@@ -1,0 +1,130 @@
+package org.moparscape.userver.v317;
+
+import org.moparscape.userver.Server;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.Socket;
+import java.net.URLConnection;
+
+/**
+ * Class:OndemandServer
+ * User: Silabsoft
+ * Date: Jul 6, 2009
+ * Time: 2:22:11 PM
+ */
+public class OndemandServer extends Server {
+
+    public static final String odsPath = "317/ondemand/";
+
+    public OndemandServer(String defaultLocation) {
+        this(defaultLocation, 0);
+    }
+
+    public OndemandServer(String defaultLocation, int port) {
+        super(defaultLocation, port);
+    }
+
+    public OndemandServer(String defaultLocation, String customLocation) {
+        this(defaultLocation, 0, customLocation);
+    }
+
+    public OndemandServer(String defaultLocation, int port, String customLocation) {
+        super(defaultLocation, port, customLocation);
+    }
+
+    public void handleConnection(Socket s) throws IOException {
+
+        boolean identify = false;
+        OutputStream out = s.getOutputStream();
+        InputStream in = s.getInputStream();
+        if (in == null)
+            return;
+        while (!s.isClosed()) {
+            int dataType = 0;
+            if (!identify)
+                dataType = in.read();
+            if (dataType == 15) {
+                // System.out.println("new client connected to update server");
+                for (int j = 0; j < 8; j++)
+                    out.write(0);
+                identify = true;
+            } else {
+                dataType = in.read();
+                int id = (in.read() << 8) + in.read();
+
+                int status = in.read();
+                // status of 10 means give priority to these files
+                // but since we serve them up in order of request
+                // just ignore it, for now at least
+                if (status == 10)
+                    System.out.println("ods: status is 10!");
+                long hash = (long) ((dataType << 16) + id);
+                // System.out.println("request " + hash);
+
+                URLConnection url = getHttpURLConnection(odsPath + hash);
+                // if url is null, custom and default cannot be reached, continue
+                if (url == null) {
+                    System.out.println("no data for index,id: " + dataType + "," + id);
+                    continue;
+                }
+
+                int size = url.getContentLength();
+                // if size == -1 it doesn't exist
+                // however this cannot be counted on as a 404 will still send html
+                // System.out.println(size);
+                InputStream data = url.getInputStream();
+
+                byte[] ioBuffer = new byte[6];
+                ioBuffer[0] = (byte) dataType;
+                ioBuffer[1] = (byte) (id >> 8);
+                ioBuffer[2] = (byte) id;
+                ioBuffer[3] = (byte) (size >> 8);
+                ioBuffer[4] = (byte) size;
+                byte partCounter = 0;
+                ioBuffer[5] = partCounter++;
+                // write it the first time
+                // System.out.println("ods: write header: "+ioBuffer[5]);
+                out.write(ioBuffer);
+
+                // due to the nature of the if statement
+                // the byte buffer cannot exceed a length of 500
+                // originally 256
+                byte[] buffer = new byte[500];
+                int lenRead = 0;
+                int lenWritten = 0;
+                int toWrite = 0;
+                while ((lenRead = data.read(buffer)) >= 0)
+                    if ((lenWritten + lenRead) <= 500) {
+                        lenWritten += lenRead;
+                        // System.out.println("ods: write lenRead: "+lenRead+" lenWritten: "+lenWritten);
+                        out.write(buffer, 0, lenRead);
+                        out.flush();
+                        if (lenWritten == 500) {
+                            lenWritten = 0;
+                            // System.out.println("ods: write lenWritten == 500 header");
+                            ioBuffer[5] = partCounter++;
+                            // System.out.println("ods: write header: "+ioBuffer[5]);
+                            out.write(ioBuffer);
+                        }
+                    } else {
+                        toWrite = 500 - lenWritten;
+                        // System.out.println("ods: write toWrite: "+toWrite+" lenWritten: "+lenWritten);
+                        out.write(buffer, 0, toWrite);
+                        lenRead -= toWrite;
+                        //                System.out.println("ods: write else header");
+                        ioBuffer[5] = partCounter++;
+                        // System.out.println("ods: write header: "+ioBuffer[5]);
+                        out.write(ioBuffer);
+                        // System.out.println("ods: write toWrite: "+toWrite+" lenRead: "+lenRead);
+                        out.write(buffer, toWrite, lenRead);
+                        out.flush();
+                        lenWritten = lenRead;
+                    }
+                data.close();
+
+            }
+        }
+    }
+}
