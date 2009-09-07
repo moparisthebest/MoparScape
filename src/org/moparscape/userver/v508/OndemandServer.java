@@ -17,7 +17,7 @@ import java.net.URLConnection;
  */
 public class OndemandServer extends Server {
     // TODO: this must dump to folders, too many files in one folder
-    public static final String odsPath = "508/";
+    public static final String odsPath = "508/%d/%d";
     public static final int clientVersion = 508;
 
     public byte[] buffer = new byte[1024];
@@ -108,10 +108,11 @@ public class OndemandServer extends Server {
 //                    if(true)
 //                        continue;
 
-                    long hash = (long) ((index << 16) + id);
+                    //long hash = (long) ((index << 16) + id);
                     //System.out.println("request " + hash);
+                    System.out.println(String.format(odsPath, index, id));
 
-                    URLConnection url = getHttpURLConnection(odsPath + hash);
+                    URLConnection url = getHttpURLConnection(String.format(odsPath, index, id));
                     // if url is null, custom and default cannot be reached, continue
                     if (url == null)
                         continue;
