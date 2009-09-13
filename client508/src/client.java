@@ -90,7 +90,7 @@ public class client extends Applet_Sub1 implements org.moparscape.ClientInterfac
 
     public org.moparscape.userver.Server[] getUpdateServers(String defaultLocation, String customLocation){
         org.moparscape.userver.Server[] ret = new org.moparscape.userver.Server[2];
-        ret[0] = new org.moparscape.userver.v508.OndemandServer(defaultLocation, customLocation);
+        ret[0] = new org.moparscape.userver.v508.OndemandServer443(defaultLocation, customLocation);
         ret[1] = new org.moparscape.userver.v508.OndemandServer(defaultLocation, customLocation);
         return ret;
     }

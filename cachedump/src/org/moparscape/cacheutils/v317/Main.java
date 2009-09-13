@@ -5,8 +5,8 @@ import java.io.*;
 public class Main {
 
     public static final String folderName = "/home/mopar/htdocs/317/ondemand/";
-    //public static final String cacheToDumpFolder = "./cachedump/complete317/";
-    public static final String cacheToDumpFolder = "/home/mopar/.moparscape/cache317/";
+    public static final String cacheToDumpFolder = "./cachedump/complete317/";
+    //public static final String cacheToDumpFolder = "/home/mopar/.moparscape/cache317/";
     public static PrintStream log;
 
     public Main() {
@@ -41,10 +41,11 @@ public class Main {
 
                         if (data == null) {
                             println("no data for: " + index + "," + id);
-                            continue;
+                            //continue;
+                            data = new byte[]{0};
+                        } else {
+                            println("data for: " + index + "," + id);
                         }
-
-                        println("data for: " + index + "," + id);
 
                         long hash = (((cacheIndexes[index].indexID - 1) << 16) + id);
                         File file = new File(folderName + hash);

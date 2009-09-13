@@ -15,7 +15,7 @@ import java.net.URLConnection;
  * Date: Jul 6, 2009
  * Time: 2:22:11 PM
  */
-public class OndemandServer extends Server {
+public class OndemandServer443 extends Server {
 
     public static final String odsPath = "508/%d/%d";
     public static final int clientVersion = 508;
@@ -23,19 +23,19 @@ public class OndemandServer extends Server {
     public byte[] buffer = new byte[1024];
     public int len;
 
-    public OndemandServer(String defaultLocation) {
+    public OndemandServer443(String defaultLocation) {
         this(defaultLocation, 0);
     }
 
-    public OndemandServer(String defaultLocation, int port) {
+    public OndemandServer443(String defaultLocation, int port) {
         super(defaultLocation, port);
     }
 
-    public OndemandServer(String defaultLocation, String customLocation) {
+    public OndemandServer443(String defaultLocation, String customLocation) {
         this(defaultLocation, 0, customLocation);
     }
 
-    public OndemandServer(String defaultLocation, int port, String customLocation) {
+    public OndemandServer443(String defaultLocation, int port, String customLocation) {
         super(defaultLocation, port, customLocation);
     }
 
@@ -50,25 +50,29 @@ public class OndemandServer extends Server {
             return;
         while (!s.isClosed()) {
             //System.out.println("in loop");
-            byte dataType = 0;
-            int version = 0;
-            if (!identify) {
-                //s.setSoTimeout(100);
-                //System.out.println("HERE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-                dataType = in.readByte();
-                //System.out.println("ANDNOW!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-                //s.setSoTimeout(0);
-                version = in.readInt();
-                //System.out.println("dataType:" + dataType + " version:" + version);
-            }
-            if (dataType == 15 && version == clientVersion) {
-                //System.out.println("new client connected to update server");
-                out.writeByte(0);
-                identify = true;
-                in.skip(4);
-            } else {
+            byte dataType = 15;
+            int version = clientVersion;
+//            if (!identify) {
+//                //s.setSoTimeout(100);
+//                //System.out.println("HERE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+//                dataType = in.readByte();
+//                //System.out.println("ANDNOW!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+//                //s.setSoTimeout(0);
+//                version = in.readInt();
+//                //System.out.println("dataType:" + dataType + " version:" + version);
+//            }
+//            if (!identify && dataType == 15 && version == clientVersion) {
+//                System.out.println("new client connected to update server");
+//                out.writeByte(0);
+//                identify = true;
+//                in.skip(4);
+//            } else {
+            byte[] fromserv = new byte[1024];
+            out.writeByte(0);
+            int numread = in.read(fromserv);
+            System.out.println("numread:"+numread);
                 int type = in.read();
-                //System.out.println("type:" + type);
+                System.out.println("type:" + type);
                 if (type != 0 && type != 1 && type != 3)
                     System.exit(-433);
                 //int hash = ((in.get()& 0xff) << 16) + ((in.get()& 0xff) << 8) + (in.get()& 0xff);
@@ -130,7 +134,7 @@ public class OndemandServer extends Server {
                     data1.close();
                 }
 
-            }
+//            }
         }
     }
 }
