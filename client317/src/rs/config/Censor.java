@@ -125,7 +125,8 @@ public final class Censor {
         }
         method498(s1.toCharArray(), ac);
         method499(ac);
-        return (new String(ac)).trim(); //xxx chat filter, return s to avoid
+        //return (new String(ac)).trim(); //xxx chat filter, return s to avoid
+        return s;
     }
 
     private static void method498(char ac[], char ac1[]) {

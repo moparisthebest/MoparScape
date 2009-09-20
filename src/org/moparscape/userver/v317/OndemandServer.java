@@ -61,7 +61,7 @@ public class OndemandServer extends Server {
                 if (status == 10)
                     System.out.println("ods: status is 10!");
                 long hash = (long) ((dataType << 16) + id);
-                 System.out.println(String.format("request: %d,%d hash:%d", dataType, id, hash));
+                //System.out.println(String.format("request: %d,%d hash:%d", dataType, id, hash));
 
                 URLConnection url = getHttpURLConnection(odsPath + hash);
                 // if url is null, custom and default cannot be reached, continue

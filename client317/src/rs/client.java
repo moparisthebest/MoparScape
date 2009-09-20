@@ -2,26 +2,26 @@ package rs;// Decompiled by Jad v1.5.8f. Copyright 2001 Pavel Kouznetsov.
 // Jad home page: http://www.kpdus.com/jad.html
 // Decompiler options: packimports(3) 
 
+import rs.animable.*;
+import rs.anticheat.MouseDetection;
+import rs.cache.Decompressor;
+import rs.cache.OnDemandData;
+import rs.cache.OnDemandFetcher;
+import rs.config.*;
 import rs.constants.SizeConstants;
 import rs.constants.Skills;
-import rs.animable.*;
-import rs.config.*;
 import rs.graphics.*;
+import rs.net.ISAACRandomGen;
+import rs.net.RSSocket;
 import rs.sign.signlink;
 import rs.stream.Stream;
 import rs.stream.StreamLoader;
-import rs.anticheat.MouseDetection;
-import rs.cache.Decompressor;
-import rs.cache.OnDemandFetcher;
-import rs.cache.OnDemandData;
-import rs.net.RSSocket;
-import rs.net.ISAACRandomGen;
 
 import java.applet.AppletContext;
 import java.awt.*;
 import java.io.DataInputStream;
-import java.io.IOException;
 import java.io.EOFException;
+import java.io.IOException;
 import java.io.OutputStream;
 import java.net.InetAddress;
 import java.net.Socket;
@@ -60,23 +60,27 @@ public class client extends RSApplet {
         jaggrabPort = port;
     }
 
+    // implemented
     public void setMapLock(boolean maplock, int mapface) {
         this.maplock = maplock;
         this.mapface = mapface;
     }
 
+    // implemented
     public void setHPheads(boolean on) {
         this.hpOn = on;
     }
 
+    // implemented
     public void setZoom(boolean on) {
         this.zoomOn = on;
     }
 
-    public void setKeyListener(java.awt.event.KeyListener kl){
+    public void setKeyListener(java.awt.event.KeyListener kl) {
         keyListener = kl;
     }
 
+    // implemented
     public void modZoomInts(int zoom, int fwdbwd, int lftrit) {
         this.zoom = zoom;
         this.fwdbwd = fwdbwd;
@@ -101,14 +105,14 @@ public class client extends RSApplet {
         return ret;
     }
 
-    public org.moparscape.userver.Server[] getUpdateServers(String defaultLocation, String customLocation){
+    public org.moparscape.userver.Server[] getUpdateServers(String defaultLocation, String customLocation) {
         org.moparscape.userver.Server[] ret = new org.moparscape.userver.Server[2];
         ret[0] = new org.moparscape.userver.v317.JaggrabServer(defaultLocation, customLocation);
         ret[1] = new org.moparscape.userver.v317.OndemandServer(defaultLocation, customLocation);
         return ret;
     }
 
-    public java.awt.Dimension getDimension(){
+    public java.awt.Dimension getDimension() {
         return new java.awt.Dimension(765, 503);
     }
 
@@ -1253,6 +1257,9 @@ public class client extends RSApplet {
                     try {
                         npcScreenPos(((Entity) (obj)), ((Entity) (obj)).height + 15);
                         if (spriteDrawX > -1) {
+                            // xxx hp over heads
+                            if (hpOn)
+                                chatTextDrawingArea.method382(0xFF0000, spriteDrawX, (((Entity) (obj)).currentHealth) + "/" + ((Entity) (obj)).maxHealth, spriteDrawY - 9, true);
                             int i1 = (((Entity) (obj)).currentHealth * 30) / ((Entity) (obj)).maxHealth;
                             if (i1 > 30)
                                 i1 = 30;
@@ -7334,8 +7341,14 @@ public class client extends RSApplet {
                 anInt1187 += (-12 - anInt1187) / 2;
             else
                 anInt1187 /= 2;
-            minimapInt1 = minimapInt1 + anInt1186 / 2 & 0x7ff;
-            anInt1184 += anInt1187 / 2;
+            // xxx maplock
+            if (maplock) {
+                minimapInt1 = mapface;
+                anInt1184 = 383;
+            } else {
+                minimapInt1 = minimapInt1 + anInt1186 / 2 & 0x7ff;
+                anInt1184 += anInt1187 / 2;
+            }
             if (anInt1184 < 128)
                 anInt1184 = 128;
             if (anInt1184 > 383)
@@ -8999,18 +9012,18 @@ public class client extends RSApplet {
             k2 = i4;
         }
         if (i2 != 0) {
-/* xxx            if(cameratoggle){
-            	if(zoom == 0)
-                zoom = k2;
-              if(lftrit == 0)
-                lftrit = j2;
-              if(fwdbwd == 0)
-                fwdbwd = l2;
-              k2 = zoom;
-              j2 = lftrit;
-              l2 = fwdbwd;
+            // camera hacks
+            if (zoomOn) {
+                if (zoom == 0)
+                    zoom = k2;
+                if (lftrit == 0)
+                    lftrit = j2;
+                if (fwdbwd == 0)
+                    fwdbwd = l2;
+                k2 = zoom;
+                j2 = lftrit;
+                l2 = fwdbwd;
             }
-*/
             int j3 = Model.modelIntArray1[i2];
             int l3 = Model.modelIntArray2[i2];
             int j4 = l2 * j3 + j2 * l3 >> 16;

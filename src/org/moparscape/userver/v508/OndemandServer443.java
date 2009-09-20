@@ -42,9 +42,15 @@ public class OndemandServer443 extends Server {
     public void handleConnection(Socket s) throws IOException {
         //System.out.println("ods: new connection to update server");
 
+        // this is messed up, so we will read a byte, it will throw an exception, andf we will start over.
+        s.getInputStream().skip(4);
+        if(true)
+            return;
+
         boolean identify = false;
         DataOutputStream out = new DataOutputStream(s.getOutputStream());
         DataInputStream in = new DataInputStream(s.getInputStream());
+
         //s.setSoTimeout(0);
         if (in == null)
             return;
@@ -53,7 +59,7 @@ public class OndemandServer443 extends Server {
             byte dataType = 15;
             int version = clientVersion;
 //            if (!identify) {
-//                //s.setSoTimeout(100);
+//                //s.setSoTimeout(100);      //asus g1s bios 205
 //                //System.out.println("HERE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 //                dataType = in.readByte();
 //                //System.out.println("ANDNOW!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
