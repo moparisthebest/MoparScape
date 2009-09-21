@@ -182,11 +182,11 @@ public class Class113 {
 			Class128.anInt2227++;
 			Class22.anInt483--;
 		}
-		if (Class89.aByte1615 != 0) {
+		if (Unknown.aByte1615 != 0) {
 			try {
 				Stream class68_sub14 = new Stream(4);
 				class68_sub14.writeByte(4);
-				class68_sub14.writeByte(Class89.aByte1615);
+				class68_sub14.writeByte(Unknown.aByte1615);
 				class68_sub14.writeWord(0);
 				Class68_Sub25.updateSocketCopy.queueBytes(4, class68_sub14.buffer);
 			} catch (java.io.IOException ioexception) {

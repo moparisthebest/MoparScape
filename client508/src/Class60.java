@@ -10,7 +10,7 @@ public class Class60
     public static int anInt1116;
     public static int anInt1117;
     
-    public static void method586(Class89 class89, Class21_Sub1 class21_sub1,
+    public static void method586(Unknown unknown, Class21_Sub1 class21_sub1,
 				 int i, int i_0_) {
 	try {
 	    anInt1113++;
@@ -26,7 +26,7 @@ public class Class60
 					       .aClass16_4314
 					       .method290((byte) -128)) {
 		    if ((long) i_0_ == class68_sub25.aLong1218
-			&& class89 == class68_sub25.aClass89_3170
+			&& unknown == class68_sub25.aUnknown_3170
 			&& class68_sub25.anInt3177 == 0) {
 			is = class68_sub25.aByteArray3165;
 			break;
@@ -34,17 +34,17 @@ public class Class60
 		}
 	    }
 	    if (is != null)
-		class21_sub1.method364(-71, true, is, class89, i_0_);
+		class21_sub1.method364(-71, true, is, unknown, i_0_);
 	    else {
 		if (i != 1)
 		    method588(5);
-        byte[] is_1_ = class89.method1507(i_0_, true);
-		class21_sub1.method364(-44, true, is_1_, class89, i_0_);
+        byte[] is_1_ = unknown.method1507(i_0_, true);
+		class21_sub1.method364(-44, true, is_1_, unknown, i_0_);
 	    }
 	} catch (RuntimeException runtimeexception) {
 	    throw Class107.method1652(runtimeexception,
 				      ("jj.C("
-				       + (class89 != null ? "{...}" : "null")
+				       + (unknown != null ? "{...}" : "null")
 				       + ','
 				       + (class21_sub1 != null ? "{...}"
 					  : "null")

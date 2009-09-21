@@ -11,7 +11,7 @@ public class Class21_Sub1 extends Class21renamed
     public int anInt2697;
     public static RSString aRSString_2698
 	= Class112.method1668(43, "Musik)2Engine vorbereitet)3");
-    public Class89 aClass89_2699;
+    public Unknown aUnknown_2699;
     public static int anInt2700;
     public int anInt2701;
     public static RSString aRSString_2702;
@@ -25,14 +25,14 @@ public class Class21_Sub1 extends Class21renamed
     public static RSString[] aRSStringArray2710;
     public int anInt2711;
     public static int anInt2712;
-    public Class89 aClass89_2713;
+    public Unknown aUnknown_2713;
     public static int anInt2714;
     public static int anInt2715;
     public static int anInt2716;
     public volatile boolean[] aBooleanArray2717;
     public static int anInt2718;
     public static int anInt2719;
-    
+
     public void method334(int i, byte i_0_) {
 	anInt2707++;
 	if (i_0_ < 84)
@@ -41,11 +41,11 @@ public class Class21_Sub1 extends Class21renamed
 	    Class20.method326(anInt2697, i, true);
     }
     
-    public void method364(int i, boolean bool, byte[] is, Class89 class89,
+    public void method364(int i, boolean bool, byte[] is, Unknown unknown,
 			  int i_1_) {
 	try {
 	    anInt2712++;
-	    if (class89 != aClass89_2713) {
+	    if (unknown != aUnknown_2713) {
 		if (!bool && i_1_ == anInt2711)
 		    aBoolean2696 = true;
 		if (is == null || is.length <= 2) {
@@ -130,7 +130,7 @@ public class Class21_Sub1 extends Class21renamed
 	    throw Class107.method1652(runtimeexception,
 				      ("sg.OA(" + i + ',' + bool + ','
 				       + (is != null ? "{...}" : "null") + ','
-				       + (class89 != null ? "{...}" : "null")
+				       + (unknown != null ? "{...}" : "null")
 				       + ',' + i_1_ + ')'));
 	}
     }
@@ -164,23 +164,23 @@ public class Class21_Sub1 extends Class21renamed
 	return true;
     }
     
-    public Class21_Sub1(Class89 class89, Class89 class89_11_, int i,
+    public Class21_Sub1(Unknown unknown, Unknown unknown_11_, int i,
 			boolean bool, boolean bool_12_, boolean bool_13_) {
 	super(bool, bool_12_);
 	aBoolean2696 = false;
 	anInt2711 = -1;
 	try {
 	    anInt2697 = i;
-	    aClass89_2713 = class89_11_;
-	    aClass89_2699 = class89;
+	    aUnknown_2713 = unknown_11_;
+	    aUnknown_2699 = unknown;
 	    aBoolean2704 = bool_13_;
 	    Class72.method1360(this, -5720, anInt2697);
 	} catch (RuntimeException runtimeexception) {
 	    throw Class107.method1652(runtimeexception,
 				      ("sg.<init>("
-				       + (class89 != null ? "{...}" : "null")
+				       + (unknown != null ? "{...}" : "null")
 				       + ','
-				       + (class89_11_ != null ? "{...}"
+				       + (unknown_11_ != null ? "{...}"
 					  : "null")
 				       + ',' + i + ',' + bool + ',' + bool_12_
 				       + ',' + bool_13_ + ')'));
@@ -202,8 +202,8 @@ public class Class21_Sub1 extends Class21renamed
 	anInt2706++;
 	anInt2701 = i_16_;
 	anInt2708 = i;
-	if (aClass89_2713 != null)
-	    Class60.method586(aClass89_2713, this, 1, anInt2697);
+	if (aUnknown_2713 != null)
+	    Class60.method586(aUnknown_2713, this, 1, anInt2697);
 	else
 	    RuntimeException_Sub1.method1798(true, anInt2701, 255, (byte) 0,
 					     anInt2697, this, (byte) 22);
@@ -338,13 +338,13 @@ public class Class21_Sub1 extends Class21renamed
     public void method331(byte i, int i_61_) {
 	anInt2719++;
 	if (this.method346(i_61_, 0)) {
-	    if (aClass89_2699 == null || aBooleanArray2717 == null
+	    if (aUnknown_2699 == null || aBooleanArray2717 == null
 		|| !aBooleanArray2717[i_61_])
 		RuntimeException_Sub1.method1798(true, anIntArray468[i_61_],
 						 anInt2697, (byte) 2, i_61_,
 						 this, (byte) 22);
 	    else
-		Class60.method586(aClass89_2699, this, 1, i_61_);
+		Class60.method586(aUnknown_2699, this, 1, i_61_);
 	    if (i > -103)
 		anIntArray2693 = null;
 	}
@@ -368,15 +368,15 @@ public class Class21_Sub1 extends Class21renamed
 	    if (bool_62_) {
 		if (aBoolean2696)
 		    throw new RuntimeException();
-		if (aClass89_2713 != null)
-		    Class16.method285(anInt2697, is, -30372, aClass89_2713);
+		if (aUnknown_2713 != null)
+		    Class16.method285(anInt2697, is, -30372, aUnknown_2713);
 		this.method349(is, -25529);
 		method372(-1);
 	    } else {
 		is[is.length + -2] = (byte) (anIntArray474[i] >> 840888328);
 		is[is.length - 1] = (byte) anIntArray474[i];
-		if (aClass89_2699 != null) {
-		    Class16.method285(i, is, -30372, aClass89_2699);
+		if (aUnknown_2699 != null) {
+		    Class16.method285(i, is, -30372, aUnknown_2699);
 		    aBooleanArray2717[i] = true;
 		}
 		if (bool)
@@ -393,14 +393,14 @@ public class Class21_Sub1 extends Class21renamed
 	     (i_64_ ^ 0xffffffff) > (aBooleanArray2717.length ^ 0xffffffff);
 	     i_64_++)
 	    aBooleanArray2717[i_64_] = false;
-	if (aClass89_2699 == null)
+	if (aUnknown_2699 == null)
 	    aBoolean2696 = true;
 	else {
 	    anInt2711 = i;
 	    for (int i_65_ = 0; ((aBooleanArray2717.length ^ 0xffffffff)
 				 < (i_65_ ^ 0xffffffff)); i_65_++) {
 		if ((anIntArray441[i_65_] ^ 0xffffffff) < -1) {
-		    Class68_Sub25.method1213(this, (byte) -119, aClass89_2699,
+		    Class68_Sub25.method1213(this, (byte) -119, aUnknown_2699,
 					     i_65_);
 		    anInt2711 = i_65_;
 		}

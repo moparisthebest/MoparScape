@@ -80,7 +80,7 @@ public class Class13_Sub1 extends Class13
 	Class52.anInt1006 = 0;
 	for (int i_10_ = 0; (i_10_ ^ 0xffffffff) > -105; i_10_++) {
 	    for (int i_11_ = 0; i_11_ < 104; i_11_++) {
-		long l = Class89.method1506(GameSocket.anInt1149, i_10_, i_11_);
+		long l = Unknown.method1506(GameSocket.anInt1149, i_10_, i_11_);
 		if (l != 0L) {
 		    Class116 class116
 			= Class1_Sub5.method140(i + 212,

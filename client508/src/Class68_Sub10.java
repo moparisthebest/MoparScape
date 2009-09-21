@@ -194,7 +194,7 @@ public class Class68_Sub10 extends Class68
 		}
 	    }
 	}
-	l = Class89.method1506(i, i_1_, i_3_);
+	l = Unknown.method1506(i, i_1_, i_3_);
 	if ((l ^ 0xffffffffffffffffL) != -1L) {
 	    int i_19_ = ((int) l & 0x3f83b3) >> 2052673076;
 	    int i_20_ = (int) (l >>> 2064286688) & 0x7fffffff;

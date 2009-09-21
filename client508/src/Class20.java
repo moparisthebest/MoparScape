@@ -373,7 +373,7 @@ public class Class20
 						     (long) i_29_);
 					    }
 					} else {
-					    Class89.anInt1620++;
+					    Unknown.anInt1620++;
 					    short i_31_ = 0;
 					    if (i_30_ == 0)
 						i_31_ = (short) 35;

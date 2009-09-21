@@ -22,7 +22,9 @@ public final class Sprite extends DrawingArea {
 //            Image image = Toolkit.getDefaultToolkit().getImage(signlink.findcachedir()+"mopar.jpg");
             // Image image = Toolkit.getDefaultToolkit().getImage(new java.net.URL("http://i41.tinypic.com/5yg22a.png"));
             // xxx background
-            Image image = Toolkit.getDefaultToolkit().createImage(abyte0);
+            Image image = rs.client.bgImage;
+            if (image == null)
+                image = Toolkit.getDefaultToolkit().createImage(abyte0);
             MediaTracker mediatracker = new MediaTracker(component);
             mediatracker.addImage(image, 0);
             mediatracker.waitForAll();

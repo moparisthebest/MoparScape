@@ -175,7 +175,7 @@ public class Class68_Sub20_Sub3 extends Class68_Sub20
 	    if (class100.method1595(-125, Class68_Sub20_Sub7.aRSString_4267)
 		!= -1) {
 		for (;;) {
-		    int i_9_ = class100.method1595(33, Class89.aRSString_1618);
+		    int i_9_ = class100.method1595(33, Unknown.aRSString_1618);
 		    if ((i_9_ ^ 0xffffffff) == 0)
 			break;
 		    class100
@@ -203,7 +203,7 @@ public class Class68_Sub20_Sub3 extends Class68_Sub20
 		}
 		for (;;) {
 		    int i_11_ = class100.method1595(i + -27678,
-						    Class89.aRSString_1619);
+						    Unknown.aRSString_1619);
 		    if (i_11_ == -1)
 			break;
 		    class100

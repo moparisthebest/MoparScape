@@ -354,7 +354,7 @@ public class Class58
 	    Class75_Sub3_Sub1.method1401(i_34_, i_33_, i_32_, i, (byte) 47,
 					 i_35_);
 	else
-	    Class89.method1499(i_32_, i_34_, i_33_, true, i, i_35_);
+	    Unknown.method1499(i_32_, i_34_, i_33_, true, i, i_35_);
     }
     
     public static void method582(int i) {

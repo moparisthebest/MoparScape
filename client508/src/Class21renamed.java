@@ -698,7 +698,7 @@ public abstract class Class21renamed
 	RSString.anInt2281 = 0;
 	Class80.anInt1450 = 0;
 	Class68_Sub13_Sub36.anInt4048 = 0;
-	Class89.anInt1613 = 0;
+	Unknown.anInt1613 = 0;
 	Class68_Sub28_Sub2.anInt4533 = 0;
 	Class68_Sub20_Sub3.anInt4201 = 0;
 	Class57.anInt1076 = 0;
@@ -987,7 +987,7 @@ public abstract class Class21renamed
 	Class54.anInt1035 = 0;
 	Class68_Sub13_Sub35.anInt4017 = 0;
 	Class68_Sub20_Sub8.anInt4281 = 0;
-	Class89.anInt1626 = 0;
+	Unknown.anInt1626 = 0;
 	Class68_Sub20_Sub11.anInt4321 = 0;
 	Class67.anInt1209 = 0;
 	Class68_Sub20_Sub6.anInt4251 = 0;
@@ -1012,7 +1012,7 @@ public abstract class Class21renamed
 	    Class116.anInt1974 = 0;
 	    Class68_Sub13_Sub38.anInt4088 = 0;
 	    Class68_Sub13_Sub38.anInt4085 = 0;
-	    Class89.anInt1623 = 0;
+	    Unknown.anInt1623 = 0;
 	    Class55.anInt2066 = 0;
 	    Class56.anInt1063 = 0;
 	    Class35.anInt610 = 0;
@@ -1020,7 +1020,7 @@ public abstract class Class21renamed
 	    Class68_Sub20_Sub11.anInt4330 = 0;
 	    RSString.anInt2272 = 0;
 	    Class97.anInt1709 = 0;
-	    Class89.anInt1620 = 0;
+	    Unknown.anInt1620 = 0;
 	    Class66.anInt1204 = 0;
 	    Class116.anInt2029 = 0;
 	    Class68_Sub13_Sub25.anInt3863 = 0;
@@ -1100,7 +1100,7 @@ public abstract class Class21renamed
 	    Class12.anInt202 = 0;
 	    Class68_Sub28_Sub1.anInt4518 = 0;
 	    Class68_Sub13_Sub39.anInt4092 = 0;
-	    Class89.anInt1624 = 0;
+	    Unknown.anInt1624 = 0;
 	    RSString.anInt2299 = 0;
 	    Class53.anInt1024 = 0;
 	    Class68_Sub17.anInt3036 = 0;
@@ -1118,7 +1118,7 @@ public abstract class Class21renamed
 	    Class68_Sub7.anInt2852 = 0;
 	    Class88.anInt1607 = 0;
 	    Class68_Sub20_Sub10.anInt4312 = 0;
-	    Class89.anInt1628 = 0;
+	    Unknown.anInt1628 = 0;
 	    RSString.anInt2304 = 0;
 	    Class1_Sub6_Sub2.anInt3437 = 0;
 	    Class13_Sub1.anInt2636 = 0;
@@ -1256,7 +1256,7 @@ public abstract class Class21renamed
 	    Class68_Sub13_Sub15.anInt3691 = 0;
 	    Class44.anInt753 = 0;
 	    Class18.anInt317 = 0;
-	    Class89.anInt1627 = 0;
+	    Unknown.anInt1627 = 0;
 	    Class68_Sub13_Sub24.anInt3832 = 0;
 	    Class20.anInt411 = 0;
 	    Class119.anInt2087 = 0;
@@ -1718,7 +1718,7 @@ public abstract class Class21renamed
 	    Class68_Sub20_Sub13_Sub2.anInt4619 = 0;
 	    RSString.anInt2298 = 0;
 	    Class68_Sub20_Sub8.anInt4288 = 0;
-	    Class89.anInt1625 = 0;
+	    Unknown.anInt1625 = 0;
 	    client.anInt2366 = 0;
 	    Class33.anInt578 = 0;
 	    Class11.anInt192 = 0;
@@ -2061,7 +2061,7 @@ public abstract class Class21renamed
 	    Class70.anInt1263 = 0;
 	    Class68_Sub19.anInt3074 = 0;
 	    Applet_Sub1.anInt12 = 0;
-	    Class89.anInt1629 = 0;
+	    Unknown.anInt1629 = 0;
 	    Class64.anInt1193 = 0;
 	    Class68_Sub28_Sub1.anInt4484 = 0;
 	    Class90.anInt2337 = 0;

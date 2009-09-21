@@ -392,7 +392,7 @@ public class Class114
 	    Class85.aByteArrayArrayArray1554[i_8_] = null;
 	    GroundData.aByteArrayArrayArray676[i_8_] = null;
 	}
-	Class89.method1498(-50, -10, -50);
+	Unknown.method1498(-50, -10, -50);
 	if (!bool) {
 	    for (int i_64_ = 0; (i_64_ ^ 0xffffffff) > -105; i_64_++) {
 		for (int i_65_ = 0; i_65_ < 104; i_65_++) {

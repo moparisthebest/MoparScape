@@ -10,7 +10,7 @@ public class Class68_Sub25 extends Class68
     public static GameSocket updateSocketCopy;
     public static Class8[] aClass8Array3168 = new Class8[500];
     public static int anInt3169;
-    public Class89 aClass89_3170;
+    public Unknown aUnknown_3170;
     public static RSString aRSString_3171
 	= Class112.method1668(43, "event_opbase");
     public static int[] anIntArray3172;
@@ -19,7 +19,7 @@ public class Class68_Sub25 extends Class68
     public Class21_Sub1 aClass21_Sub1_3175;
     public static int anInt3176;
     public int anInt3177;
-    
+
     public static boolean method1210(byte i) {
 	anInt3169++;
 	synchronized (Class66.aClass123_1200) {
@@ -71,7 +71,7 @@ public class Class68_Sub25 extends Class68
     }
     
     public static void method1213(Class21_Sub1 class21_sub1, byte i,
-				  Class89 class89, int i_10_) {
+				  Unknown unknown, int i_10_) {
 	try {
 	    anInt3166++;
 	    Class68_Sub25 class68_sub25 = new Class68_Sub25();
@@ -79,7 +79,7 @@ public class Class68_Sub25 extends Class68
 	    class68_sub25.anInt3177 = 1;
 	    class68_sub25.aClass21_Sub1_3175 = class21_sub1;
 	    class68_sub25.aLong1218 = (long) i_10_;
-	    class68_sub25.aClass89_3170 = class89;
+	    class68_sub25.aUnknown_3170 = unknown;
 	    synchronized (Class68_Sub20_Sub10.aClass16_4314) {
 		Class68_Sub20_Sub10.aClass16_4314.method286(class68_sub25,
 							    true);
@@ -91,7 +91,7 @@ public class Class68_Sub25 extends Class68
 				       + (class21_sub1 != null ? "{...}"
 					  : "null")
 				       + ',' + i + ','
-				       + (class89 != null ? "{...}" : "null")
+				       + (unknown != null ? "{...}" : "null")
 				       + ',' + i_10_ + ')'));
 	}
     }

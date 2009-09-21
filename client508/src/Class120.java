@@ -39,7 +39,7 @@ public class Class120
 	    }
 	}
 	if (bool)
-	    return Class89.method1508(is, false);
+	    return Unknown.method1508(is, false);
 	return is;
     }
     

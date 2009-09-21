@@ -61,7 +61,7 @@ public abstract class Animable
 	if (object instanceof byte[]) {
 	    byte[] is = (byte[]) object;
 	    if (bool)
-		return Class89.method1508(is, false);
+		return Unknown.method1508(is, false);
 	    return is;
 	}
 	if (i != -4)

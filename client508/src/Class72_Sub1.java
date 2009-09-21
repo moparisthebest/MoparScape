@@ -225,7 +225,7 @@ public class Class72_Sub1 extends Class72
 	Class1_Sub7.aRSString_2601 = Class68_Sub13_Sub23.aRSString_3819;
 	Class68_Sub13_Sub26_Sub1.aRSString_4605 = Class30.aRSString_551;
 	Class75_Sub3.aRSString_3324 = Class32.aRSString_567;
-	Class68_Sub16.aRSString_3027 = Class89.aRSString_1611;
+	Class68_Sub16.aRSString_3027 = Unknown.aRSString_1611;
 	Class51.aRSString_2258 = Class105.aRSString_1792;
 	Class68_Sub24.aRSString_3152 = Class97.aRSString_1713;
 	Class68_Sub13_Sub5.aRSString_3520 = Class30.aRSString_542;

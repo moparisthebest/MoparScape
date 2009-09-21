@@ -5,8 +5,6 @@
 
 package org.moparscape;
 
-import java.util.HashMap;
-
 /**
  * @author mopar
  */
@@ -39,11 +37,13 @@ public interface ClientInterface {
     /*
     These are only meant to be called once.
      */
-    public HashMap<String, String> getParams();
+    public java.util.HashMap<String, String> getParams();
 
     // should always return org.moparscape.userver.Server[2]
     public org.moparscape.userver.Server[] getUpdateServers(String defaultLocation, String customLocation);
 
     public java.awt.Dimension getDimension();
+
+    public void setBackground(java.awt.Image image);
 
 }

@@ -255,7 +255,7 @@ public class Class44
 		    if (i_28_ > i_26_)
 			i_28_ = i_26_;
 		    Class68_Sub25.updateSocketCopy.flushInputStream(i_28_, Class74.aStream_1330.currentOffset, Class74.aStream_1330.buffer);
-		    if (Class89.aByte1615 != 0) {
+		    if (Unknown.aByte1615 != 0) {
 			for (int i_29_ = 0;
 			     (i_29_ ^ 0xffffffff) > (i_28_ ^ 0xffffffff);
 			     i_29_++)
@@ -267,7 +267,7 @@ public class Class44
 					    [i_29_ + (Class74
 						      .aStream_1330
 						      .currentOffset)]),
-					   Class89.aByte1615));
+					   Unknown.aByte1615));
 		    }
 		    Class74.aStream_1330.currentOffset += i_28_;
 		    if (i_27_ > Class74.aStream_1330.currentOffset)
@@ -320,7 +320,7 @@ public class Class44
 		    if ((i_26_ ^ 0xffffffff) > (i_37_ ^ 0xffffffff))
 			i_37_ = i_26_;
 		    Class68_Sub25.updateSocketCopy.flushInputStream( i_37_, Class123.aStream_2128.currentOffset, Class123.aStream_2128.buffer);
-		    if (Class89.aByte1615 != 0) {
+		    if (Unknown.aByte1615 != 0) {
 			for (int i_38_ = 0;
 			     (i_37_ ^ 0xffffffff) < (i_38_ ^ 0xffffffff);
 			     i_38_++)
@@ -333,7 +333,7 @@ public class Class44
 					    [i_38_ + (Class123
 						      .aStream_2128
 						      .currentOffset)]),
-					   Class89.aByte1615));
+					   Unknown.aByte1615));
 		    }
 		    Class123.aStream_2128.currentOffset += i_37_;
 		    Class47.anInt942 += i_37_;
@@ -359,7 +359,7 @@ public class Class44
 				}
 				Class75_Sub1_Sub1.anInt4585++;
 				Class68_Sub25.updateSocketCopy = null;
-				Class89.aByte1615
+				Unknown.aByte1615
 				    = (byte) (int) (Math.random() * 255.0
 						    + 1.0);
 				return false;

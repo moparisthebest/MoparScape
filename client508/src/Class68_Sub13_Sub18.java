@@ -267,7 +267,7 @@ public class Class68_Sub13_Sub18 extends Class68_Sub13
 	    int i_57_ = 0x3 & i_54_;
 	    if ((i_53_ ^ 0xffffffff) <= -1 && (i_52_ ^ 0xffffffff) <= -1
 		&& (i_53_ ^ 0xffffffff) > -105 && (i_52_ ^ 0xffffffff) > -105)
-		Class89.method1500(i_53_, i ^ 0xffffffff, -1, i_56_, i_52_,
+		Unknown.method1500(i_53_, i ^ 0xffffffff, -1, i_56_, i_52_,
 				   i_55_, i_57_, GameSocket.anInt1149, 0, i_50_);
 	} else if (Class49.anInt962 == 110) {
 	    int i_58_ = Class68_Sub13_Sub8.inStream.readUnsignedByteS();
@@ -420,7 +420,7 @@ public class Class68_Sub13_Sub18 extends Class68_Sub13
 			    i_84_ = i_93_;
 			    i_93_ = i_104_;
 			}
-			Class89.method1500(i_89_, 0, 1 + i_86_, i_82_, i_90_,
+			Unknown.method1500(i_89_, 0, 1 + i_86_, i_82_, i_90_,
 					   0, 0, GameSocket.anInt1149, i_92_ - -1,
 					   -1);
 			class1_sub6_sub2.aClass1_Sub3_3411
@@ -455,7 +455,7 @@ public class Class68_Sub13_Sub18 extends Class68_Sub13
 		int i_112_ = Class12.anIntArray201[i_111_];
 		if (i_108_ >= 0 && (i_107_ ^ 0xffffffff) <= -1 && i_108_ < 104
 		    && i_107_ < 104)
-		    Class89.method1500(i_108_, i ^ 0xffffffff, -1, i_112_,
+		    Unknown.method1500(i_108_, i ^ 0xffffffff, -1, i_112_,
 				       i_107_, i_111_, i_110_,
 				       GameSocket.anInt1149, 0, -1);
 	    } else {

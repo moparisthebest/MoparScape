@@ -4,6 +4,8 @@
  */
 package org.moparscape.classloader;
 
+import org.moparscape.Update;
+
 import java.io.ByteArrayOutputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -59,16 +61,19 @@ public class CRCClassLoader extends ClassLoader {
 
         System.out.println("CRC checksum failed, redownloading file");
 
-        URLConnection uc = new URL(backupURL).openConnection();
-        InputStream in = uc.getInputStream();
-        FileOutputStream fos = new FileOutputStream(jarFileLoc);
-        byte[] buffer = new byte[1024];
-        int len;
-        while ((len = in.read(buffer)) >= 0)
-            fos.write(buffer, 0, len);
-        fos.flush();
-        in.close();
-        fos.close();
+//        URLConnection uc = new URL(backupURL).openConnection();
+//        InputStream in = uc.getInputStream();
+//        FileOutputStream fos = new FileOutputStream(jarFileLoc);
+//        byte[] buffer = new byte[1024];
+//        int len;
+//        while ((len = in.read(buffer)) >= 0)
+//            fos.write(buffer, 0, len);
+//        fos.flush();
+//        in.close();
+//        fos.close();
+
+        // use Update instead
+        new Update(backupURL, jarFileLoc, true);
 
         setup(jarFileLoc);
 

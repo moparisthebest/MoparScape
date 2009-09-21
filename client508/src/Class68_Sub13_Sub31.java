@@ -168,7 +168,7 @@ public class Class68_Sub13_Sub31 extends Class68_Sub13
 	byte i_24_ = ((Class68_Sub7.method666(1) ^ 0xffffffff) != -3 ? (byte) 1
 		      : (byte) Class3.anInt84);
 	Class79.method1439(i_8_, i, i_7_, i_10_, 0);
-	Class89.method1504
+	Unknown.method1504
 	    (Class68_Sub7.anInt2862, Class68_Sub5.anInt2833, Class85.anInt1558,
 	     Canvas_Sub1.anInt45, Class74.anInt1333,
 	     Class68_Sub20.aByteArrayArrayArray3095,

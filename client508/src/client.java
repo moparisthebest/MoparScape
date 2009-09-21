@@ -12,6 +12,7 @@ import java.util.HashMap;
 public class client extends Applet_Sub1 implements org.moparscape.ClientInterface {
 
     public static java.awt.event.KeyListener keyListener;
+    public static java.awt.Image bgImage = null;
     public static int serverPort = 43594;
     public static int ondemandPort = 43596;
     public static int jaggrabPort = 43597;
@@ -52,7 +53,7 @@ public class client extends Applet_Sub1 implements org.moparscape.ClientInterfac
         this.zoomOn = on;
     }
 
-        public void setKeyListener(java.awt.event.KeyListener kl){
+    public void setKeyListener(java.awt.event.KeyListener kl){
         keyListener = kl;
     }
 
@@ -97,6 +98,11 @@ public class client extends Applet_Sub1 implements org.moparscape.ClientInterfac
 
     public java.awt.Dimension getDimension(){
         return new java.awt.Dimension(765, 503);
+    }
+
+    public void setBackground(java.awt.Image image){
+        System.out.println("setting image interface");
+        bgImage = image;
     }
 
     public static int anInt2366;
@@ -1301,7 +1307,7 @@ public class client extends Applet_Sub1 implements org.moparscape.ClientInterfac
         GameSocket.method599((byte) -12);
         Class21_Sub1.method370(-677379135);
         Class124.method1756(true);
-        Class89.method1501((byte) 102);
+        Unknown.method1501((byte) 102);
         Class98.method1565((byte) 127);
         PacketStream.method974(false);
         Class16.method281(0);
@@ -1558,7 +1564,7 @@ public class client extends Applet_Sub1 implements org.moparscape.ClientInterfac
                             6000, 0);
                 Class75_Sub2.aClass124_3311 = new Class124((Class75_Sub1_Sub1.aSignLink_4589.aClass2_1057),
                         6000, 0);
-                Class43.aClass89_734 = new Class89(255, Class68_Sub20_Sub10.aClass124_4318,
+                Class43.aUnknown_734 = new Unknown(255, Class68_Sub20_Sub10.aClass124_4318,
                         Class75_Sub2.aClass124_3311, 500000);
                 Class68_Sub13_Sub4.aClass124_3486 = new Class124((Class75_Sub1_Sub1.aSignLink_4589.aClass2_1041),
                         24, 0);
@@ -1571,7 +1577,7 @@ public class client extends Applet_Sub1 implements org.moparscape.ClientInterfac
             Class68_Sub20_Sub10.aClass124_4318 = null;
             Class68_Sub13_Sub4.aClass124_3486 = null;
             Class75_Sub2.aClass124_3311 = null;
-            Class43.aClass89_734 = null;
+            Class43.aUnknown_734 = null;
         }
         if ((Class75_Sub3.anInt3328 ^ 0xffffffff) != -1)
             Class68_Sub22.aBoolean3134 = true;
@@ -1672,7 +1678,7 @@ public class client extends Applet_Sub1 implements org.moparscape.ClientInterfac
                             Class74.method1381(false,
                                     (Class68_Sub20_Sub13_Sub2.method1166(2,
                                             (new RSString[]{Class68_Sub13_Sub19.aRSString_3742,
-                                                    Class89.aRSString_1621,
+                                                    Unknown.aRSString_1621,
                                                     Class68_Sub13_Sub24.method816(i_69_, 0),
                                                     Class83.aRSString_1523}))),
                                     -16678);
@@ -1683,7 +1689,7 @@ public class client extends Applet_Sub1 implements org.moparscape.ClientInterfac
                         int i_70_ = (50 * (Class50_Sub2.anInt2745 + -Class68_Sub13_Sub19.anInt3748) / Class50_Sub2.anInt2745);
                         Class74.method1381(false,
                                 (Class68_Sub20_Sub13_Sub2.method1166(2, (new RSString[]{(Class68_Sub13_Sub19.aRSString_3742),
-                                        Class89.aRSString_1621,
+                                        Unknown.aRSString_1621,
                                         Class68_Sub13_Sub24.method816(i_70_, 0),
                                         Class83.aRSString_1523}))),
                                 -16678);

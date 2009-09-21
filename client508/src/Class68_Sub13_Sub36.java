@@ -323,7 +323,7 @@ public class Class68_Sub13_Sub36 extends Class68_Sub13
 						 class68_sub2.anInt2791,
 						 class68_sub2.anInt2784);
 	    if (class68_sub2.anInt2786 == 3)
-		l = Class89.method1506(class68_sub2.anInt2789,
+		l = Unknown.method1506(class68_sub2.anInt2789,
 				       class68_sub2.anInt2791,
 				       class68_sub2.anInt2784);
 	    if ((l ^ 0xffffffffffffffffL) != -1L) {

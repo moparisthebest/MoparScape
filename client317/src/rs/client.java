@@ -32,6 +32,7 @@ public class client extends RSApplet {
 
     // crc: 3885748779
     public static java.awt.event.KeyListener keyListener;
+    public static java.awt.Image bgImage = null;
     public static int serverPort = 43594;
     public static int ondemandPort = 43594;
     public static int jaggrabPort = 43595;
@@ -114,6 +115,10 @@ public class client extends RSApplet {
 
     public java.awt.Dimension getDimension() {
         return new java.awt.Dimension(765, 503);
+    }
+
+    public void setBackground(java.awt.Image image){
+        bgImage = image;
     }
 
     private static String intToKOrMilLongName(int i) {

@@ -60,7 +60,7 @@ public class Class87 implements Runnable
 		    }
 		} else {
 		    if (class68_sub25.anInt3177 == 0) {
-			class68_sub25.aClass89_3170.method1503
+			class68_sub25.aUnknown_3170.method1503
 			    (class68_sub25.aByteArray3165,
 			     (int) class68_sub25.aLong1218,
 			     class68_sub25.aByteArray3165.length, (byte) -111);
@@ -69,7 +69,7 @@ public class Class87 implements Runnable
 			}
 		    } else if ((class68_sub25.anInt3177 ^ 0xffffffff) == -2) {
 
-            class68_sub25.aByteArray3165= (class68_sub25.aClass89_3170.method1507((int) class68_sub25.aLong1218, true));
+            class68_sub25.aByteArray3165= (class68_sub25.aUnknown_3170.method1507((int) class68_sub25.aLong1218, true));
 			synchronized (Class68_Sub20_Sub10.aClass16_4314) {
 			    Class127.aClass16_2205.method286(class68_sub25,
 							     true);

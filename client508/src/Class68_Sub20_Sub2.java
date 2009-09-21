@@ -30,7 +30,7 @@ public class Class68_Sub20_Sub2 extends Class68_Sub20
 		l = Class68_Sub13_Sub36.method883(i_1_, i_4_, i_3_);
 	    else if (i != 2) {
 		if (i == 3)
-		    l = Class89.method1506(i_1_, i_4_, i_3_);
+		    l = Unknown.method1506(i_1_, i_4_, i_3_);
 	    } else
 		l = Class68_Sub13_Sub9.method738(i_1_, i_4_, i_3_);
 	} else
@@ -119,7 +119,7 @@ public class Class68_Sub20_Sub2 extends Class68_Sub20
 	if (i <= -56) {
 	    aFont4190 = null;
 	    Class118.aFontMetrics2074 = null;
-	    Class89.anImage1622 = null;
+	    Unknown.anImage1622 = null;
 	}
     }
     

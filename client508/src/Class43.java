@@ -7,7 +7,7 @@ public class Class43
     public int[] anIntArray731;
     public static int anInt732;
     public Class68_Sub20_Sub14 aClass68_Sub20_Sub14_733;
-    public static Class89 aClass89_734;
+    public static Unknown aUnknown_734;
     public static int anInt735;
     public int anInt736 = -1;
     public static int anInt737;
@@ -15,7 +15,7 @@ public class Class43
     public static int anInt739 = 0;
     public static int anInt740;
     public static boolean aBoolean741 = true;
-    
+
     public static void method480(int i, int i_0_) {
 	anInt737++;
 	if (Class68_Sub13_Sub25.method824(i, (byte) -2))
@@ -25,7 +25,7 @@ public class Class43
     
     public static void method481(int i, Class21renamed class21) {
 	if (i != 3)
-	    aClass89_734 = null;
+	    aUnknown_734 = null;
 	Class68_Sub13.aClass92_Sub1Array2921
 	    = Animable.method59(Class68_Sub20_Sub15.anInt4402, class21, false);
 	anInt740++;
@@ -74,7 +74,7 @@ public class Class43
     public static void method482(int i) {
 	if (i != -2)
 	    anInt739 = -115;
-	aClass89_734 = null;
+	aUnknown_734 = null;
     }
     
     public static void method483(int i, int i_12_, int i_13_, int i_14_,

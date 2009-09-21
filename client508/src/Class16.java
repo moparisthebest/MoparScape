@@ -124,14 +124,14 @@ public class Class16 {
         aClass68_270 = null;
     }
 
-    public static void method285(int i, byte[] is, int i_3_, Class89 class89) {
+    public static void method285(int i, byte[] is, int i_3_, Unknown unknown) {
         try {
             anInt256++;
             Class68_Sub25 class68_sub25 = new Class68_Sub25();
             class68_sub25.aByteArray3165 = is;
             class68_sub25.aLong1218 = (long) i;
             class68_sub25.anInt3177 = 0;
-            class68_sub25.aClass89_3170 = class89;
+            class68_sub25.aUnknown_3170 = unknown;
             synchronized (Class68_Sub20_Sub10.aClass16_4314) {
                 Class68_Sub20_Sub10.aClass16_4314.method286(class68_sub25,
                         true);
@@ -142,7 +142,7 @@ public class Class16 {
             Class68_Sub20_Sub11.method1140(600);
         } catch (RuntimeException runtimeexception) {
             throw Class107.method1652(runtimeexception,
-                    ("c.C(" + i + ',' + (is != null ? "{...}" : "null") + ',' + i_3_ + ',' + (class89 != null ? "{...}" : "null") + ')'));
+                    ("c.C(" + i + ',' + (is != null ? "{...}" : "null") + ',' + i_3_ + ',' + (unknown != null ? "{...}" : "null") + ')'));
         }
     }
 

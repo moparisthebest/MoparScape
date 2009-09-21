@@ -39,7 +39,7 @@ public abstract class Class72
 	Class68_Sub20_Sub16.anInt4418 = 0;
 	Class22.method373((byte) -67);
 	Class68_Sub13_Sub7.method732(19114);
-	Class89.method1505((byte) -11);
+	Unknown.method1505((byte) -11);
 	for (int i = 0; i < Class75_Sub3_Sub1.anInt4595; i++) {
 	    int i_0_ = Class68_Sub13_Sub14.anIntArray3666[i];
 	    if (Class102.aClass1_Sub6_Sub1Array1746[i_0_].anInt2575
@@ -237,11 +237,11 @@ public abstract class Class72
     public static Class21_Sub1 method1355(byte i, boolean bool, boolean bool_29_, int i_30_, boolean bool_31_) {
 	int i_32_ = 28 % ((-13 - i) / 59);
 	anInt1310++;
-	Class89 class89 = null;
+	Unknown unknown = null;
 	if (Class68_Sub20_Sub10.aClass124_4318 != null)
-	    class89 = new Class89(i_30_, Class68_Sub20_Sub10.aClass124_4318,
+	    unknown = new Unknown(i_30_, Class68_Sub20_Sub10.aClass124_4318,
 				  Class26.aClass124Array520[i_30_], 1000000);
-	return new Class21_Sub1(class89, Class43.aClass89_734, i_30_, bool,
+	return new Class21_Sub1(unknown, Class43.aUnknown_734, i_30_, bool,
 				bool_29_, bool_31_);
     }
     

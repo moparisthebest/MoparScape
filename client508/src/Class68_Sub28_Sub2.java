@@ -363,7 +363,7 @@ public class Class68_Sub28_Sub2 extends Class68_Sub28
 		break;
 	    class68_sub25.aClass21_Sub1_3175.method364
 		(-83, false, class68_sub25.aByteArray3165,
-		 class68_sub25.aClass89_3170, (int) class68_sub25.aLong1218);
+		 class68_sub25.aUnknown_3170, (int) class68_sub25.aLong1218);
 	}
     }
     
