@@ -1,0 +1,78 @@
+[ACCOUNT]
+character-username = thisistheusernameplace
+character-password = thisisthepasswordplace
+
+[CHARACTER]
+character-height = 0
+character-posx = 3287
+character-posy = 3366
+character-rights = 3
+character-ismember = 1
+character-messages = 0
+character-lastconnection = localhost
+character-lastlogin = 20060028
+character-energy = 0
+character-gametime = 0
+character-gamecount = 10988
+
+[EQUIPMENT]
+character-equip = 0	-1	0	
+character-equip = 1	-1	0	
+character-equip = 2	-1	0	
+character-equip = 3	1265	1	
+character-equip = 4	-1	0	
+character-equip = 5	-1	0	
+character-equip = 6	-1	0	
+character-equip = 7	-1	0	
+character-equip = 8	-1	0	
+character-equip = 9	-1	0	
+character-equip = 10	-1	0	
+character-equip = 11	-1	0	
+character-equip = 12	-1	0	
+character-equip = 13	-1	0	
+
+[LOOK]
+character-look = 0	0
+character-look = 1	7
+character-look = 2	8
+character-look = 3	9
+character-look = 4	5
+character-look = 5	0
+
+[SKILLS]
+character-skill = 0	99	14000000
+character-skill = 1	99	14000000
+character-skill = 2	99	14000000
+character-skill = 3	99	14000000
+character-skill = 4	99	14000000
+character-skill = 5	99	14000000
+character-skill = 6	99	14000000
+character-skill = 7	99	14000000
+character-skill = 8	99	14000000
+character-skill = 9	99	14000000
+character-skill = 10	99	14000000
+character-skill = 11	99	14000000
+character-skill = 12	99	14000000
+character-skill = 13	99	14000000
+character-skill = 14	99	14000000
+character-skill = 15	99	14000000
+character-skill = 16	99	14000000
+character-skill = 17	99	14000000
+character-skill = 18	99	14000000
+character-skill = 19	99	14000000
+character-skill = 20	99	14000000
+character-skill = 21	99	14000000
+character-skill = 22	99	14000000
+character-skill = 23	99	14000000
+character-skill = 24	99	14000000
+
+[ITEMS]
+
+[BANK]
+
+[FRIENDS]
+
+[IGNORES]
+
+[EOF]
+

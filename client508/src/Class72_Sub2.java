@@ -35,8 +35,8 @@ public class Class72_Sub2 extends Class72
 	       (directcolormodel.createCompatibleSampleModel(anInt1322,
 							     anInt1308),
 		databufferint, null));
-	anImage1314 = new BufferedImage(directcolormodel, writableraster,
-					false, new Hashtable());
+        // xxx if you set this to another image, it covers the entire screen
+	anImage1314 = new BufferedImage(directcolormodel, writableraster, false, new Hashtable());
 	aComponent3290 = component;
 	method1358(37);
     }

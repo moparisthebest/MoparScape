@@ -3075,7 +3075,7 @@ public class client extends RSApplet {
         int k = menuActionCmd3[i];
         int l = menuActionID[i];
         int i1 = menuActionCmd1[i];
-        System.out.println("j:" + j + ", k:" + k + ", l:" + l + ", i1:" + i1);
+        //System.out.println("j:" + j + ", k:" + k + ", l:" + l + ", i1:" + i1);
         if (l >= 2000)
             l -= 2000;
         if (l == 582) {
@@ -5041,7 +5041,7 @@ public class client extends RSApplet {
                 socketStream.flushInputStream(inStream.buffer, 8);
                 inStream.currentOffset = 0;
                 aLong1215 = inStream.readQWord();
-                debug("aLong1215: " + aLong1215);
+                //debug("aLong1215: " + aLong1215);
                 int ai[] = new int[4];
                 ai[0] = (int) (Math.random() * 99999999D);
                 ai[1] = (int) (Math.random() * 99999999D);
