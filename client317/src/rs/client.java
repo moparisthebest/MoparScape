@@ -2833,7 +2833,7 @@ public class client extends RSApplet {
         char c = '\u0168';
         char c1 = '\310';
         byte byte1 = 20;
-        chatTextDrawingArea.drawText(0xffffff, "RuneScape is loading - please wait...", c1 / 2 - 26 - byte1, c / 2);
+        chatTextDrawingArea.drawText(0xffffff, "MoparScape is loading - hold onto your butts...", c1 / 2 - 26 - byte1, c / 2);
         int j = c1 / 2 - 18 - byte1;
         DrawingArea.fillPixels(c / 2 - 152, 304, 34, 0x8c1111, j);
         DrawingArea.fillPixels(c / 2 - 151, 302, 32, 0, j + 1);
@@ -4921,7 +4921,7 @@ public class client extends RSApplet {
         if (signlink.mainapp != null)
             return signlink.mainapp.getDocumentBase().getHost().toLowerCase();
         if (super.gameFrame != null)
-            return "runescape.com";
+            return "moparscape.org";
         else
             return super.getDocumentBase().getHost().toLowerCase();
     }
@@ -5204,7 +5204,7 @@ public class client extends RSApplet {
                 return;
             }
             if (k == 6) {
-                loginMessage1 = "RuneScape has been updated!";
+                loginMessage1 = "MoparScape has been updated!";
                 loginMessage2 = "Please reload this page.";
                 return;
             }
@@ -5842,22 +5842,22 @@ public class client extends RSApplet {
         aBoolean993 = true;
         boolean flag = true;
         String s = getDocumentBaseHost();
-        if (s.endsWith("jagex.com"))
-            flag = true;
-        if (s.endsWith("runescape.com"))
-            flag = true;
-        if (s.endsWith("192.168.1.2"))
-            flag = true;
-        if (s.endsWith("192.168.1.229"))
-            flag = true;
-        if (s.endsWith("192.168.1.228"))
-            flag = true;
-        if (s.endsWith("192.168.1.227"))
-            flag = true;
-        if (s.endsWith("192.168.1.226"))
-            flag = true;
-        if (s.endsWith("127.0.0.1"))
-            flag = true;
+//        if (s.endsWith("jagex.com"))
+//            flag = true;
+//        if (s.endsWith("runescape.com"))
+//            flag = true;
+//        if (s.endsWith("192.168.1.2"))
+//            flag = true;
+//        if (s.endsWith("192.168.1.229"))
+//            flag = true;
+//        if (s.endsWith("192.168.1.228"))
+//            flag = true;
+//        if (s.endsWith("192.168.1.227"))
+//            flag = true;
+//        if (s.endsWith("192.168.1.226"))
+//            flag = true;
+//        if (s.endsWith("127.0.0.1"))
+//            flag = true;
         if (!flag) {
             genericLoadingError = true;
             return;
@@ -6325,7 +6325,7 @@ public class client extends RSApplet {
             g.setFont(new Font("Helvetica", 1, 16));
             g.setColor(Color.yellow);
             int k = 35;
-            g.drawString("Sorry, an error has occured whilst loading RuneScape", 30, k);
+            g.drawString("Sorry, an error has occured whilst loading MoparScape", 30, k);
             k += 50;
             g.setColor(Color.white);
             g.drawString("To fix this try the following (in order):", 30, k);
@@ -6347,14 +6347,14 @@ public class client extends RSApplet {
             g.setFont(new Font("Helvetica", 1, 20));
             g.setColor(Color.white);
             g.drawString("Error - unable to load game!", 50, 50);
-            g.drawString("To play RuneScape make sure you play from", 50, 100);
-            g.drawString("http://www.runescape.com", 50, 150);
+            g.drawString("To play MoparScape make sure you play from", 50, 100);
+            g.drawString("http://www.moparscape.org", 50, 150);
         }
         if (rsAlreadyLoaded) {
             aBoolean831 = false;
             g.setColor(Color.yellow);
             int l = 35;
-            g.drawString("Error a copy of RuneScape already appears to be loaded", 30, l);
+            g.drawString("Error a copy of MoparScape already appears to be loaded", 30, l);
             l += 50;
             g.setColor(Color.white);
             g.drawString("To fix this try the following (in order):", 30, l);
@@ -8400,7 +8400,7 @@ public class client extends RSApplet {
             int i = c1 / 2 + 80;
             aTextDrawingArea_1270.method382(0x75a9a9, c / 2, onDemandFetcher.statusString, i, true);
             i = c1 / 2 - 20;
-            chatTextDrawingArea.method382(0xffff00, c / 2, "Welcome to RuneScape", i, true);
+            chatTextDrawingArea.method382(0xffff00, c / 2, "Welcome to MoparScape", i, true);
             i += 30;
             int l = c / 2 - 80;
             int k1 = c1 / 2 + 20;
@@ -8435,15 +8435,15 @@ public class client extends RSApplet {
             }
         }
         if (loginScreenState == 3) {
-            chatTextDrawingArea.method382(0xffff00, c / 2, "Create a free account", c1 / 2 - 60, true);
+            chatTextDrawingArea.method382(0xffff00, c / 2, "Start your own server", c1 / 2 - 60, true);
             int k = c1 / 2 - 35;
-            chatTextDrawingArea.method382(0xffffff, c / 2, "To create a new account you need to", k, true);
+            chatTextDrawingArea.method382(0xffffff, c / 2, "Just click 'File' and 'Start Server'", k, true);
             k += 15;
-            chatTextDrawingArea.method382(0xffffff, c / 2, "go back to the main RuneScape webpage", k, true);
+            chatTextDrawingArea.method382(0xffffff, c / 2, "then log in with any username and", k, true);
             k += 15;
-            chatTextDrawingArea.method382(0xffffff, c / 2, "and choose the red 'create account'", k, true);
+            chatTextDrawingArea.method382(0xffffff, c / 2, "password that you want.  Otherwise", k, true);
             k += 15;
-            chatTextDrawingArea.method382(0xffffff, c / 2, "button at the top right of that page.", k, true);
+            chatTextDrawingArea.method382(0xffffff, c / 2, "click 'Help' and 'Serverstatus' to join another.", k, true);
             k += 15;
             int j1 = c / 2;
             int i2 = c1 / 2 + 50;

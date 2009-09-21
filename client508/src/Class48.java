@@ -21,7 +21,7 @@ public class Class48
     public static int anInt957;
     public int anInt958;
     public static RSString aRSString_959
-	= Class112.method1668(43, "RuneScape is loading )2 please wait)3)3)3");
+	= Class112.method1668(43, "MoparScape is loading )2 hold onto your butts)3)3)3");
     public static int[] anIntArray960;
     public static int anInt961;
     
