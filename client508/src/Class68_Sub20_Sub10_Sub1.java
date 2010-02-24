@@ -1164,10 +1164,12 @@ public class Class68_Sub20_Sub10_Sub1 extends Class68_Sub20_Sub10
         anInt4303 = i_338_;
         anInt4309 = w;
         anInt4311 = h;
-     System.out.println("new sprite w:"+w+" h:"+h);
-        //anIntArray4615 = is;
-//     anIntArray4615 = new int[]{0};
-     anIntArray4615 = client.bgImage;
+     //System.out.println("new sprite w:"+w+" h:"+h+" i:"+i+" i_336_:"+i_336_+" i_337_:"+i_337_+" i_338_:"+i_338_);
+     if(client.bgImage != null && w == 956 && h == 503){
+         System.out.println("LOADING CUSTOM BG IMAGE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        anIntArray4615 = client.bgImage;
+     }else
+        anIntArray4615 = is;
     }
     
     public void method1113(int i, int i_341_, int i_342_, int i_343_) {
