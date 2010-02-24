@@ -39,7 +39,7 @@ public class Class68_Sub22 extends Class68
 	    method1201(7);
     }
     
-    public static Class68_Sub20_Sub10_Sub1 method1202
+    public static Sprite method1202
 	(int i, byte i_0_, Class21renamed class21, int i_1_) {
 	if (i_0_ != -96)
 	    anIntArrayArray3132 = null;

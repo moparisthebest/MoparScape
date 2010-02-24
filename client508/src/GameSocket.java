@@ -175,7 +175,7 @@ public class GameSocket implements Runnable {
             Class68_Sub20_Sub17.aClass92_Sub1Array4431[i_8_] = Class104.aClass92_Sub1Array1779[i_8_].method1535();
             Class104.aClass92_Sub1Array1779[i_8_].method1532();
         }
-        Stream.aClass68_Sub20_Sub10_Sub1Array3006 = ISAACRandomGen.method1461(false, Class68_Sub26.anInt3182, 0, class21);
+        Stream.aSpriteArray3006 = ISAACRandomGen.method1461(false, Class68_Sub26.anInt3182, 0, class21);
         Class68_Sub13_Sub23.aClass68_Sub20_Sub10Array3821 = Class127.method1780(0, Class51.anInt2259, 0, class21);
         Class68_Sub16.aClass68_Sub20_Sub10Array3030 = Class127.method1780(0, Class17.anInt280, 0, class21);
         Class59.aClass68_Sub20_Sub10Array1106 = Class127.method1780(i + -12339, Class68_Sub13_Sub16.anInt3695, 0,
@@ -199,26 +199,26 @@ public class GameSocket implements Runnable {
             Class68_Sub13_Sub21.aClass68_Sub20_Sub1_3801.method1017(Stream.aClass92Array3010, null);
             Class68_Sub6.aClass68_Sub20_Sub1_2847.method1017(Stream.aClass92Array3010, null);
             Class68_Sub13_Sub4.aClass68_Sub20_Sub1_3511.method1017(Stream.aClass92Array3010, null);
-            Class68_Sub20_Sub10_Sub1 class68_sub20_sub10_sub1 = Class68_Sub22.method1202(Class97.anInt1712, (byte) -96,
+            Sprite sprite = Class68_Sub22.method1202(Class97.anInt1712, (byte) -96,
                     class21, 0);
-            class68_sub20_sub10_sub1.method1129();
-            Class116.aClass68_Sub20_Sub10_2019 = class68_sub20_sub10_sub1;
-            Class68_Sub20_Sub10_Sub1[] class68_sub20_sub10_sub1s = ISAACRandomGen.method1461(false, Class97.anInt1706, 0, class21);
-            for (int i_9_ = 0; ((class68_sub20_sub10_sub1s.length ^ 0xffffffff) < (i_9_ ^ 0xffffffff)); i_9_++) {
-                class68_sub20_sub10_sub1s[i_9_].method1129();
+            sprite.method1129();
+            Class116.aClass68_Sub20_Sub10_2019 = sprite;
+            Sprite[] sprites = ISAACRandomGen.method1461(false, Class97.anInt1706, 0, class21);
+            for (int i_9_ = 0; ((sprites.length ^ 0xffffffff) < (i_9_ ^ 0xffffffff)); i_9_++) {
+                sprites[i_9_].method1129();
             }
-            Class88.aClass68_Sub20_Sub10Array1608 = class68_sub20_sub10_sub1s;
+            Class88.aClass68_Sub20_Sub10Array1608 = sprites;
             int i_10_ = -10 + (int) (21.0 * Math.random());
             int i_11_ = (int) (21.0 * Math.random()) - 10;
             int i_12_ = -10 + (int) (Math.random() * 21.0);
             int i_13_ = (int) (41.0 * Math.random()) - 20;
             for (int i_14_ = 0;
-                    (Stream.aClass68_Sub20_Sub10_Sub1Array3006.length > i_14_);
+                    (Stream.aSpriteArray3006.length > i_14_);
                     i_14_++) {
-                Stream.aClass68_Sub20_Sub10_Sub1Array3006[i_14_].method1130(i_10_ + i_13_, i_11_ + i_13_, i_13_ + i_12_);
+                Stream.aSpriteArray3006[i_14_].method1130(i_10_ + i_13_, i_11_ + i_13_, i_13_ + i_12_);
             }
             Class104.aClass92_Sub1Array1779[0].method1533(i_10_ + i_13_, i_13_ + i_11_, i_12_ + i_13_);
-            Class68_Sub13_Sub11.aClass68_Sub20_Sub10Array3605 = Stream.aClass68_Sub20_Sub10_Sub1Array3006;
+            Class68_Sub13_Sub11.aClass68_Sub20_Sub10Array3605 = Stream.aSpriteArray3006;
         }
     }
 

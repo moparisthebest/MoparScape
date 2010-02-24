@@ -6,7 +6,7 @@ public class Class68_Sub13_Sub9 extends Class68_Sub13
 {
     public static int anInt3567;
     public static int height;
-    public static Class68_Sub20_Sub10_Sub1[] aClass68_Sub20_Sub10_Sub1Array3569;
+    public static Sprite[] aSpriteArray3569;
     public static Class43[] aClass43Array3570;
     public int anInt3571 = 0;
     public static int anInt3572;
@@ -61,7 +61,7 @@ public class Class68_Sub13_Sub9 extends Class68_Sub13
 	aRSString_3580 = null;
 	aRSString_3581 = null;
 	anIntArray3578 = null;
-	aClass68_Sub20_Sub10_Sub1Array3569 = null;
+	aSpriteArray3569 = null;
 	aClass43Array3570 = null;
 	if (i != -15578)
 	    method737(true);
@@ -168,7 +168,7 @@ public class Class68_Sub13_Sub9 extends Class68_Sub13
 		}
 		if (bool == true)
 		    break;
-		aClass68_Sub20_Sub10_Sub1Array3569 = null;
+		aSpriteArray3569 = null;
 	    } catch (Exception exception) {
 		exception.printStackTrace();
 		Class1_Sub2.aClass68_Sub28_Sub1_2433.method1249(63);

@@ -53,7 +53,7 @@ public class Class68_Sub13_Sub6 extends Class68_Sub13
 		is_3_[i_4_] = (Class68_Sub13_Sub17.anIntArray3719
 			       [Class120.method1740(is[i_4_], 255)]);
 	    class68_sub20_sub10s[i_1_]
-		= (new Class68_Sub20_Sub10_Sub1
+		= (new Sprite
 		   (Class97.anInt1703, Class68_Sub20_Sub15.anInt4405,
 		    Class4.anIntArray96[i_1_], Class116.anIntArray1996[i_1_],
 		    Class68_Sub13_Sub12.anIntArray3639[i_1_],

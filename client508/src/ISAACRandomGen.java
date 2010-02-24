@@ -430,7 +430,7 @@ public class ISAACRandomGen
 	return true;
     }
     
-    public static Class68_Sub20_Sub10_Sub1[] method1461
+    public static Sprite[] method1461
 	(boolean bool, int i, int i_42_, Class21renamed class21) {
 	anInt1473++;
 	if (bool != false)

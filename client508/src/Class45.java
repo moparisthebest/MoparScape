@@ -814,38 +814,38 @@ public class Class45
 	       Class125.aClass98_2171.method1570(i ^ 0x6809, l));
 	if (class68_sub20_sub10 != null)
 	    return class68_sub20_sub10;
-	Class68_Sub20_Sub10_Sub1 class68_sub20_sub10_sub1;
+	Sprite sprite;
 	if (aBoolean765)
-	    class68_sub20_sub10_sub1
+	    sprite
 		= Class68_Sub13_Sub31.method854(90, Class8.aClass21_164, 0,
 						i_43_);
 	else
-	    class68_sub20_sub10_sub1
+	    sprite
 		= Class68_Sub22.method1202(i_43_, (byte) -96,
 					   Class8.aClass21_164, 0);
-	if (class68_sub20_sub10_sub1 == null) {
+	if (sprite == null) {
 	    Class93.aBoolean1669 = true;
 	    return null;
 	}
 	if (aBoolean819)
-	    class68_sub20_sub10_sub1.method1117();
-	Class68_Sub20_Sub10_Sub1 class68_sub20_sub10_sub1_44_
-	    = class68_sub20_sub10_sub1;
+	    sprite.method1117();
+	Sprite sprite_44_
+	    = sprite;
 	if (aBoolean825)
-	    class68_sub20_sub10_sub1.method1120();
+	    sprite.method1120();
 	if (i != 20503)
 	    method506(45, true, (byte) 41, null, null);
 	if (anInt859 > 0)
-	    class68_sub20_sub10_sub1.method1125(anInt859);
+	    sprite.method1125(anInt859);
 	if ((anInt859 ^ 0xffffffff) <= -2)
-	    class68_sub20_sub10_sub1.method1118(1);
+	    sprite.method1118(1);
 	if (anInt859 >= 2)
-	    class68_sub20_sub10_sub1.method1118(16777215);
+	    sprite.method1118(16777215);
 	if ((anInt906 ^ 0xffffffff) != -1)
-	    class68_sub20_sub10_sub1.method1123(anInt906);
-	Class125.aClass98_2171.method1568(class68_sub20_sub10_sub1_44_,
+	    sprite.method1123(anInt906);
+	Class125.aClass98_2171.method1568(sprite_44_,
 					  i + -20386, l);
-	return class68_sub20_sub10_sub1_44_;
+	return sprite_44_;
     }
     
     public Class45() {

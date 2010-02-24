@@ -381,7 +381,7 @@ public class Class68_Sub13_Sub39 extends Class68_Sub13
 					    .method286(class68_sub8, true);
 				    }
 				    Class68_Sub13_Sub9
-					.aClass68_Sub20_Sub10_Sub1Array3569
+					.aSpriteArray3569
 					[class116.anInt1980]
 					.method1103(-7 + i_35_, i_41_ + -7);
 				}
@@ -397,7 +397,7 @@ public class Class68_Sub13_Sub39 extends Class68_Sub13
 	     class68_sub8 != null;
 	     class68_sub8 = ((Class68_Sub8)
 			     Class94.aClass16_1671.method290((byte) -119))) {
-	    Class68_Sub13_Sub9.aClass68_Sub20_Sub10_Sub1Array3569
+	    Class68_Sub13_Sub9.aSpriteArray3569
 		[class68_sub8.anInt2878].method1103
 		(-7 + class68_sub8.anInt2869, class68_sub8.anInt2875 - 7);
 	    Class79.method1434(class68_sub8.anInt2869, class68_sub8.anInt2875,

@@ -82,13 +82,13 @@ public class Class68_Sub13_Sub26 extends Class68_Sub13
 	if (anIntArray3872 != null)
 	    return true;
 	if (anInt3879 >= i) {
-	    Class68_Sub20_Sub10_Sub1 class68_sub20_sub10_sub1
+	    Sprite sprite
 		= Class68_Sub29.method1319(anInt3879, Class83.aClass21_1526,
 					   64);
-	    class68_sub20_sub10_sub1.method1129();
-	    anInt3882 = class68_sub20_sub10_sub1.anInt4309;
-	    anIntArray3872 = class68_sub20_sub10_sub1.anIntArray4615;
-	    anInt3881 = class68_sub20_sub10_sub1.anInt4311;
+	    sprite.method1129();
+	    anInt3882 = sprite.anInt4309;
+	    anIntArray3872 = sprite.anIntArray4615;
+	    anInt3881 = sprite.anInt4311;
 	    return true;
 	}
 	return false;

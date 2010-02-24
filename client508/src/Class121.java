@@ -64,12 +64,12 @@ public class Class121
 	}
     }
     
-    public static Class68_Sub20_Sub10_Sub1[] method1744(boolean bool) {
+    public static Sprite[] method1744(boolean bool) {
 	if (bool != true)
 	    return null;
 	anInt2105++;
-	Class68_Sub20_Sub10_Sub1[] class68_sub20_sub10_sub1s
-	    = new Class68_Sub20_Sub10_Sub1[Stream.anInt3007];
+	Sprite[] sprites
+	    = new Sprite[Stream.anInt3007];
 	for (int i = 0;
 	     (Stream.anInt3007 ^ 0xffffffff) < (i ^ 0xffffffff); i++) {
 	    byte[] is = Class69.aByteArrayArray1240[i];
@@ -80,15 +80,15 @@ public class Class121
 		 i_16_++)
 		is_15_[i_16_] = (Class68_Sub13_Sub17.anIntArray3719
 				 [Class120.method1740(is[i_16_], 255)]);
-	    class68_sub20_sub10_sub1s[i]
-		= (new Class68_Sub20_Sub10_Sub1
+	    sprites[i]
+		= (new Sprite
 		   (Class97.anInt1703, Class68_Sub20_Sub15.anInt4405,
 		    Class4.anIntArray96[i], Class116.anIntArray1996[i],
 		    Class68_Sub13_Sub12.anIntArray3639[i],
 		    Class68_Sub13_Sub19.anIntArray3757[i], is_15_));
 	}
 	Class87.method1487((byte) -93);
-	return class68_sub20_sub10_sub1s;
+	return sprites;
     }
     
     public static void method1745(int i, Class45 class45, boolean bool,

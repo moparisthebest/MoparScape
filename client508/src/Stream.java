@@ -67,7 +67,7 @@ public class Stream extends Class68 {
     public static int anInt3003;
     public static int anInt3004;
     public static int[] anIntArray3005;
-    public static Class68_Sub20_Sub10_Sub1[] aClass68_Sub20_Sub10_Sub1Array3006;
+    public static Sprite[] aSpriteArray3006;
     public static int anInt3007;
     public static Class113 aClass113_3008 = new Class113(4096);
     public static Class113 aClass113_3009;
@@ -407,7 +407,7 @@ public class Stream extends Class68 {
     public long readQWord(int i) {
         anInt2989++;
         if (i < 27) {
-            aClass68_Sub20_Sub10_Sub1Array3006 = null;
+            aSpriteArray3006 = null;
         }
         long l = 0xffffffffL & (long) readDWord();
         long l_30_ = (long) readDWord() & 0xffffffffL;
@@ -615,7 +615,7 @@ public class Stream extends Class68 {
 
     public static void method962(boolean bool) {
         anIntArray3005 = null;
-        aClass68_Sub20_Sub10_Sub1Array3006 = null;
+        aSpriteArray3006 = null;
         aClass92Array3010 = null;
         aClass113_3009 = null;
         aClass113_3008 = null;

@@ -2,9 +2,7 @@
  * Visit http://jode.sourceforge.net/
  */
 
-import java.awt.image.PixelGrabber;
-
-public class Class68_Sub20_Sub10_Sub1 extends Class68_Sub20_Sub10
+public class Sprite extends Class68_Sub20_Sub10
 {
     public int[] anIntArray4615;
 
@@ -1146,7 +1144,7 @@ public class Class68_Sub20_Sub10_Sub1 extends Class68_Sub20_Sub10
 		       i_327_, i_330_, i_329_, i_331_, i_332_, i_326_);
     }
  /* xxx sprite class, i think
-    public Class68_Sub20_Sub10_Sub1(int i, int i_336_, int i_337_, int i_338_,
+    public Sprite(int i, int i_336_, int i_337_, int i_338_,
 				    int i_339_, int i_340_, int[] is) {
 	anInt4305 = i;
 	anInt4313 = i_336_;
@@ -1157,7 +1155,7 @@ public class Class68_Sub20_Sub10_Sub1 extends Class68_Sub20_Sub10
 	anIntArray4615 = is;
     }
  */
-    public Class68_Sub20_Sub10_Sub1(int i, int i_336_, int i_337_, int i_338_, int w, int h, int[] is) {
+    public Sprite(int i, int i_336_, int i_337_, int i_338_, int w, int h, int[] is) {
         anInt4305 = i;
         anInt4313 = i_336_;
         anInt4315 = i_337_;
@@ -1224,10 +1222,10 @@ public class Class68_Sub20_Sub10_Sub1 extends Class68_Sub20_Sub10
 	}
     }
     
-    public Class68_Sub20_Sub10_Sub1(int i, int i_359_) {
-	anIntArray4615 = new int[i * i_359_];
-	anInt4309 = anInt4305 = i;
-	anInt4311 = anInt4313 = i_359_;
+    public Sprite(int w, int h) {
+	anIntArray4615 = new int[w * h];
+	anInt4309 = anInt4305 = w;
+	anInt4311 = anInt4313 = h;
 	anInt4315 = anInt4303 = 0;
     }
 }

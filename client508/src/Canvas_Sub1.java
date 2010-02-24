@@ -93,7 +93,7 @@ public class Canvas_Sub1 extends Canvas
 		    = 0x7ff & Class8.anInt163 - -Class68_Sub13_Sub26.anInt3883;
 		int i_7_
 		    = 464 - Class68_Sub7.aClass1_Sub6_Sub2_2860.anInt2537 / 32;
-		((Class68_Sub20_Sub10_Sub1) GameSocket.aClass68_Sub20_Sub10_1144)
+		((Sprite) GameSocket.aClass68_Sub20_Sub10_1144)
 		    .method1132
 		    (i, i_2_, class45.anInt892, class45.anInt873, i_5_, i_7_,
 		     i_6_, Class68_Sub20_Sub16.anInt4420 + 256,

@@ -76,7 +76,7 @@ public class Class33
 		    if (i_1_ <= -23) {
 			int i_10_ = i_9_ * i_3_ + i_8_ * i >> -11489424;
 			int i_11_ = -(i_3_ * i_8_) + i * i_9_ >> -1721779952;
-			((Class68_Sub20_Sub10_Sub1) class68_sub20_sub10)
+			((Sprite) class68_sub20_sub10)
 			    .method1127
 			    ((i_10_ + (i_2_ + class45.anInt892 / 2)
 			      - class68_sub20_sub10.anInt4305 / 2),

@@ -530,7 +530,7 @@ public class client extends Applet_Sub1 implements org.moparscape.ClientInterfac
                     Class68_Sub13_Sub28.anInt3917 = 85;
                 } else {
                     Class85.method1480(-10675,
-                            Stream.aClass68_Sub20_Sub10_Sub1Array3006,
+                            Stream.aSpriteArray3006,
                             Class68_Sub20_Sub5.aClass21_Sub1_4221,
                             Class68_Sub13_Sub19.aClass92_Sub1Array3745,
                             Class104.aClass92_Sub1Array1779,

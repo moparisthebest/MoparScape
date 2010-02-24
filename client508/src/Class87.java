@@ -100,14 +100,14 @@ public class Class87 implements Runnable
 	for (int i_4_ = 0; i_2_ > i_4_; i_4_++)
 	    is_3_[i_4_] = (Class68_Sub13_Sub17.anIntArray3719
 			   [Class120.method1740(is[i_4_], 255)]);
-	Class68_Sub20_Sub10_Sub1 class68_sub20_sub10_sub1
-	    = (new Class68_Sub20_Sub10_Sub1
+	Sprite sprite
+	    = (new Sprite
 	       (Class97.anInt1703, Class68_Sub20_Sub15.anInt4405,
 		Class4.anIntArray96[0], Class116.anIntArray1996[0],
 		Class68_Sub13_Sub12.anIntArray3639[0],
 		Class68_Sub13_Sub19.anIntArray3757[0], is_3_));
 	method1487((byte) -93);
-	return class68_sub20_sub10_sub1;
+	return sprite;
     }
     
     public static void method1491(byte i) {

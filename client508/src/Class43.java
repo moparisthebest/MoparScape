@@ -67,8 +67,8 @@ public class Class43
 	Class84.method1476(i + 96, null);
 	Class90.anIntArray2345 = new int[32768];
 	Class68_Sub20.anIntArray3090 = new int[32768];
-	RuntimeException_Sub1.aClass68_Sub20_Sub10_Sub1_2246
-	    = new Class68_Sub20_Sub10_Sub1(128, 254);
+	RuntimeException_Sub1.aSprite_2246
+	    = new Sprite(128, 254);
     }
     
     public static void method482(int i) {

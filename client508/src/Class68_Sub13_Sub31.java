@@ -41,7 +41,7 @@ public class Class68_Sub13_Sub31 extends Class68_Sub13
 	anInt3962++;
     }
     
-    public static Class68_Sub20_Sub10_Sub1 method854(int i, Class21renamed class21,
+    public static Sprite method854(int i, Class21renamed class21,
 						     int i_0_, int i_1_) {
 	anInt3965++;
 	if (i <= 49)

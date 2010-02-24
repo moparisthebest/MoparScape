@@ -169,7 +169,7 @@ public class Class53
 		double d = Math.atan2((double) i_24_, (double) i_25_);
 		int i_26_ = (int) (Math.sin(d) * (double) i_20_);
 		int i_27_ = (int) ((double) i_20_ * Math.cos(d));
-		((Class68_Sub20_Sub10_Sub1)
+		((Sprite)
 		 Class88.aClass68_Sub20_Sub10Array1608[i])
 		    .method1121
 		    (-10 + i_17_ - -(class45.anInt892 / 2) + i_26_,

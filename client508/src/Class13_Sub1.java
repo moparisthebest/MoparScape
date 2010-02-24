@@ -28,14 +28,14 @@ public class Class13_Sub1 extends Class13
     public static int anInt2640;
     
     public static void method246(byte i, int i_0_) {
-	Class68_Sub20_Sub10_Sub1 class68_sub20_sub10_sub1;
+	Sprite sprite;
 	if (GameSocket.aClass68_Sub20_Sub10_1144 == null)
-	    class68_sub20_sub10_sub1 = new Class68_Sub20_Sub10_Sub1(512, 512);
+	    sprite = new Sprite(512, 512);
 	else
-	    class68_sub20_sub10_sub1
-		= (Class68_Sub20_Sub10_Sub1) GameSocket.aClass68_Sub20_Sub10_1144;
+	    sprite
+		= (Sprite) GameSocket.aClass68_Sub20_Sub10_1144;
 	anInt2625++;
-	int[] is = class68_sub20_sub10_sub1.anIntArray4615;
+	int[] is = sprite.anIntArray4615;
 	int i_1_ = is.length;
 	for (int i_2_ = 0; (i_2_ ^ 0xffffffff) > (i_1_ ^ 0xffffffff); i_2_++)
 	    is[i_2_] = 1;
@@ -54,7 +54,7 @@ public class Class13_Sub1 extends Class13
 		i_4_ += 4;
 	    }
 	}
-	class68_sub20_sub10_sub1.method1126();
+	sprite.method1126();
 	if (i != -124)
 	    method254(-46, false);
 	int i_6_ = 238 + ((int) (Math.random() * 20.0) - 10) << -1313258800;
@@ -152,7 +152,7 @@ public class Class13_Sub1 extends Class13
 		}
 	    }
 	}
-	GameSocket.aClass68_Sub20_Sub10_1144 = class68_sub20_sub10_sub1;
+	GameSocket.aClass68_Sub20_Sub10_1144 = sprite;
 	Class1_Sub5.aClass72_2496.method1358(108);
     }
     

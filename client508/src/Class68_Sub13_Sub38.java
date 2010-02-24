@@ -68,7 +68,7 @@ public class Class68_Sub13_Sub38 extends Class68_Sub13
 			    (Class68_Sub13_Sub17.anIntArray3719
 			     [Class120.method1740(255, is[i_6_])])));
 		class68_sub20_sub10s[i_2_]
-		    = (new Class68_Sub20_Sub10_Sub1_Sub1
+		    = (new Sprite_Sub1
 		       (Class97.anInt1703, Class68_Sub20_Sub15.anInt4405,
 			Class4.anIntArray96[i_2_],
 			Class116.anIntArray1996[i_2_],
@@ -80,7 +80,7 @@ public class Class68_Sub13_Sub38 extends Class68_Sub13
 		    is_7_[i_8_] = (Class68_Sub13_Sub17.anIntArray3719
 				   [Class120.method1740(is[i_8_], 255)]);
 		class68_sub20_sub10s[i_2_]
-		    = (new Class68_Sub20_Sub10_Sub1
+		    = (new Sprite
 		       (Class97.anInt1703, Class68_Sub20_Sub15.anInt4405,
 			Class4.anIntArray96[i_2_],
 			Class116.anIntArray1996[i_2_],

@@ -185,14 +185,14 @@ public class Class35
 		|| Animable.aClass68_Sub20_Sub10_59.anInt4309 != i_16_
 		|| ((Animable.aClass68_Sub20_Sub10_59.anInt4311 ^ 0xffffffff)
 		    != (i_15_ ^ 0xffffffff))) {
-		Class68_Sub20_Sub10_Sub1 class68_sub20_sub10_sub1
-		    = new Class68_Sub20_Sub10_Sub1(i_16_, i_15_);
-		Class79.method1432(class68_sub20_sub10_sub1.anIntArray4615,
+		Sprite sprite
+		    = new Sprite(i_16_, i_15_);
+		Class79.method1432(sprite.anIntArray4615,
 				   i_16_, i_15_);
 		Class68_Sub29.method1323(0, 0, Class103.anInt1768, 0, 0, i_16_,
 					 1391070128, i_15_,
 					 Class68_Sub6.anInt2846);
-		Animable.aClass68_Sub20_Sub10_59 = class68_sub20_sub10_sub1;
+		Animable.aClass68_Sub20_Sub10_59 = sprite;
 		Class1_Sub5.aClass72_2496.method1358(81);
 	    }
 	    Animable.aClass68_Sub20_Sub10_59.method1108(i_17_, i);

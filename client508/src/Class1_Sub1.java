@@ -92,7 +92,7 @@ public class Class1_Sub1 extends Animable
     public static void method65(int i, int i_7_, byte i_8_, Class45 class45,
 				int i_9_) {
 	if (Class68_Sub9.anInt2882 < 3)
-	    ((Class68_Sub20_Sub10_Sub1) Class116.aClass68_Sub20_Sub10_2019)
+	    ((Sprite) Class116.aClass68_Sub20_Sub10_2019)
 		.method1119
 		(i_9_, i, class45.anInt892, class45.anInt873,
 		 Class116.aClass68_Sub20_Sub10_2019.anInt4309 / 2,

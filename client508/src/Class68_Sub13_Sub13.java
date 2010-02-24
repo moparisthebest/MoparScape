@@ -42,20 +42,20 @@ public class Class68_Sub13_Sub13 extends Class68_Sub13
 	Class1_Sub3_Sub1 class1_sub3_sub1 = class19.method305(-50);
 	if (class1_sub3_sub1 == null)
 	    return null;
-	Class68_Sub20_Sub10_Sub1 class68_sub20_sub10_sub1 = null;
+	Sprite sprite = null;
 	if (class19.anInt385 != -1) {
-	    class68_sub20_sub10_sub1
-		= (Class68_Sub20_Sub10_Sub1) method757(true, 0, -125,
+	    sprite
+		= (Sprite) method757(true, 0, -125,
 						       class19.anInt378, false,
 						       1, true, 10);
-	    if (class68_sub20_sub10_sub1 == null)
+	    if (sprite == null)
 		return null;
 	} else if (class19.anInt339 != -1) {
-	    class68_sub20_sub10_sub1
-		= (Class68_Sub20_Sub10_Sub1) method757(false, i, -125,
+	    sprite
+		= (Sprite) method757(false, i, -125,
 						       class19.anInt345, false,
 						       i_3_, true, i_5_);
-	    if (class68_sub20_sub10_sub1 == null)
+	    if (sprite == null)
 		return null;
 	}
 	int[] is = Class79.anIntArray1402;
@@ -63,11 +63,11 @@ public class Class68_Sub13_Sub13 extends Class68_Sub13
 	int[] is_9_ = new int[4];
 	int i_10_ = Class79.anInt1397;
 	Class79.method1436(is_9_);
-	Class68_Sub20_Sub10_Sub1 class68_sub20_sub10_sub1_11_
-	    = new Class68_Sub20_Sub10_Sub1(36, 32);
+	Sprite sprite_11_
+	    = new Sprite(36, 32);
 	if (i_0_ > -123)
 	    method759(-88, 64);
-	Class79.method1432(class68_sub20_sub10_sub1_11_.anIntArray4615, 36,
+	Class79.method1432(sprite_11_.anIntArray4615, 36,
 			   32);
 	Class62.method612();
 	Class62.method603(16, 16);
@@ -88,23 +88,23 @@ public class Class68_Sub13_Sub13 extends Class68_Sub13
 					   + class19.anInt391),
 				  i_13_ + class19.anInt391);
 	if (i_3_ >= 1) {
-	    class68_sub20_sub10_sub1_11_.method1118(1);
+	    sprite_11_.method1118(1);
 	    if ((i_3_ ^ 0xffffffff) <= -3)
-		class68_sub20_sub10_sub1_11_.method1118(16777215);
-	    Class79.method1432(class68_sub20_sub10_sub1_11_.anIntArray4615, 36,
+		sprite_11_.method1118(16777215);
+	    Class79.method1432(sprite_11_.anIntArray4615, 36,
 			       32);
 	}
 	if ((i ^ 0xffffffff) != -1)
-	    class68_sub20_sub10_sub1_11_.method1123(i);
+	    sprite_11_.method1123(i);
 	if ((class19.anInt385 ^ 0xffffffff) == 0) {
 	    if ((class19.anInt339 ^ 0xffffffff) != 0) {
-		Class79.method1432(class68_sub20_sub10_sub1.anIntArray4615, 36,
+		Class79.method1432(sprite.anIntArray4615, 36,
 				   32);
-		class68_sub20_sub10_sub1_11_.method1103(0, 0);
-		class68_sub20_sub10_sub1_11_ = class68_sub20_sub10_sub1;
+		sprite_11_.method1103(0, 0);
+		sprite_11_ = sprite;
 	    }
 	} else
-	    class68_sub20_sub10_sub1.method1103(0, 0);
+	    sprite.method1103(0, 0);
 	if (bool_2_
 	    && ((class19.anInt381 ^ 0xffffffff) == -2
 		|| (i_5_ ^ 0xffffffff) != -2)
@@ -115,7 +115,7 @@ public class Class68_Sub13_Sub13 extends Class68_Sub13
 	Class79.method1422(is_9_);
 	Class62.method612();
 	Class62.aBoolean1163 = true;
-	return class68_sub20_sub10_sub1_11_;
+	return sprite_11_;
     }
     
     public void method694(int i) {

@@ -2,7 +2,7 @@
  * Visit http://jode.sourceforge.net/
  */
 
-public class Class68_Sub20_Sub10_Sub1_Sub1 extends Class68_Sub20_Sub10_Sub1
+public class Sprite_Sub1 extends Sprite
 {
     public void method1107(int i, int i_0_, int i_1_, int i_2_, int i_3_,
 			   int i_4_) {
@@ -813,7 +813,7 @@ public class Class68_Sub20_Sub10_Sub1_Sub1 extends Class68_Sub20_Sub10_Sub1
 		       i_255_, i_258_, i_257_, i_259_, i_260_);
     }
     
-    public Class68_Sub20_Sub10_Sub1_Sub1(int i, int i_264_, int i_265_,
+    public Sprite_Sub1(int i, int i_264_, int i_265_,
 					 int i_266_, int i_267_, int i_268_,
 					 int[] is) {
 	super(i, i_264_, i_265_, i_266_, i_267_, i_268_, is);

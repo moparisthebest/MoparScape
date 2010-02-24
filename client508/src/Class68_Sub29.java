@@ -26,7 +26,7 @@ public class Class68_Sub29 extends Class68 {
     public static RSString[] aRSStringArray3248;
     public static int anInt3249;
 
-    public static Class68_Sub20_Sub10_Sub1 method1319(int i, Class21renamed class21,
+    public static Sprite method1319(int i, Class21renamed class21,
             int i_0_) {
         anInt3247++;
         if (i_0_ < 53) {

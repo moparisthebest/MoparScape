@@ -43,7 +43,7 @@ public class Class71
 		    int i_10_ = Class79.anIntArray1402[i_0_ + i_4_++];
 		    if ((i_9_ ^ 0xffffffff) == -1)
 			RuntimeException_Sub1
-			    .aClass68_Sub20_Sub10_Sub1_2246.anIntArray4615
+			    .aSprite_2246.anIntArray4615
 			    [i_5_++]
 			    = i_10_;
 		    else {
@@ -55,7 +55,7 @@ public class Class71
 			    i_12_ = 255;
 			i_9_ = Class68_Sub25.anIntArray3172[i_9_];
 			RuntimeException_Sub1
-			    .aClass68_Sub20_Sub10_Sub1_2246.anIntArray4615
+			    .aSprite_2246.anIntArray4615
 			    [i_5_++]
 			    = (((Class120.method1740
 				 ((Class120.method1740(65280, i_9_) * i_11_
@@ -73,12 +73,12 @@ public class Class71
 		    }
 		}
 		for (int i_13_ = 0; i_7_ > i_13_; i_13_++)
-		    RuntimeException_Sub1.aClass68_Sub20_Sub10_Sub1_2246
+		    RuntimeException_Sub1.aSprite_2246
 			.anIntArray4615[i_5_++]
 			= Class79.anIntArray1402[i_4_++ + i_0_];
 		i_4_ += Class79.anInt1401 - 128;
 	    }
-	    RuntimeException_Sub1.aClass68_Sub20_Sub10_Sub1_2246
+	    RuntimeException_Sub1.aSprite_2246
 		.method1108(i_0_, i);
 	}
     }

@@ -34,21 +34,21 @@ public class Class74
 	    aStream_1330 = null;
     }
     
-    public static Class68_Sub20_Sub10_Sub1 method1380(int i) {
+    public static Sprite method1380(int i) {
 	anInt1327++;
 	if (i != -14452)
 	    aStream_1330 = null;
 	byte[] is = Class69.aByteArrayArray1240[0];
 	int i_0_ = (Class68_Sub13_Sub12.anIntArray3639[0]
 		    * Class68_Sub13_Sub19.anIntArray3757[0]);
-	Class68_Sub20_Sub10_Sub1 class68_sub20_sub10_sub1;
+	Sprite sprite;
 	if (!Class68_Sub10.aBooleanArray2905[0]) {
 	    int[] is_1_ = new int[i_0_];
 	    for (int i_2_ = 0; i_0_ > i_2_; i_2_++)
 		is_1_[i_2_] = (Class68_Sub13_Sub17.anIntArray3719
 			       [Class120.method1740(is[i_2_], 255)]);
-	    class68_sub20_sub10_sub1
-		= (new Class68_Sub20_Sub10_Sub1
+	    sprite
+		= (new Sprite
 		   (Class97.anInt1703, Class68_Sub20_Sub15.anInt4405,
 		    Class4.anIntArray96[0], Class116.anIntArray1996[0],
 		    Class68_Sub13_Sub12.anIntArray3639[0],
@@ -64,15 +64,15 @@ public class Class74
 							       255)]),
 					 (Class120.method1740(255, is_3_[i_5_])
 					  << -1318416968));
-	    class68_sub20_sub10_sub1
-		= (new Class68_Sub20_Sub10_Sub1_Sub1
+	    sprite
+		= (new Sprite_Sub1
 		   (Class97.anInt1703, Class68_Sub20_Sub15.anInt4405,
 		    Class4.anIntArray96[0], Class116.anIntArray1996[0],
 		    Class68_Sub13_Sub12.anIntArray3639[0],
 		    Class68_Sub13_Sub19.anIntArray3757[0], is_4_));
 	}
 	Class87.method1487((byte) -93);
-	return class68_sub20_sub10_sub1;
+	return sprite;
     }
     
     public static void method1381(boolean bool, RSString class100, int i) {

@@ -39,7 +39,7 @@ public class Class85
     }
     
     public static void method1480
-	(int i, Class68_Sub20_Sub10_Sub1[] class68_sub20_sub10_sub1s,
+	(int i, Sprite[] sprites,
 	 Class21renamed class21, Class92_Sub1[] class92_sub1s,
 	 Class92_Sub1[] class92_sub1s_0_, Class92_Sub1[] class92_sub1s_1_,
 	 Class92_Sub1[] class92_sub1s_2_) {
@@ -47,8 +47,8 @@ public class Class85
 	    Class87.aClass21_1588 = class21;
 	    Class68_Sub19.aClass92_Sub1Array3069 = class92_sub1s_0_;
 	    Class1_Sub6.aClass92_Sub1Array2558 = class92_sub1s_2_;
-	    Class68_Sub13_Sub9.aClass68_Sub20_Sub10_Sub1Array3569
-		= class68_sub20_sub10_sub1s;
+	    Class68_Sub13_Sub9.aSpriteArray3569
+		= sprites;
 	    if (i != -10675)
 		anInt1548 = -51;
 	    anInt1560++;
@@ -70,7 +70,7 @@ public class Class85
 	    throw Class107.method1652
 		      (runtimeexception,
 		       ("oc.C(" + i + ','
-			+ (class68_sub20_sub10_sub1s != null ? "{...}"
+			+ (sprites != null ? "{...}"
 			   : "null")
 			+ ',' + (class21 != null ? "{...}" : "null") + ','
 			+ (class92_sub1s != null ? "{...}" : "null") + ','

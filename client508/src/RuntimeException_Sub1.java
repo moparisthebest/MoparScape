@@ -21,7 +21,7 @@ public class RuntimeException_Sub1 extends RuntimeException
     public static RSString aRSString_2243;
     public static RSString aRSString_2244;
     public static int anInt2245;
-    public static Class68_Sub20_Sub10_Sub1 aClass68_Sub20_Sub10_Sub1_2246;
+    public static Sprite aSprite_2246;
     public Throwable aThrowable2247;
 
     public static Class1_Sub3 method1793
@@ -203,7 +203,7 @@ public class RuntimeException_Sub1 extends RuntimeException
 	aRSString_2244 = null;
 	aRSString_2232 = null;
 	aRSString_2243 = null;
-	aClass68_Sub20_Sub10_Sub1_2246 = null;
+	aSprite_2246 = null;
 	aClass21_2236 = null;
 	if (i != 64)
 	    method1798(false, 79, 66, (byte) 113, 45, null, (byte) 12);
@@ -235,7 +235,7 @@ public class RuntimeException_Sub1 extends RuntimeException
 	    anInt2245++;
 	    int i_49_ = -1;
 	    if (i_47_ < 67)
-		aClass68_Sub20_Sub10_Sub1_2246 = null;
+		aSprite_2246 = null;
 	    Stream class68_sub14 = new Stream(is);
 	    for (;;) {
 		int i_50_ = class68_sub14.method937(true);
