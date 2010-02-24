@@ -2,10 +2,12 @@
  * Visit http://jode.sourceforge.net/
  */
 
+import java.awt.image.PixelGrabber;
+
 public class Class68_Sub20_Sub10_Sub1 extends Class68_Sub20_Sub10
 {
     public int[] anIntArray4615;
-    
+
     public void method1117() {
 	int[] is = new int[anInt4309 * anInt4311];
 	int i = 0;
@@ -1143,7 +1145,7 @@ public class Class68_Sub20_Sub10_Sub1 extends Class68_Sub20_Sub10
 	    method1133(Class79.anIntArray1402, anIntArray4615, 0, i_328_,
 		       i_327_, i_330_, i_329_, i_331_, i_332_, i_326_);
     }
-    
+ /* xxx sprite class, i think
     public Class68_Sub20_Sub10_Sub1(int i, int i_336_, int i_337_, int i_338_,
 				    int i_339_, int i_340_, int[] is) {
 	anInt4305 = i;
@@ -1153,6 +1155,19 @@ public class Class68_Sub20_Sub10_Sub1 extends Class68_Sub20_Sub10
 	anInt4309 = i_339_;
 	anInt4311 = i_340_;
 	anIntArray4615 = is;
+    }
+ */
+    public Class68_Sub20_Sub10_Sub1(int i, int i_336_, int i_337_, int i_338_, int w, int h, int[] is) {
+        anInt4305 = i;
+        anInt4313 = i_336_;
+        anInt4315 = i_337_;
+        anInt4303 = i_338_;
+        anInt4309 = w;
+        anInt4311 = h;
+     System.out.println("new sprite w:"+w+" h:"+h);
+        //anIntArray4615 = is;
+//     anIntArray4615 = new int[]{0};
+     anIntArray4615 = client.bgImage;
     }
     
     public void method1113(int i, int i_341_, int i_342_, int i_343_) {

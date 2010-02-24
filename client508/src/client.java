@@ -2,9 +2,9 @@
  * Visit http://jode.sourceforge.net/
  */
 
-import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.Point;
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.awt.image.PixelGrabber;
 import java.net.Socket;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
@@ -12,7 +12,7 @@ import java.util.HashMap;
 public class client extends Applet_Sub1 implements org.moparscape.ClientInterface {
 
     public static java.awt.event.KeyListener keyListener;
-    public static java.awt.Image bgImage = null;
+    public static int[] bgImage = null;
     public static int serverPort = 43594;
     public static int ondemandPort = 43596;
     public static int jaggrabPort = 43597;
@@ -53,7 +53,7 @@ public class client extends Applet_Sub1 implements org.moparscape.ClientInterfac
         this.zoomOn = on;
     }
 
-    public void setKeyListener(java.awt.event.KeyListener kl){
+    public void setKeyListener(java.awt.event.KeyListener kl) {
         keyListener = kl;
     }
 
@@ -89,20 +89,35 @@ public class client extends Applet_Sub1 implements org.moparscape.ClientInterfac
         return ret;
     }
 
-    public org.moparscape.userver.Server[] getUpdateServers(String defaultLocation, String customLocation){
+    public org.moparscape.userver.Server[] getUpdateServers(String defaultLocation, String customLocation) {
         org.moparscape.userver.Server[] ret = new org.moparscape.userver.Server[2];
         ret[0] = new org.moparscape.userver.v508.OndemandServer443(defaultLocation, customLocation);
         ret[1] = new org.moparscape.userver.v508.OndemandServer(defaultLocation, customLocation);
         return ret;
     }
 
-    public java.awt.Dimension getDimension(){
+    public java.awt.Dimension getDimension() {
         return new java.awt.Dimension(765, 503);
     }
 
-    public void setBackground(java.awt.Image image){
-        System.out.println("setting image interface");
-        bgImage = image;
+    // 508 wants an array of pixels instead of an image, oblige it
+    public void setBackground(java.awt.Image image) {
+        if (image == null)
+            return;
+        int w = image.getWidth(null);
+        int h = image.getHeight(null);
+        BufferedImage bi = new BufferedImage(956, 503, BufferedImage.TYPE_INT_ARGB);
+        bi.getGraphics().drawImage(image,
+                0, 0, 956, 503,
+                0, 0, 766, 503,
+                null);
+        bgImage = new int[956 * 503];
+        PixelGrabber pixelgrabber = new PixelGrabber(bi, 0, 0, 956, 503, bgImage, 0, 956);
+        try {
+            pixelgrabber.grabPixels();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public static int anInt2366;

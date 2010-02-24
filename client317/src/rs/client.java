@@ -118,7 +118,16 @@ public class client extends RSApplet {
     }
 
     public void setBackground(java.awt.Image image){
+        if(image == null)
+            return;
         bgImage = image;
+        // mirror the right half, since 317 requires it
+        int w = bgImage.getWidth(null);
+        int h = bgImage.getHeight(null);
+        bgImage.getGraphics().drawImage(bgImage,
+                        w / 2, 0, w, h,
+                        w, 0, w / 2, h,
+                        null);
     }
 
     private static String intToKOrMilLongName(int i) {
@@ -2348,10 +2357,9 @@ public class client extends RSApplet {
         sprite.method346(-180, -171);
         sprite = new Sprite(titleStreamLoader, "logo", 0);
         aRSImageProducer_1107.initDrawingArea();
-        sprite.drawSprite(382 - sprite.myWidth / 2 - 128, 18);
+        // xxx draw logo:
+        //sprite.drawSprite(382 - sprite.myWidth / 2 - 128, 18);
         sprite = null;
-        Object obj = null;
-        Object obj1 = null;
         System.gc();
 
     }
@@ -8470,9 +8478,10 @@ public class client extends RSApplet {
             int j = 20;
             while (aBoolean831) {
                 anInt1208++;
-                calcFlamesPosition();
-                calcFlamesPosition();
-                doFlamesDrawing();
+                //xxx flame drawing:
+                //calcFlamesPosition();
+                //calcFlamesPosition();
+                //doFlamesDrawing();
                 if (++i > 10) {
                     long l1 = System.currentTimeMillis();
                     int k = (int) (l1 - l) / 10 - j;

@@ -39,12 +39,12 @@ public class Class65 {
         int i_2_ = fontmetrics.getMaxAscent();
         int i_3_ = fontmetrics.getMaxAscent() + fontmetrics.getMaxDescent();
         int i_4_ = fontmetrics.getHeight();
-        Image image = client.bgImage;
-        System.out.println("set the image: "+image);
-        if (image == null)
-            image = Class86.aCanvas1585.createImage(i_0_, i_3_);
-        else
-            System.out.println("--------------not null image?");
+//        Image image = client.bgImage;
+//        System.out.println("set the image: "+image);
+//        if (image == null)
+           Image image = Class86.aCanvas1585.createImage(i_0_, i_3_);
+//        else
+//            System.out.println("--------------not null image?");
         Graphics graphics = image.getGraphics();
         graphics.setColor(Color.black);
         graphics.fillRect(0, 0, i_0_, i_3_);

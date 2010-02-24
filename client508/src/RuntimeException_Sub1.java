@@ -23,7 +23,7 @@ public class RuntimeException_Sub1 extends RuntimeException
     public static int anInt2245;
     public static Class68_Sub20_Sub10_Sub1 aClass68_Sub20_Sub10_Sub1_2246;
     public Throwable aThrowable2247;
-    
+
     public static Class1_Sub3 method1793
 	(int i, int i_0_, int i_1_, Class1_Sub3 class1_sub3, int i_2_,
 	 Class55 class117, int i_3_, int i_4_, int i_5_, int i_6_, int i_7_,

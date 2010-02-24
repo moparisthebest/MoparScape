@@ -52,7 +52,7 @@ public class Class68_Sub13_Sub9 extends Class68_Sub13
     public static RSString aRSString_3581;
     public static int[] anIntArray3582;
     public static int anInt3583;
-    
+
     public static void method736(int i) {
 	anIntArray3582 = null;
 	aRSString_3577 = null;
