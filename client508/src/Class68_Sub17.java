@@ -26,12 +26,12 @@ public class Class68_Sub17 extends Class68
 	    method991(-70, false, 8, -46, 86);
 	Class68_Sub13_Sub36.method887(22050, 2, Class74.aBoolean1324, 81);
 	Class68_Sub13_Sub36.aClass35_4035
-	    = Class55.method1717(Class75_Sub1_Sub1.aSignLink_4589, (byte) 104,
+	    = Class55.method1717(Class75_Sub1_Sub1.signlink, (byte) 104,
 				  Class86.aCanvas1585, 22050, 0);
 	Class68_Sub13_Sub36.aClass35_4035
 	    .method425(false, Class54.aClass68_Sub28_Sub1_1028);
 	Animable.aClass35_66
-	    = Class55.method1717(Class75_Sub1_Sub1.aSignLink_4589, (byte) 104,
+	    = Class55.method1717(Class75_Sub1_Sub1.signlink, (byte) 104,
 				  Class86.aCanvas1585, 2048, 1);
 	Animable.aClass35_66.method425(false, Class80.aClass68_Sub28_Sub4_1418);
     }

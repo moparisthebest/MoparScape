@@ -60,7 +60,7 @@ public class Class20
 	    anInt410++;
 	    Class68_Sub6.aClass68_Sub20_Sub1_2847
 		= Class90.method1509(class21, 0, (byte) 58, class21_0_,
-				     RuntimeException_Sub1.anInt2241);
+				     GameException.anInt2241);
 	    Class68_Sub13_Sub4.aClass68_Sub20_Sub1_3511
 		= Class90.method1509(class21, 0, (byte) 67, class21_0_,
 				     Class50.anInt986);

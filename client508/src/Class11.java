@@ -57,7 +57,7 @@ public class Class11
 	else if (Class108.aFrame1832 != null)
 	    container = Class108.aFrame1832;
 	else
-	    container = Class75_Sub1_Sub1.aSignLink_4589.anApplet1042;
+	    container = Class75_Sub1_Sub1.signlink.anApplet1042;
 	anInt188++;
 	Class68_Sub20_Sub17.anInt4437 = container.getSize().width;
 	Class21renamed.anInt479 = container.getSize().height;
@@ -90,8 +90,8 @@ public class Class11
 	    Class36.aLong644 = Class36.method438(17161) + (long) i;
 	ISAACRandomGen.aLong1480 = Class36.method438(17161) - -(long) i;
 	if (i == 0 && PlayerDefinition.connection != null
-	    && ((RuntimeException_Sub1.anInt2231 ^ 0xffffffff) == -31
-		|| RuntimeException_Sub1.anInt2231 == 25))
+	    && ((GameException.anInt2231 ^ 0xffffffff) == -31
+		|| GameException.anInt2231 == 25))
 	    Class68_Sub20_Sub6.method1071((byte) -118);
     }
     

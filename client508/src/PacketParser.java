@@ -84,7 +84,7 @@ public class PacketParser
 	Class105.anInt1794 = i;
 	Class52.aBoolean998 = bool;
 	Class67.anInt1217 = i_16_;
-	RuntimeException_Sub1.aClass21_2236 = class21;
+	GameException.aClass21_2236 = class21;
 	anInt1871++;
 	Class70.anInt1287 = 1;
     }
@@ -261,7 +261,7 @@ public class PacketParser
 	}
 	if ((Class49.anInt962 ^ 0xffffffff) == -211) {
 	    if (Class68_Sub13_Sub10.anInt3595 != -1)
-		RuntimeException_Sub1
+		GameException
 		    .method1796(89, Class68_Sub13_Sub10.anInt3595, 0);
 	    Class49.anInt962 = -1;
 	    return true;
@@ -953,7 +953,7 @@ public class PacketParser
 	    return true;
 	}
 	if ((Class49.anInt962 ^ 0xffffffff) == -140) {
-	    Class12.method238(Class75_Sub1_Sub1.aSignLink_4589, Class68_Sub13_Sub8.inStream, Class106.anInt1804, (byte) 101);
+	    Class12.method238(Class75_Sub1_Sub1.signlink, Class68_Sub13_Sub8.inStream, Class106.anInt1804, (byte) 101);
 	    Class49.anInt962 = -1;
 	    return true;
 	}
@@ -1290,7 +1290,7 @@ public class PacketParser
 	if (Class49.anInt962 == 172) {
 	    int i_156_ = Class68_Sub13_Sub8.inStream.readDWord();
 	    Class68_Sub10.aClass31_2914
-		= Class75_Sub1_Sub1.aSignLink_4589.method563(i_156_, i + 26354);
+		= Class75_Sub1_Sub1.signlink.method563(i_156_, i + 26354);
 	    Class49.anInt962 = -1;
 	    return true;
 	}
@@ -1558,7 +1558,7 @@ public class PacketParser
 		Class68_Sub13_Sub27.method838(-1, true, class45);
 	    }
 	    if ((Class68_Sub13_Sub10.anInt3595 ^ 0xffffffff) != 0)
-		RuntimeException_Sub1
+		GameException
 		    .method1796(i + 26449, Class68_Sub13_Sub10.anInt3595, 1);
 	    Class49.anInt962 = -1;
 	    return true;

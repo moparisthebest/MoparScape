@@ -80,7 +80,7 @@ public class Class49 {
                     Class88.anInt1602++;
                 }
                 if (Class68_Sub13_Sub27.anInt3914 == 1) {
-                    Class13_Sub2.aClass31_2657 = (Class75_Sub1_Sub1.aSignLink_4589.newJagSocket(Class68_Sub9.serverAddress, (byte) 113, Class103.port));
+                    Class13_Sub2.aClass31_2657 = (Class75_Sub1_Sub1.signlink.newJagSocket(Class68_Sub9.serverAddress, (byte) 113, Class103.port));
                     Class68_Sub13_Sub27.anInt3914 = 2;
                 }
                 if ((Class68_Sub13_Sub27.anInt3914 ^ 0xffffffff) == -3) {
@@ -89,7 +89,7 @@ public class Class49 {
                     if (Class13_Sub2.aClass31_2657.anInt555 != 1)
                         return;
                     PlayerDefinition.connection = new GameSocket(((Socket) Class13_Sub2.aClass31_2657.playerDefSocket),
-                            Class75_Sub1_Sub1.aSignLink_4589);
+                            Class75_Sub1_Sub1.signlink);
                     Class13_Sub2.aClass31_2657 = null;
                     PlayerDefinition.connection.queueBytes(
                             Class21renamed.stream.currentOffset,

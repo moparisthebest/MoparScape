@@ -66,7 +66,7 @@ public abstract class Class68_Sub13 extends Class68
 	if (i_0_ < 118)
 	    aClass92_Sub1Array2921 = null;
 	Class68_Sub13_Sub11.anInt3620 = i;
-	RuntimeException_Sub1.aClass21_2236 = null;
+	GameException.aClass21_2236 = null;
     }
     
     public int method693(byte i) {

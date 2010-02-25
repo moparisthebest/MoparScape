@@ -160,7 +160,7 @@ public class Class68_Sub13_Sub9 extends Class68_Sub13
 		    Class1_Sub2.aClass68_Sub28_Sub1_2433.method1249(98);
 		    Class1_Sub2.aClass68_Sub28_Sub1_2433.method1246(true);
 		    client.aClass68_Sub12_2379 = null;
-		    if (RuntimeException_Sub1.aClass21_2236 != null)
+		    if (GameException.aClass21_2236 != null)
 			Class70.anInt1287 = 2;
 		    else
 			Class70.anInt1287 = 0;
@@ -175,7 +175,7 @@ public class Class68_Sub13_Sub9 extends Class68_Sub13
 		client.aClass68_Sub12_2379 = null;
 		Class93.aClass14_1667 = null;
 		Class70.anInt1287 = 0;
-		RuntimeException_Sub1.aClass21_2236 = null;
+		GameException.aClass21_2236 = null;
 		break;
 	    }
 	    break;

@@ -143,7 +143,7 @@ public class Class90 implements Interface4
 		if (!Class14.method265(-110))
 		    break;
 	    }
-	    if ((RuntimeException_Sub1.anInt2231 ^ 0xffffffff) == -31) {
+	    if ((GameException.anInt2231 ^ 0xffffffff) == -31) {
 		Class50.method531(false, 141, Class21renamed.stream);
 		synchronized (Class14.aClass84_241.anObject1543) {
 		    if (!Class68_Sub13_Sub33.aBoolean4000)
@@ -333,7 +333,7 @@ public class Class90 implements Interface4
 		    Class108.aBoolean1830 = true;
 		}
 		Class114.method1692(0);
-		if (RuntimeException_Sub1.anInt2231 == 30) {
+		if (GameException.anInt2231 == 30) {
 		    Class68_Sub13_Sub32.method864(0);
 		    Class68_Sub29.method1321((byte) -110);
 		    Class68_Sub20_Sub13.anInt4368++;

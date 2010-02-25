@@ -46,7 +46,7 @@ public class Class59
 	aRSString_1112 = Class112.method1668(43, "mapdots");
 	anInt1109 = 0;
 	aRSString_1108 = aRSString_1110;
-	aRSString_1111 = Class112.method1668(43, "Clientscript error in: ");
+	aRSString_1111 = Class112.method1668(43, "Clientscript error_fatal in: ");
 	aShortArray1107 = new short[] { -4160, -4163, -8256, -8259, 22461 };
     }
 }

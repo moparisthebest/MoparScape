@@ -187,7 +187,7 @@ public class Class35
 		    != (i_15_ ^ 0xffffffff))) {
 		Sprite sprite
 		    = new Sprite(i_16_, i_15_);
-		Class79.method1432(sprite.anIntArray4615,
+		Class79.method1432(sprite.pixels,
 				   i_16_, i_15_);
 		Class68_Sub29.method1323(0, 0, Class103.anInt1768, 0, 0, i_16_,
 					 1391070128, i_15_,
@@ -404,7 +404,7 @@ public class Class35
 	anInt607++;
 	Class113.anInt1912
 	    = class21.method335(Class90.aRSString_2355, (byte) -103);
-	RuntimeException_Sub1.anInt2241
+	GameException.anInt2241
 	    = class21.method335(Class7.aRSString_123, (byte) -117);
 	Class50.anInt986
 	    = class21.method335(Class37.aRSString_650, (byte) -112);

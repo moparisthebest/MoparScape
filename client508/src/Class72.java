@@ -92,7 +92,7 @@ public abstract class Class72
 			    container = Class108.aFrame1832;
 			else
 			    container
-				= Class75_Sub1_Sub1.aSignLink_4589.anApplet1042;
+				= Class75_Sub1_Sub1.signlink.anApplet1042;
 		    } else
 			container = Class1_Sub2.aFrame2429;
 		    int i_6_ = 0;
@@ -276,7 +276,7 @@ public abstract class Class72
 	} else {
 	    if (i != -5720)
 		aClass65_1305 = null;
-	    RuntimeException_Sub1.method1798(true, 0, 255, (byte) 0, 255, null,
+	    GameException.method1798(true, 0, 255, (byte) 0, 255, null,
 					     (byte) 22);
 	    Class68_Sub20.aClass21_Sub1Array3081[i_39_] = class21_sub1;
 	}

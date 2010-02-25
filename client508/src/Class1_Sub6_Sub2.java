@@ -249,7 +249,7 @@ public class Class1_Sub6_Sub2 extends Class1_Sub6
 			|| (Class68_Sub13_Sub11.method753
 			    (aClass126_3410.anInt2201, -103).aBoolean1448))) {
 		    Class1_Sub3 class1_sub3_40_
-			= (RuntimeException_Sub1.method1793
+			= (GameException.method1793
 			   (anInt2537, i, anInt2582, class1_sub3,
 			    class117_39_ != null ? anInt2555 : anInt2522,
 			    class117_39_ != null ? class117_39_ : class117,

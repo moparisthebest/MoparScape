@@ -154,7 +154,7 @@ public class Class68_Sub13_Sub10 extends Class68_Sub13
 			    Class68_Sub13_Sub15.anInt3687, Class33.anInt588,
 			    (byte) -107);
 	if (anInt3595 != -1)
-	    RuntimeException_Sub1.method1796(116, anInt3595, 1);
+	    GameException.method1796(116, anInt3595, 1);
     }
     
     static {

@@ -213,7 +213,7 @@ public class Class1_Sub5 extends Animable
 			   Login.aClass113_1512
 			       .method1678((long) class45.anInt792, -63));
 		    if (class68_sub3 != null)
-			RuntimeException_Sub1
+			GameException
 			    .method1796(113, class68_sub3.anInt2803, i);
 		}
 		if ((i ^ 0xffffffff) == -1

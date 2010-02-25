@@ -301,7 +301,7 @@ public class Class68_Sub13_Sub19 extends Class68_Sub13
 			    = (Class68_Sub20_Sub13_Sub2.method1166
 			       (2,
 				(new RSString[]
-				 { RuntimeException_Sub1.aRSString_2232,
+				 { GameException.aRSString_2232,
 				   class93.aRSString_1670,
 				   Class68_Sub20_Sub11.aRSString_4333,
 				   class100, Class13_Sub1.aRSString_2624,

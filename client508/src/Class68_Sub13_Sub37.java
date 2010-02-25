@@ -261,7 +261,7 @@ public class Class68_Sub13_Sub37 extends Class68_Sub13
 	if ((class100.method1590((byte) -97) ^ 0xffffffff) < -7)
 	    return (Class68_Sub20_Sub13_Sub2.method1166
 		    (2, (new RSString[]
-			 { RuntimeException_Sub1.aRSString_2240,
+			 { GameException.aRSString_2240,
 			   class100.method1607(0, (byte) -74,
 					       (class100.method1590((byte) -99)
 						+ -4)),

@@ -365,7 +365,7 @@ public class Class58
 		    if (Class76.aClass52_1354 != null)
 			break;
 		    Class76.aClass52_1354
-			= new Class52(Class75_Sub1_Sub1.aSignLink_4589,
+			= new Class52(Class75_Sub1_Sub1.signlink,
 				      Class68_Sub20_Sub13_Sub2.method1166
 					  (2, (new RSString[]
 					       { Class88.method1492(-1),

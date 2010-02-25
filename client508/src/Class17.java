@@ -24,8 +24,8 @@ public class Class17 {
             aBoolean284 = true;
         }
         anInt282++;
-        if (i != RuntimeException_Sub1.anInt2231) {
-            if (RuntimeException_Sub1.anInt2231 == 0) {
+        if (i != GameException.anInt2231) {
+            if (GameException.anInt2231 == 0) {
                 Class68_Sub20_Sub2.method1044((byte) -79);
             }
             if ((i ^ 0xffffffff) == -41) {
@@ -51,7 +51,7 @@ public class Class17 {
             } else {
                 Class13_Sub1.method253(20);
             }
-            boolean bool_1_ = (RuntimeException_Sub1.anInt2231 == 5 || (RuntimeException_Sub1.anInt2231 ^ 0xffffffff) == -11 || (RuntimeException_Sub1.anInt2231 ^ 0xffffffff) == -29);
+            boolean bool_1_ = (GameException.anInt2231 == 5 || (GameException.anInt2231 ^ 0xffffffff) == -11 || (GameException.anInt2231 ^ 0xffffffff) == -29);
             if (!bool_1_ != !bool) {
                 if (bool) {
                     Class101.anInt1745 = Class68_Sub13_Sub15.anInt3681;
@@ -69,7 +69,7 @@ public class Class17 {
                     Class50.method530(true, false);
                 }
             }
-            RuntimeException_Sub1.anInt2231 = i;
+            GameException.anInt2231 = i;
         }
     }
 

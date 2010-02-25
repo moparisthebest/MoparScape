@@ -132,7 +132,7 @@ public class Class68_Sub13_Sub7 extends Class68_Sub13
 	    int i_5_ = 0;
 	    if (class21.method360(Class113.anInt1912, 0))
 		i_5_++;
-	    if (class21.method360(RuntimeException_Sub1.anInt2241, 0))
+	    if (class21.method360(GameException.anInt2241, 0))
 		i_5_++;
 	    if (class21.method360(Class50.anInt986, 0))
 		i_5_++;
@@ -140,7 +140,7 @@ public class Class68_Sub13_Sub7 extends Class68_Sub13
 		i_5_++;
 	    if (i < 43)
 		method726((byte) -13, null);
-	    if (class21_4_.method360(RuntimeException_Sub1.anInt2241, 0))
+	    if (class21_4_.method360(GameException.anInt2241, 0))
 		i_5_++;
 	    if (class21_4_.method360(Class50.anInt986, 0))
 		i_5_++;

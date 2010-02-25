@@ -690,7 +690,7 @@ public abstract class Class21renamed
 	Class103.anInt1774 = 0;
 	Class68_Sub13_Sub21.anInt3798 = 0;
 	Animable.anInt55 = 0;
-	RuntimeException_Sub1.anInt2245 = 0;
+	GameException.anInt2245 = 0;
 	Class1_Sub7.anInt2615 = 0;
 	Class68_Sub13_Sub37.anInt4074 = 0;
 	Class68_Sub17.anInt3032 = 0;
@@ -880,7 +880,7 @@ public abstract class Class21renamed
 	Class11.anInt189 = 0;
 	Class112.anInt1882 = 0;
 	Stream.anInt2986 = 0;
-	RuntimeException_Sub1.anInt2234 = 0;
+	GameException.anInt2234 = 0;
 	Class72_Sub1.anInt3270 = 0;
 	Class75_Sub1_Sub1.anInt4576 = 0;
 	Stream.anInt2997 = 0;
@@ -1153,7 +1153,7 @@ public abstract class Class21renamed
 	    anInt460 = 0;
 	    PacketParser.anInt1873 = 0;
 	    Class68_Sub9.anInt2899 = 0;
-	    RuntimeException_Sub1.anInt2235 = 0;
+	    GameException.anInt2235 = 0;
 	    Class36.anInt645 = 0;
 	    Class9.anInt171 = 0;
 	    Class68_Sub13_Sub11.anInt3607 = 0;
@@ -1222,7 +1222,7 @@ public abstract class Class21renamed
 	    Class68_Sub13_Sub19.anInt3751 = 0;
 	    Class44.anInt751 = 0;
 	    Class53.anInt1021 = 0;
-	    RuntimeException_Sub1.anInt2237 = 0;
+	    GameException.anInt2237 = 0;
 	    Class68_Sub13_Sub8.anInt3562 = 0;
 	    Class1_Sub7.anInt2610 = 0;
 	    Class68_Sub13_Sub9.anInt3573 = 0;
@@ -1278,7 +1278,7 @@ public abstract class Class21renamed
 	    Class45.anInt809 = 0;
 	    Class68_Sub20_Sub6.anInt4238 = 0;
 	    Class68_Sub13_Sub15.anInt3693 = 0;
-	    RuntimeException_Sub1.anInt2233 = 0;
+	    GameException.anInt2233 = 0;
 	    Class30.anInt547 = 0;
 	    Class71.anInt1295 = 0;
 	    Class116.anInt2001 = 0;
@@ -1698,7 +1698,7 @@ public abstract class Class21renamed
 	    Class68_Sub28_Sub1.anInt4486 = 0;
 	    Class13_Sub4.anInt2684 = 0;
 	    Class32.anInt561 = 0;
-	    RuntimeException_Sub1.anInt2242 = 0;
+	    GameException.anInt2242 = 0;
 	    Class68_Sub29.anInt3245 = 0;
 	    Class68_Sub13_Sub36.anInt4045 = 0;
 	    Class11.anInt190 = 0;
@@ -1740,7 +1740,7 @@ public abstract class Class21renamed
 	    Class72_Sub1.anInt3280 = 0;
 	    Class86.anInt1581 = 0;
 	    Class68_Sub20_Sub13.anInt4356 = 0;
-	    RuntimeException_Sub1.anInt2238 = 0;
+	    GameException.anInt2238 = 0;
 	    Class68_Sub6.anInt2837 = 0;
 	    Class105.anInt1796 = 0;
 	    Class68_Sub13_Sub20.anInt3762 = 0;

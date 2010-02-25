@@ -113,7 +113,7 @@ public class Class127
 	if (i != Class68_Sub13_Sub10.anInt3597) {
 	    try {
 		Class103.aRSString_1771.method1604((Class75_Sub1_Sub1
-						    .aSignLink_4589
+						    .signlink
 						    .anApplet1042),
 						   (byte) -123);
 		return true;

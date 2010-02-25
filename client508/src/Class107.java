@@ -79,16 +79,16 @@ public class Class107
 	}
     }
     
-    public static RuntimeException_Sub1 method1652(Throwable throwable,
+    public static GameException method1652(Throwable throwable,
 						   String string) {
 	anInt1812++;
-	RuntimeException_Sub1 runtimeexception_sub1;
-	if (throwable instanceof RuntimeException_Sub1) {
-	    runtimeexception_sub1 = (RuntimeException_Sub1) throwable;
+	GameException runtimeexception_sub1;
+	if (throwable instanceof GameException) {
+	    runtimeexception_sub1 = (GameException) throwable;
 	    runtimeexception_sub1.aString2239 += ' ' + (String) string;
 	} else
 	    runtimeexception_sub1
-		= new RuntimeException_Sub1(throwable, string);
+		= new GameException(throwable, string);
 	return runtimeexception_sub1;
     }
     

@@ -37,7 +37,7 @@ public class Class1_Sub6_Sub1 extends Class1_Sub6
 		if (Class68_Sub20_Sub13_Sub2.aBoolean4629
 		    && class80.aBoolean1448) {
 		    Class1_Sub3 class1_sub3_8_
-			= (RuntimeException_Sub1.method1793
+			= (GameException.method1793
 			   (anInt2537, i, anInt2582, class1_sub3,
 			    class117_7_ == null ? anInt2522 : anInt2555,
 			    class117_7_ != null ? class117_7_ : class117,

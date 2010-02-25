@@ -17,10 +17,10 @@ public class Class75_Sub1_Sub1 extends Class75_Sub1
     public static Class21renamed aClass21_4586;
     public static RSString aRSString_4587;
     public static Login aLogin_4588;
-    public static SignLink aSignLink_4589;
+    public static SignLink signlink;
     public static int anInt4590;
     public static Class21renamed aClass21_4591;
-    
+
     public static boolean method1391(boolean bool,
 				     Class68_Sub1[][][] class68_sub1s, int i,
 				     int i_0_, int i_1_, byte i_2_) {
@@ -529,7 +529,7 @@ public class Class75_Sub1_Sub1 extends Class75_Sub1
 	aRSString_4581 = null;
 	aClass21_4591 = null;
 	aClass21_4586 = null;
-	aSignLink_4589 = null;
+	signlink = null;
 	aRSString_4587 = null;
 	aLogin_4588 = null;
     }

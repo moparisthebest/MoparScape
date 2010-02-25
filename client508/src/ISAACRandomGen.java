@@ -418,7 +418,7 @@ public class ISAACRandomGen
 	if (Class68_Sub13_Sub10.anInt3597 != 0) {
 	    try {
 		if (((Boolean) (Class68_Sub20_Sub15.aRSString_4390.method1604
-				(Class75_Sub1_Sub1.aSignLink_4589.anApplet1042,
+				(Class75_Sub1_Sub1.signlink.anApplet1042,
 				 (byte) -123)))
 			.booleanValue())
 		    return false;

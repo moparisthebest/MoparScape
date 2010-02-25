@@ -15,7 +15,6 @@ import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import java.lang.reflect.Method;
 import java.net.URL;
-import java.io.*;
 
 public abstract class Applet_Sub1 extends Applet
         implements Runnable, FocusListener, WindowListener {
@@ -99,23 +98,23 @@ public abstract class Applet_Sub1 extends Applet
                 String string = SignLink.javaVendor.toLowerCase();
                 if (string.indexOf("sun") == -1 && (string.indexOf("apple") ^ 0xffffffff) == 0) {
                     if (string.indexOf("ibm") != -1 && (SignLink.javaVersion == null || SignLink.javaVersion.equals("1.4.2"))) {
-                        error(690, "wrongjava");
+                        error_fatal(690, "wrongjava");
                         return;
                     }
                 } else {
                     String string_0_ = SignLink.javaVersion;
                     if (string_0_.equals("1.1") || string_0_.startsWith("1.1.") || string_0_.equals("1.2") || string_0_.startsWith("1.2.")) {
-                        error(690, "wrongjava");
+                        error_fatal(690, "wrongjava");
                         return;
                     }
                     Class109.anInt1839 = 5;
                 }
             }
-            if (Class75_Sub1_Sub1.aSignLink_4589.anApplet1042 != null) {
+            if (Class75_Sub1_Sub1.signlink.anApplet1042 != null) {
                 Method method = SignLink.setFocusCycleRoot;
                 if (method != null)
                     try {
-                        method.invoke((Class75_Sub1_Sub1.aSignLink_4589.anApplet1042),
+                        method.invoke((Class75_Sub1_Sub1.signlink.anApplet1042),
                                 new Object[]{Boolean.TRUE});
                     } catch (Throwable throwable) {
                         /* empty */
@@ -134,17 +133,17 @@ public abstract class Applet_Sub1 extends Applet
                         i++)
                     method30((byte) -71);
                 method25(-16633);
-                Canvas_Sub1.method46(Class75_Sub1_Sub1.aSignLink_4589,
+                Canvas_Sub1.method46(Class75_Sub1_Sub1.signlink,
                         Class86.aCanvas1585, (byte) -108);
             }
         } catch (Exception exception) {
             Class71.method1339(null, exception, 38);
-            error(690, "crash");
+            error_fatal(690, "crash");
         }
         method20(true, 1000);
     }
 
-    public void error(int i, String string) {
+    public void error_fatal(int i, String string) {
         anInt20++;
         if (!aBoolean6) {
             aBoolean6 = true;
@@ -233,7 +232,7 @@ public abstract class Applet_Sub1 extends Applet
             if (Class69.anApplet_Sub1_1241 != null) {
                 Class68_Sub20_Sub7.anInt4255++;
                 if ((Class68_Sub20_Sub7.anInt4255 ^ 0xffffffff) <= -4)
-                    error(690, "alreadyloaded");
+                    error_fatal(690, "alreadyloaded");
                 else
                     getAppletContext().showDocument(getDocumentBase(),
                             "_self");
@@ -250,15 +249,15 @@ public abstract class Applet_Sub1 extends Applet
                     /* empty */
                 }
                 if (i < -1) {
-                    if (Class75_Sub1_Sub1.aSignLink_4589 == null)
-                        Class85.aSignLink_1553 = Class75_Sub1_Sub1.aSignLink_4589 = new SignLink(false, this, i_4_, null, 0);
-                    Class75_Sub1_Sub1.aSignLink_4589.method558((byte) -95, 1,
+                    if (Class75_Sub1_Sub1.signlink == null)
+                        Class85.aSignLink_1553 = Class75_Sub1_Sub1.signlink = new SignLink(false, this, i_4_, null, 0);
+                    Class75_Sub1_Sub1.signlink.method558((byte) -95, 1,
                             this);
                 }
             }
         } catch (Exception exception) {
             Class71.method1339(null, exception, 38);
-            error(690, "crash");
+            error_fatal(690, "crash");
         }
     }
 
@@ -275,8 +274,8 @@ public abstract class Applet_Sub1 extends Applet
                 return;
             PlayerDefinition.aBoolean2185 = true;
         }
-        if (Class75_Sub1_Sub1.aSignLink_4589.anApplet1042 != null)
-            Class75_Sub1_Sub1.aSignLink_4589.anApplet1042.destroy();
+        if (Class75_Sub1_Sub1.signlink.anApplet1042 != null)
+            Class75_Sub1_Sub1.signlink.anApplet1042.destroy();
         try {
             method29(-121);
         } catch (Exception exception) {
@@ -289,9 +288,9 @@ public abstract class Applet_Sub1 extends Applet
             } catch (Exception exception) {
                 /* empty */
             }
-        if (Class75_Sub1_Sub1.aSignLink_4589 != null)
+        if (Class75_Sub1_Sub1.signlink != null)
             try {
-                Class75_Sub1_Sub1.aSignLink_4589.method566(0);
+                Class75_Sub1_Sub1.signlink.method566(0);
             } catch (Exception exception) {
                 /* empty */
             }
@@ -327,8 +326,8 @@ public abstract class Applet_Sub1 extends Applet
                 Insets insets = Class108.aFrame1832.getInsets();
                 Class108.aFrame1832.setSize((insets.left + (Class68_Sub20_Sub17.anInt4437 + insets.right)),
                         (Class21renamed.anInt479 - -insets.top + insets.bottom));
-                Class85.aSignLink_1553 = Class75_Sub1_Sub1.aSignLink_4589 = new SignLink(true, null, i_12_, string, i_10_);
-                Class75_Sub1_Sub1.aSignLink_4589.method558((byte) -36, 1, this);
+                Class85.aSignLink_1553 = Class75_Sub1_Sub1.signlink = new SignLink(true, null, i_12_, string, i_10_);
+                Class75_Sub1_Sub1.signlink.method558((byte) -36, 1, this);
                 if (i_9_ >= 86)
                     break;
                 getDocumentBase();
@@ -348,8 +347,8 @@ public abstract class Applet_Sub1 extends Applet
         anInt14++;
         if (Class108.aFrame1832 != null)
             return null;
-        if (Class75_Sub1_Sub1.aSignLink_4589 != null && this != Class75_Sub1_Sub1.aSignLink_4589.anApplet1042)
-            return Class75_Sub1_Sub1.aSignLink_4589.anApplet1042.getDocumentBase();
+        if (Class75_Sub1_Sub1.signlink != null && this != Class75_Sub1_Sub1.signlink.anApplet1042)
+            return Class75_Sub1_Sub1.signlink.anApplet1042.getDocumentBase();
         return super.getDocumentBase();
     }
 
@@ -367,7 +366,7 @@ public abstract class Applet_Sub1 extends Applet
 
     public static void method24(SignLink class55) {
         anInt8++;
-        Class85.aSignLink_1553 = Class75_Sub1_Sub1.aSignLink_4589 = class55;
+        Class85.aSignLink_1553 = Class75_Sub1_Sub1.signlink = class55;
     }
 
     public void method25(int i) {
@@ -424,7 +423,7 @@ public abstract class Applet_Sub1 extends Applet
         }
         if (string.endsWith("192.168.1."))
             return true;
-        error(690, "invalidhost");
+        error_fatal(690, "invalidhost");
         return false;
     }
 
@@ -447,8 +446,8 @@ public abstract class Applet_Sub1 extends Applet
         anInt19++;
         if (Class108.aFrame1832 != null)
             return null;
-        if (Class75_Sub1_Sub1.aSignLink_4589 != null && Class75_Sub1_Sub1.aSignLink_4589.anApplet1042 != this)
-            return Class75_Sub1_Sub1.aSignLink_4589.anApplet1042.getCodeBase();
+        if (Class75_Sub1_Sub1.signlink != null && Class75_Sub1_Sub1.signlink.anApplet1042 != this)
+            return Class75_Sub1_Sub1.signlink.anApplet1042.getCodeBase();
         return super.getCodeBase();
     }
 
@@ -490,8 +489,8 @@ public abstract class Applet_Sub1 extends Applet
         anInt24++;
         if (Class108.aFrame1832 != null)
             return null;
-        if (Class75_Sub1_Sub1.aSignLink_4589 != null && this != Class75_Sub1_Sub1.aSignLink_4589.anApplet1042)
-            return Class75_Sub1_Sub1.aSignLink_4589.anApplet1042.getParameter(string);
+        if (Class75_Sub1_Sub1.signlink != null && this != Class75_Sub1_Sub1.signlink.anApplet1042)
+            return Class75_Sub1_Sub1.signlink.anApplet1042.getParameter(string);
         return super.getParameter(string);
     }
 
@@ -506,7 +505,7 @@ public abstract class Applet_Sub1 extends Applet
             if (Class108.aFrame1832 != null)
                 container = Class108.aFrame1832;
             else
-                container = Class75_Sub1_Sub1.aSignLink_4589.anApplet1042;
+                container = Class75_Sub1_Sub1.signlink.anApplet1042;
         else
             container = Class1_Sub2.aFrame2429;
         anInt23++;
@@ -563,8 +562,8 @@ public abstract class Applet_Sub1 extends Applet
         anInt21++;
         if (Class108.aFrame1832 != null)
             return null;
-        if (Class75_Sub1_Sub1.aSignLink_4589 != null && this != Class75_Sub1_Sub1.aSignLink_4589.anApplet1042)
-            return Class75_Sub1_Sub1.aSignLink_4589.anApplet1042.getAppletContext();
+        if (Class75_Sub1_Sub1.signlink != null && this != Class75_Sub1_Sub1.signlink.anApplet1042)
+            return Class75_Sub1_Sub1.signlink.anApplet1042.getAppletContext();
         return super.getAppletContext();
     }
 

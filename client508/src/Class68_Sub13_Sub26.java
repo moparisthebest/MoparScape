@@ -87,7 +87,7 @@ public class Class68_Sub13_Sub26 extends Class68_Sub13
 					   64);
 	    sprite.method1129();
 	    anInt3882 = sprite.anInt4309;
-	    anIntArray3872 = sprite.anIntArray4615;
+	    anIntArray3872 = sprite.pixels;
 	    anInt3881 = sprite.anInt4311;
 	    return true;
 	}

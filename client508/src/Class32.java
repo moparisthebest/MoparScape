@@ -72,7 +72,7 @@ public class Class32
 	Class71.method1340(-1, i_2_);
 	int i_5_ = -12 / ((i_3_ - 65) / 56);
 	if (Class68_Sub13_Sub10.anInt3595 != -1)
-	    RuntimeException_Sub1.method1796(99, Class68_Sub13_Sub10.anInt3595,
+	    GameException.method1796(99, Class68_Sub13_Sub10.anInt3595,
 					     1);
 	return class68_sub3;
     }

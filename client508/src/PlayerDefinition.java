@@ -461,11 +461,11 @@ public class PlayerDefinition
 	throws IOException {
 	anInt2193++;
 	String string;
-	if (!(throwable instanceof RuntimeException_Sub1))
+	if (!(throwable instanceof GameException))
 	    string = "";
 	else {
-	    RuntimeException_Sub1 runtimeexception_sub1
-		= (RuntimeException_Sub1) throwable;
+	    GameException runtimeexception_sub1
+		= (GameException) throwable;
 	    throwable = runtimeexception_sub1.aThrowable2247;
 	    string = runtimeexception_sub1.aString2239 + " | ";
 	}

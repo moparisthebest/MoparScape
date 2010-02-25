@@ -128,15 +128,15 @@ public class Class68_Sub13_Sub11 extends Class68_Sub13
     public static void method747(RSString class100, byte i) {
 	anInt3624++;
 	Class26.aRSString_521 = class100;
-	if (Class75_Sub1_Sub1.aSignLink_4589.anApplet1042 != null) {
+	if (Class75_Sub1_Sub1.signlink.anApplet1042 != null) {
 	    try {
 		RSString class100_19_
 		    = (Class68_Sub13_Sub7.aRSString_3551.method1610
-		       (Class75_Sub1_Sub1.aSignLink_4589.anApplet1042,
+		       (Class75_Sub1_Sub1.signlink.anApplet1042,
 			(byte) -31));
 		RSString class100_20_
 		    = (Class68_Sub13_Sub16.aRSString_3694.method1610
-		       (Class75_Sub1_Sub1.aSignLink_4589.anApplet1042,
+		       (Class75_Sub1_Sub1.signlink.anApplet1042,
 			(byte) -31));
 		RSString class100_21_
 		    = (Class68_Sub20_Sub13_Sub2.method1166
@@ -168,7 +168,7 @@ public class Class68_Sub13_Sub11 extends Class68_Sub13
 					  Class68_Sub20.aRSString_3091 })
 			.method1599
 			((byte) -45,
-			 Class75_Sub1_Sub1.aSignLink_4589.anApplet1042);
+			 Class75_Sub1_Sub1.signlink.anApplet1042);
 	    } catch (Throwable throwable) {
 		/* empty */
 	    }
@@ -391,7 +391,7 @@ public class Class68_Sub13_Sub11 extends Class68_Sub13
 	if (class48 != null)
 	    return class48;
 	byte[] is = (Class66.aClass21_1203.method338
-		     (RuntimeException_Sub1.method1795(i_51_, 72), i ^ 0x51,
+		     (GameException.method1795(i_51_, 72), i ^ 0x51,
 		      Class68_Sub20_Sub8.method1094(i_51_, 654593194)));
 	class48 = new Class48();
 	if (is != null)

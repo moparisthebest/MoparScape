@@ -72,7 +72,7 @@ public class Class68_Sub13_Sub33 extends Class68_Sub13
 				 i_21_++) {
 				if (i_20_ == Class119.anIntArray2089[i_21_]
 				    && is[i_21_] != null) {
-				    RuntimeException_Sub1.method1797
+				    GameException.method1797
 					(i_12_, bool, 8 * (0x7 & i_19_),
 					 8 * i_13_, i_17_, (i_18_ & 0x7) * 8,
 					 is[i_21_], i_16_,

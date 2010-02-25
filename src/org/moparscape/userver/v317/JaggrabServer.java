@@ -33,7 +33,6 @@ public class JaggrabServer extends Server {
         super(defaultLocation, port, customLocation);
     }
 
-    // TODO: if no internet connection, use a default CRC so it may continue
     public void handleConnection(Socket s) {
         try {
             InputStream is = s.getInputStream();
@@ -98,12 +97,38 @@ public class JaggrabServer extends Server {
         URLConnection url = getHttpURLConnection(jagPath + file);
         // if url is null, custom and default cannot be reached, return
         if (url == null) {
+            // unless we want the CRC and may not be connected to the internet
+            // so we server it up if it is that which we are requesting
+            if (file.equals("crc-317")) {
+                System.out.println("UpdateServer: CRC does not exist on server, serving generic one.");
+                
+                byte[] crc = new byte[]{0, 0, 0, 0, -107, 9, -20, -27, 45, -32, 105, 81, -7, 104, -39,
+                                        107, -28, -60, -76, -52, -73, -79, 92, -7, 105, 102, 28,
+                                       -102, -20, -93, 86, 90, 61, 51, 96, 30, -16, 30, 75, -30};
+                out.write(crc);
+                out.flush();
+            }
             out.close();
             return;
         }
 
         InputStream in = url.getInputStream();
 
+/*      // this is a crude way to output the crc byte array, leaving it here in case its needed it later
+        if (file.startsWith("crc")) {
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            byte[] buffer = new byte[1024];
+            int len;
+            while ((len = in.read(buffer)) >= 0)
+                baos.write(buffer, 0, len);
+            baos.flush();
+            in.close();
+            out.close();
+            for(byte b : baos.toByteArray())
+                System.out.print(b+", ");
+            System.exit(0);
+        }
+*/
         byte[] buffer = new byte[1024];
         int len;
         while ((len = in.read(buffer)) >= 0)

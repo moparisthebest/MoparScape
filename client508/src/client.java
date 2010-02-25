@@ -107,11 +107,17 @@ public class client extends Applet_Sub1 implements org.moparscape.ClientInterfac
         int w = image.getWidth(null);
         int h = image.getHeight(null);
         BufferedImage bi = new BufferedImage(956, 503, BufferedImage.TYPE_INT_ARGB);
+        int onEachSide = (956-766)/2;
+        bi.getGraphics().drawImage(image,
+                onEachSide, 0, 956-onEachSide, 503,
+                0, 0, 766, 503,
+                null);
+/*        // this kind of stretches the image, but might be needed with HD
         bi.getGraphics().drawImage(image,
                 0, 0, 956, 503,
                 0, 0, 766, 503,
                 null);
-        bgImage = new int[956 * 503];
+*/      bgImage = new int[956 * 503];
         PixelGrabber pixelgrabber = new PixelGrabber(bi, 0, 0, 956, 503, bgImage, 0, 956);
         try {
             pixelgrabber.grabPixels();
@@ -143,8 +149,8 @@ public class client extends Applet_Sub1 implements org.moparscape.ClientInterfac
 
     public void method29(int i) {
         anInt2373++;
-        if (Class75_Sub1_Sub1.aSignLink_4589 != null)
-            Class75_Sub1_Sub1.aSignLink_4589.method560(this.getClass(), 50);
+        if (Class75_Sub1_Sub1.signlink != null)
+            Class75_Sub1_Sub1.signlink.method560(this.getClass(), 50);
         if (Class14.aClass84_241 != null)
             Class14.aClass84_241.aBoolean1533 = false;
         Class14.aClass84_241 = null;
@@ -190,7 +196,7 @@ public class client extends Applet_Sub1 implements org.moparscape.ClientInterfac
     public static void method34(byte i) {
         anInt2371++;
         int i_2_ = -36 % ((i - -7) / 60);
-        if (RuntimeException_Sub1.anInt2231 == 30)
+        if (GameException.anInt2231 == 30)
             Class17.method296(25, (byte) -81);
     }
 
@@ -301,7 +307,7 @@ public class client extends Applet_Sub1 implements org.moparscape.ClientInterfac
                     -126);
             Class54.aClass68_Sub28_Sub1_1028 = new Class68_Sub28_Sub1();
             Class54.aClass68_Sub28_Sub1_1028.method1238(9, 128, i ^ 0x5e);
-            Class68_Sub13_Sub36.aClass35_4035 = Class55.method1717(Class75_Sub1_Sub1.aSignLink_4589,
+            Class68_Sub13_Sub36.aClass35_4035 = Class55.method1717(Class75_Sub1_Sub1.signlink,
                     (byte) 104, Class86.aCanvas1585, 22050,
                     0);
             Class68_Sub13_Sub36.aClass35_4035.method425(false, Class54.aClass68_Sub28_Sub1_1028);
@@ -309,7 +315,7 @@ public class client extends Applet_Sub1 implements org.moparscape.ClientInterfac
                     Class78.aClass21_Sub1_1388, false,
                     Class28.aClass21_Sub1_529,
                     Class68_Sub20_Sub4.aClass21_Sub1_4217);
-            Animable.aClass35_66 = Class55.method1717(Class75_Sub1_Sub1.aSignLink_4589,
+            Animable.aClass35_66 = Class55.method1717(Class75_Sub1_Sub1.signlink,
                     (byte) 104, Class86.aCanvas1585, 2048,
                     1);
             Class80.aClass68_Sub28_Sub4_1418 = new Class68_Sub28_Sub4();
@@ -481,7 +487,7 @@ public class client extends Applet_Sub1 implements org.moparscape.ClientInterfac
                 method29(-56);
             if ((Class107.anInt1815 ^ 0xffffffff) == -111) {
                 Class14.aClass84_241 = new Class84();
-                Class75_Sub1_Sub1.aSignLink_4589.method558((byte) -61, 10, Class14.aClass84_241);
+                Class75_Sub1_Sub1.signlink.method558((byte) -61, 10, Class14.aClass84_241);
                 Class107.anInt1815 = 120;
                 Class68_Sub29.aRSString_3235 = Class67.aRSString_1207;
                 Class68_Sub13_Sub28.anInt3917 = 75;
@@ -695,7 +701,7 @@ public class client extends Applet_Sub1 implements org.moparscape.ClientInterfac
             anInt2366++;
             boolean bool = Class44.method488(-127);
             if (!bool)
-                method42(0);
+                doUpdateServer(0);
         }
     }
 
@@ -708,7 +714,7 @@ public class client extends Applet_Sub1 implements org.moparscape.ClientInterfac
 
     public void method33(int i) {
         anInt2381++;
-        if (i == 2 && RuntimeException_Sub1.anInt2231 != 1000) {
+        if (i == 2 && GameException.anInt2231 != 1000) {
             Class68_Sub3.anInt2812++;
             if ((Class68_Sub3.anInt2812 % 1000 ^ 0xffffffff) == -2) {
                 GregorianCalendar gregoriancalendar = new GregorianCalendar();
@@ -725,19 +731,19 @@ public class client extends Applet_Sub1 implements org.moparscape.ClientInterfac
                 int i_21_ = RSString.aClass97_2261.method1557(false);
                 Class68_Sub13_Sub30.anInt3948 = i_21_;
             }
-            if ((RuntimeException_Sub1.anInt2231 ^ 0xffffffff) != -1) {
-                if (RuntimeException_Sub1.anInt2231 == 5) {
+            if ((GameException.anInt2231 ^ 0xffffffff) != -1) {
+                if (GameException.anInt2231 == 5) {
                     method35((byte) 68);
                     Class20.method327((byte) 50);
-                } else if (((RuntimeException_Sub1.anInt2231 ^ 0xffffffff) == -26) || ((RuntimeException_Sub1.anInt2231 ^ 0xffffffff) == -29))
+                } else if (((GameException.anInt2231 ^ 0xffffffff) == -26) || ((GameException.anInt2231 ^ 0xffffffff) == -29))
                     GameSocket.method598(94);
             } else {
                 method35((byte) 68);
                 Class20.method327((byte) 104);
             }
-            if ((RuntimeException_Sub1.anInt2231 ^ 0xffffffff) != -11)
-                if (RuntimeException_Sub1.anInt2231 != 30) {
-                    if (RuntimeException_Sub1.anInt2231 == 40) {
+            if ((GameException.anInt2231 ^ 0xffffffff) != -11)
+                if (GameException.anInt2231 != 30) {
+                    if (GameException.anInt2231 == 40) {
                         Login.login(false);
                         if ((Class68_Sub20_Sub7.anInt4257 ^ 0xffffffff) != 2)
                             if ((Class68_Sub20_Sub7.anInt4257 ^ 0xffffffff) != -16) {
@@ -764,17 +770,112 @@ public class client extends Applet_Sub1 implements org.moparscape.ClientInterfac
         return class45.anInt763;
     }
 
-    public void method42(int i) {
+     private void doUpdateServernew(int i)
+    {
+        anInt2385++;
+        if (i == 0)
+        {
+            if (Class75_Sub1_Sub1.anInt4585 >= 4)
+            {
+                this.error_fatal(i + 690, "js5crc");
+                GameException.anInt2233 = 1000;
+            } else
+            {
+                if (Class68_Sub10.anInt2911 >= 4)
+                {
+                    if (GameException.anInt2233 == 0 || GameException.anInt2233 == 5)
+                    {
+                        this.error_fatal(690, "js5io");
+                        GameException.anInt2233 = 1000;
+                        return;
+                    }
+                    Class13_Sub2.anInt2654 = 3000;
+                    Class68_Sub10.anInt2911 = 3;
+                }
+                if (Class13_Sub2.anInt2654-- <= 0)
+                {
+                    do
+                    {
+                        try
+                        {
+                            if (Class84.anInt1542 == 0)
+                            {
+                                //System.out.println(Class103.port);
+                                Class103.port = client.ondemandPort;
+                                Class68_Sub9.serverAddress = "localhost";
+                                Class68_Sub13_Sub9.unknownSocket = (Class75_Sub1_Sub1.signlink.newJagSocket(Class68_Sub9.serverAddress, (byte) 115, Class103.port));
+                                Class84.anInt1542++;
+                            }
+                            if (Class84.anInt1542 == 1)
+                            {
+                                if (Class68_Sub13_Sub9.unknownSocket.anInt555 == 2)
+                                {
+                                    resetUpdateServer(-5, -1);
+                                    break;
+                                }
+                                if (Class68_Sub13_Sub9.unknownSocket.anInt555 == 1)
+                                    Class84.anInt1542++;
+                            }
+                            if (Class84.anInt1542 == 2)
+                            {
+                                Class109.updateServer = new GameSocket((Socket) (Class68_Sub13_Sub9.unknownSocket.playerDefSocket), (Class75_Sub1_Sub1.signlink));
+                                Stream class68_sub14 = new Stream(5);
+                                class68_sub14.writeByte(15);
+                                class68_sub14.writeDWord(508);
+                                Class109.updateServer.queueBytes(5, (((Stream) class68_sub14).buffer));
+                                Class84.anInt1542++;
+                                Class1_Sub6.aLong2585 = Class36.method438(17161);
+                            }
+                            if (Class84.anInt1542 == 3)
+                            {
+                                if (GameException.anInt2233 != 0 && GameException.anInt2233 != 5 && Class109.updateServer.available() <= 0)
+                                {
+                                    if ((Class36.method438(i + 17161) - Class1_Sub6.aLong2585) > 30000L)
+                                    {
+                                        resetUpdateServer(i - 5, -2);
+                                        break;
+                                    }
+                                } else
+                                {
+                                    int i_22_ = Class109.updateServer.read();
+                                    if (i_22_ != 0)
+                                    {
+                                        resetUpdateServer(-5, i_22_);
+                                        break;
+                                    }
+                                    Class84.anInt1542++;
+                                }
+                            }
+                            if (Class84.anInt1542 != 4)
+                                break;
+                            boolean bool = (GameException.anInt2233 == 5 || GameException.anInt2233 == 10 || GameException.anInt2233 == 28);
+                            Class113.doUpdateServer(Class109.updateServer, false, !bool);
+                            Class127.anInt2209 = 0;
+                            Class68_Sub13_Sub9.unknownSocket = null;
+                            Class84.anInt1542 = 0;
+                            Class109.updateServer = null;
+                        } catch (java.io.IOException ioexception)
+                        {
+                            resetUpdateServer(-5, -3);
+                        }
+                        break;
+                    } while (false);
+                }
+            }
+        }
+    }
+
+    public void doUpdateServer(int i) {
         anInt2383++;
         if (i == 0)
             if (Class75_Sub1_Sub1.anInt4585 >= 4) {
-                this.error(i + 690, "js5crc");
-                RuntimeException_Sub1.anInt2231 = 1000;
+                this.error_fatal(i + 690, "js5crc");
+                GameException.anInt2231 = 1000;
             } else {
                 if ((Class68_Sub10.anInt2909 ^ 0xffffffff) <= -5) {
-                    if (RuntimeException_Sub1.anInt2231 == 0 || RuntimeException_Sub1.anInt2231 == 5) {
-                        this.error(690, "js5io");
-                        RuntimeException_Sub1.anInt2231 = 1000;
+                    if (GameException.anInt2231 == 0 || GameException.anInt2231 == 5) {
+                        this.error_fatal(690, "js5io");
+                        GameException.anInt2231 = 1000;
                         return;
                     }
                     Class13_Sub2.anInt2652 = 3000;
@@ -785,13 +886,16 @@ public class client extends Applet_Sub1 implements org.moparscape.ClientInterfac
                         try {
                             if ((Class84.anInt1540 ^ 0xffffffff) == -1) {
                                 // xxx believe this to be update server
-                                // Class68_Sub13_Sub9.unknownSocket = (Class75_Sub1_Sub1.aSignLink_4589.newJagSocket(Class68_Sub9.serverAddress, (byte) 115, Class103.port));
+                                Class103.port = client.ondemandPort;
+                                Class68_Sub9.serverAddress = "localhost";
+                                Class68_Sub13_Sub9.unknownSocket = (Class75_Sub1_Sub1.signlink.newJagSocket(Class68_Sub9.serverAddress, (byte) 115, Class103.port));
                                 //System.out.println("update server? port:"+Class103.port);
-                                Class68_Sub13_Sub9.unknownSocket = (Class75_Sub1_Sub1.aSignLink_4589.newJagSocket("localhost", (byte) 115, client.jaggrabPort));
+                                //Class68_Sub13_Sub9.unknownSocket = (Class75_Sub1_Sub1.signlink.newJagSocket("localhost", (byte) 115, client.jaggrabPort));
                                 Class84.anInt1540++;
                             }
                             if (Class84.anInt1540 == 1) {
                                 if (Class68_Sub13_Sub9.unknownSocket.anInt555 == 2) {
+                 //                   System.out.println("WARNING: this should not execute");
                                     resetUpdateServer(-5, -1);
                                     break;
                                 }
@@ -800,7 +904,8 @@ public class client extends Applet_Sub1 implements org.moparscape.ClientInterfac
                             }
                             if ((Class84.anInt1540 ^ 0xffffffff) == -3) {
                                 // xxx this is update server
-                                Class109.updateServer = new GameSocket(new Socket("localhost", client.ondemandPort), (Class75_Sub1_Sub1.aSignLink_4589));
+                                //Class109.updateServer = new GameSocket(new Socket("localhost", client.ondemandPort), (Class75_Sub1_Sub1.signlink));
+                                Class109.updateServer = new GameSocket((Socket) (Class68_Sub13_Sub9.unknownSocket.playerDefSocket), (Class75_Sub1_Sub1.signlink));
                                 Stream class68_sub14 = new Stream(5);
                                 class68_sub14.writeByte(15);
                                 class68_sub14.writeDWord(508);
@@ -809,32 +914,33 @@ public class client extends Applet_Sub1 implements org.moparscape.ClientInterfac
                                 Class1_Sub6.aLong2585 = Class36.method438(17161);
                             }
                             if (Class84.anInt1540 == 3)
-                                if ((RuntimeException_Sub1.anInt2231 ^ 0xffffffff) != -1 && RuntimeException_Sub1.anInt2231 != 5 && (Class109.updateServer.available() ^ 0xffffffff) >= -1) {
+                                if ((GameException.anInt2231 ^ 0xffffffff) != -1 && GameException.anInt2231 != 5 && (Class109.updateServer.available() ^ 0xffffffff) >= -1) {
                                     if (((Class36.method438(i + 17161) + -Class1_Sub6.aLong2585) ^ 0xffffffffffffffffL) < -30001L) {
-                                        System.out.println("WARNING: this should not execute");
+                       //                 System.out.println("WARNING: this should not execute");
                                         resetUpdateServer(i + -5, -2);
                                         break;
                                     }
                                 } else {
                                     int i_22_ = Class109.updateServer.read();
                                     if ((i_22_ ^ 0xffffffff) != -1) {
-                                        //System.out.println("WARNING: this should not execute");
+                 //                       System.out.println("WARNING: this should not execute");
                                         resetUpdateServer(-5, i_22_);
                                         break;
                                     }
                                     Class84.anInt1540++;
                                 }
+                            // the following is needed to connect:
                             if (Class84.anInt1540 != 4)
                                 break;
-                            boolean bool = (RuntimeException_Sub1.anInt2231 == 5 || (RuntimeException_Sub1.anInt2231 ^ 0xffffffff) == -11 || (RuntimeException_Sub1.anInt2231 ^ 0xffffffff) == -29);
-                            Class113.doUpdateServer(Class109.updateServer, false,
-                                    !bool);
+                            boolean bool = (GameException.anInt2231 == 5 || (GameException.anInt2231 ^ 0xffffffff) == -11 || (GameException.anInt2231 ^ 0xffffffff) == -29);
+                            Class113.doUpdateServer(Class109.updateServer, false, !bool);
                             Class127.anInt2209 = 0;
                             Class68_Sub13_Sub9.unknownSocket = null;
                             Class84.anInt1540 = 0;
                             Class109.updateServer = null;
                         } catch (java.io.IOException ioexception) {
-                            ioexception.printStackTrace();
+                 //           System.out.println("WARNING: this should not execute");
+                 //           ioexception.printStackTrace();
                             resetUpdateServer(-5, -3);
                             break;
                         }
@@ -1350,7 +1456,7 @@ public class client extends Applet_Sub1 implements org.moparscape.ClientInterfac
         Class37.method440(-121);
         Class108.method1656(29889);
         Class94.method1544((byte) -52);
-        RuntimeException_Sub1.method1794(64);
+        GameException.method1794(64);
         Class63.method621((byte) 126);
         Class11.method230((byte) 102);
         Class12.method237(-5);
@@ -1543,7 +1649,7 @@ public class client extends Applet_Sub1 implements org.moparscape.ClientInterfac
     }
 
     public void method27(int i) {
-        Class68_Sub13_Sub26.method831(Class75_Sub1_Sub1.aSignLink_4589,
+        Class68_Sub13_Sub26.method831(Class75_Sub1_Sub1.signlink,
                 (byte) -104, Class75_Sub2.safeMode);
         Class68_Sub15.anInt3013 = (i != (Class75_Sub3.anInt3328 ^ 0xffffffff)
                 ? Class106.anInt1799 + 50000 : 443);
@@ -1571,22 +1677,22 @@ public class client extends Applet_Sub1 implements org.moparscape.ClientInterfac
             RSString.aClass97_2261.method1562(Class86.aCanvas1585, true);
         Class112.anInt1900 = SignLink.anInt1054;
         try {
-            if (Class75_Sub1_Sub1.aSignLink_4589.aClass2_1045 != null) {
-                Class68_Sub20_Sub10.aClass124_4318 = new Class124((Class75_Sub1_Sub1.aSignLink_4589.aClass2_1045),
+            if (Class75_Sub1_Sub1.signlink.aClass2_1045 != null) {
+                Class68_Sub20_Sub10.aClass124_4318 = new Class124((Class75_Sub1_Sub1.signlink.aClass2_1045),
                         5200, 0);
                 for (int i_66_ = 0; (i_66_ ^ 0xffffffff) > -28; i_66_++)
-                    Class26.aClass124Array520[i_66_] = new Class124((Class75_Sub1_Sub1.aSignLink_4589.aClass2Array1039[i_66_]),
+                    Class26.aClass124Array520[i_66_] = new Class124((Class75_Sub1_Sub1.signlink.aClass2Array1039[i_66_]),
                             6000, 0);
-                Class75_Sub2.aClass124_3311 = new Class124((Class75_Sub1_Sub1.aSignLink_4589.aClass2_1057),
+                Class75_Sub2.aClass124_3311 = new Class124((Class75_Sub1_Sub1.signlink.aClass2_1057),
                         6000, 0);
                 Class43.aUnknown_734 = new Unknown(255, Class68_Sub20_Sub10.aClass124_4318,
                         Class75_Sub2.aClass124_3311, 500000);
-                Class68_Sub13_Sub4.aClass124_3486 = new Class124((Class75_Sub1_Sub1.aSignLink_4589.aClass2_1041),
+                Class68_Sub13_Sub4.aClass124_3486 = new Class124((Class75_Sub1_Sub1.signlink.aClass2_1041),
                         24, 0);
-                Class75_Sub1_Sub1.aSignLink_4589.aClass2_1041 = null;
-                Class75_Sub1_Sub1.aSignLink_4589.aClass2_1057 = null;
-                Class75_Sub1_Sub1.aSignLink_4589.aClass2_1045 = null;
-                Class75_Sub1_Sub1.aSignLink_4589.aClass2Array1039 = null;
+                Class75_Sub1_Sub1.signlink.aClass2_1041 = null;
+                Class75_Sub1_Sub1.signlink.aClass2_1057 = null;
+                Class75_Sub1_Sub1.signlink.aClass2_1045 = null;
+                Class75_Sub1_Sub1.signlink.aClass2Array1039 = null;
             }
         } catch (java.io.IOException ioexception) {
             Class68_Sub20_Sub10.aClass124_4318 = null;
@@ -1614,19 +1720,19 @@ public class client extends Applet_Sub1 implements org.moparscape.ClientInterfac
         if ((Class127.anInt2209 ^ 0xffffffff) > -3 || (i_67_ ^ 0xffffffff) != -8 && i_67_ != 9)
             if ((Class127.anInt2209 ^ 0xffffffff) > -3 || i_67_ != 6) {
                 if ((Class127.anInt2209 ^ 0xffffffff) <= -5)
-                    if (RuntimeException_Sub1.anInt2231 != 0 && ((RuntimeException_Sub1.anInt2231 ^ 0xffffffff) != -6))
+                    if (GameException.anInt2231 != 0 && ((GameException.anInt2231 ^ 0xffffffff) != -6))
                         Class13_Sub2.anInt2652 = 3000;
                     else {
-                        this.error(690, "js5connect");
-                        RuntimeException_Sub1.anInt2231 = 1000;
+                        this.error_fatal(690, "js5connect");
+                        GameException.anInt2231 = 1000;
                     }
             } else {
-                this.error(690, "js5connect_outofdate");
-                RuntimeException_Sub1.anInt2231 = 1000;
+                this.error_fatal(690, "js5connect_outofdate");
+                GameException.anInt2231 = 1000;
             }
-        else if ((RuntimeException_Sub1.anInt2231 ^ 0xffffffff) == -1 || (RuntimeException_Sub1.anInt2231 ^ 0xffffffff) == -6) {
-            this.error(i ^ ~0x2b6, "js5connect_full");
-            RuntimeException_Sub1.anInt2231 = 1000;
+        else if ((GameException.anInt2231 ^ 0xffffffff) == -1 || (GameException.anInt2231 ^ 0xffffffff) == -6) {
+            this.error_fatal(i ^ ~0x2b6, "js5connect_full");
+            GameException.anInt2231 = 1000;
         } else
             Class13_Sub2.anInt2652 = 3000;
     }
@@ -1643,20 +1749,20 @@ public class client extends Applet_Sub1 implements org.moparscape.ClientInterfac
 
     public void method15(byte i) {
         anInt2374++;
-        if (RuntimeException_Sub1.anInt2231 != 1000) {
+        if (GameException.anInt2231 != 1000) {
             boolean bool = Class68_Sub13_Sub34.method872(0);
             if (bool && Class123.aBoolean2127 && Class68_Sub13_Sub36.aClass35_4035 != null)
                 Class68_Sub13_Sub36.aClass35_4035.method428((byte) -100);
             if (i >= -56)
                 init();
             boolean bool_68_ = false;
-            if ((RuntimeException_Sub1.anInt2231 ^ 0xffffffff) == -31 || RuntimeException_Sub1.anInt2231 == 10)
+            if ((GameException.anInt2231 ^ 0xffffffff) == -31 || GameException.anInt2231 == 10)
                 if (!Class68_Sub13_Sub21.aBoolean3796) {
                     if (Class36.aLong644 != 0L && ((Class36.method438(17161) ^ 0xffffffffffffffffL) < (Class36.aLong644 ^ 0xffffffffffffffffL)))
                         Class44.method485(-1);
                 } else
                     Class44.method485(-1);
-            if ((ISAACRandomGen.aLong1480 ^ 0xffffffffffffffffL) != -1L && ((Class36.method438(17161) ^ 0xffffffffffffffffL) < (ISAACRandomGen.aLong1480 ^ 0xffffffffffffffffL)) && PlayerDefinition.connection != null && (RuntimeException_Sub1.anInt2231 == 30 || RuntimeException_Sub1.anInt2231 == 25))
+            if ((ISAACRandomGen.aLong1480 ^ 0xffffffffffffffffL) != -1L && ((Class36.method438(17161) ^ 0xffffffffffffffffL) < (ISAACRandomGen.aLong1480 ^ 0xffffffffffffffffL)) && PlayerDefinition.connection != null && (GameException.anInt2231 == 30 || GameException.anInt2231 == 25))
                 Class68_Sub20_Sub6.method1071((byte) -118);
             if (Class103.aBoolean1762) {
                 bool_68_ = true;
@@ -1664,16 +1770,16 @@ public class client extends Applet_Sub1 implements org.moparscape.ClientInterfac
             }
             if (bool_68_)
                 Class72.method1348(0);
-            if (RuntimeException_Sub1.anInt2231 == 0)
+            if (GameException.anInt2231 == 0)
                 Class68_Sub13_Sub16.method779(Class68_Sub13_Sub28.anInt3917,
                         null,
                         Class68_Sub29.aRSString_3235,
                         bool_68_, 23189);
-            else if (RuntimeException_Sub1.anInt2231 != 5)
-                if ((RuntimeException_Sub1.anInt2231 ^ 0xffffffff) != -11)
-                    if ((RuntimeException_Sub1.anInt2231 ^ 0xffffffff) != -26 && ((RuntimeException_Sub1.anInt2231 ^ 0xffffffff) != -29))
-                        if (RuntimeException_Sub1.anInt2231 != 30) {
-                            if ((RuntimeException_Sub1.anInt2231 ^ 0xffffffff) == -41)
+            else if (GameException.anInt2231 != 5)
+                if ((GameException.anInt2231 ^ 0xffffffff) != -11)
+                    if ((GameException.anInt2231 ^ 0xffffffff) != -26 && ((GameException.anInt2231 ^ 0xffffffff) != -29))
+                        if (GameException.anInt2231 != 30) {
+                            if ((GameException.anInt2231 ^ 0xffffffff) == -41)
                                 Class74.method1381(false,
                                         (Class68_Sub20_Sub13_Sub2.method1166(2, (new RSString[]{Class72.aRSString_1306,
                                                 Class118.aRSString_2081,
@@ -1714,7 +1820,7 @@ public class client extends Applet_Sub1 implements org.moparscape.ClientInterfac
             else
                 Class68_Sub7.method665((Class68_Sub13_Sub4.aClass68_Sub20_Sub1_3511),
                         -27931);
-            if ((RuntimeException_Sub1.anInt2231 == 30 || (RuntimeException_Sub1.anInt2231 ^ 0xffffffff) == -11) && (Class68_Sub20_Sub5.anInt4229 ^ 0xffffffff) == -1 && !bool_68_)
+            if ((GameException.anInt2231 == 30 || (GameException.anInt2231 ^ 0xffffffff) == -11) && (Class68_Sub20_Sub5.anInt4229 ^ 0xffffffff) == -1 && !bool_68_)
                 try {
                     Graphics graphics = Class86.aCanvas1585.getGraphics();
                     for (int i_71_ = 0; ((Class56.anInt1061 ^ 0xffffffff) < (i_71_ ^ 0xffffffff)); i_71_++)
@@ -1728,7 +1834,7 @@ public class client extends Applet_Sub1 implements org.moparscape.ClientInterfac
                 } catch (Exception exception) {
                     Class86.aCanvas1585.repaint();
                 }
-            else if (RuntimeException_Sub1.anInt2231 != 0)
+            else if (GameException.anInt2231 != 0)
                 try {
                     Graphics graphics = Class86.aCanvas1585.getGraphics();
                     Class1_Sub5.aClass72_2496.method1350(73, 0, 0, graphics);

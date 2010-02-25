@@ -46,7 +46,7 @@ public class Class68_Sub20_Sub11 extends Class68_Sub20
 	anInt4329++;
 	synchronized (Class63.anObject1169) {
 	    if (Class9.anInt169 == 0)
-		Class75_Sub1_Sub1.aSignLink_4589.method558((byte) -58, 5,
+		Class75_Sub1_Sub1.signlink.method558((byte) -58, 5,
 							  new Class87());
 	    Class9.anInt169 = i;
 	}

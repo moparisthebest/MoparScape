@@ -114,7 +114,7 @@ public abstract class Server extends Thread {
     public void handleException(Exception e) {
         if (MainPanel.debug()) {
             String myName = this.getClass().getName();
-            if(!myName.equals("org.moparscape.userver.v508.OndemandServer443"))
+            if(myName.equals("org.moparscape.userver.v508.OndemandServer443"))
                 return;
             System.err.print("Server error: ");
             e.printStackTrace();

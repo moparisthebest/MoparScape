@@ -40,7 +40,7 @@ public class OndemandServer443 extends Server {
     }
 
     public void handleConnection(Socket s) throws IOException {
-        //System.out.println("ods: new connection to update server");
+        System.out.println("ods: new connection to 443 server");
 
         // this is messed up, so we will read a byte, it will throw an exception, andf we will start over.
         s.getInputStream().skip(4);

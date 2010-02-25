@@ -2222,7 +2222,7 @@ public class Class68_Sub28_Sub1 extends Class68_Sub28 {
                                                                                                             int i_225_ = Class68_Sub13.anIntArray2924[--i_85_];
                                                                                                             RSString password = Class68_Sub15.stringArray[1 + i_89_];
                                                                                                             RSString username = Class68_Sub15.stringArray[i_89_];
-                                                                                                            if (RuntimeException_Sub1.anInt2231 == 10) {
+                                                                                                            if (GameException.anInt2231 == 10) {
                                                                                                                 if (Class32.anInt574 == 0 && Class68_Sub13_Sub27.anInt3914 == 0) {
                                                                                                                     Class16.method283(password, i ^ 0x4a, username, i_225_);
                                                                                                                 }
@@ -2241,7 +2241,7 @@ public class Class68_Sub28_Sub1 extends Class68_Sub28 {
                                                                                                         }
                                                                                                         if ((i_87_ ^ 0xffffffff) == -5604) {
                                                                                                             i_85_ -= 4;
-                                                                                                            if ((RuntimeException_Sub1.anInt2231 ^ 0xffffffff) == -11) {
+                                                                                                            if ((GameException.anInt2231 ^ 0xffffffff) == -11) {
                                                                                                                 if ((Class32.anInt574 ^ 0xffffffff) == -1 && (Class68_Sub13_Sub27.anInt3914 ^ 0xffffffff) == -1) {
                                                                                                                     Class97.method1560(Class68_Sub13.anIntArray2924[i_85_], Class68_Sub13.anIntArray2924[1 + i_85_], true, Class68_Sub13.anIntArray2924[2 + i_85_], Class68_Sub13.anIntArray2924[3 + i_85_]);
                                                                                                                 }
@@ -2250,7 +2250,7 @@ public class Class68_Sub28_Sub1 extends Class68_Sub28 {
                                                                                                         }
                                                                                                         if (i_87_ == 5604) {
                                                                                                             i_89_--;
-                                                                                                            if (RuntimeException_Sub1.anInt2231 == 10) {
+                                                                                                            if (GameException.anInt2231 == 10) {
                                                                                                                 if ((Class32.anInt574 ^ 0xffffffff) == -1 && (Class68_Sub13_Sub27.anInt3914 ^ 0xffffffff) == -1) {
                                                                                                                     ISAACRandomGen.method1456(-3, Class68_Sub15.stringArray[i_89_].toLong(10908));
                                                                                                                 }
@@ -2260,7 +2260,7 @@ public class Class68_Sub28_Sub1 extends Class68_Sub28 {
                                                                                                         if (i_87_ == 5605) {
                                                                                                             i_89_ -= 2;
                                                                                                             i_85_ -= 4;
-                                                                                                            if (RuntimeException_Sub1.anInt2231 == 10) {
+                                                                                                            if (GameException.anInt2231 == 10) {
                                                                                                                 if ((Class32.anInt574 ^ 0xffffffff) == -1 && (Class68_Sub13_Sub27.anInt3914 ^ 0xffffffff) == -1) {
                                                                                                                     Class74.method1384(Class68_Sub15.stringArray[i_89_].toLong(i ^ 0x2ae0), Class68_Sub13.anIntArray2924[i_85_], i ^ 0x28, Class68_Sub13.anIntArray2924[1 + i_85_], Class68_Sub15.stringArray[i_89_ + 1], Class68_Sub13.anIntArray2924[3 + i_85_], Class68_Sub13.anIntArray2924[i_85_ + 2]);
                                                                                                                 }
@@ -2557,7 +2557,7 @@ public class Class68_Sub28_Sub1 extends Class68_Sub28 {
                                                                                                                 Class62.method614(0.6F);
                                                                                                             }
                                                                                                             Class68_Sub19.method1001((byte) -67);
-                                                                                                            Class68_Sub20_Sub10.method1115(true, Class75_Sub1_Sub1.aSignLink_4589);
+                                                                                                            Class68_Sub20_Sub10.method1115(true, Class75_Sub1_Sub1.signlink);
                                                                                                             Class108.aBoolean1830 = false;
                                                                                                             break;
                                                                                                         }
@@ -2566,52 +2566,52 @@ public class Class68_Sub28_Sub1 extends Class68_Sub28 {
                                                                                                             Class59.method585((byte) 51);
                                                                                                             client.method34((byte) -68);
                                                                                                             Class107.method1654(-13401);
-                                                                                                            Class68_Sub20_Sub10.method1115(true, Class75_Sub1_Sub1.aSignLink_4589);
+                                                                                                            Class68_Sub20_Sub10.method1115(true, Class75_Sub1_Sub1.signlink);
                                                                                                             Class108.aBoolean1830 = false;
                                                                                                             break;
                                                                                                         }
                                                                                                         if (i_87_ == 6003) {
                                                                                                             Class68_Sub20_Sub2.aBoolean4188 = Class68_Sub13.anIntArray2924[--i_85_] == 1;
                                                                                                             Class107.method1654(i + -13525);
-                                                                                                            Class68_Sub20_Sub10.method1115(true, Class75_Sub1_Sub1.aSignLink_4589);
+                                                                                                            Class68_Sub20_Sub10.method1115(true, Class75_Sub1_Sub1.signlink);
                                                                                                             Class108.aBoolean1830 = false;
                                                                                                             break;
                                                                                                         }
                                                                                                         if (i_87_ == 6005) {
                                                                                                             ISAACRandomGen.aBoolean1487 = Class68_Sub13.anIntArray2924[--i_85_] == 1;
                                                                                                             client.method34((byte) -120);
-                                                                                                            Class68_Sub20_Sub10.method1115(true, Class75_Sub1_Sub1.aSignLink_4589);
+                                                                                                            Class68_Sub20_Sub10.method1115(true, Class75_Sub1_Sub1.signlink);
                                                                                                             Class108.aBoolean1830 = false;
                                                                                                             break;
                                                                                                         }
                                                                                                         if (i_87_ == 6006) {
                                                                                                             Class1_Sub2.aBoolean2432 = Class68_Sub13.anIntArray2924[--i_85_] == 1;
                                                                                                             ((Class90) Class62.anInterface4_1159).method1518((byte) -97, !Class1_Sub2.aBoolean2432);
-                                                                                                            Class68_Sub20_Sub10.method1115(true, Class75_Sub1_Sub1.aSignLink_4589);
+                                                                                                            Class68_Sub20_Sub10.method1115(true, Class75_Sub1_Sub1.signlink);
                                                                                                             Class108.aBoolean1830 = false;
                                                                                                             break;
                                                                                                         }
                                                                                                         if (i_87_ == 6007) {
                                                                                                             RSString.aBoolean2262 = Class68_Sub13.anIntArray2924[--i_85_] == 1;
-                                                                                                            Class68_Sub20_Sub10.method1115(true, Class75_Sub1_Sub1.aSignLink_4589);
+                                                                                                            Class68_Sub20_Sub10.method1115(true, Class75_Sub1_Sub1.signlink);
                                                                                                             Class108.aBoolean1830 = false;
                                                                                                             break;
                                                                                                         }
                                                                                                         if (i_87_ == 6008) {
                                                                                                             Class68_Sub13_Sub2.aBoolean3460 = Class68_Sub13.anIntArray2924[--i_85_] == 1;
-                                                                                                            Class68_Sub20_Sub10.method1115(true, Class75_Sub1_Sub1.aSignLink_4589);
+                                                                                                            Class68_Sub20_Sub10.method1115(true, Class75_Sub1_Sub1.signlink);
                                                                                                             Class108.aBoolean1830 = false;
                                                                                                             break;
                                                                                                         }
                                                                                                         if (i_87_ == 6009) {
                                                                                                             Class68_Sub22.aBoolean3149 = (Class68_Sub13.anIntArray2924[--i_85_] ^ 0xffffffff) == -2;
-                                                                                                            Class68_Sub20_Sub10.method1115(true, Class75_Sub1_Sub1.aSignLink_4589);
+                                                                                                            Class68_Sub20_Sub10.method1115(true, Class75_Sub1_Sub1.signlink);
                                                                                                             Class108.aBoolean1830 = false;
                                                                                                             break;
                                                                                                         }
                                                                                                         if ((i_87_ ^ 0xffffffff) == -6011) {
                                                                                                             Class68_Sub20_Sub13_Sub2.aBoolean4629 = (Class68_Sub13.anIntArray2924[--i_85_] ^ 0xffffffff) == -2;
-                                                                                                            Class68_Sub20_Sub10.method1115(true, Class75_Sub1_Sub1.aSignLink_4589);
+                                                                                                            Class68_Sub20_Sub10.method1115(true, Class75_Sub1_Sub1.signlink);
                                                                                                             Class108.aBoolean1830 = false;
                                                                                                             break;
                                                                                                         }
@@ -2621,7 +2621,7 @@ public class Class68_Sub28_Sub1 extends Class68_Sub28 {
                                                                                                                 i_235_ = 0;
                                                                                                             }
                                                                                                             Class68_Sub13_Sub26.anInt3876 = i_235_;
-                                                                                                            Class68_Sub20_Sub10.method1115(true, Class75_Sub1_Sub1.aSignLink_4589);
+                                                                                                            Class68_Sub20_Sub10.method1115(true, Class75_Sub1_Sub1.signlink);
                                                                                                             Class108.aBoolean1830 = false;
                                                                                                             break;
                                                                                                         }
@@ -2640,19 +2640,19 @@ public class Class68_Sub28_Sub1 extends Class68_Sub28 {
                                                                                                                 Class62.method614(0.6F);
                                                                                                             }
                                                                                                             client.method34((byte) -103);
-                                                                                                            Class68_Sub20_Sub10.method1115(true, Class75_Sub1_Sub1.aSignLink_4589);
+                                                                                                            Class68_Sub20_Sub10.method1115(true, Class75_Sub1_Sub1.signlink);
                                                                                                             Class108.aBoolean1830 = false;
                                                                                                             break;
                                                                                                         }
                                                                                                         if (i_87_ == 6014) {
                                                                                                             Class68_Sub6.aBoolean2838 = (Class68_Sub13.anIntArray2924[--i_85_] ^ 0xffffffff) == -2;
-                                                                                                            Class68_Sub20_Sub10.method1115(true, Class75_Sub1_Sub1.aSignLink_4589);
+                                                                                                            Class68_Sub20_Sub10.method1115(true, Class75_Sub1_Sub1.signlink);
                                                                                                             Class108.aBoolean1830 = false;
                                                                                                             break;
                                                                                                         }
                                                                                                         if ((i_87_ ^ 0xffffffff) == -6016) {
                                                                                                             Class43.aBoolean741 = (Class68_Sub13.anIntArray2924[--i_85_] ^ 0xffffffff) == -2;
-                                                                                                            Class68_Sub20_Sub10.method1115(true, Class75_Sub1_Sub1.aSignLink_4589);
+                                                                                                            Class68_Sub20_Sub10.method1115(true, Class75_Sub1_Sub1.signlink);
                                                                                                             Class108.aBoolean1830 = false;
                                                                                                             break;
                                                                                                         }
@@ -2662,14 +2662,14 @@ public class Class68_Sub28_Sub1 extends Class68_Sub28 {
                                                                                                                 i_236_ = 0;
                                                                                                             }
                                                                                                             Class69.anInt1245 = i_236_;
-                                                                                                            Class68_Sub20_Sub10.method1115(true, Class75_Sub1_Sub1.aSignLink_4589);
+                                                                                                            Class68_Sub20_Sub10.method1115(true, Class75_Sub1_Sub1.signlink);
                                                                                                             Class108.aBoolean1830 = false;
                                                                                                             break;
                                                                                                         }
                                                                                                         if (i_87_ == 6017) {
                                                                                                             Class74.aBoolean1324 = (Class68_Sub13.anIntArray2924[--i_85_] ^ 0xffffffff) == -2;
                                                                                                             Class68_Sub17.method990((byte) 124);
-                                                                                                            Class68_Sub20_Sub10.method1115(true, Class75_Sub1_Sub1.aSignLink_4589);
+                                                                                                            Class68_Sub20_Sub10.method1115(true, Class75_Sub1_Sub1.signlink);
                                                                                                             Class108.aBoolean1830 = false;
                                                                                                             break;
                                                                                                         }
@@ -2682,7 +2682,7 @@ public class Class68_Sub28_Sub1 extends Class68_Sub28 {
                                                                                                                 i_237_ = 127;
                                                                                                             }
                                                                                                             Class106.anInt1801 = i_237_;
-                                                                                                            Class68_Sub20_Sub10.method1115(true, Class75_Sub1_Sub1.aSignLink_4589);
+                                                                                                            Class68_Sub20_Sub10.method1115(true, Class75_Sub1_Sub1.signlink);
                                                                                                             Class108.aBoolean1830 = false;
                                                                                                             break;
                                                                                                         }
@@ -2706,7 +2706,7 @@ public class Class68_Sub28_Sub1 extends Class68_Sub28 {
                                                                                                                 }
                                                                                                                 Class68_Sub13_Sub25.anInt3855 = i_238_;
                                                                                                             }
-                                                                                                            Class68_Sub20_Sub10.method1115(true, Class75_Sub1_Sub1.aSignLink_4589);
+                                                                                                            Class68_Sub20_Sub10.method1115(true, Class75_Sub1_Sub1.signlink);
                                                                                                             Class108.aBoolean1830 = false;
                                                                                                             break;
                                                                                                         }
@@ -2719,7 +2719,7 @@ public class Class68_Sub28_Sub1 extends Class68_Sub28 {
                                                                                                                 i_239_ = 127;
                                                                                                             }
                                                                                                             Class68_Sub20_Sub15.anInt4399 = i_239_;
-                                                                                                            Class68_Sub20_Sub10.method1115(true, Class75_Sub1_Sub1.aSignLink_4589);
+                                                                                                            Class68_Sub20_Sub10.method1115(true, Class75_Sub1_Sub1.signlink);
                                                                                                             Class108.aBoolean1830 = false;
                                                                                                             break;
                                                                                                         }
@@ -2730,7 +2730,7 @@ public class Class68_Sub28_Sub1 extends Class68_Sub28 {
                                                                                                         }
                                                                                                         if (i_87_ == 6022) {
                                                                                                             Class68_Sub13_Sub21.aBoolean3793 = (Class68_Sub13.anIntArray2924[--i_85_] ^ 0xffffffff) == -2;
-                                                                                                            Class68_Sub20_Sub10.method1115(true, Class75_Sub1_Sub1.aSignLink_4589);
+                                                                                                            Class68_Sub20_Sub10.method1115(true, Class75_Sub1_Sub1.signlink);
                                                                                                             Class11.method233(0, -97);
                                                                                                             break;
                                                                                                         }
@@ -2825,9 +2825,9 @@ public class Class68_Sub28_Sub1 extends Class68_Sub28 {
                                                                                                                 } else if (class100_245_.method1589(Class97.aRSString_1719, i + -96)) {
                                                                                                                     class100 = class100.method1615(Class97.aRSString_1719.method1590((byte) -108), true);
                                                                                                                     i_246_ = 8;
-                                                                                                                } else if (class100_245_.method1589(RuntimeException_Sub1.aRSString_2230, 109)) {
+                                                                                                                } else if (class100_245_.method1589(GameException.aRSString_2230, 109)) {
                                                                                                                     i_246_ = 9;
-                                                                                                                    class100 = class100.method1615(RuntimeException_Sub1.aRSString_2230.method1590((byte) -103), true);
+                                                                                                                    class100 = class100.method1615(GameException.aRSString_2230.method1590((byte) -103), true);
                                                                                                                 } else if (class100_245_.method1589(Class124.aRSString_2143, 42)) {
                                                                                                                     i_246_ = 10;
                                                                                                                     class100 = class100.method1615(Class124.aRSString_2143.method1590((byte) -96), true);
@@ -2856,9 +2856,9 @@ public class Class68_Sub28_Sub1 extends Class68_Sub28 {
                                                                                                                                 } else if (class100_245_.method1589(Class97.aRSString_1716, 66)) {
                                                                                                                                     class100 = class100.method1615(Class97.aRSString_1716.method1590((byte) -98), true);
                                                                                                                                     i_246_ = 8;
-                                                                                                                                } else if (class100_245_.method1589(RuntimeException_Sub1.aRSString_2243, i + -73)) {
+                                                                                                                                } else if (class100_245_.method1589(GameException.aRSString_2243, i + -73)) {
                                                                                                                                     i_246_ = 9;
-                                                                                                                                    class100 = class100.method1615(RuntimeException_Sub1.aRSString_2243.method1590((byte) -103), true);
+                                                                                                                                    class100 = class100.method1615(GameException.aRSString_2243.method1590((byte) -103), true);
                                                                                                                                 } else if (class100_245_.method1589(Class124.aRSString_2163, i ^ 0x5)) {
                                                                                                                                     class100 = class100.method1615(Class124.aRSString_2163.method1590((byte) -120), true);
                                                                                                                                     i_246_ = 10;

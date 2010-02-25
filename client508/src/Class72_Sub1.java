@@ -210,7 +210,7 @@ public class Class72_Sub1 extends Class72
 	Class52.aRSString_1005 = Class106.aRSString_1808;
 	Class84.aRSString_1536 = Class68_Sub28_Sub2.aRSString_4550;
 	Class72.aRSString_1306 = Class68_Sub13_Sub7.aRSString_3552;
-	RuntimeException_Sub1.aRSString_2243
+	GameException.aRSString_2243
 	    = Class68_Sub13_Sub2.aRSString_3458;
 	Class76.aRSString_1347 = Class14.aRSString_243;
 	Class68_Sub13_Sub5.aRSString_3517 = Class128.aRSString_2225;

@@ -148,7 +148,7 @@ public class Class68_Sub20_Sub8 extends Class68_Sub20
 	    }
 	    if ((i_7_ ^ 0xffffffff) == -8) {
 		Class21renamed.stream.createFrame(152);
-		RuntimeException_Sub1.anInt2242++;
+		GameException.anInt2242++;
 		Class21renamed.stream.writeWordBigEndianA((byte) 19, i_9_);
 		Class21renamed.stream.writeWordA(i_8_, -49);
 		Class21renamed.stream.writeDWord_v1((byte) -102, i_6_);
@@ -689,7 +689,7 @@ public class Class68_Sub20_Sub8 extends Class68_Sub20
 			Class21renamed.stream.createFrame(113);
 			Class21renamed.stream.writeDWord(
 								  i_6_);
-			RuntimeException_Sub1.anInt2235++;
+			GameException.anInt2235++;
 			Class45 class45
 			    = Class68_Sub20_Sub15.method1170(i_6_, (byte) -80);
 			if (class45.anIntArrayArray908 != null
@@ -811,7 +811,7 @@ public class Class68_Sub20_Sub8 extends Class68_Sub20
 		    }
 		    int i_11_ = -68 % ((i - -6) / 56);
 		    if ((i_7_ ^ 0xffffffff) == -29) {
-			RuntimeException_Sub1.anInt2235++;
+			GameException.anInt2235++;
 			Class21renamed.stream.createFrame(113);
 			Class21renamed.stream.writeDWord(
 								  i_6_);
@@ -1083,7 +1083,7 @@ public class Class68_Sub20_Sub8 extends Class68_Sub20
 			if ((class45.anInt808 ^ 0xffffffff) < -1)
 			    bool = Class54.method554(class45, 29905);
 			if (bool) {
-			    RuntimeException_Sub1.anInt2235++;
+			    GameException.anInt2235++;
 			    Class21renamed.stream.createFrame(113);
 			    Class21renamed.stream
 				.writeDWord( i_6_);

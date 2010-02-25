@@ -51,7 +51,7 @@ public class Class21_Sub1 extends Class21renamed
 		if (is == null || is.length <= 2) {
 		    aBooleanArray2717[i_1_] = false;
 		    if (aBoolean2704 || bool)
-			RuntimeException_Sub1.method1798(bool,
+			GameException.method1798(bool,
 							 anIntArray468[i_1_],
 							 anInt2697, (byte) 2,
 							 i_1_, this,
@@ -67,7 +67,7 @@ public class Class21_Sub1 extends Class21renamed
 		    || i_3_ != anIntArray474[i_1_]) {
 		    aBooleanArray2717[i_1_] = false;
 		    if (aBoolean2704 || bool)
-			RuntimeException_Sub1.method1798(bool,
+			GameException.method1798(bool,
 							 anIntArray468[i_1_],
 							 anInt2697, (byte) 2,
 							 i_1_, this,
@@ -82,7 +82,7 @@ public class Class21_Sub1 extends Class21renamed
 		if (aBoolean2696)
 		    throw new RuntimeException();
 		if (is == null) {
-		    RuntimeException_Sub1.method1798(true, anInt2701, 255,
+		    GameException.method1798(true, anInt2701, 255,
 						     (byte) 0, anInt2697, this,
 						     (byte) 22);
 		    return;
@@ -91,7 +91,7 @@ public class Class21_Sub1 extends Class21renamed
 		PacketParser.aCRC32_1872.update(is, 0, is.length);
 		int i_4_ = (int) PacketParser.aCRC32_1872.getValue();
 		if ((anInt2701 ^ 0xffffffff) != (i_4_ ^ 0xffffffff)) {
-		    RuntimeException_Sub1.method1798(true, anInt2701, 255,
+		    GameException.method1798(true, anInt2701, 255,
 						     (byte) 0, anInt2697, this,
 						     (byte) 22);
 		    return;
@@ -101,14 +101,14 @@ public class Class21_Sub1 extends Class21renamed
 		    class68_sub14
 			= new Stream(RSString.method1612(is, true));
 		} catch (RuntimeException runtimeexception) {
-		    RuntimeException_Sub1.method1798(true, anInt2701, 255,
+		    GameException.method1798(true, anInt2701, 255,
 						     (byte) 0, anInt2697, this,
 						     (byte) 22);
 		    return;
 		}
 		int i_5_ = class68_sub14.readUnsignedByte(-6677);
 		if ((i_5_ ^ 0xffffffff) != -6 && i_5_ != 6) {
-		    RuntimeException_Sub1.method1798(true, anInt2701, 255,
+		    GameException.method1798(true, anInt2701, 255,
 						     (byte) 0, anInt2697, this,
 						     (byte) 22);
 		    return;
@@ -117,7 +117,7 @@ public class Class21_Sub1 extends Class21renamed
 		if (i_5_ >= 6)
 		    i_6_ = class68_sub14.readDWord();
 		if ((i_6_ ^ 0xffffffff) != (anInt2708 ^ 0xffffffff)) {
-		    RuntimeException_Sub1.method1798(true, anInt2701, 255,
+		    GameException.method1798(true, anInt2701, 255,
 						     (byte) 0, anInt2697, this,
 						     (byte) 22);
 		    return;
@@ -205,7 +205,7 @@ public class Class21_Sub1 extends Class21renamed
 	if (aUnknown_2713 != null)
 	    Class60.method586(aUnknown_2713, this, 1, anInt2697);
 	else
-	    RuntimeException_Sub1.method1798(true, anInt2701, 255, (byte) 0,
+	    GameException.method1798(true, anInt2701, 255, (byte) 0,
 					     anInt2697, this, (byte) 22);
 	if (i_15_ <= 76)
 	    aLongArray2703 = null;
@@ -340,7 +340,7 @@ public class Class21_Sub1 extends Class21renamed
 	if (this.method346(i_61_, 0)) {
 	    if (aUnknown_2699 == null || aBooleanArray2717 == null
 		|| !aBooleanArray2717[i_61_])
-		RuntimeException_Sub1.method1798(true, anIntArray468[i_61_],
+		GameException.method1798(true, anIntArray468[i_61_],
 						 anInt2697, (byte) 2, i_61_,
 						 this, (byte) 22);
 	    else

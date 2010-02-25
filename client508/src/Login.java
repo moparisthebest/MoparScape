@@ -85,7 +85,7 @@ public class Login {
                     aRSString_1522 = null;
                 }
                 if (Class32.anInt574 == 1) {
-                    Class13_Sub2.aClass31_2657 = (Class75_Sub1_Sub1.aSignLink_4589.newJagSocket(Class68_Sub9.serverAddress, (byte) 116, Class103.port));
+                    Class13_Sub2.aClass31_2657 = (Class75_Sub1_Sub1.signlink.newJagSocket(Class68_Sub9.serverAddress, (byte) 116, Class103.port));
                     Class32.anInt574 = 2;
                 }
                 if (Class32.anInt574 == 2) {
@@ -95,7 +95,7 @@ public class Login {
                     if (Class13_Sub2.aClass31_2657.anInt555 != 1) {
                         return;
                     }
-                    PlayerDefinition.connection = new GameSocket(((Socket) Class13_Sub2.aClass31_2657.playerDefSocket), Class75_Sub1_Sub1.aSignLink_4589);
+                    PlayerDefinition.connection = new GameSocket(((Socket) Class13_Sub2.aClass31_2657.playerDefSocket), Class75_Sub1_Sub1.signlink);
                     Class13_Sub2.aClass31_2657 = null;
                     long l = (Class72_Sub1.aLong3285 = Class68_Sub28_Sub2.username.toLong(10908));
 
@@ -163,11 +163,11 @@ public class Login {
                     Class21renamed.stream.writeString((byte) -9, Class68_Sub28_Sub2.password);
                     Class21renamed.stream.doKeys(false, Class68_Sub4.aBigInteger2814, Class68_Sub22.aBigInteger3136);
                     Class112.extraStream.currentOffset = 0;
-                    if (RuntimeException_Sub1.anInt2231 == 40) {
-                        System.out.println("RuntimeException_Sub1.anInt2231 == 40");
+                    if (GameException.anInt2231 == 40) {
+                        System.out.println("GameException.anInt2231 == 40");
                         Class112.extraStream.writeByte(18);
                     } else {
-                        System.out.println("RuntimeException_Sub1.anInt2231 != 40");
+                        System.out.println("GameException.anInt2231 != 40");
                         Class112.extraStream.writeByte(16);
                     }
                     int thisword = (151 + Class21renamed.stream.currentOffset + Class13_Sub1.method250(Class26.aRSString_521, -106));
@@ -328,13 +328,13 @@ public class Login {
                         Class25.anInt517 = Class68_Sub13_Sub8.inStream.readUnsignedByte(-6677);
                         if (Class25.anInt517 != 1) {
                             try {
-                                Class68_Sub20_Sub8.aRSString_4282.method1604((Class75_Sub1_Sub1.aSignLink_4589.anApplet1042), (byte) -123);
+                                Class68_Sub20_Sub8.aRSString_4282.method1604((Class75_Sub1_Sub1.signlink.anApplet1042), (byte) -123);
                             } catch (Throwable throwable) {
                                 /* empty */
                             }
                         } else {
                             try {
-                                Class68_Sub4.aRSString_2829.method1604((Class75_Sub1_Sub1.aSignLink_4589.anApplet1042), (byte) -123);
+                                Class68_Sub4.aRSString_2829.method1604((Class75_Sub1_Sub1.signlink.anApplet1042), (byte) -123);
                             } catch (Throwable throwable) {
                                 /* empty */
                             }

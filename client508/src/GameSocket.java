@@ -439,7 +439,7 @@ public class GameSocket implements Runnable {
                 Class49.method524(16322);
                 Class34.method414(-28968);
                 PacketStream.method971(137);
-                if (Class108.aFrame1832 != null && PlayerDefinition.connection != null && RuntimeException_Sub1.anInt2231 == 25) {
+                if (Class108.aFrame1832 != null && PlayerDefinition.connection != null && GameException.anInt2231 == 25) {
                     Class21renamed.stream.createFrame(22);
                     Class21renamed.stream.writeDWord(1057001181);
                     Class68_Sub13_Sub39.anInt4107++;
@@ -471,7 +471,7 @@ public class GameSocket implements Runnable {
                         }
                     }
                 }
-                if (RuntimeException_Sub1.anInt2231 != 28) {
+                if (GameException.anInt2231 != 28) {
                     Class17.method296(30, (byte) -77);
                     if (PlayerDefinition.connection != null) {
                         Class21renamed.stream.createFrame(60);

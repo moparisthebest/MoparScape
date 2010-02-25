@@ -67,7 +67,7 @@ public class Class68_Sub13_Sub13 extends Class68_Sub13
 	    = new Sprite(36, 32);
 	if (i_0_ > -123)
 	    method759(-88, 64);
-	Class79.method1432(sprite_11_.anIntArray4615, 36,
+	Class79.method1432(sprite_11_.pixels, 36,
 			   32);
 	Class62.method612();
 	Class62.method603(16, 16);
@@ -91,14 +91,14 @@ public class Class68_Sub13_Sub13 extends Class68_Sub13
 	    sprite_11_.method1118(1);
 	    if ((i_3_ ^ 0xffffffff) <= -3)
 		sprite_11_.method1118(16777215);
-	    Class79.method1432(sprite_11_.anIntArray4615, 36,
+	    Class79.method1432(sprite_11_.pixels, 36,
 			       32);
 	}
 	if ((i ^ 0xffffffff) != -1)
 	    sprite_11_.method1123(i);
 	if ((class19.anInt385 ^ 0xffffffff) == 0) {
 	    if ((class19.anInt339 ^ 0xffffffff) != 0) {
-		Class79.method1432(sprite.anIntArray4615, 36,
+		Class79.method1432(sprite.pixels, 36,
 				   32);
 		sprite_11_.method1103(0, 0);
 		sprite_11_ = sprite;
@@ -198,7 +198,7 @@ public class Class68_Sub13_Sub13 extends Class68_Sub13
 	Class70.anInt1287 = 1;
 	anInt3653++;
 	if (i == 16777215)
-	    RuntimeException_Sub1.aClass21_2236 = null;
+	    GameException.aClass21_2236 = null;
     }
     
     public boolean method761(int i) {

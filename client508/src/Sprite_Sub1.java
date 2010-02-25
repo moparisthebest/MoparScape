@@ -101,7 +101,7 @@ public class Sprite_Sub1 extends Sprite
 				    && i_30_ - (anInt4311 << 12) < 0) {
 				    for (/**/; i_31_ < 0; i_31_++) {
 					int i_32_
-					    = (anIntArray4615
+					    = (pixels
 					       [((i_30_ >> 12) * anInt4309
 						 + (i_29_ >> 12))]);
 					int i_33_
@@ -142,7 +142,7 @@ public class Sprite_Sub1 extends Sprite
 					i_40_ = i_41_;
 				    for (/**/; i_40_ < 0; i_40_++) {
 					int i_42_
-					    = (anIntArray4615
+					    = (pixels
 					       [((i_39_ >> 12) * anInt4309
 						 + (i_38_ >> 12))]);
 					int i_43_
@@ -186,7 +186,7 @@ public class Sprite_Sub1 extends Sprite
 					i_50_ = i_52_;
 				    for (/**/; i_50_ < 0; i_50_++) {
 					int i_53_
-					    = (anIntArray4615
+					    = (pixels
 					       [((i_49_ >> 12) * anInt4309
 						 + (i_48_ >> 12))]);
 					int i_54_
@@ -231,7 +231,7 @@ public class Sprite_Sub1 extends Sprite
 					i_61_ = i_62_;
 				    for (/**/; i_61_ < 0; i_61_++) {
 					int i_63_
-					    = (anIntArray4615
+					    = (pixels
 					       [((i_60_ >> 12) * anInt4309
 						 + (i_59_ >> 12))]);
 					int i_64_
@@ -279,7 +279,7 @@ public class Sprite_Sub1 extends Sprite
 				if ((i_72_ = (i_70_ - i_21_) / i_21_) > i_71_)
 				    i_71_ = i_72_;
 				for (/**/; i_71_ < 0; i_71_++) {
-				    int i_73_ = (anIntArray4615
+				    int i_73_ = (pixels
 						 [((i_70_ >> 12) * anInt4309
 						   + (i_69_ >> 12))]);
 				    int i_74_ = Class79.anIntArray1402[i_68_];
@@ -329,7 +329,7 @@ public class Sprite_Sub1 extends Sprite
 				    > i_81_)
 				    i_81_ = i_82_;
 				for (/**/; i_81_ < 0; i_81_++) {
-				    int i_83_ = (anIntArray4615
+				    int i_83_ = (pixels
 						 [((i_80_ >> 12) * anInt4309
 						   + (i_79_ >> 12))]);
 				    int i_84_ = Class79.anIntArray1402[i_78_];
@@ -371,7 +371,7 @@ public class Sprite_Sub1 extends Sprite
 				    > i_91_)
 				    i_91_ = i_93_;
 				for (/**/; i_91_ < 0; i_91_++) {
-				    int i_94_ = (anIntArray4615
+				    int i_94_ = (pixels
 						 [((i_90_ >> 12) * anInt4309
 						   + (i_89_ >> 12))]);
 				    int i_95_ = Class79.anIntArray1402[i_88_];
@@ -421,7 +421,7 @@ public class Sprite_Sub1 extends Sprite
 				i_102_ = i_104_;
 			    for (/**/; i_102_ < 0; i_102_++) {
 				int i_105_
-				    = (anIntArray4615
+				    = (pixels
 				       [(i_101_ >> 12) * anInt4309 + (i_100_
 								      >> 12)]);
 				int i_106_ = Class79.anIntArray1402[i_99_];
@@ -474,7 +474,7 @@ public class Sprite_Sub1 extends Sprite
 				i_113_ = i_115_;
 			    for (/**/; i_113_ < 0; i_113_++) {
 				int i_116_
-				    = (anIntArray4615
+				    = (pixels
 				       [(i_112_ >> 12) * anInt4309 + (i_111_
 								      >> 12)]);
 				int i_117_ = Class79.anIntArray1402[i_110_];
@@ -579,7 +579,7 @@ public class Sprite_Sub1 extends Sprite
 	    i_151_ += i_155_;
 	}
 	if (i_150_ > 0 && i_149_ > 0)
-	    method1136(Class79.anIntArray1402, anIntArray4615, i_148_, i_147_,
+	    method1136(Class79.anIntArray1402, pixels, i_148_, i_147_,
 		       i_150_, i_149_, i_151_, i_152_);
     }
     
@@ -603,7 +603,7 @@ public class Sprite_Sub1 extends Sprite
 		int i_174_ = i_169_ - i_166_ * i_171_;
 		for (i = -is_163_[i_156_]; i < 0; i++) {
 		    int i_175_
-			= (anIntArray4615
+			= (pixels
 			   [(i_173_ >> 16) + (i_174_ >> 16) * anInt4309]);
 		    int i_176_ = Class79.anIntArray1402[i_172_];
 		    int i_177_ = i_175_ >>> 24;
@@ -725,7 +725,7 @@ public class Sprite_Sub1 extends Sprite
 		i_218_ += i_222_ * i_230_;
 		i_227_ += i_230_;
 	    }
-	    method1137(Class79.anIntArray1402, anIntArray4615, 0, i_218_,
+	    method1137(Class79.anIntArray1402, pixels, 0, i_218_,
 		       i_219_, i_226_, i_227_, i_213_, i_214_, i_222_, i_223_,
 		       i_216_, i_215_);
 	}
@@ -751,7 +751,7 @@ public class Sprite_Sub1 extends Sprite
 		int i_249_ = i_244_ - i_241_ * i_246_;
 		for (i = -is_238_[i_231_]; i < 0; i++) {
 		    int i_250_
-			= (anIntArray4615
+			= (pixels
 			   [(i_248_ >> 16) + (i_249_ >> 16) * anInt4309]);
 		    int i_251_ = Class79.anIntArray1402[i_247_];
 		    int i_252_ = i_250_ >>> 24;
@@ -809,7 +809,7 @@ public class Sprite_Sub1 extends Sprite
 	    i_259_ += i_263_;
 	}
 	if (i_258_ > 0 && i_257_ > 0)
-	    method1135(Class79.anIntArray1402, anIntArray4615, 0, i_256_,
+	    method1135(Class79.anIntArray1402, pixels, 0, i_256_,
 		       i_255_, i_258_, i_257_, i_259_, i_260_);
     }
     
@@ -853,7 +853,7 @@ public class Sprite_Sub1 extends Sprite
 	    i_275_ += i_279_;
 	}
 	if (i_274_ > 0 && i_273_ > 0)
-	    method1138(Class79.anIntArray1402, anIntArray4615, 0, i_272_,
+	    method1138(Class79.anIntArray1402, pixels, 0, i_272_,
 		       i_271_, i_274_, i_273_, i_275_, i_276_, i_270_);
     }
     
@@ -875,7 +875,7 @@ public class Sprite_Sub1 extends Sprite
 		int i_295_ = i_291_;
 		for (i = -i_281_; i < 0; i++) {
 		    int i_296_
-			= (anIntArray4615
+			= (pixels
 			   [(i_294_ >> 16) + (i_295_ >> 16) * anInt4309]);
 		    int i_297_ = Class79.anIntArray1402[i_293_];
 		    int i_298_ = i_296_ >>> 24;

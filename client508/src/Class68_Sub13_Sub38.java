@@ -117,7 +117,7 @@ public class Class68_Sub13_Sub38 extends Class68_Sub13
     
     public static void method899(int i, Class21renamed class21, boolean bool,
 				 int i_10_, int i_11_, boolean bool_12_) {
-	RuntimeException_Sub1.aClass21_2236 = class21;
+	GameException.aClass21_2236 = class21;
 	Class70.anInt1287 = 1;
 	Class68_Sub13_Sub11.anInt3620 = 10000;
 	Class68_Sub20_Sub15.anInt4403 = i;

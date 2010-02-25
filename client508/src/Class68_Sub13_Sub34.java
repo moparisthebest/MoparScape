@@ -144,7 +144,7 @@ public class Class68_Sub13_Sub34 extends Class68_Sub13
 	    if ((Class70.anInt1287 ^ 0xffffffff) == -3) {
 		if (client.aClass68_Sub12_2379 == null) {
 		    client.aClass68_Sub12_2379
-			= Class68_Sub12.method686((RuntimeException_Sub1
+			= Class68_Sub12.method686((GameException
 						   .aClass21_2236),
 						  (Class68_Sub20_Sub15
 						   .anInt4403),
@@ -165,7 +165,7 @@ public class Class68_Sub13_Sub34 extends Class68_Sub13
 		    Class1_Sub2.aClass68_Sub28_Sub1_2433.method1259
 			(Class52.aBoolean998, true,
 			 client.aClass68_Sub12_2379);
-		    RuntimeException_Sub1.aClass21_2236 = null;
+		    GameException.aClass21_2236 = null;
 		    client.aClass68_Sub12_2379 = null;
 		    Class70.anInt1287 = 0;
 		    Class93.aClass14_1667 = null;
@@ -175,7 +175,7 @@ public class Class68_Sub13_Sub34 extends Class68_Sub13
 	} catch (Exception exception) {
 	    exception.printStackTrace();
 	    Class1_Sub2.aClass68_Sub28_Sub1_2433.method1249(73);
-	    RuntimeException_Sub1.aClass21_2236 = null;
+	    GameException.aClass21_2236 = null;
 	    client.aClass68_Sub12_2379 = null;
 	    Class70.anInt1287 = 0;
 	    Class93.aClass14_1667 = null;

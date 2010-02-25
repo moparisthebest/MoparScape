@@ -35,7 +35,7 @@ public class Class13_Sub1 extends Class13
 	    sprite
 		= (Sprite) GameSocket.aClass68_Sub20_Sub10_1144;
 	anInt2625++;
-	int[] is = sprite.anIntArray4615;
+	int[] is = sprite.pixels;
 	int i_1_ = is.length;
 	for (int i_2_ = 0; (i_2_ ^ 0xffffffff) > (i_1_ ^ 0xffffffff); i_2_++)
 	    is[i_2_] = 1;
@@ -327,8 +327,8 @@ public class Class13_Sub1 extends Class13
 	    method252(47);
 	anInt2620++;
 	Class49.method524(16322);
-	if ((RuntimeException_Sub1.anInt2231 ^ 0xffffffff) == -31
-	    || RuntimeException_Sub1.anInt2231 == 25) {
+	if ((GameException.anInt2231 ^ 0xffffffff) == -31
+	    || GameException.anInt2231 == 25) {
 	    Class75_Sub2.anInt3313++;
 	    if (Class75_Sub2.anInt3313 >= 50 || bool) {
 		Class75_Sub2.anInt3313 = 0;

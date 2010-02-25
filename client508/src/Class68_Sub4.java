@@ -127,8 +127,11 @@ public class Class68_Sub4 extends Class68
 		int i_22_ = (int) (Math.random() * 100.0);
 		if (i_22_ >= 50 || i_21_ <= 10 || i_21_ >= 118)
 		    Class68_Sub20.anIntArray3090[i_21_ - -i_20_] = 0;
-		else
-		    Class68_Sub20.anIntArray3090[i_20_ + i_21_] = 255;
+		else{
+            // this stops the fire from being rendered:
+		    // orig: Class68_Sub20.anIntArray3090[i_20_ + i_21_] = 255;
+            Class68_Sub20.anIntArray3090[i_20_ + i_21_] = 0;
+        }
 	    }
 	}
 	if (i_11_ != 60)

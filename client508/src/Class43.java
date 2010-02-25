@@ -67,7 +67,7 @@ public class Class43
 	Class84.method1476(i + 96, null);
 	Class90.anIntArray2345 = new int[32768];
 	Class68_Sub20.anIntArray3090 = new int[32768];
-	RuntimeException_Sub1.aSprite_2246
+	GameException.aSprite_2246
 	    = new Sprite(128, 254);
     }
     
