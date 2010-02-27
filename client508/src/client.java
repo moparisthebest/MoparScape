@@ -2,6 +2,8 @@
  * Visit http://jode.sourceforge.net/
  */
 
+import org.moparscape.iface.ClientInterface;
+
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.awt.image.PixelGrabber;
@@ -9,7 +11,7 @@ import java.net.Socket;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
 
-public class client extends Applet_Sub1 implements org.moparscape.ClientInterface {
+public class client extends Applet_Sub1 implements ClientInterface {
 
     public static java.awt.event.KeyListener keyListener;
     public static int[] bgImage = null;

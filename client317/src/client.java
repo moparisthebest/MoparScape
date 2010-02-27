@@ -3,10 +3,12 @@
  * and open the template in the editor.
  */
 
+import org.moparscape.iface.ClientInterface;
+
 /**
  *
  * @author mopar
  */
-public class client extends rs.client implements org.moparscape.ClientInterface{
+public class client extends rs.client implements ClientInterface {
 
 }

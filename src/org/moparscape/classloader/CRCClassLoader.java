@@ -7,11 +7,9 @@ package org.moparscape.classloader;
 import org.moparscape.Update;
 
 import java.io.ByteArrayOutputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.URL;
-import java.net.URLConnection;
+import java.security.ProtectionDomain;
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
@@ -26,6 +24,8 @@ public class CRCClassLoader extends ClassLoader {
 
     private Map<String, byte[]> classes;
     private long crcVal;
+    private ClassLoader parent = null;
+    private ProtectionDomain pd = null;
 
     /**
      * Reads the jar file and calculates the CRC.  Sets up the class.
@@ -38,12 +38,25 @@ public class CRCClassLoader extends ClassLoader {
         setup(jarFileLoc);
     }
 
+    public CRCClassLoader(String jarFileLoc, Class parent) throws IOException {
+        this(jarFileLoc);
+        this.parent = parent.getClassLoader();
+        this.pd = parent.getProtectionDomain();
+    }
+
+    public CRCClassLoader(String jarFileLoc, String backupURL, long expectedCRC, Class parent) throws IOException {
+        this(jarFileLoc, backupURL, expectedCRC);
+        this.parent = parent.getClassLoader();
+        this.pd = parent.getProtectionDomain();
+    }
+
     /**
      * Reads the jar file and calculates the CRC.  Sets up the class.
      * If the provided CRC does not match, downloads the new jar file to
      * the provided location and tries again.  If it fails again, an IOException is thrown.
      *
      * @param jarFileLoc The location of the jar file to load on the disk
+     *
      */
     public CRCClassLoader(String jarFileLoc, String backupURL, long expectedCRC) throws IOException {
         super();
@@ -56,10 +69,10 @@ public class CRCClassLoader extends ClassLoader {
             if (getCRC() == expectedCRC)
                 return;
         } catch (IOException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
         }
 
-        System.out.println("CRC checksum failed, redownloading file");
+        System.out.println("CRC checksum failed, downloading new file.");
 
 //        URLConnection uc = new URL(backupURL).openConnection();
 //        InputStream in = uc.getInputStream();
@@ -124,50 +137,23 @@ public class CRCClassLoader extends ClassLoader {
     }
 
     /**
-     * Is called by the ClassLoader to load a class, It checks in its cache,
-     * and in its parent ClassLoader, if not found it calls findClass()
-     */
-    public Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
-        //uncomment this if you want to see the loaded classes
-        //Cherokee.debug("Applet is loading class " + name);
-        return super.loadClass(name, resolve);
-    }
-
-    /**
      * Is called by the ClassLoader when the requested class
-     * is not found in its cache. Parses the class from its bytecode.
+     * is not found in its cache. The parent is only used when
+     * this is ran as an applet strangely.
      *
      * @param name The name of the class
      */
     public Class<?> findClass(String name) throws ClassNotFoundException {
-
+        // System.out.println("CRCClassLoader: Requesting class " + name);
         byte[] classBytes = classes.get(name);
-        if (classBytes == null)
-            throw new ClassNotFoundException("Couldn't find class " + name);
-        Class foundClass = defineClass(name, classBytes, 0, classBytes.length);
+        if (classBytes == null){
+            if(parent == null)
+                throw new ClassNotFoundException("Couldn't find class " + name);
+            //System.out.println("Couldn't find class " + name + " trying parent class loader.");
+            return parent.loadClass(name);
+        }
+        Class foundClass = defineClass(name, classBytes, 0, classBytes.length, pd);
         return foundClass;
     }
 
-    /**
-     * Is called by the ClassLoader when the requested resource is not
-     * found in its cache. Gives a URL of the resource but doesnt check
-     * if it exists.
-     *
-     * @param name The name of the resource
-     */
-    public URL findResource(String name) {
-        //TODO find a way to check if the resource exists
-        return super.findResource(name);
-    }
-
-    /**
-     * Is called by the ClassLoader when the requested resources is not
-     * found in its cache. Simply calls the superclasses method.
-     *
-     * @param name The name of the resource
-     */
-    public Enumeration<URL> findResources(String name) throws IOException {
-        //TODO find a way to do this
-        return super.findResources(name);
-    }
 }

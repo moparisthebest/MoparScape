@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 
-package org.moparscape;
+package org.moparscape.iface;
 
 /**
  * @author mopar

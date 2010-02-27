@@ -5,12 +5,8 @@ package org.moparscape.classloader;
  * and open the template in the editor.
  */
 
-import java.io.ByteArrayOutputStream;
-import java.io.InputStream;
-import java.util.Enumeration;
-import java.util.jar.JarEntry;
-import java.util.jar.JarFile;
-import java.util.zip.CRC32;
+import java.io.FileOutputStream;
+import java.io.PrintStream;
 
 /**
  * @author mopar
@@ -18,40 +14,19 @@ import java.util.zip.CRC32;
 public class CRCJar {
 
     public static void main(String[] args) throws Exception {
-        if (args.length != 1) {
-            System.out.println("Usage: CRCJar jarFile");
+        if (args.length < 2) {
+            System.out.println("Usage: CRCJar logFile jarFile...");
             return;
         }
-        long current = System.currentTimeMillis();
-        CRC32 crc = new CRC32();
+        PrintStream log;
+        if(args[0].equals("-"))
+            log = System.out;
+        else
+            log = new PrintStream(new FileOutputStream(args[0]));
 
-        JarFile jf = new JarFile(args[0]);
-        Enumeration entries = jf.entries();
-        byte[] buffer = new byte[1024];
-        while (entries.hasMoreElements()) {
-            JarEntry entry = (JarEntry) entries.nextElement();
-            if (entry.getName().endsWith(".class")) {
-                //System.out.println("class name: " + entry.getName());
-                InputStream in = jf.getInputStream(entry);
-                ByteArrayOutputStream baos = new ByteArrayOutputStream();
-                int len;
-                while ((len = in.read(buffer)) >= 0)
-                    baos.write(buffer, 0, len);
-                baos.flush();
-                in.close();
-                baos.close();
-
-                // update crc
-                byte[] classArr = baos.toByteArray();
-                crc.update(classArr);
-
-                // String className = entry.getName().substring(0, entry.getName().lastIndexOf(".")).replaceAll("/", ".");
-            }
+        for (int x= 1; x < args.length; ++x) {
+            CRCClassLoader cl = new CRCClassLoader(args[x]);
+            log.println(args[x] + " crc: " + cl.getCRC());
         }
-        jf.close();
-
-        // 2092023208
-        System.out.println(args[0] + " crc: " + crc.getValue());
-        System.out.println(System.currentTimeMillis() - current + "ms");
     }
 }

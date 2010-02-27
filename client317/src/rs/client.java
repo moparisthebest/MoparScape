@@ -2204,7 +2204,7 @@ public class client extends RSApplet {
             setHighMem();
         String s1 = getParameter("free");
         isMembers = !(s1 != null && s1.equals("1"));
-        System.out.println("isMembers: " + isMembers);
+        //System.out.println("isMembers: " + isMembers);
 
         // xxx added in following two lines
         signlink.storeid = 32;
