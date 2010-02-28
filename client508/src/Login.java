@@ -33,7 +33,7 @@ public class Login {
     public Class128 aClass128_1520 = new Class128();
     public static RSString aRSString_1521;
     public static RSString aRSString_1522;
-
+ /*
     public static long longForName(String s) {
         long l = 0L;
         for (int i = 0; i < s.length() && i < 12; i++) {
@@ -57,7 +57,7 @@ public class Login {
         System.out.println(s+": "+i);
         arr += i+", ";
     }
-
+ */
     public static void login(boolean bool) {
         anInt1500++;
         if (Class32.anInt574 != 0 && Class32.anInt574 != 5) {
@@ -98,7 +98,7 @@ public class Login {
                     PlayerDefinition.connection = new GameSocket(((Socket) Class13_Sub2.aClass31_2657.playerDefSocket), Class75_Sub1_Sub1.signlink);
                     Class13_Sub2.aClass31_2657 = null;
                     long l = (Class72_Sub1.aLong3285 = Class68_Sub28_Sub2.username.toLong(10908));
-
+ /*
                     System.out.println("getting username");
                     System.out.println("username: "+Class68_Sub28_Sub2.username.toString());
                     System.out.println("Class68_Sub28_Sub2.username.method1590((byte) -113): "+Class68_Sub28_Sub2.username.method1590((byte) -113));
@@ -106,32 +106,32 @@ public class Login {
                     System.out.println("password: "+Class68_Sub28_Sub2.password.toString());
                     System.out.println("new strtolong: "+l);
                     System.out.println("old strtolong: "+longForName(Class68_Sub28_Sub2.username.toString()));
-
+*/
                     Class21renamed.stream.currentOffset = 0;
                     Class21renamed.stream.writeByte(14);
                     int i = (int) (0x1fL & l >> 502092432);
                     Class21renamed.stream.writeByte( i);
                     PlayerDefinition.connection.queueBytes(  2, (Class21renamed.stream.buffer));
                     if (Class68_Sub13_Sub36.aClass35_4035 != null) {
-                        System.out.println("1 Class68_Sub13_Sub36.aClass35_4035 != null");
+//                        System.out.println("1 Class68_Sub13_Sub36.aClass35_4035 != null");
                         Class68_Sub13_Sub36.aClass35_4035.method418(bool);
                     }
                     if (Animable.aClass35_66 != null) {
-                        System.out.println("1 Animable.aClass35_66 != null");
+  //                      System.out.println("1 Animable.aClass35_66 != null");
                         Animable.aClass35_66.method418(bool);
                     }
                     int response = PlayerDefinition.connection.read();
-                    System.out.println("response: "+response);
+//                    System.out.println("response: "+response);
                     if (Class68_Sub13_Sub36.aClass35_4035 != null) {
-                        System.out.println("2 Class68_Sub13_Sub36.aClass35_4035 != null");
+ //                       System.out.println("2 Class68_Sub13_Sub36.aClass35_4035 != null");
                         Class68_Sub13_Sub36.aClass35_4035.method418(false);
                     }
                     if (Animable.aClass35_66 != null) {
-                        System.out.println("2 Animable.aClass35_66 != null");
+ //                       System.out.println("2 Animable.aClass35_66 != null");
                         Animable.aClass35_66.method418(false);
                     }
                     if (response != 0) {
-                        System.out.println("i_0_ != 0");
+ //                       System.out.println("i_0_ != 0");
                         Class68_Sub20_Sub7.anInt4257 = response;
                         Class32.anInt574 = 0;
                         PlayerDefinition.connection.method594(-7);
@@ -141,7 +141,7 @@ public class Login {
                     Class32.anInt574 = 3;
                 }
                 if (Class32.anInt574 == 3) {
-                    System.out.println("PlayerDefinition.connection.available(): "+PlayerDefinition.connection.available());
+   //                 System.out.println("PlayerDefinition.connection.available(): "+PlayerDefinition.connection.available());
                     if (PlayerDefinition.connection.available() < 8) {
                         return;
                     }
@@ -164,97 +164,97 @@ public class Login {
                     Class21renamed.stream.doKeys(false, Class68_Sub4.aBigInteger2814, Class68_Sub22.aBigInteger3136);
                     Class112.extraStream.currentOffset = 0;
                     if (GameException.anInt2231 == 40) {
-                        System.out.println("GameException.anInt2231 == 40");
+                        //System.out.println("GameException.anInt2231 == 40");
                         Class112.extraStream.writeByte(18);
                     } else {
-                        System.out.println("GameException.anInt2231 != 40");
+                        //System.out.println("GameException.anInt2231 != 40");
                         Class112.extraStream.writeByte(16);
                     }
                     int thisword = (151 + Class21renamed.stream.currentOffset + Class13_Sub1.method250(Class26.aRSString_521, -106));
-                    System.out.println("thisword: "+thisword);
+                    //System.out.println("thisword: "+thisword);
                     Class112.extraStream.writeWord(thisword );
                     Class112.extraStream.writeDWord(508);
-                    System.out.println("Class68_Sub13_Sub5.anInt3518: "+Class68_Sub13_Sub5.anInt3518);
+                    //System.out.println("Class68_Sub13_Sub5.anInt3518: "+Class68_Sub13_Sub5.anInt3518);
                     Class112.extraStream.writeByte( Class68_Sub13_Sub5.anInt3518);
                     Class112.extraStream.writeByte(0);
                     int thisbyte = Class71_Sub1.method1344((byte) 97);
-                    System.out.println("Class71_Sub1.method1344((byte) 97): "+thisbyte);
+                    //System.out.println("Class71_Sub1.method1344((byte) 97): "+thisbyte);
                     Class112.extraStream.writeByte( thisbyte );
-                    System.out.println("Class13_Sub3.width: "+Class13_Sub3.width);
+                    //System.out.println("Class13_Sub3.width: "+Class13_Sub3.width);
                     Class112.extraStream.writeWord( Class13_Sub3.width);
-                    System.out.println("Class68_Sub13_Sub9.height: "+Class68_Sub13_Sub9.height);
+                    //System.out.println("Class68_Sub13_Sub9.height: "+Class68_Sub13_Sub9.height);
                     Class112.extraStream.writeWord( Class68_Sub13_Sub9.height);
                     // write bytes
-                    System.out.print("new byte[]{");
+                    //System.out.print("new byte[]{");
                     Class20.method322(24, Class112.extraStream);
-                    System.out.println("Class26.aRSString_521: '"+Class26.aRSString_521.toString()+"'");
+                    //System.out.println("Class26.aRSString_521: '"+Class26.aRSString_521.toString()+"'");
                     Class112.extraStream.writeString((byte) -9, Class26.aRSString_521);
 
                     // start writing dwords
-                    System.out.println("Start dwords");
-                    logstrint("Class68_Sub13_Sub20.anInt3780",Class68_Sub13_Sub20.anInt3780);
+                    //System.out.println("Start dwords");
+                    //logstrint("Class68_Sub13_Sub20.anInt3780",Class68_Sub13_Sub20.anInt3780);
                     Class112.extraStream.writeDWord( Class68_Sub13_Sub20.anInt3780);
                     thisbyte = Class34.method415((byte) 119);
-                    logstrint("Class34.method415((byte) 119)",thisbyte);
+                    //logstrint("Class34.method415((byte) 119)",thisbyte);
                     Class112.extraStream.writeDWord( thisbyte );
                     Class108.aBoolean1830 = true;
-                    logstrint("Class68_Sub28_Sub1.aClass21_Sub1_4519.anInt428",Class68_Sub28_Sub1.aClass21_Sub1_4519.anInt428);
+                    //logstrint("Class68_Sub28_Sub1.aClass21_Sub1_4519.anInt428",Class68_Sub28_Sub1.aClass21_Sub1_4519.anInt428);
                     Class112.extraStream.writeDWord( Class68_Sub28_Sub1.aClass21_Sub1_4519.anInt428);
-                    logstrint("Class58.aClass21_Sub1_1097.anInt428",Class58.aClass21_Sub1_1097.anInt428);
+                    //logstrint("Class58.aClass21_Sub1_1097.anInt428",Class58.aClass21_Sub1_1097.anInt428);
                     Class112.extraStream.writeDWord( Class58.aClass21_Sub1_1097.anInt428);
-                    logstrint("Class68_Sub6.aClass21_Sub1_2843.anInt428",Class68_Sub6.aClass21_Sub1_2843.anInt428);
+                    //logstrint("Class68_Sub6.aClass21_Sub1_2843.anInt428",Class68_Sub6.aClass21_Sub1_2843.anInt428);
                     Class112.extraStream.writeDWord( Class68_Sub6.aClass21_Sub1_2843.anInt428);
-                    logstrint("Class68_Sub13_Sub21.aClass21_Sub1_3804.anInt428",Class68_Sub13_Sub21.aClass21_Sub1_3804.anInt428);
+                    //logstrint("Class68_Sub13_Sub21.aClass21_Sub1_3804.anInt428",Class68_Sub13_Sub21.aClass21_Sub1_3804.anInt428);
                     Class112.extraStream.writeDWord( Class68_Sub13_Sub21.aClass21_Sub1_3804.anInt428);
-                    logstrint("Class78.aClass21_Sub1_1388.anInt428",Class78.aClass21_Sub1_1388.anInt428);
+                    //logstrint("Class78.aClass21_Sub1_1388.anInt428",Class78.aClass21_Sub1_1388.anInt428);
                     Class112.extraStream.writeDWord( Class78.aClass21_Sub1_1388.anInt428);
-                    logstrint("Class92.aClass21_Sub1_1644.anInt428",Class92.aClass21_Sub1_1644.anInt428);
+                    //logstrint("Class92.aClass21_Sub1_1644.anInt428",Class92.aClass21_Sub1_1644.anInt428);
                     Class112.extraStream.writeDWord( Class92.aClass21_Sub1_1644.anInt428);
-                    logstrint("Class21.aClass21_Sub1_459.anInt428",Class21renamed.aClass21_Sub1_459.anInt428);
+                    //logstrint("Class21.aClass21_Sub1_459.anInt428",Class21renamed.aClass21_Sub1_459.anInt428);
                     Class112.extraStream.writeDWord( Class21renamed.aClass21_Sub1_459.anInt428);
-                    logstrint("Class120.aClass21_Sub1_2095.anInt428",Class120.aClass21_Sub1_2095.anInt428);
+                    //logstrint("Class120.aClass21_Sub1_2095.anInt428",Class120.aClass21_Sub1_2095.anInt428);
                     Class112.extraStream.writeDWord( Class120.aClass21_Sub1_2095.anInt428);
-                    logstrint("Class52.aClass21_Sub1_1011.anInt428", Class52.aClass21_Sub1_1011.anInt428);
+                    //logstrint("Class52.aClass21_Sub1_1011.anInt428", Class52.aClass21_Sub1_1011.anInt428);
                     Class112.extraStream.writeDWord( Class52.aClass21_Sub1_1011.anInt428);
-                    logstrint("Class68_Sub13_Sub30.aClass21_Sub1_3953.anInt428", Class68_Sub13_Sub30.aClass21_Sub1_3953.anInt428);
+                    //logstrint("Class68_Sub13_Sub30.aClass21_Sub1_3953.anInt428", Class68_Sub13_Sub30.aClass21_Sub1_3953.anInt428);
                     Class112.extraStream.writeDWord( Class68_Sub13_Sub30.aClass21_Sub1_3953.anInt428);
-                    logstrint("Class84.aClass21_Sub1_1532.anInt428", Class84.aClass21_Sub1_1532.anInt428);
+                    //logstrint("Class84.aClass21_Sub1_1532.anInt428", Class84.aClass21_Sub1_1532.anInt428);
                     Class112.extraStream.writeDWord( Class84.aClass21_Sub1_1532.anInt428);
-                    logstrint("Class21.aClass21_Sub1_472.anInt428", Class21renamed.aClass21_Sub1_472.anInt428);
+                    //logstrint("Class21.aClass21_Sub1_472.anInt428", Class21renamed.aClass21_Sub1_472.anInt428);
                     Class112.extraStream.writeDWord( Class21renamed.aClass21_Sub1_472.anInt428);
-                    logstrint("Class13.aClass21_Sub1_221.anInt428", Class13.aClass21_Sub1_221.anInt428);
+                    //logstrint("Class13.aClass21_Sub1_221.anInt428", Class13.aClass21_Sub1_221.anInt428);
                     Class112.extraStream.writeDWord( Class13.aClass21_Sub1_221.anInt428);
-                    logstrint("Class63.aClass21_Sub1_1173.anInt428", Class63.aClass21_Sub1_1173.anInt428);
+                    //logstrint("Class63.aClass21_Sub1_1173.anInt428", Class63.aClass21_Sub1_1173.anInt428);
                     Class112.extraStream.writeDWord( Class63.aClass21_Sub1_1173.anInt428);
-                    logstrint("Class68_Sub20_Sub4.aClass21_Sub1_4217.anInt428", Class68_Sub20_Sub4.aClass21_Sub1_4217.anInt428);
+                    //logstrint("Class68_Sub20_Sub4.aClass21_Sub1_4217.anInt428", Class68_Sub20_Sub4.aClass21_Sub1_4217.anInt428);
                     Class112.extraStream.writeDWord( Class68_Sub20_Sub4.aClass21_Sub1_4217.anInt428);
-                    logstrint("Class28.aClass21_Sub1_529.anInt428", Class28.aClass21_Sub1_529.anInt428);
+                    //logstrint("Class28.aClass21_Sub1_529.anInt428", Class28.aClass21_Sub1_529.anInt428);
                     Class112.extraStream.writeDWord( Class28.aClass21_Sub1_529.anInt428);
-                    logstrint("Class7.aClass21_Sub1_136.anInt428", Class7.aClass21_Sub1_136.anInt428);
+                    //logstrint("Class7.aClass21_Sub1_136.anInt428", Class7.aClass21_Sub1_136.anInt428);
                     Class112.extraStream.writeDWord( Class7.aClass21_Sub1_136.anInt428);
-                    logstrint("Class33.aClass21_Sub1_583.anInt428", Class33.aClass21_Sub1_583.anInt428);
+                    //logstrint("Class33.aClass21_Sub1_583.anInt428", Class33.aClass21_Sub1_583.anInt428);
                     Class112.extraStream.writeDWord( Class33.aClass21_Sub1_583.anInt428);
-                    logstrint("Class68.aClass21_Sub1_1228.anInt428", Class68.aClass21_Sub1_1228.anInt428);
+                    //logstrint("Class68.aClass21_Sub1_1228.anInt428", Class68.aClass21_Sub1_1228.anInt428);
                     Class112.extraStream.writeDWord( Class68.aClass21_Sub1_1228.anInt428);
-                    logstrint("Class55.aClass21_Sub1_2038.anInt428", Class55.aClass21_Sub1_2038.anInt428);
+                    //logstrint("Class55.aClass21_Sub1_2038.anInt428", Class55.aClass21_Sub1_2038.anInt428);
                     Class112.extraStream.writeDWord( Class55.aClass21_Sub1_2038.anInt428);
-                    logstrint("Class57.aClass21_Sub1_1068.anInt428", Class57.aClass21_Sub1_1068.anInt428);
+                    //logstrint("Class57.aClass21_Sub1_1068.anInt428", Class57.aClass21_Sub1_1068.anInt428);
                     Class112.extraStream.writeDWord( Class57.aClass21_Sub1_1068.anInt428);
-                    logstrint("Class68_Sub13_Sub31.aClass21_Sub1_3971.anInt428", Class68_Sub13_Sub31.aClass21_Sub1_3971.anInt428);
+                    //logstrint("Class68_Sub13_Sub31.aClass21_Sub1_3971.anInt428", Class68_Sub13_Sub31.aClass21_Sub1_3971.anInt428);
                     Class112.extraStream.writeDWord( Class68_Sub13_Sub31.aClass21_Sub1_3971.anInt428);
-                    logstrint("Class14.aClass21_Sub1_229.anInt428", Class14.aClass21_Sub1_229.anInt428);
+                    //logstrint("Class14.aClass21_Sub1_229.anInt428", Class14.aClass21_Sub1_229.anInt428);
                     Class112.extraStream.writeDWord( Class14.aClass21_Sub1_229.anInt428);
-                    logstrint("Class68_Sub20_Sub5.aClass21_Sub1_4221.anInt428", Class68_Sub20_Sub5.aClass21_Sub1_4221.anInt428);
+                    //logstrint("Class68_Sub20_Sub5.aClass21_Sub1_4221.anInt428", Class68_Sub20_Sub5.aClass21_Sub1_4221.anInt428);
                     Class112.extraStream.writeDWord( Class68_Sub20_Sub5.aClass21_Sub1_4221.anInt428);
-                    logstrint("Class68_Sub13_Sub5.aClass21_Sub1_3522.anInt428", Class68_Sub13_Sub5.aClass21_Sub1_3522.anInt428);
+                    //logstrint("Class68_Sub13_Sub5.aClass21_Sub1_3522.anInt428", Class68_Sub13_Sub5.aClass21_Sub1_3522.anInt428);
                     Class112.extraStream.writeDWord( Class68_Sub13_Sub5.aClass21_Sub1_3522.anInt428);
-                    logstrint("GroundData.aClass21_Sub1_659.anInt428", GroundData.aClass21_Sub1_659.anInt428);
+                    //logstrint("GroundData.aClass21_Sub1_659.anInt428", GroundData.aClass21_Sub1_659.anInt428);
                     Class112.extraStream.writeDWord( GroundData.aClass21_Sub1_659.anInt428);
-                    logstrint("PacketStream.aClass21_Sub1_4133.anInt428", PacketStream.aClass21_Sub1_4133.anInt428);
+                    //logstrint("PacketStream.aClass21_Sub1_4133.anInt428", PacketStream.aClass21_Sub1_4133.anInt428);
                     Class112.extraStream.writeDWord( PacketStream.aClass21_Sub1_4133.anInt428);
 
-                    System.out.println(arr);
-                    arr = "{";
+                    //System.out.println(arr);
+                    //arr = "{";
                     //logstrint("", );
                     Class112.extraStream.writeBytes(Class21renamed.stream.currentOffset, 0, Class21renamed.stream.buffer);
                     PlayerDefinition.connection.queueBytes(  Class112.extraStream.currentOffset, Class112.extraStream.buffer);
@@ -270,7 +270,7 @@ public class Login {
                         return;
                     }
                     int i = PlayerDefinition.connection.read();
-                    System.out.println("i: "+i);
+                    //System.out.println("i: "+i);
                     if (i == 21) {
                         Class32.anInt574 = 7;
                     } else if (i != 1) {
