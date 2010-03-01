@@ -56,7 +56,46 @@ public abstract class Server extends Thread {
     public int getPort() {
         return port;
     }
+ /*
+    private synchronized int modThreadCount(int mod) {
+        if(mod > 100){
+            System.out.println("mod shouldn't be above 100!");
+            System.exit(1);
+        }
+        threadCount += mod;
+        return threadCount;
+    }
 
+    private int threadCount = 0;
+
+    public void runu() {
+        thisThread = this;
+        while (isRunning)
+            try {
+                //handleConnection(sSock.accept());
+                if (modThreadCount(0) < 100) {
+                    (new Thread() {
+                        public void run() {
+                            modThreadCount(1);
+                            //System.out.println("threadCount: " + modThreadCount(1));
+                            try {
+                                handleConnection(sSock.accept());
+                            } catch (IOException e) {
+                                handleException(e);
+                            }
+                            modThreadCount(-1);
+                        }
+                    }).start();
+                } else {
+                    Thread.sleep(500);
+                }
+
+
+            } catch (Exception e) {
+                handleException(e);
+            }
+    }
+ */
     public void run() {
         thisThread = this;
         while (isRunning)
@@ -114,7 +153,7 @@ public abstract class Server extends Thread {
     public void handleException(Exception e) {
         if (MainPanel.debug()) {
             String myName = this.getClass().getName();
-            if(myName.equals("org.moparscape.userver.v508.OndemandServer443"))
+            if (myName.equals("org.moparscape.userver.v508.OndemandServer443"))
                 return;
             System.err.print("Server error: ");
             e.printStackTrace();

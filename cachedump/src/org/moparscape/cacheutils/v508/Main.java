@@ -30,9 +30,53 @@ public class Main {
             // client requests the following, but I don't have them... ?
             // testDump(cache, 0, 5632);
             // testDump(cache, 0, 2560);
+            //testDump(cache, 7, -32165);
+            //testDump(cache, 0, 59137);//0/59137
+            //System.exit(0);
 
-            for (int index = 0; index <= 255 && index >= 0; ++index)
-                for (short id = 0; id <= Short.MAX_VALUE && id >= 0; ++id)
+            //int index = 7;
+            // the ids are unsigned shorts, which in java needs an int and is twice a short
+            int maxId = Short.MAX_VALUE*2;
+            System.out.println("maxId: "+maxId);
+            int[] maxIds = new int[255];
+            for(int x = 0; x < maxIds.length; ++x)
+                maxIds[x] = maxId;
+            maxIds[0] = 2509;
+            maxIds[1] = 2240;
+            maxIds[2] = 26;
+            dumpFile(cache, 2, 715827883);
+            dumpFile(cache, 2, 1431655772);
+            dumpFile(cache, 2, 1431655776);
+            dumpFile(cache, 2, 1431655780);
+            dumpFile(cache, 2, 1431655783);
+            maxIds[3] = 781;
+            dumpFile(cache, 3, 715828458);
+            maxIds[4] = 5173;
+            maxIds[5] = 3535;
+            maxIds[6] = 552;
+            dumpFile(cache, 6,715827884);
+            dumpFile(cache, 6,715827958);
+            dumpFile(cache, 6,715827967);
+            dumpFile(cache, 6,715828004);
+            dumpFile(cache, 6,715828039);
+            dumpFile(cache, 6,715828059);
+            dumpFile(cache, 6,715828209);
+            dumpFile(cache, 6,715828434);
+            maxIds[7] = 41760;
+            maxIds[8] = 1462;
+            maxIds[9] = 677;
+            dumpFile(cache, 9,1431655786);
+            dumpFile(cache, 9,1431655802);
+            dumpFile(cache, 9,1431655805);
+            dumpFile(cache, 9,1431655814);
+            dumpFile(cache, 9,1431655817);
+            dumpFile(cache, 9,1431656403);
+            maxIds[10] = 1;
+            dumpFile(cache, 10,1431655766);
+
+            for (byte index = 0; index <= 255 && index >= 0; ++index)
+                for (int id = 0; id <= maxId && id >= 0; ++id)
+                //for (int id = 0; id <= maxIds[index] && id >= 0; ++id)
                     dumpFile(cache, index, id);
 
         } catch (Exception e) {
@@ -43,16 +87,17 @@ public class Main {
     }
 
     public void testDump(CacheFileSet cache, int index, int id) throws Exception {
-        boolean success = !dumpFile(cache, index, (short) id);
-        println("testDump: " + index + "," + id + " success: " + success);
+        boolean success = !dumpFile(cache, index, id);
+        System.out.println("testDump: " + index + "," + id + " success: " + success);
     }
 
-    public boolean dumpFile(CacheFileSet cache, int index, short id) throws Exception {
+    public boolean dumpFile(CacheFileSet cache, int index, int id) throws Exception {
         byte[] data = cache.read(index, id);
 
-        if (data == null)
-            // println("no data for: " + index + "," + id);
+        if (data == null){
+            //println("no data for: " + index + "," + id);
             return true;
+        }
 
         println("data for: " + index + "," + id);
 
@@ -123,7 +168,7 @@ public class Main {
         out.close();
     }
 
-    public static File checkFile(int index, short id) throws Exception {
+    public static File checkFile(int index, int id) throws Exception {
         File file = new File(folderName + index);
         if (!file.exists())
             if (!file.mkdir()) {
