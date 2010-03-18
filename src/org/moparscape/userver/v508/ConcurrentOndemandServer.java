@@ -15,27 +15,30 @@ import java.net.URLConnection;
  * Date: Jul 6, 2009
  * Time: 2:22:11 PM
  */
-public class OndemandServer extends Server {
+public class ConcurrentOndemandServer extends Server {
 
     public static final String odsPath = "508/%d/%d";
     public static final int clientVersion = 508;
+    // for some reason, any more than 1 makes the client request pieces that don't exist (so I'm using OndemandServer now)
+    public static final int concurrentRequests = 1;
 
+    public String[] requests = new String[concurrentRequests];
     public byte[] buffer = new byte[1024];
     public int len;
 
-    public OndemandServer(String defaultLocation) {
+    public ConcurrentOndemandServer(String defaultLocation) {
         this(defaultLocation, 0);
     }
 
-    public OndemandServer(String defaultLocation, int port) {
+    public ConcurrentOndemandServer(String defaultLocation, int port) {
         super(defaultLocation, port);
     }
 
-    public OndemandServer(String defaultLocation, String customLocation) {
+    public ConcurrentOndemandServer(String defaultLocation, String customLocation) {
         this(defaultLocation, 0, customLocation);
     }
 
-    public OndemandServer(String defaultLocation, int port, String customLocation) {
+    public ConcurrentOndemandServer(String defaultLocation, int port, String customLocation) {
         super(defaultLocation, port, customLocation);
     }
 
@@ -78,49 +81,15 @@ public class OndemandServer extends Server {
                     int uid = (in.readUnsignedByte() << 16) + (in.readUnsignedByte() << 8) + in.readUnsignedByte();
                     int index = uid >> 16;
                     int id = uid & 0xFFFF;
-                    //System.out.println("index:" + index + " id:" + id);
-//                    if (index == 255 && id == 255) {
-//                        System.out.println("writing out update keys");
-//                        for (int i : UPDATE_KEYS)
-//                            out.writeByte(i);
-//                        out.flush();
-//                        continue;
-//                    }
 
-//                    byte[] data = cache.read(index, id);
-//                    out.writeByte(index);
-//                    out.writeShort(id);
-//
-//                    if (data == null) {
-//                        System.out.println("oh shit");
-//                        return;
-//                    }
-//                    int c = 3;
-//                    for (int i = 0; i < data.length; i++) {
-//
-//                        if (c == 512) {
-//                            out.writeByte(255);
-//                            c = 1;
-//                        }
-//                        out.writeByte(data[i]);
-//
-//                        c++;
-//                    }
-//                    out.flush();
-//
-//                    if(true)
-//                        continue;
+                    if (index == 255 && id == 255) {
+                        // serve update keys
+                        URLConnection url = getHttpURLConnection(String.format(odsPath, index, id));
 
-                    //long hash = (long) ((index << 16) + id);
-                    //System.out.println("request " + hash);
-                    //System.out.println(String.format(odsPath, index, id));
-
-                    URLConnection url = getHttpURLConnection(String.format(odsPath, index, id));
-                    // if url is null, custom and default cannot be reached, continue
-                    if (url == null) {
-                        // unless we want the update keys and may not be connected to the internet
-                        // so we server them up if it is that which we are requesting
-                        if (index == 255 && id == 255) {
+                        // if url is null, custom and default cannot be reached, continue
+                        if (url == null) {
+                            // unless we want the update keys and may not be connected to the internet
+                            // so we server them up if it is that which we are requesting
                             System.out.println("UpdateServer: Update Keys do not exist on server, serving generic ones.");
                             int[] UPDATE_KEYS = {
                                     0xff, 0x00, 0xff, 0x00, 0x00, 0x00, 0x00, 0xd8,
@@ -155,26 +124,59 @@ public class OndemandServer extends Server {
                             for (int i : UPDATE_KEYS)
                                 out.writeByte(i);
                             out.flush();
+                            continue;
                         }
+
+                        InputStream data1 = url.getInputStream();
+
+                        // buffer and len are static
+                        while ((len = data1.read(buffer)) >= 0)
+                            out.write(buffer, 0, len);
+                        out.flush();
+                        data1.close();
+
+                        // served update keys, so get next request
                         continue;
                     }
 
-                    //int size = url.getContentLength();
-                    // if size == -1 it doesn't exist
-                    // however this cannot be counted on as a 404 will still send html
-                    //System.out.println("size: " + size);
-                    System.out.println("opening stream");
-                    InputStream data1 = url.getInputStream();
-                    System.out.println("InputStream Open!");
-
-                    // buffer and len are static
-                    while ((len = data1.read(buffer)) >= 0){
-                        System.out.println("len read:"+len);
-                        out.write(buffer, 0, len);
+                    this.requests[0] = String.format(odsPath, index, id);
+                    //System.out.println("request0: " + this.requests[0]);
+                    // queue the requests
+                    for (int x = 1; x < concurrentRequests; ++x) {
+                        //index = in.read() & 0xff;
+                        //id = in.readShort();
+                        uid = (in.readUnsignedByte() << 16) + (in.readUnsignedByte() << 8) + in.readUnsignedByte();
+                        index = uid >> 16;
+                        id = uid & 0xFFFF;
+                        this.requests[x] = String.format(odsPath, index, id);
+                        //System.out.println("request" + x + ": " + this.requests[x]);
                     }
-                    System.out.println("Data Written! len:"+len);
+
+                    // serve the requests
+                    for (String request : requests) {
+                        //System.out.println("request: " + request);
+                        URLConnection url = getHttpURLConnection(request);
+                        // if url is null, custom and default cannot be reached, continue
+                        if (url == null){
+           /*                 out.writeByte(index);
+                            out.writeShort(id);
+                            out.writeByte(0);
+                            out.writeInt(0);
+           */                 continue;
+                        }
+
+                        //int size = url.getContentLength();
+                        // if size == -1 it doesn't exist
+                        // however this cannot be counted on as a 404 will still send html
+                        //System.out.println("size: " + size);
+                        InputStream data1 = url.getInputStream();
+
+                        // buffer and len are static
+                        while ((len = data1.read(buffer)) >= 0)
+                            out.write(buffer, 0, len);
+                        data1.close();
+                    }
                     out.flush();
-                    data1.close();
                 }
 
             }

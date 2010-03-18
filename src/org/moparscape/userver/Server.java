@@ -120,7 +120,7 @@ public abstract class Server extends Thread {
     public HttpURLConnection getHttpURLConnection(String request) {
         HttpURLConnection ret;
         String urlStr = customLocation + request;
-        //System.out.println("getHttpURLConnection urlStr: "+urlStr);
+        System.out.println("getHttpURLConnection urlStr: "+urlStr);
         try {
             ret = (HttpURLConnection) new URL(urlStr).openConnection();
             // if response code is not 200

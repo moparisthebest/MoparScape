@@ -109,7 +109,7 @@ public class client extends RSApplet {
     public org.moparscape.userver.Server[] getUpdateServers(String defaultLocation, String customLocation) {
         org.moparscape.userver.Server[] ret = new org.moparscape.userver.Server[2];
         ret[0] = new org.moparscape.userver.v317.JaggrabServer(defaultLocation, customLocation);
-        ret[1] = new org.moparscape.userver.v317.OndemandServer(defaultLocation, customLocation);
+        ret[1] = new org.moparscape.userver.v317.ConcurrentOndemandServer(defaultLocation, customLocation);
         return ret;
     }
 

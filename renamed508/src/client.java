@@ -12,6 +12,7 @@ import java.util.HashMap;
 
 import nativeadvert.browsercontrol;
 import org.moparscape.iface.ClientInterface;
+import org.moparscape.userver.v508.ConcurrentOndemandServer;
 
 public final class client extends GameApplet implements ClientInterface {
 
@@ -96,7 +97,7 @@ public final class client extends GameApplet implements ClientInterface {
     public org.moparscape.userver.Server[] getUpdateServers(String defaultLocation, String customLocation) {
         org.moparscape.userver.Server[] ret = new org.moparscape.userver.Server[2];
         ret[0] = new org.moparscape.userver.v508.OndemandServer443(defaultLocation, customLocation);
-        ret[1] = new org.moparscape.userver.v508.OndemandServer(defaultLocation, customLocation);
+        ret[1] = new ConcurrentOndemandServer(defaultLocation, customLocation);
         return ret;
     }
 

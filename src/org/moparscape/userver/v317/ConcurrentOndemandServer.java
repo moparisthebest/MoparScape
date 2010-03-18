@@ -14,7 +14,7 @@ import java.net.URLConnection;
  * Date: Jul 6, 2009
  * Time: 2:22:11 PM
  */
-public class OndemandServer extends Server {
+public class ConcurrentOndemandServer extends Server {
 
     public static final String odsPath = "317/ondemand/";
     // 10 seems to be the correct number
@@ -22,19 +22,19 @@ public class OndemandServer extends Server {
 
     public int[] requests = new int[concurrentRequests*2];
 
-    public OndemandServer(String defaultLocation) {
+    public ConcurrentOndemandServer(String defaultLocation) {
         this(defaultLocation, 0);
     }
 
-    public OndemandServer(String defaultLocation, int port) {
+    public ConcurrentOndemandServer(String defaultLocation, int port) {
         super(defaultLocation, port);
     }
 
-    public OndemandServer(String defaultLocation, String customLocation) {
+    public ConcurrentOndemandServer(String defaultLocation, String customLocation) {
         this(defaultLocation, 0, customLocation);
     }
 
-    public OndemandServer(String defaultLocation, int port, String customLocation) {
+    public ConcurrentOndemandServer(String defaultLocation, int port, String customLocation) {
         super(defaultLocation, port, customLocation);
     }
 

@@ -8,6 +8,8 @@ import java.io.PrintStream;
 public class Main {
 
     public static final String folderName = "/home/mopar/htdocs/508/";
+    // some (crappy) filesystems can handle more than this many files in any given folder, so we have to handle it (suffer)
+    public static final int maxFilesInFolder = 33000;
     public static PrintStream log;
 
     public Main() {
@@ -32,13 +34,14 @@ public class Main {
             // testDump(cache, 0, 2560);
             //testDump(cache, 7, -32165);
             //testDump(cache, 0, 59137);//0/59137
+            //testDump(cache, 255, 1);
             //System.exit(0);
 
             //int index = 7;
-            // the ids are unsigned shorts, which in java needs an int and is twice a short
+            // the ids are unsigned shorts, which in java needs an int and is twice a max short
             int maxId = Short.MAX_VALUE*2;
-            System.out.println("maxId: "+maxId);
-            int[] maxIds = new int[255];
+            // goes up to index of 255, which needs length of 256
+            int[] maxIds = new int[256];
             for(int x = 0; x < maxIds.length; ++x)
                 maxIds[x] = maxId;
             maxIds[0] = 2509;
@@ -74,7 +77,7 @@ public class Main {
             maxIds[10] = 1;
             dumpFile(cache, 10,1431655766);
 
-            for (byte index = 0; index <= 255 && index >= 0; ++index)
+            for (short index = 0; index <= 255 && index >= 0; ++index)
                 for (int id = 0; id <= maxId && id >= 0; ++id)
                 //for (int id = 0; id <= maxIds[index] && id >= 0; ++id)
                     dumpFile(cache, index, id);
