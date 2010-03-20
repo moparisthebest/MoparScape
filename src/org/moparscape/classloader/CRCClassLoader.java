@@ -56,7 +56,6 @@ public class CRCClassLoader extends ClassLoader {
      * the provided location and tries again.  If it fails again, an IOException is thrown.
      *
      * @param jarFileLoc The location of the jar file to load on the disk
-     *
      */
     public CRCClassLoader(String jarFileLoc, String backupURL, long expectedCRC) throws IOException {
         super();
@@ -94,15 +93,27 @@ public class CRCClassLoader extends ClassLoader {
             throw new IOException("CRC checksum failed. crc:" + getCRC() + " expected:" + expectedCRC);
     }
 
+    public void addJar(String jarFileLoc) throws IOException {
+        this.setup(jarFileLoc, false);
+    }
+
     private void setup(String jarFileLoc) throws IOException {
+        this.setup(jarFileLoc, true);
+    }
+
+    private void setup(String jarFileLoc, boolean updateCRC) throws IOException {
 
         JarFile jf = new JarFile(jarFileLoc);
         Enumeration entries = jf.entries();
 
         classes = new HashMap<String, byte[]>();
-        crcVal = 0;
 
-        CRC32 crc = new CRC32();
+        CRC32 crc = null;
+        if (updateCRC) {
+            crcVal = 0;
+            crc = new CRC32();
+        }
+
         byte[] buffer = new byte[1024];
 
         while (entries.hasMoreElements()) {
@@ -120,7 +131,8 @@ public class CRCClassLoader extends ClassLoader {
 
                 // update crc
                 byte[] classArr = baos.toByteArray();
-                crc.update(classArr);
+                if (updateCRC)
+                    crc.update(classArr);
 
                 String className = entry.getName().substring(0, entry.getName().lastIndexOf(".")).replaceAll("/", ".");
                 // save class
@@ -129,7 +141,8 @@ public class CRCClassLoader extends ClassLoader {
         }
         jf.close();
 
-        crcVal = crc.getValue();
+        if (updateCRC)
+            crcVal = crc.getValue();
     }
 
     public long getCRC() {
@@ -146,8 +159,8 @@ public class CRCClassLoader extends ClassLoader {
     public Class<?> findClass(String name) throws ClassNotFoundException {
         // System.out.println("CRCClassLoader: Requesting class " + name);
         byte[] classBytes = classes.get(name);
-        if (classBytes == null){
-            if(parent == null)
+        if (classBytes == null) {
+            if (parent == null)
                 throw new ClassNotFoundException("Couldn't find class " + name);
             //System.out.println("Couldn't find class " + name + " trying parent class loader.");
             return parent.loadClass(name);
