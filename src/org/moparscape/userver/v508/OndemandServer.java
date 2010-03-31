@@ -17,8 +17,10 @@ import java.net.URLConnection;
  */
 public class OndemandServer extends Server {
 
-    public static final String odsPath = "508/%d/%d";
+    public static final String odsPath = "508/%d%s/%d";
     public static final int clientVersion = 508;
+    // some (crappy) filesystems can't handle more than this many files in any given folder, so we have to handle it (suffer)
+    public static final int maxFilesInFolder = 33005;
 
     public byte[] buffer = new byte[1024];
     public int len;
@@ -113,9 +115,9 @@ public class OndemandServer extends Server {
 
                     //long hash = (long) ((index << 16) + id);
                     //System.out.println("request " + hash);
-                    //System.out.println(String.format(odsPath, index, id));
+                    //System.out.println(String.format(odsPath, index, id >= maxFilesInFolder ? "/a" : "", id));
 
-                    URLConnection url = getHttpURLConnection(String.format(odsPath, index, id));
+                    URLConnection url = getHttpURLConnection(String.format(odsPath, index, id >= maxFilesInFolder ? "/a" : "", id));
                     // if url is null, custom and default cannot be reached, continue
                     if (url == null) {
                         // unless we want the update keys and may not be connected to the internet
@@ -163,16 +165,16 @@ public class OndemandServer extends Server {
                     // if size == -1 it doesn't exist
                     // however this cannot be counted on as a 404 will still send html
                     //System.out.println("size: " + size);
-                    System.out.println("opening stream");
+                    //System.out.println("opening stream");
                     InputStream data1 = url.getInputStream();
-                    System.out.println("InputStream Open!");
+                    //System.out.println("InputStream Open!");
 
                     // buffer and len are static
                     while ((len = data1.read(buffer)) >= 0){
-                        System.out.println("len read:"+len);
+                        //System.out.println("len read:"+len);
                         out.write(buffer, 0, len);
                     }
-                    System.out.println("Data Written! len:"+len);
+                    //System.out.println("Data Written! len:"+len);
                     out.flush();
                     data1.close();
                 }

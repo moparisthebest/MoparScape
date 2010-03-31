@@ -8,8 +8,8 @@ import java.io.PrintStream;
 public class Main {
 
     public static final String folderName = "/home/mopar/htdocs/508/";
-    // some (crappy) filesystems can handle more than this many files in any given folder, so we have to handle it (suffer)
-    public static final int maxFilesInFolder = 33000;
+    // some (crappy) filesystems can't handle more than this many files in any given folder, so we have to handle it (suffer)
+    public static final int maxFilesInFolder = 33005;
     public static PrintStream log;
 
     public Main() {
@@ -77,10 +77,16 @@ public class Main {
             maxIds[10] = 1;
             dumpFile(cache, 10,1431655766);
 
-            for (short index = 0; index <= 255 && index >= 0; ++index)
-                for (int id = 0; id <= maxId && id >= 0; ++id)
+            int idCount;
+            for (short index = 0; index <= 255 && index >= 0; ++index){
+                idCount = 0;
+                for (int id = 0; id <= maxId && id >= 0; ++id){
                 //for (int id = 0; id <= maxIds[index] && id >= 0; ++id)
-                    dumpFile(cache, index, id);
+                    if(!dumpFile(cache, index, id))
+                        ++idCount;
+                }
+                System.out.println("total files for index '"+index+"' is '"+idCount+"'");
+            }
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -172,14 +178,18 @@ public class Main {
     }
 
     public static File checkFile(int index, int id) throws Exception {
-        File file = new File(folderName + index);
+        String folder = folderName + index;
+        // handle crappy filesystems
+        if(id >= maxFilesInFolder)
+            folder += "/a";
+        File file = new File(folder);
         if (!file.exists())
-            if (!file.mkdir()) {
+            if (!file.mkdirs()) {
                 println("can't create dir");
                 System.exit(1);
             }
 
-        file = new File(folderName + index + "/" + id);
+        file = new File(folder + "/" + id);
         if (file.exists()) {
             println("oh shit, collision!!!!!!");
             System.exit(1);

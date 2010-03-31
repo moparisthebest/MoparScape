@@ -94,9 +94,10 @@ public class Class20
 		    is[i_3_] = (byte) -1;
 	    }
 	}
-    for(byte b : is)
-        System.out.print(b + ", ");
-    System.out.println();
+    //xxx moparisthebest added
+    //for(byte b : is)
+    //    System.out.print(b + ", ");
+    //System.out.println();
 	class68_sub14.writeBytes(24, 0, is);
     }
     

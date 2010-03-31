@@ -7,6 +7,7 @@ package org.moparscape.classloader;
 import org.moparscape.Update;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.security.ProtectionDomain;
@@ -22,7 +23,7 @@ import java.util.zip.CRC32;
  */
 public class CRCClassLoader extends ClassLoader {
 
-    private Map<String, byte[]> classes;
+    private Map<String, byte[]> classes = new HashMap<String, byte[]>();
     private long crcVal;
     private ClassLoader parent = null;
     private ProtectionDomain pd = null;
@@ -102,11 +103,17 @@ public class CRCClassLoader extends ClassLoader {
     }
 
     private void setup(String jarFileLoc, boolean updateCRC) throws IOException {
+        File f = new File(jarFileLoc);
+        if (!f.exists()) {
+            System.out.println("Jar file doesn't exist: " + jarFileLoc);
+            return;
+        }
 
-        JarFile jf = new JarFile(jarFileLoc);
+        JarFile jf = new JarFile(f);
         Enumeration entries = jf.entries();
 
-        classes = new HashMap<String, byte[]>();
+        if(updateCRC)
+            classes = new HashMap<String, byte[]>();
 
         CRC32 crc = null;
         if (updateCRC) {
@@ -119,7 +126,6 @@ public class CRCClassLoader extends ClassLoader {
         while (entries.hasMoreElements()) {
             JarEntry entry = (JarEntry) entries.nextElement();
             if (entry.getName().endsWith(".class")) {
-                //System.out.println("class name: " + entry.getName());
                 InputStream in = jf.getInputStream(entry);
                 ByteArrayOutputStream baos = new ByteArrayOutputStream();
                 int len;
@@ -135,6 +141,7 @@ public class CRCClassLoader extends ClassLoader {
                     crc.update(classArr);
 
                 String className = entry.getName().substring(0, entry.getName().lastIndexOf(".")).replaceAll("/", ".");
+                //if (updateCRC)  System.out.println("class name: " + className);
                 // save class
                 classes.put(className, classArr);
             }
@@ -152,17 +159,17 @@ public class CRCClassLoader extends ClassLoader {
     /**
      * Is called by the ClassLoader when the requested class
      * is not found in its cache. The parent is only used when
-     * this is ran as an applet strangely.
+     * this is ran as an applet, strangely.
      *
      * @param name The name of the class
      */
     public Class<?> findClass(String name) throws ClassNotFoundException {
-        // System.out.println("CRCClassLoader: Requesting class " + name);
+        //System.out.println("CRCClassLoader: Requesting class '" + name + "'");
         byte[] classBytes = classes.get(name);
         if (classBytes == null) {
             if (parent == null)
                 throw new ClassNotFoundException("Couldn't find class " + name);
-            //System.out.println("Couldn't find class " + name + " trying parent class loader.");
+            System.out.println("Couldn't find class '" + name + "' trying parent class loader.");
             return parent.loadClass(name);
         }
         Class foundClass = defineClass(name, classBytes, 0, classBytes.length, pd);

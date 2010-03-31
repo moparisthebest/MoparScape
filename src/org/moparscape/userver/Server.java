@@ -120,7 +120,7 @@ public abstract class Server extends Thread {
     public HttpURLConnection getHttpURLConnection(String request) {
         HttpURLConnection ret;
         String urlStr = customLocation + request;
-        System.out.println("getHttpURLConnection urlStr: "+urlStr);
+        //System.out.println("getHttpURLConnection urlStr: "+urlStr);
         try {
             ret = (HttpURLConnection) new URL(urlStr).openConnection();
             // if response code is not 200
@@ -153,8 +153,7 @@ public abstract class Server extends Thread {
     public void handleException(Exception e) {
         if (MainPanel.debug()) {
             String myName = this.getClass().getName();
-            if (myName.equals("org.moparscape.userver.v508.OndemandServer443"))
-                return;
+            //if (myName.equals("org.moparscape.userver.v508.OndemandServer443"))  return;
             System.err.print("Server error: ");
             e.printStackTrace();
         }
