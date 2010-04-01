@@ -1,0 +1,13 @@
+Child: 0, type: 0, width: 447, height: 81
+Child: 1, message: Line1
+Child: 2, message: Line2
+Child: 3, message: Line3
+Child: 4, message: Line4
+Child: 5, message: Line5
+Child: 6, message: Line6
+Child: 7, message: Line7
+Child: 8, message: Line8
+Child: 9, message: Line9
+Child: 10, message: Line10
+Child: 11, message: Line11
+Child: 12, message: Line12

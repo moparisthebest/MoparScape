@@ -1,0 +1,19 @@
+Child: 0, type: 0, width: 512, height: 334
+Child: 1, type: 0, width: 450, height: 15
+Child: 2, type: 0, width: 451, height: 18
+Child: 3, type: 0, width: 450, height: 18
+Child: 4, type: 0, width: 450, height: 18
+Child: 5, type: 0, width: 449, height: 14
+Child: 6, type: 0, width: 452, height: 15
+Child: 7, type: 0, width: 453, height: 16
+Child: 8, type: 0, width: 453, height: 18
+Child: 9, type: 0, width: 452, height: 16
+Child: 10, message: Five hundred years have passed since the rule of King Alvis,
+Child: 11, message: saviour of Keldagrim, victim of his own inventions.
+Child: 12, message: Founder of the Consortium, the gathering of mining companies
+Child: 13, message: that were to serve the monarchy, eventually the monarchy came
+Child: 14, message: to serve the Consortium.
+Child: 15, message: By the time of his death, the monarchy was all but abolished.
+Child: 16, message: By now, the Kings of Keldagrim are but a distant memory...
+Child: 17, message: with only the statue of King Alvis to remind the people of the
+Child: 18, message: old days.

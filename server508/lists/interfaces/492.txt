@@ -1,0 +1,50 @@
+Child: 0, type: 3, width: 16391, height: 19628
+Child: 1, type: 6, width: 501, height: 284
+Child: 2, message: Player 1 Interface Screen
+Child: 3, message: Decline
+Child: 4, type: 6, width: 47, height: 49
+Child: 5, message: Accept
+Child: 6, message: Player 2 selected role:
+Child: 7, message: Waiting ...
+Child: 8, message: The team:
+Child: 9, message: Name
+Child: 10, message: Role
+Child: 11, message: 1
+Child: 12, message: 2
+Child: 13, message: 3
+Child: 14, message: 4
+Child: 15, message: 5
+Child: 16, message: none set
+Child: 17, message: none set
+Child: 18, message: none set
+Child: 19, message: none set
+Child: 20, message: none set
+Child: 21, message: none set
+Child: 22, message: none set
+Child: 23, message: none set
+Child: 24, message: none set
+Child: 25, message: none set
+Child: 26, message: Wave
+Child: 27, message: 0
+Child: 28, type: 6, width: 22, height: 23
+Child: 29, type: 6, width: 22, height: 23
+Child: 30, type: 6, width: 22, height: 23
+Child: 31, message: Remove?
+Child: 32, message: 0
+Child: 33, message: 0
+Child: 34, message: 0
+Child: 35, message: 0
+Child: 36, type: 6, width: 46, height: 51
+Child: 37, type: 3, width: 5, height: 187
+Child: 38, type: 3, width: 5, height: 187
+Child: 39, type: 3, width: 5, height: 187
+Child: 40, type: 3, width: 5, height: 187
+Child: 41, type: 3, width: 285, height: 5
+Child: 42, type: 3, width: 285, height: 5
+Child: 43, type: 3, width: 285, height: 5
+Child: 44, type: 3, width: 285, height: 5
+Child: 45, type: 3, width: 285, height: 5
+Child: 46, message: Level in role:
+Child: 47, message: Waiting ...
+Child: 48, type: 6, width: 22, height: 23
+Child: 49, type: 0, width: 512, height: 334

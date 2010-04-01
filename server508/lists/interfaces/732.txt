@@ -1,0 +1,210 @@
+Child: 0, type: 0, width: 512, height: 334
+Child: 1, type: 5, width: 491, height: 271
+Child: 2, type: 3, width: 228, height: 51
+Child: 3, type: 6, width: 35, height: 27
+Child: 4, message: Druidic Mage Top 
+Child: 5, message: Lvl. Req. 20 Magic, 10 Defence
+Child: 6, message: (Cost: 300, Recharge: 100)
+Child: 7, type: 3, width: 228, height: 51
+Child: 8, type: 6, width: 27, height: 39
+Child: 9, message: Druidic Mage Bottom
+Child: 10, message: Lvl. Req. 20 Magic, 10 Defence
+Child: 11, message: (Cost: 200, Recharge: 70)
+Child: 12, type: 3, width: 228, height: 51
+Child: 13, type: 6, width: 19, height: 26
+Child: 14, message: Druidic Mage Hood
+Child: 15, message: Lvl. Req. 20 Magic, 10 Defence
+Child: 16, message: (Cost: 100, Recharge: 35)
+Child: 17, type: 3, width: 400, height: 1
+Child: 18, type: 3, width: 400, height: 3
+Child: 19, type: 3, width: 228, height: 51
+Child: 20, type: 6, width: 40, height: 29
+Child: 21, message: Combat Robe Top
+Child: 22, message: Lvl. Req. 20 Magic, 10 Defence
+Child: 23, message: (Cost: 150, Recharge: 50)
+Child: 24, type: 3, width: 228, height: 51
+Child: 25, type: 6, width: 25, height: 40
+Child: 26, message: Combat Robe Bottom
+Child: 27, message: Lvl. Req. 20 Magic, 10 Defence
+Child: 28, message: (Cost: 100, Recharge: 35)
+Child: 29, type: 3, width: 228, height: 51
+Child: 30, type: 6, width: 19, height: 26
+Child: 31, message: Combat Hood
+Child: 32, message: Lvl. Req. 20 Magic, 10 Defence
+Child: 33, message: (Cost: 50, Recharge: 15)
+Child: 34, type: 3, width: 400, height: 1
+Child: 35, type: 3, width: 400, height: 3
+Child: 36, type: 3, width: 228, height: 51
+Child: 37, type: 6, width: 41, height: 29
+Child: 38, message: Battle Robe Top
+Child: 39, message: Lvl. Req. 60 Magic, 50 Defence
+Child: 40, message: (Cost: 1500, Recharge: 500)
+Child: 41, type: 3, width: 228, height: 51
+Child: 42, type: 6, width: 24, height: 40
+Child: 43, message: Battle Robe Bottom
+Child: 44, message: Lvl. Req. 60 Magic, 50 Defence
+Child: 45, message: (Cost: 1000, Recharge: 350)
+Child: 46, type: 3, width: 228, height: 51
+Child: 47, type: 6, width: 19, height: 26
+Child: 48, message: Battle Hood
+Child: 49, message: Lvl. Req. 60 Magic, 50 Defence
+Child: 50, message: (Cost: 250, Recharge: 80)
+Child: 51, type: 3, width: 400, height: 1
+Child: 52, type: 3, width: 400, height: 3
+Child: 53, type: 3, width: 228, height: 51
+Child: 54, type: 6, width: 30, height: 34
+Child: 55, message: Green D'hide Coif
+Child: 56, message: Lvl. Req. 40 Ranged, 40 Defence
+Child: 57, message: (Cost: 150, Recharge: 25)
+Child: 58, type: 3, width: 228, height: 51
+Child: 59, type: 6, width: 30, height: 34
+Child: 60, message: Blue D'hide Coif
+Child: 61, message: Lvl. Req. 50 Ranged, 40 Defence
+Child: 62, message: (Cost: 200, Recharge: 35)
+Child: 63, type: 3, width: 228, height: 51
+Child: 64, type: 6, width: 30, height: 34
+Child: 65, message: Red D'hide Coif
+Child: 66, message: Lvl. Req. 60 Ranged, 40 Defence
+Child: 67, message: (Cost: 300, Recharge: 50)
+Child: 68, type: 3, width: 228, height: 51
+Child: 69, type: 6, width: 30, height: 34
+Child: 70, message: Black D'hide Coif
+Child: 71, message: Lvl. Req. 70 Ranged, 40 Defence
+Child: 72, message: (Cost: 500, Recharge: 75)
+Child: 73, type: 3, width: 400, height: 1
+Child: 74, type: 3, width: 400, height: 3
+Child: 75, type: 3, width: 228, height: 51
+Child: 76, type: 6, width: 37, height: 22
+Child: 77, message: Bronze Gauntlets
+Child: 78, message: Lvl. Req. None
+Child: 79, message: (Cost: 15, Recharge: 3)
+Child: 80, type: 3, width: 228, height: 51
+Child: 81, type: 6, width: 37, height: 22
+Child: 82, message: Iron Gauntlets
+Child: 83, message: Lvl. Req. None
+Child: 84, message: (Cost: 30, Recharge: 5)
+Child: 85, type: 3, width: 228, height: 51
+Child: 86, type: 6, width: 37, height: 22
+Child: 87, message: Steel Gauntlets
+Child: 88, message: Lvl. Req. 5 Defence
+Child: 89, message: (Cost: 50, Recharge: 8)
+Child: 90, type: 3, width: 228, height: 51
+Child: 91, type: 6, width: 37, height: 22
+Child: 92, message: Black Gauntlets
+Child: 93, message: Lvl. Req. 10 Defence
+Child: 94, message: (Cost: 75, Recharge: 13)
+Child: 95, type: 3, width: 228, height: 51
+Child: 96, type: 6, width: 37, height: 22
+Child: 97, message: Mithril Gauntlets
+Child: 98, message: Lvl. Req. 20 Defence
+Child: 99, message: (Cost: 100, Recharge: 17)
+Child: 100, type: 3, width: 228, height: 51
+Child: 101, type: 6, width: 37, height: 22
+Child: 102, message: Adamant Gauntlets
+Child: 103, message: Lvl. Req. 30 Defence
+Child: 104, message: (Cost: 150, Recharge: 25)
+Child: 105, type: 3, width: 228, height: 51
+Child: 106, type: 6, width: 37, height: 22
+Child: 107, message: Rune Gauntlets
+Child: 108, message: Lvl. Req. 40 Defence
+Child: 109, message: (Cost: 200, Recharge: 35)
+Child: 110, type: 3, width: 228, height: 51
+Child: 111, type: 6, width: 37, height: 25
+Child: 112, message: Dragon Gauntlets
+Child: 113, message: Lvl. Req. 60 Defence
+Child: 114, message: (Cost: 300, Recharge: 50)
+Child: 115, type: 3, width: 400, height: 1
+Child: 116, type: 3, width: 400, height: 3
+Child: 117, type: 3, width: 228, height: 51
+Child: 118, type: 6, width: 27, height: 45
+Child: 119, message: Adamant Spikeshield
+Child: 120, message: Lvl. Req. 35 Defence
+Child: 121, message: (Cost: 50, Recharge: 8)
+Child: 122, type: 3, width: 228, height: 51
+Child: 123, type: 6, width: 39, height: 47
+Child: 124, message: Adamant Berserker Shield
+Child: 125, message: Lvl. Req. 35 Defence
+Child: 126, message: (Cost: 100, Recharge: 17)
+Child: 127, type: 3, width: 228, height: 51
+Child: 128, type: 6, width: 27, height: 45
+Child: 129, message: Rune Spikeshield
+Child: 130, message: Lvl. Req. 45 Defence
+Child: 131, message: (Cost: 200, Recharge: 35)
+Child: 132, type: 3, width: 228, height: 51
+Child: 133, type: 6, width: 39, height: 47
+Child: 134, message: Rune Berserker Shield
+Child: 135, message: Lvl. Req. 45 Defence
+Child: 136, message: (Cost: 300, Recharge: 50)
+Child: 137, type: 3, width: 400, height: 1
+Child: 138, type: 3, width: 400, height: 3
+Child: 139, type: 3, width: 228, height: 51
+Child: 140, type: 6, width: 29, height: 36
+Child: 141, message: Irit Gloves
+Child: 142, message: Lvl. Req. 50 Herblore
+Child: 143, message: (Cost: 75)
+Child: 144, type: 3, width: 228, height: 51
+Child: 145, type: 6, width: 29, height: 36
+Child: 146, message: Avantoe Gloves
+Child: 147, message: Lvl. Req. 60 Herblore
+Child: 148, message: (Cost: 100)
+Child: 149, type: 3, width: 228, height: 51
+Child: 150, type: 6, width: 29, height: 36
+Child: 151, message: Kwuarm Gloves
+Child: 152, message: Lvl. Req. 70 Herblore
+Child: 153, message: (Cost: 200)
+Child: 154, type: 3, width: 228, height: 51
+Child: 155, type: 6, width: 29, height: 36
+Child: 156, message: Cadantine Gloves
+Child: 157, message: Lvl. Req. 80 Herblore
+Child: 158, message: (Cost: 200)
+Child: 159, type: 3, width: 400, height: 1
+Child: 160, type: 3, width: 400, height: 3
+Child: 161, type: 3, width: 228, height: 51
+Child: 162, type: 6, width: 29, height: 36
+Child: 163, message: Swordfish Gloves
+Child: 164, message: Lvl. Req. 65 Fishing
+Child: 165, message: (Cost: 200)
+Child: 166, type: 3, width: 228, height: 51
+Child: 167, type: 6, width: 29, height: 36
+Child: 168, message: Shark Gloves
+Child: 169, message: Lvl. Req. 90 Fishing
+Child: 170, message: (Cost: 200)
+Child: 171, type: 3, width: 228, height: 51
+Child: 172, type: 6, width: 29, height: 36
+Child: 173, message: Dragon Slayer Gloves
+Child: 174, message: Lvl. Req. 70 Slayer
+Child: 175, message: (Cost: 200)
+Child: 176, type: 3, width: 228, height: 51
+Child: 177, type: 6, width: 29, height: 36
+Child: 178, message: Air Runecrafting Gloves
+Child: 179, message: Lvl. Req. 10 Runecrafting
+Child: 180, message: (Cost: 75)
+Child: 181, type: 3, width: 228, height: 51
+Child: 182, type: 6, width: 29, height: 36
+Child: 183, message: Water Runecrafting Gloves
+Child: 184, message: Lvl. Req. 20 Runecrafting
+Child: 185, message: (Cost: 75)
+Child: 186, type: 3, width: 228, height: 51
+Child: 187, type: 6, width: 29, height: 36
+Child: 188, message: Earth Runecrafting Gloves
+Child: 189, message: Lvl. Req. 30 Runecrafting
+Child: 190, message: (Cost: 75)
+Child: 191, type: 3, width: 400, height: 1
+Child: 192, type: 3, width: 400, height: 3
+Child: 193, type: 0, width: 504, height: 276
+Child: 194, type: 5, width: 491, height: 33
+Child: 195, type: 5, width: 31, height: 235
+Child: 196, type: 5, width: 31, height: 235
+Child: 197, type: 5, width: 32, height: 32
+Child: 198, type: 5, width: 441, height: 30
+Child: 199, type: 5, width: 32, height: 32
+Child: 200, type: 5, width: 32, height: 32
+Child: 201, type: 5, width: 32, height: 32
+Child: 202, type: 5, width: 483, height: 25
+Child: 203, type: 5, width: 441, height: 33
+Child: 204, type: 5, width: 32, height: 32
+Child: 205, type: 5, width: 32, height: 32
+Child: 206, message: Fist of Guthix Reward Shop
+Child: 207, type: 0, width: 512, height: 334
+Child: 208, type: 5, width: 16, height: 16
+Child: 209, type: 0, width: 16, height: 240

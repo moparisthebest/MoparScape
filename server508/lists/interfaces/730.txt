@@ -1,0 +1,30 @@
+Child: 0, type: 5, width: 190, height: 26
+Child: 1, type: 5, width: 32, height: 32
+Child: 2, type: 5, width: 32, height: 32
+Child: 3, type: 5, width: 32, height: 32
+Child: 4, type: 5, width: 32, height: 32
+Child: 5, type: 5, width: 142, height: 32
+Child: 6, type: 5, width: 140, height: 32
+Child: 7, message: Please pick up a stone!
+Child: 8, type: 0, width: 16391, height: 16391
+Child: 9, type: 5, width: 159, height: 50
+Child: 10, type: 5, width: 32, height: 32
+Child: 11, type: 5, width: 32, height: 32
+Child: 12, type: 5, width: 32, height: 32
+Child: 13, type: 5, width: 32, height: 32
+Child: 14, type: 5, width: 108, height: 32
+Child: 15, type: 5, width: 108, height: 32
+Child: 16, type: 5, width: 153, height: 32
+Child: 17, message: Charge:
+Child: 18, message: Name
+Child: 19, type: 0, width: 204, height: 64
+Child: 20, type: 0, width: 201, height: 64
+Child: 21, type: 0, width: 512, height: 334
+Child: 22, type: 0, width: 512, height: 334
+Child: 23, type: 0, width: 204, height: 32
+Child: 24, type: 0, width: 512, height: 334
+Child: 25, message: Hunting:
+Child: 26, message: Hunted by:
+Child: 27, message: Time left:
+Child: 28, type: 9, width: 182, height: 0
+Child: 29, type: 5, width: 184, height: 8

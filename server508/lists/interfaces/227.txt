@@ -1,0 +1,57 @@
+Child: 0, type: 0, width: 387, height: 287
+Child: 1, type: 0, width: 342, height: 215
+Child: 2, message: List of needed items:
+Child: 3, message: mourning_deathalter_item1
+Child: 4, type: 6, width: 387, height: 297
+Child: 5, message: mourning_deathalter_item2
+Child: 6, message: mourning_deathalter_item3
+Child: 7, message: mourning_deathalter_item4
+Child: 8, message: mourning_deathalter_item5
+Child: 9, message: mourning_deathalter_item6
+Child: 10, message: mourning_deathalter_item7
+Child: 11, message: mourning_deathalter_item8
+Child: 12, message: mourning_deathalter_item9
+Child: 13, message: mourning_deathalter_item10
+Child: 14, message: mourning_deathalter_item11
+Child: 15, message: mourning_deathalter_item12
+Child: 16, message: mourning_deathalter_item13
+Child: 17, message: mourning_deathalter_item14
+Child: 18, message: mourning_deathalter_item15
+Child: 19, message: mourning_deathalter_item16
+Child: 20, message: mourning_deathalter_item17
+Child: 21, message: mourning_deathalter_item18
+Child: 22, message: mourning_deathalter_item19
+Child: 23, message: mourning_deathalter_item20
+Child: 24, message: mourning_deathalter_item21
+Child: 25, message: mourning_deathalter_item22
+Child: 26, message: mourning_deathalter_item23
+Child: 27, message: mourning_deathalter_item24
+Child: 28, message: mourning_deathalter_item25
+Child: 29, message: mourning_deathalter_item26
+Child: 30, message: mourning_deathalter_item27
+Child: 31, message: mourning_deathalter_item28
+Child: 32, message: mourning_deathalter_item29
+Child: 33, message: mourning_deathalter_item30
+Child: 34, message: mourning_deathalter_item31
+Child: 35, message: mourning_deathalter_item32
+Child: 36, message: mourning_deathalter_item33
+Child: 37, message: mourning_deathalter_item34
+Child: 38, message: mourning_deathalter_item35
+Child: 39, message: mourning_deathalter_item36
+Child: 40, message: mourning_deathalter_item37
+Child: 41, message: mourning_deathalter_item38
+Child: 42, message: mourning_deathalter_item39
+Child: 43, message: mourning_deathalter_item40
+Child: 44, message: mourning_deathalter_item41
+Child: 45, message: mourning_deathalter_item42
+Child: 46, message: mourning_deathalter_item43
+Child: 47, message: mourning_deathalter_item44
+Child: 48, message: mourning_deathalter_item45
+Child: 49, message: mourning_deathalter_item46
+Child: 50, message: mourning_deathalter_item47
+Child: 51, message: mourning_deathalter_item48
+Child: 52, message: mourning_deathalter_item49
+Child: 53, message: mourning_deathalter_item50
+Child: 54, type: 5, width: 26, height: 23
+Child: 55, type: 0, width: 32, height: 32
+Child: 56, type: 0, width: 16, height: 213

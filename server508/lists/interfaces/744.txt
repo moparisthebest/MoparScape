@@ -1,0 +1,306 @@
+Child: 0, type: 0, width: 16391, height: 16391
+Child: 1, type: 0, width: 16384, height: 380
+Child: 2, type: 3, width: 16391, height: 16391
+Child: 3, type: 3, width: 16391, height: 16391
+Child: 4, type: 3, width: 16391, height: 16391
+Child: 5, type: 5, width: 16391, height: 16391
+Child: 6, type: 3, width: 128, height: 256
+Child: 7, type: 3, width: 128, height: 256
+Child: 8, type: 5, width: 360, height: 123
+Child: 9, type: 0, width: 16391, height: 380
+Child: 10, message: Your fullscreen resolution has been changed. Do you want to keep this setting?
+Child: 11, type: 0, width: 16, height: 265
+Child: 12, message: (Press `Esc' for Main Menu)
+Child: 13, type: 0, width: 16, height: 265
+Child: 14, type: 5, width: 60, height: 236
+Child: 15, type: 5, width: 60, height: 236
+Child: 16, type: 5, width: 135, height: 236
+Child: 17, type: 5, width: 135, height: 236
+Child: 18, type: 5, width: 172, height: 40
+Child: 19, type: 5, width: 130, height: 40
+Child: 20, type: 5, width: 130, height: 40
+Child: 21, type: 5, width: 172, height: 40
+Child: 22, type: 5, width: 130, height: 40
+Child: 23, type: 5, width: 130, height: 40
+Child: 24, type: 5, width: 138, height: 112
+Child: 25, type: 5, width: 110, height: 112
+Child: 26, type: 5, width: 130, height: 40
+Child: 27, type: 5, width: 130, height: 40
+Child: 28, type: 5, width: 130, height: 40
+Child: 29, type: 5, width: 130, height: 40
+Child: 30, type: 5, width: 130, height: 40
+Child: 31, type: 5, width: 130, height: 40
+Child: 32, message: Never give anyone your password, not even Jagex staff. Jagex will never ask you for your password.
+Child: 33, type: 0, width: 16391, height: 16391
+Child: 34, message: Close
+Child: 35, type: 0, width: 180, height: 256
+Child: 36, type: 0, width: 180, height: 256
+Child: 37, message: Yes
+Child: 38, message: No
+Child: 39, message: 
+Child: 40, type: 0, width: 184, height: 256
+Child: 41, type: 5, width: 22, height: 28
+Child: 42, message: Log In
+Child: 43, message: (Existing User)
+Child: 44, message: Create Account
+Child: 45, message: (New User)
+Child: 46, message: 
+Child: 47, message: 
+Child: 48, message: 
+Child: 49, message: Graphics Options
+Child: 50, message: Audio Options
+Child: 51, message: Music Volume
+Child: 52, message: Quit
+Child: 53, type: 5, width: 100, height: 33
+Child: 54, type: 5, width: 66, height: 34
+Child: 55, type: 5, width: 66, height: 34
+Child: 56, type: 5, width: 22, height: 28
+Child: 57, type: 5, width: 22, height: 28
+Child: 58, type: 5, width: 22, height: 28
+Child: 59, type: 5, width: 22, height: 28
+Child: 60, type: 5, width: 22, height: 28
+Child: 61, type: 5, width: 22, height: 28
+Child: 62, type: 5, width: 22, height: 28
+Child: 63, type: 0, width: 110, height: 28
+Child: 64, type: 0, width: 134, height: 16
+Child: 65, type: 0, width: 134, height: 52
+Child: 66, type: 0, width: 16, height: 50
+Child: 67, type: 0, width: 116, height: 50
+Child: 68, message: Brightness
+Child: 69, type: 5, width: 22, height: 28
+Child: 70, type: 5, width: 22, height: 28
+Child: 71, type: 5, width: 22, height: 28
+Child: 72, type: 5, width: 22, height: 28
+Child: 73, type: 5, width: 22, height: 28
+Child: 74, type: 5, width: 22, height: 28
+Child: 75, type: 0, width: 88, height: 28
+Child: 76, type: 5, width: 22, height: 28
+Child: 77, message: Visible levels
+Child: 78, type: 5, width: 13, height: 20
+Child: 79, type: 5, width: 13, height: 20
+Child: 80, type: 5, width: 100, height: 20
+Child: 81, message: 
+Child: 82, type: 5, width: 13, height: 20
+Child: 83, type: 5, width: 13, height: 20
+Child: 84, type: 5, width: 100, height: 20
+Child: 85, message: Ground decoration
+Child: 86, type: 5, width: 13, height: 20
+Child: 87, type: 5, width: 13, height: 20
+Child: 88, type: 5, width: 100, height: 20
+Child: 89, message: Texture detail
+Child: 90, type: 5, width: 13, height: 20
+Child: 91, type: 5, width: 13, height: 20
+Child: 92, type: 5, width: 100, height: 20
+Child: 93, message: Idle animations
+Child: 94, type: 5, width: 13, height: 20
+Child: 95, type: 5, width: 13, height: 20
+Child: 96, type: 5, width: 100, height: 20
+Child: 97, message: Flickering effects
+Child: 98, type: 5, width: 13, height: 20
+Child: 99, type: 5, width: 13, height: 20
+Child: 100, type: 5, width: 100, height: 20
+Child: 101, message: Ground textures
+Child: 102, type: 5, width: 13, height: 20
+Child: 103, type: 5, width: 13, height: 20
+Child: 104, type: 5, width: 100, height: 20
+Child: 105, message: Character shadows
+Child: 106, type: 5, width: 13, height: 20
+Child: 107, type: 5, width: 13, height: 20
+Child: 108, type: 5, width: 100, height: 20
+Child: 109, message: Scenery shadows
+Child: 110, type: 5, width: 13, height: 20
+Child: 111, type: 5, width: 13, height: 20
+Child: 112, type: 5, width: 100, height: 20
+Child: 113, message: Lighting detail
+Child: 114, type: 5, width: 13, height: 20
+Child: 115, type: 5, width: 13, height: 20
+Child: 116, type: 5, width: 100, height: 20
+Child: 117, message: Water detail
+Child: 118, type: 5, width: 13, height: 20
+Child: 119, type: 5, width: 13, height: 20
+Child: 120, type: 5, width: 100, height: 20
+Child: 121, message: Fog
+Child: 122, type: 5, width: 13, height: 20
+Child: 123, type: 5, width: 13, height: 20
+Child: 124, type: 5, width: 100, height: 20
+Child: 125, message: Anti-aliasing
+Child: 126, type: 5, width: 13, height: 20
+Child: 127, type: 5, width: 13, height: 20
+Child: 128, type: 5, width: 100, height: 20
+Child: 129, message: Main Menu
+Child: 130, type: 0, width: 107, height: 16
+Child: 131, type: 0, width: 107, height: 52
+Child: 132, type: 0, width: 105, height: 50
+Child: 133, type: 0, width: 107, height: 16
+Child: 134, type: 0, width: 107, height: 52
+Child: 135, type: 0, width: 105, height: 50
+Child: 136, type: 0, width: 107, height: 16
+Child: 137, type: 0, width: 107, height: 52
+Child: 138, type: 0, width: 105, height: 50
+Child: 139, type: 0, width: 107, height: 16
+Child: 140, type: 0, width: 107, height: 52
+Child: 141, type: 0, width: 105, height: 50
+Child: 142, type: 0, width: 107, height: 16
+Child: 143, type: 0, width: 107, height: 52
+Child: 144, type: 0, width: 105, height: 50
+Child: 145, type: 0, width: 107, height: 16
+Child: 146, type: 0, width: 107, height: 52
+Child: 147, type: 0, width: 105, height: 50
+Child: 148, type: 0, width: 107, height: 16
+Child: 149, type: 0, width: 107, height: 52
+Child: 150, type: 0, width: 105, height: 50
+Child: 151, type: 0, width: 107, height: 16
+Child: 152, type: 0, width: 107, height: 52
+Child: 153, type: 0, width: 105, height: 50
+Child: 154, type: 0, width: 107, height: 16
+Child: 155, type: 0, width: 107, height: 52
+Child: 156, type: 0, width: 105, height: 50
+Child: 157, type: 0, width: 107, height: 16
+Child: 158, type: 0, width: 107, height: 52
+Child: 159, type: 0, width: 105, height: 50
+Child: 160, type: 0, width: 107, height: 16
+Child: 161, type: 0, width: 107, height: 52
+Child: 162, type: 0, width: 105, height: 50
+Child: 163, type: 0, width: 107, height: 16
+Child: 164, type: 0, width: 107, height: 52
+Child: 165, type: 0, width: 105, height: 50
+Child: 166, type: 0, width: 107, height: 16
+Child: 167, type: 0, width: 107, height: 52
+Child: 168, type: 0, width: 105, height: 50
+Child: 169, message: Sound Effects Volume
+Child: 170, type: 5, width: 22, height: 28
+Child: 171, type: 5, width: 22, height: 28
+Child: 172, type: 5, width: 22, height: 28
+Child: 173, type: 5, width: 22, height: 28
+Child: 174, type: 5, width: 22, height: 28
+Child: 175, type: 5, width: 22, height: 28
+Child: 176, type: 5, width: 22, height: 28
+Child: 177, type: 0, width: 110, height: 28
+Child: 178, type: 5, width: 22, height: 28
+Child: 179, message: Music Volume
+Child: 180, type: 5, width: 22, height: 28
+Child: 181, type: 5, width: 22, height: 28
+Child: 182, type: 5, width: 22, height: 28
+Child: 183, type: 5, width: 22, height: 28
+Child: 184, type: 5, width: 22, height: 28
+Child: 185, type: 5, width: 22, height: 28
+Child: 186, type: 5, width: 22, height: 28
+Child: 187, type: 0, width: 110, height: 28
+Child: 188, type: 5, width: 22, height: 28
+Child: 189, type: 5, width: 22, height: 28
+Child: 190, message: Area Sounds Volume
+Child: 191, type: 5, width: 22, height: 28
+Child: 192, type: 5, width: 22, height: 28
+Child: 193, type: 5, width: 22, height: 28
+Child: 194, type: 5, width: 22, height: 28
+Child: 195, type: 5, width: 22, height: 28
+Child: 196, type: 5, width: 22, height: 28
+Child: 197, type: 5, width: 22, height: 28
+Child: 198, type: 0, width: 110, height: 28
+Child: 199, message: Mono
+Child: 200, type: 5, width: 15, height: 15
+Child: 201, message: Stereo
+Child: 202, type: 5, width: 15, height: 15
+Child: 203, message: Main Menu
+Child: 204, message: Audio Options
+Child: 205, message: Please Log In
+Child: 206, message: 
+Child: 207, message: Username:
+Child: 208, type: 5, width: 142, height: 22
+Child: 209, type: 5, width: 66, height: 34
+Child: 210, type: 5, width: 52, height: 34
+Child: 211, type: 5, width: 66, height: 34
+Child: 212, message: 
+Child: 213, message: Password:
+Child: 214, type: 5, width: 142, height: 20
+Child: 215, type: 5, width: 66, height: 34
+Child: 216, type: 5, width: 52, height: 34
+Child: 217, type: 5, width: 66, height: 34
+Child: 218, message: ********************
+Child: 219, message: Log In
+Child: 220, message: Main Menu
+Child: 221, message: Creating a RuneScape account is quick, easy and free. It only takes a few simple steps and you'll be enjoying the game in no time.
+Child: 222, message: Main Menu
+Child: 223, message: Next
+Child: 224, type: 5, width: 13, height: 20
+Child: 225, type: 5, width: 47, height: 20
+Child: 226, type: 5, width: 13, height: 20
+Child: 227, type: 5, width: 13, height: 20
+Child: 228, type: 5, width: 101, height: 20
+Child: 229, type: 5, width: 13, height: 20
+Child: 230, type: 5, width: 13, height: 20
+Child: 231, type: 5, width: 47, height: 20
+Child: 232, type: 5, width: 13, height: 20
+Child: 233, message: Please input your date of birth:
+Child: 234, message: Please select your permanent country of residence:
+Child: 235, message: Do not worry. These are the only<br>personal questions we need to ask.
+Child: 236, message: Previous
+Child: 237, message: Next
+Child: 238, type: 5, width: 13, height: 20
+Child: 239, type: 5, width: 202, height: 20
+Child: 240, type: 5, width: 13, height: 20
+Child: 241, type: 0, width: 210, height: 16
+Child: 242, type: 0, width: 210, height: 75
+Child: 243, type: 0, width: 194, height: 74
+Child: 244, type: 0, width: 16, height: 73
+Child: 245, type: 0, width: 56, height: 16
+Child: 246, type: 0, width: 56, height: 59
+Child: 247, type: 0, width: 39, height: 57
+Child: 248, type: 0, width: 16, height: 57
+Child: 249, type: 0, width: 109, height: 16
+Child: 250, type: 0, width: 109, height: 59
+Child: 251, type: 0, width: 91, height: 57
+Child: 252, type: 0, width: 16, height: 57
+Child: 253, type: 0, width: 56, height: 16
+Child: 254, type: 0, width: 56, height: 59
+Child: 255, type: 0, width: 39, height: 57
+Child: 256, type: 0, width: 16, height: 57
+Child: 257, message: Please input a username, then click `Next' to check that it is available.
+Child: 258, message: Usernames can be a maximum of 12 characters long and may contain letters, numbers and underscores. Note: first letters will be capitalised and underscores will be converted into spaces. For example, the username red_rooster would display in the game as Red Rooster.
+Child: 259, message: Username:
+Child: 260, message: Previous
+Child: 261, message: Next
+Child: 262, type: 5, width: 104, height: 20
+Child: 263, type: 5, width: 13, height: 20
+Child: 264, type: 5, width: 95, height: 20
+Child: 265, type: 5, width: 13, height: 20
+Child: 266, message: 
+Child: 267, message: Congratulations! That username is currently available.
+Child: 268, message: By clicking `I Agree', you confirm that you will play RuneScape according to our Terms and Conditions.<br><br>Please ensure that you have read them carefully by clicking the following link:
+Child: 269, type: 0, width: 16384, height: 17
+Child: 270, type: 0, width: 16384, height: 17
+Child: 271, message: These are also available as a page on our website, should you wish to visit them later or print them out.
+Child: 272, message: Previous
+Child: 273, message: I Agree
+Child: 274, type: 0, width: 180, height: 265
+Child: 275, message: Graphics Options
+Child: 276, type: 0, width: 180, height: 256
+Child: 277, type: 0, width: 16391, height: 503
+Child: 278, type: 0, width: 305, height: 256
+Child: 279, type: 0, width: 305, height: 256
+Child: 280, type: 0, width: 305, height: 256
+Child: 281, type: 0, width: 305, height: 256
+Child: 282, message: <u=0000F0>Terms and Conditions</u>
+Child: 283, message: <u=000096>Terms and Conditions</u>
+Child: 284, type: 0, width: 305, height: 256
+Child: 285, type: 0, width: 305, height: 256
+Child: 286, message: Please note that your account has been locked into Quick Chat until you are of suitable age - please review our Terms & Conditions for more information.
+Child: 287, message: Please choose a password and click `Create' to create your account.
+Child: 288, message: Passwords must be between<br>5 and 20 charcters long.<br>We recommend using a combination of numbers and letters in your password to make it harder for someone to guess.
+Child: 289, message: Password:
+Child: 290, type: 5, width: 185, height: 20
+Child: 291, type: 5, width: 13, height: 20
+Child: 292, type: 5, width: 178, height: 20
+Child: 293, type: 5, width: 13, height: 20
+Child: 294, message: Confirm Password:
+Child: 295, message: 
+Child: 296, type: 5, width: 185, height: 20
+Child: 297, type: 5, width: 13, height: 20
+Child: 298, type: 5, width: 178, height: 20
+Child: 299, type: 5, width: 13, height: 20
+Child: 300, message: 
+Child: 301, message: Previous
+Child: 302, message: Create
+Child: 303, message: Congratulations, you have created your account! Now, you just need to log in to play. If it doesn't work straight away, wait a few minutes and try again.
+Child: 304, type: 0, width: 16391, height: 80
+Child: 305, message: Main Menu

@@ -1,0 +1,41 @@
+Child: 0, type: 5, width: 25, height: 25
+Child: 1, message: 
+Child: 2, message: 0
+Child: 3, message: Tourn. Rank:
+Child: 4, message: 
+Child: 5, message: Tourn. Value:
+Child: 6, type: 3, width: 90, height: 105
+Child: 7, message: 0
+Child: 8, message: 
+Child: 9, message: Opponent:
+Child: 10, message: Tourn. Size:
+Child: 11, type: 0, width: 16391, height: 16391
+Child: 12, type: 0, width: 16391, height: 16391
+Child: 13, type: 0, width: 16391, height: 16391
+Child: 14, type: 0, width: 16391, height: 16391
+Child: 15, type: 0, width: 16391, height: 16391
+Child: 16, type: 0, width: 16391, height: 16391
+Child: 17, type: 0, width: 16391, height: 16391
+Child: 18, type: 0, width: 16391, height: 16391
+Child: 19, type: 0, width: 16391, height: 16391
+Child: 20, type: 0, width: 16391, height: 16391
+Child: 21, type: 0, width: 16391, height: 16391
+Child: 22, type: 0, width: 207, height: 53
+Child: 23, type: 0, width: 16391, height: 16391
+Child: 24, message: Style:
+Child: 25, message: Options:
+Child: 26, type: 6, width: 0, height: 0
+Child: 27, type: 5, width: 25, height: 25
+Child: 28, type: 5, width: 25, height: 25
+Child: 29, type: 5, width: 25, height: 25
+Child: 30, type: 5, width: 25, height: 25
+Child: 31, type: 5, width: 25, height: 25
+Child: 32, type: 5, width: 25, height: 25
+Child: 33, type: 5, width: 25, height: 25
+Child: 34, type: 5, width: 25, height: 25
+Child: 35, type: 5, width: 25, height: 25
+Child: 36, type: 5, width: 25, height: 25
+Child: 37, type: 0, width: 16391, height: 16391
+Child: 38, message: Round Time:
+Child: 39, message: 
+Child: 40, type: 0, width: 16391, height: 16391

@@ -1,0 +1,42 @@
+Child: 0, type: 3, width: 332, height: 253
+Child: 1, type: 5, width: 327, height: 248
+Child: 2, type: 5, width: 39, height: 202
+Child: 3, type: 5, width: 27, height: 207
+Child: 4, type: 5, width: 32, height: 32
+Child: 5, type: 5, width: 286, height: 22
+Child: 6, type: 5, width: 285, height: 37
+Child: 7, type: 5, width: 32, height: 32
+Child: 8, type: 5, width: 32, height: 32
+Child: 9, type: 5, width: 32, height: 32
+Child: 10, type: 5, width: 316, height: 22
+Child: 11, type: 5, width: 32, height: 32
+Child: 12, type: 5, width: 32, height: 32
+Child: 13, message: Amazing Farming Equipment Store
+Child: 14, message: Farming rake
+Child: 15, message: 
+Child: 16, message: Seed dibber
+Child: 17, message: 
+Child: 18, message: All-purpose spade
+Child: 19, message: 
+Child: 20, message: Secateurs
+Child: 21, message: 
+Child: 22, message: Watering Can
+Child: 23, message: 
+Child: 24, message: Gardening trowel
+Child: 25, message: 
+Child: 26, message: Empty buckets
+Child: 27, message: 
+Child: 28, message: Normal Compost
+Child: 29, message: 
+Child: 30, message: Supercompost
+Child: 31, message: 
+Child: 32, type: 5, width: 26, height: 23
+Child: 33, type: 5, width: 34, height: 32
+Child: 34, type: 5, width: 34, height: 32
+Child: 35, type: 5, width: 34, height: 32
+Child: 36, type: 5, width: 34, height: 32
+Child: 37, type: 5, width: 34, height: 32
+Child: 38, type: 5, width: 34, height: 32
+Child: 39, type: 5, width: 34, height: 32
+Child: 40, type: 5, width: 34, height: 32
+Child: 41, type: 5, width: 34, height: 32

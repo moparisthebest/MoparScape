@@ -1,0 +1,2 @@
+Child: 0, type: 6, width: 17191, height: 18451
+Child: 1, message: Score: 0

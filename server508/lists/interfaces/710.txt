@@ -1,0 +1,60 @@
+Child: 0, type: 0, width: 512, height: 334
+Child: 1, type: 6, width: 487, height: 335
+Child: 2, type: 6, width: 193, height: 151
+Child: 3, message: Question:
+Child: 4, message: Player Safety Test
+Child: 5, type: 5, width: 26, height: 23
+Child: 6, message: You are asked for your full name and date of birth by a player that you have been chatting with for a short while. Should you give them these details?
+Child: 7, message: No. The player could use my information to steal my identity. I don't want anyone pretending to be me
+Child: 8, message: Yes. There's no harm in telling someone my full name and my birthday. Maybe they want to buy me a birthday present!
+Child: 9, type: 6, width: 33, height: 34
+Child: 10, type: 6, width: 31, height: 34
+Child: 11, type: 9, width: 19, height: 1
+Child: 12, type: 9, width: 0, height: 19
+Child: 13, type: 9, width: 19, height: 1
+Child: 14, type: 9, width: 0, height: 20
+Child: 15, type: 9, width: 19, height: 1
+Child: 16, type: 9, width: 0, height: 19
+Child: 17, type: 9, width: 19, height: 1
+Child: 18, type: 9, width: 0, height: 20
+Child: 19, type: 9, width: 248, height: 0
+Child: 20, type: 0, width: 513, height: 335
+Child: 21, type: 3, width: 512, height: 334
+Child: 22, type: 5, width: 449, height: 230
+Child: 23, type: 5, width: 25, height: 175
+Child: 24, type: 5, width: 32, height: 32
+Child: 25, type: 5, width: 32, height: 32
+Child: 26, type: 5, width: 391, height: 32
+Child: 27, type: 5, width: 32, height: 175
+Child: 28, type: 5, width: 32, height: 32
+Child: 29, type: 5, width: 32, height: 32
+Child: 30, type: 5, width: 387, height: 25
+Child: 31, type: 0, width: 389, height: 160
+Child: 32, message: Correct!
+Child: 33, message: Correct! Personal details given out while chatting could be used by someone who wishes to pretend to be you. Use the Report Abuse button to report anyone asking for your personal details.
+Child: 34, type: 0, width: 389, height: 160
+Child: 35, message: Incorrect!
+Child: 36, message: Wrong. Never give out personal details, such as your full name and date of birth, to other players. Personal details that you give out while chatting could be used by someone so that they can pretend to be you. Use the Report Abuse button to report anyone asking  for your personal details.
+Child: 37, type: 0, width: 97, height: 42
+Child: 38, type: 0, width: 97, height: 42
+Child: 39, type: 3, width: 97, height: 42
+Child: 40, message: Next
+Child: 41, type: 0, width: 16391, height: 16391
+Child: 42, type: 0, width: 16391, height: 16391
+Child: 43, type: 5, width: 32, height: 334
+Child: 44, type: 5, width: 462, height: 32
+Child: 45, type: 5, width: 512, height: 32
+Child: 46, type: 5, width: 32, height: 334
+Child: 47, type: 5, width: 32, height: 32
+Child: 48, type: 5, width: 32, height: 32
+Child: 49, type: 5, width: 32, height: 32
+Child: 50, type: 5, width: 32, height: 32
+Child: 51, type: 0, width: 8192, height: 16391
+Child: 52, type: 0, width: 8188, height: 16391
+Child: 53, type: 0, width: 16391, height: 8192
+Child: 54, type: 0, width: 16391, height: 8182
+Child: 55, type: 0, width: 512, height: 334
+Child: 56, type: 5, width: 256, height: 16384
+Child: 57, type: 5, width: 256, height: 16391
+Child: 58, type: 5, width: 16391, height: 167
+Child: 59, type: 5, width: 16391, height: 166

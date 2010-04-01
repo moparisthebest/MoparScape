@@ -1,0 +1,6 @@
+Child: 0, type: 6, width: 152, height: 97
+Child: 1, type: 6, width: 130, height: 73
+Child: 2, type: 0, width: 165, height: 20
+Child: 3, type: 0, width: 224, height: 73
+Child: 4, message: ****
+Child: 5, message: <col=00ff00>* <col=ffff00>Tai Bwo Favour <col=00ff00>*

@@ -1,0 +1,5 @@
+Child: 0, type: 0, width: 512, height: 334
+Child: 1, type: 3, width: 111, height: 60
+Child: 2, message: Gnomeball
+Child: 3, message: Score
+Child: 4, message: 

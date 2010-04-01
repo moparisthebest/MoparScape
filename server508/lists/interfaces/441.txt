@@ -1,0 +1,9 @@
+Child: 0, type: 3, width: 16647, height: 19628
+Child: 1, type: 6, width: 243, height: 299
+Child: 2, type: 6, width: 71, height: 117
+Child: 3, message: Certificate of Qualification
+Child: 4, message: Earth Sciences Level 2<br>This is to certify that
+Child: 5, message: <name>
+Child: 6, message: has passed the Level 2<br>Earth Sciences exam.
+Child: 7, type: 5, width: 26, height: 23
+Child: 8, type: 5, width: 26, height: 23

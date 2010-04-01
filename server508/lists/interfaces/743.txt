@@ -1,0 +1,35 @@
+Child: 0, type: 0, width: 512, height: 334
+Child: 1, type: 3, width: 175, height: 244
+Child: 2, type: 5, width: 166, height: 219
+Child: 3, type: 5, width: 33, height: 183
+Child: 4, type: 5, width: 32, height: 183
+Child: 5, type: 5, width: 113, height: 32
+Child: 6, type: 5, width: 32, height: 32
+Child: 7, type: 5, width: 32, height: 32
+Child: 8, type: 5, width: 32, height: 32
+Child: 9, type: 5, width: 113, height: 32
+Child: 10, type: 5, width: 32, height: 32
+Child: 11, type: 5, width: 16, height: 16
+Child: 12, message: Audio Options
+Child: 13, type: 5, width: 32, height: 32
+Child: 14, type: 5, width: 26, height: 16
+Child: 15, type: 5, width: 26, height: 16
+Child: 16, type: 5, width: 26, height: 16
+Child: 17, type: 5, width: 26, height: 16
+Child: 18, type: 5, width: 26, height: 16
+Child: 19, type: 5, width: 32, height: 32
+Child: 20, type: 5, width: 26, height: 16
+Child: 21, type: 5, width: 26, height: 16
+Child: 22, type: 5, width: 26, height: 16
+Child: 23, type: 5, width: 26, height: 16
+Child: 24, type: 5, width: 26, height: 16
+Child: 25, type: 5, width: 32, height: 32
+Child: 26, type: 5, width: 26, height: 16
+Child: 27, type: 5, width: 26, height: 16
+Child: 28, type: 5, width: 26, height: 16
+Child: 29, type: 5, width: 26, height: 16
+Child: 30, type: 5, width: 26, height: 16
+Child: 31, type: 5, width: 15, height: 15
+Child: 32, message: Mono
+Child: 33, type: 5, width: 15, height: 15
+Child: 34, message: Stereo

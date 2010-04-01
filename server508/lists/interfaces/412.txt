@@ -1,0 +1,19 @@
+Child: 0, type: 6, width: 511, height: 350
+Child: 1, message: Attack Dummy Key
+Child: 2, type: 6, width: 65, height: 68
+Child: 3, type: 6, width: 93, height: 73
+Child: 4, type: 6, width: 80, height: 90
+Child: 5, type: 6, width: 64, height: 62
+Child: 6, type: 6, width: 71, height: 85
+Child: 7, type: 6, width: 67, height: 62
+Child: 8, type: 6, width: 70, height: 61
+Child: 9, message: Accurate
+Child: 10, message: Slash
+Child: 11, message: Aggressive
+Child: 12, message: Controlled
+Child: 13, message: Crush
+Child: 14, message: Stab
+Child: 15, message: Defensive 
+Child: 16, message: <br><br>These are the types<br>of attack to use on<br>each of the dummies<br>that pop up from<br>the floor.<br><br>You will find that you<br>need more than one<br>weapon to be<br>successful.
+Child: 17, type: 5, width: 26, height: 23
+Child: 18, type: 0, width: 512, height: 334

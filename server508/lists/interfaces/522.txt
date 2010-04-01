@@ -1,0 +1,8 @@
+Child: 0, message: Monster name
+Child: 1, message: Line1
+Child: 2, message: Line2
+Child: 3, message: Line3
+Child: 4, message: Line4
+Child: 5, type: 5, width: 50, height: 50
+Child: 6, type: 5, width: 16, height: 16
+Child: 7, type: 0, width: 30, height: 27

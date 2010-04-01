@@ -1,0 +1,6 @@
+Child: 0, type: 3, width: 16391, height: 16391
+Child: 1, message: There's no place like home...
+Child: 2, type: 5, width: 256, height: 192
+Child: 3, type: 3, width: 256, height: 192
+Child: 4, type: 3, width: 258, height: 194
+Child: 5, type: 0, width: 514, height: 231

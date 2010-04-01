@@ -1,0 +1,12 @@
+Child: 0, type: 3, width: 170, height: 50
+Child: 1, type: 3, width: 170, height: 2
+Child: 2, type: 3, width: 174, height: 2
+Child: 3, type: 3, width: 2, height: 52
+Child: 4, type: 3, width: 176, height: 56
+Child: 5, type: 3, width: 2, height: 52
+Child: 6, message: Players waiting (need X):
+Child: 7, message: 0
+Child: 8, type: 0, width: 170, height: 20
+Child: 9, message: Game starting in:
+Child: 10, message: 100 Sec
+Child: 11, type: 0, width: 181, height: 63

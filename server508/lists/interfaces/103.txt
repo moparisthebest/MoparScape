@@ -1,0 +1,15 @@
+Child: 0, type: 3, width: 16384, height: 16384
+Child: 1, type: 3, width: 486, height: 4
+Child: 2, type: 3, width: 4, height: 15
+Child: 3, type: 3, width: 4, height: 305
+Child: 4, type: 6, width: 492, height: 322
+Child: 5, type: 6, width: 32, height: 29
+Child: 6, type: 6, width: 41, height: 34
+Child: 7, type: 6, width: 41, height: 34
+Child: 8, type: 6, width: 41, height: 34
+Child: 9, message: What comes next?
+Child: 10, type: 6, width: 41, height: 34
+Child: 11, type: 6, width: 41, height: 34
+Child: 12, type: 6, width: 41, height: 34
+Child: 13, type: 6, width: 41, height: 34
+Child: 14, type: 0, width: 506, height: 335

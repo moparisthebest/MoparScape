@@ -1,0 +1,39 @@
+Child: 0, type: 3, width: 521, height: 344
+Child: 1, type: 5, width: 488, height: 302
+Child: 2, type: 5, width: 25, height: 244
+Child: 3, type: 5, width: 32, height: 32
+Child: 4, type: 5, width: 33, height: 242
+Child: 5, type: 5, width: 433, height: 35
+Child: 6, type: 5, width: 434, height: 33
+Child: 7, type: 5, width: 32, height: 32
+Child: 8, type: 5, width: 32, height: 32
+Child: 9, type: 5, width: 32, height: 32
+Child: 10, type: 6, width: 84, height: 124
+Child: 11, type: 6, width: 62, height: 91
+Child: 12, type: 6, width: 55, height: 117
+Child: 13, type: 6, width: 87, height: 97
+Child: 14, type: 6, width: 60, height: 121
+Child: 15, type: 6, width: 66, height: 87
+Child: 16, type: 6, width: 85, height: 164
+Child: 17, type: 6, width: 59, height: 89
+Child: 18, type: 6, width: 60, height: 111
+Child: 19, type: 6, width: 65, height: 94
+Child: 20, type: 6, width: 73, height: 89
+Child: 21, type: 6, width: 51, height: 68
+Child: 22, type: 6, width: 62, height: 86
+Child: 23, type: 6, width: 34, height: 60
+Child: 24, message: Honest<br>Jimmy
+Child: 25, message: Bert the<br>Sandman
+Child: 26, message: Advisor<br>Ghrim
+Child: 27, message: Turael
+Child: 28, message: Sumona
+Child: 29, message: Lanthus
+Child: 30, message: Mazchna
+Child: 31, message: Duradel
+Child: 32, message: Vannaka
+Child: 33, message: Murphy
+Child: 34, message: Chaeldar
+Child: 35, message: Cyrisus
+Child: 36, message: Random
+Child: 37, type: 5, width: 23, height: 23
+Child: 38, message: Choose a character

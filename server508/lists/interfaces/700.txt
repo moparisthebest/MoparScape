@@ -1,0 +1,33 @@
+Child: 0, type: 5, width: 488, height: 305
+Child: 1, type: 5, width: 25, height: 30
+Child: 2, type: 5, width: 25, height: 30
+Child: 3, type: 5, width: 25, height: 30
+Child: 4, type: 5, width: 25, height: 30
+Child: 5, type: 5, width: 440, height: 23
+Child: 6, type: 5, width: 482, height: 32
+Child: 7, type: 5, width: 442, height: 31
+Child: 8, type: 5, width: 35, height: 245
+Child: 9, type: 5, width: 38, height: 261
+Child: 10, type: 5, width: 26, height: 23
+Child: 11, message: Report abuse
+Child: 12, message: This form is for reporting players who are breaking our rules. <br>Using it sends a snapshot of the last 60 secs of activity to us.
+Child: 13, message: If you misuse this form, you will be banned.
+Child: 14, message: First please enter the name of the offending player below:
+Child: 15, message: **************
+Child: 16, message: Then click below to indicate which of our 13 rules is being broken.<br>For a detailed explanation of each rule please read the manual on our website.
+Child: 17, message: 1: Offensive language
+Child: 18, message: 2: Item scamming
+Child: 19, message: 3: Password scamming
+Child: 20, message: 4: Bug abuse
+Child: 21, message: 5: Jagex staff impersonation
+Child: 22, message: 6: Account sharing/trading
+Child: 23, message: 7: Macroing
+Child: 24, message: 8: Multiple logging in
+Child: 25, message: 9: Encouraging others to break rules
+Child: 26, message: 10: Misuse of customer support
+Child: 27, message: 11: Advertising / website
+Child: 28, message: 12: Real world item trading
+Child: 29, message: 13: Asking for personal details
+Child: 30, type: 6, width: 31, height: 34
+Child: 31, type: 6, width: 32, height: 32
+Child: 32, type: 3, width: 517, height: 335

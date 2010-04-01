@@ -1,0 +1,81 @@
+Child: 0, type: 5, width: 487, height: 299
+Child: 1, type: 5, width: 25, height: 30
+Child: 2, type: 5, width: 36, height: 241
+Child: 3, type: 5, width: 36, height: 241
+Child: 4, type: 5, width: 438, height: 36
+Child: 5, type: 5, width: 438, height: 36
+Child: 6, type: 5, width: 25, height: 30
+Child: 7, type: 5, width: 25, height: 30
+Child: 8, type: 5, width: 25, height: 30
+Child: 9, type: 5, width: 36, height: 288
+Child: 10, type: 5, width: 181, height: 36
+Child: 11, type: 5, width: 25, height: 30
+Child: 12, type: 5, width: 36, height: 36
+Child: 13, type: 5, width: 25, height: 30
+Child: 14, type: 5, width: 25, height: 30
+Child: 15, type: 5, width: 36, height: 36
+Child: 16, type: 5, width: 25, height: 30
+Child: 17, type: 3, width: 66, height: 31
+Child: 18, message: Runesquares
+Child: 19, message: 
+Child: 20, message: vs
+Child: 21, message: 
+Child: 22, message: Close
+Child: 23, type: 6, width: 20, height: 19
+Child: 24, type: 6, width: 20, height: 19
+Child: 25, message: 
+Child: 26, message: 
+Child: 27, type: 0, width: 274, height: 274
+Child: 28, type: 3, width: 272, height: 2
+Child: 29, type: 3, width: 2, height: 272
+Child: 30, type: 3, width: 272, height: 2
+Child: 31, type: 3, width: 2, height: 272
+Child: 32, type: 3, width: 2, height: 2
+Child: 33, type: 3, width: 2, height: 2
+Child: 34, type: 3, width: 2, height: 2
+Child: 35, type: 3, width: 2, height: 2
+Child: 36, type: 3, width: 2, height: 2
+Child: 37, type: 3, width: 2, height: 2
+Child: 38, type: 3, width: 2, height: 2
+Child: 39, type: 3, width: 2, height: 2
+Child: 40, type: 3, width: 2, height: 2
+Child: 41, type: 3, width: 2, height: 2
+Child: 42, type: 3, width: 2, height: 2
+Child: 43, type: 3, width: 2, height: 2
+Child: 44, type: 3, width: 2, height: 2
+Child: 45, type: 3, width: 2, height: 2
+Child: 46, type: 3, width: 2, height: 2
+Child: 47, type: 3, width: 2, height: 2
+Child: 48, type: 3, width: 2, height: 2
+Child: 49, type: 3, width: 2, height: 2
+Child: 50, type: 3, width: 2, height: 2
+Child: 51, type: 3, width: 2, height: 2
+Child: 52, type: 3, width: 2, height: 2
+Child: 53, type: 3, width: 2, height: 2
+Child: 54, type: 3, width: 2, height: 2
+Child: 55, type: 3, width: 2, height: 2
+Child: 56, type: 3, width: 2, height: 2
+Child: 57, type: 3, width: 2, height: 2
+Child: 58, type: 3, width: 2, height: 2
+Child: 59, type: 3, width: 2, height: 2
+Child: 60, type: 3, width: 2, height: 2
+Child: 61, type: 3, width: 2, height: 2
+Child: 62, type: 3, width: 2, height: 2
+Child: 63, type: 3, width: 2, height: 2
+Child: 64, type: 3, width: 2, height: 2
+Child: 65, type: 3, width: 2, height: 2
+Child: 66, type: 3, width: 2, height: 2
+Child: 67, type: 3, width: 2, height: 2
+Child: 68, type: 3, width: 2, height: 2
+Child: 69, type: 3, width: 2, height: 2
+Child: 70, type: 3, width: 2, height: 2
+Child: 71, type: 3, width: 2, height: 2
+Child: 72, type: 3, width: 2, height: 2
+Child: 73, type: 3, width: 2, height: 2
+Child: 74, type: 3, width: 2, height: 2
+Child: 75, type: 3, width: 2, height: 2
+Child: 76, type: 3, width: 2, height: 2
+Child: 77, type: 3, width: 2, height: 2
+Child: 78, type: 3, width: 2, height: 2
+Child: 79, type: 3, width: 2, height: 2
+Child: 80, type: 3, width: 2, height: 2

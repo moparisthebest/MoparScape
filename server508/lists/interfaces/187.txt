@@ -1,0 +1,17 @@
+Child: 0, type: 3, width: 176, height: 209
+Child: 1, type: 0, width: 166, height: 186
+Child: 2, type: 5, width: 32, height: 32
+Child: 3, type: 5, width: 32, height: 32
+Child: 4, type: 5, width: 32, height: 32
+Child: 5, type: 5, width: 32, height: 32
+Child: 6, type: 5, width: 124, height: 32
+Child: 7, type: 5, width: 176, height: 32
+Child: 8, type: 5, width: 32, height: 157
+Child: 9, type: 5, width: 32, height: 157
+Child: 10, type: 5, width: 125, height: 32
+Child: 11, type: 5, width: 25, height: 25
+Child: 12, type: 0, width: 16, height: 184
+Child: 13, type: 0, width: 190, height: 261
+Child: 14, message: Playing.............................
+Child: 15, type: 0, width: 190, height: 261
+Child: 16, message: Unlocked:<br>???

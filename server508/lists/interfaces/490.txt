@@ -1,0 +1,32 @@
+Child: 0, type: 3, width: 16391, height: 19628
+Child: 1, type: 6, width: 561, height: 340
+Child: 2, message: Player status for:
+Child: 3, message: Role
+Child: 4, message: Current honour points
+Child: 5, message: Attacker
+Child: 6, message: Healer
+Child: 7, message: Defender
+Child: 8, message: Collector
+Child: 9, message: Points for next level
+Child: 10, message: 0
+Child: 11, message: 0
+Child: 12, message: 0
+Child: 13, message: 0
+Child: 14, message: Level
+Child: 15, message: 0
+Child: 16, message: 0
+Child: 17, message: 0
+Child: 18, message: 0
+Child: 19, message: null
+Child: 20, message: 0
+Child: 21, message: 0
+Child: 22, message: 0
+Child: 23, message: 0
+Child: 24, message: Current wave :
+Child: 25, message: 0
+Child: 26, message: Reward next level
+Child: 27, message: -----------
+Child: 28, message: -----------
+Child: 29, message: -----------
+Child: 30, message: -----------
+Child: 31, type: 5, width: 26, height: 23

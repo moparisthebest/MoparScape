@@ -1,0 +1,16 @@
+Child: 0, type: 0, width: 512, height: 334
+Child: 1, type: 6, width: 463, height: 299
+Child: 2, message: 
+Child: 3, message: 
+Child: 4, message: 
+Child: 5, message: 
+Child: 6, message: 
+Child: 7, message: 
+Child: 8, message: 
+Child: 9, message: 
+Child: 10, message: 
+Child: 11, message: 
+Child: 12, message: 
+Child: 13, message: 
+Child: 14, type: 5, width: 26, height: 23
+Child: 15, type: 0, width: 32, height: 32

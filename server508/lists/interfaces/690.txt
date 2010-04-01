@@ -1,0 +1,12 @@
+Child: 0, type: 3, width: 514, height: 335
+Child: 1, type: 3, width: 181, height: 179
+Child: 2, type: 3, width: 181, height: 179
+Child: 3, message: Farmers wander the area looking for seeds that have been dug up by mistake. They will also collect any flags you have placed, resetting the nearby area and giving you points if the flag is in the right place.
+Child: 4, message: If you place a flag over a seed, you will be able to get the flag back from Mrs. Winkin or Farmer Blinkin. If you placed a flag wrongly, you will have to pay 500gp for a new one.
+Child: 5, type: 6, width: 74, height: 176
+Child: 6, type: 6, width: 59, height: 123
+Child: 7, type: 6, width: 81, height: 30
+Child: 8, type: 6, width: 83, height: 54
+Child: 9, type: 6, width: 43, height: 69
+Child: 10, type: 6, width: 96, height: 81
+Child: 11, type: 5, width: 26, height: 23

@@ -1,0 +1,15 @@
+Child: 0, type: 3, width: 514, height: 335
+Child: 1, type: 3, width: 181, height: 179
+Child: 2, type: 3, width: 181, height: 179
+Child: 3, message: While you are in the area, you will be able to see your points total in the top-right corner of your screen. Your points are saved, so you can leave if you wish and return another time to pick up from where you left off.
+Child: 4, message: You can trade your points in for prizes or Farming experience by speaking to Mrs. Winkin in the Winkin shop.
+Child: 5, type: 6, width: 65, height: 44
+Child: 6, type: 6, width: 59, height: 123
+Child: 7, type: 3, width: 74, height: 36
+Child: 8, message: Points
+Child: 9, message: 234,567
+Child: 10, type: 6, width: 67, height: 161
+Child: 11, message: XP
+Child: 12, type: 6, width: 35, height: 51
+Child: 13, type: 6, width: 38, height: 29
+Child: 14, type: 5, width: 26, height: 23

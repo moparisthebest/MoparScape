@@ -1,0 +1,15 @@
+Child: 0, type: 0, width: 184, height: 63
+Child: 1, type: 3, width: 170, height: 50
+Child: 2, type: 3, width: 170, height: 2
+Child: 3, type: 3, width: 174, height: 2
+Child: 4, type: 3, width: 2, height: 52
+Child: 5, type: 3, width: 176, height: 56
+Child: 6, type: 3, width: 2, height: 52
+Child: 7, message: Target:
+Child: 8, message: None
+Child: 9, type: 0, width: 170, height: 20
+Child: 10, message: Pickup penalty:
+Child: 11, message: 100 Sec
+Child: 12, type: 0, width: 170, height: 20
+Child: 13, message: Can't leave for:
+Child: 14, message: 100 Sec

@@ -1,0 +1,85 @@
+Child: 0, type: 3, width: 16391, height: 16391
+Child: 1, type: 3, width: 527, height: 340
+Child: 2, type: 6, width: 225, height: 107
+Child: 3, type: 6, width: 435, height: 319
+Child: 4, message: Misthalin & Asgarnia
+Child: 5, type: 6, width: 64, height: 62
+Child: 6, type: 6, width: 32, height: 32
+Child: 7, type: 6, width: 32, height: 32
+Child: 8, type: 6, width: 32, height: 32
+Child: 9, type: 6, width: 32, height: 32
+Child: 10, type: 6, width: 32, height: 32
+Child: 11, type: 6, width: 32, height: 32
+Child: 12, type: 6, width: 32, height: 32
+Child: 13, type: 6, width: 32, height: 32
+Child: 14, type: 6, width: 32, height: 32
+Child: 15, type: 6, width: 32, height: 32
+Child: 16, type: 6, width: 32, height: 32
+Child: 17, type: 6, width: 32, height: 32
+Child: 18, type: 6, width: 32, height: 32
+Child: 19, type: 6, width: 32, height: 32
+Child: 20, type: 6, width: 32, height: 32
+Child: 21, type: 6, width: 32, height: 32
+Child: 22, type: 6, width: 32, height: 32
+Child: 23, type: 6, width: 32, height: 32
+Child: 24, type: 6, width: 32, height: 32
+Child: 25, type: 6, width: 32, height: 32
+Child: 26, type: 6, width: 32, height: 32
+Child: 27, type: 6, width: 32, height: 32
+Child: 28, type: 6, width: 32, height: 32
+Child: 29, type: 6, width: 32, height: 32
+Child: 30, type: 6, width: 32, height: 32
+Child: 31, type: 6, width: 32, height: 32
+Child: 32, type: 6, width: 32, height: 32
+Child: 33, type: 6, width: 32, height: 32
+Child: 34, type: 6, width: 32, height: 32
+Child: 35, type: 6, width: 32, height: 32
+Child: 36, type: 6, width: 32, height: 32
+Child: 37, type: 6, width: 32, height: 32
+Child: 38, type: 6, width: 32, height: 32
+Child: 39, type: 6, width: 32, height: 32
+Child: 40, type: 6, width: 32, height: 32
+Child: 41, type: 6, width: 32, height: 32
+Child: 42, type: 6, width: 32, height: 32
+Child: 43, type: 6, width: 32, height: 32
+Child: 44, type: 6, width: 32, height: 32
+Child: 45, type: 6, width: 32, height: 32
+Child: 46, type: 6, width: 32, height: 32
+Child: 47, type: 6, width: 32, height: 32
+Child: 48, message: Lumbridge
+Child: 49, message: Draynor
+Child: 50, message: Varrock
+Child: 51, message: Falador
+Child: 52, message: Port
+Child: 53, message: Sarim
+Child: 54, message: Rimmington
+Child: 55, message: Edgeville
+Child: 56, message: Al Kharid
+Child: 57, type: 6, width: 34, height: 34
+Child: 58, type: 0, width: 494, height: 319
+Child: 59, type: 0, width: 72, height: 64
+Child: 60, message: Show Tutors
+Child: 61, type: 5, width: 26, height: 23
+Child: 62, type: 6, width: 22, height: 23
+Child: 63, type: 6, width: 23, height: 21
+Child: 64, type: 6, width: 22, height: 23
+Child: 65, type: 0, width: 512, height: 334
+Child: 66, type: 0, width: 16391, height: 16391
+Child: 67, type: 0, width: 16391, height: 16391
+Child: 68, type: 5, width: 32, height: 334
+Child: 69, type: 5, width: 462, height: 32
+Child: 70, type: 5, width: 512, height: 32
+Child: 71, type: 5, width: 32, height: 334
+Child: 72, type: 5, width: 32, height: 32
+Child: 73, type: 5, width: 32, height: 32
+Child: 74, type: 5, width: 32, height: 32
+Child: 75, type: 5, width: 32, height: 32
+Child: 76, type: 0, width: 8192, height: 16391
+Child: 77, type: 0, width: 8188, height: 16391
+Child: 78, type: 0, width: 16391, height: 8192
+Child: 79, type: 0, width: 16391, height: 8182
+Child: 80, type: 0, width: 512, height: 334
+Child: 81, type: 5, width: 256, height: 16384
+Child: 82, type: 5, width: 256, height: 16391
+Child: 83, type: 5, width: 16391, height: 167
+Child: 84, type: 5, width: 16391, height: 166

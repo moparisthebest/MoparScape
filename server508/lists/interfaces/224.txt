@@ -1,0 +1,9 @@
+Child: 0, type: 3, width: 16391, height: 16391
+Child: 1, type: 6, width: 484, height: 315
+Child: 2, message: Waterbirth Island
+Child: 3, message: Miscellania
+Child: 4, message: Etceteria
+Child: 5, message: Rellekka
+Child: 6, message: Neitiznot & Jatizso
+Child: 7, type: 6, width: 358, height: 195
+Child: 8, type: 0, width: 512, height: 334

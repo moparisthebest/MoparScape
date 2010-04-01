@@ -1,0 +1,18 @@
+Child: 0, type: 3, width: 512, height: 400
+Child: 1, type: 6, width: 32, height: 32
+Child: 2, message: Tutorial Progress
+Child: 3, message: Introduction to the Arena
+Child: 4, message: Getting Started
+Child: 5, message: Playing the Game
+Child: 6, message: The Attacker Role
+Child: 7, message: The Defender Role
+Child: 8, message: The Collector Role
+Child: 9, message: The Healer Role
+Child: 10, message: Extra Information
+Child: 11, message: The Final Battle
+Child: 12, message: Rewards
+Child: 13, type: 5, width: 26, height: 23
+Child: 14, type: 5, width: 26, height: 23
+Child: 15, type: 0, width: 32, height: 32
+Child: 16, type: 6, width: 32, height: 32
+Child: 17, type: 6, width: 32, height: 32

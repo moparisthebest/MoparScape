@@ -1,0 +1,1 @@
+Child: 0, message: Waiting for players to join the other team.

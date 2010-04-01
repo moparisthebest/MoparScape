@@ -1,0 +1,91 @@
+Child: 0, type: 3, width: 514, height: 335
+Child: 1, type: 6, width: 511, height: 333
+Child: 2, message: Ape
+Child: 3, message: Asgarnia
+Child: 4, message: Karamja
+Child: 5, message: Crandor
+Child: 6, message: Entrana
+Child: 7, message: Port
+Child: 8, message: Sarim
+Child: 9, type: 6, width: 16, height: 22
+Child: 10, type: 6, width: 16, height: 22
+Child: 11, type: 6, width: 16, height: 21
+Child: 12, type: 6, width: 16, height: 22
+Child: 13, message: Port
+Child: 14, message: Khazard
+Child: 15, message: Ship
+Child: 16, message: Yard
+Child: 17, type: 6, width: 16, height: 22
+Child: 18, type: 6, width: 16, height: 22
+Child: 19, message: Cairn
+Child: 20, message: Isle
+Child: 21, type: 6, width: 16, height: 22
+Child: 22, message: Brimhaven
+Child: 23, message: Ardougne
+Child: 24, type: 6, width: 16, height: 22
+Child: 25, message: You Journey on the ship....
+Child: 26, type: 6, width: 16, height: 22
+Child: 27, message: Atoll
+Child: 28, type: 6, width: 16, height: 22
+Child: 29, type: 6, width: 16, height: 21
+Child: 30, message: Feldip
+Child: 31, message: Hills
+Child: 32, type: 0, width: 512, height: 334
+Child: 33, type: 0, width: 512, height: 334
+Child: 34, type: 0, width: 512, height: 334
+Child: 35, type: 0, width: 512, height: 334
+Child: 36, type: 0, width: 512, height: 334
+Child: 37, type: 0, width: 512, height: 334
+Child: 38, type: 0, width: 512, height: 334
+Child: 39, type: 0, width: 512, height: 334
+Child: 40, type: 0, width: 512, height: 334
+Child: 41, type: 0, width: 512, height: 334
+Child: 42, type: 0, width: 512, height: 334
+Child: 43, type: 0, width: 512, height: 334
+Child: 44, type: 0, width: 512, height: 334
+Child: 45, type: 0, width: 512, height: 334
+Child: 46, type: 0, width: 512, height: 334
+Child: 47, type: 0, width: 512, height: 334
+Child: 48, message: The ogres follow the scent of the chompy.... 
+Child: 49, message: The ogres travel back with the goods
+Child: 50, type: 0, width: 512, height: 334
+Child: 51, type: 3, width: 32, height: 32
+Child: 52, type: 6, width: 103, height: 93
+Child: 53, type: 6, width: 145, height: 74
+Child: 54, type: 6, width: 145, height: 74
+Child: 55, type: 0, width: 512, height: 334
+Child: 56, type: 6, width: 148, height: 66
+Child: 57, type: 6, width: 148, height: 66
+Child: 58, type: 6, width: 87, height: 69
+Child: 59, type: 6, width: 87, height: 69
+Child: 60, type: 6, width: 58, height: 41
+Child: 61, type: 6, width: 58, height: 41
+Child: 62, type: 6, width: 28, height: 32
+Child: 63, type: 6, width: 83, height: 90
+Child: 64, type: 6, width: 287, height: 125
+Child: 65, type: 6, width: 287, height: 125
+Child: 66, type: 6, width: 224, height: 124
+Child: 67, type: 6, width: 266, height: 236
+Child: 68, type: 6, width: 265, height: 237
+Child: 69, type: 6, width: 103, height: 93
+Child: 70, type: 0, width: 16391, height: 16391
+Child: 71, type: 0, width: 305, height: 20
+Child: 72, type: 0, width: 305, height: 20
+Child: 73, type: 0, width: 16391, height: 16391
+Child: 74, type: 5, width: 32, height: 334
+Child: 75, type: 5, width: 462, height: 32
+Child: 76, type: 5, width: 512, height: 32
+Child: 77, type: 5, width: 32, height: 334
+Child: 78, type: 5, width: 32, height: 32
+Child: 79, type: 5, width: 32, height: 32
+Child: 80, type: 5, width: 32, height: 32
+Child: 81, type: 5, width: 32, height: 32
+Child: 82, type: 0, width: 8192, height: 16391
+Child: 83, type: 0, width: 8188, height: 16391
+Child: 84, type: 0, width: 16391, height: 8192
+Child: 85, type: 0, width: 16391, height: 8182
+Child: 86, type: 0, width: 512, height: 334
+Child: 87, type: 5, width: 256, height: 16384
+Child: 88, type: 5, width: 256, height: 16391
+Child: 89, type: 5, width: 16391, height: 167
+Child: 90, type: 5, width: 16391, height: 166

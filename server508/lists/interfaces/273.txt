@@ -1,0 +1,7 @@
+Child: 0, type: 6, width: 32, height: 32
+Child: 1, message: Pop the correct balloon animal to find a key
+Child: 2, type: 0, width: 511, height: 334
+Child: 3, type: 6, width: 32, height: 32
+Child: 4, type: 5, width: 26, height: 23
+Child: 5, type: 5, width: 26, height: 23
+Child: 6, type: 0, width: 32, height: 32

@@ -1,0 +1,88 @@
+Child: 0, type: 5, width: 387, height: 294
+Child: 1, type: 5, width: 32, height: 242
+Child: 2, type: 5, width: 32, height: 243
+Child: 3, type: 5, width: 32, height: 32
+Child: 4, type: 5, width: 337, height: 34
+Child: 5, type: 5, width: 337, height: 32
+Child: 6, type: 5, width: 32, height: 32
+Child: 7, type: 5, width: 32, height: 32
+Child: 8, type: 5, width: 32, height: 32
+Child: 9, type: 6, width: 0, height: 0
+Child: 10, type: 5, width: 388, height: 32
+Child: 11, type: 5, width: 389, height: 32
+Child: 12, type: 5, width: 32, height: 210
+Child: 13, type: 5, width: 387, height: 32
+Child: 14, type: 5, width: 16, height: 16
+Child: 15, message: Duelling with:
+Child: 16, message: name
+Child: 17, message: Their Combat Level:
+Child: 18, message: 126
+Child: 19, message: No Ranged
+Child: 20, type: 5, width: 15, height: 15
+Child: 21, message: No Melee
+Child: 22, type: 5, width: 15, height: 15
+Child: 23, message: No Magic
+Child: 24, type: 5, width: 15, height: 15
+Child: 25, message: Fun Weapons
+Child: 26, type: 5, width: 15, height: 15
+Child: 27, message: No Forfeit
+Child: 28, type: 5, width: 15, height: 15
+Child: 29, message: No Drinks
+Child: 30, type: 5, width: 15, height: 15
+Child: 31, message: No Food
+Child: 32, type: 5, width: 15, height: 15
+Child: 33, message: No Prayer
+Child: 34, type: 5, width: 15, height: 15
+Child: 35, message: No Movement
+Child: 36, type: 5, width: 15, height: 15
+Child: 37, message: Obstacles
+Child: 38, type: 5, width: 15, height: 15
+Child: 39, message: Enable Summoning
+Child: 40, type: 5, width: 15, height: 15
+Child: 41, message: No Special Attacks
+Child: 42, type: 5, width: 15, height: 15
+Child: 43, type: 0, width: 133, height: 33
+Child: 44, type: 0, width: 161, height: 210
+Child: 45, message: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Child: 46, type: 5, width: 36, height: 36
+Child: 47, type: 5, width: 36, height: 36
+Child: 48, type: 5, width: 36, height: 36
+Child: 49, type: 5, width: 36, height: 36
+Child: 50, type: 5, width: 36, height: 36
+Child: 51, type: 5, width: 36, height: 36
+Child: 52, type: 5, width: 36, height: 36
+Child: 53, type: 5, width: 36, height: 36
+Child: 54, type: 5, width: 36, height: 36
+Child: 55, type: 5, width: 36, height: 36
+Child: 56, type: 5, width: 36, height: 36
+Child: 57, type: 5, width: 32, height: 32
+Child: 58, type: 5, width: 32, height: 32
+Child: 59, type: 5, width: 32, height: 32
+Child: 60, type: 5, width: 32, height: 32
+Child: 61, type: 5, width: 32, height: 32
+Child: 62, type: 5, width: 32, height: 32
+Child: 63, type: 5, width: 32, height: 32
+Child: 64, type: 5, width: 32, height: 32
+Child: 65, type: 5, width: 32, height: 32
+Child: 66, type: 5, width: 32, height: 32
+Child: 67, type: 5, width: 32, height: 32
+Child: 68, type: 5, width: 36, height: 36
+Child: 69, type: 5, width: 36, height: 36
+Child: 70, type: 5, width: 36, height: 36
+Child: 71, type: 5, width: 36, height: 36
+Child: 72, type: 5, width: 36, height: 36
+Child: 73, type: 5, width: 36, height: 36
+Child: 74, type: 5, width: 36, height: 36
+Child: 75, type: 5, width: 36, height: 36
+Child: 76, type: 5, width: 36, height: 36
+Child: 77, type: 5, width: 36, height: 36
+Child: 78, type: 5, width: 36, height: 36
+Child: 79, type: 0, width: 159, height: 203
+Child: 80, type: 0, width: 159, height: 203
+Child: 81, type: 0, width: 80, height: 24
+Child: 82, message: Accept
+Child: 83, type: 0, width: 80, height: 24
+Child: 84, type: 0, width: 80, height: 24
+Child: 85, message: Decline
+Child: 86, type: 0, width: 80, height: 24
+Child: 87, type: 0, width: 16, height: 210

@@ -1,0 +1,86 @@
+Child: 0, type: 3, width: 512, height: 334
+Child: 1, type: 5, width: 26, height: 23
+Child: 2, message: Text
+Child: 3, type: 6, width: 32, height: 32
+Child: 4, type: 6, width: 32, height: 32
+Child: 5, type: 6, width: 32, height: 32
+Child: 6, type: 6, width: 32, height: 32
+Child: 7, type: 6, width: 32, height: 32
+Child: 8, type: 6, width: 32, height: 32
+Child: 9, type: 6, width: 32, height: 32
+Child: 10, type: 6, width: 32, height: 32
+Child: 11, type: 6, width: 32, height: 32
+Child: 12, type: 6, width: 32, height: 32
+Child: 13, type: 6, width: 32, height: 32
+Child: 14, type: 6, width: 32, height: 32
+Child: 15, type: 6, width: 32, height: 32
+Child: 16, type: 6, width: 32, height: 32
+Child: 17, type: 6, width: 32, height: 32
+Child: 18, type: 6, width: 32, height: 32
+Child: 19, type: 6, width: 32, height: 32
+Child: 20, type: 6, width: 32, height: 32
+Child: 21, type: 6, width: 32, height: 32
+Child: 22, type: 6, width: 32, height: 32
+Child: 23, type: 6, width: 32, height: 32
+Child: 24, type: 6, width: 32, height: 32
+Child: 25, type: 6, width: 32, height: 32
+Child: 26, type: 6, width: 32, height: 32
+Child: 27, type: 6, width: 32, height: 32
+Child: 28, type: 6, width: 32, height: 32
+Child: 29, type: 6, width: 32, height: 32
+Child: 30, type: 6, width: 32, height: 32
+Child: 31, type: 6, width: 32, height: 32
+Child: 32, type: 6, width: 32, height: 32
+Child: 33, type: 6, width: 32, height: 32
+Child: 34, type: 6, width: 32, height: 32
+Child: 35, type: 6, width: 32, height: 32
+Child: 36, type: 6, width: 32, height: 32
+Child: 37, type: 6, width: 32, height: 32
+Child: 38, type: 6, width: 32, height: 32
+Child: 39, type: 6, width: 32, height: 32
+Child: 40, type: 6, width: 32, height: 32
+Child: 41, type: 6, width: 32, height: 32
+Child: 42, type: 6, width: 186, height: 248
+Child: 43, type: 6, width: 32, height: 32
+Child: 44, type: 6, width: 32, height: 32
+Child: 45, type: 6, width: 32, height: 32
+Child: 46, type: 6, width: 32, height: 32
+Child: 47, type: 6, width: 32, height: 32
+Child: 48, type: 6, width: 32, height: 32
+Child: 49, type: 6, width: 32, height: 32
+Child: 50, type: 6, width: 32, height: 32
+Child: 51, type: 6, width: 32, height: 32
+Child: 52, type: 6, width: 32, height: 32
+Child: 53, type: 6, width: 32, height: 32
+Child: 54, type: 6, width: 32, height: 32
+Child: 55, type: 6, width: 32, height: 32
+Child: 56, type: 6, width: 32, height: 32
+Child: 57, type: 6, width: 32, height: 32
+Child: 58, type: 6, width: 32, height: 32
+Child: 59, message: Asgarnia
+Child: 60, message: Misthalin
+Child: 61, message: Avarrocka
+Child: 62, message: Ghost Town
+Child: 63, message: Karamja
+Child: 64, message: Entrana
+Child: 65, type: 0, width: 236, height: 300
+Child: 66, type: 6, width: 32, height: 32
+Child: 67, type: 6, width: 223, height: 314
+Child: 68, type: 6, width: 180, height: 127
+Child: 69, type: 6, width: 187, height: 179
+Child: 70, type: 6, width: 183, height: 218
+Child: 71, type: 6, width: 180, height: 213
+Child: 72, type: 6, width: 185, height: 212
+Child: 73, type: 6, width: 185, height: 151
+Child: 74, type: 6, width: 180, height: 126
+Child: 75, type: 6, width: 32, height: 32
+Child: 76, type: 6, width: 32, height: 32
+Child: 77, type: 6, width: 32, height: 32
+Child: 78, type: 6, width: 32, height: 32
+Child: 79, type: 6, width: 32, height: 32
+Child: 80, type: 6, width: 32, height: 32
+Child: 81, type: 6, width: 32, height: 32
+Child: 82, type: 6, width: 32, height: 32
+Child: 83, type: 6, width: 32, height: 32
+Child: 84, message: Display number
+Child: 85, message: 03

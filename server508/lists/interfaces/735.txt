@@ -1,0 +1,80 @@
+Child: 0, type: 0, width: 190, height: 261
+Child: 1, type: 3, width: 190, height: 261
+Child: 2, type: 5, width: 190, height: 32
+Child: 3, type: 5, width: 158, height: 32
+Child: 4, type: 5, width: 158, height: 32
+Child: 5, type: 5, width: 32, height: 229
+Child: 6, type: 5, width: 32, height: 229
+Child: 7, type: 5, width: 32, height: 32
+Child: 8, type: 5, width: 32, height: 32
+Child: 9, type: 5, width: 32, height: 32
+Child: 10, type: 5, width: 32, height: 32
+Child: 11, message: Travel Log
+Child: 12, type: 5, width: 16, height: 14
+Child: 13, type: 0, width: 166, height: 226
+Child: 14, message: 
+Child: 15, message: 
+Child: 16, message: 
+Child: 17, message: 
+Child: 18, message: 
+Child: 19, message: 
+Child: 20, message: 
+Child: 21, message: 
+Child: 22, message: 
+Child: 23, message: 
+Child: 24, message: 
+Child: 25, message: 
+Child: 26, message: 
+Child: 27, message: 
+Child: 28, message: 
+Child: 29, message: 
+Child: 30, message: 
+Child: 31, message: 
+Child: 32, message: 
+Child: 33, message: 
+Child: 34, message: 
+Child: 35, message: 
+Child: 36, message: 
+Child: 37, message: 
+Child: 38, message: 
+Child: 39, message: 
+Child: 40, message: 
+Child: 41, message: 
+Child: 42, message: 
+Child: 43, message: 
+Child: 44, message: 
+Child: 45, message: 
+Child: 46, message: 
+Child: 47, message: 
+Child: 48, message: 
+Child: 49, message: 
+Child: 50, message: 
+Child: 51, message: 
+Child: 52, message: 
+Child: 53, message: 
+Child: 54, message: 
+Child: 55, message: 
+Child: 56, message: 
+Child: 57, message: 
+Child: 58, message: 
+Child: 59, message: 
+Child: 60, message: 
+Child: 61, message: 
+Child: 62, message: 
+Child: 63, message: 
+Child: 64, message: 
+Child: 65, message: 
+Child: 66, message: 
+Child: 67, message: 
+Child: 68, message: 
+Child: 69, message: 
+Child: 70, message: 
+Child: 71, message: 
+Child: 72, message: 
+Child: 73, message: 
+Child: 74, message: 
+Child: 75, message: 
+Child: 76, message: 
+Child: 77, message: 
+Child: 78, message: 
+Child: 79, type: 0, width: 16, height: 226

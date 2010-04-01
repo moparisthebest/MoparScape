@@ -1,0 +1,44 @@
+Child: 0, type: 3, width: 489, height: 305
+Child: 1, type: 5, width: 485, height: 300
+Child: 2, type: 5, width: 32, height: 241
+Child: 3, type: 5, width: 32, height: 32
+Child: 4, type: 5, width: 32, height: 243
+Child: 5, type: 5, width: 424, height: 34
+Child: 6, type: 5, width: 423, height: 32
+Child: 7, type: 5, width: 16, height: 16
+Child: 8, type: 5, width: 32, height: 32
+Child: 9, type: 5, width: 32, height: 32
+Child: 10, type: 5, width: 32, height: 32
+Child: 11, type: 5, width: 465, height: 32
+Child: 12, type: 5, width: 32, height: 32
+Child: 13, type: 5, width: 32, height: 32
+Child: 14, type: 5, width: 97, height: 20
+Child: 15, type: 5, width: 94, height: 20
+Child: 16, type: 5, width: 99, height: 20
+Child: 17, type: 3, width: 200, height: 31
+Child: 18, message: XXXX
+Child: 19, message: Buy
+Child: 20, message: Learn
+Child: 21, message: Assignment
+Child: 22, message: Learn how to fletch broad arrows/bolts
+Child: 23, message: Learn how to craft rings of slaying
+Child: 24, message: Learn how to craft Slayer helmets
+Child: 25, message: (Already learned)
+Child: 26, message: (Already learned)
+Child: 27, message: (Already learned)
+Child: 28, message: Current points =
+Child: 29, message: 300 points
+Child: 30, message: 300 points
+Child: 31, message: 400 points
+Child: 32, type: 6, width: 29, height: 53
+Child: 33, type: 6, width: 34, height: 30
+Child: 34, type: 6, width: 41, height: 33
+Child: 35, type: 6, width: 38, height: 35
+Child: 36, type: 5, width: 32, height: 32
+Child: 37, type: 5, width: 32, height: 32
+Child: 38, type: 5, width: 32, height: 32
+Child: 39, type: 5, width: 32, height: 32
+Child: 40, type: 5, width: 155, height: 32
+Child: 41, type: 5, width: 152, height: 32
+Child: 42, type: 0, width: 512, height: 334
+Child: 43, type: 0, width: 512, height: 334

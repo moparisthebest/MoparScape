@@ -1,0 +1,16 @@
+Child: 0, type: 5, width: 36, height: 36
+Child: 1, type: 5, width: 36, height: 36
+Child: 2, type: 5, width: 36, height: 36
+Child: 3, type: 5, width: 36, height: 36
+Child: 4, type: 5, width: 36, height: 36
+Child: 5, message: Stop Viewing
+Child: 6, type: 6, width: 28, height: 28
+Child: 7, type: 6, width: 28, height: 28
+Child: 8, type: 6, width: 28, height: 28
+Child: 9, type: 6, width: 28, height: 28
+Child: 10, type: 6, width: 28, height: 28
+Child: 11, message: Centre
+Child: 12, message: North-West
+Child: 13, message: North-East
+Child: 14, message: South-East
+Child: 15, message: South-West

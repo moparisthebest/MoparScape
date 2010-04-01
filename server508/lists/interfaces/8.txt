@@ -1,0 +1,10 @@
+Child: 0, type: 6, width: 482, height: 348
+Child: 1, message: 8-East
+Child: 2, message: 6-South
+Child: 3, message: 2-North
+Child: 4, message: 4-East
+Child: 5, message: 22-South
+Child: 6, message: X marks the start!
+Child: 7, message: Dragontooth Island
+Child: 8, type: 5, width: 26, height: 23
+Child: 9, type: 0, width: 512, height: 334

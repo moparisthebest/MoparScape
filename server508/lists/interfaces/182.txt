@@ -1,0 +1,7 @@
+Child: 0, message: When you have finished playing<br>RuneScape, always use the<br>button below to logout safely.
+Child: 1, type: 5, width: 36, height: 36
+Child: 2, type: 5, width: 36, height: 36
+Child: 3, type: 5, width: 36, height: 36
+Child: 4, type: 5, width: 36, height: 36
+Child: 5, type: 5, width: 36, height: 36
+Child: 6, message: Click here to logout

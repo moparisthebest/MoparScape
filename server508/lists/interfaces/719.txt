@@ -1,0 +1,7 @@
+Child: 0, type: 3, width: 514, height: 336
+Child: 1, type: 6, width: 477, height: 513
+Child: 2, type: 5, width: 26, height: 23
+Child: 3, message: COAL AND WATER SUPPLIES:<br> For your convenience, the incubator has a coal scuttle and water tank, which can hold up to twelve buckets of coal or water respectively.  Simply use a bucket of coal or water on the coal scuttle or water tank to add to the supplies.<br><br>ADJUSTING THE INCUBATOR TEMPERATURE:<br>The control panel to the left of the incubator allows you to use the coal and water supplies you have added to the incubator to heat or cool it.<br><br>INCUBATING AN EGG:<br>>  Place a suitable egg inside the incubation chamber.<br>>  Add supplies to the water tank and coal scuttle<br>>  Using the incubator controls, adjust the temperature.  The temperature gauge has a needle which shows the current temperature.  The top of the temperature gauge also has an arrow showing the temperature needed to reach the next phase of incubation.<br>> Some eggs may require you to reach several different temperatures before they hatch.<br><br>The very best of luck with hatching your eggs!
+Child: 4, type: 0, width: 16, height: 260
+Child: 5, type: 0, width: 320, height: 268
+Child: 6, message: Operating your incubator

@@ -1,0 +1,6 @@
+Child: 0, type: 3, width: 512, height: 334
+Child: 1, type: 5, width: 72, height: 36
+Child: 2, type: 5, width: 72, height: 36
+Child: 3, message: YES
+Child: 4, message: NO
+Child: 5, message: Do you really want to bet X?

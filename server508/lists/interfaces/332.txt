@@ -1,0 +1,30 @@
+Child: 0, type: 5, width: 476, height: 288
+Child: 1, type: 5, width: 32, height: 32
+Child: 2, type: 5, width: 32, height: 32
+Child: 3, type: 5, width: 32, height: 232
+Child: 4, type: 5, width: 32, height: 232
+Child: 5, type: 5, width: 427, height: 32
+Child: 6, type: 5, width: 426, height: 32
+Child: 7, type: 5, width: 32, height: 32
+Child: 8, type: 5, width: 32, height: 32
+Child: 9, type: 5, width: 32, height: 32
+Child: 10, type: 5, width: 468, height: 32
+Child: 11, type: 5, width: 32, height: 32
+Child: 12, type: 5, width: 26, height: 23
+Child: 13, message: Water Battlestaff
+Child: 14, message: Air Battlestaff
+Child: 15, message: Earth Battlestaff
+Child: 16, message: Fire Battlestaff
+Child: 17, message: What would you like to enchant?
+Child: 18, message: Lava Battlestaff
+Child: 19, message: Mud Battlestaff
+Child: 20, message: Steam Battlestaff
+Child: 21, type: 6, width: 32, height: 32
+Child: 22, type: 6, width: 32, height: 32
+Child: 23, type: 6, width: 32, height: 32
+Child: 24, type: 6, width: 32, height: 32
+Child: 25, type: 6, width: 32, height: 32
+Child: 26, type: 6, width: 32, height: 32
+Child: 27, type: 6, width: 32, height: 32
+Child: 28, type: 0, width: 512, height: 334
+Child: 29, type: 0, width: 50, height: 34

@@ -1,0 +1,301 @@
+Child: 0, type: 3, width: 488, height: 305
+Child: 1, type: 5, width: 485, height: 300
+Child: 2, type: 5, width: 32, height: 243
+Child: 3, type: 5, width: 32, height: 241
+Child: 4, type: 5, width: 465, height: 32
+Child: 5, type: 5, width: 424, height: 32
+Child: 6, type: 5, width: 423, height: 32
+Child: 7, type: 5, width: 32, height: 32
+Child: 8, type: 5, width: 32, height: 32
+Child: 9, type: 5, width: 32, height: 32
+Child: 10, type: 5, width: 32, height: 32
+Child: 11, type: 5, width: 32, height: 32
+Child: 12, type: 5, width: 32, height: 32
+Child: 13, type: 3, width: 130, height: 10
+Child: 14, type: 3, width: 130, height: 10
+Child: 15, type: 3, width: 130, height: 10
+Child: 16, type: 3, width: 130, height: 10
+Child: 17, type: 3, width: 130, height: 10
+Child: 18, type: 3, width: 130, height: 10
+Child: 19, type: 3, width: 130, height: 10
+Child: 20, type: 3, width: 130, height: 10
+Child: 21, type: 3, width: 130, height: 10
+Child: 22, type: 3, width: 130, height: 10
+Child: 23, type: 3, width: 130, height: 10
+Child: 24, type: 3, width: 130, height: 10
+Child: 25, type: 3, width: 130, height: 10
+Child: 26, type: 3, width: 130, height: 10
+Child: 27, type: 3, width: 130, height: 10
+Child: 28, type: 3, width: 130, height: 10
+Child: 29, type: 3, width: 130, height: 10
+Child: 30, type: 3, width: 130, height: 10
+Child: 31, type: 3, width: 130, height: 10
+Child: 32, type: 3, width: 130, height: 10
+Child: 33, type: 3, width: 130, height: 10
+Child: 34, type: 3, width: 130, height: 10
+Child: 35, type: 3, width: 130, height: 10
+Child: 36, type: 3, width: 130, height: 10
+Child: 37, type: 3, width: 130, height: 10
+Child: 38, type: 0, width: 130, height: 238
+Child: 39, type: 3, width: 173, height: 7
+Child: 40, type: 3, width: 173, height: 10
+Child: 41, type: 3, width: 173, height: 10
+Child: 42, type: 3, width: 173, height: 10
+Child: 43, type: 3, width: 173, height: 10
+Child: 44, type: 3, width: 173, height: 10
+Child: 45, type: 3, width: 173, height: 10
+Child: 46, type: 3, width: 173, height: 10
+Child: 47, type: 3, width: 173, height: 10
+Child: 48, type: 3, width: 173, height: 10
+Child: 49, type: 3, width: 173, height: 10
+Child: 50, type: 3, width: 173, height: 10
+Child: 51, type: 3, width: 173, height: 10
+Child: 52, type: 3, width: 173, height: 10
+Child: 53, type: 3, width: 173, height: 10
+Child: 54, type: 3, width: 173, height: 10
+Child: 55, type: 3, width: 173, height: 10
+Child: 56, type: 3, width: 173, height: 10
+Child: 57, type: 3, width: 173, height: 9
+Child: 58, type: 0, width: 173, height: 236
+Child: 59, type: 0, width: 130, height: 238
+Child: 60, type: 6, width: 136, height: 168
+Child: 61, message: Thessalia's Makeovers
+Child: 62, message: Striped sweater
+Child: 63, type: 5, width: 36, height: 36
+Child: 64, type: 0, width: 147, height: 21
+Child: 65, type: 5, width: 36, height: 36
+Child: 66, type: 0, width: 147, height: 21
+Child: 67, message: Woollen vest
+Child: 68, message: Frilled blouse
+Child: 69, type: 5, width: 36, height: 36
+Child: 70, type: 0, width: 147, height: 21
+Child: 71, message: Bodice
+Child: 72, type: 5, width: 36, height: 36
+Child: 73, type: 0, width: 147, height: 21
+Child: 74, message: Fine shirt
+Child: 75, type: 5, width: 36, height: 36
+Child: 76, type: 0, width: 147, height: 21
+Child: 77, message: Ragged top
+Child: 78, type: 5, width: 36, height: 36
+Child: 79, type: 0, width: 147, height: 21
+Child: 80, message: Plain top
+Child: 81, type: 5, width: 36, height: 36
+Child: 82, type: 0, width: 147, height: 21
+Child: 83, message: Crop-top
+Child: 84, type: 5, width: 36, height: 36
+Child: 85, type: 0, width: 147, height: 21
+Child: 86, message: Simple
+Child: 87, type: 5, width: 36, height: 36
+Child: 88, type: 0, width: 147, height: 21
+Child: 89, message: Polo neck
+Child: 90, type: 5, width: 36, height: 36
+Child: 91, type: 0, width: 147, height: 21
+Child: 92, message: Torn
+Child: 93, type: 5, width: 36, height: 36
+Child: 94, type: 0, width: 147, height: 21
+Child: 95, message: Striped arms
+Child: 96, type: 5, width: 36, height: 36
+Child: 97, type: 0, width: 147, height: 21
+Child: 98, message: Frilled sleeves
+Child: 99, type: 5, width: 36, height: 36
+Child: 100, type: 0, width: 147, height: 21
+Child: 101, message: Fine cuffs
+Child: 102, type: 5, width: 36, height: 36
+Child: 103, type: 0, width: 147, height: 21
+Child: 104, message: Woollen arms
+Child: 105, type: 5, width: 36, height: 36
+Child: 106, type: 0, width: 147, height: 21
+Child: 107, message: Ragged sleeves
+Child: 108, type: 5, width: 36, height: 36
+Child: 109, type: 0, width: 147, height: 21
+Child: 110, message: Tattered sleeves
+Child: 111, type: 5, width: 36, height: 36
+Child: 112, type: 0, width: 147, height: 21
+Child: 113, message: Long sleeves
+Child: 114, type: 5, width: 36, height: 36
+Child: 115, type: 0, width: 147, height: 21
+Child: 116, message: Short sleeves
+Child: 117, type: 5, width: 36, height: 36
+Child: 118, type: 0, width: 147, height: 21
+Child: 119, message: Muscly
+Child: 120, type: 5, width: 36, height: 36
+Child: 121, type: 0, width: 147, height: 21
+Child: 122, message: Large cuffs
+Child: 123, type: 5, width: 36, height: 36
+Child: 124, type: 0, width: 147, height: 21
+Child: 125, message: Bare arms
+Child: 126, type: 5, width: 36, height: 36
+Child: 127, type: 0, width: 147, height: 21
+Child: 128, message: Fine skirt
+Child: 129, type: 5, width: 36, height: 36
+Child: 130, type: 0, width: 147, height: 21
+Child: 131, message: Frilled skirt
+Child: 132, type: 5, width: 36, height: 36
+Child: 133, type: 0, width: 147, height: 21
+Child: 134, message: Layered skirt
+Child: 135, type: 5, width: 36, height: 36
+Child: 136, type: 0, width: 147, height: 21
+Child: 137, message: Long, narrow skirt
+Child: 138, type: 5, width: 36, height: 36
+Child: 139, type: 0, width: 147, height: 21
+Child: 140, message: Ragged skirt
+Child: 141, type: 5, width: 36, height: 36
+Child: 142, type: 0, width: 147, height: 21
+Child: 143, message: Tattered skirt
+Child: 144, type: 5, width: 36, height: 36
+Child: 145, type: 0, width: 147, height: 21
+Child: 146, message: Short skirt
+Child: 147, type: 5, width: 36, height: 36
+Child: 148, type: 0, width: 147, height: 21
+Child: 149, message: Sashed skirt
+Child: 150, type: 5, width: 36, height: 36
+Child: 151, type: 0, width: 147, height: 21
+Child: 152, message: Fitted skirt
+Child: 153, type: 5, width: 36, height: 36
+Child: 154, type: 0, width: 147, height: 21
+Child: 155, message: Torn trousers
+Child: 156, type: 5, width: 36, height: 36
+Child: 157, type: 0, width: 147, height: 21
+Child: 158, message: Long skirt
+Child: 159, type: 5, width: 36, height: 36
+Child: 160, type: 0, width: 147, height: 21
+Child: 161, message: Turn-ups
+Child: 162, type: 5, width: 36, height: 36
+Child: 163, type: 0, width: 147, height: 21
+Child: 164, message: Flares
+Child: 165, type: 5, width: 36, height: 36
+Child: 166, type: 0, width: 147, height: 21
+Child: 167, message: Plain trousers
+Child: 168, type: 5, width: 36, height: 36
+Child: 169, type: 0, width: 147, height: 21
+Child: 170, message: Shorts
+Child: 171, type: 5, width: 36, height: 36
+Child: 172, type: 0, width: 147, height: 21
+Child: 173, type: 0, width: 173, height: 183
+Child: 174, type: 0, width: 16, height: 187
+Child: 175, type: 0, width: 173, height: 186
+Child: 176, type: 0, width: 16, height: 187
+Child: 177, type: 0, width: 173, height: 186
+Child: 178, type: 0, width: 16, height: 187
+Child: 179, type: 0, width: 95, height: 195
+Child: 180, message: 1,000 Coins
+Child: 181, type: 5, width: 42, height: 42
+Child: 182, type: 0, width: 87, height: 68
+Child: 183, type: 5, width: 42, height: 42
+Child: 184, type: 5, width: 42, height: 42
+Child: 185, type: 5, width: 42, height: 42
+Child: 186, type: 3, width: 20, height: 20
+Child: 187, type: 3, width: 20, height: 20
+Child: 188, type: 3, width: 20, height: 20
+Child: 189, type: 3, width: 20, height: 20
+Child: 190, type: 3, width: 20, height: 20
+Child: 191, type: 3, width: 20, height: 20
+Child: 192, type: 3, width: 20, height: 20
+Child: 193, type: 3, width: 20, height: 20
+Child: 194, type: 3, width: 20, height: 20
+Child: 195, type: 3, width: 20, height: 20
+Child: 196, type: 3, width: 20, height: 20
+Child: 197, type: 3, width: 20, height: 20
+Child: 198, type: 3, width: 20, height: 20
+Child: 199, type: 3, width: 20, height: 20
+Child: 200, type: 3, width: 20, height: 20
+Child: 201, type: 3, width: 20, height: 20
+Child: 202, type: 3, width: 20, height: 20
+Child: 203, type: 3, width: 20, height: 20
+Child: 204, type: 3, width: 20, height: 20
+Child: 205, type: 3, width: 20, height: 20
+Child: 206, type: 3, width: 20, height: 20
+Child: 207, type: 3, width: 20, height: 20
+Child: 208, type: 3, width: 20, height: 20
+Child: 209, type: 3, width: 20, height: 20
+Child: 210, type: 3, width: 20, height: 20
+Child: 211, type: 3, width: 20, height: 20
+Child: 212, type: 3, width: 20, height: 20
+Child: 213, type: 3, width: 20, height: 20
+Child: 214, type: 3, width: 20, height: 20
+Child: 215, type: 3, width: 20, height: 20
+Child: 216, type: 3, width: 20, height: 20
+Child: 217, type: 3, width: 20, height: 20
+Child: 218, type: 3, width: 20, height: 20
+Child: 219, type: 3, width: 20, height: 20
+Child: 220, type: 3, width: 20, height: 20
+Child: 221, type: 3, width: 20, height: 20
+Child: 222, type: 3, width: 20, height: 20
+Child: 223, type: 0, width: 95, height: 195
+Child: 224, type: 3, width: 21, height: 21
+Child: 225, type: 3, width: 21, height: 21
+Child: 226, type: 3, width: 21, height: 21
+Child: 227, type: 3, width: 21, height: 21
+Child: 228, type: 3, width: 21, height: 21
+Child: 229, type: 3, width: 21, height: 21
+Child: 230, type: 3, width: 21, height: 21
+Child: 231, type: 3, width: 21, height: 21
+Child: 232, type: 3, width: 21, height: 21
+Child: 233, type: 3, width: 21, height: 21
+Child: 234, type: 3, width: 21, height: 21
+Child: 235, type: 3, width: 21, height: 21
+Child: 236, type: 3, width: 21, height: 21
+Child: 237, type: 3, width: 21, height: 21
+Child: 238, type: 3, width: 21, height: 21
+Child: 239, type: 3, width: 21, height: 21
+Child: 240, type: 3, width: 21, height: 21
+Child: 241, type: 3, width: 21, height: 21
+Child: 242, type: 3, width: 21, height: 21
+Child: 243, type: 3, width: 21, height: 21
+Child: 244, type: 3, width: 21, height: 21
+Child: 245, type: 3, width: 21, height: 21
+Child: 246, type: 3, width: 21, height: 21
+Child: 247, type: 3, width: 21, height: 21
+Child: 248, type: 3, width: 21, height: 21
+Child: 249, type: 3, width: 21, height: 21
+Child: 250, type: 3, width: 21, height: 21
+Child: 251, type: 3, width: 21, height: 21
+Child: 252, type: 3, width: 21, height: 21
+Child: 253, type: 5, width: 21, height: 21
+Child: 254, type: 5, width: 21, height: 21
+Child: 255, type: 5, width: 21, height: 21
+Child: 256, type: 5, width: 21, height: 21
+Child: 257, type: 5, width: 21, height: 21
+Child: 258, type: 5, width: 21, height: 21
+Child: 259, type: 5, width: 21, height: 21
+Child: 260, type: 5, width: 21, height: 21
+Child: 261, type: 5, width: 21, height: 21
+Child: 262, type: 5, width: 21, height: 21
+Child: 263, type: 5, width: 21, height: 21
+Child: 264, type: 5, width: 21, height: 21
+Child: 265, type: 5, width: 21, height: 21
+Child: 266, type: 5, width: 21, height: 21
+Child: 267, type: 5, width: 21, height: 21
+Child: 268, type: 5, width: 21, height: 21
+Child: 269, type: 5, width: 21, height: 21
+Child: 270, type: 5, width: 21, height: 21
+Child: 271, type: 5, width: 21, height: 21
+Child: 272, type: 5, width: 21, height: 21
+Child: 273, type: 5, width: 21, height: 21
+Child: 274, type: 5, width: 21, height: 21
+Child: 275, type: 5, width: 21, height: 21
+Child: 276, type: 5, width: 21, height: 21
+Child: 277, type: 5, width: 21, height: 21
+Child: 278, type: 5, width: 21, height: 21
+Child: 279, type: 5, width: 21, height: 21
+Child: 280, type: 5, width: 21, height: 21
+Child: 281, type: 5, width: 21, height: 21
+Child: 282, type: 5, width: 16, height: 16
+Child: 283, type: 0, width: 512, height: 334
+Child: 284, type: 9, width: 176, height: 0
+Child: 285, type: 9, width: 0, height: 187
+Child: 286, type: 9, width: 0, height: 187
+Child: 287, type: 9, width: 176, height: 0
+Child: 288, type: 9, width: 93, height: 0
+Child: 289, type: 9, width: 0, height: 183
+Child: 290, type: 9, width: 0, height: 160
+Child: 291, type: 9, width: 24, height: 0
+Child: 292, type: 9, width: 133, height: 0
+Child: 293, type: 9, width: 0, height: 239
+Child: 294, type: 9, width: 0, height: 239
+Child: 295, type: 9, width: 133, height: 0
+Child: 296, type: 9, width: 69, height: 0
+Child: 297, type: 9, width: 0, height: 21
+Child: 298, type: 5, width: 23, height: 23
+Child: 299, type: 0, width: 512, height: 334
+Child: 300, type: 0, width: 200, height: 200

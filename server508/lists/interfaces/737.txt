@@ -1,0 +1,9 @@
+Child: 0, message: Pick a Kitten
+Child: 1, type: 5, width: 57, height: 13
+Child: 2, type: 5, width: 57, height: 13
+Child: 3, type: 6, width: 33, height: 31
+Child: 4, type: 6, width: 33, height: 31
+Child: 5, type: 6, width: 33, height: 31
+Child: 6, type: 6, width: 33, height: 31
+Child: 7, type: 6, width: 33, height: 31
+Child: 8, type: 6, width: 33, height: 31

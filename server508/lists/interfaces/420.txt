@@ -1,0 +1,27 @@
+Child: 0, type: 6, width: 32, height: 32
+Child: 1, type: 6, width: 32, height: 32
+Child: 2, type: 6, width: 32, height: 32
+Child: 3, type: 6, width: 32, height: 32
+Child: 4, type: 6, width: 32, height: 32
+Child: 5, type: 6, width: 32, height: 32
+Child: 6, type: 0, width: 48, height: 48
+Child: 7, type: 0, width: 55, height: 48
+Child: 8, type: 0, width: 48, height: 50
+Child: 9, type: 0, width: 48, height: 46
+Child: 10, type: 6, width: 120, height: 96
+Child: 11, type: 6, width: 126, height: 112
+Child: 12, type: 6, width: 122, height: 128
+Child: 13, type: 6, width: 114, height: 112
+Child: 14, type: 0, width: 522, height: 351
+Child: 15, type: 0, width: 524, height: 365
+Child: 16, type: 0, width: 530, height: 351
+Child: 17, type: 0, width: 518, height: 351
+Child: 18, type: 0, width: 70, height: 127
+Child: 19, type: 6, width: 32, height: 32
+Child: 20, type: 6, width: 32, height: 32
+Child: 21, type: 6, width: 32, height: 32
+Child: 22, type: 6, width: 32, height: 32
+Child: 23, message: EXAMPLE
+Child: 24, type: 5, width: 26, height: 23
+Child: 25, type: 5, width: 26, height: 23
+Child: 26, type: 0, width: 32, height: 32

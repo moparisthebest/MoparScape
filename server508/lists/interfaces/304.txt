@@ -1,0 +1,18 @@
+Child: 0, type: 5, width: 57, height: 13
+Child: 1, type: 5, width: 57, height: 13
+Child: 2, type: 6, width: 67, height: 82
+Child: 3, type: 6, width: 67, height: 82
+Child: 4, type: 6, width: 67, height: 82
+Child: 5, message: 
+Child: 6, message: 
+Child: 7, message: 
+Child: 8, message: 
+Child: 9, message: 
+Child: 10, message: 
+Child: 11, message: 
+Child: 12, message: 
+Child: 13, message: 
+Child: 14, message: 
+Child: 15, message: 
+Child: 16, message: 
+Child: 17, message: What would you like to make?

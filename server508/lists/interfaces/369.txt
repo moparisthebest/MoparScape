@@ -1,0 +1,43 @@
+Child: 0, type: 3, width: 508, height: 172
+Child: 1, type: 0, width: 491, height: 39
+Child: 2, type: 5, width: 481, height: 53
+Child: 3, type: 5, width: 32, height: 32
+Child: 4, type: 5, width: 439, height: 35
+Child: 5, type: 5, width: 32, height: 32
+Child: 6, type: 5, width: 32, height: 32
+Child: 7, type: 5, width: 440, height: 22
+Child: 8, type: 5, width: 32, height: 32
+Child: 9, type: 6, width: 32, height: 32
+Child: 10, type: 6, width: 32, height: 32
+Child: 11, type: 6, width: 32, height: 32
+Child: 12, type: 6, width: 32, height: 32
+Child: 13, message: A
+Child: 14, message: A
+Child: 15, message: A
+Child: 16, message: A
+Child: 17, type: 5, width: 45, height: 36
+Child: 18, type: 5, width: 45, height: 36
+Child: 19, type: 5, width: 45, height: 36
+Child: 20, type: 5, width: 45, height: 36
+Child: 21, type: 5, width: 45, height: 36
+Child: 22, type: 5, width: 45, height: 36
+Child: 23, type: 5, width: 45, height: 36
+Child: 24, type: 5, width: 45, height: 36
+Child: 25, message: Combination Lock Door
+Child: 26, type: 3, width: 128, height: 32
+Child: 27, message: Enter
+Child: 28, type: 5, width: 26, height: 23
+Child: 29, type: 5, width: 32, height: 32
+Child: 30, type: 5, width: 32, height: 32
+Child: 31, type: 5, width: 87, height: 31
+Child: 32, type: 5, width: 32, height: 32
+Child: 33, type: 5, width: 32, height: 32
+Child: 34, type: 5, width: 91, height: 31
+Child: 35, type: 5, width: 32, height: 32
+Child: 36, type: 5, width: 32, height: 32
+Child: 37, type: 5, width: 447, height: 23
+Child: 38, type: 5, width: 31, height: 114
+Child: 39, type: 5, width: 32, height: 32
+Child: 40, type: 5, width: 450, height: 19
+Child: 41, type: 5, width: 32, height: 32
+Child: 42, type: 5, width: 36, height: 115

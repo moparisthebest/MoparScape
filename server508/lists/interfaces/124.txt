@@ -1,0 +1,7 @@
+Child: 0, type: 6, width: 32, height: 28
+Child: 1, message: List of Fairy Queen's Symptoms.
+Child: 2, type: 5, width: 23, height: 23
+Child: 3, message:  Extremely weak<br>Slow discorporation of ethereal body<br>Drifting in and out of coma<br>Shallow breath<br>Fading magical energy<br>High fever
+Child: 4, type: 5, width: 23, height: 23
+Child: 5, type: 6, width: 32, height: 32
+Child: 6, type: 0, width: 32, height: 32

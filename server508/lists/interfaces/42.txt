@@ -1,0 +1,4 @@
+Child: 0, type: 6, width: 119, height: 118
+Child: 1, message: Runesquares
+Child: 2, message: Rank: %1
+Child: 3, type: 0, width: 98, height: 110

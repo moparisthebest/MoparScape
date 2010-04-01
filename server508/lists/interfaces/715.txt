@@ -1,0 +1,7 @@
+Child: 0, type: 6, width: 32, height: 32
+Child: 1, type: 6, width: 76, height: 100
+Child: 2, message: 
+Child: 3, type: 6, width: 125, height: 145
+Child: 4, message: Message of the week
+Child: 5, type: 6, width: 21, height: 19
+Child: 6, type: 6, width: 20, height: 19

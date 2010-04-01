@@ -1,0 +1,10 @@
+Child: 0, type: 0, width: 512, height: 334
+Child: 1, type: 5, width: 17, height: 13
+Child: 2, message: Wave 1
+Child: 3, type: 5, width: 17, height: 13
+Child: 4, message: Controlled/
+Child: 5, message: Bronze/Wind
+Child: 6, type: 5, width: 17, height: 13
+Child: 7, message: Green eggs
+Child: 8, type: 5, width: 17, height: 13
+Child: 9, message: Collector

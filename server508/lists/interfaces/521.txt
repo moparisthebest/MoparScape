@@ -1,0 +1,90 @@
+Child: 0, type: 3, width: 491, height: 307
+Child: 1, type: 5, width: 482, height: 295
+Child: 2, type: 5, width: 32, height: 32
+Child: 3, type: 5, width: 32, height: 32
+Child: 4, type: 5, width: 37, height: 243
+Child: 5, type: 5, width: 32, height: 32
+Child: 6, type: 5, width: 21, height: 246
+Child: 7, type: 5, width: 442, height: 20
+Child: 8, type: 5, width: 447, height: 28
+Child: 9, type: 5, width: 32, height: 32
+Child: 10, type: 5, width: 32, height: 32
+Child: 11, type: 5, width: 32, height: 32
+Child: 12, type: 5, width: 477, height: 33
+Child: 13, type: 5, width: 16, height: 16
+Child: 14, message: Guidance System
+Child: 15, type: 0, width: 32, height: 32
+Child: 16, type: 0, width: 210, height: 43
+Child: 17, type: 3, width: 200, height: 32
+Child: 18, type: 3, width: 51, height: 40
+Child: 19, type: 3, width: 51, height: 40
+Child: 20, type: 3, width: 51, height: 40
+Child: 21, type: 3, width: 51, height: 40
+Child: 22, type: 0, width: 16, height: 44
+Child: 23, type: 6, width: 7, height: 42
+Child: 24, type: 0, width: 16, height: 40
+Child: 25, type: 6, width: 7, height: 42
+Child: 26, type: 0, width: 16, height: 40
+Child: 27, type: 6, width: 7, height: 42
+Child: 28, type: 0, width: 16, height: 40
+Child: 29, type: 6, width: 7, height: 42
+Child: 30, type: 6, width: 230, height: 60
+Child: 31, message: 100%
+Child: 32, message: Health - 
+Child: 33, type: 0, width: 210, height: 43
+Child: 34, type: 3, width: 200, height: 32
+Child: 35, type: 3, width: 51, height: 40
+Child: 36, type: 3, width: 51, height: 40
+Child: 37, type: 3, width: 51, height: 40
+Child: 38, type: 3, width: 51, height: 40
+Child: 39, type: 0, width: 16, height: 44
+Child: 40, type: 6, width: 7, height: 42
+Child: 41, type: 0, width: 16, height: 44
+Child: 42, type: 6, width: 7, height: 42
+Child: 43, type: 0, width: 16, height: 40
+Child: 44, type: 6, width: 7, height: 42
+Child: 45, type: 6, width: 230, height: 60
+Child: 46, message: 100%
+Child: 47, message: Spirit - 
+Child: 48, type: 0, width: 210, height: 43
+Child: 49, type: 3, width: 200, height: 32
+Child: 50, type: 3, width: 51, height: 40
+Child: 51, type: 3, width: 51, height: 40
+Child: 52, type: 3, width: 51, height: 40
+Child: 53, type: 3, width: 51, height: 40
+Child: 54, type: 0, width: 16, height: 40
+Child: 55, type: 6, width: 7, height: 42
+Child: 56, type: 6, width: 230, height: 60
+Child: 57, message: 100%
+Child: 58, message: Armament - 
+Child: 59, type: 3, width: 201, height: 10
+Child: 60, type: 3, width: 201, height: 10
+Child: 61, type: 3, width: 201, height: 10
+Child: 62, type: 3, width: 201, height: 10
+Child: 63, type: 3, width: 201, height: 10
+Child: 64, type: 3, width: 201, height: 10
+Child: 65, type: 3, width: 201, height: 10
+Child: 66, type: 3, width: 201, height: 10
+Child: 67, type: 3, width: 201, height: 10
+Child: 68, type: 3, width: 201, height: 10
+Child: 69, type: 3, width: 201, height: 9
+Child: 70, type: 0, width: 125, height: 107
+Child: 71, type: 6, width: 106, height: 114
+Child: 72, type: 0, width: 125, height: 107
+Child: 73, type: 6, width: 92, height: 115
+Child: 74, type: 0, width: 125, height: 107
+Child: 75, type: 6, width: 95, height: 120
+Child: 76, type: 0, width: 125, height: 107
+Child: 77, type: 6, width: 78, height: 102
+Child: 78, type: 3, width: 201, height: 131
+Child: 79, message: --- Stat ---
+Child: 80, message: Information...
+Child: 81, type: 3, width: 203, height: 109
+Child: 82, type: 3, width: 201, height: 107
+Child: 83, type: 3, width: 202, height: 108
+Child: 84, type: 3, width: 202, height: 131
+Child: 85, type: 3, width: 200, height: 129
+Child: 86, type: 3, width: 201, height: 130
+Child: 87, type: 3, width: 203, height: 109
+Child: 88, type: 3, width: 201, height: 107
+Child: 89, type: 3, width: 202, height: 108

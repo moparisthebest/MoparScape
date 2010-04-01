@@ -1,0 +1,25 @@
+Child: 0, type: 5, width: 36, height: 36
+Child: 1, type: 5, width: 36, height: 36
+Child: 2, type: 5, width: 36, height: 36
+Child: 3, type: 5, width: 36, height: 36
+Child: 4, type: 5, width: 36, height: 36
+Child: 5, message: Talk to puppet
+Child: 6, message: Jester Controls
+Child: 7, type: 5, width: 36, height: 36
+Child: 8, type: 5, width: 36, height: 36
+Child: 9, message: Dance
+Child: 10, type: 5, width: 36, height: 36
+Child: 11, type: 5, width: 36, height: 36
+Child: 12, message: Juggle
+Child: 13, type: 5, width: 36, height: 36
+Child: 14, type: 5, width: 36, height: 36
+Child: 15, message: Skip
+Child: 16, type: 5, width: 36, height: 36
+Child: 17, type: 5, width: 36, height: 36
+Child: 18, message: Pie
+Child: 19, type: 5, width: 36, height: 36
+Child: 20, type: 5, width: 36, height: 36
+Child: 21, message: Jig
+Child: 22, type: 5, width: 36, height: 36
+Child: 23, type: 5, width: 36, height: 36
+Child: 24, message: Bow

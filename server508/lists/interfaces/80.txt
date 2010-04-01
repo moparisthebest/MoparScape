@@ -1,0 +1,14 @@
+Child: 0, message: %1
+Child: 1, type: 0, width: 180, height: 163
+Child: 2, type: 5, width: 70, height: 46
+Child: 3, type: 5, width: 70, height: 46
+Child: 4, type: 5, width: 34, height: 24
+Child: 5, type: 5, width: 30, height: 30
+Child: 6, message: Combat Lvl: %1
+Child: 7, type: 5, width: 150, height: 46
+Child: 8, message: Aim and Fire
+Child: 9, message: Kick
+Child: 10, message: Auto Retaliate <br>(Off)
+Child: 11, type: 8, width: 70, height: 46
+Child: 12, type: 8, width: 70, height: 46
+Child: 13, type: 8, width: 150, height: 46

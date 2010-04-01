@@ -1,0 +1,33 @@
+Child: 0, type: 3, width: 512, height: 334
+Child: 1, message: Text
+Child: 2, type: 6, width: 32, height: 32
+Child: 3, type: 6, width: 32, height: 32
+Child: 4, type: 6, width: 32, height: 32
+Child: 5, type: 6, width: 32, height: 32
+Child: 6, type: 6, width: 32, height: 32
+Child: 7, type: 6, width: 32, height: 32
+Child: 8, type: 6, width: 32, height: 32
+Child: 9, type: 6, width: 32, height: 32
+Child: 10, type: 6, width: 32, height: 32
+Child: 11, type: 6, width: 32, height: 32
+Child: 12, type: 6, width: 32, height: 32
+Child: 13, type: 6, width: 32, height: 32
+Child: 14, type: 6, width: 32, height: 32
+Child: 15, type: 6, width: 32, height: 32
+Child: 16, type: 6, width: 32, height: 32
+Child: 17, type: 6, width: 32, height: 32
+Child: 18, type: 6, width: 32, height: 32
+Child: 19, type: 6, width: 32, height: 32
+Child: 20, type: 6, width: 32, height: 32
+Child: 21, type: 6, width: 32, height: 32
+Child: 22, type: 6, width: 32, height: 32
+Child: 23, type: 6, width: 32, height: 32
+Child: 24, message: Display number
+Child: 25, message: 03
+Child: 26, type: 0, width: 270, height: 304
+Child: 27, type: 0, width: 270, height: 304
+Child: 28, message: Text
+Child: 29, message: Text
+Child: 30, message: Text
+Child: 31, message: Text
+Child: 32, type: 5, width: 26, height: 23

@@ -1,0 +1,87 @@
+Child: 0, type: 5, width: 478, height: 295
+Child: 1, type: 5, width: 33, height: 295
+Child: 2, type: 5, width: 32, height: 295
+Child: 3, type: 5, width: 479, height: 40
+Child: 4, type: 5, width: 482, height: 39
+Child: 5, type: 5, width: 32, height: 32
+Child: 6, type: 5, width: 32, height: 32
+Child: 7, type: 5, width: 32, height: 32
+Child: 8, type: 5, width: 32, height: 32
+Child: 9, type: 5, width: 479, height: 38
+Child: 10, type: 5, width: 32, height: 32
+Child: 11, type: 5, width: 32, height: 32
+Child: 12, type: 5, width: 16, height: 16
+Child: 13, message: Silver Casting
+Child: 14, type: 0, width: 441, height: 241
+Child: 15, type: 0, width: 85, height: 115
+Child: 16, message: 
+Child: 17, type: 6, width: 32, height: 32
+Child: 18, message: Make<br> Saradomin <br>Symbol
+Child: 19, type: 0, width: 85, height: 115
+Child: 20, type: 6, width: 32, height: 32
+Child: 21, message: You need a Holy Symbol mould to make this item.
+Child: 22, type: 0, width: 85, height: 113
+Child: 23, message: 
+Child: 24, type: 6, width: 32, height: 32
+Child: 25, message: Make<br> Zamorak<br>Symbol
+Child: 26, type: 0, width: 85, height: 113
+Child: 27, type: 6, width: 32, height: 32
+Child: 28, message: You need an Unholy Symbol mould to make this item.
+Child: 29, type: 0, width: 84, height: 115
+Child: 30, message: 
+Child: 31, type: 6, width: 32, height: 32
+Child: 32, message: Make<br>Silver<br>Sickle
+Child: 33, type: 0, width: 84, height: 115
+Child: 34, type: 6, width: 32, height: 32
+Child: 35, message: You need a <br>sickle mould<br> to make<br> this item.
+Child: 36, type: 0, width: 84, height: 112
+Child: 37, message: 
+Child: 38, type: 6, width: 32, height: 32
+Child: 39, message: Make<br>Lightning<br>Rod
+Child: 40, type: 0, width: 84, height: 112
+Child: 41, type: 6, width: 32, height: 32
+Child: 42, message: You need a lightning rod mould to make this item.
+Child: 43, type: 0, width: 84, height: 115
+Child: 44, message: 
+Child: 45, type: 6, width: 32, height: 32
+Child: 46, message: Make<br>Tiara
+Child: 47, type: 0, width: 84, height: 115
+Child: 48, type: 6, width: 32, height: 32
+Child: 49, message: You need a<br> tiara mould <br>to make<br> a tiara.
+Child: 50, type: 0, width: 84, height: 112
+Child: 51, type: 6, width: 32, height: 32
+Child: 52, message: 
+Child: 53, type: 6, width: 32, height: 32
+Child: 54, message: Make <br>Silvthril <br>Rod
+Child: 55, type: 0, width: 84, height: 112
+Child: 56, type: 6, width: 32, height: 32
+Child: 57, message: You need a <br> rod mould <br>to make this <br>item.
+Child: 58, type: 0, width: 84, height: 115
+Child: 59, message: 
+Child: 60, type: 6, width: 32, height: 32
+Child: 61, message: Make<br> Demonic<br>Sigil
+Child: 62, type: 0, width: 84, height: 115
+Child: 63, type: 6, width: 32, height: 32
+Child: 64, message: You need a<br> demonic sigil<br>mould to make<br>this item.
+Child: 65, type: 0, width: 84, height: 112
+Child: 66, message: 
+Child: 67, type: 6, width: 32, height: 32
+Child: 68, message: Make<br> Silver  <br>Crossbow<br> Bolts
+Child: 69, type: 0, width: 84, height: 112
+Child: 70, type: 6, width: 32, height: 32
+Child: 71, message: You need a<br> crossbow bolt<br>mould to make<br>this item.
+Child: 72, type: 0, width: 84, height: 115
+Child: 73, message: 
+Child: 74, type: 6, width: 32, height: 32
+Child: 75, message: Make<br> Silvthril <br>Chain
+Child: 76, type: 6, width: 32, height: 32
+Child: 77, type: 0, width: 84, height: 115
+Child: 78, type: 6, width: 32, height: 32
+Child: 79, message: You need a chain mould to make this item.
+Child: 80, type: 0, width: 84, height: 112
+Child: 81, message: 
+Child: 82, type: 6, width: 32, height: 32
+Child: 83, message: 
+Child: 84, type: 0, width: 84, height: 112
+Child: 85, type: 6, width: 32, height: 32
+Child: 86, message: 

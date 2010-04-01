@@ -1,0 +1,3 @@
+Child: 0, type: 0, width: 16384, height: 16384
+Child: 1, type: 6, width: 18279, height: 16685
+Child: 2, type: 3, width: 17607, height: 19628

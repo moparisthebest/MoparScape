@@ -1,0 +1,37 @@
+Child: 0, type: 3, width: 512, height: 334
+Child: 1, type: 6, width: 32, height: 32
+Child: 2, type: 6, width: 32, height: 32
+Child: 3, message: Rune-Draw
+Child: 4, message: Your Score
+Child: 5, message: Opponent's Score
+Child: 6, type: 0, width: 62, height: 43
+Child: 7, message: Draw
+Child: 8, message: 
+Child: 9, type: 0, width: 63, height: 43
+Child: 10, message: Hold
+Child: 11, message: 
+Child: 12, type: 6, width: 25, height: 24
+Child: 13, type: 6, width: 25, height: 24
+Child: 14, type: 6, width: 25, height: 24
+Child: 15, type: 6, width: 25, height: 24
+Child: 16, type: 6, width: 25, height: 24
+Child: 17, type: 6, width: 25, height: 24
+Child: 18, type: 6, width: 25, height: 24
+Child: 19, type: 6, width: 25, height: 24
+Child: 20, type: 6, width: 25, height: 24
+Child: 21, type: 6, width: 25, height: 24
+Child: 22, type: 6, width: 25, height: 24
+Child: 23, type: 6, width: 25, height: 24
+Child: 24, type: 6, width: 25, height: 24
+Child: 25, type: 6, width: 25, height: 24
+Child: 26, type: 6, width: 25, height: 24
+Child: 27, type: 6, width: 25, height: 24
+Child: 28, type: 6, width: 25, height: 24
+Child: 29, type: 6, width: 25, height: 24
+Child: 30, type: 6, width: 25, height: 24
+Child: 31, type: 6, width: 25, height: 24
+Child: 32, message: DEATH
+Child: 33, message: Text
+Child: 34, message: DEATH
+Child: 35, message: Text
+Child: 36, type: 5, width: 26, height: 23

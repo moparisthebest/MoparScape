@@ -1,0 +1,3 @@
+Child: 0, type: 0, width: 16391, height: 16391
+Child: 1, message: Line1
+Child: 2, message: Click here to continue

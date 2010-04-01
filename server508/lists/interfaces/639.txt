@@ -1,0 +1,38 @@
+Child: 0, type: 3, width: 488, height: 305
+Child: 1, type: 5, width: 485, height: 300
+Child: 2, type: 5, width: 32, height: 242
+Child: 3, type: 5, width: 32, height: 32
+Child: 4, type: 5, width: 32, height: 243
+Child: 5, type: 5, width: 424, height: 34
+Child: 6, type: 5, width: 423, height: 32
+Child: 7, type: 5, width: 32, height: 32
+Child: 8, type: 5, width: 32, height: 32
+Child: 9, type: 5, width: 32, height: 32
+Child: 10, type: 5, width: 16, height: 16
+Child: 11, type: 5, width: 474, height: 32
+Child: 12, type: 5, width: 474, height: 32
+Child: 13, type: 5, width: 474, height: 32
+Child: 14, message: Are you sure you want to fight this duel?
+Child: 15, message: Before the duel starts:
+Child: 16, message: Lots of y's and g's
+Child: 17, message: There will be obstacles in the arena.
+Child: 18, message: There will be obstacles in the arena.
+Child: 19, message: There will be obstacles in the arena.
+Child: 20, message: There will be obstacles in the arena.
+Child: 21, message: During the duel:
+Child: 22, message: There will be obstacles in the arena.
+Child: 23, message: There will be obstacles in the arena.
+Child: 24, message: There will be obstacles in the arena.
+Child: 25, message: There will be obstacles in the arena.
+Child: 26, message: There will be obstacles in the arena.
+Child: 27, message: There will be obstacles in the arena.
+Child: 28, message: There will be obstacles in the arena.
+Child: 29, message: There will be obstacles in the arena.
+Child: 30, message: There will be obstacles in the arena.
+Child: 31, message: There will be obstacles in the arena.
+Child: 32, message: There will be obstacles in the arena.
+Child: 33, message: Waiting for other player...
+Child: 34, type: 0, width: 70, height: 24
+Child: 35, message: Accept
+Child: 36, type: 0, width: 70, height: 24
+Child: 37, message: Decline

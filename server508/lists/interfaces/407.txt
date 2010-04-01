@@ -1,0 +1,18 @@
+Child: 0, type: 3, width: 10, height: 14
+Child: 1, type: 6, width: 45, height: 107
+Child: 2, type: 0, width: 517, height: 332
+Child: 3, message: eeeeeeeeeeeeee
+Child: 4, type: 3, width: 10, height: 14
+Child: 5, type: 3, width: 10, height: 14
+Child: 6, type: 3, width: 10, height: 14
+Child: 7, type: 3, width: 10, height: 14
+Child: 8, type: 3, width: 10, height: 14
+Child: 9, type: 3, width: 10, height: 14
+Child: 10, type: 3, width: 10, height: 14
+Child: 11, type: 3, width: 10, height: 14
+Child: 12, type: 3, width: 10, height: 14
+Child: 13, message: Next Departure: 5 min
+Child: 14, message: Players Ready: 5
+Child: 15, message: (Need 5 to 25 players)
+Child: 16, message: Points:pest_points
+Child: 17, type: 0, width: 119, height: 292

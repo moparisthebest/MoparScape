@@ -1,0 +1,52 @@
+Child: 0, type: 3, width: 512, height: 388
+Child: 1, type: 6, width: 32, height: 32
+Child: 2, type: 6, width: 32, height: 32
+Child: 3, type: 6, width: 32, height: 32
+Child: 4, type: 6, width: 32, height: 32
+Child: 5, type: 6, width: 32, height: 32
+Child: 6, type: 6, width: 32, height: 32
+Child: 7, type: 6, width: 32, height: 32
+Child: 8, type: 6, width: 32, height: 32
+Child: 9, type: 6, width: 32, height: 32
+Child: 10, type: 6, width: 32, height: 32
+Child: 11, type: 6, width: 32, height: 32
+Child: 12, type: 6, width: 32, height: 32
+Child: 13, type: 6, width: 34, height: 32
+Child: 14, type: 6, width: 32, height: 32
+Child: 15, type: 0, width: 512, height: 334
+Child: 16, type: 0, width: 512, height: 334
+Child: 17, type: 5, width: 45, height: 36
+Child: 18, type: 5, width: 45, height: 36
+Child: 19, type: 0, width: 63, height: 52
+Child: 20, type: 0, width: 63, height: 52
+Child: 21, message: -Drogokishuun-<br>Goblins of the<br>Fierce Blades
+Child: 22, message: -Huzamogaarb-<br>Live-Flesh Eaters<br>of the Chaos God
+Child: 23, message: -Saragorgak-<br>Footsoldiers of<br>Holy Wrath
+Child: 24, message: -Dorgeshuun-<br>Goblins of the<br>Strong Spears
+Child: 25, message: -Horogothgar-<br>Eaters of<br>Manflesh
+Child: 26, message: -Yurkolgokh-<br>The Flatulent
+Child: 27, message: -Thorobshuun-<br>Goblins of the<br>Hills
+Child: 28, message: -Garagorshuun-<br>Goblins of the<br>Sea
+Child: 29, message: -Rekeshuun-<br>Goblins of the<br>North
+Child: 30, message: -Ekeleshuun-<br>Goblins of the<br>East
+Child: 31, message: -Idithuun-<br>Goblins of the<br>South
+Child: 32, message: -Narogoshuun-<br>Goblins of the<br>West
+Child: 33, message: A History of the Goblin Race
+Child: 34, type: 0, width: 512, height: 388
+Child: 35, message: Goblin tradition holds that<br>their race was created by<br>a war-god in order to<br>fight a war against other<br>gods.
+Child: 36, message: (They never name their<br>god, so whether it is the<br>same as any of the gods<br>worshipped by the other<br>races is unknown.)
+Child: 37, message: The legends also speak<br>of goblins fighting<br>against goblins during<br>the wars, so it is likely<br>that gods other than<br>their creators used<br>them as footsoldiers.
+Child: 38, message: Although goblins are still<br>warlike, it is probable<br>that in earlier ages<br>they were more<br>organised than they<br>are now,
+Child: 39, type: 0, width: 512, height: 388
+Child: 40, message: especially if they were<br>under the direct<br>command of one or<br>more gods.
+Child: 41, message: This is corroborated<br>by finds unearthed<br>at various<br>archaeological sites,<br>including the large<br>excavation east of<br>Varrock.
+Child: 42, message: Armour and weapons<br>have been found,<br>obviously made to fit<br>goblins but far more<br>well-made than their<br>current equipment.
+Child: 43, type: 0, width: 512, height: 388
+Child: 44, message: Almost every piece of<br>ancient goblin equipment<br>has one of a number<br>of symbols on it,<br>and by correlating these<br>symbols with the<br>sketchy records that<br>survive from the<br>Third Age it has been<br>possible to identify<br>twelve distinct goblin tribes<br>or regiments.
+Child: 45, message: The separate identities of<br>the tribes have long<br>since dissolved and<br>no goblins remember the<br>symbols, although their<br>generals may still<br>recognize the ancient<br>tribal names.
+Child: 46, message: In the following pages<br>I present a list of<br>the tribes and their<br>symbols.
+Child: 47, type: 0, width: 512, height: 334
+Child: 48, type: 5, width: 26, height: 23
+Child: 49, type: 5, width: 26, height: 23
+Child: 50, type: 0, width: 32, height: 32
+Child: 51, message: 

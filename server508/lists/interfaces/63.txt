@@ -1,0 +1,11 @@
+Child: 0, type: 6, width: 32, height: 28
+Child: 1, message: Congratulations!
+Child: 2, message: Well done, you defeated the Champion!
+Child: 3, type: 6, width: 85, height: 105
+Child: 4, type: 6, width: 32, height: 32
+Child: 5, message: You are awarded:
+Child: 6, message: %1 Slayer Xp
+Child: 7, message: %1 Hitpoint Xp
+Child: 8, type: 5, width: 26, height: 23
+Child: 9, type: 5, width: 26, height: 23
+Child: 10, type: 0, width: 32, height: 32

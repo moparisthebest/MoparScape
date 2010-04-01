@@ -1,0 +1,6 @@
+Child: 0, type: 3, width: 16391, height: 16391
+Child: 1, type: 3, width: 300, height: 170
+Child: 2, type: 6, width: 509, height: 298
+Child: 3, message: Tai Bwo Wannai Parcel service
+Child: 4, type: 5, width: 26, height: 23
+Child: 5, type: 0, width: 294, height: 147

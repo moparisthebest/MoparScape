@@ -1,0 +1,14 @@
+Child: 0, type: 5, width: 502, height: 324
+Child: 1, type: 5, width: 32, height: 273
+Child: 2, type: 5, width: 32, height: 32
+Child: 3, type: 5, width: 32, height: 271
+Child: 4, type: 5, width: 450, height: 29
+Child: 5, type: 5, width: 450, height: 36
+Child: 6, type: 5, width: 32, height: 32
+Child: 7, type: 5, width: 32, height: 32
+Child: 8, type: 5, width: 32, height: 32
+Child: 9, type: 6, width: 146, height: 255
+Child: 10, type: 5, width: 25, height: 25
+Child: 11, message: Step 4 : With your items placed on the Grand Exchange system, just wait a while and we will let you know when your items are traded.
+Child: 12, type: 5, width: 16, height: 16
+Child: 13, message: Click to continue

@@ -1,0 +1,3 @@
+Child: 0, type: 6, width: 475, height: 91
+Child: 1, message: This vile gublinchette was asking a player for his home address. The clever player didn't give her their address, but used the Report Abuse button to report her instead.
+Child: 2, type: 5, width: 23, height: 23

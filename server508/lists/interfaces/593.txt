@@ -1,0 +1,153 @@
+Child: 0, type: 3, width: 488, height: 305
+Child: 1, type: 5, width: 485, height: 300
+Child: 2, type: 5, width: 32, height: 243
+Child: 3, type: 5, width: 32, height: 241
+Child: 4, type: 5, width: 465, height: 32
+Child: 5, type: 5, width: 424, height: 32
+Child: 6, type: 5, width: 423, height: 32
+Child: 7, type: 5, width: 32, height: 32
+Child: 8, type: 5, width: 32, height: 32
+Child: 9, type: 5, width: 32, height: 32
+Child: 10, type: 5, width: 32, height: 32
+Child: 11, type: 5, width: 32, height: 32
+Child: 12, type: 5, width: 32, height: 32
+Child: 13, type: 3, width: 130, height: 10
+Child: 14, type: 3, width: 130, height: 10
+Child: 15, type: 3, width: 130, height: 10
+Child: 16, type: 3, width: 130, height: 10
+Child: 17, type: 3, width: 130, height: 10
+Child: 18, type: 3, width: 130, height: 10
+Child: 19, type: 3, width: 130, height: 10
+Child: 20, type: 3, width: 130, height: 10
+Child: 21, type: 3, width: 130, height: 10
+Child: 22, type: 3, width: 130, height: 10
+Child: 23, type: 3, width: 130, height: 10
+Child: 24, type: 3, width: 130, height: 10
+Child: 25, type: 3, width: 130, height: 10
+Child: 26, type: 3, width: 130, height: 10
+Child: 27, type: 3, width: 130, height: 10
+Child: 28, type: 3, width: 130, height: 10
+Child: 29, type: 3, width: 130, height: 10
+Child: 30, type: 3, width: 130, height: 10
+Child: 31, type: 3, width: 130, height: 10
+Child: 32, type: 3, width: 130, height: 10
+Child: 33, type: 3, width: 130, height: 10
+Child: 34, type: 3, width: 130, height: 10
+Child: 35, type: 3, width: 130, height: 10
+Child: 36, type: 3, width: 130, height: 10
+Child: 37, type: 0, width: 130, height: 246
+Child: 38, type: 3, width: 173, height: 7
+Child: 39, type: 3, width: 173, height: 10
+Child: 40, type: 3, width: 173, height: 10
+Child: 41, type: 3, width: 173, height: 10
+Child: 42, type: 3, width: 173, height: 10
+Child: 43, type: 3, width: 173, height: 10
+Child: 44, type: 3, width: 173, height: 10
+Child: 45, type: 3, width: 173, height: 10
+Child: 46, type: 3, width: 173, height: 10
+Child: 47, type: 3, width: 173, height: 10
+Child: 48, type: 3, width: 173, height: 10
+Child: 49, type: 3, width: 173, height: 10
+Child: 50, type: 3, width: 173, height: 10
+Child: 51, type: 3, width: 173, height: 10
+Child: 52, type: 3, width: 173, height: 10
+Child: 53, type: 3, width: 173, height: 10
+Child: 54, type: 3, width: 173, height: 10
+Child: 55, type: 3, width: 173, height: 10
+Child: 56, type: 3, width: 173, height: 10
+Child: 57, type: 0, width: 173, height: 235
+Child: 58, type: 3, width: 140, height: 10
+Child: 59, type: 3, width: 140, height: 10
+Child: 60, type: 3, width: 140, height: 10
+Child: 61, type: 3, width: 140, height: 10
+Child: 62, type: 3, width: 140, height: 10
+Child: 63, type: 3, width: 140, height: 10
+Child: 64, type: 3, width: 140, height: 10
+Child: 65, type: 3, width: 140, height: 10
+Child: 66, type: 3, width: 140, height: 14
+Child: 67, type: 0, width: 512, height: 334
+Child: 68, type: 6, width: 32, height: 32
+Child: 69, type: 6, width: 32, height: 32
+Child: 70, type: 0, width: 130, height: 238
+Child: 71, type: 6, width: 136, height: 168
+Child: 72, message: Reinald's Smithing Emporium
+Child: 73, message: Bare arms
+Child: 74, type: 5, width: 36, height: 36
+Child: 75, type: 0, width: 147, height: 21
+Child: 76, message: Silver wristguards
+Child: 77, type: 5, width: 36, height: 36
+Child: 78, type: 0, width: 147, height: 21
+Child: 79, message: Silver clasps
+Child: 80, type: 5, width: 36, height: 36
+Child: 81, type: 0, width: 147, height: 21
+Child: 82, message: Silver bangles
+Child: 83, type: 5, width: 36, height: 36
+Child: 84, type: 0, width: 147, height: 21
+Child: 85, message: Silver banding
+Child: 86, type: 5, width: 36, height: 36
+Child: 87, type: 0, width: 147, height: 21
+Child: 88, message: Silver bands
+Child: 89, type: 5, width: 36, height: 36
+Child: 90, type: 0, width: 147, height: 21
+Child: 91, message: Silver armguards
+Child: 92, type: 5, width: 36, height: 36
+Child: 93, type: 0, width: 147, height: 21
+Child: 94, message: Bare arms
+Child: 95, type: 5, width: 36, height: 36
+Child: 96, type: 0, width: 147, height: 21
+Child: 97, message: Gold wristguards
+Child: 98, type: 5, width: 36, height: 36
+Child: 99, type: 0, width: 147, height: 21
+Child: 100, message: Gold clasps
+Child: 101, type: 5, width: 36, height: 36
+Child: 102, type: 0, width: 147, height: 21
+Child: 103, message: Gold bangles
+Child: 104, type: 5, width: 36, height: 36
+Child: 105, type: 0, width: 147, height: 21
+Child: 106, message: Gold banding
+Child: 107, type: 5, width: 36, height: 36
+Child: 108, type: 0, width: 147, height: 21
+Child: 109, message: Gold bands
+Child: 110, type: 5, width: 36, height: 36
+Child: 111, type: 0, width: 147, height: 21
+Child: 112, message: Gold armguards
+Child: 113, type: 5, width: 36, height: 36
+Child: 114, type: 0, width: 147, height: 21
+Child: 115, type: 0, width: 173, height: 194
+Child: 116, type: 0, width: 173, height: 194
+Child: 117, type: 5, width: 42, height: 42
+Child: 118, message: 500 Coins
+Child: 119, type: 0, width: 72, height: 71
+Child: 120, type: 5, width: 42, height: 42
+Child: 121, type: 5, width: 42, height: 42
+Child: 122, type: 3, width: 20, height: 20
+Child: 123, type: 3, width: 20, height: 20
+Child: 124, type: 3, width: 20, height: 20
+Child: 125, type: 3, width: 20, height: 20
+Child: 126, type: 3, width: 20, height: 20
+Child: 127, type: 3, width: 20, height: 20
+Child: 128, type: 3, width: 20, height: 20
+Child: 129, type: 3, width: 20, height: 20
+Child: 130, type: 3, width: 20, height: 20
+Child: 131, type: 3, width: 20, height: 20
+Child: 132, type: 3, width: 20, height: 20
+Child: 133, type: 3, width: 20, height: 20
+Child: 134, type: 3, width: 20, height: 20
+Child: 135, type: 3, width: 20, height: 20
+Child: 136, type: 5, width: 16, height: 16
+Child: 137, type: 0, width: 512, height: 334
+Child: 138, type: 9, width: 176, height: 0
+Child: 139, type: 9, width: 0, height: 188
+Child: 140, type: 9, width: 0, height: 188
+Child: 141, type: 9, width: 176, height: 0
+Child: 142, type: 9, width: 143, height: 0
+Child: 143, type: 9, width: 0, height: 92
+Child: 144, type: 9, width: 0, height: 92
+Child: 145, type: 9, width: 143, height: 0
+Child: 146, type: 9, width: 133, height: 0
+Child: 147, type: 9, width: 0, height: 239
+Child: 148, type: 9, width: 0, height: 239
+Child: 149, type: 9, width: 133, height: 0
+Child: 150, type: 5, width: 23, height: 23
+Child: 151, type: 0, width: 512, height: 334
+Child: 152, type: 0, width: 200, height: 200

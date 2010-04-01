@@ -1,0 +1,73 @@
+Child: 0, type: 6, width: 32, height: 32
+Child: 1, type: 6, width: 32, height: 32
+Child: 2, type: 6, width: 32, height: 32
+Child: 3, type: 6, width: 32, height: 32
+Child: 4, type: 6, width: 32, height: 32
+Child: 5, type: 6, width: 32, height: 32
+Child: 6, type: 6, width: 32, height: 32
+Child: 7, type: 6, width: 32, height: 32
+Child: 8, type: 0, width: 32, height: 32
+Child: 9, type: 0, width: 32, height: 32
+Child: 10, type: 0, width: 32, height: 32
+Child: 11, message: Poison
+Child: 12, message: Explosive
+Child: 13, message: Stun
+Child: 14, type: 6, width: 32, height: 32
+Child: 15, type: 6, width: 32, height: 32
+Child: 16, type: 6, width: 32, height: 32
+Child: 17, type: 6, width: 32, height: 32
+Child: 18, type: 6, width: 32, height: 32
+Child: 19, type: 6, width: 32, height: 32
+Child: 20, type: 6, width: 32, height: 32
+Child: 21, type: 0, width: 32, height: 32
+Child: 22, type: 0, width: 32, height: 32
+Child: 23, type: 0, width: 32, height: 32
+Child: 24, message: Poison
+Child: 25, message: Explosive
+Child: 26, message: Stun
+Child: 27, type: 6, width: 32, height: 32
+Child: 28, type: 6, width: 32, height: 32
+Child: 29, type: 6, width: 32, height: 32
+Child: 30, type: 6, width: 32, height: 32
+Child: 31, type: 6, width: 32, height: 32
+Child: 32, type: 6, width: 32, height: 32
+Child: 33, type: 6, width: 32, height: 32
+Child: 34, type: 0, width: 32, height: 32
+Child: 35, type: 0, width: 32, height: 32
+Child: 36, type: 0, width: 32, height: 32
+Child: 37, message: Poison
+Child: 38, message: Explosive
+Child: 39, message: Stun
+Child: 40, type: 6, width: 32, height: 32
+Child: 41, type: 6, width: 32, height: 32
+Child: 42, type: 6, width: 32, height: 32
+Child: 43, type: 6, width: 32, height: 32
+Child: 44, type: 6, width: 32, height: 32
+Child: 45, type: 6, width: 32, height: 32
+Child: 46, type: 6, width: 32, height: 32
+Child: 47, type: 0, width: 32, height: 32
+Child: 48, type: 0, width: 32, height: 32
+Child: 49, type: 0, width: 32, height: 32
+Child: 50, message: Poison
+Child: 51, message: Explosive
+Child: 52, message: Stun
+Child: 53, type: 6, width: 32, height: 32
+Child: 54, type: 6, width: 32, height: 32
+Child: 55, type: 0, width: 32, height: 32
+Child: 56, message: Omega
+Child: 57, message: ##
+Child: 58, message: ##
+Child: 59, message: ##
+Child: 60, message: ##
+Child: 61, message: ##
+Child: 62, message: ##
+Child: 63, message: ##
+Child: 64, message: ##
+Child: 65, message: ##
+Child: 66, message: ##
+Child: 67, message: ##
+Child: 68, message: ##
+Child: 69, message: ##
+Child: 70, type: 5, width: 16, height: 16
+Child: 71, type: 5, width: 16, height: 16
+Child: 72, type: 0, width: 16, height: 16

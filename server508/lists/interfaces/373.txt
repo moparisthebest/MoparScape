@@ -1,0 +1,3 @@
+Child: 0, message: Current Champion: TzHaar-Xil-Huz
+Child: 1, message: Foes Remaining:
+Child: 2, type: 0, width: 191, height: 27

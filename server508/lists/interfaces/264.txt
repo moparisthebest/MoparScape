@@ -1,0 +1,10 @@
+Child: 0, type: 6, width: 32, height: 32
+Child: 1, message: 
+Child: 2, message: 
+Child: 3, message: 
+Child: 4, message: 
+Child: 5, message: 
+Child: 6, type: 3, width: 107, height: 85
+Child: 7, type: 3, width: 97, height: 75
+Child: 8, type: 6, width: 32, height: 32
+Child: 9, type: 5, width: 26, height: 23

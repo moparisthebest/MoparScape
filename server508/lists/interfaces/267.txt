@@ -1,0 +1,127 @@
+Child: 0, type: 5, width: 470, height: 85
+Child: 1, type: 5, width: 461, height: 262
+Child: 2, type: 5, width: 29, height: 206
+Child: 3, type: 5, width: 25, height: 196
+Child: 4, type: 0, width: 32, height: 32
+Child: 5, type: 5, width: 25, height: 25
+Child: 6, type: 5, width: 25, height: 25
+Child: 7, type: 5, width: 25, height: 25
+Child: 8, type: 5, width: 25, height: 25
+Child: 9, type: 5, width: 25, height: 25
+Child: 10, type: 5, width: 25, height: 25
+Child: 11, type: 5, width: 25, height: 25
+Child: 12, message: Attack
+Child: 13, message: Strength
+Child: 14, message: Defence
+Child: 15, message: Ranged
+Child: 16, message: Magic
+Child: 17, message: Hitpoints
+Child: 18, message: Prayer
+Child: 19, type: 6, width: 32, height: 32
+Child: 20, type: 6, width: 17, height: 23
+Child: 21, type: 6, width: 32, height: 32
+Child: 22, type: 6, width: 32, height: 32
+Child: 23, type: 6, width: 32, height: 32
+Child: 24, type: 6, width: 32, height: 32
+Child: 25, type: 6, width: 32, height: 32
+Child: 26, type: 6, width: 32, height: 32
+Child: 27, type: 6, width: 32, height: 32
+Child: 28, type: 6, width: 32, height: 32
+Child: 29, type: 6, width: 32, height: 32
+Child: 30, message: Void Knight Mace
+Child: 31, message: Void Knight Top
+Child: 32, message: Void Knight Robes
+Child: 33, message: Void Knight Gloves
+Child: 34, message: Herb Pack
+Child: 35, message: Seed Pack
+Child: 36, message: (1 Pt)
+Child: 37, message: (1 Pt)
+Child: 38, message: (1 Pt)
+Child: 39, message: (1 Pt)
+Child: 40, message: (1 Pt)
+Child: 41, message: (1 Pt)
+Child: 42, message: (1 Pt)
+Child: 43, message: (250 Pts)
+Child: 44, message: (250 Pts)
+Child: 45, message: (250 Pts)
+Child: 46, message: (150 Pts)
+Child: 47, message: (30 Pts)
+Child: 48, message: (15 Pts)
+Child: 49, message: Mineral Pack
+Child: 50, message: (15 Pts)
+Child: 51, message: (10 Pts)
+Child: 52, message: (10 Pts)
+Child: 53, message: (10 Pts)
+Child: 54, message: (10 Pts)
+Child: 55, message: (10 Pts)
+Child: 56, message: (10 Pts)
+Child: 57, message: (10 Pts)
+Child: 58, message: (100 Pts)
+Child: 59, message: (100 Pts)
+Child: 60, message: (100 Pts)
+Child: 61, message: (100 Pts)
+Child: 62, message: (100 Pts)
+Child: 63, message: (100 Pts)
+Child: 64, message: (100 Pts)
+Child: 65, message: Void Knight Mage Helm
+Child: 66, message: Void Knight Ranger Helm
+Child: 67, message: Void Knight Melee Helm
+Child: 68, message: Void Knight Seal
+Child: 69, message: (200 Pts)
+Child: 70, message: (200 Pts)
+Child: 71, message: (200 Pts)
+Child: 72, message: (10 Pts)
+Child: 73, message: Spinner Charm
+Child: 74, message: Ravager Charm
+Child: 75, message: Shifter Charm
+Child: 76, message: Torcher Charm
+Child: 77, message: (2 Pts)
+Child: 78, message: (28 Pts)
+Child: 79, message: (56 Pts)
+Child: 80, message: (28 Pts)
+Child: 81, message: (56 Pts)
+Child: 82, message: (28 Pts)
+Child: 83, message: (56 Pts)
+Child: 84, message: (28 Pts)
+Child: 85, message: (56 Pts)
+Child: 86, message: (2 Pts)
+Child: 87, message: (2 Pts)
+Child: 88, message: (2 Pts)
+Child: 89, type: 0, width: 459, height: 519
+Child: 90, type: 6, width: 33, height: 32
+Child: 91, type: 6, width: 33, height: 32
+Child: 92, type: 6, width: 33, height: 32
+Child: 93, type: 6, width: 33, height: 32
+Child: 94, type: 3, width: 512, height: 38
+Child: 95, type: 0, width: 462, height: 31
+Child: 96, message: Void Knights' Reward Options
+Child: 97, type: 3, width: 512, height: 74
+Child: 98, type: 3, width: 22, height: 223
+Child: 99, type: 3, width: 22, height: 223
+Child: 100, type: 5, width: 16, height: 16
+Child: 101, type: 5, width: 32, height: 32
+Child: 102, type: 5, width: 32, height: 32
+Child: 103, type: 5, width: 32, height: 32
+Child: 104, type: 5, width: 32, height: 32
+Child: 105, type: 3, width: 138, height: 45
+Child: 106, message: Confirm:
+Child: 107, type: 5, width: 98, height: 31
+Child: 108, type: 5, width: 107, height: 37
+Child: 109, message: 
+Child: 110, message: 
+Child: 111, type: 5, width: 32, height: 32
+Child: 112, type: 5, width: 32, height: 32
+Child: 113, type: 5, width: 418, height: 37
+Child: 114, type: 5, width: 32, height: 32
+Child: 115, type: 5, width: 413, height: 37
+Child: 116, type: 5, width: 459, height: 31
+Child: 117, type: 5, width: 32, height: 32
+Child: 118, type: 5, width: 32, height: 32
+Child: 119, type: 5, width: 32, height: 32
+Child: 120, type: 3, width: 339, height: 1
+Child: 121, type: 3, width: 337, height: 3
+Child: 122, type: 3, width: 339, height: 1
+Child: 123, type: 3, width: 337, height: 3
+Child: 124, type: 3, width: 339, height: 1
+Child: 125, type: 3, width: 337, height: 3
+Child: 126, type: 0, width: 16, height: 220

@@ -1,0 +1,744 @@
+----------Interfaces----------
+1 - A sack of some sort in the lower right hand corner
+2 - Some sort of mysterious man question?
+3 - a jug in the lower right hand corner with question marks coming out of it
+4 - Tears of guthix...tears collected, time left, etc.
+5 - Brimhaven agility course. Whether next ticket stand is active or not
+6 - Brimhaven agility ticket exchange.
+7 - Black screen with a single line of text
+8 - Dragontooth Island map. (dunno wtf its used for?)
+9 - RuneDraw game screen
+10 - Windspeed gauge
+11 - Deposit box
+12 - Bank
+13 - Enter bank pin
+14 - Bank pin settings
+15 - Deposit screen (goes over inventory)
+All the way to 23 is blank screens
+24 - Barrows kill count
+25 - Next shape in the above sequence
+26 to 27 - Book thing..
+28 - Blast Furnace bar stock
+29 - Blast Furnace plan map
+30 - Blast Furnace temp. gauge
+31 - Challenge opponent (games room)
+32 - Draughts game
+33 - Draughts options
+34 - Draughts board in upper right corner
+35 - Druaghts game (again)
+36 - Runelink game
+37 - Runelink options
+38 - Runelink board in upper right corner
+39 - Runelink game (again)
+40 - Runesqaures game
+41 - Runesquares options
+42 - Runesquares board in upper right corner
+43 - Runesquares game (again)
+44 - Runeversi game
+45 - Runeversi options
+46 - Runeversi board in upper right corner
+47 - Runeversi game (again)
+48 - Bob the cat compass
+49 - Book again
+50 - Goblin brooch
+51 - Map of paths from Temple to Mort'ton
+52 - What canoe would you like to make?
+53 - Canoe destination
+54 - Catapult controls
+55 - CW "Total Wins" thing. (Goes in chatbox)
+56 - Blank screen
+57 - CW "Waiting for players to join the other team" message
+58 - CW ingame options
+59 - CW ingame options
+60 - CW Ticket exchange interface
+61 - "Name your cat" screen
+62 - Something from the Dorgeshun quest
+63 - Champion scroll completion
+64 - Single line of text
+65 - 2 lines of text
+66 - 3 lines of text
+67 - 4 lines of text
+68 - Single line of text...no continue
+69 - 2 lines of text...no continue
+70 - 3 lines of text...no continue
+71 - 4 lines of text...no continue
+72 - "What would you like to make in the churn?" - Cheese
+73 - Same as 72 - Butter / Cheese
+74 - Same as 72 - Cream / Butter / Cheese
+75 - Battleaxe attack options
+76 - Warhammer attack options
+77 - Bow attack options
+78 - Claw attack options
+79 - Crossbow attack options
+80 - some weird as fhk attack option
+81 - sword attack options
+82 - more sword attack options
+83 - pickaxe attack options
+84 - Halberd attack options
+85 - staff attack options (no auto cast)
+86 - Scythe attack options (Thanks Pharmacy)
+87 - Spear attack options
+88 - Mace attack options
+89 - More sword attack options
+90 - Staff options (with auto cast)
+91 - Thrown darts attack option
+92 - unarmed attack option
+93 - whip attack option
+94 - Destory this object?
+95 - Sail-to map
+96 - almost completely dark screen
+97 - slightly darkened
+98 - darker than 97
+99 - Gambling screen from climber boots quest
+100 - green tint screen
+101 - blank completion screen...has blood splatters
+102 - Items kept on death
+103 - Which comes next? (all tomatoes. You will have to change them through a frame :S)
+104 - Star chart viewer
+105 - Grand Exchange buy offer
+106 - Grand exchange tutorial. (German for some reason)
+107 - Blank screen
+108 - More GE tut. (German again)
+109 - GE Collection box. (Quick view. From a banker or somewhere else)
+110 - More GE Tutorial (German)
+111 - Another book interface
+112 - Some guys head.... (WTF IS THIS????)
+113 - Some complicated set of instructions
+114 - Monkey Madness puzzle pieces thing...Rotate etc. (i think)
+115 - Slowly fade black
+116 - Blank scroll....with a title
+117 - Thunder across screen?
+118 - Smoke rolling across screen
+119 - Green to slowly fade black screen
+120 - fade black
+121 - slowly fade into green
+122 - fade into a bright white
+123 - Certificate of advanced magical healing
+124 - List of the fairy queen's symptoms
+125 - Farming equipment (remove from gnome guy)
+126 - Store farming equipment
+127 - Some key puzzle thing
+128 - Gnome cart railroad switches (don't know what I'm talking about..then gtfo)
+129 - more railroad switches
+130 - even more switches (super complicated)
+131 - single line of text
+132 - List of items needed for King Roald's garden
+133 - [A] [b] [C] on left side of screen???
+134 - Skill lamp "Which skill to advance"
+135 - Some weird compass thing
+136 - 2 heads saying "Argh!"
+137 - Chat interface...8 lines of text + scrollbar
+138 - Gnome glider map
+139 - Gnomeball score
+140 - 4 options
+141 - Grave of somesort?
+142 - Daggonoth door. The runes/arrows/sword thing
+143 - Part of zombie random
+144 - Gnome cart map
+145 - Recipe for disaster miniquest list (NPC faces are tomatoes. Must fix with a frame)
+146 - Spinning thing around screen
+147 - Part of Desert Treasure puzzle I think
+148 - 4 or 5 options..can't tell
+149 - blank screen I think
+150 - Map of some giant dwarf and a boat
+151 - Blank screen again
+152 - Blank
+153 - "Oh dear you're dead" Tells you where to get your starter stuff back if you die when you're a nub
+154 - Normal leather crafting
+155 - looking through a window of some sort
+156 - 39 Line interface + a title
+157 - Blank...shop interface maybe?
+158 - Fade from black to a light fog
+159 - Some puzzle thing
+160 - Stupid cats chasing each others tails
+161 - Slayer assignment
+162 - fade from light fog to black
+163 - "Learn" to do certain slayer things with points
+164 - "Buy" slayer stuff with points
+165 - light fog
+166 - Flying at supersonic speeds?
+167 - greenish tint
+168 - Some accordian looking thing
+169 - Imps
+170 - fast fade from black to normal
+171 - fast fade from normal to white
+172 - Insert coins like a slot machine thing
+173 - 1 line of text
+174 - 16 line scroll on screen
+175 - Heat waves on screen (rofl irl)
+176 - Screen dies (wtfux don't do this rofl)
+177 - Flash of white then it fades away
+178 - Move taper and light candles
+179 - greenish blue tint
+180 - quick flash of blue-green
+181 - Rotate mirror (belongs in side panels)
+182 - Logout interface (wewt...i know where this goes for the logout tab too ;) )
+183 - History of goblin race book
+184 - Is this a... random event
+185 - Another random event puzzle
+186 - Some weird thing that goes in sidebars
+187 - Music list (goes in side bar)
+188 - Mime random events (you choose what emote the guy does)
+189 - Escape from jail thing
+190 - Mysterious box screen. (Box doesn't spin????)
+191 - Pick the odd one out random event
+192 - Normal magics (belongs in side tab)
+193 - Ancient magiks (belonds in side tab)
+194 - Alchemy room in the magic place with the talking hat...(place behind duel arena)
+195 - Enchantment room in the magic place
+196 - Graveyard room in the magic place
+197 - Magic area training shop
+198 - Telekenetic room in magic place
+199 - Beard changing thing...
+200 - Shoe store...(with no items??)
+201 - Legs makeover Thessalia (female)
+202 - Torso makeover Thessalia(female)
+203 - Hair changing thing (female)
+204 - Hair changing thing (male)
+205 - Change gender
+206 - More legs makeover (male)
+207 - Torso makeover (male)
+208 - Blank screen
+209 - Maze interface. (all 4 lines are in one interface now ;( No more stupid server names up top now  )
+210 - 1 line of text
+211 - 2 lines of text
+212 - 3 lines of text
+213 - 4 lines of text
+214 - 5 lines of text (o.O)
+215 - 1 line of text (no continue option)
+216 - 2 lines no continue
+217 - 3 lines no continue
+218 - 4 lines no continue
+219 - 5 lines no continue
+220 - Blank scroll
+221 - Another blank scroll...with a camo texture ???
+222 - Blank scroll again
+223 - PENGUIN EMOTES!!!!!! (for that one quest. Belong in a tab)
+224 - map of fremmy area
+225 - Another camo scroll
+226 - Mud splatters on screen. (at least I hope it is mud)
+227 - Scroll with 50 lines of text
+228 - 2 options
+229 - 2 options again
+230 - 3 options
+240 - Catch the evil twin controls. (go on a tab)
+241 - Single line of text
+242 - 2 lines of text
+243 - 3 lines of text
+244 - 4 lines of text
+245 - 1 line of text no continue
+246 - 2 lines of text no continue
+247 - 3 lines of text no continue
+248 - 4 lines of text no continue
+249 - A note scribbled in ancient writing
+250 - A letter to from a partner
+251 - Instructions for a beacon ring
+252 - Puzzle thing to escape jail?
+253 - Skull and cross bones puzzle
+254 - Map to somewhere...
+255 - Blank scroll
+256 - Barbarian assalt team interface i think
+257 - Bright flash on screen
+258 - Train speeding by really fast... (needs a black background)
+259 - achievement diary
+260 - Some weird banking screen. (I've never seen it before)
+261 - Options interface. (belongs in a tab)
+262 - Weird pipes...
+263 - Pinball random screen.
+264 - Fire that huge frog cannon
+265 - Clan wars "players remaining: "screen
+266 - Blank scroll thing
+267 - Void knight cash in your points screen
+268 - Blank screen?
+269 - Beginners map... with (show tutor option)
+270 - Same thing?
+271 - Prayer interface (belongs in a side tab)
+272 - Grave monument to saradomin
+273 - Pop the balloon animal (random event)
+274 - Quest interface (belongs in a side tab)
+275 - 300 line quest interface
+276 - Completion of a quest
+277 - 8 line quest completion (with an item picture)
+278 - Range guild ticket exchange (need to add items with a frame ;(
+279 - Cat fight stake screen
+280 - Confirm a bet screen
+281 - Cat fights...with name and hp (i think)
+282 - Play a flute?
+283 - Another play a flute
+284 - rat fight in lower left corner...?
+285 - Combination lock to the door. Part of fremmy trials.
+286 - Blast furnace?? (I've never seen it before)
+287 - No clue...a blank checkerboard
+288 - WTF? more games room maybe
+289 - more games room I think
+290 - Spinning gears. (looks like a puzzle)
+291 - 6 yellow blank boxes....??
+292 - More to a puzzle
+293 - Puzzle again
+294 - retarded cat headbutting a ball of yarn
+295 - Rum deal banner
+296 - Yellow smoke across screen
+297 - Sandwhich lady tray
+298 - combo lock again...
+299 - "You journey on the ship map" The red arrow is a frame Im guessing
+300 - Smithing interface (Items are a frame...)
+301 - Assist menu (XP you've earned so far)
+302 - Blank scroll
+303 - "What would you like to make?" (Fletching normal logs I assume. Items must be added with a frame)
+304 to 307 - More fletching options I assume
+308 - Blank scroll thing
+309 - More "What would you like to make?"
+310 - Auto cast wave spells, crumble undead and magic dart (belongs in a side tab)
+311 - What would you like to smelt? (goes in chatbox...bar images must be changed with a frame)
+312 - Saftey first menu
+313 - white fog
+314 - Select an option...unknown amount
+315 - Rage bar
+316 - blank screen?
+317 - black screen. no fade
+318 - ghost attacks screen
+319 - Autocast all modern spells (goes in a tab)
+320 - Stat menu (goes in a tab)
+321 - Map of somewhere...
+322 - Same map as 321
+323 - Tai Bao Wanno parcel service
+324 - What hides would you like to tan? items need to be added through a frame
+325 - Target View...Missed, etc.
+326 - Teleport other
+327 - Warning..area so cold your stats will be constantly drained
+328 - Temple repair interface
+329 - Routes between canfis swamp area
+330 - Safe combo puzzle
+331 - Some text, and combo for a lock
+332 - What would you like to enchant?
+333 - Black screen
+334 - Second trade screen...
+335 - First trade screen
+336 - blank screen
+337 - A clue scroll map
+338 - Another clue scroll map
+339 - another map
+340 to 344 are clue scroll maps
+345 to 362 are random clue scroll clues
+363 - Clue scroll thing (never seen before)
+364 - Clue scroll reward screen
+365 - Sextant / compass / watch interface
+366 - Fishing Trawler mi****me...
+367 - Trawler catch screen
+368 - Trawler how-to play screen
+369 - Combo lock door (orange letters)
+370 - SNOWW!!! :)
+371 - Tutorial island flashing arrow
+372 - 4 lines of text
+373 - Current Champion screen from fight pits
+374 - View orbs from fight pits
+375 - Unmorph from easter egg (goes in tab area)
+376 - Possible a planet with its rings and moons?
+377 - Tai Bwo favor
+378 - Welcome to runescape screen!!!
+379 - Some weird skull thing
+380 - Old wilderness skull with level
+381 - New wilderness level with ghost head
+382 - Wilderness warning (Thanks Pharmacy)
+383 - "Pick a colour"
+384 - 16 line scroll
+385 - Cracked screen
+386 - Spying through a telescope
+
+387 - Equipment interface (belongs in a tab)
+388 - Autocast Ancients (belongs in a tab)
+389 - Search Grand Exchange item database
+390 - some riddle
+391 - Interface to that one mi****me where you rule the kingdom
+392 - "Resources Collected"
+393 - Hangman guessing game (I think)
+394 - Furniture creation interface
+395 - bright green flash...
+396 - More furniture
+397 - In house furniture building
+398 - House options (goes in a tab)
+399 - "No place like home"
+400 - Make tabs interface
+401 - minigame inside houses
+402 - Room creation menu
+403 - Convert logs to planks
+404 - Purpley thing goes across screen
+405 - Blank screen?
+406 - Guthix staff autocast
+407 - Pest control waiting boat
+408 - Pest control ingame
+409 - Fix some bbroken thing with parts
+410 - Warriors guild catapult defence thing guide
+411 - Warriors guild catapult defence options (in the mi****me itself)
+412 - Warriors guild attack dummy guide
+413 - Spying through an eyeglass
+414 - Team winning something...(clan wars I assume)
+415 - Ingame of some mi****me. Looks like cooking
+416 - At a workbench of some sort
+417 - Take certain things from a table. (part of a quest I think)
+418 - Players waiting for same mi****me as 415
+419 - Rewards to pirate mi****me
+420 - Some build beehive thing
+421 - 12 lines of text with a scrollbar. (goes in chatbox)
+422 - dark screen with a red flash
+423 - Advanced healing certificate again
+424 - Ancient writing
+425 - more ancient writing
+426 - snow piling up on the screen
+427 - some contract with a fairy
+428 - Theiving minigame timer or something
+429 - "Choose a character"
+430 - Lunar magic interface (goes in a tab)
+431 - Boat circling pirate island (???Wtfux)
+432 - Enchant crossbow bolt interface
+433 - "Crossbow bolt pouch" (never seen it before)
+434 - Gnome battas (items have to be added with a frame)
+435 - Gnome bowls
+436 - Gnome Cocktails
+437 - Gnome Crunchies
+438 - Make silver items (crafting)
+439 - Some map with moving flags
+440 - Certificate of earth science
+441 - Same as above, but lvl 2
+442 - Some math thing
+443 - Another math puzzle
+444 - Level 3 earth science
+445 - Some interface to view jagex's website...
+446 - "What would you like to make?" - Crafting
+447 - Blank screen?
+448 - Green fog
+449 - blank screen
+450 - light fog
+451 - 3 options
+452 - Viewing a statue holding a key
+453 - Black screen
+454 - A weird map
+455 - Another weird map
+456 - same as above but mirrored
+457 - weird map
+458 - 3 options
+459 - What would you like to spin? - Crafting
+460 - Dark Green font
+461 - map of somewhere I've never seen
+462 - controls to something (goes in a tab)
+463 - Blank scroll
+464 - Emote tab (goes in a tab)
+465 - Some newspaper that fades into an animation (DO NOT DO YET)
+466 - guide to pull a lever
+467 - Grand exchange recent history (I think)
+468 - Diango's item return
+469 - Basic teleporting map
+470 - some 2d version of clouds and grass...
+471 - Hot air balloon controls (goes in a tab)
+472 - hot air balloon guide
+473 - Chinchompa attack options!!!
+474 - Lizard attack options!!
+475 - Chinchompa again?
+476 - Lizard again...
+477 - Custom fur clothing
+478 - Imp release negotiation form
+479 - Map of somewhere
+480 - weird as fhk map..
+481 - blizzard!
+482 - less strong blizzard
+483 - light fog
+484 - Barb assault horn of glory
+485 - Barb assault ingame menu - collecter
+486 - Barb assault ingame menu - attacker
+487 - Barb assault ingame menu - Healer
+488 - Barb assault ingame menu - Defender (healer maybe..idk haven't played in a while)
+489 - Barb assault waiting room
+490 - somet barb assault examine team menu
+491 - barb assault reward shop
+492 - barb assault add to team menu
+493 - barb assault view team interface
+494 - barb assault "Time until next wave"
+495 - Some queen barb assault guide
+496 - barb assault tutorial progress
+497 - Complete wave
+498 - some quest scroll
+499 - Blank skill guide...
+500 - Some dollar sign...probably G.E
+501 - Some take from chest interface
+502 - more take from chest
+503 - Clockwork toys guide
+504 - looking through a hole in a fence
+505 - another map
+506 - Jester controls
+507 - Hangman guess
+508 - some weirdo interface
+509 - a weird interface puzzle
+510 - another puzzle
+511 - another puzzle...
+512 - blank
+513 - blank
+514 - cat playing with ball of yarn
+515 - green fog
+516 - black screen
+517 - blank
+518 - Follower inventory space left (summoning if you didn't know)
+519 - click her to continue
+520 - Courage bar...
+521 - Guidance system...(summoning i think)
+522 - Monster examine interface (lunar spell)
+523 - Player examine (lunar spell)
+524 - some text?
+525 - half of an interface...
+526 - full interface of 525 and 529
+527 - blank screen
+528 - Black screen with some text
+529 - right of 525
+530 - 2 paged book, each page has a scrollbar
+531 - some logo...
+532 - "Museum Kudos: "
+533 - black screen again
+534 - text
+535 - a piano
+536 - "Shrink me quick" recipe
+537 - Another piano thing...
+538 - A "To-do" list
+539 - Blank screen
+540 - "Elnok's Exchange" exchange imps for something?
+541 - white screen
+542 - "What would you like to make?" - Crafting. Blown Glass
+543 - Thunder and lighting moving across screen
+544 - Map with a boat going somewhere...
+545 - Green dragon racing across screen really fast
+546 - Dragon flying around in clouds
+547 - Blank map from 544
+548 - Main game screen...DO NOT DO THIS AS AN INTERFACE...
+549 - black screen
+550 - Friends list (belongs in a tab)
+551 - Ignore List (belongs in a tab)
+552 - Star gazing through a telescope
+553 - Report abuse
+554 - Select an option...unknown amount
+555 - Another select an option...unknown amount
+556 - Same as 555
+557 - 2 options
+558 - What would you like to make? unknown items
+559 - Quiz random. Items are tomatoes, need to be set with a frame
+560 - Warning about goblins and spiders for low level players
+561 - Warning before going to kalphite queen
+562 - warning about entering a dark area
+563 - Warning before entering building mode
+564 - Warning before going to top of ranger guild tower
+565 - Warning before entering desert
+566 - Warning before leaving an area when you've dropped items
+567 - Warning about going in without a light source
+568 - Warning about extinguising lightsource in dark area
+569 - Warning about going in without a light source
+570 - Warning about dark cave and no light source
+571 - Warning about dark tunnel and no light source
+572 - Warning about going in without a tinderbox
+573 - Warning about a dangerous area that follows
+574 - Warning about a dangerous area
+575 - Warning before going to KBD
+576 - Warning about going down into a wilderness
+577 - Warning about dark tunnel
+578 - Warning about fairy ring leads to a dark area
+579 - Warning: "Are you sure you want to climb down?"
+580 - Warning about mort myre
+581 - Danger about death plateau
+582 - How many would you like to make? unkown amount
+583 - Reset warning messages
+584 - Statue of a king being unstoned
+585 - Wizard climbing into a window
+586 - Change of address form for seers' village
+587 - Half of a meet at "somewhere" note
+588 - Breaking into a lock interface
+589 - Clan chat interface
+590 - Clan chat setup
+591 - Thessalia's makeover
+592 - Hairdresser's salon
+593 - Reinald's smithing emporium. (Arm cuffs, etc.)
+594 - Thessalia's makeover again
+595 - same as 593
+596 - same as 592
+597 - Godwars killcount (on left hand side of screen)
+598 - Darker screen with GW killcount
+599 - little brighter than 598
+600 - Wilderness warning
+601 - Godwars killcount (on right hand side of screen)
+602 - blank screen
+603 - Acorn breathing in palm of hand
+604 - Map with flags
+605 - Fade in through a window?
+606 - Acorn starts to hatch
+607 - Painting a poster on a fence
+608 - Grand tree spinning around
+609 - Tearing posters off the fence
+610 - Black fade to the right
+611 - Posters on screen
+612 - same as 611
+613 - Hand at a coin machine?
+614 - Posters on fence again
+615 - Slowly zooming in on gnome king head
+616 - Map with flags again
+617 - Bolrie's diary
+618 - One poster on fence
+619 - "Pay Bank charge with..."
+620 - Archery emporium...Main stock
+621 - Blank screen
+622 - Blank screen
+623 - Blank screen
+624 - Fairy ring power relay
+625 - "Select your goblin"
+626 - Third duel screen... "Check over options etc." (stake)
+627 - Warning before entering dueling arena
+628 - Blank Screen
+629 - Dueling tornament info
+630 - Another coin machine
+631 - Stake duel screen...
+632 - Duel scoreboard...(last 50 duels)
+633 - You are victorious screen (friendly)
+634 - You are victorious screen (stake)
+635 - Dueling axe in upper right corner with tourny rank below
+636 - Upcoming tournament rules
+637 - Dueling screen...no stake
+638 - Dueling axe in upper right corner with no tourny rank
+639 - Third duel screen..."Check over options etc." (friendly)
+640 - First duel screen..."Friendly or stake"
+641 - Some dueling options? never seen them before
+642 - Grand exchange common item costs (woodcutting)
+643 - Grand exchange recent history
+644 - Blank screen
+645 - Grand exchange item sets
+646 - Another part of G.E tutorial...about waiting
+647 - party room drop interface
+648 - blank screen
+649 - fight pit orbs
+650 - Defeated at clan wars
+651 - Victory at clan wars
+652 - Gravestone selection
+653 - Bounty hunter "Target: " screen
+654 - Bounty hunter hiscores board (not rogues?? forgot what they're called)
+655 - Bounty hunter hiscores board (rogues)
+656 - Bounty hunter waiting room
+657 - Warning to enter bounty hunter
+658 - "Select a snowman hat"
+659 - snowglobe
+660 - Character design!
+661 - a riddle
+662 - summoning interface
+663 - another summoning interface
+664 - summoning combat interface
+665 - blank screen
+666 - Summoning scroll creation
+667 - Equip character screen
+668 - "Pick a puppy"
+669 - Summoning pouch creation
+670 - blank screen
+671 - Familiar inventory
+672 - Summoning pouch creation
+673 - Summoning scroll creation
+674 - Blanks creen
+675 - What would you like to make? crafting with moulds...
+676 - Another warning screen
+677 - warning screen
+678 - warning screen
+679 - blank screen
+680 - Wierd as fhk interface...
+681 - Looks like a build a catapult interface
+682 - Fire catapult interface (belongs in a tab)
+683 - Some control interface that goes in a tab
+684 - Watch out for bunnies (wtf??)
+685 - Wine sweeper instructions
+686 - Trade seeds for XP (farming)
+687 - Some more 'minesweeper' instructions. (goes with the bunny)
+688 - more instructions
+689 - some box in the upper right corner with points
+690 - More instructions
+691 - animation of goblins coming out of the ground
+692 - animation of a big *** goblin
+693 - "Congratulations! you have slain bork!" -- wtfux is this?
+694 - Player safety test
+695 - some info to the safety room
+696 - more to the player test
+697 - more to the player safety test
+698 - more info to safety room
+699 - more safety test
+700 - report abuse
+701 - more info to safety
+702 - more info to safety
+703 - more info to safety
+704 - more safety test
+705 - more safety test
+706 - more info to safety
+707 - more safety test
+708 - more safety test
+708 - END OF SAFETY EXAM! (thank god...hand went to sleep)
+709 - end of exam..with moving timer
+710 - more safety test (wtf there's more???)
+711 - more info to safety
+712 - Letter to meet some guy infront of legend's guild
+713 - spotlight type thing on your character
+714 - blank screen
+715 - blank screen
+716 - Chocatrice summoning menu
+717 - incubator controls
+718 - 2 options
+719 - Instructions to operate the incubator
+720 - some text...
+721 - some gears spinning
+722 - blank screen
+723 - null interface? (looks like it belongs in a tab)
+724 - Runesquares board
+725 - runelink board
+726 - runeversi board
+727 - draughts board
+728 - Pilot's interface?
+729 - some weird screen interface
+730 - Fist of Gutxix: Pick up a stone
+731 - Fist of Guthix: Attacker interface
+732 - Fist of Guthix: reward shop
+733 - Ivandis Flail message
+734 - some combination teleport message
+735 - Travel log (belongs in a tab)
+736 - Gnome stealing a green dragon from an egg
+737 - Pick a kitten
+738 - Some Tzharr interface
+739 - Tzharr symbol decoding
+740 - Tutorial island message... "Open flashing stats icon..."
+741 - Blank skill advancement...will need to add items and suck with a frame
+742 - Graphics options!
+743 - Audio options!
+744 - Login homepage
+745 - username password input
+746 - Full screen interface... Must be used as a main interface
+747 - Blank screen? (Should be summoning orb....)
+748 - HP Orb
+749 - Prayer orb
+750 - Energy orb
+751 - Row of buttons below chatbox
+752 - Chatbox spites...do not put in main frame...can't do much if you do
+753 - Blank screen?
+754 - Blank screen
+755 - Load world map
+756 - Draughts options
+757 - "Click here to continue"
+758 - canoe map
+759 - Confirm Game Resolution Change
+760 - Click here to continue in blue
+761 - Sir Vant's requests
+762 - Bank interface
+763 - Equipment interface
+764 - Runescape minimap key
+765 - Select task
+766 - Oh dear you are dead, but don't worry
+767 - Bank of Runescape help
+768 - Nothing
+769 - Nothing
+770 - Black Screen
+771 - Character design screen
+772 - Returned Items
+773 - Runecrafters quest, runes going across screen
+774 - Where do you want to rub the key?
+775 - fades from white then white squiggles on screen
+776 - Cont. from 775 fades to white
+777 - Fades from black to mist
+778 - Mist
+779 - Runecrafting Guild Rewards
+780 - Use a talisman to display an altar location
+781 - Waiting for players to join
+782+  - Crashes client

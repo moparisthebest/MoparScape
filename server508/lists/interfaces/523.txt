@@ -1,0 +1,103 @@
+Child: 0, type: 5, width: 25, height: 25
+Child: 1, message: 00
+Child: 2, message: 00
+Child: 3, message: /
+Child: 4, type: 5, width: 25, height: 25
+Child: 5, message: 00
+Child: 6, message: 00
+Child: 7, message: /
+Child: 8, type: 5, width: 25, height: 25
+Child: 9, message: 00
+Child: 10, message: 00
+Child: 11, message: /
+Child: 12, type: 5, width: 25, height: 25
+Child: 13, message: 00
+Child: 14, message: 00
+Child: 15, message: /
+Child: 16, type: 5, width: 25, height: 25
+Child: 17, message: 00
+Child: 18, message: 00
+Child: 19, message: /
+Child: 20, type: 5, width: 25, height: 25
+Child: 21, message: 00
+Child: 22, message: 00
+Child: 23, message: /
+Child: 24, type: 5, width: 25, height: 25
+Child: 25, message: 00
+Child: 26, message: 00
+Child: 27, message: /
+Child: 28, type: 5, width: 25, height: 25
+Child: 29, message: 00
+Child: 30, message: 00
+Child: 31, message: /
+Child: 32, type: 5, width: 25, height: 25
+Child: 33, message: 00
+Child: 34, message: 00
+Child: 35, message: /
+Child: 36, type: 5, width: 25, height: 25
+Child: 37, message: 00
+Child: 38, message: 00
+Child: 39, message: /
+Child: 40, type: 5, width: 25, height: 25
+Child: 41, message: 00
+Child: 42, message: 00
+Child: 43, message: /
+Child: 44, type: 5, width: 25, height: 25
+Child: 45, message: 00
+Child: 46, message: 00
+Child: 47, message: /
+Child: 48, type: 5, width: 25, height: 25
+Child: 49, message: 00
+Child: 50, message: 00
+Child: 51, message: /
+Child: 52, type: 5, width: 25, height: 25
+Child: 53, message: 00
+Child: 54, message: 00
+Child: 55, message: /
+Child: 56, type: 5, width: 25, height: 25
+Child: 57, message: 00
+Child: 58, message: 00
+Child: 59, message: /
+Child: 60, type: 5, width: 25, height: 25
+Child: 61, message: 00
+Child: 62, message: 00
+Child: 63, message: /
+Child: 64, type: 5, width: 25, height: 25
+Child: 65, message: 00
+Child: 66, message: 00
+Child: 67, message: /
+Child: 68, type: 5, width: 25, height: 25
+Child: 69, message: 00
+Child: 70, message: 00
+Child: 71, message: /
+Child: 72, type: 5, width: 25, height: 25
+Child: 73, message: 00
+Child: 74, message: 00
+Child: 75, message: /
+Child: 76, type: 5, width: 25, height: 25
+Child: 77, message: 00
+Child: 78, message: 00
+Child: 79, message: /
+Child: 80, type: 5, width: 25, height: 25
+Child: 81, message: 00
+Child: 82, message: 00
+Child: 83, message: /
+Child: 84, type: 5, width: 25, height: 25
+Child: 85, message: 00
+Child: 86, message: 00
+Child: 87, message: /
+Child: 88, type: 5, width: 25, height: 25
+Child: 89, message: 00
+Child: 90, message: 00
+Child: 91, message: /
+Child: 92, type: 5, width: 25, height: 25
+Child: 93, message: 00
+Child: 94, message: 00
+Child: 95, message: /
+Child: 96, type: 0, width: 168, height: 207
+Child: 97, type: 0, width: 16, height: 206
+Child: 98, message: Player :
+Child: 99, message: Player ~ Name
+Child: 100, type: 5, width: 16, height: 16
+Child: 101, type: 0, width: 26, height: 23
+Child: 102, type: 5, width: 26, height: 23

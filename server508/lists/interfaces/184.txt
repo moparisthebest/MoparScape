@@ -1,0 +1,13 @@
+Child: 0, type: 6, width: 426, height: 331
+Child: 1, message: A....a lemming
+Child: 2, message: B....a fryingpan
+Child: 3, message: C....the disenfrachaised youth of 1940's Columbia
+Child: 4, message: Is this:
+Child: 5, type: 3, width: 236, height: 153
+Child: 6, type: 3, width: 226, height: 144
+Child: 7, type: 6, width: 106, height: 77
+Child: 8, type: 6, width: 35, height: 31
+Child: 9, type: 6, width: 37, height: 33
+Child: 10, type: 6, width: 39, height: 32
+Child: 11, type: 5, width: 26, height: 23
+Child: 12, type: 0, width: 512, height: 334

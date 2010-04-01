@@ -1,0 +1,15 @@
+Child: 0, type: 3, width: 16391, height: 16391
+Child: 1, message: Which is the next shape in the above sequence?
+Child: 2, type: 6, width: 93, height: 93
+Child: 3, type: 6, width: 93, height: 93
+Child: 4, type: 6, width: 93, height: 93
+Child: 5, type: 0, width: 355, height: 93
+Child: 6, type: 6, width: 93, height: 93
+Child: 7, type: 6, width: 93, height: 93
+Child: 8, type: 6, width: 93, height: 93
+Child: 9, type: 6, width: 157, height: 157
+Child: 10, type: 0, width: 16391, height: 16391
+Child: 11, message: 1.
+Child: 12, message: 2.
+Child: 13, message: 3.
+Child: 14, message: 4.

@@ -1,0 +1,83 @@
+Child: 0, type: 0, width: 512, height: 334
+Child: 1, type: 6, width: 49, height: 17
+Child: 2, message: Barbarian <br> Village
+Child: 3, message: 
+Child: 4, type: 6, width: 43, height: 27
+Child: 5, message: Edgeville
+Child: 6, message: 
+Child: 7, type: 0, width: 527, height: 340
+Child: 8, type: 0, width: 32, height: 32
+Child: 9, type: 6, width: 374, height: 330
+Child: 10, type: 0, width: 248, height: 36
+Child: 11, type: 0, width: 249, height: 42
+Child: 12, type: 0, width: 227, height: 42
+Child: 13, type: 0, width: 32, height: 32
+Child: 14, type: 0, width: 55, height: 46
+Child: 15, type: 0, width: 65, height: 44
+Child: 16, type: 0, width: 75, height: 29
+Child: 17, type: 0, width: 80, height: 30
+Child: 18, type: 0, width: 254, height: 53
+Child: 19, type: 0, width: 124, height: 34
+Child: 20, type: 0, width: 232, height: 52
+Child: 21, type: 0, width: 79, height: 38
+Child: 22, type: 0, width: 254, height: 53
+Child: 23, type: 0, width: 145, height: 32
+Child: 24, type: 0, width: 145, height: 32
+Child: 25, type: 0, width: 145, height: 32
+Child: 26, type: 0, width: 203, height: 36
+Child: 27, type: 6, width: 239, height: 54
+Child: 28, message: Please Select <br>Your Destination
+Child: 29, type: 5, width: 26, height: 23
+Child: 30, type: 0, width: 32, height: 32
+Child: 31, type: 6, width: 710, height: 366
+Child: 32, type: 6, width: 871, height: 358
+Child: 33, type: 6, width: 931, height: 282
+Child: 34, type: 6, width: 939, height: 211
+Child: 35, type: 6, width: 31, height: 11
+Child: 36, type: 6, width: 36, height: 11
+Child: 37, type: 6, width: 34, height: 9
+Child: 38, type: 6, width: 28, height: 17
+Child: 39, type: 6, width: 50, height: 14
+Child: 40, type: 6, width: 50, height: 15
+Child: 41, type: 6, width: 2137, height: 1340
+Child: 42, type: 6, width: 22, height: 18
+Child: 43, message: Lumbridge
+Child: 44, message: Champions' <br>Guild
+Child: 45, message: Wilderness Pond - <br>No canoe trees here.
+Child: 46, type: 6, width: 23, height: 21
+Child: 47, message: 
+Child: 48, message: 
+Child: 49, message: 
+Child: 50, message: You are here
+Child: 51, message: Wilderness Pond - <br>No canoe trees here.
+Child: 52, type: 6, width: 26, height: 20
+Child: 53, type: 6, width: 26, height: 20
+Child: 54, message: You are here
+Child: 55, type: 6, width: 26, height: 20
+Child: 56, message: You are here
+Child: 57, type: 6, width: 26, height: 20
+Child: 58, message: You are here
+Child: 59, message: 
+Child: 60, message: 
+Child: 61, message: 
+Child: 62, message: 
+Child: 63, type: 0, width: 512, height: 334
+Child: 64, type: 0, width: 16391, height: 16391
+Child: 65, type: 0, width: 16391, height: 16391
+Child: 66, type: 5, width: 32, height: 334
+Child: 67, type: 5, width: 462, height: 32
+Child: 68, type: 5, width: 512, height: 32
+Child: 69, type: 5, width: 32, height: 334
+Child: 70, type: 5, width: 32, height: 32
+Child: 71, type: 5, width: 32, height: 32
+Child: 72, type: 5, width: 32, height: 32
+Child: 73, type: 5, width: 32, height: 32
+Child: 74, type: 0, width: 8192, height: 16391
+Child: 75, type: 0, width: 8188, height: 16391
+Child: 76, type: 0, width: 16391, height: 8192
+Child: 77, type: 0, width: 16391, height: 8182
+Child: 78, type: 0, width: 512, height: 334
+Child: 79, type: 5, width: 256, height: 16384
+Child: 80, type: 5, width: 256, height: 16391
+Child: 81, type: 5, width: 16391, height: 167
+Child: 82, type: 5, width: 16391, height: 166

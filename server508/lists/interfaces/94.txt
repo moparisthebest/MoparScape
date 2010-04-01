@@ -1,0 +1,14 @@
+inventory type: 1 slots, width: 1, height: 1, 0
+Child: 1, type: 6, width: 32, height: 32
+Child: 2, type: 6, width: 32, height: 32
+Child: 3, message: Are you sure you want to destroy this object?
+Child: 4, message: Yes.
+Child: 5, message: No.
+Child: 6, type: 5, width: 57, height: 13
+Child: 7, type: 5, width: 57, height: 13
+Child: 8, type: 0, width: 482, height: 66
+Child: 9, type: 0, width: 482, height: 66
+Child: 10, message: Single_Line_Text
+Child: 11, message: Multi_line_text_1
+Child: 12, message: Multi_line_text_2
+Child: 13, message: Name

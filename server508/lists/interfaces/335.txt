@@ -1,0 +1,81 @@
+Child: 0, type: 5, width: 498, height: 302
+Child: 1, type: 5, width: 32, height: 251
+Child: 2, type: 5, width: 32, height: 32
+Child: 3, type: 5, width: 32, height: 250
+Child: 4, type: 5, width: 448, height: 34
+Child: 5, type: 5, width: 448, height: 32
+Child: 6, type: 5, width: 32, height: 32
+Child: 7, type: 5, width: 32, height: 32
+Child: 8, type: 5, width: 32, height: 32
+Child: 9, type: 5, width: 490, height: 32
+Child: 10, type: 5, width: 32, height: 32
+Child: 11, type: 5, width: 32, height: 32
+Child: 12, type: 5, width: 16, height: 16
+Child: 13, type: 3, width: 249, height: 244
+Child: 14, type: 3, width: 247, height: 244
+Child: 15, type: 3, width: 499, height: 27
+Child: 16, type: 5, width: 32, height: 244
+Child: 17, message: Trading With: Unknown
+Child: 18, type: 0, width: 65, height: 32
+Child: 19, message: Accept
+Child: 20, type: 0, width: 65, height: 32
+Child: 21, message: Decline
+Child: 22, type: 3, width: 91, height: 47
+Child: 23, message: Name
+Child: 24, type: 5, width: 40, height: 32
+Child: 25, type: 5, width: 32, height: 32
+Child: 26, type: 5, width: 32, height: 32
+Child: 27, type: 5, width: 32, height: 32
+Child: 28, type: 5, width: 32, height: 32
+Child: 29, type: 5, width: 35, height: 32
+Child: 30, type: 5, width: 499, height: 32
+Child: 31, type: 0, width: 497, height: 301
+Child: 32, type: 0, width: 185, height: 223
+Child: 33, type: 0, width: 185, height: 223
+Child: 34, type: 0, width: 185, height: 223
+Child: 35, type: 0, width: 185, height: 223
+Child: 36, message: Trader's Offer
+Child: 37, message: Your Offer
+Child: 38, message: Waiting for other player
+Child: 39, type: 0, width: 32, height: 32
+Child: 40, message: Trade modified
+Child: 41, message: Trade modified
+Child: 42, message: Limit: 3000
+Child: 43, message: Wealth transfer
+Child: 44, message: Limit: 3000
+Child: 45, type: 6, width: 0, height: 0
+Child: 46, type: 5, width: 490, height: 32
+Child: 47, type: 9, width: 493, height: 0
+Child: 48, type: 9, width: 493, height: 0
+Child: 49, type: 9, width: 0, height: 8
+Child: 50, type: 9, width: 0, height: 7
+Child: 51, type: 9, width: 0, height: 9
+Child: 52, type: 9, width: 0, height: 5
+Child: 53, type: 9, width: 0, height: 8
+Child: 54, type: 9, width: 0, height: 8
+Child: 55, type: 9, width: 0, height: 9
+Child: 56, type: 9, width: 0, height: 5
+Child: 57, type: 9, width: 0, height: 8
+Child: 58, type: 9, width: 0, height: 8
+Child: 59, type: 9, width: 0, height: 9
+Child: 60, type: 9, width: 0, height: 5
+Child: 61, type: 9, width: 0, height: 8
+Child: 62, type: 9, width: 0, height: 5
+Child: 63, type: 9, width: 0, height: 8
+Child: 64, type: 9, width: 0, height: 8
+Child: 65, type: 9, width: 0, height: 9
+Child: 66, type: 9, width: 0, height: 5
+Child: 67, type: 9, width: 0, height: 8
+Child: 68, type: 9, width: 0, height: 8
+Child: 69, type: 9, width: 0, height: 9
+Child: 70, type: 9, width: 0, height: 5
+Child: 71, type: 9, width: 0, height: 8
+Child: 72, type: 9, width: 0, height: 8
+Child: 73, type: 9, width: 0, height: 9
+Child: 74, type: 6, width: 0, height: 0
+Child: 75, type: 5, width: 12, height: 12
+Child: 76, type: 5, width: 12, height: 12
+Child: 77, type: 5, width: 12, height: 12
+Child: 78, type: 5, width: 12, height: 12
+Child: 79, type: 0, width: 10, height: 10
+Child: 80, type: 0, width: 512, height: 334

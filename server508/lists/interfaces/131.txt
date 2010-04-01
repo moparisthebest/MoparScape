@@ -1,0 +1,4 @@
+Child: 0, type: 6, width: 50, height: 50
+Child: 1, message: Line1
+Child: 2, type: 6, width: 50, height: 50
+Child: 3, message: Click here to continue

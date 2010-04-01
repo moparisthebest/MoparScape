@@ -1,0 +1,3 @@
+Child: 0, type: 0, width: 100, height: 25
+Child: 1, type: 5, width: 25, height: 25
+Child: 2, type: 5, width: 25, height: 25

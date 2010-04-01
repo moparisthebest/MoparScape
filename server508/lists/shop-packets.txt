@@ -1,0 +1,107 @@
+p.frames.showInterface(p,620); //Shop
+                    p.frames.setTab(p,80,621);//Inv
+                    Object[] setshopparams = new Object[]{Integer.parseInt(cmd[1]),93};
+                    int shi = 621 << 16;
+                    int ship = (620 << 16) + 24;
+                    Object[] invparams = new Object[]{"","","","","Sell 50","Sell 10","Sell 5","Sell 1","Value",-1,0,7,4,93,shi};
+                    Object[] shopparams = new Object[]{"","","","Peter Owns","Buy 50","Buy 10","Buy 5","Buy 1","Value",-1,0,4,10,31,ship};
+                    p.frames.runScript(p,25,setshopparams,"vg");//Loads main stock items
+                    p.frames.runScript(p,150,invparams,"IviiiIsssssssss");
+                    p.frames.runScript(p,150,shopparams,"IviiiIsssssssss");
+                    p.frames.setAccessMask(p,1278,0,621,0,28);
+                    if (p.mainstock){
+                        p.frames.setInterfaceConfig(p,620,23,false);
+                        p.frames.setInterfaceConfig(p,620,24,true);
+                        p.frames.setInterfaceConfig(p,620,29,false);
+                        p.frames.setInterfaceConfig(p,620,25,true);
+                        p.frames.setInterfaceConfig(p,620,27,true);
+                        p.frames.setInterfaceConfig(p,620,26,false);
+                        p.frames.setAccessMask(p,1278,23,620,0,40);
+                    }else
+                    {
+                        p.frames.setInterfaceConfig(p,620,23, true);
+                        p.frames.setInterfaceConfig(p,620,24, false);
+                        p.frames.setInterfaceConfig(p,620,29, true);
+                        p.frames.setInterfaceConfig(p,620,25, false);
+                        p.frames.setInterfaceConfig(p,620,27, false);
+                        p.frames.setInterfaceConfig(p,620,26, true);
+                        p.frames.setAccessMask(p,1278,24,620,0,40);
+
+                    }
+                    p.frames.setItems(p,-1,64209,93,new int[]{99***,new int[]{999});//Shop Inventory
+                    p.frames.setItems(p,-1,64271,31,new int[]{99***,new int[]{998});//Main Stock
+                    p.frames.sendMessage(p,"Shop test "+cmd[1]);  
+
+    /**
+     * Sets item options allowed
+     * @param p The Player which the frame should be created for.
+     * @param set The access mask
+     * @param window The window or child interface id
+     * @param inter The main interface id
+     * @param off The item offset to start with
+     * @param len The item count to set
+     */
+    public void setAccessMask(Player p, int set,int window,int inter,int off,int len) {
+        if (p == null || p.stream == null || p.disconnected[0]) {
+            return;
+        }
+        p.stream.createFrame(223);
+        p.stream.writeWord(len);           
+        p.stream.writeWordBigEndianA(off);   
+        p.stream.writeWordBigEndian(window);   
+        p.stream.writeWordBigEndian(inter);  
+        p.stream.writeWordBigEndian(set);
+        p.stream.writeWordBigEndian(0);
+    }
+
+    /**
+     * Runs an ClientScript2 script
+     * @param p The Player which the frame should be created for.
+     * @param id The script id
+     * @param o The script arguments
+     * @param valstring The argument types
+     */
+    public void runScript(Player p,int id,Object[] o,String valstring)
+    {
+        if (valstring.length() != o.length)
+            throw new IllegalArgumentException("Argument array size mismatch");
+        p.stream.createFrameVarSizeWord(152);
+        p.stream.writeString(valstring);
+        int j = 0;
+        for (int i = (valstring.length() - 1);i >= 0;i--)
+        {
+            if (valstring.charAt(i) == 115)
+                p.stream.writeString((String) o[j]);
+            else
+                p.stream.writeDWord((Integer) o[j]);
+            j++;
+        }
+        p.stream.writeDWord(id);
+        p.stream.endFrameVarSize();
+    }  
+
+case 620:
+            if (buttonId == 25)
+            {
+                p.frames.setInterfaceConfig(p,620,23,false);
+                p.frames.setInterfaceConfig(p,620,24,true);
+                p.frames.setInterfaceConfig(p,620,29,false);
+                p.frames.setInterfaceConfig(p,620,25,true);
+                p.frames.setInterfaceConfig(p,620,27,true);
+                p.frames.setInterfaceConfig(p,620,26,false);
+                p.frames.setAccessMask(p,1278,23,620,0,40);
+                p.mainstock = true;
+            }
+            if (buttonId == 26)
+            {
+                p.frames.setInterfaceConfig(p,620,23, true);
+                p.frames.setInterfaceConfig(p,620,24, false);
+                p.frames.setInterfaceConfig(p,620,29, true);
+                p.frames.setInterfaceConfig(p,620,25, false);
+                p.frames.setInterfaceConfig(p,620,27, false);
+                p.frames.setInterfaceConfig(p,620,26, true);
+                p.frames.setAccessMask(p,1278,24,620,0,40);
+                p.mainstock = false;
+            }
+            break;  
+

@@ -1,0 +1,15 @@
+Child: 0, message: Talking in: Not in chat
+Child: 1, message: Owner: None
+Child: 2, type: 0, width: 72, height: 32
+Child: 3, type: 0, width: 72, height: 32
+Child: 4, type: 3, width: 190, height: 158
+Child: 5, type: 0, width: 160, height: 159
+Child: 6, type: 0, width: 16, height: 159
+Child: 7, message: Clan Chat
+Child: 8, message: Join Chat
+Child: 9, message: Clan Setup
+Child: 10, type: 5, width: 190, height: 32
+Child: 11, type: 5, width: 190, height: 32
+Child: 12, type: 0, width: 13, height: 13
+Child: 13, type: 0, width: 177, height: 111
+Child: 14, type: 5, width: 26, height: 26

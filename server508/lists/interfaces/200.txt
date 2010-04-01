@@ -1,0 +1,29 @@
+Child: 0, type: 0, width: 512, height: 334
+Child: 1, type: 5, width: 485, height: 300
+Child: 2, type: 5, width: 32, height: 241
+Child: 3, type: 5, width: 32, height: 32
+Child: 4, type: 5, width: 32, height: 243
+Child: 5, type: 5, width: 424, height: 34
+Child: 6, type: 5, width: 423, height: 32
+Child: 7, type: 5, width: 32, height: 32
+Child: 8, type: 5, width: 32, height: 32
+Child: 9, type: 5, width: 32, height: 32
+Child: 10, type: 5, width: 465, height: 32
+Child: 11, type: 5, width: 32, height: 32
+Child: 12, type: 5, width: 32, height: 32
+Child: 13, message: Yrsa's Shoe Store
+Child: 14, message: CONFIRM (500 GOLD)
+Child: 15, type: 6, width: 32, height: 32
+Child: 16, type: 6, width: 32, height: 32
+Child: 17, type: 6, width: 32, height: 32
+Child: 18, type: 6, width: 32, height: 32
+Child: 19, type: 6, width: 32, height: 32
+Child: 20, type: 6, width: 32, height: 32
+Child: 21, type: 5, width: 23, height: 23
+Child: 22, type: 5, width: 23, height: 23
+Child: 23, type: 5, width: 23, height: 23
+Child: 24, type: 5, width: 23, height: 23
+Child: 25, type: 5, width: 23, height: 23
+Child: 26, type: 5, width: 23, height: 23
+Child: 27, type: 5, width: 26, height: 24
+Child: 28, type: 3, width: 488, height: 305

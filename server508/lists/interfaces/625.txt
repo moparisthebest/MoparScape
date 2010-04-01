@@ -1,0 +1,107 @@
+Child: 0, type: 3, width: 488, height: 305
+Child: 1, type: 5, width: 485, height: 300
+Child: 2, type: 5, width: 32, height: 243
+Child: 3, type: 5, width: 32, height: 241
+Child: 4, type: 5, width: 465, height: 32
+Child: 5, type: 5, width: 424, height: 32
+Child: 6, type: 5, width: 423, height: 32
+Child: 7, type: 5, width: 32, height: 32
+Child: 8, type: 5, width: 32, height: 32
+Child: 9, type: 5, width: 32, height: 32
+Child: 10, type: 5, width: 32, height: 32
+Child: 11, type: 5, width: 32, height: 32
+Child: 12, type: 5, width: 32, height: 32
+Child: 13, type: 3, width: 222, height: 21
+Child: 14, type: 3, width: 222, height: 21
+Child: 15, type: 3, width: 222, height: 21
+Child: 16, type: 3, width: 222, height: 21
+Child: 17, type: 3, width: 222, height: 21
+Child: 18, type: 3, width: 222, height: 21
+Child: 19, type: 3, width: 222, height: 21
+Child: 20, type: 3, width: 222, height: 21
+Child: 21, type: 3, width: 222, height: 21
+Child: 22, type: 3, width: 222, height: 21
+Child: 23, type: 3, width: 222, height: 21
+Child: 24, type: 3, width: 222, height: 21
+Child: 25, type: 3, width: 222, height: 21
+Child: 26, type: 3, width: 222, height: 21
+Child: 27, type: 3, width: 222, height: 21
+Child: 28, type: 3, width: 222, height: 21
+Child: 29, type: 3, width: 222, height: 21
+Child: 30, type: 3, width: 222, height: 21
+Child: 31, type: 3, width: 222, height: 21
+Child: 32, type: 3, width: 222, height: 21
+Child: 33, type: 3, width: 222, height: 21
+Child: 34, type: 3, width: 222, height: 21
+Child: 35, type: 3, width: 222, height: 21
+Child: 36, type: 3, width: 222, height: 21
+Child: 37, type: 3, width: 222, height: 21
+Child: 38, type: 0, width: 222, height: 238
+Child: 39, type: 6, width: 140, height: 203
+Child: 40, type: 3, width: 173, height: 39
+Child: 41, type: 9, width: 176, height: 0
+Child: 42, type: 9, width: 176, height: 0
+Child: 43, type: 9, width: 0, height: 41
+Child: 44, type: 9, width: 0, height: 41
+Child: 45, message: Please select your goblin from the options below:
+Child: 46, type: 3, width: 173, height: 7
+Child: 47, type: 3, width: 173, height: 10
+Child: 48, type: 3, width: 173, height: 10
+Child: 49, type: 3, width: 173, height: 10
+Child: 50, type: 3, width: 173, height: 10
+Child: 51, type: 3, width: 173, height: 10
+Child: 52, type: 3, width: 173, height: 10
+Child: 53, type: 3, width: 173, height: 10
+Child: 54, type: 3, width: 173, height: 10
+Child: 55, type: 3, width: 173, height: 10
+Child: 56, type: 3, width: 173, height: 10
+Child: 57, type: 3, width: 173, height: 10
+Child: 58, type: 3, width: 173, height: 10
+Child: 59, type: 3, width: 173, height: 10
+Child: 60, type: 3, width: 173, height: 10
+Child: 61, type: 3, width: 173, height: 10
+Child: 62, type: 3, width: 173, height: 10
+Child: 63, type: 3, width: 173, height: 10
+Child: 64, type: 3, width: 173, height: 9
+Child: 65, type: 0, width: 173, height: 236
+Child: 66, type: 0, width: 202, height: 226
+Child: 67, message: Select your Goblin
+Child: 68, message: Goblin 1
+Child: 69, type: 5, width: 36, height: 36
+Child: 70, type: 0, width: 147, height: 21
+Child: 71, message: Goblin 2
+Child: 72, type: 5, width: 36, height: 36
+Child: 73, type: 0, width: 147, height: 21
+Child: 74, message: Goblin 3
+Child: 75, type: 5, width: 36, height: 36
+Child: 76, type: 0, width: 147, height: 21
+Child: 77, message: Goblin 4
+Child: 78, type: 5, width: 36, height: 36
+Child: 79, type: 0, width: 147, height: 21
+Child: 80, message: Goblin 5
+Child: 81, type: 5, width: 36, height: 36
+Child: 82, type: 0, width: 147, height: 21
+Child: 83, message: Goblin 6
+Child: 84, type: 5, width: 36, height: 36
+Child: 85, type: 0, width: 147, height: 21
+Child: 86, type: 0, width: 173, height: 183
+Child: 87, type: 0, width: 16, height: 187
+Child: 88, type: 5, width: 16, height: 16
+Child: 89, type: 9, width: 176, height: 0
+Child: 90, type: 9, width: 0, height: 187
+Child: 91, type: 9, width: 0, height: 187
+Child: 92, type: 9, width: 176, height: 0
+Child: 93, type: 9, width: 225, height: 0
+Child: 94, type: 9, width: 0, height: 239
+Child: 95, type: 9, width: 0, height: 239
+Child: 96, type: 9, width: 225, height: 0
+Child: 97, type: 5, width: 106, height: 7
+Child: 98, type: 5, width: 103, height: 10
+Child: 99, type: 5, width: 15, height: 20
+Child: 100, type: 5, width: 9, height: 22
+Child: 101, type: 5, width: 9, height: 9
+Child: 102, type: 5, width: 9, height: 9
+Child: 103, type: 5, width: 9, height: 9
+Child: 104, type: 5, width: 9, height: 9
+Child: 105, message: Confirm
+Child: 106, type: 0, width: 117, height: 29

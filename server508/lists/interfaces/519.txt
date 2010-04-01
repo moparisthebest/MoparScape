@@ -1,0 +1,3 @@
+Child: 0, type: 6, width: 64, height: 64
+Child: 1, message: 
+Child: 2, message: Click here to continue

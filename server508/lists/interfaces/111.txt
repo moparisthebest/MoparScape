@@ -1,0 +1,80 @@
+Child: 0, type: 6, width: 503, height: 306
+Child: 1, type: 0, width: 512, height: 334
+Child: 2, type: 0, width: 488, height: 36
+Child: 3, type: 5, width: 301, height: 35
+Child: 4, type: 5, width: 39, height: 35
+Child: 5, type: 5, width: 39, height: 35
+Child: 6, message: %1
+Child: 7, type: 0, width: 175, height: 210
+Child: 8, type: 0, width: 175, height: 210
+Child: 9, type: 0, width: 175, height: 210
+Child: 10, type: 0, width: 175, height: 210
+Child: 11, type: 0, width: 175, height: 210
+Child: 12, type: 0, width: 175, height: 210
+Child: 13, type: 0, width: 175, height: 210
+Child: 14, type: 0, width: 175, height: 210
+Child: 15, type: 0, width: 175, height: 210
+Child: 16, type: 0, width: 175, height: 210
+Child: 17, type: 0, width: 175, height: 210
+Child: 18, type: 0, width: 175, height: 210
+Child: 19, type: 0, width: 175, height: 210
+Child: 20, type: 0, width: 175, height: 210
+Child: 21, type: 0, width: 175, height: 210
+Child: 22, type: 0, width: 175, height: 210
+Child: 23, type: 0, width: 175, height: 210
+Child: 24, type: 0, width: 175, height: 210
+Child: 25, type: 0, width: 175, height: 210
+Child: 26, type: 0, width: 175, height: 210
+Child: 27, type: 0, width: 175, height: 210
+Child: 28, type: 0, width: 175, height: 210
+Child: 29, type: 0, width: 45, height: 36
+Child: 30, type: 0, width: 45, height: 36
+Child: 31, message: line1
+Child: 32, message: line2
+Child: 33, message: line3
+Child: 34, message: line4
+Child: 35, message: line5
+Child: 36, message: line6
+Child: 37, message: line7
+Child: 38, message: line8
+Child: 39, message: line9
+Child: 40, message: line10
+Child: 41, message: line11
+Child: 42, message: line12
+Child: 43, message: line13
+Child: 44, message: line14
+Child: 45, message: line15
+Child: 46, message: line16
+Child: 47, message: line17
+Child: 48, message: line18
+Child: 49, message: line19
+Child: 50, message: line20
+Child: 51, message: line21
+Child: 52, message: line22
+Child: 53, type: 5, width: 21, height: 21
+Child: 54, type: 0, width: 512, height: 334
+Child: 55, type: 6, width: 133, height: 194
+Child: 56, type: 6, width: 68, height: 40
+Child: 57, type: 6, width: 68, height: 40
+Child: 58, type: 6, width: 68, height: 40
+Child: 59, type: 6, width: 68, height: 40
+Child: 60, type: 6, width: 68, height: 40
+Child: 61, type: 6, width: 68, height: 40
+Child: 62, type: 6, width: 68, height: 40
+Child: 63, type: 6, width: 68, height: 40
+Child: 64, type: 6, width: 68, height: 40
+Child: 65, type: 6, width: 68, height: 40
+Child: 66, type: 6, width: 68, height: 40
+Child: 67, type: 6, width: 68, height: 40
+Child: 68, type: 6, width: 68, height: 40
+Child: 69, type: 6, width: 68, height: 40
+Child: 70, type: 6, width: 68, height: 40
+Child: 71, type: 6, width: 68, height: 40
+Child: 72, type: 6, width: 68, height: 40
+Child: 73, type: 6, width: 68, height: 40
+Child: 74, type: 6, width: 68, height: 40
+Child: 75, type: 6, width: 68, height: 40
+Child: 76, type: 6, width: 68, height: 40
+Child: 77, type: 6, width: 68, height: 40
+Child: 78, type: 5, width: 39, height: 35
+Child: 79, type: 5, width: 39, height: 35

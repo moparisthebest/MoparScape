@@ -1,0 +1,51 @@
+Child: 0, type: 0, width: 512, height: 334
+Child: 1, type: 6, width: 527, height: 381
+Child: 2, type: 6, width: 465, height: 227
+Child: 3, type: 6, width: 43, height: 74
+Child: 4, type: 6, width: 69, height: 68
+Child: 5, type: 6, width: 61, height: 57
+Child: 6, type: 6, width: 70, height: 14
+Child: 7, type: 6, width: 67, height: 77
+Child: 8, type: 6, width: 40, height: 50
+Child: 9, type: 6, width: 49, height: 49
+Child: 10, type: 6, width: 51, height: 50
+Child: 11, type: 6, width: 31, height: 51
+Child: 12, type: 6, width: 14, height: 49
+Child: 13, type: 6, width: 64, height: 62
+Child: 14, type: 6, width: 50, height: 57
+Child: 15, message: Bamboo pipe
+Child: 16, message: Bridge section
+Child: 17, message: Bucket
+Child: 18, message: Torch
+Child: 19, message: Lumber patch
+Child: 20, message: Jar
+Child: 21, message: Bowl
+Child: 22, message: Tinderbox
+Child: 23, message: Meat
+Child: 24, message: Knife
+Child: 25, message: Net
+Child: 26, message: Axe
+Child: 27, message: 0
+Child: 28, message: 0
+Child: 29, message: 0
+Child: 30, type: 5, width: 26, height: 23
+Child: 31, type: 0, width: 512, height: 334
+Child: 32, type: 0, width: 16391, height: 16391
+Child: 33, type: 0, width: 16391, height: 16391
+Child: 34, type: 5, width: 32, height: 334
+Child: 35, type: 5, width: 462, height: 32
+Child: 36, type: 5, width: 512, height: 32
+Child: 37, type: 5, width: 32, height: 334
+Child: 38, type: 5, width: 32, height: 32
+Child: 39, type: 5, width: 32, height: 32
+Child: 40, type: 5, width: 32, height: 32
+Child: 41, type: 5, width: 32, height: 32
+Child: 42, type: 0, width: 8192, height: 16391
+Child: 43, type: 0, width: 8188, height: 16391
+Child: 44, type: 0, width: 16391, height: 8192
+Child: 45, type: 0, width: 16391, height: 8182
+Child: 46, type: 0, width: 512, height: 334
+Child: 47, type: 5, width: 256, height: 16384
+Child: 48, type: 5, width: 256, height: 16391
+Child: 49, type: 5, width: 16391, height: 167
+Child: 50, type: 5, width: 16391, height: 166

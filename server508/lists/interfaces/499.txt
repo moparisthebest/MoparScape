@@ -1,0 +1,26 @@
+Child: 0, type: 3, width: 16391, height: 16391
+Child: 1, type: 6, width: 334, height: 51
+Child: 2, type: 6, width: 372, height: 264
+Child: 3, type: 6, width: 143, height: 253
+Child: 4, type: 6, width: 154, height: 12
+Child: 5, type: 6, width: 154, height: 12
+Child: 6, message: Skill
+Child: 7, type: 0, width: 296, height: 239
+Child: 8, type: 0, width: 16, height: 239
+Child: 9, message: Description
+Child: 10, message: 
+Child: 11, message: 
+Child: 12, message: 
+Child: 13, message: 
+Child: 14, message: 
+Child: 15, message: 
+Child: 16, message: 
+Child: 17, message: 
+Child: 18, message: 
+Child: 19, message: 
+Child: 20, message: 
+Child: 21, message: 
+Child: 22, message: 
+Child: 23, message: 
+Child: 24, type: 5, width: 26, height: 23
+Child: 25, type: 0, width: 512, height: 334

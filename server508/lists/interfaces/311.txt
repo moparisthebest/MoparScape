@@ -1,0 +1,49 @@
+Child: 0, type: 5, width: 57, height: 13
+Child: 1, type: 5, width: 57, height: 13
+Child: 2, message: What would you like to smelt?
+inventory type: 8 slots, width: 8, height: 1, 3
+Child: 4, type: 6, width: 32, height: 32
+Child: 5, type: 6, width: 32, height: 32
+Child: 6, type: 6, width: 32, height: 32
+Child: 7, type: 6, width: 32, height: 32
+Child: 8, type: 6, width: 32, height: 32
+Child: 9, type: 6, width: 32, height: 32
+Child: 10, type: 6, width: 32, height: 32
+Child: 11, type: 6, width: 32, height: 32
+Child: 12, type: 6, width: 32, height: 32
+Child: 13, message: 
+Child: 14, message: 
+Child: 15, message: 
+Child: 16, message: <br><br><br><br>Bronze
+Child: 17, message: 
+Child: 18, message: 
+Child: 19, message: 
+Child: 20, message: <br><br><br><br>Blurite
+Child: 21, message: 
+Child: 22, message: 
+Child: 23, message: 
+Child: 24, message: <br><br><br><br>Iron
+Child: 25, message: 
+Child: 26, message: 
+Child: 27, message: 
+Child: 28, message: <br><br><br><br>Silver
+Child: 29, message: 
+Child: 30, message: 
+Child: 31, message: 
+Child: 32, message: <br><br><br><br>Steel
+Child: 33, message: 
+Child: 34, message: 
+Child: 35, message: 
+Child: 36, message: <br><br><br><br>Gold
+Child: 37, message: 
+Child: 38, message: 
+Child: 39, message: 
+Child: 40, message: <br><br><br><br>Mithril
+Child: 41, message: 
+Child: 42, message: 
+Child: 43, message: 
+Child: 44, message: <br><br><br><br>Adamant
+Child: 45, message: 
+Child: 46, message: 
+Child: 47, message: 
+Child: 48, message: <br><br><br><br>Rune

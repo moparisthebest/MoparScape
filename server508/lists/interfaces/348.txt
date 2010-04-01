@@ -1,0 +1,49 @@
+Child: 0, type: 6, width: 43, height: 35
+Child: 1, type: 6, width: 325, height: 310
+Child: 2, type: 6, width: 24, height: 22
+Child: 3, type: 6, width: 98, height: 85
+Child: 4, type: 6, width: 87, height: 98
+Child: 5, type: 6, width: 99, height: 85
+Child: 6, type: 6, width: 87, height: 97
+Child: 7, type: 0, width: 313, height: 239
+Child: 8, type: 6, width: 31, height: 26
+Child: 9, type: 6, width: 35, height: 28
+Child: 10, type: 6, width: 23, height: 28
+Child: 11, type: 6, width: 22, height: 26
+Child: 12, type: 6, width: 22, height: 28
+Child: 13, type: 6, width: 23, height: 28
+Child: 14, type: 6, width: 22, height: 27
+Child: 15, type: 6, width: 7, height: 3
+Child: 16, type: 6, width: 7, height: 3
+Child: 17, type: 6, width: 3, height: 7
+Child: 18, type: 6, width: 3, height: 7
+Child: 19, type: 6, width: 3, height: 7
+Child: 20, type: 6, width: 3, height: 7
+Child: 21, type: 6, width: 7, height: 3
+Child: 22, type: 6, width: 7, height: 3
+Child: 23, type: 6, width: 7, height: 3
+Child: 24, type: 6, width: 3, height: 7
+Child: 25, type: 6, width: 3, height: 7
+Child: 26, type: 6, width: 3, height: 7
+Child: 27, message: 2W
+Child: 28, message: 4S
+Child: 29, message: 3E
+Child: 30, message: 3S
+Child: 31, type: 6, width: 23, height: 15
+Child: 32, type: 6, width: 23, height: 16
+Child: 33, type: 6, width: 23, height: 17
+Child: 34, type: 6, width: 27, height: 15
+Child: 35, type: 6, width: 23, height: 16
+Child: 36, type: 6, width: 23, height: 16
+Child: 37, type: 6, width: 23, height: 16
+Child: 38, type: 5, width: 26, height: 23
+Child: 39, type: 6, width: 41, height: 35
+Child: 40, type: 6, width: 38, height: 32
+Child: 41, type: 6, width: 35, height: 31
+Child: 42, type: 6, width: 38, height: 31
+Child: 43, type: 6, width: 40, height: 31
+Child: 44, type: 6, width: 42, height: 31
+Child: 45, type: 6, width: 42, height: 31
+Child: 46, type: 6, width: 43, height: 31
+Child: 47, type: 6, width: 43, height: 31
+Child: 48, type: 0, width: 512, height: 334

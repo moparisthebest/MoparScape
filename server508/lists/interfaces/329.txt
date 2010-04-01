@@ -1,0 +1,60 @@
+Child: 0, type: 3, width: 16519, height: 19039
+Child: 1, type: 6, width: 393, height: 347
+Child: 2, message: Burgh DeRott
+Child: 3, message: Mort'ton
+Child: 4, message: Canifis
+Child: 5, message: Mort
+Child: 6, message: Myre
+Child: 7, message: Swamp
+Child: 8, message: The Hollows
+Child: 9, type: 6, width: 155, height: 44
+Child: 10, type: 6, width: 156, height: 43
+Child: 11, type: 6, width: 153, height: 49
+Child: 12, type: 6, width: 203, height: 89
+Child: 13, message: Choose a route
+Child: 14, message: Route One
+Child: 15, type: 0, width: 464, height: 304
+Child: 16, message: Route Two
+Child: 17, type: 0, width: 464, height: 304
+Child: 18, message: Route Three
+Child: 19, type: 0, width: 464, height: 304
+Child: 20, type: 6, width: 161, height: 289
+Child: 21, message: Temple
+Child: 22, type: 6, width: 32, height: 32
+Child: 23, type: 6, width: 32, height: 32
+Child: 24, type: 6, width: 32, height: 32
+Child: 25, type: 6, width: 32, height: 32
+Child: 26, type: 6, width: 32, height: 32
+Child: 27, type: 6, width: 32, height: 32
+Child: 28, type: 6, width: 32, height: 32
+Child: 29, type: 6, width: 32, height: 32
+Child: 30, type: 6, width: 32, height: 32
+Child: 31, type: 6, width: 32, height: 32
+Child: 32, type: 6, width: 32, height: 32
+Child: 33, type: 6, width: 32, height: 32
+Child: 34, type: 6, width: 32, height: 32
+Child: 35, type: 6, width: 32, height: 32
+Child: 36, type: 6, width: 32, height: 32
+Child: 37, type: 6, width: 32, height: 32
+Child: 38, type: 6, width: 32, height: 32
+Child: 39, type: 6, width: 32, height: 32
+Child: 40, type: 6, width: 32, height: 32
+Child: 41, type: 6, width: 32, height: 32
+Child: 42, type: 6, width: 32, height: 32
+Child: 43, type: 6, width: 32, height: 32
+Child: 44, type: 6, width: 32, height: 32
+Child: 45, type: 6, width: 32, height: 32
+Child: 46, type: 6, width: 32, height: 32
+Child: 47, type: 0, width: 512, height: 334
+Child: 48, type: 6, width: 203, height: 89
+Child: 49, type: 6, width: 203, height: 89
+Child: 50, type: 6, width: 203, height: 89
+Child: 51, type: 6, width: 134, height: 219
+Child: 52, message: Route One
+Child: 53, type: 6, width: 134, height: 219
+Child: 54, message: Route Two
+Child: 55, type: 6, width: 160, height: 219
+Child: 56, message: Route Three
+Child: 57, message: Slow plod, <br>can evade <br>encounters.
+Child: 58, message: Leisurely walk, <br>harder to evade <br>encounters.
+Child: 59, message: Brisk walk, <br>impossible to <br>evade encounters.

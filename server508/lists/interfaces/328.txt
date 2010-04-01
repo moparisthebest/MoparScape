@@ -1,0 +1,8 @@
+Child: 0, message: Repair State :
+Child: 1, message: ****
+Child: 2, message: Resources :
+Child: 3, message: ****
+Child: 4, message: Sanctity:
+Child: 5, message: ****
+Child: 6, message: * Temple Repair *
+Child: 7, type: 0, width: 139, height: 62

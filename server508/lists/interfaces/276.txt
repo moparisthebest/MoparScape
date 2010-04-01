@@ -1,0 +1,14 @@
+Child: 0, type: 3, width: 512, height: 334
+Child: 1, type: 6, width: 35, height: 35
+Child: 2, message: Congratulations!
+Child: 3, message: 
+Child: 4, type: 6, width: 85, height: 105
+Child: 5, message: Total Points:
+Child: 6, message: %1
+Child: 7, type: 6, width: 32, height: 32
+Child: 8, message: You are awarded
+Child: 9, message: 0
+Child: 10, message: Quest points.
+Child: 11, type: 5, width: 26, height: 23
+Child: 12, type: 5, width: 26, height: 23
+Child: 13, type: 0, width: 32, height: 32

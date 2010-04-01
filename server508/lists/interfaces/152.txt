@@ -1,0 +1,19 @@
+Child: 0, type: 0, width: 512, height: 334
+Child: 1, type: 0, width: 512, height: 334
+Child: 2, type: 0, width: 512, height: 334
+Child: 3, type: 0, width: 512, height: 400
+Child: 4, type: 0, width: 512, height: 400
+Child: 5, type: 0, width: 512, height: 334
+Child: 6, type: 0, width: 512, height: 334
+Child: 7, message: The Giant<br>Dwarf
+Child: 8, message: Keldagrim
+Child: 9, message: Grand Capital<br> of the Dwarven realm
+Child: 10, message: Rise of the<br>Red Axe
+Child: 11, message: Part 1
+Child: 12, message: Keldagrim<br>Palace
+Child: 13, message: Consortium<br>Meeting
+Child: 14, message: A little while later
+Child: 15, message: Rise of the<br>Red Axe
+Child: 16, message: Part II
+Child: 17, message: Forgettable Tale<br> of a<br>Drunken Dwarf
+Child: 18, type: 0, width: 512, height: 334

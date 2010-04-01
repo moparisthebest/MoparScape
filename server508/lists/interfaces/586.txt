@@ -1,0 +1,8 @@
+Child: 0, type: 6, width: 243, height: 322
+Child: 1, message: Change of address form for the citizens of Seers' Village.
+Child: 2, type: 3, width: 168, height: 4
+Child: 3, type: 3, width: 168, height: 4
+Child: 4, type: 3, width: 168, height: 4
+Child: 5, type: 3, width: 72, height: 4
+Child: 6, type: 5, width: 26, height: 23
+Child: 7, type: 0, width: 512, height: 334

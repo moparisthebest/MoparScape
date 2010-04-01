@@ -1,0 +1,55 @@
+Child: 0, type: 3, width: 402, height: 256
+Child: 1, type: 3, width: 399, height: 257
+Child: 2, type: 5, width: 387, height: 246
+Child: 3, type: 5, width: 32, height: 194
+Child: 4, type: 5, width: 32, height: 195
+Child: 5, type: 5, width: 32, height: 32
+Child: 6, type: 5, width: 337, height: 34
+Child: 7, type: 5, width: 337, height: 32
+Child: 8, type: 5, width: 32, height: 32
+Child: 9, type: 5, width: 32, height: 32
+Child: 10, type: 5, width: 32, height: 32
+Child: 11, type: 5, width: 389, height: 32
+Child: 12, type: 5, width: 16, height: 16
+Child: 13, message: Select a Snowman Hat
+Child: 14, type: 6, width: 0, height: 0
+Child: 15, message:  Barbarian hat
+Child: 16, message: Dragon hat
+Child: 17, message: Dwarf hat
+Child: 18, message: Pirate hat
+Child: 19, message: Top hat
+Child: 20, type: 6, width: 0, height: 0
+Child: 21, type: 0, width: 50, height: 50
+Child: 22, type: 3, width: 50, height: 50
+Child: 23, type: 0, width: 50, height: 50
+Child: 24, type: 3, width: 50, height: 50
+Child: 25, type: 0, width: 50, height: 50
+Child: 26, type: 3, width: 50, height: 50
+Child: 27, type: 0, width: 50, height: 50
+Child: 28, type: 3, width: 50, height: 50
+Child: 29, type: 0, width: 50, height: 50
+Child: 30, type: 3, width: 50, height: 50
+Child: 31, type: 0, width: 50, height: 50
+Child: 32, type: 3, width: 50, height: 50
+Child: 33, type: 0, width: 50, height: 50
+Child: 34, type: 3, width: 50, height: 50
+Child: 35, type: 0, width: 50, height: 50
+Child: 36, type: 3, width: 50, height: 50
+Child: 37, type: 6, width: 0, height: 0
+Child: 38, type: 9, width: 396, height: 0
+Child: 39, type: 9, width: 387, height: 0
+Child: 40, type: 9, width: 387, height: 0
+Child: 41, type: 9, width: 12, height: 0
+Child: 42, type: 6, width: 39, height: 38
+Child: 43, type: 6, width: 49, height: 35
+Child: 44, type: 6, width: 37, height: 28
+Child: 45, type: 6, width: 44, height: 29
+Child: 46, type: 6, width: 41, height: 33
+Child: 47, type: 6, width: 41, height: 48
+Child: 48, type: 6, width: 48, height: 54
+Child: 49, type: 6, width: 45, height: 48
+Child: 50, message: Holly Bow
+Child: 51, message: Winter Staff
+Child: 52, message: Ice Sword
+Child: 53, type: 0, width: 512, height: 334
+Child: 54, type: 3, width: 399, height: 256

@@ -1,0 +1,11 @@
+Child: 0, type: 3, width: 190, height: 195
+Child: 1, type: 0, width: 16, height: 196
+Child: 2, type: 0, width: 158, height: 196
+Child: 3, message: Friends List - RuneScape XXX
+Child: 4, message: Add Friend
+Child: 5, message: Del Friend
+Child: 6, type: 5, width: 190, height: 32
+Child: 7, type: 5, width: 190, height: 32
+Child: 8, message: 
+Child: 9, type: 0, width: 72, height: 32
+Child: 10, type: 0, width: 72, height: 32

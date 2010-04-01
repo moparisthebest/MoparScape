@@ -1,0 +1,7 @@
+Child: 0, type: 6, width: 480, height: 301
+Child: 1, type: 6, width: 137, height: 245
+Child: 2, message: Victory!
+Child: 3, message: Your clan is victorious!
+Child: 4, type: 3, width: 200, height: 1
+Child: 5, type: 5, width: 26, height: 23
+Child: 6, type: 0, width: 512, height: 334

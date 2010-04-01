@@ -1,0 +1,34 @@
+Child: 0, type: 6, width: 176, height: 240
+Child: 1, type: 6, width: 162, height: 154
+Child: 2, type: 6, width: 63, height: 72
+Child: 3, type: 6, width: 176, height: 240
+Child: 4, type: 6, width: 162, height: 154
+Child: 5, type: 6, width: 63, height: 87
+Child: 6, type: 0, width: 32, height: 39
+Child: 7, type: 0, width: 107, height: 101
+Child: 8, type: 6, width: 176, height: 240
+Child: 9, type: 6, width: 162, height: 154
+Child: 10, type: 6, width: 63, height: 59
+Child: 11, type: 0, width: 40, height: 51
+Child: 12, type: 0, width: 107, height: 101
+Child: 13, type: 6, width: 176, height: 240
+Child: 14, type: 6, width: 162, height: 154
+Child: 15, type: 6, width: 76, height: 70
+Child: 16, type: 0, width: 47, height: 36
+Child: 17, type: 0, width: 107, height: 101
+Child: 18, type: 6, width: 176, height: 240
+Child: 19, type: 6, width: 162, height: 154
+Child: 20, type: 6, width: 74, height: 70
+Child: 21, type: 0, width: 47, height: 36
+Child: 22, type: 0, width: 107, height: 101
+Child: 23, type: 6, width: 42, height: 40
+Child: 24, type: 6, width: 42, height: 40
+Child: 25, type: 0, width: 43, height: 45
+Child: 26, type: 0, width: 43, height: 45
+Child: 27, message: Tries = 3
+Child: 28, message: 
+Child: 29, message: 
+Child: 30, message: 
+Child: 31, message: 
+Child: 32, message: 
+Child: 33, type: 5, width: 26, height: 23

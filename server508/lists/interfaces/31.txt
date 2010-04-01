@@ -1,0 +1,39 @@
+Child: 0, type: 3, width: 334, height: 221
+Child: 1, type: 5, width: 326, height: 213
+Child: 2, type: 0, width: 80, height: 45
+Child: 3, message: Challenge: Select Game
+Child: 4, type: 3, width: 72, height: 33
+Child: 5, message: Select
+Child: 6, type: 0, width: 295, height: 158
+Child: 7, type: 5, width: 15, height: 15
+Child: 8, type: 5, width: 15, height: 15
+Child: 9, message: Draughts
+Child: 10, message: Runelink
+Child: 11, message: 100 vs 100
+Child: 12, message: 100 vs 100
+Child: 13, message: Game:
+Child: 14, message: Ranks (mine vs opponent's):
+Child: 15, type: 5, width: 15, height: 15
+Child: 16, message: Runesquares
+Child: 17, message: 100 vs 100
+Child: 18, type: 5, width: 15, height: 15
+Child: 19, message: Runeversi
+Child: 20, message: 100 vs 100
+Child: 21, type: 5, width: 16, height: 16
+Child: 22, type: 5, width: 32, height: 179
+Child: 23, type: 5, width: 269, height: 32
+Child: 24, type: 5, width: 311, height: 32
+Child: 25, type: 5, width: 269, height: 32
+Child: 26, type: 5, width: 32, height: 32
+Child: 27, type: 5, width: 32, height: 32
+Child: 28, type: 5, width: 32, height: 32
+Child: 29, type: 5, width: 32, height: 32
+Child: 30, type: 5, width: 32, height: 32
+Child: 31, type: 5, width: 32, height: 32
+Child: 32, type: 5, width: 32, height: 32
+Child: 33, type: 5, width: 32, height: 32
+Child: 34, type: 5, width: 32, height: 32
+Child: 35, type: 5, width: 32, height: 32
+Child: 36, type: 5, width: 32, height: 32
+Child: 37, type: 5, width: 32, height: 32
+Child: 38, type: 5, width: 32, height: 155

@@ -1,0 +1,27 @@
+Child: 0, type: 5, width: 112, height: 26
+Child: 1, type: 5, width: 32, height: 32
+Child: 2, type: 5, width: 32, height: 32
+Child: 3, type: 5, width: 32, height: 32
+Child: 4, type: 5, width: 32, height: 32
+Child: 5, type: 5, width: 69, height: 29
+Child: 6, type: 5, width: 62, height: 20
+Child: 7, message: Rating
+Child: 8, type: 0, width: 512, height: 334
+Child: 9, type: 5, width: 112, height: 26
+Child: 10, type: 5, width: 32, height: 32
+Child: 11, type: 5, width: 32, height: 32
+Child: 12, type: 5, width: 32, height: 32
+Child: 13, type: 5, width: 32, height: 32
+Child: 14, type: 5, width: 69, height: 29
+Child: 15, type: 5, width: 62, height: 20
+Child: 16, message: Text
+Child: 17, type: 0, width: 512, height: 334
+Child: 18, type: 5, width: 475, height: 30
+Child: 19, type: 5, width: 32, height: 32
+Child: 20, type: 5, width: 32, height: 32
+Child: 21, type: 5, width: 32, height: 32
+Child: 22, type: 5, width: 32, height: 32
+Child: 23, type: 5, width: 442, height: 32
+Child: 24, type: 5, width: 441, height: 32
+Child: 25, message: The following item is not allowed in the arena:
+Child: 26, type: 0, width: 510, height: 62

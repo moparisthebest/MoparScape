@@ -1,0 +1,92 @@
+Child: 0, type: 3, width: 481, height: 314
+Child: 1, type: 5, width: 464, height: 24
+Child: 2, type: 5, width: 464, height: 26
+Child: 3, type: 5, width: 26, height: 23
+Child: 4, type: 5, width: 32, height: 32
+Child: 5, type: 5, width: 32, height: 32
+Child: 6, type: 5, width: 32, height: 32
+Child: 7, type: 5, width: 32, height: 32
+Child: 8, type: 5, width: 32, height: 264
+Child: 9, type: 5, width: 32, height: 264
+Child: 10, type: 5, width: 428, height: 32
+Child: 11, type: 5, width: 430, height: 32
+Child: 12, type: 5, width: 478, height: 32
+Child: 13, type: 5, width: 32, height: 32
+Child: 14, type: 5, width: 32, height: 32
+Child: 15, type: 5, width: 32, height: 32
+Child: 16, type: 5, width: 32, height: 32
+Child: 17, type: 5, width: 32, height: 32
+Child: 18, type: 5, width: 32, height: 32
+Child: 19, type: 5, width: 114, height: 32
+Child: 20, type: 5, width: 114, height: 32
+Child: 21, type: 5, width: 32, height: 212
+Child: 22, type: 5, width: 32, height: 211
+Child: 23, type: 5, width: 32, height: 32
+Child: 24, type: 5, width: 32, height: 32
+Child: 25, type: 5, width: 32, height: 32
+Child: 26, type: 5, width: 32, height: 32
+Child: 27, type: 5, width: 32, height: 66
+Child: 28, type: 5, width: 32, height: 62
+Child: 29, type: 5, width: 123, height: 32
+Child: 30, type: 5, width: 123, height: 32
+Child: 31, type: 5, width: 32, height: 32
+Child: 32, type: 5, width: 32, height: 32
+Child: 33, type: 5, width: 32, height: 32
+Child: 34, type: 5, width: 32, height: 32
+Child: 35, type: 5, width: 32, height: 32
+Child: 36, type: 5, width: 204, height: 32
+Child: 37, type: 5, width: 204, height: 32
+Child: 38, type: 5, width: 32, height: 32
+Child: 39, type: 3, width: 164, height: 264
+Child: 40, message: Bank PIN Settings
+Child: 41, message: Messages
+Child: 42, message: 
+Child: 43, message: 
+Child: 44, message: 
+Child: 45, message: 
+Child: 46, message: 
+Child: 47, message: 
+Child: 48, message: 
+Child: 49, message: 
+Child: 50, message: 
+Child: 51, message: 
+Child: 52, message: 
+Child: 53, message: 
+Child: 54, message: 
+Child: 55, message: 
+Child: 56, message: 
+Child: 57, message: 
+Child: 58, type: 0, width: 252, height: 63
+Child: 59, type: 5, width: 255, height: 104
+Child: 60, message: Set a PIN
+Child: 61, message: Change your recovery delay
+Child: 62, message: Change your PIN
+Child: 63, message: Delete your PIN
+Child: 64, message: Change your recovery delay
+Child: 65, message: Cancel the PIN that's pending
+Child: 66, type: 5, width: 176, height: 128
+Child: 67, type: 0, width: 173, height: 113
+Child: 68, message: Your Bank PIN status:
+Child: 69, message: Unknown
+Child: 70, message: Recovery delay:
+Child: 71, message: X days
+Child: 72, type: 3, width: 476, height: 312
+Child: 73, message: Do you really wish to do that?
+Child: 74, type: 5, width: 32, height: 32
+Child: 75, type: 5, width: 32, height: 32
+Child: 76, type: 5, width: 32, height: 32
+Child: 77, type: 5, width: 32, height: 32
+Child: 78, type: 5, width: 411, height: 32
+Child: 79, type: 5, width: 412, height: 32
+Child: 80, type: 5, width: 32, height: 32
+Child: 81, type: 5, width: 32, height: 32
+Child: 82, type: 5, width: 32, height: 32
+Child: 83, type: 5, width: 32, height: 32
+Child: 84, type: 5, width: 411, height: 32
+Child: 85, type: 5, width: 411, height: 32
+Child: 86, message: Use the buttons below to change your PIN settings
+Child: 87, type: 0, width: 512, height: 334
+Child: 88, type: 0, width: 477, height: 26
+Child: 89, message: Yes, I really want to do that.
+Child: 90, type: 0, width: 477, height: 26
+Child: 91, message: No, forget I asked.

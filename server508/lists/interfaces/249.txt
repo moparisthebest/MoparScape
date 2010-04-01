@@ -1,0 +1,6 @@
+Child: 0, type: 0, width: 387, height: 287
+Child: 1, type: 0, width: 358, height: 225
+Child: 2, message: Surok Magis,
+Child: 3, type: 6, width: 418, height: 325
+Child: 4, message: Your actions are being watched. We know what you are trying to do and the VPSG will stop you! Do not attempt to leave the palace or you will be arrested on sight. We will not hesitate to kill you if you disobey King Roald's orders.                                                                                            Rat Burgiss
+Child: 5, type: 5, width: 26, height: 23

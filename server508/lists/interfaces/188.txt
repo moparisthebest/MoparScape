@@ -1,0 +1,11 @@
+Child: 0, type: 6, width: 90, height: 102
+Child: 1, type: 6, width: 91, height: 101
+Child: 2, message: Think
+Child: 3, message: Cry
+Child: 4, message: Laugh
+Child: 5, message: Dance
+Child: 6, message: Climb Rope
+Child: 7, message: Lean on air
+Child: 8, message: Glass Box
+Child: 9, message: Glass Wall
+Child: 10, type: 0, width: 509, height: 102

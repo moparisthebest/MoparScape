@@ -1,0 +1,7 @@
+Child: 0, type: 0, width: 183, height: 66
+Child: 1, type: 6, width: 203, height: 54
+Child: 2, message: 0
+Child: 3, message: 0
+Child: 4, message: Next Game In :
+Child: 5, message: Players waiting
+Child: 6, type: 0, width: 223, height: 80

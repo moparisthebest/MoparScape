@@ -1,0 +1,7 @@
+Child: 0, type: 6, width: 32, height: 32
+Child: 1, type: 5, width: 23, height: 23
+Child: 2, message: Certificate of Advanced Healing
+Child: 3, message: From PoxStead College.
+Child: 4, message: Signed Dr Foster-MMD, PRD<br>Head Of<br>Magical Healing.
+Child: 5, type: 5, width: 23, height: 23
+Child: 6, type: 0, width: 32, height: 32

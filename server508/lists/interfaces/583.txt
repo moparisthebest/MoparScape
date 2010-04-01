@@ -1,0 +1,74 @@
+Child: 0, type: 3, width: 488, height: 305
+Child: 1, type: 5, width: 485, height: 300
+Child: 2, type: 5, width: 32, height: 241
+Child: 3, type: 5, width: 32, height: 32
+Child: 4, type: 5, width: 32, height: 243
+Child: 5, type: 5, width: 424, height: 34
+Child: 6, type: 5, width: 423, height: 32
+Child: 7, type: 5, width: 32, height: 32
+Child: 8, type: 5, width: 32, height: 32
+Child: 9, type: 5, width: 32, height: 32
+Child: 10, type: 5, width: 465, height: 32
+Child: 11, type: 5, width: 32, height: 32
+Child: 12, type: 5, width: 32, height: 32
+Child: 13, type: 5, width: 16, height: 16
+Child: 14, message: Reset Warning Messages
+Child: 15, message: Body Text
+Child: 16, type: 0, width: 449, height: 265
+Child: 17, type: 0, width: 16, height: 258
+Child: 18, type: 5, width: 90, height: 56
+Child: 19, type: 5, width: 90, height: 56
+Child: 20, type: 5, width: 90, height: 56
+Child: 21, type: 5, width: 90, height: 56
+Child: 22, type: 5, width: 90, height: 56
+Child: 23, type: 5, width: 90, height: 56
+Child: 24, type: 5, width: 90, height: 56
+Child: 25, type: 5, width: 90, height: 56
+Child: 26, type: 5, width: 90, height: 56
+Child: 27, type: 5, width: 90, height: 56
+Child: 28, type: 5, width: 90, height: 56
+Child: 29, type: 5, width: 90, height: 56
+Child: 30, type: 5, width: 90, height: 56
+Child: 31, type: 5, width: 90, height: 56
+Child: 32, type: 5, width: 90, height: 56
+Child: 33, type: 5, width: 90, height: 56
+Child: 34, type: 5, width: 90, height: 56
+Child: 35, type: 5, width: 90, height: 56
+Child: 36, type: 5, width: 90, height: 56
+Child: 37, type: 5, width: 90, height: 56
+Child: 38, type: 5, width: 90, height: 56
+Child: 39, type: 5, width: 90, height: 56
+Child: 40, type: 5, width: 90, height: 56
+Child: 41, type: 5, width: 90, height: 56
+Child: 42, type: 5, width: 90, height: 56
+Child: 43, type: 5, width: 90, height: 56
+Child: 44, type: 5, width: 90, height: 56
+Child: 45, type: 5, width: 90, height: 56
+Child: 46, message: Dagannoth Kings' Ladder
+Child: 47, message: Lumbridge Swamp Cave Rope
+Child: 48, message: Stronghold of Security Ladders
+Child: 49, message: Falador Mole Lair
+Child: 50, message: Dropped Items in Random Events
+Child: 51, message: Player-Owned Houses
+Child: 52, message: Contact Dungeon Ladder
+Child: 53, message: Icy Path Area
+Child: 54, message: H.A.M. Tunnel from Mill
+Child: 55, message: Fairy Ring to Dorgesh-Kaan
+Child: 56, message: Lumbridge Cellar
+Child: 57, message: Mort Myre
+Child: 58, message: Observatory Stairs
+Child: 59, message: Shantay Pass
+Child: 60, message: Elid Genie Cave
+Child: 61, message: Watchtower Shaman Cave
+Child: 62, message: Trollheim Wilderness Entrance
+Child: 63, message: Wilderness Ditch
+Child: 64, message: Dorgesh-Kaan City Exit
+Child: 65, message: Dorgesh-Kaan Tunnel to Kalphites
+Child: 66, message: Ranging Guild Tower
+Child: 67, message: Death Plateau
+Child: 68, message: God Wars Wilderness Agility Route
+Child: 69, message: Duel Arena
+Child: 70, message: Bounty Hunter
+Child: 71, message: Chaos Tunnels (East)
+Child: 72, message: Chaos Tunnels (Central)
+Child: 73, message: Chaos Tunnels (West)

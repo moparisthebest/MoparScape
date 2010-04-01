@@ -1,0 +1,4 @@
+Child: 0, type: 3, width: 141, height: 28
+Child: 1, message: Windspeed:
+Child: 2, message: high
+Child: 3, type: 0, width: 145, height: 46

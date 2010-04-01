@@ -1,0 +1,15 @@
+Child: 0, type: 6, width: 32, height: 32
+Child: 1, type: 5, width: 26, height: 23
+Child: 2, type: 0, width: 32, height: 32
+Child: 3, type: 0, width: 52, height: 51
+Child: 4, type: 0, width: 49, height: 52
+Child: 5, type: 0, width: 51, height: 50
+Child: 6, type: 0, width: 48, height: 48
+Child: 7, type: 0, width: 50, height: 49
+Child: 8, type: 6, width: 32, height: 32
+Child: 9, type: 6, width: 52, height: 51
+Child: 10, type: 6, width: 49, height: 52
+Child: 11, type: 6, width: 51, height: 50
+Child: 12, type: 6, width: 48, height: 48
+Child: 13, type: 6, width: 50, height: 49
+Child: 14, type: 6, width: 47, height: 91

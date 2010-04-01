@@ -1,0 +1,46 @@
+Child: 0, type: 0, width: 512, height: 334
+Child: 1, type: 3, width: 32, height: 32
+Child: 2, type: 6, width: 73, height: 216
+Child: 3, type: 6, width: 164, height: 315
+Child: 4, type: 6, width: 319, height: 63
+Child: 5, type: 6, width: 207, height: 73
+Child: 6, type: 6, width: 206, height: 57
+Child: 7, type: 6, width: 302, height: 117
+Child: 8, type: 6, width: 178, height: 210
+Child: 9, type: 6, width: 166, height: 206
+Child: 10, type: 6, width: 507, height: 319
+Child: 11, type: 6, width: 143, height: 110
+Child: 12, type: 6, width: 94, height: 80
+Child: 13, type: 6, width: 64, height: 49
+Child: 14, type: 6, width: 113, height: 137
+Child: 15, type: 6, width: 74, height: 96
+Child: 16, type: 6, width: 101, height: 91
+Child: 17, message: Ta Quir Priw
+Child: 18, message: Lemanto Andra
+Child: 19, message: Sindarpos
+Child: 20, message: Gandius
+Child: 21, message: Kar-Hewo
+Child: 22, message: Lemantolly
+Child: 23, message: Undri
+Child: 24, type: 6, width: 59, height: 81
+Child: 25, type: 6, width: 101, height: 106
+Child: 26, type: 6, width: 139, height: 56
+Child: 27, type: 6, width: 102, height: 65
+Child: 28, type: 6, width: 127, height: 61
+Child: 29, type: 6, width: 90, height: 100
+Child: 30, type: 6, width: 315, height: 117
+Child: 31, type: 6, width: 169, height: 292
+Child: 32, type: 6, width: 89, height: 255
+Child: 33, type: 5, width: 26, height: 23
+Child: 34, type: 0, width: 32, height: 32
+Child: 35, type: 0, width: 512, height: 334
+Child: 36, type: 0, width: 512, height: 334
+Child: 37, type: 0, width: 512, height: 334
+Child: 38, type: 0, width: 512, height: 334
+Child: 39, type: 0, width: 512, height: 334
+Child: 40, type: 0, width: 512, height: 334
+Child: 41, type: 0, width: 512, height: 334
+Child: 42, type: 0, width: 512, height: 334
+Child: 43, type: 0, width: 512, height: 334
+Child: 44, type: 0, width: 512, height: 334
+Child: 45, type: 0, width: 512, height: 334

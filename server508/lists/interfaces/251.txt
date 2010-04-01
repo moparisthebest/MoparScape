@@ -1,0 +1,7 @@
+Child: 0, type: 3, width: 517, height: 335
+Child: 1, type: 0, width: 387, height: 287
+Child: 2, type: 0, width: 358, height: 225
+Child: 3, message: Instructions for Beacon Ring
+Child: 4, type: 6, width: 55, height: 81
+Child: 5, message: Use this ring when you are ready to summon me to your aid. It is a daunting task, yet you must battle the king to allow me to remove the spell from him. When the king is almost dead, use this ring and I will teleport to your aid. Be warned - Though I am skilled with magic, I am no fighter! Should you summon me too early I will have to teleport us out of danger! When our mission is completed, I will remove the summon ability from this ring, but you may keep it for protection.                                   Zaff
+Child: 6, type: 5, width: 26, height: 23

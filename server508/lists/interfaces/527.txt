@@ -1,0 +1,223 @@
+Child: 0, type: 6, width: 338, height: 325
+Child: 1, type: 6, width: 550, height: 537
+Child: 2, type: 0, width: 512, height: 334
+Child: 3, type: 0, width: 512, height: 334
+Child: 4, message: 1st Age
+Child: 5, type: 0, width: 512, height: 334
+Child: 6, type: 5, width: 26, height: 23
+Child: 7, type: 0, width: 512, height: 334
+Child: 8, type: 6, width: 38, height: 48
+Child: 9, type: 0, width: 90, height: 48
+Child: 10, message: Arrowheads display
+Child: 11, type: 6, width: 38, height: 48
+Child: 12, type: 0, width: 92, height: 48
+Child: 13, message: Saranthium coin display
+Child: 14, type: 6, width: 38, height: 48
+Child: 15, type: 0, width: 92, height: 48
+Child: 16, message: Senntisten coin display
+Child: 17, type: 6, width: 38, height: 48
+Child: 18, type: 0, width: 102, height: 48
+Child: 19, message: Jewellery display
+Child: 20, type: 6, width: 38, height: 48
+Child: 21, type: 0, width: 92, height: 48
+Child: 22, message: Pottery display
+Child: 23, type: 6, width: 38, height: 48
+Child: 24, type: 0, width: 92, height: 60
+Child: 25, message: Ancient Saradomin symbol display
+Child: 26, type: 6, width: 38, height: 48
+Child: 27, type: 0, width: 92, height: 60
+Child: 28, message: Old Saradomin symbol display
+Child: 29, type: 6, width: 38, height: 48
+Child: 30, type: 0, width: 92, height: 50
+Child: 31, message: Zaros tablet display
+Child: 32, type: 6, width: 38, height: 48
+Child: 33, type: 0, width: 92, height: 50
+Child: 34, message: Ancient talisman display
+Child: 35, type: 6, width: 38, height: 48
+Child: 36, type: 0, width: 92, height: 50
+Child: 37, message: Vase display
+Child: 38, type: 6, width: 38, height: 48
+Child: 39, type: 0, width: 92, height: 50
+Child: 40, message: Soil layers display
+Child: 41, message: Stairs to<br>Natural History<br>exhibit
+Child: 42, message: Stairs to<br>Timeline<br>exhibit
+Child: 43, message: Dig Site cleaning area
+Child: 44, message: Level up
+Child: 45, type: 6, width: 338, height: 325
+Child: 46, type: 6, width: 33, height: 41
+Child: 47, type: 6, width: 33, height: 41
+Child: 48, type: 6, width: 33, height: 41
+Child: 49, type: 6, width: 33, height: 41
+Child: 50, type: 6, width: 33, height: 41
+Child: 51, type: 6, width: 33, height: 41
+Child: 52, type: 6, width: 33, height: 41
+Child: 53, type: 6, width: 33, height: 41
+Child: 54, type: 6, width: 33, height: 41
+Child: 55, type: 6, width: 33, height: 41
+Child: 56, type: 6, width: 33, height: 41
+Child: 57, type: 6, width: 33, height: 41
+Child: 58, type: 6, width: 33, height: 41
+Child: 59, type: 6, width: 33, height: 41
+Child: 60, type: 6, width: 33, height: 41
+Child: 61, type: 6, width: 33, height: 41
+Child: 62, type: 6, width: 33, height: 41
+Child: 63, type: 6, width: 33, height: 41
+Child: 64, type: 6, width: 35, height: 43
+Child: 65, type: 6, width: 35, height: 43
+Child: 66, type: 6, width: 35, height: 43
+Child: 67, type: 6, width: 35, height: 43
+Child: 68, type: 6, width: 35, height: 43
+Child: 69, type: 6, width: 35, height: 44
+Child: 70, type: 0, width: 92, height: 50
+Child: 71, type: 0, width: 52, height: 54
+Child: 72, message: 1st-2nd Ages
+Child: 73, type: 0, width: 92, height: 50
+Child: 74, message: End of<br>2nd Age
+Child: 75, type: 0, width: 92, height: 50
+Child: 76, message: 3rd Age<br>4000 years long
+Child: 77, type: 0, width: 92, height: 50
+Child: 78, message: 3rd Age<br>yr 3000-4000
+Child: 79, type: 0, width: 92, height: 50
+Child: 80, message: 4th Age<br>2000 yrs long
+Child: 81, type: 0, width: 92, height: 50
+Child: 82, message: 4th Age<br>yr 1-200
+Child: 83, type: 0, width: 92, height: 50
+Child: 84, message: 4th Age<br>yr 500-900
+Child: 85, type: 0, width: 92, height: 50
+Child: 86, message: 4th Age<br>yr 1-100
+Child: 87, type: 0, width: 92, height: 50
+Child: 88, message: 4th Age<br>yr 31-60
+Child: 89, type: 0, width: 92, height: 50
+Child: 90, message: 4th Age<br>yr 1100-1200
+Child: 91, type: 0, width: 92, height: 50
+Child: 92, message: 4th Age<br>yr 700-800
+Child: 93, type: 0, width: 92, height: 50
+Child: 94, message: 4th Age<br>yr 1777
+Child: 95, type: 0, width: 92, height: 50
+Child: 96, message: 4th Age<br>yr 1937
+Child: 97, type: 0, width: 92, height: 50
+Child: 98, message: 5th Age<br>currently 169 years old
+Child: 99, type: 0, width: 92, height: 50
+Child: 100, message: 5th Age<br>yr 8
+Child: 101, type: 0, width: 92, height: 50
+Child: 102, message: 5th Age<br>yr 9
+Child: 103, type: 0, width: 92, height: 50
+Child: 104, message: 5th Age<br>yr 12
+Child: 105, type: 0, width: 92, height: 50
+Child: 106, message: 5th Age<br>yr 20
+Child: 107, type: 0, width: 92, height: 50
+Child: 108, message: 5th Age<br>yr 23
+Child: 109, type: 0, width: 92, height: 50
+Child: 110, message: 5th Age<br>yr 42-62
+Child: 111, type: 0, width: 92, height: 50
+Child: 112, message: 5th Age<br>yr 47
+Child: 113, type: 0, width: 92, height: 50
+Child: 114, type: 0, width: 92, height: 50
+Child: 115, message: 5th Age<br>yr 7
+Child: 116, message: 5th Age<br>yr 62
+Child: 117, message: Stairs to<br>Dig Site<br>exhibit
+Child: 118, message: Stairs to<br>Timeline<br>exhibit
+Child: 119, message: Level up
+Child: 120, message: Level down
+Child: 121, type: 6, width: 338, height: 325
+Child: 122, type: 6, width: 35, height: 44
+Child: 123, type: 0, width: 92, height: 50
+Child: 124, message: 5th Age<br>yr 136
+Child: 125, type: 6, width: 35, height: 44
+Child: 126, type: 0, width: 92, height: 50
+Child: 127, message: 5th Age<br>yr 70
+Child: 128, type: 6, width: 35, height: 44
+Child: 129, type: 0, width: 92, height: 50
+Child: 130, message: 5th Age<br>yr 132
+Child: 131, type: 6, width: 35, height: 44
+Child: 132, type: 0, width: 92, height: 50
+Child: 133, message: 5th Age<br>yr 154
+Child: 134, type: 6, width: 35, height: 44
+Child: 135, type: 0, width: 92, height: 50
+Child: 136, message: 5th Age<br>yr 169
+Child: 137, type: 6, width: 35, height: 44
+Child: 138, type: 0, width: 92, height: 50
+Child: 139, message: 5th Age<br>yr 169
+Child: 140, type: 6, width: 35, height: 44
+Child: 141, type: 0, width: 92, height: 50
+Child: 142, message: 5th Age<br>yr 143
+Child: 143, type: 6, width: 35, height: 44
+Child: 144, type: 0, width: 92, height: 50
+Child: 145, message: 5th Age<br>yr 162-163
+Child: 146, type: 6, width: 94, height: 42
+Child: 147, type: 0, width: 78, height: 94
+Child: 148, message: 5th Age<br>yr 20
+Child: 149, type: 6, width: 1031, height: 2459
+Child: 150, type: 0, width: 78, height: 50
+Child: 151, message: 5th Age<br>yr 98
+Child: 152, message: Level down
+Child: 153, message: Stairs to<br>Timeline<br>exhibit
+Child: 154, type: 6, width: 35, height: 44
+Child: 155, type: 0, width: 92, height: 50
+Child: 156, message: 5th Age<br>yr 70
+Child: 157, type: 6, width: 395, height: 316
+Child: 158, type: 6, width: 35, height: 44
+Child: 159, type: 0, width: 92, height: 48
+Child: 160, message: Terrorbird display
+Child: 161, type: 6, width: 35, height: 44
+Child: 162, type: 0, width: 92, height: 48
+Child: 163, message: Kalphite Queen<br>display
+Child: 164, type: 6, width: 35, height: 44
+Child: 165, type: 0, width: 82, height: 48
+Child: 166, message: Mole<br>display
+Child: 167, type: 6, width: 35, height: 44
+Child: 168, type: 0, width: 82, height: 48
+Child: 169, message: Penguin<br>display
+Child: 170, type: 6, width: 35, height: 44
+Child: 171, type: 0, width: 82, height: 48
+Child: 172, message: Camel<br>display
+Child: 173, type: 6, width: 35, height: 44
+Child: 174, type: 0, width: 81, height: 48
+Child: 175, message: Leech<br>display
+Child: 176, type: 6, width: 35, height: 44
+Child: 177, type: 0, width: 82, height: 48
+Child: 178, message: Monkey<br>display
+Child: 179, type: 6, width: 35, height: 44
+Child: 180, type: 0, width: 120, height: 48
+Child: 181, message: Sea slug<br>display
+Child: 182, type: 6, width: 35, height: 44
+Child: 183, type: 0, width: 82, height: 48
+Child: 184, message: Snail<br>display
+Child: 185, type: 6, width: 35, height: 44
+Child: 186, type: 0, width: 82, height: 48
+Child: 187, message: Snake<br>display
+Child: 188, type: 6, width: 35, height: 44
+Child: 189, type: 0, width: 92, height: 48
+Child: 190, message: Lizard<br>display
+Child: 191, type: 6, width: 35, height: 44
+Child: 192, type: 0, width: 92, height: 48
+Child: 193, message: Battle tortoise<br>display
+Child: 194, type: 6, width: 35, height: 44
+Child: 195, type: 0, width: 92, height: 48
+Child: 196, message: Dragon<br>display
+Child: 197, type: 6, width: 35, height: 44
+Child: 198, type: 0, width: 92, height: 48
+Child: 199, message: Wyvern<br>display
+Child: 200, message: Level down
+Child: 201, message: Level up
+Child: 202, message: Stairs to<br>Dig Site<br>exhibit
+Child: 203, type: 0, width: 512, height: 334
+Child: 204, type: 0, width: 16391, height: 16391
+Child: 205, type: 0, width: 16391, height: 16391
+Child: 206, type: 5, width: 32, height: 334
+Child: 207, type: 5, width: 462, height: 32
+Child: 208, type: 5, width: 512, height: 32
+Child: 209, type: 5, width: 32, height: 334
+Child: 210, type: 5, width: 32, height: 32
+Child: 211, type: 5, width: 32, height: 32
+Child: 212, type: 5, width: 32, height: 32
+Child: 213, type: 5, width: 32, height: 32
+Child: 214, type: 0, width: 8192, height: 16391
+Child: 215, type: 0, width: 8188, height: 16391
+Child: 216, type: 0, width: 16391, height: 8192
+Child: 217, type: 0, width: 16391, height: 8182
+Child: 218, type: 0, width: 512, height: 334
+Child: 219, type: 5, width: 256, height: 16384
+Child: 220, type: 5, width: 256, height: 16391
+Child: 221, type: 5, width: 16391, height: 167
+Child: 222, type: 5, width: 16391, height: 166

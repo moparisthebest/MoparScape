@@ -1,0 +1,183 @@
+Child: 0, type: 6, width: 555, height: 478
+Child: 1, message: Kingdom of Miscellania
+Child: 2, type: 0, width: 93, height: 61
+Child: 3, type: 0, width: 156, height: 148
+Child: 4, type: 6, width: 59, height: 48
+Child: 5, type: 6, width: 58, height: 57
+Child: 6, type: 0, width: 153, height: 56
+Child: 7, type: 6, width: 36, height: 54
+Child: 8, type: 6, width: 28, height: 44
+Child: 9, type: 0, width: 88, height: 59
+Child: 10, type: 6, width: 35, height: 53
+Child: 11, type: 0, width: 104, height: 76
+Child: 12, type: 6, width: 40, height: 26
+Child: 13, type: 0, width: 88, height: 80
+Child: 14, type: 6, width: 24, height: 16
+Child: 15, type: 6, width: 27, height: 17
+Child: 16, type: 6, width: 57, height: 50
+Child: 17, type: 6, width: 111, height: 111
+Child: 18, message: Help
+Child: 19, type: 6, width: 48, height: 42
+Child: 20, type: 6, width: 74, height: 73
+Child: 21, type: 6, width: 34, height: 52
+Child: 22, type: 6, width: 35, height: 53
+Child: 23, type: 6, width: 41, height: 62
+Child: 24, type: 6, width: 35, height: 53
+Child: 25, type: 0, width: 104, height: 76
+Child: 26, type: 0, width: 90, height: 63
+Child: 27, type: 0, width: 151, height: 104
+Child: 28, type: 0, width: 146, height: 93
+Child: 29, type: 5, width: 26, height: 23
+Child: 30, type: 0, width: 32, height: 32
+Child: 31, type: 3, width: 15, height: 47
+Child: 32, message: Mining
+Child: 33, type: 6, width: 53, height: 42
+Child: 34, type: 3, width: 16, height: 54
+Child: 35, type: 6, width: 51, height: 49
+Child: 36, type: 6, width: 18, height: 21
+Child: 37, message: Herbs
+Child: 38, type: 6, width: 17, height: 21
+Child: 39, type: 3, width: 9, height: 4
+Child: 40, type: 3, width: 9, height: 4
+Child: 41, type: 3, width: 9, height: 4
+Child: 42, type: 3, width: 9, height: 4
+Child: 43, type: 3, width: 9, height: 4
+Child: 44, type: 3, width: 9, height: 4
+Child: 45, type: 3, width: 9, height: 4
+Child: 46, type: 3, width: 9, height: 4
+Child: 47, type: 3, width: 9, height: 4
+Child: 48, type: 3, width: 9, height: 4
+Child: 49, message: Coffers:
+Child: 50, type: 6, width: 18, height: 21
+Child: 51, type: 6, width: 17, height: 21
+Child: 52, type: 3, width: 15, height: 57
+Child: 53, type: 3, width: 9, height: 5
+Child: 54, type: 3, width: 9, height: 5
+Child: 55, type: 3, width: 9, height: 6
+Child: 56, type: 3, width: 9, height: 6
+Child: 57, type: 3, width: 9, height: 5
+Child: 58, type: 3, width: 9, height: 6
+Child: 59, type: 3, width: 9, height: 5
+Child: 60, type: 3, width: 9, height: 6
+Child: 61, type: 3, width: 9, height: 6
+Child: 62, message: Wood
+Child: 63, type: 6, width: 18, height: 21
+Child: 64, type: 6, width: 17, height: 21
+Child: 65, type: 3, width: 9, height: 5
+Child: 66, type: 6, width: 39, height: 37
+Child: 67, type: 6, width: 49, height: 60
+Child: 68, type: 3, width: 16, height: 51
+Child: 69, type: 3, width: 10, height: 5
+Child: 70, type: 3, width: 10, height: 5
+Child: 71, type: 3, width: 10, height: 5
+Child: 72, type: 3, width: 10, height: 5
+Child: 73, type: 3, width: 10, height: 5
+Child: 74, type: 3, width: 10, height: 5
+Child: 75, type: 3, width: 10, height: 5
+Child: 76, type: 3, width: 10, height: 5
+Child: 77, type: 3, width: 10, height: 5
+Child: 78, type: 3, width: 10, height: 5
+Child: 79, message: Fishing
+Child: 80, type: 6, width: 18, height: 21
+Child: 81, type: 6, width: 17, height: 21
+Child: 82, type: 3, width: 10, height: 5
+Child: 83, type: 3, width: 10, height: 5
+Child: 84, type: 3, width: 10, height: 5
+Child: 85, type: 3, width: 16, height: 75
+Child: 86, type: 3, width: 10, height: 4
+Child: 87, type: 3, width: 10, height: 5
+Child: 88, type: 3, width: 10, height: 4
+Child: 89, type: 3, width: 10, height: 4
+Child: 90, type: 3, width: 10, height: 5
+Child: 91, type: 3, width: 10, height: 4
+Child: 92, type: 3, width: 10, height: 5
+Child: 93, type: 3, width: 10, height: 5
+Child: 94, type: 3, width: 10, height: 5
+Child: 95, type: 3, width: 10, height: 5
+Child: 96, type: 3, width: 10, height: 5
+Child: 97, message: Idle
+Child: 98, type: 6, width: 38, height: 42
+Child: 99, type: 3, width: 10, height: 5
+Child: 100, type: 3, width: 10, height: 5
+Child: 101, type: 3, width: 10, height: 5
+Child: 102, type: 3, width: 10, height: 5
+Child: 103, type: 3, width: 10, height: 5
+Child: 104, type: 3, width: 10, height: 5
+Child: 105, type: 3, width: 10, height: 5
+Child: 106, type: 3, width: 10, height: 5
+Child: 107, type: 3, width: 10, height: 5
+Child: 108, type: 3, width: 10, height: 5
+Child: 109, type: 3, width: 10, height: 5
+Child: 110, message: 500,000
+Child: 111, message: Deposit
+Child: 112, message: Withdraw
+Child: 113, message: Deposit money in
+Child: 114, message: the coffers to
+Child: 115, message: pay your subjects
+Child: 116, message: and make them
+Child: 117, message: work harder.
+Child: 118, message: Use the arrows to
+Child: 119, message: adjust the amount
+Child: 120, message: of effort your
+Child: 121, message: subjects spend
+Child: 122, message: on each resource.
+Child: 123, message: Cooked
+Child: 124, type: 5, width: 15, height: 15
+Child: 125, type: 3, width: 15, height: 47
+Child: 126, type: 6, width: 18, height: 21
+Child: 127, type: 6, width: 17, height: 21
+Child: 128, type: 3, width: 9, height: 4
+Child: 129, type: 3, width: 9, height: 4
+Child: 130, type: 3, width: 9, height: 4
+Child: 131, type: 3, width: 9, height: 4
+Child: 132, type: 3, width: 9, height: 4
+Child: 133, type: 3, width: 9, height: 4
+Child: 134, type: 3, width: 9, height: 4
+Child: 135, type: 3, width: 9, height: 4
+Child: 136, type: 3, width: 9, height: 4
+Child: 137, type: 3, width: 9, height: 4
+Child: 138, type: 5, width: 15, height: 15
+Child: 139, type: 5, width: 15, height: 15
+Child: 140, type: 5, width: 15, height: 15
+Child: 141, message: Mahogany
+Child: 142, message: Teak
+Child: 143, message: Both
+Child: 144, message: Hardwood
+Child: 145, type: 3, width: 15, height: 47
+Child: 146, message: Farm
+Child: 147, type: 6, width: 18, height: 21
+Child: 148, type: 6, width: 17, height: 21
+Child: 149, type: 3, width: 9, height: 4
+Child: 150, type: 3, width: 9, height: 4
+Child: 151, type: 3, width: 9, height: 4
+Child: 152, type: 3, width: 9, height: 4
+Child: 153, type: 3, width: 9, height: 4
+Child: 154, type: 3, width: 9, height: 4
+Child: 155, type: 3, width: 9, height: 4
+Child: 156, type: 3, width: 9, height: 4
+Child: 157, type: 3, width: 9, height: 4
+Child: 158, type: 3, width: 9, height: 4
+Child: 159, type: 5, width: 15, height: 15
+Child: 160, message: Herbs
+Child: 161, type: 5, width: 15, height: 15
+Child: 162, message: Flax
+Child: 163, type: 0, width: 512, height: 334
+Child: 164, type: 0, width: 16391, height: 16391
+Child: 165, type: 0, width: 16391, height: 16391
+Child: 166, type: 5, width: 32, height: 334
+Child: 167, type: 5, width: 462, height: 32
+Child: 168, type: 5, width: 512, height: 32
+Child: 169, type: 5, width: 32, height: 334
+Child: 170, type: 5, width: 32, height: 32
+Child: 171, type: 5, width: 32, height: 32
+Child: 172, type: 5, width: 32, height: 32
+Child: 173, type: 5, width: 32, height: 32
+Child: 174, type: 0, width: 8192, height: 16391
+Child: 175, type: 0, width: 8188, height: 16391
+Child: 176, type: 0, width: 16391, height: 8192
+Child: 177, type: 0, width: 16391, height: 8182
+Child: 178, type: 0, width: 512, height: 334
+Child: 179, type: 5, width: 256, height: 16384
+Child: 180, type: 5, width: 256, height: 16391
+Child: 181, type: 5, width: 16391, height: 167
+Child: 182, type: 5, width: 16391, height: 166

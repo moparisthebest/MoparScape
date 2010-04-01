@@ -1,0 +1,60 @@
+Child: 0, type: 0, width: 512, height: 334
+Child: 1, type: 6, width: 521, height: 346
+Child: 2, type: 3, width: 508, height: 172
+Child: 3, type: 3, width: 499, height: 164
+Child: 4, type: 0, width: 488, height: 36
+Child: 5, type: 6, width: 83, height: 80
+Child: 6, type: 6, width: 83, height: 80
+Child: 7, type: 6, width: 83, height: 80
+Child: 8, type: 6, width: 83, height: 80
+Child: 9, type: 6, width: 83, height: 80
+Child: 10, type: 6, width: 83, height: 80
+Child: 11, message: A
+Child: 12, message: A
+Child: 13, message: A
+Child: 14, message: A
+Child: 15, message: A
+Child: 16, message: A
+Child: 17, type: 6, width: 361, height: 93
+Child: 18, type: 5, width: 31, height: 24
+Child: 19, type: 5, width: 31, height: 24
+Child: 20, type: 5, width: 32, height: 25
+Child: 21, type: 5, width: 32, height: 25
+Child: 22, type: 5, width: 32, height: 25
+Child: 23, type: 5, width: 32, height: 25
+Child: 24, type: 5, width: 32, height: 25
+Child: 25, type: 5, width: 32, height: 25
+Child: 26, type: 5, width: 32, height: 25
+Child: 27, type: 5, width: 32, height: 25
+Child: 28, type: 5, width: 32, height: 25
+Child: 29, type: 5, width: 32, height: 25
+Child: 30, type: 5, width: 26, height: 23
+Child: 31, message: Name Your Cat
+Child: 32, type: 3, width: 128, height: 32
+Child: 33, message: E N T E R
+Child: 34, type: 6, width: 80, height: 86
+Child: 35, type: 6, width: 70, height: 87
+Child: 36, type: 6, width: 8, height: 8
+Child: 37, type: 6, width: 6, height: 6
+Child: 38, type: 6, width: 8, height: 7
+Child: 39, type: 6, width: 6, height: 6
+Child: 40, type: 0, width: 32, height: 32
+Child: 41, type: 0, width: 16391, height: 16391
+Child: 42, type: 0, width: 16391, height: 16391
+Child: 43, type: 5, width: 32, height: 334
+Child: 44, type: 5, width: 462, height: 32
+Child: 45, type: 5, width: 512, height: 32
+Child: 46, type: 5, width: 32, height: 334
+Child: 47, type: 5, width: 32, height: 32
+Child: 48, type: 5, width: 32, height: 32
+Child: 49, type: 5, width: 32, height: 32
+Child: 50, type: 5, width: 32, height: 32
+Child: 51, type: 0, width: 8192, height: 16391
+Child: 52, type: 0, width: 8188, height: 16391
+Child: 53, type: 0, width: 16391, height: 8192
+Child: 54, type: 0, width: 16391, height: 8182
+Child: 55, type: 0, width: 512, height: 334
+Child: 56, type: 5, width: 256, height: 16384
+Child: 57, type: 5, width: 256, height: 16391
+Child: 58, type: 5, width: 16391, height: 167
+Child: 59, type: 5, width: 16391, height: 166

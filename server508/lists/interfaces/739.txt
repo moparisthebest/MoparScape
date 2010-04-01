@@ -1,0 +1,36 @@
+Child: 0, type: 0, width: 512, height: 334
+Child: 1, type: 6, width: 319, height: 302
+Child: 2, message: TzHaar Numbers
+Child: 3, type: 5, width: 26, height: 23
+Child: 4, message: a
+Child: 5, message: = 1 
+Child: 6, message: = 13
+Child: 7, message: = 14
+Child: 8, message: = 15
+Child: 9, message: etc.
+Child: 10, message: = 2
+Child: 11, message: = 3
+Child: 12, message: = 4
+Child: 13, message: = 5
+Child: 14, message: = 6
+Child: 15, message: = 7
+Child: 16, message: = 8
+Child: 17, message: = 1 
+Child: 18, message: = 9
+Child: 19, message: = 10
+Child: 20, message: = 11
+Child: 21, message: = 12
+Child: 22, message: b
+Child: 23, message: c
+Child: 24, message: d
+Child: 25, message: e
+Child: 26, message: f
+Child: 27, message: g
+Child: 28, message: h
+Child: 29, message: i
+Child: 30, message: j
+Child: 31, message: k
+Child: 32, message: l
+Child: 33, message: aa
+Child: 34, message: ab
+Child: 35, message: ac

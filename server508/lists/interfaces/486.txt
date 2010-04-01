@@ -1,0 +1,9 @@
+Child: 0, type: 0, width: 512, height: 334
+Child: 1, type: 5, width: 17, height: 13
+Child: 2, message: Wave 1
+Child: 3, type: 5, width: 17, height: 13
+Child: 4, message: Red eggs
+Child: 5, type: 5, width: 17, height: 13
+Child: 6, message: Style 1
+Child: 7, type: 5, width: 17, height: 13
+Child: 8, message: Attacker

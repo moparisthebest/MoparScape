@@ -1,0 +1,23 @@
+Child: 0, type: 3, width: 488, height: 305
+Child: 1, type: 5, width: 485, height: 300
+Child: 2, type: 5, width: 32, height: 241
+Child: 3, type: 5, width: 32, height: 32
+Child: 4, type: 5, width: 32, height: 243
+Child: 5, type: 5, width: 424, height: 34
+Child: 6, type: 5, width: 423, height: 32
+Child: 7, type: 5, width: 16, height: 16
+Child: 8, type: 5, width: 32, height: 32
+Child: 9, type: 5, width: 32, height: 32
+Child: 10, type: 5, width: 32, height: 32
+Child: 11, type: 5, width: 465, height: 32
+Child: 12, type: 5, width: 32, height: 32
+Child: 13, type: 5, width: 32, height: 32
+Child: 14, message: Farmer Blinkin's Vinesweeper Instructions
+Child: 15, message: 1. Speak to either Mrs. Winkin in the barn or Farmer Blinkin outside to buy some flags.
+Child: 16, message: 2. When you have some flags, head out into the farmyard area over any of the 4 stiles.
+Child: 17, message: 3. Use your spade to dig up any of the holes around the farmyard. This will uncover what was in that hole. The aim is to place your flags in holes where you believe seeds are planted.
+Child: 18, message: 4. If the hole has nothing in it, then it will uncover a radius of 2 holes in all directions
+Child: 19, message: 5. If you uncover a number from 1-8, this means that there are that many seeds planted in the 8 holes surrounding the one that you have dug up.
+Child: 20, message: 6. When you have a square that you are certain contains a seed, either right-click and select the 'Flag' option or use a flag on the hole.
+Child: 21, message: 7. When a farmer sees a flag, he will come over to check beneath it. He will collect the flag and give points out if there was a seed there. If you have successfully found a seed, you will be able to get the flag back for free from either Mrs. Winkin or Farmer Blinkin.
+Child: 22, message: 8. Rabbits roam the area and will attempt to eat seeds where flags are planted or where they have been dug up. Use the ogleroots that you find on them to make them disappear.

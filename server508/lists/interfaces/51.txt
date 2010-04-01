@@ -1,0 +1,34 @@
+Child: 0, type: 3, width: 512, height: 334
+Child: 1, type: 6, width: 32, height: 32
+Child: 2, type: 6, width: 32, height: 32
+Child: 3, type: 6, width: 32, height: 32
+Child: 4, type: 6, width: 32, height: 32
+Child: 5, type: 6, width: 32, height: 32
+Child: 6, type: 6, width: 32, height: 32
+Child: 7, type: 6, width: 32, height: 32
+Child: 8, type: 6, width: 32, height: 32
+Child: 9, type: 6, width: 32, height: 32
+Child: 10, type: 6, width: 32, height: 32
+Child: 11, message: Canifis
+Child: 12, message: Mort Myre<br>Swamp
+Child: 13, message: Hollows
+Child: 14, message: Mort'ton
+Child: 15, message: Graveyard
+Child: 16, message: Temple
+Child: 17, type: 6, width: 32, height: 32
+Child: 18, type: 6, width: 32, height: 32
+Child: 19, type: 6, width: 131, height: 45
+Child: 20, message: Route 1
+Child: 21, message: Route 1
+Child: 22, type: 6, width: 128, height: 45
+Child: 23, message: Route 2
+Child: 24, message: Route 2
+Child: 25, type: 6, width: 32, height: 32
+Child: 26, message: Route 1:<br><br>Take the route through<br>Canifis.<br><br>Shorter but potentially<br>more dangerous.
+Child: 27, message: Route 2:<br><br>Take the route through<br>Mort Myre Swamp.<br><br>Longer but less likely<br>to be attacked.
+Child: 28, type: 0, width: 487, height: 319
+Child: 29, type: 0, width: 487, height: 319
+Child: 30, type: 6, width: 128, height: 45
+Child: 31, message: Burgh de<br>Rott
+Child: 32, message: Choose your path
+Child: 33, type: 5, width: 26, height: 23

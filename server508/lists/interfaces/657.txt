@@ -1,0 +1,29 @@
+Child: 0, type: 3, width: 373, height: 243
+Child: 1, type: 5, width: 361, height: 236
+Child: 2, type: 5, width: 32, height: 202
+Child: 3, type: 5, width: 32, height: 32
+Child: 4, type: 5, width: 32, height: 205
+Child: 5, type: 5, width: 349, height: 34
+Child: 6, type: 5, width: 341, height: 32
+Child: 7, type: 5, width: 32, height: 32
+Child: 8, type: 5, width: 32, height: 32
+Child: 9, type: 5, width: 32, height: 32
+Child: 10, type: 5, width: 358, height: 32
+Child: 11, type: 5, width: 32, height: 32
+Child: 12, type: 5, width: 32, height: 32
+Child: 13, type: 5, width: 16, height: 16
+Child: 14, type: 6, width: 22, height: 26
+Child: 15, type: 6, width: 22, height: 26
+Child: 16, type: 6, width: 22, height: 26
+Child: 17, type: 6, width: 22, height: 26
+Child: 18, type: 5, width: 90, height: 56
+Child: 19, type: 5, width: 90, height: 56
+Child: 20, type: 5, width: 19, height: 19
+Child: 21, type: 5, width: 19, height: 19
+Child: 22, message: WARNING!
+Child: 23, message: You are about to enter the Bounty Hunter minigame.<br><br>This is not a safe area - it involves player versus player combat and, if you die, you will lose all the items you are carrying!<br><br>If you kill players that are not your target, you will not be able to use the Protect Item prayer. Also you cannot drop items on the floor worth over 1000 gp.
+Child: 24, message: Enter<br>Crater
+Child: 25, message: Don't go
+Child: 26, message: Don't ask me this again
+Child: 27, type: 5, width: 19, height: 19
+Child: 28, type: 0, width: 255, height: 20

@@ -1,0 +1,36 @@
+Child: 0, message: A
+Child: 1, message: B
+Child: 2, message: C
+Child: 3, message: D
+Child: 4, message: E
+Child: 5, message: F
+Child: 6, message: G
+Child: 7, message: H
+Child: 8, message: I
+Child: 9, message: J
+Child: 10, message: K
+Child: 11, message: L
+Child: 12, message: M
+Child: 13, message: N
+Child: 14, message: O
+Child: 15, message: P
+Child: 16, message: Q
+Child: 17, message: R
+Child: 18, message: S
+Child: 19, message: T
+Child: 20, message: U
+Child: 21, message: V
+Child: 22, message: W
+Child: 23, message: X
+Child: 24, message: Y
+Child: 25, message: Z
+Child: 26, message: Ä
+Child: 27, message: Ü
+Child: 28, message: Ö
+Child: 29, message: ß
+Child: 30, type: 5, width: 72, height: 36
+Child: 31, message: GUESS
+Child: 32, message: 
+Child: 33, message: __________
+Child: 34, message: Enter up to five letters in any order then click 'guess' again.
+Child: 35, type: 0, width: 406, height: 24

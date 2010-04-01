@@ -1,0 +1,30 @@
+Child: 0, type: 3, width: 21, height: 10
+Child: 1, type: 3, width: 21, height: 10
+Child: 2, type: 3, width: 21, height: 10
+Child: 3, type: 3, width: 21, height: 10
+Child: 4, type: 3, width: 21, height: 10
+Child: 5, type: 3, width: 21, height: 10
+Child: 6, type: 3, width: 21, height: 10
+Child: 7, type: 3, width: 21, height: 10
+Child: 8, type: 3, width: 21, height: 10
+Child: 9, type: 3, width: 21, height: 10
+Child: 10, type: 3, width: 21, height: 10
+Child: 11, type: 3, width: 21, height: 10
+Child: 12, type: 3, width: 21, height: 10
+Child: 13, type: 3, width: 21, height: 10
+Child: 14, type: 3, width: 21, height: 10
+Child: 15, type: 3, width: 21, height: 10
+Child: 16, type: 3, width: 21, height: 10
+Child: 17, type: 3, width: 21, height: 10
+Child: 18, type: 3, width: 21, height: 10
+Child: 19, type: 3, width: 21, height: 10
+Child: 20, type: 0, width: 475, height: 62
+Child: 21, message: Water:
+Child: 22, message: Net:
+Child: 23, message: Catch:
+Child: 24, message: Time left:
+Child: 25, type: 3, width: 421, height: 10
+Child: 26, message: Okay
+Child: 27, message: Ripped!
+Child: 28, message: Nothing
+Child: 29, message: 10 mins

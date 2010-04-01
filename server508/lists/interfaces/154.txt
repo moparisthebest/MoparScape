@@ -1,0 +1,35 @@
+Child: 0, type: 5, width: 482, height: 299
+Child: 1, type: 5, width: 33, height: 294
+Child: 2, type: 5, width: 31, height: 293
+Child: 3, type: 5, width: 479, height: 44
+Child: 4, type: 5, width: 481, height: 32
+Child: 5, type: 5, width: 32, height: 32
+Child: 6, type: 5, width: 32, height: 32
+Child: 7, type: 5, width: 32, height: 32
+Child: 8, type: 5, width: 480, height: 31
+Child: 9, type: 5, width: 32, height: 32
+Child: 10, type: 5, width: 32, height: 32
+Child: 11, type: 5, width: 32, height: 32
+Child: 12, type: 5, width: 16, height: 16
+Child: 13, message: What would you like to make?
+Child: 14, type: 6, width: 64, height: 96
+Child: 15, message: Armour
+Child: 16, type: 6, width: 64, height: 96
+Child: 17, message: Gloves
+Child: 18, type: 6, width: 64, height: 96
+Child: 19, message: Boots
+Child: 20, type: 6, width: 64, height: 96
+Child: 21, message: Vambraces
+Child: 22, type: 6, width: 64, height: 96
+Child: 23, message: Chaps
+Child: 24, type: 6, width: 64, height: 96
+Child: 25, message: Coif
+Child: 26, type: 6, width: 64, height: 96
+Child: 27, message: Cowl
+Child: 28, type: 0, width: 90, height: 100
+Child: 29, type: 0, width: 90, height: 100
+Child: 30, type: 0, width: 90, height: 100
+Child: 31, type: 0, width: 90, height: 100
+Child: 32, type: 0, width: 90, height: 100
+Child: 33, type: 0, width: 90, height: 100
+Child: 34, type: 0, width: 90, height: 100

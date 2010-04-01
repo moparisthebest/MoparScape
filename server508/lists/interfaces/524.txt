@@ -1,0 +1,3 @@
+Child: 0, type: 3, width: 465, height: 68
+Child: 1, message: Text
+Child: 2, message: Text

@@ -1,0 +1,14 @@
+Child: 0, type: 0, width: 170, height: 76
+Child: 1, type: 6, width: 38, height: 26
+Child: 2, type: 6, width: 28, height: 33
+Child: 3, type: 6, width: 36, height: 23
+Child: 4, type: 6, width: 39, height: 26
+Child: 5, message: 4
+Child: 6, message: 3
+Child: 7, message: 2
+Child: 8, message: 1
+Child: 9, type: 6, width: 159, height: 65
+Child: 10, message: Graveyard
+Child: 11, message: Pizazz Points:
+Child: 12, message: 9999
+Child: 13, type: 0, width: 69, height: 156

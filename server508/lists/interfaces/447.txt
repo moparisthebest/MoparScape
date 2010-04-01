@@ -1,0 +1,6 @@
+Child: 0, message: Message of the Week
+Child: 1, message: 
+Child: 2, message: 
+Child: 3, type: 6, width: 141, height: 149
+Child: 4, type: 6, width: 114, height: 161
+Child: 5, type: 0, width: 765, height: 503

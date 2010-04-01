@@ -1,0 +1,69 @@
+Child: 0, type: 3, width: 332, height: 303
+Child: 1, type: 5, width: 319, height: 302
+Child: 2, type: 5, width: 32, height: 257
+Child: 3, type: 5, width: 32, height: 32
+Child: 4, type: 5, width: 23, height: 257
+Child: 5, type: 5, width: 270, height: 26
+Child: 6, type: 5, width: 269, height: 24
+Child: 7, type: 5, width: 32, height: 32
+Child: 8, type: 5, width: 32, height: 32
+Child: 9, type: 5, width: 32, height: 32
+Child: 10, type: 5, width: 319, height: 32
+Child: 11, message: Upcoming Tournament Rules: Registrar #
+Child: 12, type: 5, width: 16, height: 16
+Child: 13, type: 0, width: 148, height: 16
+Child: 14, type: 0, width: 148, height: 16
+Child: 15, type: 0, width: 148, height: 16
+Child: 16, type: 0, width: 148, height: 16
+Child: 17, type: 0, width: 148, height: 16
+Child: 18, type: 0, width: 148, height: 16
+Child: 19, type: 0, width: 148, height: 16
+Child: 20, type: 0, width: 148, height: 16
+Child: 21, type: 0, width: 148, height: 16
+Child: 22, type: 0, width: 148, height: 16
+Child: 23, type: 0, width: 148, height: 16
+Child: 24, type: 0, width: 148, height: 16
+Child: 25, type: 0, width: 148, height: 16
+Child: 26, type: 0, width: 148, height: 16
+Child: 27, type: 0, width: 148, height: 16
+Child: 28, type: 0, width: 148, height: 16
+Child: 29, type: 0, width: 148, height: 16
+Child: 30, type: 0, width: 148, height: 16
+Child: 31, type: 0, width: 148, height: 16
+Child: 32, type: 0, width: 148, height: 16
+Child: 33, type: 0, width: 148, height: 16
+Child: 34, type: 0, width: 148, height: 16
+Child: 35, type: 0, width: 148, height: 16
+Child: 36, type: 0, width: 148, height: 16
+Child: 37, type: 0, width: 148, height: 16
+Child: 38, type: 0, width: 148, height: 16
+Child: 39, type: 0, width: 148, height: 16
+Child: 40, type: 0, width: 148, height: 16
+Child: 41, message: Tournament Value:
+Child: 42, message: Rank Required:
+Child: 43, message: Entry Fee:
+Child: 44, message: Potions:
+Child: 45, message: Food:
+Child: 46, message: Prayer:
+Child: 47, message: Special Attacks:
+Child: 48, message: Obstacles:
+Child: 49, message: Ranged:
+Child: 50, message: Melee:
+Child: 51, message: Magic:
+Child: 52, message: Heal Between Rounds:
+Child: 53, message: Weapon Slots Only:
+Child: 54, message: Summoning:
+Child: 55, message: 0
+Child: 56, message: rank
+Child: 57, message: fee
+Child: 58, message: fee
+Child: 59, message: fee
+Child: 60, message: fee
+Child: 61, message: spec
+Child: 62, message: obstacles
+Child: 63, message: ranged
+Child: 64, message: melee
+Child: 65, message: magic
+Child: 66, message: heal
+Child: 67, message: weapon
+Child: 68, message: summon

@@ -1,0 +1,28 @@
+Child: 0, type: 0, width: 512, height: 334
+Child: 1, type: 6, width: 557, height: 449
+Child: 2, type: 6, width: 132, height: 156
+Child: 3, type: 6, width: 133, height: 159
+Child: 4, message: Time
+Child: 5, message: 4:17
+Child: 6, message: 300
+Child: 7, message: XP score
+Child: 8, type: 5, width: 26, height: 23
+Child: 9, type: 0, width: 16391, height: 16391
+Child: 10, type: 0, width: 16391, height: 16391
+Child: 11, type: 5, width: 32, height: 334
+Child: 12, type: 5, width: 462, height: 32
+Child: 13, type: 5, width: 512, height: 32
+Child: 14, type: 5, width: 32, height: 334
+Child: 15, type: 5, width: 32, height: 32
+Child: 16, type: 5, width: 32, height: 32
+Child: 17, type: 5, width: 32, height: 32
+Child: 18, type: 5, width: 32, height: 32
+Child: 19, type: 0, width: 8192, height: 16391
+Child: 20, type: 0, width: 8188, height: 16391
+Child: 21, type: 0, width: 16391, height: 8192
+Child: 22, type: 0, width: 16391, height: 8182
+Child: 23, type: 0, width: 512, height: 334
+Child: 24, type: 5, width: 256, height: 16384
+Child: 25, type: 5, width: 256, height: 16391
+Child: 26, type: 5, width: 16391, height: 167
+Child: 27, type: 5, width: 16391, height: 166

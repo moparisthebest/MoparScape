@@ -1,0 +1,16 @@
+Child: 0, type: 0, width: 512, height: 334
+Child: 1, type: 6, width: 481, height: 327
+Child: 2, type: 6, width: 41, height: 40
+Child: 3, message: Blast Furnace Plan
+Child: 4, message: Stove
+Child: 5, message: Air Pump
+Child: 6, message: Temp Gauge
+Child: 7, message: Furnace
+Child: 8, message: Dispenser
+Child: 9, message: Conveyor<br>Belt
+Child: 10, message: Cogs
+Child: 11, message: Pipes
+Child: 12, message: Coke
+Child: 13, type: 6, width: 41, height: 40
+Child: 14, type: 6, width: 41, height: 40
+Child: 15, type: 6, width: 41, height: 40

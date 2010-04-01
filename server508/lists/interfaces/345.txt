@@ -1,0 +1,12 @@
+Child: 0, type: 6, width: 32, height: 32
+Child: 1, message: The quick brown fox jumped over the 
+Child: 2, message: The quick brown fox jumped over the 
+Child: 3, message: The quick brown fox jumped over the 
+Child: 4, message: The quick brown fox jumped over the 
+Child: 5, message: The quick brown fox jumped over the 
+Child: 6, message: The quick brown fox jumped over the 
+Child: 7, message: The quick brown fox jumped over the 
+Child: 8, message: The quick brown fox jumped over the 
+Child: 9, type: 5, width: 25, height: 25
+Child: 10, type: 5, width: 26, height: 23
+Child: 11, type: 0, width: 32, height: 32

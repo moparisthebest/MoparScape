@@ -1,0 +1,25 @@
+Child: 0, type: 0, width: 35, height: 14
+Child: 1, type: 3, width: 41, height: 41
+Child: 2, type: 0, width: 40, height: 14
+Child: 3, type: 3, width: 41, height: 41
+Child: 4, type: 0, width: 41, height: 14
+Child: 5, type: 3, width: 41, height: 41
+Child: 6, type: 0, width: 41, height: 14
+Child: 7, type: 3, width: 41, height: 41
+Child: 8, type: 0, width: 41, height: 14
+Child: 9, type: 3, width: 41, height: 41
+Child: 10, type: 0, width: 41, height: 14
+Child: 11, type: 3, width: 41, height: 41
+Child: 12, type: 0, width: 40, height: 14
+Child: 13, type: 3, width: 41, height: 41
+Child: 14, type: 0, width: 41, height: 14
+Child: 15, type: 3, width: 41, height: 41
+Child: 16, type: 0, width: 40, height: 14
+Child: 17, type: 3, width: 41, height: 41
+Child: 18, type: 0, width: 36, height: 14
+Child: 19, type: 3, width: 41, height: 41
+Child: 20, type: 3, width: 11, height: 14
+Child: 21, type: 3, width: 409, height: 11
+Child: 22, type: 3, width: 10, height: 14
+Child: 23, type: 3, width: 409, height: 9
+Child: 24, message: Cyrisus's Courage

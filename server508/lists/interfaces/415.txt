@@ -1,0 +1,68 @@
+Child: 0, type: 0, width: 76, height: 113
+Child: 1, type: 6, width: 39, height: 37
+Child: 2, type: 6, width: 38, height: 28
+Child: 3, type: 6, width: 47, height: 23
+Child: 4, message: 0
+Child: 5, message: 0
+Child: 6, message: 0
+Child: 7, type: 0, width: 33, height: 35
+Child: 8, type: 6, width: 36, height: 15
+Child: 9, type: 0, width: 36, height: 28
+Child: 10, type: 6, width: 36, height: 15
+Child: 11, type: 0, width: 39, height: 31
+Child: 12, type: 6, width: 36, height: 15
+Child: 13, type: 0, width: 498, height: 52
+Child: 14, type: 6, width: 32, height: 26
+Child: 15, type: 6, width: 30, height: 24
+Child: 16, type: 6, width: 25, height: 30
+Child: 17, type: 6, width: 41, height: 24
+Child: 18, type: 6, width: 35, height: 25
+Child: 19, type: 6, width: 29, height: 29
+Child: 20, type: 6, width: 29, height: 29
+Child: 21, type: 6, width: 29, height: 29
+Child: 22, type: 0, width: 56, height: 56
+Child: 23, type: 6, width: 32, height: 26
+Child: 24, type: 0, width: 53, height: 50
+Child: 25, type: 6, width: 30, height: 24
+Child: 26, type: 0, width: 54, height: 50
+Child: 27, type: 6, width: 41, height: 24
+Child: 28, type: 0, width: 52, height: 48
+Child: 29, type: 6, width: 35, height: 25
+Child: 30, type: 0, width: 52, height: 54
+Child: 31, type: 6, width: 29, height: 29
+Child: 32, type: 0, width: 63, height: 55
+Child: 33, type: 6, width: 29, height: 29
+Child: 34, type: 0, width: 57, height: 55
+Child: 35, type: 6, width: 29, height: 29
+Child: 36, type: 0, width: 54, height: 53
+Child: 37, type: 6, width: 25, height: 30
+Child: 38, type: 0, width: 52, height: 50
+Child: 39, type: 6, width: 41, height: 24
+Child: 40, type: 0, width: 54, height: 50
+Child: 41, type: 6, width: 41, height: 24
+Child: 42, type: 0, width: 184, height: 73
+Child: 43, type: 6, width: 175, height: 49
+Child: 44, message: 0
+Child: 45, message: 0
+Child: 46, type: 0, width: 69, height: 68
+Child: 47, type: 6, width: 23, height: 48
+Child: 48, type: 0, width: 69, height: 68
+Child: 49, type: 6, width: 23, height: 48
+Child: 50, type: 0, width: 69, height: 68
+Child: 51, type: 6, width: 23, height: 48
+Child: 52, type: 0, width: 69, height: 68
+Child: 53, type: 6, width: 23, height: 48
+Child: 54, type: 0, width: 69, height: 68
+Child: 55, type: 6, width: 23, height: 48
+Child: 56, type: 0, width: 69, height: 68
+Child: 57, type: 6, width: 29, height: 61
+Child: 58, message: 0
+Child: 59, message: 0
+Child: 60, message: 0
+Child: 61, message: 0
+Child: 62, message: 0
+Child: 63, message: 0
+Child: 64, message: 0
+Child: 65, message: 0
+Child: 66, message: Current Score
+Child: 67, message: Time Left : 20 Mins

@@ -1,0 +1,108 @@
+Child: 0, type: 0, width: 512, height: 334
+Child: 1, type: 5, width: 484, height: 315
+Child: 2, type: 5, width: 30, height: 309
+Child: 3, type: 5, width: 32, height: 309
+Child: 4, type: 5, width: 483, height: 29
+Child: 5, type: 5, width: 32, height: 32
+Child: 6, type: 5, width: 32, height: 32
+Child: 7, type: 5, width: 32, height: 32
+Child: 8, type: 5, width: 32, height: 32
+Child: 9, type: 5, width: 478, height: 31
+Child: 10, type: 5, width: 32, height: 32
+Child: 11, type: 5, width: 32, height: 32
+Child: 12, type: 5, width: 16, height: 16
+Child: 13, message: Enchant Crossbow Bolt
+Child: 14, type: 0, width: 40, height: 40
+Child: 15, message: Magic 4
+Child: 16, message: Opal
+Child: 17, type: 6, width: 40, height: 43
+Child: 18, type: 0, width: 40, height: 40
+Child: 19, message: Jade
+Child: 20, message: Magic 14
+Child: 21, type: 6, width: 40, height: 43
+Child: 22, type: 0, width: 40, height: 40
+Child: 23, message: Pearl
+Child: 24, message: Magic 24
+Child: 25, type: 6, width: 40, height: 43
+Child: 26, type: 0, width: 40, height: 40
+Child: 27, message: Magic 29
+Child: 28, type: 6, width: 40, height: 43
+Child: 29, type: 0, width: 40, height: 40
+Child: 30, message: Magic 7
+Child: 31, type: 6, width: 40, height: 43
+Child: 32, type: 0, width: 40, height: 40
+Child: 33, message: Magic 27
+Child: 34, type: 6, width: 40, height: 43
+Child: 35, type: 0, width: 40, height: 40
+Child: 36, message: Magic 49
+Child: 37, type: 6, width: 40, height: 43
+Child: 38, type: 0, width: 40, height: 40
+Child: 39, message: Magic 57
+Child: 40, type: 6, width: 40, height: 43
+Child: 41, type: 0, width: 40, height: 40
+Child: 42, message: Magic 68
+Child: 43, type: 6, width: 40, height: 43
+Child: 44, type: 0, width: 40, height: 40
+Child: 45, message: Magic 87
+Child: 46, type: 6, width: 40, height: 43
+Child: 47, message: %1/1
+Child: 48, type: 6, width: 22, height: 21
+Child: 49, message: %1/1
+Child: 50, type: 6, width: 22, height: 21
+Child: 51, message: %1/1
+Child: 52, type: 6, width: 22, height: 21
+Child: 53, message: %1/1
+Child: 54, type: 6, width: 22, height: 21
+Child: 55, message: %1/1
+Child: 56, type: 6, width: 22, height: 21
+Child: 57, message: %1/1
+Child: 58, type: 6, width: 22, height: 21
+Child: 59, message: %1/1
+Child: 60, type: 6, width: 22, height: 21
+Child: 61, message: %1/1
+Child: 62, type: 6, width: 22, height: 21
+Child: 63, message: %1/1
+Child: 64, type: 6, width: 20, height: 19
+Child: 65, message: %1/1
+Child: 66, type: 6, width: 22, height: 21
+Child: 67, type: 6, width: 22, height: 21
+Child: 68, message: %1/2
+Child: 69, type: 6, width: 22, height: 21
+Child: 70, message: %1/15
+Child: 71, type: 6, width: 22, height: 21
+Child: 72, message: %1/2
+Child: 73, type: 6, width: 22, height: 21
+Child: 74, message: %1/2
+Child: 75, type: 6, width: 22, height: 21
+Child: 76, message: %1/2
+Child: 77, type: 6, width: 22, height: 21
+Child: 78, message: %1/1
+Child: 79, type: 6, width: 22, height: 21
+Child: 80, message: %1/1
+Child: 81, type: 6, width: 22, height: 21
+Child: 82, message: %1/1
+Child: 83, type: 6, width: 22, height: 21
+Child: 84, message: %1/5
+Child: 85, type: 6, width: 22, height: 21
+Child: 86, message: %1/3
+Child: 87, type: 6, width: 22, height: 21
+Child: 88, message: %1/2
+Child: 89, type: 6, width: 22, height: 22
+Child: 90, message: %1/1
+Child: 91, type: 6, width: 22, height: 21
+Child: 92, message: %1/1
+Child: 93, type: 6, width: 22, height: 21
+Child: 94, message: %1/1
+Child: 95, message: Click on the bolts to enchant a maximum of 10.
+Child: 96, message: Red Topaz
+Child: 97, message: Sapphire
+Child: 98, message: Emerald
+Child: 99, message: Ruby
+Child: 100, message: Diamond
+Child: 101, message: Dragonstone
+Child: 102, message: Onyx
+Child: 103, type: 6, width: 22, height: 21
+Child: 104, message: %1/10
+Child: 105, type: 6, width: 22, height: 21
+Child: 106, message: %1/20
+Child: 107, type: 5, width: 422, height: 32

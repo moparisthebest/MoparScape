@@ -1,0 +1,275 @@
+Child: 0, type: 3, width: 508, height: 305
+Child: 1, type: 5, width: 498, height: 300
+Child: 2, type: 3, width: 498, height: 292
+Child: 3, type: 5, width: 32, height: 241
+Child: 4, type: 5, width: 32, height: 32
+Child: 5, type: 5, width: 32, height: 243
+Child: 6, type: 5, width: 448, height: 34
+Child: 7, type: 5, width: 448, height: 32
+Child: 8, type: 5, width: 32, height: 32
+Child: 9, type: 5, width: 32, height: 32
+Child: 10, type: 5, width: 32, height: 32
+Child: 11, type: 5, width: 490, height: 32
+Child: 12, type: 5, width: 32, height: 32
+Child: 13, type: 5, width: 32, height: 32
+Child: 14, type: 5, width: 16, height: 16
+Child: 15, message: Smithing
+Child: 16, type: 0, width: 484, height: 264
+Child: 17, type: 0, width: 16, height: 264
+Child: 18, type: 0, width: 109, height: 32
+Child: 19, type: 5, width: 36, height: 32
+Child: 20, message: Dagger
+Child: 21, message: 1 Bar
+Child: 22, message: 
+Child: 23, message: 
+Child: 24, message: 
+Child: 25, message: 
+Child: 26, type: 0, width: 109, height: 32
+Child: 27, type: 5, width: 36, height: 32
+Child: 28, message: Axe
+Child: 29, message: 1 Bar
+Child: 30, message: 
+Child: 31, message: 
+Child: 32, message: 
+Child: 33, message: 
+Child: 34, type: 0, width: 109, height: 32
+Child: 35, type: 5, width: 36, height: 32
+Child: 36, message: Mace
+Child: 37, message: 1 Bar
+Child: 38, message: 
+Child: 39, message: 
+Child: 40, message: 
+Child: 41, message: 
+Child: 42, type: 0, width: 109, height: 32
+Child: 43, type: 5, width: 36, height: 32
+Child: 44, message: Medium helm
+Child: 45, message: 1 Bar
+Child: 46, message: 
+Child: 47, message: 
+Child: 48, message: 
+Child: 49, message: 
+Child: 50, type: 0, width: 114, height: 32
+Child: 51, type: 5, width: 36, height: 32
+Child: 52, message: Crossbow bolts
+Child: 53, message: 1 Bar
+Child: 54, message: 
+Child: 55, message: 
+Child: 56, message: 
+Child: 57, message: 
+Child: 58, type: 0, width: 109, height: 32
+Child: 59, type: 5, width: 36, height: 32
+Child: 60, message: Sword
+Child: 61, message: 1 Bar
+Child: 62, message: 
+Child: 63, message: 
+Child: 64, message: 
+Child: 65, message: 
+Child: 66, type: 0, width: 124, height: 32
+Child: 67, type: 5, width: 36, height: 32
+Child: 68, message: Dart tips
+Child: 69, message: 1 Bar
+Child: 70, message: 
+Child: 71, message: 
+Child: 72, message: 
+Child: 73, message: 
+Child: 74, type: 0, width: 109, height: 32
+Child: 75, type: 5, width: 36, height: 32
+Child: 76, message: Nails
+Child: 77, message: 1 Bar
+Child: 78, message: 
+Child: 79, message: 
+Child: 80, message: 
+Child: 81, message: 
+Child: 82, type: 0, width: 109, height: 32
+Child: 83, type: 5, width: 36, height: 32
+Child: 84, message: Bronze wire
+Child: 85, message: 1 Bar
+Child: 86, message: 
+Child: 87, message: 
+Child: 88, message: 
+Child: 89, message: 
+Child: 90, type: 0, width: 109, height: 32
+Child: 91, type: 5, width: 36, height: 32
+Child: 92, message: Spit iron
+Child: 93, message: 1 Bar
+Child: 94, message: 
+Child: 95, message: 
+Child: 96, message: 
+Child: 97, message: 
+Child: 98, type: 0, width: 109, height: 32
+Child: 99, type: 5, width: 36, height: 32
+Child: 100, message: Studs
+Child: 101, message: 1 Bar
+Child: 102, message: 
+Child: 103, message: 
+Child: 104, message: 
+Child: 105, message: 
+Child: 106, type: 0, width: 109, height: 32
+Child: 107, type: 5, width: 36, height: 32
+Child: 108, message: Arrow tips
+Child: 109, message: 1 Bar
+Child: 110, message: 
+Child: 111, message: 
+Child: 112, message: 
+Child: 113, message: 
+Child: 114, type: 0, width: 109, height: 32
+Child: 115, type: 5, width: 36, height: 32
+Child: 116, message: Scimitar
+Child: 117, message: 2 Bars
+Child: 118, message: 
+Child: 119, message: 
+Child: 120, message: 
+Child: 121, message: 
+Child: 122, type: 0, width: 112, height: 32
+Child: 123, type: 5, width: 36, height: 32
+Child: 124, message: Crossbow limbs
+Child: 125, message: 1 Bar
+Child: 126, message: 
+Child: 127, message: 
+Child: 128, message: 
+Child: 129, message: 
+Child: 130, type: 0, width: 109, height: 32
+Child: 131, type: 5, width: 36, height: 32
+Child: 132, message: Longsword
+Child: 133, message: 2 Bars
+Child: 134, message: 
+Child: 135, message: 
+Child: 136, message: 
+Child: 137, message: 
+Child: 138, type: 0, width: 109, height: 32
+Child: 139, type: 5, width: 36, height: 32
+Child: 140, message: Throwing knife
+Child: 141, message: 1 Bar
+Child: 142, message: 
+Child: 143, message: 
+Child: 144, message: 
+Child: 145, message: 
+Child: 146, type: 0, width: 109, height: 32
+Child: 147, type: 5, width: 36, height: 32
+Child: 148, message: Full helm
+Child: 149, message: 2 Bars
+Child: 150, message: 
+Child: 151, message: 
+Child: 152, message: 
+Child: 153, message: 
+Child: 154, type: 0, width: 109, height: 32
+Child: 155, type: 5, width: 36, height: 32
+Child: 156, message: Square shield
+Child: 157, message: 2 Bars
+Child: 158, message: 
+Child: 159, message: 
+Child: 160, message: 
+Child: 161, message: 
+Child: 162, type: 0, width: 118, height: 32
+Child: 163, type: 5, width: 36, height: 32
+Child: 164, message: Bullseye lantern
+Child: 165, message: 1 Bar
+Child: 166, message: 
+Child: 167, message: 
+Child: 168, message: 
+Child: 169, message: 
+Child: 170, type: 0, width: 109, height: 32
+Child: 171, type: 5, width: 36, height: 32
+Child: 172, message: Grapple tip
+Child: 173, message: 1 Bar
+Child: 174, message: 
+Child: 175, message: 
+Child: 176, message: 
+Child: 177, message: 
+Child: 178, type: 0, width: 109, height: 32
+Child: 179, type: 5, width: 36, height: 32
+Child: 180, message: Warhammer
+Child: 181, message: 3 Bars
+Child: 182, message: 
+Child: 183, message: 
+Child: 184, message: 
+Child: 185, message: 
+Child: 186, type: 0, width: 109, height: 32
+Child: 187, type: 5, width: 36, height: 32
+Child: 188, message: Battleaxe
+Child: 189, message: 3 Bars
+Child: 190, message: 
+Child: 191, message: 
+Child: 192, message: 
+Child: 193, message: 
+Child: 194, type: 0, width: 109, height: 32
+Child: 195, type: 5, width: 36, height: 32
+Child: 196, message: Chainbody
+Child: 197, message: 3 Bars
+Child: 198, message: 
+Child: 199, message: 
+Child: 200, message: 
+Child: 201, message: 
+Child: 202, type: 0, width: 109, height: 32
+Child: 203, type: 5, width: 36, height: 32
+Child: 204, message: Kiteshield
+Child: 205, message: 3 Bars
+Child: 206, message: 
+Child: 207, message: 
+Child: 208, message: 
+Child: 209, message: 
+Child: 210, type: 0, width: 109, height: 32
+Child: 211, type: 5, width: 36, height: 32
+Child: 212, message: Claws
+Child: 213, message: 2 Bars
+Child: 214, message: 
+Child: 215, message: 
+Child: 216, message: 
+Child: 217, message: 
+Child: 218, type: 0, width: 118, height: 32
+Child: 219, type: 5, width: 36, height: 32
+Child: 220, message: 2-h sword
+Child: 221, message: 3 Bars
+Child: 222, message: 
+Child: 223, message: 
+Child: 224, message: 
+Child: 225, message: 
+Child: 226, type: 0, width: 109, height: 32
+Child: 227, type: 5, width: 36, height: 32
+Child: 228, message: Plateskirt
+Child: 229, message: 3 Bars
+Child: 230, message: 
+Child: 231, message: 
+Child: 232, message: 
+Child: 233, message: 
+Child: 234, type: 0, width: 190, height: 32
+Child: 235, type: 5, width: 36, height: 32
+Child: 236, message: Platelegs
+Child: 237, message: 3 Bars
+Child: 238, message: 
+Child: 239, message: 
+Child: 240, message: 
+Child: 241, message: 
+Child: 242, type: 0, width: 109, height: 32
+Child: 243, type: 5, width: 36, height: 32
+Child: 244, message: Platebody
+Child: 245, message: 5 Bars
+Child: 246, message: 
+Child: 247, message: 
+Child: 248, message: 
+Child: 249, message: 
+Child: 250, type: 0, width: 484, height: 264
+Child: 251, type: 0, width: 109, height: 32
+Child: 252, type: 5, width: 36, height: 32
+Child: 253, message: Crossbow bolts
+Child: 254, message: 1 Bar
+Child: 255, message: 
+Child: 256, message: 
+Child: 257, message: 
+Child: 258, message: 
+Child: 259, type: 0, width: 109, height: 32
+Child: 260, type: 5, width: 36, height: 32
+Child: 261, message: Crossbow limbs
+Child: 262, message: 1 Bar
+Child: 263, message: 
+Child: 264, message: 
+Child: 265, message: 
+Child: 266, message: 
+Child: 267, type: 0, width: 109, height: 42
+Child: 268, type: 5, width: 36, height: 32
+Child: 269, message: Pickaxe
+Child: 270, message: 2 Bars
+Child: 271, message: 
+Child: 272, message: 
+Child: 273, message: 
+Child: 274, message: 

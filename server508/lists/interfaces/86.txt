@@ -1,0 +1,22 @@
+Child: 0, message: %1
+Child: 1, type: 0, width: 180, height: 163
+Child: 2, type: 5, width: 70, height: 46
+Child: 3, type: 5, width: 70, height: 46
+Child: 4, type: 5, width: 70, height: 46
+Child: 5, type: 5, width: 70, height: 46
+Child: 6, type: 5, width: 34, height: 24
+Child: 7, type: 5, width: 34, height: 24
+Child: 8, type: 5, width: 34, height: 24
+Child: 9, type: 5, width: 34, height: 24
+Child: 10, message: Combat Lvl: %1
+Child: 11, type: 5, width: 150, height: 46
+Child: 12, message: Reap
+Child: 13, message: Chop
+Child: 14, message: Jab
+Child: 15, message: Block
+Child: 16, message: Auto Retaliate <br>(Off)
+Child: 17, type: 8, width: 70, height: 46
+Child: 18, type: 8, width: 70, height: 46
+Child: 19, type: 8, width: 70, height: 47
+Child: 20, type: 8, width: 70, height: 47
+Child: 21, type: 8, width: 150, height: 46

@@ -1,0 +1,24 @@
+Child: 0, type: 5, width: 36, height: 36
+Child: 1, type: 5, width: 36, height: 36
+Child: 2, message: Off
+Child: 3, type: 5, width: 36, height: 36
+Child: 4, type: 5, width: 36, height: 36
+Child: 5, type: 5, width: 36, height: 36
+Child: 6, type: 5, width: 36, height: 36
+Child: 7, message: House Options
+Child: 8, type: 5, width: 36, height: 36
+Child: 9, type: 5, width: 36, height: 36
+Child: 10, type: 5, width: 36, height: 36
+Child: 11, type: 5, width: 36, height: 36
+Child: 12, type: 5, width: 36, height: 36
+Child: 13, type: 5, width: 170, height: 36
+Child: 14, type: 5, width: 36, height: 36
+Child: 15, type: 5, width: 170, height: 36
+Child: 16, message: Leave House
+Child: 17, message: Building Mode
+Child: 18, message: Expel Guests
+Child: 19, message: On
+Child: 20, message: Number Of Rooms: %1
+Child: 21, type: 5, width: 26, height: 23
+Child: 22, type: 5, width: 26, height: 23
+Child: 23, type: 0, width: 32, height: 32

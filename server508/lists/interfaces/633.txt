@@ -1,0 +1,33 @@
+Child: 0, type: 3, width: 488, height: 305
+Child: 1, type: 5, width: 485, height: 300
+Child: 2, type: 5, width: 32, height: 241
+Child: 3, type: 5, width: 32, height: 32
+Child: 4, type: 5, width: 32, height: 243
+Child: 5, type: 5, width: 424, height: 34
+Child: 6, type: 5, width: 423, height: 32
+Child: 7, type: 5, width: 32, height: 32
+Child: 8, type: 5, width: 32, height: 32
+Child: 9, type: 5, width: 32, height: 32
+Child: 10, type: 5, width: 465, height: 32
+Child: 11, type: 5, width: 32, height: 32
+Child: 12, type: 5, width: 32, height: 32
+Child: 13, type: 6, width: 62, height: 241
+Child: 14, type: 0, width: 105, height: 43
+Child: 15, message: You are Victorious!
+Child: 16, type: 3, width: 94, height: 32
+Child: 17, message: Close
+Child: 18, message: The Defeated:
+Child: 19, message: Name:
+Child: 20, message: Combat Level:
+Child: 21, message: 126
+Child: 22, message: Crunchy
+Child: 23, type: 5, width: 32, height: 32
+Child: 24, type: 5, width: 32, height: 32
+Child: 25, type: 5, width: 32, height: 32
+Child: 26, type: 5, width: 32, height: 32
+Child: 27, type: 5, width: 42, height: 37
+Child: 28, type: 5, width: 43, height: 32
+Child: 29, type: 6, width: 99, height: 85
+Child: 30, type: 5, width: 16, height: 16
+Child: 31, type: 0, width: 32, height: 32
+Child: 32, type: 0, width: 168, height: 89

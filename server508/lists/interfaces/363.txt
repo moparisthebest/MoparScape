@@ -1,0 +1,10 @@
+Child: 0, type: 6, width: 30, height: 27
+Child: 1, type: 6, width: 204, height: 203
+Child: 2, type: 0, width: 42, height: 47
+Child: 3, type: 0, width: 210, height: 210
+Child: 4, type: 6, width: 211, height: 210
+Child: 5, type: 5, width: 26, height: 23
+Child: 6, type: 0, width: 183, height: 183
+Child: 7, message: Hint
+Child: 8, type: 6, width: 204, height: 203
+Child: 9, type: 0, width: 512, height: 334

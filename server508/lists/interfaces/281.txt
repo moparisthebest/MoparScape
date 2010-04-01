@@ -1,0 +1,11 @@
+Child: 0, message: Text
+Child: 1, message: Text
+Child: 2, type: 6, width: 44, height: 45
+Child: 3, type: 6, width: 45, height: 45
+Child: 4, message: 10
+Child: 5, message: 10
+Child: 6, type: 5, width: 25, height: 25
+Child: 7, type: 0, width: 268, height: 121
+Child: 8, type: 6, width: 264, height: 76
+Child: 9, message: Your cat has been
+Child: 10, message: Defeated

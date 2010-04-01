@@ -1,0 +1,22 @@
+Child: 0, type: 5, width: 319, height: 203
+Child: 1, type: 5, width: 32, height: 154
+Child: 2, type: 5, width: 32, height: 32
+Child: 3, type: 5, width: 23, height: 155
+Child: 4, type: 5, width: 270, height: 26
+Child: 5, type: 5, width: 269, height: 24
+Child: 6, type: 5, width: 32, height: 32
+Child: 7, type: 5, width: 32, height: 32
+Child: 8, type: 5, width: 32, height: 32
+Child: 9, type: 5, width: 311, height: 26
+Child: 10, type: 5, width: 32, height: 32
+Child: 11, type: 5, width: 32, height: 32
+Child: 12, type: 5, width: 16, height: 16
+Child: 13, message: Warning!
+Child: 14, message: You can run past, but keep in mind that a<br> dangerous area follows!
+Child: 15, type: 5, width: 19, height: 19
+Child: 16, type: 5, width: 19, height: 19
+Child: 17, message: I'm not scared
+Child: 18, message: I think I'll stay here
+Child: 19, message: Don't ask me this again
+Child: 20, type: 5, width: 19, height: 19
+Child: 21, type: 0, width: 270, height: 20

@@ -1,0 +1,33 @@
+Child: 0, type: 5, width: 57, height: 13
+Child: 1, type: 5, width: 57, height: 13
+Child: 2, type: 6, width: 63, height: 80
+Child: 3, type: 6, width: 63, height: 80
+Child: 4, type: 6, width: 63, height: 80
+Child: 5, type: 6, width: 63, height: 80
+Child: 6, type: 6, width: 63, height: 80
+Child: 7, type: 6, width: 63, height: 80
+Child: 8, message: 
+Child: 9, message: 
+Child: 10, message: 
+Child: 11, message: 
+Child: 12, message: 
+Child: 13, message: 
+Child: 14, message: 
+Child: 15, message: 
+Child: 16, message: 
+Child: 17, message: 
+Child: 18, message: 
+Child: 19, message: 
+Child: 20, message: 
+Child: 21, message: 
+Child: 22, message: 
+Child: 23, message: 
+Child: 24, message: 
+Child: 25, message: 
+Child: 26, message: 
+Child: 27, message: 
+Child: 28, message: What would you like to make?
+Child: 29, message: 
+Child: 30, message: 
+Child: 31, message: 
+Child: 32, message: 

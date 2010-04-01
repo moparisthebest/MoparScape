@@ -1,0 +1,60 @@
+Child: 0, type: 0, width: 512, height: 334
+Child: 1, type: 0, width: 16391, height: 16391
+Child: 2, type: 5, width: 32, height: 334
+Child: 3, type: 5, width: 462, height: 32
+Child: 4, type: 5, width: 512, height: 32
+Child: 5, type: 5, width: 32, height: 334
+Child: 6, type: 5, width: 32, height: 32
+Child: 7, type: 5, width: 32, height: 32
+Child: 8, type: 5, width: 32, height: 32
+Child: 9, type: 5, width: 32, height: 32
+Child: 10, type: 6, width: 487, height: 335
+Child: 11, type: 6, width: 193, height: 151
+Child: 12, type: 6, width: 33, height: 34
+Child: 13, type: 6, width: 31, height: 34
+Child: 14, message: Question:
+Child: 15, message: Player Safety Test
+Child: 16, type: 5, width: 26, height: 23
+Child: 17, message: How long should you play RuneScape for at any one time?
+Child: 18, message: As long as I like. I'm having fun and don't want to stop
+Child: 19, message: I should take regular breaks in order to stay healthy
+Child: 20, type: 9, width: 19, height: 1
+Child: 21, type: 9, width: 0, height: 19
+Child: 22, type: 9, width: 19, height: 1
+Child: 23, type: 9, width: 0, height: 20
+Child: 24, type: 9, width: 19, height: 1
+Child: 25, type: 9, width: 0, height: 19
+Child: 26, type: 9, width: 19, height: 1
+Child: 27, type: 9, width: 0, height: 20
+Child: 28, type: 9, width: 248, height: 0
+Child: 29, type: 0, width: 513, height: 335
+Child: 30, type: 3, width: 512, height: 334
+Child: 31, type: 5, width: 449, height: 230
+Child: 32, type: 5, width: 25, height: 173
+Child: 33, type: 5, width: 32, height: 32
+Child: 34, type: 5, width: 32, height: 32
+Child: 35, type: 5, width: 391, height: 32
+Child: 36, type: 5, width: 32, height: 173
+Child: 37, type: 5, width: 32, height: 32
+Child: 38, type: 5, width: 32, height: 32
+Child: 39, type: 5, width: 387, height: 25
+Child: 40, type: 0, width: 389, height: 160
+Child: 41, message: Correct!
+Child: 42, message: It's very important to remain healthy by taking regular breaks and spending time doing other activities. 
+Child: 43, type: 0, width: 389, height: 160
+Child: 44, message: Incorrect!
+Child: 45, message: Spending too much time on the computer can be harmful to your health. It's very important to take breaks, exercise and eat properly in order to stay healthy. While it's great to play RuneScape, it's also important to maintain a balanced lifestyle by socialising and spending time away from your computer. For more information, please look at our Responsible Gaming Policy on the RuneScape Knowledge Base.
+Child: 46, type: 0, width: 97, height: 42
+Child: 47, type: 0, width: 97, height: 42
+Child: 48, type: 3, width: 97, height: 42
+Child: 49, message: Next
+Child: 50, type: 0, width: 16391, height: 16391
+Child: 51, type: 0, width: 8192, height: 16391
+Child: 52, type: 0, width: 8188, height: 16391
+Child: 53, type: 0, width: 16391, height: 8192
+Child: 54, type: 0, width: 16391, height: 8182
+Child: 55, type: 0, width: 512, height: 334
+Child: 56, type: 5, width: 256, height: 16384
+Child: 57, type: 5, width: 256, height: 16391
+Child: 58, type: 5, width: 16391, height: 167
+Child: 59, type: 5, width: 16391, height: 166

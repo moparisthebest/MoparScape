@@ -1,0 +1,6 @@
+Child: 0, type: 6, width: 427, height: 343
+Child: 1, message: Ivandis Flail
+Child: 2, message: Ivandis flail requires silvthril chain to connect blessed silver sickle to. However, to increase charges for the flail, need to add an emerald to the sickle before chain is attached. 
+Child: 3, message: Find it difficult to make big hole for emerald to fit in sickle and am just frustrated. More effort to make this work is just crazy, why won't it just work??  
+Child: 4, type: 5, width: 26, height: 23
+Child: 5, type: 0, width: 512, height: 334

@@ -1,0 +1,2 @@
+Child: 0, type: 0, width: 450, height: 24
+Child: 1, message: Text

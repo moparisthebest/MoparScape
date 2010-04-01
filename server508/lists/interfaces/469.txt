@@ -1,0 +1,26 @@
+Child: 0, type: 3, width: 511, height: 335
+Child: 1, type: 6, width: 32, height: 32
+Child: 2, type: 6, width: 32, height: 32
+Child: 3, message: Castle
+Child: 4, message: Wars
+Child: 5, message: Grand
+Child: 6, message: Tree
+Child: 7, message: Varrock
+Child: 8, message: Entrana
+Child: 9, message: Taverley
+Child: 10, message: Crafting
+Child: 11, message: Guild
+Child: 12, type: 6, width: 32, height: 32
+Child: 13, type: 5, width: 26, height: 23
+Child: 14, type: 5, width: 99, height: 53
+Child: 15, type: 5, width: 99, height: 53
+Child: 16, type: 5, width: 116, height: 53
+Child: 17, type: 5, width: 77, height: 34
+Child: 18, type: 5, width: 81, height: 35
+Child: 19, type: 5, width: 83, height: 35
+Child: 20, type: 6, width: 32, height: 32
+Child: 21, type: 6, width: 32, height: 32
+Child: 22, type: 6, width: 32, height: 32
+Child: 23, type: 6, width: 32, height: 32
+Child: 24, type: 6, width: 32, height: 32
+Child: 25, type: 6, width: 32, height: 32

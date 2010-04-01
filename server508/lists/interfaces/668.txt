@@ -1,0 +1,11 @@
+Child: 0, message: Pick a Puppy
+Child: 1, type: 5, width: 57, height: 13
+Child: 2, type: 5, width: 57, height: 13
+Child: 3, type: 6, width: 39, height: 37
+Child: 4, type: 6, width: 48, height: 41
+Child: 5, type: 6, width: 49, height: 34
+Child: 6, type: 6, width: 44, height: 43
+Child: 7, type: 6, width: 48, height: 45
+Child: 8, type: 6, width: 46, height: 37
+Child: 9, type: 0, width: 506, height: 129
+Child: 10, type: 0, width: 506, height: 129

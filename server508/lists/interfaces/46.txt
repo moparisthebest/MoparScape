@@ -1,0 +1,4 @@
+Child: 0, type: 0, width: 95, height: 109
+Child: 1, type: 6, width: 111, height: 110
+Child: 2, message: Runeversi
+Child: 3, message: Rank: %1

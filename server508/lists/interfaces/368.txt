@@ -1,0 +1,12 @@
+Child: 0, message: Body Text
+Child: 1, type: 6, width: 482, height: 303
+Child: 2, type: 6, width: 57, height: 36
+Child: 3, type: 6, width: 56, height: 42
+Child: 4, type: 6, width: 50, height: 63
+Child: 5, message: Use rope to repair the Trawler's nets.
+Child: 6, message: Use Swamp Paste to repair leaks in the Ship's hull.
+Child: 7, message: If all else fails you can always try and bail the water out as well!
+Child: 8, message: How to play:
+Child: 9, type: 3, width: 200, height: 1
+Child: 10, type: 5, width: 26, height: 23
+Child: 11, type: 0, width: 512, height: 334

@@ -1,0 +1,51 @@
+Child: 0, type: 3, width: 488, height: 305
+Child: 1, type: 5, width: 485, height: 300
+Child: 2, type: 5, width: 32, height: 241
+Child: 3, type: 5, width: 32, height: 32
+Child: 4, type: 5, width: 32, height: 243
+Child: 5, type: 5, width: 424, height: 34
+Child: 6, type: 5, width: 423, height: 32
+Child: 7, type: 5, width: 16, height: 16
+Child: 8, type: 5, width: 32, height: 32
+Child: 9, type: 5, width: 32, height: 32
+Child: 10, type: 5, width: 32, height: 32
+Child: 11, type: 5, width: 465, height: 32
+Child: 12, type: 5, width: 32, height: 32
+Child: 13, type: 5, width: 32, height: 32
+Child: 14, type: 6, width: 0, height: 0
+Child: 15, type: 5, width: 474, height: 32
+Child: 16, type: 5, width: 32, height: 44
+Child: 17, type: 5, width: 32, height: 44
+Child: 18, type: 5, width: 32, height: 44
+Child: 19, message: Item Back History
+Child: 20, type: 5, width: 25, height: 25
+Child: 21, message: Offer type
+Child: 22, message: Item name
+Child: 23, message: Quantity
+Child: 24, message: Price
+Child: 25, message: xxxxxxxxxxxxx
+Child: 26, message: xxxxxxxxxxxxx
+Child: 27, message: xxxxxxxxxxxxx
+Child: 28, message: xxxxxxxxxxxxx
+Child: 29, message: xxxxxxxxxxxxx
+Child: 30, message: 2,000,000,000
+Child: 31, message: 2,000,000,000
+Child: 32, message: 2,000,000,000
+Child: 33, message: 2,000,000,000
+Child: 34, message: 2,000,000,000
+Child: 35, message: name name name name name
+Child: 36, message: name name name name name
+Child: 37, message: name name name name name
+Child: 38, message: name name name name name
+Child: 39, message: name name name name name
+Child: 40, message: 2,000,000,000 gp
+Child: 41, message: 2,000,000,000 gp
+Child: 42, message: 2,000,000,000 gp
+Child: 43, message: 2,000,000,000 gp
+Child: 44, message: 2,000,000,000 gp
+Child: 45, type: 5, width: 474, height: 32
+Child: 46, type: 5, width: 474, height: 32
+Child: 47, type: 5, width: 474, height: 32
+Child: 48, type: 5, width: 474, height: 32
+Child: 49, type: 5, width: 474, height: 32
+Child: 50, type: 5, width: 474, height: 32

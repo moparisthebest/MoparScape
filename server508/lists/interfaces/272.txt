@@ -1,0 +1,19 @@
+Child: 0, type: 3, width: 493, height: 307
+Child: 1, type: 5, width: 478, height: 293
+Child: 2, type: 6, width: 328, height: 205
+Child: 3, type: 6, width: 361, height: 159
+Child: 4, type: 6, width: 78, height: 62
+Child: 5, type: 5, width: 32, height: 32
+Child: 6, type: 5, width: 40, height: 232
+Child: 7, type: 5, width: 432, height: 28
+Child: 8, type: 5, width: 32, height: 32
+Child: 9, type: 5, width: 32, height: 32
+Child: 10, type: 5, width: 32, height: 32
+Child: 11, type: 5, width: 472, height: 29
+Child: 12, type: 5, width: 32, height: 32
+Child: 13, type: 5, width: 32, height: 32
+Child: 14, type: 5, width: 36, height: 231
+Child: 15, type: 5, width: 429, height: 31
+Child: 16, message: Grave Monument
+Child: 17, message: Saradomin<br><br>lights my way<br><br>through<br><br>the darkness of life
+Child: 18, type: 5, width: 26, height: 23

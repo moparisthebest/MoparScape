@@ -1,0 +1,7 @@
+Child: 0, type: 0, width: 300, height: 300
+Child: 1, type: 6, width: 327, height: 329
+Child: 2, type: 0, width: 300, height: 250
+Child: 3, type: 5, width: 26, height: 23
+Child: 4, type: 0, width: 512, height: 334
+Child: 5, message: Things to do:
+Child: 6, message: Take out the rubbish<br>Buy a new record for the gramophone<br>Check shrunken ogleroot supply<br>Feed ogleroots to my darlings<br>Wash the bedsheets<br>Hang out the washing<br>Practise the piano<br>Terrorise the little brat with the ball again<br>Trim hedges in the garden<br>Floss warts<br>Plot revenge on Fritz's murderer

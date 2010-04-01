@@ -1,0 +1,102 @@
+Child: 0, type: 3, width: 476, height: 232
+Child: 1, type: 5, width: 210, height: 25
+Child: 2, type: 5, width: 210, height: 25
+Child: 3, type: 5, width: 210, height: 25
+Child: 4, type: 5, width: 210, height: 25
+Child: 5, type: 5, width: 210, height: 25
+Child: 6, type: 5, width: 210, height: 25
+Child: 7, type: 5, width: 210, height: 25
+Child: 8, type: 5, width: 210, height: 25
+Child: 9, type: 5, width: 210, height: 25
+Child: 10, message: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Child: 11, type: 3, width: 212, height: 27
+Child: 12, type: 3, width: 212, height: 27
+Child: 13, type: 0, width: 212, height: 27
+Child: 14, type: 3, width: 212, height: 27
+Child: 15, type: 3, width: 212, height: 27
+Child: 16, type: 3, width: 212, height: 27
+Child: 17, type: 3, width: 212, height: 27
+Child: 18, type: 0, width: 212, height: 27
+Child: 19, type: 3, width: 212, height: 27
+Child: 20, type: 3, width: 212, height: 27
+Child: 21, type: 3, width: 212, height: 27
+Child: 22, type: 3, width: 212, height: 27
+Child: 23, type: 0, width: 212, height: 27
+Child: 24, type: 3, width: 212, height: 27
+Child: 25, type: 3, width: 212, height: 27
+Child: 26, type: 3, width: 212, height: 27
+Child: 27, type: 3, width: 212, height: 27
+Child: 28, type: 0, width: 212, height: 27
+Child: 29, type: 3, width: 212, height: 27
+Child: 30, type: 3, width: 212, height: 27
+Child: 31, type: 3, width: 212, height: 27
+Child: 32, type: 3, width: 212, height: 27
+Child: 33, type: 0, width: 212, height: 27
+Child: 34, type: 3, width: 212, height: 27
+Child: 35, type: 3, width: 212, height: 27
+Child: 36, type: 3, width: 212, height: 27
+Child: 37, type: 3, width: 212, height: 27
+Child: 38, type: 0, width: 212, height: 27
+Child: 39, type: 3, width: 212, height: 27
+Child: 40, type: 3, width: 212, height: 27
+Child: 41, type: 3, width: 212, height: 27
+Child: 42, type: 3, width: 212, height: 27
+Child: 43, type: 0, width: 212, height: 27
+Child: 44, type: 3, width: 212, height: 27
+Child: 45, type: 3, width: 212, height: 27
+Child: 46, type: 3, width: 212, height: 27
+Child: 47, type: 3, width: 212, height: 27
+Child: 48, type: 0, width: 212, height: 27
+Child: 49, type: 3, width: 212, height: 27
+Child: 50, type: 3, width: 212, height: 27
+Child: 51, type: 3, width: 212, height: 27
+Child: 52, type: 3, width: 212, height: 27
+Child: 53, type: 0, width: 212, height: 27
+Child: 54, type: 3, width: 212, height: 27
+Child: 55, type: 3, width: 212, height: 27
+Child: 56, type: 3, width: 212, height: 27
+Child: 57, type: 3, width: 212, height: 27
+Child: 58, type: 5, width: 16, height: 16
+Child: 59, type: 5, width: 32, height: 27
+Child: 60, type: 5, width: 32, height: 32
+Child: 61, type: 5, width: 32, height: 32
+Child: 62, type: 5, width: 32, height: 27
+Child: 63, type: 5, width: 417, height: 32
+Child: 64, type: 5, width: 32, height: 164
+Child: 65, type: 5, width: 417, height: 32
+Child: 66, type: 5, width: 32, height: 165
+Child: 67, type: 5, width: 32, height: 32
+Child: 68, type: 5, width: 466, height: 32
+Child: 69, type: 5, width: 32, height: 32
+Child: 70, message: Runecrafting XP
+Child: 71, message: XP
+Child: 72, message: Crafting XP
+Child: 73, message: XP
+Child: 74, message: Fletching XP
+Child: 75, message: XP
+Child: 76, message: Construction XP
+Child: 77, message: XP
+Child: 78, message: Farming XP
+Child: 79, message: XP
+Child: 80, message: Magic XP
+Child: 81, message: XP 
+Child: 82, message: Smithing XP
+Child: 83, message: XP 
+Child: 84, message: Cooking XP
+Child: 85, message: XP 
+Child: 86, message: Herblore XP
+Child: 87, message: XP 
+Child: 88, type: 5, width: 25, height: 25
+Child: 89, type: 5, width: 25, height: 25
+Child: 90, type: 5, width: 25, height: 25
+Child: 91, type: 5, width: 25, height: 25
+Child: 92, type: 5, width: 25, height: 25
+Child: 93, type: 5, width: 25, height: 25
+Child: 94, type: 5, width: 25, height: 25
+Child: 95, type: 5, width: 25, height: 25
+Child: 96, type: 5, width: 25, height: 25
+Child: 97, type: 0, width: 486, height: 212
+Child: 98, message: Total XP earned
+Child: 99, message: XP 
+Child: 100, type: 0, width: 115, height: 133
+Child: 101, message: Assist System XP Display - You are assisting <name>

@@ -1,0 +1,49 @@
+Child: 0, type: 6, width: 55, height: 81
+Child: 1, message: lj1
+Child: 2, message: lj2
+Child: 3, message: lj3
+Child: 4, message: lj4
+Child: 5, message: lj5
+Child: 6, message: lj6
+Child: 7, message: lj7
+Child: 8, message: lj8
+Child: 9, message: lj9
+Child: 10, message: lj10
+Child: 11, message: lj11
+Child: 12, type: 0, width: 340, height: 23
+Child: 13, message: >>>
+Child: 14, message: <<<
+Child: 15, type: 0, width: 340, height: 23
+Child: 16, message: >>>
+Child: 17, message: <<<
+Child: 18, type: 0, width: 340, height: 23
+Child: 19, message: >>>
+Child: 20, message: <<<
+Child: 21, type: 0, width: 340, height: 23
+Child: 22, message: >>>
+Child: 23, message: <<<
+Child: 24, type: 0, width: 340, height: 23
+Child: 25, message: >>>
+Child: 26, message: <<<
+Child: 27, type: 0, width: 340, height: 23
+Child: 28, message: >>>
+Child: 29, message: <<<
+Child: 30, type: 0, width: 340, height: 23
+Child: 31, message: >>>
+Child: 32, message: <<<
+Child: 33, type: 0, width: 340, height: 23
+Child: 34, message: >>>
+Child: 35, message: <<<
+Child: 36, type: 0, width: 340, height: 23
+Child: 37, message: >>>
+Child: 38, message: <<<
+Child: 39, type: 0, width: 340, height: 23
+Child: 40, message: >>>
+Child: 41, message: <<<
+Child: 42, type: 0, width: 340, height: 23
+Child: 43, message: >>>
+Child: 44, message: <<<
+Child: 45, message: Items I need to get for King Roald's garden:
+Child: 46, type: 5, width: 23, height: 23
+Child: 47, type: 5, width: 23, height: 23
+Child: 48, type: 0, width: 32, height: 32

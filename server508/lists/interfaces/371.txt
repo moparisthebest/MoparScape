@@ -1,0 +1,28 @@
+Child: 0, type: 0, width: 504, height: 66
+Child: 1, message: % Done
+Child: 2, message: Tutorial Island Progress
+Child: 3, type: 3, width: 421, height: 10
+Child: 4, type: 0, width: 512, height: 128
+Child: 5, type: 3, width: 21, height: 10
+Child: 6, type: 3, width: 21, height: 10
+Child: 7, type: 3, width: 21, height: 10
+Child: 8, type: 3, width: 21, height: 10
+Child: 9, type: 3, width: 21, height: 10
+Child: 10, type: 3, width: 21, height: 10
+Child: 11, type: 3, width: 21, height: 10
+Child: 12, type: 3, width: 21, height: 10
+Child: 13, type: 3, width: 21, height: 10
+Child: 14, type: 3, width: 21, height: 10
+Child: 15, type: 3, width: 21, height: 10
+Child: 16, type: 3, width: 21, height: 10
+Child: 17, type: 3, width: 21, height: 10
+Child: 18, type: 3, width: 21, height: 10
+Child: 19, type: 3, width: 21, height: 10
+Child: 20, type: 3, width: 21, height: 10
+Child: 21, type: 3, width: 21, height: 10
+Child: 22, type: 3, width: 21, height: 10
+Child: 23, type: 3, width: 21, height: 10
+Child: 24, type: 3, width: 21, height: 10
+Child: 25, type: 0, width: 512, height: 334
+Child: 26, type: 6, width: 480, height: 113
+Child: 27, message: Please follow the instructions below to advance in the tutorial.

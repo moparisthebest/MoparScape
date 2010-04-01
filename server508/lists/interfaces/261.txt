@@ -1,0 +1,27 @@
+Child: 0, type: 0, width: 190, height: 261
+Child: 1, type: 5, width: 40, height: 40
+Child: 2, type: 5, width: 40, height: 40
+Child: 3, type: 5, width: 40, height: 40
+Child: 4, type: 5, width: 40, height: 40
+Child: 5, type: 5, width: 40, height: 40
+Child: 6, type: 5, width: 40, height: 40
+Child: 7, type: 5, width: 32, height: 33
+Child: 8, type: 5, width: 32, height: 33
+Child: 9, type: 5, width: 32, height: 32
+Child: 10, type: 5, width: 32, height: 33
+Child: 11, message: %1%
+Child: 12, type: 5, width: 17, height: 18
+Child: 13, type: 5, width: 32, height: 32
+Child: 14, type: 5, width: 40, height: 40
+Child: 15, type: 5, width: 40, height: 40
+Child: 16, type: 5, width: 40, height: 40
+Child: 17, type: 5, width: 32, height: 32
+Child: 18, type: 5, width: 40, height: 40
+Child: 19, type: 5, width: 40, height: 40
+Child: 20, type: 5, width: 190, height: 27
+Child: 21, type: 0, width: 140, height: 15
+Child: 22, type: 0, width: 140, height: 100
+Child: 23, type: 0, width: 16, height: 98
+Child: 24, type: 0, width: 122, height: 98
+Child: 25, type: 0, width: 179, height: 251
+Child: 26, type: 0, width: 116, height: 132

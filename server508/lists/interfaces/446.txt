@@ -1,0 +1,93 @@
+Child: 0, type: 5, width: 480, height: 293
+Child: 1, type: 5, width: 37, height: 276
+Child: 2, type: 5, width: 22, height: 281
+Child: 3, type: 5, width: 468, height: 23
+Child: 4, type: 5, width: 478, height: 38
+Child: 5, type: 5, width: 32, height: 32
+Child: 6, type: 5, width: 32, height: 32
+Child: 7, type: 5, width: 32, height: 32
+Child: 8, type: 5, width: 32, height: 32
+Child: 9, type: 5, width: 477, height: 35
+Child: 10, type: 5, width: 32, height: 32
+Child: 11, type: 5, width: 32, height: 32
+Child: 12, type: 5, width: 16, height: 16
+Child: 13, message: What would you like to make?
+Child: 14, type: 0, width: 450, height: 60
+Child: 15, type: 6, width: 32, height: 32
+Child: 16, message: You need a ring mould to craft rings.
+Child: 17, message: Rings
+Child: 18, type: 0, width: 394, height: 60
+Child: 19, type: 6, width: 32, height: 32
+Child: 20, type: 0, width: 32, height: 32
+Child: 21, type: 6, width: 32, height: 32
+Child: 22, type: 0, width: 32, height: 32
+Child: 23, type: 6, width: 32, height: 32
+Child: 24, type: 0, width: 32, height: 32
+Child: 25, type: 6, width: 32, height: 32
+Child: 26, type: 0, width: 32, height: 32
+Child: 27, type: 6, width: 32, height: 32
+Child: 28, type: 0, width: 32, height: 32
+Child: 29, type: 6, width: 32, height: 32
+Child: 30, type: 0, width: 32, height: 32
+Child: 31, type: 6, width: 32, height: 32
+Child: 32, type: 0, width: 32, height: 32
+Child: 33, type: 6, width: 32, height: 32
+Child: 34, type: 6, width: 32, height: 32
+Child: 35, type: 0, width: 32, height: 32
+Child: 36, type: 0, width: 450, height: 60
+Child: 37, type: 6, width: 43, height: 38
+Child: 38, message: You need a necklace mould to craft necklaces.
+Child: 39, message: Necklaces
+Child: 40, type: 0, width: 394, height: 60
+Child: 41, type: 6, width: 32, height: 32
+Child: 42, type: 0, width: 32, height: 32
+Child: 43, type: 6, width: 32, height: 32
+Child: 44, type: 0, width: 32, height: 32
+Child: 45, type: 6, width: 32, height: 32
+Child: 46, type: 0, width: 32, height: 32
+Child: 47, type: 6, width: 32, height: 32
+Child: 48, type: 0, width: 32, height: 32
+Child: 49, type: 6, width: 32, height: 32
+Child: 50, type: 0, width: 32, height: 32
+Child: 51, type: 6, width: 32, height: 32
+Child: 52, type: 0, width: 32, height: 32
+Child: 53, type: 6, width: 32, height: 32
+Child: 54, type: 0, width: 32, height: 32
+Child: 55, type: 0, width: 450, height: 60
+Child: 56, type: 6, width: 32, height: 32
+Child: 57, message: You need an amulet mould to craft amulets.
+Child: 58, message: Amulets
+Child: 59, type: 0, width: 394, height: 60
+Child: 60, type: 6, width: 32, height: 32
+Child: 61, type: 0, width: 32, height: 32
+Child: 62, type: 6, width: 32, height: 32
+Child: 63, type: 0, width: 32, height: 32
+Child: 64, type: 6, width: 32, height: 32
+Child: 65, type: 0, width: 32, height: 32
+Child: 66, type: 6, width: 32, height: 32
+Child: 67, type: 0, width: 32, height: 32
+Child: 68, type: 6, width: 32, height: 32
+Child: 69, type: 0, width: 32, height: 32
+Child: 70, type: 6, width: 32, height: 32
+Child: 71, type: 0, width: 32, height: 32
+Child: 72, type: 6, width: 32, height: 32
+Child: 73, type: 0, width: 32, height: 32
+Child: 74, type: 0, width: 450, height: 60
+Child: 75, type: 6, width: 32, height: 32
+Child: 76, message: You need a bracelet mould to craft bracelets.
+Child: 77, message: Bracelets
+Child: 78, type: 0, width: 394, height: 60
+Child: 79, type: 6, width: 32, height: 32
+Child: 80, type: 0, width: 32, height: 32
+Child: 81, type: 6, width: 32, height: 32
+Child: 82, type: 0, width: 32, height: 32
+Child: 83, type: 6, width: 32, height: 32
+Child: 84, type: 0, width: 32, height: 32
+Child: 85, type: 6, width: 32, height: 32
+Child: 86, type: 0, width: 32, height: 32
+Child: 87, type: 6, width: 32, height: 32
+Child: 88, type: 0, width: 32, height: 32
+Child: 89, type: 6, width: 32, height: 32
+Child: 90, type: 0, width: 32, height: 32
+Child: 91, type: 6, width: 32, height: 32
+Child: 92, type: 0, width: 32, height: 32

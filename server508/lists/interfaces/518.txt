@@ -1,0 +1,120 @@
+Child: 0, type: 3, width: 562, height: 362
+Child: 1, type: 5, width: 88, height: 60
+Child: 2, type: 5, width: 88, height: 60
+Child: 3, type: 5, width: 88, height: 60
+Child: 4, type: 5, width: 88, height: 60
+Child: 5, type: 5, width: 88, height: 60
+Child: 6, type: 5, width: 88, height: 60
+Child: 7, type: 5, width: 88, height: 60
+Child: 8, type: 5, width: 88, height: 60
+Child: 9, type: 5, width: 88, height: 60
+Child: 10, type: 5, width: 88, height: 60
+Child: 11, type: 5, width: 88, height: 60
+Child: 12, type: 5, width: 88, height: 60
+Child: 13, type: 5, width: 88, height: 60
+Child: 14, type: 5, width: 88, height: 60
+Child: 15, type: 5, width: 88, height: 60
+Child: 16, type: 5, width: 88, height: 60
+Child: 17, type: 5, width: 88, height: 60
+Child: 18, type: 5, width: 88, height: 60
+Child: 19, type: 5, width: 88, height: 60
+Child: 20, type: 5, width: 88, height: 60
+Child: 21, type: 5, width: 88, height: 60
+Child: 22, type: 5, width: 88, height: 60
+Child: 23, type: 5, width: 88, height: 60
+Child: 24, type: 5, width: 88, height: 60
+Child: 25, type: 5, width: 88, height: 60
+Child: 26, type: 5, width: 88, height: 60
+Child: 27, type: 5, width: 88, height: 60
+Child: 28, type: 5, width: 88, height: 60
+Child: 29, type: 5, width: 88, height: 60
+Child: 30, type: 5, width: 36, height: 36
+Child: 31, type: 5, width: 36, height: 36
+Child: 32, type: 5, width: 36, height: 36
+Child: 33, type: 5, width: 36, height: 36
+Child: 34, type: 5, width: 36, height: 36
+Child: 35, type: 5, width: 36, height: 36
+Child: 36, type: 5, width: 36, height: 36
+Child: 37, type: 5, width: 36, height: 36
+Child: 38, type: 5, width: 36, height: 36
+Child: 39, type: 5, width: 36, height: 36
+Child: 40, type: 5, width: 36, height: 36
+Child: 41, type: 5, width: 36, height: 36
+Child: 42, type: 5, width: 36, height: 36
+Child: 43, type: 5, width: 36, height: 36
+Child: 44, type: 5, width: 36, height: 36
+Child: 45, type: 5, width: 36, height: 36
+Child: 46, type: 5, width: 36, height: 36
+Child: 47, type: 5, width: 36, height: 36
+Child: 48, type: 5, width: 36, height: 36
+Child: 49, type: 5, width: 36, height: 36
+Child: 50, type: 5, width: 36, height: 36
+Child: 51, type: 5, width: 36, height: 36
+Child: 52, type: 5, width: 36, height: 36
+Child: 53, type: 5, width: 36, height: 36
+Child: 54, type: 5, width: 36, height: 36
+Child: 55, type: 5, width: 36, height: 36
+Child: 56, type: 5, width: 36, height: 36
+Child: 57, type: 5, width: 36, height: 36
+Child: 58, type: 5, width: 36, height: 36
+Child: 59, type: 5, width: 36, height: 36
+Child: 60, type: 5, width: 36, height: 36
+Child: 61, type: 5, width: 36, height: 36
+Child: 62, type: 5, width: 36, height: 36
+Child: 63, type: 5, width: 25, height: 30
+Child: 64, type: 5, width: 36, height: 36
+Child: 65, type: 5, width: 25, height: 30
+Child: 66, type: 5, width: 36, height: 36
+Child: 67, type: 5, width: 36, height: 36
+Child: 68, type: 5, width: 36, height: 36
+Child: 69, type: 5, width: 36, height: 36
+Child: 70, type: 5, width: 36, height: 36
+Child: 71, type: 5, width: 36, height: 36
+Child: 72, type: 5, width: 88, height: 60
+Child: 73, type: 5, width: 36, height: 36
+Child: 74, type: 5, width: 36, height: 36
+Child: 75, type: 5, width: 36, height: 36
+Child: 76, type: 5, width: 36, height: 36
+Child: 77, type: 5, width: 36, height: 36
+inventory type: 20 slots, width: 5, height: 4, 78
+Child: 79, message: Follower Inv
+Child: 80, message: %1
+Child: 81, message: Npc spaces left.
+Child: 82, message: %1
+Child: 83, message: %1
+Child: 84, message: %1
+Child: 85, type: 5, width: 88, height: 60
+Child: 86, type: 5, width: 36, height: 36
+Child: 87, message: %1
+Child: 88, message: %1
+Child: 89, message: %1
+Child: 90, message: %1
+Child: 91, message: %1
+Child: 92, message: %1
+Child: 93, message: %1
+Child: 94, message: %1
+Child: 95, message: %1
+Child: 96, message: %1
+Child: 97, message: %1
+Child: 98, message: %1
+Child: 99, message: %1
+Child: 100, message: %1
+Child: 101, message: %1
+Child: 102, message: %1
+Child: 103, type: 5, width: 36, height: 36
+Child: 104, type: 5, width: 36, height: 36
+Child: 105, type: 5, width: 36, height: 36
+Child: 106, type: 5, width: 36, height: 36
+Child: 107, type: 5, width: 36, height: 36
+Child: 108, type: 5, width: 25, height: 30
+Child: 109, type: 3, width: 374, height: 47
+Child: 110, type: 5, width: 150, height: 35
+Child: 111, type: 5, width: 25, height: 30
+Child: 112, type: 5, width: 36, height: 36
+Child: 113, type: 5, width: 36, height: 36
+Child: 114, type: 5, width: 36, height: 36
+Child: 115, type: 3, width: 123, height: 32
+Child: 116, type: 5, width: 26, height: 23
+Child: 117, type: 5, width: 26, height: 23
+Child: 118, message: Right click on items in your inventory to add them here, then click close.
+Child: 119, type: 0, width: 32, height: 32

@@ -1,0 +1,31 @@
+Child: 0, type: 3, width: 520, height: 335
+Child: 1, message: Attacker :
+Child: 2, message: Defender :
+Child: 3, message: Collector :
+Child: 4, message: Healer :
+Child: 5, message: ----------------------
+Child: 6, message: ----------------------
+Child: 7, message: ----------------------
+Child: 8, message: ----------------------
+Child: 9, type: 6, width: 32, height: 32
+Child: 10, type: 6, width: 32, height: 32
+Child: 11, type: 6, width: 32, height: 32
+Child: 12, type: 6, width: 32, height: 32
+Child: 13, message: Red
+Child: 14, message: Green
+Child: 15, message: Blue
+Child: 16, message: Controlled/Bronze/Wind
+Child: 17, message: Accurate/Iron/Water
+Child: 18, message: Aggressive/Steel/Earth
+Child: 19, message: Defensive/Mithril/Fire
+Child: 20, message: Tofu
+Child: 21, message: Worms
+Child: 22, message: Crackers
+Child: 23, message: Poison tofu
+Child: 24, message: Poison worms
+Child: 25, message: Poison meat
+Child: 26, message: Horn of Glory
+Child: 27, type: 5, width: 26, height: 23
+Child: 28, type: 5, width: 26, height: 23
+Child: 29, type: 0, width: 32, height: 32
+Child: 30, message: Call out :

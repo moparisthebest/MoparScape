@@ -1,0 +1,7 @@
+Child: 0, type: 3, width: 538, height: 341
+Child: 1, type: 6, width: 888, height: 898
+Child: 2, message: Varrock Herald
+Child: 3, message: Covering all of Misthalin and beyond.
+Child: 4, message: 1 gp
+Child: 5, message: Oo'glog Ogresses Open Health Spa!
+Child: 6, type: 6, width: 337, height: 355

@@ -1,0 +1,80 @@
+Child: 0, type: 3, width: 16391, height: 19628
+Child: 1, type: 6, width: 503, height: 286
+Child: 2, type: 6, width: 402, height: 247
+Child: 3, type: 6, width: 117, height: 62
+Child: 4, message: Wave Complete!
+Child: 5, message: Reward: 
+Child: 6, message: Runners that got past
+Child: 7, message: Rangers killed
+Child: 8, message: Fighters killed
+Child: 9, message: Healers killed
+Child: 10, message: Runners killed
+Child: 11, message: Player hitpoints replenished
+Child: 12, message: Wrong poison packs used
+Child: 13, message: Eggs collected (min. exploded)
+Child: 14, message: Failed Attacker attacks
+Child: 15, message: 0
+Child: 16, message: 0
+Child: 17, message: 0
+Child: 18, message: 0
+Child: 19, message: 0
+Child: 20, message: 0
+Child: 21, message: 0
+Child: 22, message: 0
+Child: 23, message: 0
+Child: 24, message: Total
+Child: 25, message: 0
+Child: 26, message: 0
+Child: 27, message: 0
+Child: 28, message: 0
+Child: 29, message: 0
+Child: 30, message: 0
+Child: 31, message: 0
+Child: 32, message: 0
+Child: 33, message: 0
+Child: 34, message: 0
+Child: 35, message: #
+Child: 36, message: Team Honour Points
+Child: 37, message: Role:
+Child: 38, message: None
+Child: 39, message: 0
+Child: 40, message: 0
+Child: 41, message: 0
+Child: 42, message: 0
+Child: 43, message: 0
+Child: 44, message: 0
+Child: 45, message: 0
+Child: 46, message: 0
+Child: 47, message: 0
+Child: 48, message: 0
+Child: 49, message: Honour Points reward :
+Child: 50, message: 0
+Child: 51, message: -
+Child: 52, message: -
+Child: 53, message: -
+Child: 54, message: -
+Child: 55, message: -
+Child: 56, message: -
+Child: 57, message: Total Honour Points in role:
+Child: 58, message: 0
+Child: 59, message: Individual Honour Points
+Child: 60, type: 0, width: 428, height: 250
+Child: 61, type: 0, width: 420, height: 230
+Child: 62, message: The Queen is dead!
+Child: 63, message: Reward:
+Child: 64, message: --Points output--
+Child: 65, message: -Role-
+Child: 66, message: Simple breakdown
+Child: 67, message: Honour Points Reward:
+Child: 68, message: 0
+Child: 69, message: 0
+Child: 70, type: 0, width: 419, height: 230
+Child: 71, message: Advanced Breakdown
+Child: 72, message: Total Honour Points in role:
+Child: 73, type: 5, width: 26, height: 23
+Child: 74, type: 6, width: 59, height: 59
+Child: 75, message: Level<br>up
+Child: 76, type: 0, width: 72, height: 65
+Child: 77, type: 6, width: 59, height: 59
+Child: 78, message: Level<br>up
+Child: 79, type: 0, width: 72, height: 65

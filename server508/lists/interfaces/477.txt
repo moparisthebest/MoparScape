@@ -1,0 +1,27 @@
+Child: 0, type: 3, width: 488, height: 305
+Child: 1, type: 5, width: 485, height: 300
+Child: 2, type: 5, width: 32, height: 241
+Child: 3, type: 5, width: 32, height: 32
+Child: 4, type: 5, width: 32, height: 243
+Child: 5, type: 5, width: 424, height: 34
+Child: 6, type: 5, width: 423, height: 32
+Child: 7, type: 5, width: 32, height: 32
+Child: 8, type: 5, width: 32, height: 32
+Child: 9, type: 5, width: 32, height: 32
+Child: 10, type: 5, width: 465, height: 32
+Child: 11, type: 5, width: 32, height: 32
+Child: 12, type: 5, width: 32, height: 32
+Child: 13, message: Custom Fur Clothing
+Child: 14, message: Right-click an item in the shop to have it made for you.
+Child: 15, message: Larupia
+Child: 16, message: Graahk
+Child: 17, message: Kyatt 
+Child: 18, message: Polar kebbit
+Child: 19, message: Common kebbit
+Child: 20, message: Feldip weasel
+Child: 21, message: Desert devil
+Child: 22, message: Dark kebbit
+Child: 23, message: Spotted kebbit
+Child: 24, message: Dashing kebbit
+Child: 25, type: 5, width: 16, height: 16
+Child: 26, type: 0, width: 458, height: 215

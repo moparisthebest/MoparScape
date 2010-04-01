@@ -1,0 +1,11 @@
+Child: 0, type: 3, width: 16391, height: 16391
+Child: 1, type: 0, width: 16391, height: 16391
+Child: 2, message: NPC Killcount
+Child: 3, message: Armadyl kills
+Child: 4, message: Bandos kills
+Child: 5, message: Saradomin kills
+Child: 6, message: Zamorak kills
+Child: 7, message: 0
+Child: 8, message: 0
+Child: 9, message: 0
+Child: 10, message: 0

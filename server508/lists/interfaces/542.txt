@@ -1,0 +1,46 @@
+Child: 0, type: 5, width: 480, height: 293
+Child: 1, type: 5, width: 28, height: 290
+Child: 2, type: 5, width: 47, height: 285
+Child: 3, type: 5, width: 462, height: 26
+Child: 4, type: 5, width: 464, height: 34
+Child: 5, type: 5, width: 32, height: 32
+Child: 6, type: 5, width: 32, height: 32
+Child: 7, type: 5, width: 32, height: 32
+Child: 8, type: 5, width: 32, height: 32
+Child: 9, type: 5, width: 478, height: 35
+Child: 10, type: 5, width: 32, height: 32
+Child: 11, type: 5, width: 32, height: 32
+Child: 12, type: 5, width: 16, height: 16
+Child: 13, message: What would you like to make?
+Child: 14, type: 0, width: 75, height: 94
+Child: 15, type: 0, width: 75, height: 96
+Child: 16, type: 0, width: 75, height: 96
+Child: 17, type: 0, width: 77, height: 90
+Child: 18, type: 0, width: 75, height: 92
+Child: 19, type: 0, width: 72, height: 92
+Child: 20, type: 0, width: 76, height: 101
+Child: 21, type: 0, width: 76, height: 96
+Child: 22, message: Vial
+Child: 23, message: Orb
+Child: 24, message: Beer Glass
+Child: 25, message: Candle Lantern
+Child: 26, message: Oil lamp
+Child: 27, message: Lantern Lens
+Child: 28, message: Fish Bowl
+Child: 29, message: Dorgeshuun Light Orb  
+Child: 30, type: 6, width: 70, height: 92
+Child: 31, type: 6, width: 64, height: 96
+Child: 32, type: 6, width: 64, height: 96
+Child: 33, type: 6, width: 64, height: 96
+Child: 34, type: 6, width: 64, height: 96
+Child: 35, type: 6, width: 64, height: 96
+Child: 36, type: 6, width: 59, height: 79
+Child: 37, type: 6, width: 70, height: 92
+Child: 38, message: 
+Child: 39, message: 
+Child: 40, message: 
+Child: 41, message: 
+Child: 42, message: 
+Child: 43, message: 
+Child: 44, message: 
+Child: 45, message: 

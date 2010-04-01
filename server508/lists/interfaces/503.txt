@@ -1,0 +1,16 @@
+Child: 0, type: 6, width: 467, height: 252
+Child: 1, type: 0, width: 488, height: 36
+Child: 2, type: 6, width: 49, height: 110
+Child: 3, message: Clockwork Toys - A Clockwork Mechanism, Chapter 1.0
+Child: 4, type: 5, width: 26, height: 23
+Child: 5, message: Making a clockwork toy is very simple and a good place to start for new crafters. Simply create a clockwork mechanism on your Crafting table, then use it and a wood plank to make a toy soldier or a doll. Wind them up and watch them go!
+Child: 6, message: Multi-rotation head for lifelike simulation
+Child: 7, message: A well-hidden clockwork system
+Child: 8, type: 6, width: 104, height: 104
+Child: 9, message: The clockwork mechanism.
+Child: 10, type: 6, width: 204, height: 143
+Child: 11, message: It would be simple to alter the design by adding a piece of silk to the wooden frame and clockwork mechanism. You could make a suit that could be controlled from the inside.
+Child: 12, type: 6, width: 64, height: 79
+Child: 13, type: 3, width: 25, height: 4
+Child: 14, type: 3, width: 29, height: 4
+Child: 15, type: 0, width: 512, height: 334

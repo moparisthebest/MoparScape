@@ -1,0 +1,52 @@
+Child: 0, type: 5, width: 488, height: 304
+Child: 1, type: 5, width: 64, height: 64
+Child: 2, type: 5, width: 64, height: 64
+Child: 3, type: 5, width: 64, height: 64
+Child: 4, type: 5, width: 64, height: 64
+Child: 5, type: 5, width: 64, height: 64
+Child: 6, type: 5, width: 64, height: 64
+Child: 7, type: 5, width: 64, height: 64
+Child: 8, type: 5, width: 64, height: 64
+Child: 9, type: 5, width: 64, height: 64
+Child: 10, type: 5, width: 64, height: 64
+Child: 11, message: 0
+Child: 12, message: 0
+Child: 13, message: 0
+Child: 14, message: 0
+Child: 15, message: 0
+Child: 16, message: 0
+Child: 17, message: 0
+Child: 18, message: 0
+Child: 19, message: 0
+Child: 20, message: 0
+Child: 21, message: 
+Child: 22, message: 
+Child: 23, message: 
+Child: 24, message: 
+Child: 25, type: 0, width: 146, height: 48
+Child: 26, type: 5, width: 104, height: 104
+Child: 27, type: 5, width: 104, height: 104
+Child: 28, message: Please enter your FOUR DIGIT PIN using the buttons below.
+Child: 29, message: 
+Child: 30, message: Exit
+Child: 31, message: YOUR PIN WILL BE DELETED IN X DAYS
+Child: 32, message: 
+Child: 33, type: 5, width: 32, height: 32
+Child: 34, type: 5, width: 32, height: 32
+Child: 35, type: 5, width: 32, height: 32
+Child: 36, type: 5, width: 32, height: 32
+Child: 37, type: 5, width: 32, height: 246
+Child: 38, type: 5, width: 32, height: 244
+Child: 39, type: 5, width: 428, height: 32
+Child: 40, type: 5, width: 478, height: 32
+Child: 41, type: 5, width: 32, height: 32
+Child: 42, type: 5, width: 32, height: 32
+Child: 43, type: 5, width: 428, height: 32
+Child: 44, type: 5, width: 32, height: 32
+Child: 45, type: 5, width: 32, height: 32
+Child: 46, type: 5, width: 32, height: 32
+Child: 47, type: 5, width: 96, height: 32
+Child: 48, type: 5, width: 96, height: 32
+Child: 49, type: 5, width: 32, height: 32
+Child: 50, type: 6, width: 102, height: 99
+Child: 51, type: 6, width: 75, height: 74

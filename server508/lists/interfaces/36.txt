@@ -1,0 +1,60 @@
+Child: 0, type: 5, width: 483, height: 297
+Child: 1, type: 5, width: 25, height: 30
+Child: 2, type: 5, width: 43, height: 243
+Child: 3, type: 5, width: 34, height: 249
+Child: 4, message: Insert a very long name here!
+Child: 5, type: 5, width: 448, height: 42
+Child: 6, type: 5, width: 443, height: 42
+Child: 7, type: 5, width: 25, height: 30
+Child: 8, type: 5, width: 25, height: 30
+Child: 9, message: vs
+Child: 10, message: Insert a very long name here!
+Child: 11, type: 5, width: 38, height: 289
+Child: 12, type: 5, width: 181, height: 34
+Child: 13, message: Turn:
+Child: 14, type: 6, width: 33, height: 91
+Child: 15, type: 0, width: 122, height: 42
+Child: 16, type: 0, width: 122, height: 43
+Child: 17, message: Runelink
+Child: 18, type: 3, width: 110, height: 31
+Child: 19, message: Resign
+Child: 20, type: 3, width: 110, height: 31
+Child: 21, message: Offer draw
+Child: 22, type: 5, width: 79, height: 32
+Child: 23, type: 5, width: 85, height: 34
+Child: 24, message: Name
+Child: 25, type: 5, width: 79, height: 37
+Child: 26, type: 5, width: 25, height: 30
+Child: 27, type: 5, width: 25, height: 30
+Child: 28, type: 5, width: 25, height: 30
+Child: 29, type: 5, width: 25, height: 30
+Child: 30, type: 5, width: 25, height: 30
+Child: 31, type: 5, width: 25, height: 30
+Child: 32, type: 5, width: 25, height: 30
+Child: 33, type: 5, width: 80, height: 33
+Child: 34, type: 5, width: 25, height: 30
+Child: 35, type: 6, width: 299, height: 252
+Child: 36, type: 6, width: 1, height: 1
+Child: 37, message: 
+Child: 38, message: 
+Child: 39, type: 5, width: 32, height: 207
+Child: 40, type: 5, width: 32, height: 207
+Child: 41, type: 5, width: 32, height: 207
+Child: 42, type: 5, width: 32, height: 207
+Child: 43, type: 5, width: 32, height: 207
+Child: 44, type: 5, width: 32, height: 207
+Child: 45, type: 5, width: 32, height: 207
+Child: 46, message: 
+Child: 47, type: 0, width: 78, height: 42
+Child: 48, type: 3, width: 66, height: 31
+Child: 49, message: Close
+Child: 50, type: 5, width: 36, height: 36
+Child: 51, type: 5, width: 25, height: 30
+Child: 52, type: 5, width: 25, height: 30
+Child: 53, type: 5, width: 25, height: 30
+Child: 54, type: 5, width: 25, height: 30
+Child: 55, type: 5, width: 36, height: 36
+Child: 56, type: 6, width: 20, height: 19
+Child: 57, type: 6, width: 20, height: 19
+Child: 58, type: 5, width: 25, height: 30
+Child: 59, type: 0, width: 242, height: 207

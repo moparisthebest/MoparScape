@@ -1,0 +1,6 @@
+Child: 0, type: 6, width: 485, height: 282
+Child: 1, message: Kaleef<br><br>Your mission is to contact our agent inside Menaphos.<br>Use the tunnels beneath the temple of lesser gods.<br>Be vigilant of traps and the hostile natives.<br> They're about as welcoming as the Menaphites only slightly better looking.<br><br>Os
+Child: 2, type: 6, width: 315, height: 195
+Child: 3, type: 5, width: 26, height: 23
+Child: 4, type: 0, width: 32, height: 32
+Child: 5, type: 0, width: 512, height: 334

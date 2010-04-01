@@ -1,0 +1,3 @@
+Child: 0, type: 6, width: 475, height: 91
+Child: 1, message: This evil gublinch asked a younger player where she went to school. The player was smart enough to not tell the gublinch and report him instead.
+Child: 2, type: 5, width: 23, height: 23

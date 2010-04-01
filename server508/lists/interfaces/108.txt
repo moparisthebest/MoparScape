@@ -1,0 +1,98 @@
+Child: 0, type: 3, width: 488, height: 305
+Child: 1, type: 5, width: 485, height: 300
+Child: 2, type: 5, width: 7, height: 241
+Child: 3, type: 5, width: 32, height: 32
+Child: 4, type: 5, width: 32, height: 243
+Child: 5, type: 5, width: 424, height: 7
+Child: 6, type: 5, width: 423, height: 32
+Child: 7, type: 5, width: 32, height: 32
+Child: 8, type: 5, width: 32, height: 32
+Child: 9, type: 5, width: 32, height: 32
+Child: 10, type: 5, width: 465, height: 6
+Child: 11, type: 5, width: 32, height: 32
+Child: 12, type: 5, width: 32, height: 32
+Child: 13, type: 5, width: 16, height: 16
+Child: 14, message: Grand Exchange
+Child: 15, type: 5, width: 25, height: 25
+Child: 16, type: 5, width: 35, height: 35
+Child: 17, type: 5, width: 474, height: 32
+Child: 18, type: 0, width: 426, height: 90
+Child: 19, type: 5, width: 32, height: 87
+Child: 20, type: 0, width: 426, height: 84
+Child: 21, type: 5, width: 32, height: 81
+Child: 22, message: Buy Offer
+Child: 23, type: 5, width: 16, height: 14
+Child: 24, type: 5, width: 157, height: 32
+Child: 25, type: 5, width: 40, height: 36
+Child: 26, type: 5, width: 36, height: 32
+Child: 27, type: 5, width: 16, height: 14
+Child: 28, message: 1,281 gp
+Child: 29, message: Choose an item to exchange
+Child: 30, message: Quantity:
+Child: 31, type: 5, width: 20, height: 20
+Child: 32, type: 5, width: 113, height: 20
+Child: 33, type: 5, width: 20, height: 20
+Child: 34, message: 2
+Child: 35, message: Price per item:
+Child: 36, type: 5, width: 20, height: 20
+Child: 37, type: 5, width: 108, height: 20
+Child: 38, type: 5, width: 20, height: 20
+Child: 39, message: 1,281 gp
+Child: 40, type: 5, width: 16, height: 14
+Child: 41, type: 5, width: 16, height: 14
+Child: 42, type: 5, width: 35, height: 35
+Child: 43, message: 1
+Child: 44, type: 5, width: 35, height: 35
+Child: 45, message: 10
+Child: 46, type: 5, width: 35, height: 35
+Child: 47, message: 100
+Child: 48, type: 5, width: 35, height: 35
+Child: 49, message: 500
+Child: 50, type: 5, width: 35, height: 35
+Child: 51, message: ...
+Child: 52, type: 5, width: 16, height: 14
+Child: 53, type: 5, width: 16, height: 14
+Child: 54, type: 5, width: 35, height: 35
+Child: 55, type: 5, width: 16, height: 14
+Child: 56, message: 
+Child: 57, type: 5, width: 35, height: 35
+Child: 58, type: 5, width: 16, height: 14
+Child: 59, message: 
+Child: 60, type: 5, width: 35, height: 35
+Child: 61, type: 5, width: 16, height: 14
+Child: 62, message: 
+Child: 63, type: 5, width: 35, height: 35
+Child: 64, message: ...
+Child: 65, type: 5, width: 20, height: 20
+Child: 66, type: 5, width: 108, height: 20
+Child: 67, type: 5, width: 20, height: 20
+Child: 68, message: 2,562 gp
+Child: 69, message: 
+Child: 70, type: 0, width: 120, height: 43
+Child: 71, message: Confirm Offer
+Child: 72, type: 6, width: 23, height: 29
+Child: 73, type: 6, width: 0, height: 0
+Child: 74, type: 3, width: 130, height: 5
+Child: 75, type: 3, width: 130, height: 5
+Child: 76, type: 3, width: 5, height: 53
+Child: 77, type: 3, width: 5, height: 53
+Child: 78, type: 0, width: 512, height: 334
+Child: 79, type: 3, width: 130, height: 5
+Child: 80, type: 3, width: 130, height: 5
+Child: 81, type: 3, width: 5, height: 53
+Child: 82, type: 3, width: 5, height: 53
+Child: 83, type: 6, width: 0, height: 0
+Child: 84, type: 3, width: 317, height: 83
+Child: 85, type: 3, width: 305, height: 71
+Child: 86, type: 5, width: 32, height: 32
+Child: 87, type: 5, width: 252, height: 32
+Child: 88, type: 5, width: 32, height: 32
+Child: 89, type: 5, width: 32, height: 32
+Child: 90, type: 5, width: 32, height: 32
+Child: 91, type: 5, width: 252, height: 32
+Child: 92, type: 5, width: 32, height: 32
+Child: 93, type: 5, width: 32, height: 32
+Child: 94, message: Jetzt ist Ihr Angebot eingegangen! Sie können jederzeit darauf klicken, um sich die Einzelheiten anzuschauen. Unten wird der Fortschritt mit einem Balken angezeigt. 
+Child: 95, type: 5, width: 16, height: 16
+Child: 96, type: 6, width: 0, height: 0
+Child: 97, message: Click to continue

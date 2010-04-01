@@ -1,0 +1,24 @@
+Child: 0, type: 6, width: 32, height: 32
+Child: 1, message: Alchemy
+Child: 2, message: Pizazz Points:
+Child: 3, message: 9999
+Child: 4, message: Leather Boots:
+Child: 5, message: Adamant Kiteshield:
+Child: 6, message: Adamant Helm:
+Child: 7, message: Emerald:
+Child: 8, message: Rune Longsword:
+Child: 9, message: 999
+Child: 10, message: 999
+Child: 11, message: 999
+Child: 12, message: 999
+Child: 13, message: 999
+Child: 14, type: 0, width: 32, height: 32
+Child: 15, type: 0, width: 32, height: 32
+Child: 16, type: 0, width: 32, height: 32
+Child: 17, type: 0, width: 32, height: 32
+Child: 18, type: 0, width: 32, height: 32
+Child: 19, type: 6, width: 32, height: 32
+Child: 20, type: 6, width: 32, height: 32
+Child: 21, type: 6, width: 32, height: 32
+Child: 22, type: 6, width: 32, height: 32
+Child: 23, type: 6, width: 32, height: 32

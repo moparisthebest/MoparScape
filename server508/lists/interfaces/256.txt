@@ -1,0 +1,20 @@
+Child: 0, type: 3, width: 196, height: 18
+Child: 1, type: 3, width: 196, height: 82
+Child: 2, type: 3, width: 196, height: 18
+Child: 3, type: 3, width: 196, height: 82
+Child: 4, message: Current team
+Child: 5, message: -----
+Child: 6, message: -----
+Child: 7, message: -----
+Child: 8, message: -----
+Child: 9, message: -----
+Child: 10, message: Leader:
+Child: 11, message: Player 1:
+Child: 12, message: Player 2:
+Child: 13, message: Player 3:
+Child: 14, message: Player 4:
+Child: 15, type: 6, width: 16, height: 16
+Child: 16, type: 6, width: 16, height: 16
+Child: 17, type: 6, width: 16, height: 16
+Child: 18, type: 6, width: 16, height: 16
+Child: 19, type: 6, width: 16, height: 16

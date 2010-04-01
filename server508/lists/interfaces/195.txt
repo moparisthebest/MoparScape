@@ -1,0 +1,15 @@
+Child: 0, type: 0, width: 174, height: 74
+Child: 1, type: 0, width: 77, height: 73
+Child: 2, type: 0, width: 79, height: 73
+Child: 3, type: 0, width: 79, height: 73
+Child: 4, type: 0, width: 82, height: 71
+Child: 5, message: Bonus:
+Child: 6, type: 6, width: 159, height: 64
+Child: 7, message: Enchantment
+Child: 8, message: Pizazz Points:
+Child: 9, message: 9999
+Child: 10, type: 0, width: 119, height: 145
+Child: 11, type: 6, width: 60, height: 49
+Child: 12, type: 6, width: 48, height: 54
+Child: 13, type: 6, width: 55, height: 53
+Child: 14, type: 6, width: 52, height: 49

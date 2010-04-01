@@ -1,0 +1,94 @@
+Child: 0, type: 0, width: 512, height: 334
+Child: 1, type: 0, width: 512, height: 334
+Child: 2, type: 6, width: 502, height: 320
+Child: 3, message: Ahoy!  What would ye like to be sewn together, matey?
+Child: 4, type: 0, width: 67, height: 61
+Child: 5, type: 0, width: 61, height: 63
+Child: 6, type: 0, width: 62, height: 62
+Child: 7, type: 0, width: 61, height: 63
+Child: 8, type: 0, width: 56, height: 61
+Child: 9, type: 0, width: 59, height: 62
+Child: 10, type: 0, width: 55, height: 60
+Child: 11, type: 0, width: 55, height: 60
+Child: 12, type: 0, width: 55, height: 60
+Child: 13, type: 0, width: 55, height: 60
+Child: 14, type: 0, width: 59, height: 84
+Child: 15, type: 0, width: 55, height: 60
+Child: 16, type: 0, width: 55, height: 60
+Child: 17, type: 0, width: 55, height: 60
+Child: 18, type: 0, width: 55, height: 60
+Child: 19, type: 0, width: 55, height: 71
+Child: 20, type: 0, width: 55, height: 71
+Child: 21, type: 0, width: 55, height: 71
+Child: 22, type: 0, width: 55, height: 71
+Child: 23, type: 0, width: 55, height: 71
+Child: 24, type: 0, width: 55, height: 71
+Child: 25, type: 0, width: 55, height: 71
+Child: 26, type: 0, width: 65, height: 55
+Child: 27, type: 0, width: 71, height: 85
+Child: 28, type: 0, width: 46, height: 78
+Child: 29, type: 0, width: 76, height: 58
+Child: 30, type: 0, width: 83, height: 84
+Child: 31, type: 0, width: 85, height: 75
+Child: 32, type: 3, width: 343, height: 2
+Child: 33, type: 3, width: 343, height: 2
+Child: 34, type: 3, width: 343, height: 2
+Child: 35, type: 0, width: 504, height: 263
+Child: 36, type: 0, width: 16, height: 240
+Child: 37, type: 5, width: 26, height: 23
+Child: 38, type: 6, width: 47, height: 38
+Child: 39, message: White<br>bandana
+Child: 40, type: 6, width: 47, height: 38
+Child: 41, message: Red<br>bandana
+Child: 42, type: 6, width: 47, height: 38
+Child: 43, message: Blue<br>bandana
+Child: 44, type: 6, width: 47, height: 38
+Child: 45, message: Brown<br>bandana
+Child: 46, type: 6, width: 47, height: 38
+Child: 47, message: Grey<br>bandana
+Child: 48, type: 6, width: 47, height: 38
+Child: 49, message: Purple<br>bandana
+Child: 50, type: 6, width: 51, height: 41
+Child: 51, message: Orange<br>bandana
+Child: 52, type: 6, width: 62, height: 41
+Child: 53, message: Grey<br>bandana
+Child: 54, type: 6, width: 62, height: 41
+Child: 55, message: Purple<br>bandana
+Child: 56, type: 6, width: 62, height: 41
+Child: 57, message: Orange<br>bandana
+Child: 58, type: 6, width: 62, height: 48
+Child: 59, message: Hat & double patches
+Child: 60, type: 6, width: 62, height: 41
+Child: 61, message: Red<br>bandana
+Child: 62, type: 6, width: 62, height: 41
+Child: 63, message: Brown<br>bandana
+Child: 64, type: 6, width: 62, height: 41
+Child: 65, message: Blue<br>bandana
+Child: 66, type: 6, width: 62, height: 41
+Child: 67, message: White<br>bandana
+Child: 68, type: 6, width: 60, height: 41
+Child: 69, message: White<br>bandana<br>left eye
+Child: 70, type: 6, width: 60, height: 41
+Child: 71, message: Red<br>bandana<br>left eye
+Child: 72, type: 6, width: 60, height: 41
+Child: 73, message: Blue<br> bandana<br>left eye
+Child: 74, type: 6, width: 60, height: 41
+Child: 75, message: Brown<br>bandana<br>left eye
+Child: 76, type: 6, width: 60, height: 41
+Child: 77, message: Grey<br>bandana<br>left eye
+Child: 78, type: 6, width: 60, height: 41
+Child: 79, message: Purple<br>bandana<br>left eye
+Child: 80, type: 6, width: 60, height: 41
+Child: 81, message: Orange<br>bandana<br>left eye
+Child: 82, type: 6, width: 53, height: 38
+Child: 83, message: Hat & patch
+Child: 84, type: 6, width: 64, height: 51
+Child: 85, message: Hat & patch<br>left
+Child: 86, type: 6, width: 37, height: 66
+Child: 87, message: Double<br>patch
+Child: 88, type: 6, width: 41, height: 44
+Child: 89, message: Hook & claw
+Child: 90, type: 6, width: 58, height: 48
+Child: 91, message: Cavalier & highwayman mask
+Child: 92, type: 6, width: 42, height: 49
+Child: 93, message: Beret & mime mask

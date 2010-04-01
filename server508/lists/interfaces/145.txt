@@ -1,0 +1,22 @@
+Child: 0, type: 6, width: 434, height: 334
+Child: 1, type: 0, width: 322, height: 197
+Child: 2, message: Dwarf
+Child: 3, message: Wartface & Bentnoze
+Child: 4, message: Pirate Pete
+Child: 5, message: Lumbridge Guide
+Child: 6, message: Evil Dave
+Child: 7, message: Sir Amik Varze
+Child: 8, message: Skrach 'Bone Cruncher' Uglogwee
+Child: 9, message: Monkey Ambassador
+Child: 10, type: 6, width: 37, height: 30
+Child: 11, type: 6, width: 37, height: 30
+Child: 12, type: 6, width: 37, height: 30
+Child: 13, type: 6, width: 37, height: 30
+Child: 14, type: 6, width: 37, height: 30
+Child: 15, type: 6, width: 37, height: 30
+Child: 16, type: 6, width: 37, height: 30
+Child: 17, type: 6, width: 37, height: 30
+Child: 18, type: 0, width: 16, height: 197
+Child: 19, type: 5, width: 26, height: 23
+Child: 20, message: Recipe for Disaster
+Child: 21, message: This quest is comprised of the 8 mini quests highlighted below

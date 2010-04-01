@@ -1,0 +1,41 @@
+Child: 0, type: 6, width: 430, height: 383
+Child: 1, type: 3, width: 357, height: 2
+Child: 2, type: 3, width: 357, height: 2
+Child: 3, type: 3, width: 357, height: 2
+Child: 4, type: 3, width: 357, height: 2
+Child: 5, type: 3, width: 357, height: 2
+Child: 6, type: 5, width: 29, height: 66
+Child: 7, type: 5, width: 45, height: 36
+Child: 8, type: 5, width: 45, height: 36
+Child: 9, type: 5, width: 45, height: 36
+Child: 10, type: 5, width: 45, height: 36
+Child: 11, type: 5, width: 45, height: 36
+Child: 12, type: 5, width: 45, height: 36
+Child: 13, message: E
+Child: 14, message: F
+Child: 15, message: E
+Child: 16, message: D
+Child: 17, message: C
+Child: 18, message: A
+Child: 19, message: E
+Child: 20, message: G
+Child: 21, message: A
+Child: 22, type: 6, width: 405, height: 82
+Child: 23, message: C
+Child: 24, message: D
+Child: 25, message: E
+Child: 26, message: F
+Child: 27, message: G
+Child: 28, message: A
+Child: 29, message: B
+Child: 30, message: D
+Child: 31, message: C
+Child: 32, message: E
+Child: 33, message: F
+Child: 34, message: G
+Child: 35, message: A
+Child: 36, message: B
+Child: 37, message: UPPER
+Child: 38, message: LOWER
+Child: 39, type: 5, width: 26, height: 23
+Child: 40, type: 0, width: 512, height: 334

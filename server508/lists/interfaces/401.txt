@@ -1,0 +1,24 @@
+Child: 0, type: 6, width: 15271, height: 939
+Child: 1, type: 6, width: 15271, height: 939
+Child: 2, type: 6, width: 15271, height: 1625
+Child: 3, message: PLAYER 
+Child: 4, message: SHOTS
+Child: 5, message: SCORE
+Child: 6, message: -
+Child: 7, message: -
+Child: 8, message: -
+Child: 9, message: -
+Child: 10, message: -
+Child: 11, message: -
+Child: 12, message: -
+Child: 13, message: -
+Child: 14, message: -
+Child: 15, message: -
+Child: 16, message: -
+Child: 17, message: -
+Child: 18, message: 
+Child: 19, message: 
+Child: 20, message: 
+Child: 21, message: 
+Child: 22, message: 
+Child: 23, type: 0, width: 16391, height: 16391

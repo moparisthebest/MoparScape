@@ -1,0 +1,231 @@
+Child: 0, type: 3, width: 562, height: 362
+Child: 1, type: 5, width: 88, height: 60
+Child: 2, type: 5, width: 88, height: 60
+Child: 3, type: 5, width: 88, height: 60
+Child: 4, type: 5, width: 88, height: 60
+Child: 5, type: 5, width: 88, height: 60
+Child: 6, type: 5, width: 88, height: 60
+Child: 7, type: 5, width: 88, height: 60
+Child: 8, type: 5, width: 88, height: 60
+Child: 9, type: 5, width: 88, height: 60
+Child: 10, type: 5, width: 88, height: 60
+Child: 11, type: 5, width: 88, height: 60
+Child: 12, type: 5, width: 88, height: 60
+Child: 13, type: 5, width: 88, height: 60
+Child: 14, type: 5, width: 88, height: 60
+Child: 15, type: 5, width: 88, height: 60
+Child: 16, type: 5, width: 88, height: 60
+Child: 17, type: 5, width: 88, height: 60
+Child: 18, type: 5, width: 88, height: 60
+Child: 19, type: 5, width: 88, height: 60
+Child: 20, type: 5, width: 88, height: 60
+Child: 21, type: 5, width: 88, height: 60
+Child: 22, type: 5, width: 88, height: 60
+Child: 23, type: 5, width: 88, height: 60
+Child: 24, type: 5, width: 88, height: 60
+Child: 25, type: 5, width: 88, height: 60
+Child: 26, type: 5, width: 88, height: 60
+Child: 27, type: 5, width: 88, height: 60
+Child: 28, type: 5, width: 88, height: 60
+Child: 29, type: 5, width: 88, height: 60
+Child: 30, type: 5, width: 36, height: 36
+Child: 31, type: 5, width: 36, height: 36
+Child: 32, type: 5, width: 36, height: 36
+Child: 33, type: 5, width: 36, height: 36
+Child: 34, type: 5, width: 36, height: 36
+Child: 35, type: 5, width: 36, height: 36
+Child: 36, type: 5, width: 36, height: 36
+Child: 37, type: 5, width: 36, height: 36
+Child: 38, type: 5, width: 36, height: 36
+Child: 39, type: 5, width: 36, height: 36
+Child: 40, type: 5, width: 36, height: 36
+Child: 41, type: 5, width: 36, height: 36
+Child: 42, type: 5, width: 36, height: 36
+Child: 43, type: 5, width: 36, height: 36
+Child: 44, type: 5, width: 36, height: 36
+Child: 45, type: 5, width: 36, height: 36
+Child: 46, type: 5, width: 36, height: 36
+Child: 47, type: 5, width: 36, height: 36
+Child: 48, type: 5, width: 36, height: 36
+Child: 49, type: 5, width: 36, height: 36
+Child: 50, type: 5, width: 36, height: 36
+Child: 51, type: 5, width: 36, height: 36
+Child: 52, type: 5, width: 36, height: 36
+Child: 53, type: 5, width: 36, height: 36
+Child: 54, type: 5, width: 36, height: 36
+Child: 55, type: 5, width: 36, height: 36
+Child: 56, type: 5, width: 36, height: 36
+Child: 57, type: 5, width: 36, height: 36
+Child: 58, type: 5, width: 36, height: 36
+Child: 59, type: 5, width: 36, height: 36
+Child: 60, type: 5, width: 36, height: 36
+Child: 61, type: 5, width: 36, height: 36
+Child: 62, type: 5, width: 36, height: 36
+Child: 63, type: 5, width: 25, height: 30
+Child: 64, type: 5, width: 36, height: 36
+Child: 65, type: 5, width: 25, height: 30
+Child: 66, type: 5, width: 36, height: 36
+Child: 67, type: 5, width: 36, height: 36
+Child: 68, type: 5, width: 36, height: 36
+Child: 69, type: 5, width: 36, height: 36
+Child: 70, type: 5, width: 36, height: 36
+Child: 71, type: 5, width: 36, height: 36
+Child: 72, type: 5, width: 88, height: 60
+Child: 73, type: 5, width: 36, height: 36
+Child: 74, type: 5, width: 36, height: 36
+Child: 75, type: 5, width: 36, height: 36
+Child: 76, type: 5, width: 36, height: 36
+Child: 77, type: 5, width: 36, height: 36
+Child: 78, message: Barbarian Assault Reward Shop
+Child: 79, type: 0, width: 435, height: 195
+Child: 80, type: 6, width: 49, height: 34
+Child: 81, type: 3, width: 238, height: 46
+Child: 82, message: Attacker level up to 2
+Child: 83, message: 100 Attacker points
+Child: 84, type: 3, width: 90, height: 46
+Child: 85, message: +2 bonus damage
+Child: 86, type: 3, width: 90, height: 46
+Child: 87, type: 5, width: 88, height: 60
+Child: 88, type: 5, width: 36, height: 36
+Child: 89, type: 6, width: 49, height: 34
+Child: 90, type: 3, width: 238, height: 46
+Child: 91, message: Collector level up to 2
+Child: 92, message: 100 Collector points
+Child: 93, type: 3, width: 90, height: 46
+Child: 94, message: Bag stores 4
+Child: 95, type: 3, width: 90, height: 46
+Child: 96, type: 6, width: 49, height: 34
+Child: 97, type: 3, width: 238, height: 46
+Child: 98, message: Defender level up to 2
+Child: 99, message: 100 Defender points
+Child: 100, type: 3, width: 90, height: 46
+Child: 101, message: Lure range 5
+Child: 102, type: 3, width: 90, height: 46
+Child: 103, type: 6, width: 49, height: 34
+Child: 104, type: 3, width: 238, height: 46
+Child: 105, message: Defender level up to 2
+Child: 106, message: 100 Healer points
+Child: 107, type: 3, width: 90, height: 46
+Child: 108, message: Class 2 healing
+Child: 109, type: 3, width: 90, height: 46
+Child: 110, type: 6, width: 49, height: 34
+Child: 111, type: 3, width: 238, height: 46
+Child: 112, message: Penance Fighter hat
+Child: 113, message: 275 points in each role
+Child: 114, type: 3, width: 90, height: 46
+Child: 115, message: Requires Defence 45
+Child: 116, type: 3, width: 90, height: 46
+Child: 117, type: 6, width: 49, height: 34
+Child: 118, type: 3, width: 238, height: 46
+Child: 119, message: Penance Ranger hat
+Child: 120, message: 275 points in each role
+Child: 121, type: 3, width: 90, height: 46
+Child: 122, message: Requires Defence 45
+Child: 123, type: 3, width: 90, height: 46
+Child: 124, type: 6, width: 49, height: 34
+Child: 125, type: 3, width: 238, height: 46
+Child: 126, message: Penance Runner hat
+Child: 127, message: 275 points in each role
+Child: 128, type: 3, width: 90, height: 46
+Child: 129, message: Requires Defence 45
+Child: 130, type: 3, width: 90, height: 46
+Child: 131, type: 6, width: 49, height: 34
+Child: 132, type: 3, width: 238, height: 46
+Child: 133, message: Penance Healer hat
+Child: 134, message: 275 points in each role
+Child: 135, type: 3, width: 90, height: 46
+Child: 136, message: Requires Defence 45
+Child: 137, type: 3, width: 90, height: 46
+Child: 138, type: 6, width: 49, height: 34
+Child: 139, type: 3, width: 238, height: 46
+Child: 140, message: Penance torso
+Child: 141, message: 375 points in each role
+Child: 142, type: 3, width: 90, height: 46
+Child: 143, message: Requires Defence 40
+Child: 144, type: 3, width: 90, height: 46
+Child: 145, type: 6, width: 49, height: 34
+Child: 146, type: 3, width: 238, height: 46
+Child: 147, message: Penance skirt
+Child: 148, message: 375 points in each role
+Child: 149, type: 3, width: 90, height: 46
+Child: 150, message: Requires Defence 40
+Child: 151, type: 3, width: 90, height: 46
+Child: 152, type: 6, width: 49, height: 34
+Child: 153, type: 3, width: 238, height: 46
+Child: 154, message: Penance boots
+Child: 155, message: 100 points in each role
+Child: 156, type: 3, width: 90, height: 46
+Child: 157, message: Requires Defence 40
+Child: 158, type: 3, width: 90, height: 46
+Child: 159, type: 6, width: 49, height: 34
+Child: 160, type: 3, width: 238, height: 46
+Child: 161, message: Penance gloves
+Child: 162, message: 150 points in each role
+Child: 163, type: 3, width: 90, height: 46
+Child: 164, message: Requires Defence 40
+Child: 165, type: 3, width: 90, height: 46
+Child: 166, type: 6, width: 49, height: 34
+Child: 167, type: 3, width: 238, height: 46
+Child: 168, message: Granite body
+Child: 169, message: 95,000 coins
+Child: 170, type: 3, width: 90, height: 46
+Child: 171, message: Requires Defence 50
+Child: 172, type: 3, width: 90, height: 46
+Child: 173, type: 6, width: 49, height: 34
+Child: 174, type: 3, width: 238, height: 46
+Child: 175, message: Gamble points - low items
+Child: 176, message: 200 points (any role)
+Child: 177, type: 3, width: 90, height: 46
+Child: 178, message: Receive a random item
+Child: 179, type: 3, width: 90, height: 46
+Child: 180, type: 6, width: 49, height: 34
+Child: 181, type: 3, width: 238, height: 46
+Child: 182, message: Gamble points - medium items
+Child: 183, message: 400 points (any role)
+Child: 184, type: 3, width: 90, height: 46
+Child: 185, message: Receive a random item
+Child: 186, type: 3, width: 90, height: 46
+Child: 187, type: 6, width: 49, height: 34
+Child: 188, type: 3, width: 238, height: 46
+Child: 189, message: Gamble points - high items
+Child: 190, message: 500 points (any role)
+Child: 191, type: 3, width: 90, height: 46
+Child: 192, message: Receive a random item
+Child: 193, type: 3, width: 90, height: 46
+Child: 194, type: 5, width: 36, height: 36
+Child: 195, type: 5, width: 36, height: 36
+Child: 196, type: 5, width: 36, height: 36
+Child: 197, type: 5, width: 36, height: 36
+Child: 198, type: 5, width: 36, height: 36
+Child: 199, type: 5, width: 25, height: 30
+Child: 200, type: 3, width: 374, height: 47
+Child: 201, type: 5, width: 150, height: 35
+Child: 202, type: 5, width: 25, height: 30
+Child: 203, type: 5, width: 36, height: 36
+Child: 204, type: 5, width: 36, height: 36
+Child: 205, type: 5, width: 36, height: 36
+Child: 206, type: 3, width: 123, height: 32
+Child: 207, type: 5, width: 26, height: 23
+Child: 208, type: 5, width: 26, height: 23
+Child: 209, type: 0, width: 32, height: 32
+Child: 210, message: Select your reward
+Child: 211, type: 3, width: 435, height: 196
+Child: 212, type: 6, width: 32, height: 32
+Child: 213, message:  Accept
+Child: 214, type: 3, width: 93, height: 34
+Child: 215, message: Attacker Honour Points:
+Child: 216, message: Defender Honour Points:
+Child: 217, message: Collector Honour Points:
+Child: 218, message: Healer Honour Points:
+Child: 219, message: 999
+Child: 220, message: 999
+Child: 221, message: 999
+Child: 222, message: 999
+Child: 223, message: Kill Queen
+Child: 224, message: Kill Queen
+Child: 225, message: Kill Queen
+Child: 226, message: Kill Queen
+Child: 227, message: Kill Queen
+Child: 228, message: Kill Queen
+Child: 229, message: Kill Queen
+Child: 230, message: Kill Queen

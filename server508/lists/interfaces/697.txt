@@ -1,0 +1,69 @@
+Child: 0, type: 0, width: 512, height: 334
+Child: 1, type: 6, width: 487, height: 335
+Child: 2, type: 6, width: 193, height: 151
+Child: 3, type: 6, width: 33, height: 34
+Child: 4, type: 6, width: 31, height: 34
+Child: 5, type: 6, width: 39, height: 29
+Child: 6, message: Question:
+Child: 7, message: Player Safety Test
+Child: 8, type: 5, width: 26, height: 23
+Child: 9, message: A player has just asked you for your personal details, including your phone number, home address and email address. What should you do?
+Child: 10, message: Give them my personal details
+Child: 11, message: Say "No" or ignore them
+Child: 12, message: Say "No" and ask for their details instead
+Child: 13, type: 9, width: 19, height: 1
+Child: 14, type: 9, width: 0, height: 19
+Child: 15, type: 9, width: 19, height: 1
+Child: 16, type: 9, width: 0, height: 20
+Child: 17, type: 9, width: 19, height: 1
+Child: 18, type: 9, width: 0, height: 19
+Child: 19, type: 9, width: 19, height: 1
+Child: 20, type: 9, width: 0, height: 20
+Child: 21, type: 9, width: 19, height: 1
+Child: 22, type: 9, width: 0, height: 19
+Child: 23, type: 9, width: 19, height: 1
+Child: 24, type: 9, width: 0, height: 20
+Child: 25, type: 9, width: 248, height: 0
+Child: 26, type: 0, width: 513, height: 335
+Child: 27, type: 3, width: 512, height: 334
+Child: 28, type: 5, width: 449, height: 230
+Child: 29, type: 5, width: 25, height: 172
+Child: 30, type: 5, width: 32, height: 32
+Child: 31, type: 5, width: 32, height: 32
+Child: 32, type: 5, width: 391, height: 32
+Child: 33, type: 5, width: 32, height: 173
+Child: 34, type: 5, width: 32, height: 32
+Child: 35, type: 5, width: 32, height: 32
+Child: 36, type: 5, width: 387, height: 25
+Child: 37, type: 0, width: 389, height: 160
+Child: 38, message: Correct!
+Child: 39, message: Be polite and say no, but if the other player is persistent you can also use the report abuse button and ignore functions, which can both be found at the bottom of your game window. If you are at all concerned, speak to a parent, friend or adult that you trust.
+Child: 40, type: 0, width: 389, height: 160
+Child: 41, message: Incorrect!
+Child: 42, message: Giving out personal information to another player is dangerous, as you can never be sure who you are talking to. It's best to keep your personal details to yourself.
+Child: 43, type: 0, width: 389, height: 160
+Child: 44, message: Incorrect!
+Child: 45, message: Asking for another player's personal details is against the RuneScape Rules of Conduct. Doing so would put your account at risk of being banned.
+Child: 46, type: 0, width: 97, height: 42
+Child: 47, type: 0, width: 97, height: 42
+Child: 48, type: 3, width: 97, height: 42
+Child: 49, message: Next
+Child: 50, type: 0, width: 16391, height: 16391
+Child: 51, type: 0, width: 16391, height: 16391
+Child: 52, type: 5, width: 32, height: 334
+Child: 53, type: 5, width: 462, height: 32
+Child: 54, type: 5, width: 512, height: 32
+Child: 55, type: 5, width: 32, height: 334
+Child: 56, type: 5, width: 32, height: 32
+Child: 57, type: 5, width: 32, height: 32
+Child: 58, type: 5, width: 32, height: 32
+Child: 59, type: 5, width: 32, height: 32
+Child: 60, type: 0, width: 8192, height: 16391
+Child: 61, type: 0, width: 8188, height: 16391
+Child: 62, type: 0, width: 16391, height: 8192
+Child: 63, type: 0, width: 16391, height: 8182
+Child: 64, type: 0, width: 512, height: 334
+Child: 65, type: 5, width: 256, height: 16384
+Child: 66, type: 5, width: 256, height: 16391
+Child: 67, type: 5, width: 16391, height: 167
+Child: 68, type: 5, width: 16391, height: 166

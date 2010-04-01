@@ -1,0 +1,51 @@
+Child: 0, type: 0, width: 512, height: 334
+Child: 1, type: 6, width: 532, height: 468
+Child: 2, message: Choose your refreshment from the sandwich tray
+Child: 3, type: 5, width: 26, height: 23
+Child: 4, type: 0, width: 32, height: 32
+Child: 5, type: 0, width: 515, height: 335
+Child: 6, type: 0, width: 448, height: 277
+Child: 7, type: 6, width: 53, height: 59
+Child: 8, type: 6, width: 57, height: 50
+Child: 9, type: 6, width: 57, height: 52
+Child: 10, type: 6, width: 36, height: 34
+Child: 11, type: 6, width: 57, height: 43
+Child: 12, type: 6, width: 42, height: 26
+Child: 13, type: 6, width: 30, height: 36
+Child: 14, message: Key
+Child: 15, type: 3, width: 515, height: 335
+Child: 16, type: 6, width: 53, height: 59
+Child: 17, type: 6, width: 57, height: 50
+Child: 18, type: 6, width: 57, height: 52
+Child: 19, type: 6, width: 36, height: 34
+Child: 20, type: 6, width: 57, height: 43
+Child: 21, type: 6, width: 42, height: 26
+Child: 22, type: 6, width: 30, height: 36
+Child: 23, message: Meat Pie
+Child: 24, message: Kebab
+Child: 25, message: Chocolate Bar
+Child: 26, message: Baguette
+Child: 27, message: Triangle Sandwich
+Child: 28, message: Square Sandwich
+Child: 29, message: back
+Child: 30, message: Roll
+Child: 31, message: 
+Child: 32, type: 0, width: 16391, height: 16391
+Child: 33, type: 0, width: 16391, height: 16391
+Child: 34, type: 5, width: 32, height: 334
+Child: 35, type: 5, width: 462, height: 32
+Child: 36, type: 5, width: 512, height: 32
+Child: 37, type: 5, width: 32, height: 334
+Child: 38, type: 5, width: 32, height: 32
+Child: 39, type: 5, width: 32, height: 32
+Child: 40, type: 5, width: 32, height: 32
+Child: 41, type: 5, width: 32, height: 32
+Child: 42, type: 0, width: 8192, height: 16391
+Child: 43, type: 0, width: 8188, height: 16391
+Child: 44, type: 0, width: 16391, height: 8192
+Child: 45, type: 0, width: 16391, height: 8182
+Child: 46, type: 0, width: 512, height: 334
+Child: 47, type: 5, width: 256, height: 16384
+Child: 48, type: 5, width: 256, height: 16391
+Child: 49, type: 5, width: 16391, height: 167
+Child: 50, type: 5, width: 16391, height: 166

@@ -1,0 +1,12 @@
+Child: 0, type: 6, width: 46, height: 32
+Child: 1, message: I (insert full name here) do hereby swear fealty   
+Child: 2, message: and indebtedness to the Fairy Godfather until
+Child: 3, message: such time as he releases me from my bond.
+Child: 4, message: 
+Child: 5, message: Signed
+Child: 6, message: 
+Child: 7, message: (insert full name and date here)
+Child: 8, message: 
+Child: 9, type: 5, width: 26, height: 23
+Child: 10, type: 5, width: 26, height: 23
+Child: 11, type: 0, width: 32, height: 32

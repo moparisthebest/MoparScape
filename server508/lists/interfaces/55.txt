@@ -1,0 +1,10 @@
+Child: 0, message: Total Wins This Season!
+Child: 1, message: Saradomin: 0
+Child: 2, message: Zamorak: 0
+Child: 3, type: 6, width: 21, height: 28
+Child: 4, type: 6, width: 21, height: 28
+Child: 5, type: 5, width: 57, height: 13
+Child: 6, type: 5, width: 57, height: 13
+Child: 7, type: 6, width: 21, height: 28
+Child: 8, type: 6, width: 21, height: 28
+Child: 9, type: 5, width: 26, height: 23

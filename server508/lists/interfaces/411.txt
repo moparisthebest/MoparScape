@@ -1,0 +1,14 @@
+Child: 0, type: 3, width: 165, height: 232
+Child: 1, type: 3, width: 155, height: 53
+Child: 2, type: 3, width: 155, height: 53
+Child: 3, type: 3, width: 155, height: 53
+Child: 4, type: 3, width: 155, height: 53
+Child: 5, type: 6, width: 32, height: 32
+Child: 6, type: 6, width: 32, height: 32
+Child: 7, type: 6, width: 32, height: 32
+Child: 8, type: 6, width: 32, height: 32
+Child: 9, message: Use stab defence
+Child: 10, message: Use blunt defence
+Child: 11, message:  Use slash defence
+Child: 12, message:  Use magic defence
+Child: 13, message: Defence style.

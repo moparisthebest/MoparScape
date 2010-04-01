@@ -1,0 +1,48 @@
+Child: 0, type: 0, width: 512, height: 334
+Child: 1, type: 6, width: 510, height: 289
+Child: 2, message: Player 2 Interface Screen
+Child: 3, message: Decline
+Child: 4, type: 6, width: 60, height: 58
+Child: 5, message: Attacker
+Child: 6, type: 6, width: 47, height: 56
+Child: 7, message: Defender
+Child: 8, message: Collector
+Child: 9, type: 6, width: 41, height: 53
+Child: 10, type: 6, width: 51, height: 51
+Child: 11, message: Healer
+Child: 12, type: 6, width: 43, height: 45
+Child: 13, message: Accept
+Child: 14, type: 6, width: 43, height: 45
+Child: 15, message: None
+Child: 16, type: 0, width: 191, height: 32
+Child: 17, message: Waiting for player 1 to accept...
+Child: 18, message: The team:
+Child: 19, message: Name
+Child: 20, message: Role
+Child: 21, message: --- Leader ---
+Child: 22, message: --- Followers ---
+Child: 23, message: none set
+Child: 24, message: none set
+Child: 25, message: none set
+Child: 26, message: none set
+Child: 27, message: none set
+Child: 28, message: none set
+Child: 29, message: none set
+Child: 30, message: none set
+Child: 31, message: none set
+Child: 32, message: none set
+Child: 33, message: Wave
+Child: 34, message: 0
+Child: 35, message: 0
+Child: 36, message: 0
+Child: 37, message: 0
+Child: 38, message: 0
+Child: 39, message: Please select a role!<br>Current Role:
+Child: 40, message: Name
+Child: 41, message: Role
+Child: 42, message: Name
+Child: 43, message: Role
+Child: 44, message: Name
+Child: 45, message: Role
+Child: 46, message: Name
+Child: 47, message: Role

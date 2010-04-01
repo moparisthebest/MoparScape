@@ -1,0 +1,9 @@
+Child: 0, type: 0, width: 174, height: 189
+Child: 1, type: 6, width: 159, height: 64
+Child: 2, message: Telekinetic
+Child: 3, message: Pizazz Points:
+Child: 4, message: 999999
+Child: 5, type: 0, width: 58, height: 119
+Child: 6, type: 6, width: 35, height: 57
+Child: 7, message: 999
+Child: 8, message: Solved :

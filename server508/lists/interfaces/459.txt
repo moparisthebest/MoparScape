@@ -1,0 +1,38 @@
+Child: 0, type: 5, width: 480, height: 294
+Child: 1, type: 5, width: 36, height: 276
+Child: 2, type: 5, width: 24, height: 272
+Child: 3, type: 5, width: 466, height: 25
+Child: 4, type: 5, width: 475, height: 38
+Child: 5, type: 5, width: 32, height: 32
+Child: 6, type: 5, width: 32, height: 32
+Child: 7, type: 5, width: 32, height: 32
+Child: 8, type: 5, width: 32, height: 32
+Child: 9, type: 5, width: 479, height: 33
+Child: 10, type: 5, width: 32, height: 32
+Child: 11, type: 5, width: 32, height: 32
+Child: 12, type: 5, width: 16, height: 16
+Child: 13, message: What would you like to spin?
+Child: 14, type: 6, width: 38, height: 39
+Child: 15, message: Bow String<br>(Flax)
+Child: 16, type: 0, width: 64, height: 80
+Child: 17, message: 
+Child: 18, type: 0, width: 64, height: 80
+Child: 19, message: 
+Child: 20, type: 6, width: 32, height: 35
+Child: 21, message: Ball of Wool<br>(Wool)
+Child: 22, type: 0, width: 64, height: 80
+Child: 23, message: 
+Child: 24, type: 6, width: 38, height: 39
+Child: 25, message: Magic Amulet<br>String<br>(Magic Roots)
+Child: 26, type: 0, width: 64, height: 80
+Child: 27, message: 
+Child: 28, type: 6, width: 56, height: 49
+Child: 29, message: C'Bow String<br>(Sinew)
+Child: 30, type: 0, width: 64, height: 80
+Child: 31, message: 
+Child: 32, type: 6, width: 56, height: 48
+Child: 33, message: C'Bow String<br>(Tree Roots)
+Child: 34, type: 0, width: 64, height: 80
+Child: 35, message: 
+Child: 36, type: 6, width: 59, height: 39
+Child: 37, message: Rope<br>(Yak Hair)

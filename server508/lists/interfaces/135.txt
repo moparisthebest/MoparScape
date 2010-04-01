@@ -1,0 +1,18 @@
+Child: 0, type: 3, width: 16384, height: 16384
+Child: 1, type: 6, width: 208, height: 111
+Child: 2, message: To the NORTH
+Child: 3, message: To the NORTH
+Child: 4, type: 6, width: 147, height: 192
+Child: 5, type: 6, width: 208, height: 111
+Child: 6, message: To the EAST
+Child: 7, message: To the SOUTH
+Child: 8, message: To the EAST
+Child: 9, message: To the SOUTH
+Child: 10, type: 6, width: 147, height: 190
+Child: 11, message: To the WEST
+Child: 12, message: To the WEST
+Child: 13, type: 5, width: 26, height: 23
+Child: 14, type: 6, width: 145, height: 148
+Child: 15, type: 0, width: 32, height: 32
+Child: 16, type: 0, width: 512, height: 334
+Child: 17, type: 5, width: 26, height: 23

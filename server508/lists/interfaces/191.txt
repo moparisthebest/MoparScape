@@ -1,0 +1,10 @@
+Child: 0, type: 0, width: 512, height: 334
+Child: 1, type: 3, width: 904, height: 585
+Child: 2, type: 6, width: 509, height: 98
+Child: 3, type: 6, width: 105, height: 35
+Child: 4, type: 6, width: 105, height: 35
+Child: 5, type: 6, width: 105, height: 35
+Child: 6, type: 6, width: 25, height: 4
+Child: 7, type: 6, width: 31, height: 14
+Child: 8, type: 6, width: 25, height: 4
+Child: 9, message: Pick the odd one out.

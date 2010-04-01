@@ -1,0 +1,17 @@
+Child: 0, type: 3, width: 512, height: 400
+Child: 1, type: 3, width: 520, height: 34
+Child: 2, type: 6, width: 32, height: 32
+Child: 3, message: Magic Training Arena Shop
+Child: 4, message: Telekinetic Pizazz Points
+Child: 5, message: Enchantment Pizazz Points
+Child: 6, message: Graveyard Pizazz Points
+Child: 7, message: Alchemist Pizazz Points
+Child: 8, message: 99999
+Child: 9, message: 99999
+Child: 10, message: 99999
+Child: 11, message: 99999
+Child: 12, message: (Upgrade)
+Child: 13, message: (Upgrade)
+Child: 14, message: (Upgrade)
+Child: 15, type: 5, width: 26, height: 23
+Child: 16, type: 0, width: 498, height: 214

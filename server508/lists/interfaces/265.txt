@@ -1,0 +1,10 @@
+Child: 0, type: 3, width: 239, height: 54
+Child: 1, type: 3, width: 239, height: 54
+Child: 2, message: Clan A's name
+Child: 3, message: Players remaining:
+Child: 4, message: Opposing clan
+Child: 5, message: Players remaining:
+Child: 6, message: 0
+Child: 7, message: 0
+Child: 8, message: Time till start
+Child: 9, message: 0 secs

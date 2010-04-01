@@ -1,0 +1,9 @@
+Child: 0, type: 6, width: 470, height: 261
+Child: 1, message: To: Engineer Claus Mousetrap
+Child: 2, message: This morning I received a complaint about your inability to repair the Camp Tyras catapult, arriving without the tools and materials required.  To avoid further delay, I'll repeat your instructions:
+Child: 3, message: *The replacement wooden parts must be made from MAHOGANY planks and at least MITHRIL nails. <br>*You will need METAL PARTS, which have been ordered from Rolad, the dwarf scholar.<br>The pride of the King's Engineers is at stake, Claus.
+Child: 4, message: SORT THIS MESS OUT!
+Child: 5, message: Chief Engineer, Commander Measures
+Child: 6, type: 5, width: 26, height: 23
+Child: 7, type: 5, width: 26, height: 23
+Child: 8, type: 0, width: 32, height: 32

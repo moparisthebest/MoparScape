@@ -1,0 +1,45 @@
+Child: 0, type: 5, width: 487, height: 297
+Child: 1, type: 5, width: 25, height: 30
+Child: 2, type: 5, width: 27, height: 250
+Child: 3, type: 5, width: 22, height: 247
+Child: 4, message: Insert a very long name here!
+Child: 5, type: 5, width: 444, height: 27
+Child: 6, type: 5, width: 441, height: 27
+Child: 7, type: 5, width: 25, height: 30
+Child: 8, type: 5, width: 25, height: 30
+Child: 9, type: 5, width: 25, height: 30
+Child: 10, message: vs
+Child: 11, message: Insert a very long name here!
+Child: 12, type: 5, width: 38, height: 289
+Child: 13, type: 5, width: 181, height: 23
+Child: 14, message: Turn:
+Child: 15, type: 0, width: 122, height: 35
+Child: 16, type: 0, width: 122, height: 36
+Child: 17, message: Draughts
+Child: 18, type: 3, width: 111, height: 25
+Child: 19, message: Resign
+Child: 20, type: 3, width: 112, height: 26
+Child: 21, message: Offer draw
+Child: 22, type: 5, width: 77, height: 23
+Child: 23, type: 5, width: 79, height: 23
+Child: 24, message: A very long name
+Child: 25, type: 5, width: 84, height: 50
+Child: 26, type: 5, width: 25, height: 30
+Child: 27, type: 5, width: 25, height: 30
+Child: 28, type: 5, width: 25, height: 30
+Child: 29, type: 5, width: 25, height: 30
+Child: 30, type: 5, width: 25, height: 30
+Child: 31, type: 5, width: 25, height: 30
+Child: 32, type: 5, width: 25, height: 30
+Child: 33, type: 5, width: 77, height: 35
+Child: 34, type: 5, width: 25, height: 30
+Child: 35, type: 6, width: 275, height: 274
+Child: 36, type: 3, width: 258, height: 258
+Child: 37, message: Blah blah blah blah blah blah blah!
+Child: 38, type: 6, width: 32, height: 32
+Child: 39, message: Blah blah blah blah blah blah blah!
+Child: 40, message: Blah blah blah blah blah!
+Child: 41, type: 6, width: 20, height: 20
+Child: 42, type: 6, width: 20, height: 20
+Child: 43, type: 6, width: 32, height: 32
+Child: 44, type: 0, width: 258, height: 258

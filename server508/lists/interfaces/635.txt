@@ -1,0 +1,39 @@
+Child: 0, type: 5, width: 25, height: 25
+Child: 1, type: 3, width: 90, height: 131
+Child: 2, type: 0, width: 16391, height: 16391
+Child: 3, type: 0, width: 16391, height: 16391
+Child: 4, type: 0, width: 16391, height: 16391
+Child: 5, type: 0, width: 16391, height: 16391
+Child: 6, type: 0, width: 16391, height: 16391
+Child: 7, type: 0, width: 16391, height: 16391
+Child: 8, type: 0, width: 16391, height: 16391
+Child: 9, type: 0, width: 16391, height: 16391
+Child: 10, type: 0, width: 16391, height: 16391
+Child: 11, type: 0, width: 16391, height: 16391
+Child: 12, type: 0, width: 16384, height: 16391
+Child: 13, message: Style:
+Child: 14, message: Options:
+Child: 15, type: 5, width: 25, height: 25
+Child: 16, type: 5, width: 25, height: 25
+Child: 17, type: 5, width: 25, height: 25
+Child: 18, type: 5, width: 25, height: 25
+Child: 19, type: 5, width: 25, height: 25
+Child: 20, type: 5, width: 25, height: 25
+Child: 21, type: 5, width: 25, height: 25
+Child: 22, type: 5, width: 25, height: 25
+Child: 23, type: 5, width: 25, height: 25
+Child: 24, type: 5, width: 25, height: 25
+Child: 25, type: 0, width: 6631, height: 2606
+Child: 26, message: 
+Child: 27, message: Registrar:
+Child: 28, message: Time left:
+Child: 29, message: 
+Child: 30, message: Entry Fee:
+Child: 31, message: 
+Child: 32, message: Tourn. Value:
+Child: 33, message: 
+Child: 34, message: 
+Child: 35, type: 0, width: 16391, height: 16391
+Child: 36, type: 0, width: 16391, height: 16391
+Child: 37, message: Tourn. Rank:
+Child: 38, message: 

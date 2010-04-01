@@ -1,0 +1,1 @@
+Child: 0, type: 6, width: 18727, height: 31254

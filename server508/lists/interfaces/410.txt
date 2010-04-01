@@ -1,0 +1,13 @@
+Child: 0, type: 6, width: 32, height: 32
+Child: 1, type: 6, width: 32, height: 32
+Child: 2, type: 6, width: 32, height: 32
+Child: 3, type: 6, width: 32, height: 32
+Child: 4, type: 6, width: 32, height: 32
+Child: 5, message: Spiky ball. Use stab defence.
+Child: 6, message: Anvil. Use blunt defence.
+Child: 7, message: Slashing blades. Use slash defence.
+Child: 8, message: Magic missile. Use magic defence.
+Child: 9, message: Catapult Defence Game Key
+Child: 10, type: 5, width: 26, height: 23
+Child: 11, type: 5, width: 26, height: 23
+Child: 12, type: 0, width: 32, height: 32

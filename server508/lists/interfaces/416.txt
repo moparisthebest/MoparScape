@@ -1,0 +1,39 @@
+Child: 0, type: 6, width: 533, height: 378
+Child: 1, type: 0, width: 513, height: 208
+Child: 2, message: 
+Child: 3, message: 
+Child: 4, message: 
+Child: 5, type: 0, width: 204, height: 70
+Child: 6, type: 0, width: 204, height: 70
+Child: 7, type: 0, width: 204, height: 70
+Child: 8, type: 5, width: 26, height: 23
+Child: 9, type: 6, width: 201, height: 60
+Child: 10, message: Bridge Section
+Child: 11, type: 6, width: 200, height: 58
+Child: 12, message: Pipe Section
+Child: 13, type: 6, width: 201, height: 57
+Child: 14, message: Wooden Planks
+Child: 15, type: 0, width: 512, height: 334
+Child: 16, type: 6, width: 775, height: 332
+Child: 17, type: 6, width: 169, height: 101
+Child: 18, type: 6, width: 120, height: 96
+Child: 19, type: 6, width: 78, height: 105
+Child: 20, type: 0, width: 16391, height: 16391
+Child: 21, type: 0, width: 16391, height: 16391
+Child: 22, type: 0, width: 8192, height: 16391
+Child: 23, type: 5, width: 256, height: 16391
+Child: 24, type: 0, width: 8188, height: 16391
+Child: 25, type: 5, width: 256, height: 16384
+Child: 26, type: 0, width: 16391, height: 8192
+Child: 27, type: 5, width: 16391, height: 167
+Child: 28, type: 0, width: 16391, height: 8182
+Child: 29, type: 5, width: 16391, height: 166
+Child: 30, type: 0, width: 512, height: 334
+Child: 31, type: 5, width: 32, height: 334
+Child: 32, type: 5, width: 462, height: 32
+Child: 33, type: 5, width: 512, height: 32
+Child: 34, type: 5, width: 32, height: 334
+Child: 35, type: 5, width: 32, height: 32
+Child: 36, type: 5, width: 32, height: 32
+Child: 37, type: 5, width: 32, height: 32
+Child: 38, type: 5, width: 32, height: 32

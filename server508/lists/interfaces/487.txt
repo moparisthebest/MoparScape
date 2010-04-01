@@ -1,0 +1,9 @@
+Child: 0, type: 5, width: 17, height: 13
+Child: 1, message: Wave 1
+Child: 2, type: 5, width: 17, height: 13
+Child: 3, message: Tofu
+Child: 4, type: 5, width: 17, height: 13
+Child: 5, message: Poison meat
+Child: 6, type: 5, width: 17, height: 13
+Child: 7, message: Healer
+Child: 8, type: 0, width: 512, height: 334

@@ -1,0 +1,35 @@
+Child: 0, type: 0, width: 16391, height: 16391
+Child: 1, type: 5, width: 12, height: 32
+Child: 2, type: 0, width: 12, height: 49
+Child: 3, type: 0, width: 16384, height: 16391
+Child: 4, type: 5, width: 177, height: 16391
+Child: 5, type: 0, width: 24, height: 16391
+Child: 6, type: 0, width: 16, height: 16391
+Child: 7, type: 5, width: 3, height: 16391
+Child: 8, type: 3, width: 3, height: 454
+Child: 9, type: 5, width: 16, height: 16
+Child: 10, type: 0, width: 12, height: 32
+Child: 11, type: 5, width: 16391, height: 16384
+Child: 12, type: 5, width: 35, height: 35
+Child: 13, type: 5, width: 35, height: 35
+Child: 14, type: 5, width: 35, height: 35
+Child: 15, type: 0, width: 350, height: 20
+Child: 16, type: 5, width: 20, height: 20
+Child: 17, type: 5, width: 310, height: 20
+Child: 18, type: 5, width: 20, height: 20
+Child: 19, message: Search the map by typing here.
+Child: 20, type: 0, width: 153, height: 153
+Child: 21, type: 0, width: 35, height: 140
+Child: 22, type: 0, width: 185, height: 16391
+Child: 23, type: 5, width: 35, height: 35
+Child: 24, message: 37%
+Child: 25, type: 5, width: 35, height: 35
+Child: 26, message: 50%
+Child: 27, type: 5, width: 35, height: 35
+Child: 28, message: 75%
+Child: 29, type: 5, width: 35, height: 35
+Child: 30, message: 100%
+Child: 31, type: 5, width: 32, height: 32
+Child: 32, type: 5, width: 120, height: 32
+Child: 33, type: 5, width: 32, height: 121
+Child: 34, type: 0, width: 150, height: 150

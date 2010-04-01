@@ -1,0 +1,42 @@
+4177-defender block
+390-d long attack
+4168-blunt defense block from catapult at warriors guild
+4175-hit by something from catapult at warriors guild
+4170-slash defense from catapult at warriors guild
+4171-magic defense from catapult at warriors guild
+8500-infusing pouch (summoning)
+8502-renew points(summoning)
+828-climb up ladder
+7181-female druid attack
+7185-druid dead
+7187-druid block
+7182-male druid attack
+2572-pushing door open
+4181-standing throw(shotput)
+4183-spin and throw(shotput)
+4182-step and throw(shotput)
+4180-bend over to get barrels on top of head(warrior's guild)
+4188-barrel falling of head anim
+4652-cyclops attack anim
+4651-cyclops block anim
+4653-cyclops death anim
+169-imp attack anim
+168/170-imp block anim
+6183-goblin block anim
+6182-goblin death anim
+6184-goblin attack anim
+5850-cow attack anim
+5849-cow block anim
+5851-cow death anim
+5389-chicken death anim
+5388-chicken block anim
+5387-chicken attack anim
+6375-unicorn block anim
+6376-unicorn attack anim
+6377-unicorn death anim
+4925-bear attack anim
+4927-bear block anim
+4929-bear death anim
+4933-rat attack anim
+4934-rat block anim
+4935-rat death anim

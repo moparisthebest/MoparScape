@@ -1,0 +1,7 @@
+Child: 0, type: 0, width: 194, height: 192
+Child: 1, type: 6, width: 32, height: 32
+inventory type: 25 slots, width: 5, height: 5, 2
+Child: 3, type: 6, width: 32, height: 32
+Child: 4, type: 5, width: 26, height: 23
+Child: 5, type: 5, width: 26, height: 23
+Child: 6, type: 0, width: 32, height: 32

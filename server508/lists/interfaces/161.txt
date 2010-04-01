@@ -1,0 +1,48 @@
+Child: 0, type: 3, width: 489, height: 305
+Child: 1, type: 5, width: 485, height: 300
+Child: 2, type: 5, width: 32, height: 241
+Child: 3, type: 5, width: 32, height: 32
+Child: 4, type: 5, width: 32, height: 243
+Child: 5, type: 5, width: 424, height: 34
+Child: 6, type: 5, width: 423, height: 32
+Child: 7, type: 5, width: 16, height: 16
+Child: 8, type: 5, width: 32, height: 32
+Child: 9, type: 5, width: 32, height: 32
+Child: 10, type: 5, width: 32, height: 32
+Child: 11, type: 5, width: 465, height: 32
+Child: 12, type: 5, width: 32, height: 32
+Child: 13, type: 5, width: 32, height: 32
+Child: 14, type: 5, width: 102, height: 20
+Child: 15, type: 5, width: 94, height: 20
+Child: 16, type: 5, width: 98, height: 20
+Child: 17, type: 9, width: 398, height: 0
+Child: 18, type: 3, width: 200, height: 31
+Child: 19, message: XXXX
+Child: 20, message: Buy
+Child: 21, message: Learn
+Child: 22, message: Assignment
+Child: 23, message: Reassign current mission
+Child: 24, message: Permanently remove current<br>(additional Quest Point requirement)
+Child: 25, message: Current points =
+Child: 26, message: (30 points)
+Child: 27, message: (100 points)
+Child: 28, message: (Does not
+Child: 29, message: refund points)
+Child: 30, message: B
+Child: 31, message: C
+Child: 32, message: D
+Child: 33, message: Cancel removal
+Child: 34, message: Currently removed
+Child: 35, message: A
+Child: 36, type: 5, width: 16, height: 16
+Child: 37, type: 5, width: 16, height: 16
+Child: 38, type: 5, width: 16, height: 16
+Child: 39, type: 5, width: 16, height: 16
+Child: 40, type: 5, width: 32, height: 32
+Child: 41, type: 5, width: 32, height: 32
+Child: 42, type: 5, width: 32, height: 32
+Child: 43, type: 5, width: 32, height: 32
+Child: 44, type: 5, width: 147, height: 32
+Child: 45, type: 5, width: 148, height: 32
+Child: 46, type: 0, width: 512, height: 334
+Child: 47, type: 0, width: 512, height: 334

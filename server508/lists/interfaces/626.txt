@@ -1,0 +1,56 @@
+Child: 0, type: 3, width: 488, height: 305
+Child: 1, type: 5, width: 485, height: 300
+Child: 2, type: 5, width: 32, height: 241
+Child: 3, type: 5, width: 32, height: 32
+Child: 4, type: 5, width: 32, height: 243
+Child: 5, type: 5, width: 424, height: 34
+Child: 6, type: 5, width: 423, height: 32
+Child: 7, type: 5, width: 16, height: 16
+Child: 8, type: 5, width: 32, height: 32
+Child: 9, type: 5, width: 32, height: 32
+Child: 10, type: 5, width: 32, height: 32
+Child: 11, type: 5, width: 470, height: 32
+Child: 12, type: 5, width: 32, height: 32
+Child: 13, type: 5, width: 32, height: 32
+Child: 14, type: 5, width: 32, height: 32
+Child: 15, type: 5, width: 32, height: 260
+Child: 16, type: 5, width: 226, height: 32
+Child: 17, type: 5, width: 241, height: 32
+Child: 18, type: 5, width: 32, height: 32
+Child: 19, type: 5, width: 32, height: 32
+Child: 20, message: Are you sure you want to fight this duel?
+Child: 21, type: 0, width: 208, height: 129
+Child: 22, type: 0, width: 208, height: 129
+Child: 23, message: You are about to stake:
+Child: 24, message: Your opponent will stake:
+Child: 25, message: Absolutely nothing!
+Child: 26, message: Absolutely nothing!
+Child: 27, message: Before the duel starts:
+Child: 28, message: There will be obstacles in the arena.
+Child: 29, message: There will be obstacles in the arena.
+Child: 30, message: There will be obstacles in the arena.
+Child: 31, message: There will be obstacles in the arena.
+Child: 32, message: During the duel:
+Child: 33, message: There will be obstacles in the arena.
+Child: 34, message: There will be obstacles in the arena.
+Child: 35, message: There will be obstacles in the arena.
+Child: 36, message: There will be obstacles in the arena.
+Child: 37, message: There will be obstacles in the arena.
+Child: 38, message: There will be obstacles in the arena.
+Child: 39, message: There will be obstacles in the arena.
+Child: 40, message: There will be obstacles in the arena.
+Child: 41, message: Lots of y's and g's
+Child: 42, message: There will be obstacles in the arena.
+Child: 43, message: There will be obstacles in the arena.
+Child: 44, message: There will be obstacles in the arena.
+Child: 45, message: Waiting for other player...
+Child: 46, message: 
+Child: 47, message: 
+Child: 48, type: 0, width: 196, height: 108
+Child: 49, type: 0, width: 196, height: 108
+Child: 50, type: 0, width: 16, height: 108
+Child: 51, type: 0, width: 16, height: 108
+Child: 52, type: 0, width: 70, height: 18
+Child: 53, message: Accept
+Child: 54, type: 0, width: 70, height: 18
+Child: 55, message: Decline

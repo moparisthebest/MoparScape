@@ -1,0 +1,62 @@
+Child: 0, type: 0, width: 512, height: 334
+Child: 1, type: 0, width: 527, height: 340
+Child: 2, type: 0, width: 329, height: 104
+Child: 3, type: 0, width: 230, height: 170
+Child: 4, type: 0, width: 131, height: 224
+Child: 5, type: 0, width: 458, height: 103
+Child: 6, type: 0, width: 80, height: 16
+Child: 7, message: WHAT SORT OF CANOE WOULD YOU LIKE TO MAKE   ?
+Child: 8, type: 0, width: 462, height: 110
+Child: 9, type: 0, width: 234, height: 164
+Child: 10, type: 0, width: 336, height: 108
+Child: 11, type: 5, width: 26, height: 23
+Child: 12, type: 0, width: 32, height: 32
+Child: 13, type: 6, width: 710, height: 366
+Child: 14, type: 6, width: 164, height: 38
+Child: 15, type: 6, width: 179, height: 79
+Child: 16, type: 6, width: 114, height: 42
+Child: 17, type: 6, width: 118, height: 122
+Child: 18, type: 6, width: 74, height: 53
+Child: 19, type: 6, width: 931, height: 282
+Child: 20, type: 6, width: 71, height: 130
+Child: 21, type: 6, width: 227, height: 56
+Child: 22, type: 6, width: 288, height: 91
+Child: 23, message: A Stable Dugout.
+Child: 24, message: A Waka.
+Child: 25, message: A Dugout.
+Child: 26, message: A Log.
+Child: 27, type: 6, width: 871, height: 358
+Child: 28, type: 6, width: 939, height: 211
+Child: 29, type: 6, width: 1095, height: 829
+Child: 30, message: 
+Child: 31, message: 
+Child: 32, message: 
+Child: 33, message: 
+Child: 34, type: 6, width: 227, height: 56
+Child: 35, type: 6, width: 294, height: 91
+Child: 36, type: 6, width: 114, height: 42
+Child: 37, type: 6, width: 119, height: 121
+Child: 38, type: 6, width: 164, height: 38
+Child: 39, type: 6, width: 189, height: 76
+Child: 40, message: 
+Child: 41, message: 
+Child: 42, message: 
+Child: 43, type: 0, width: 16391, height: 16391
+Child: 44, type: 0, width: 16391, height: 16391
+Child: 45, type: 5, width: 32, height: 334
+Child: 46, type: 5, width: 462, height: 32
+Child: 47, type: 5, width: 512, height: 32
+Child: 48, type: 5, width: 32, height: 334
+Child: 49, type: 5, width: 32, height: 32
+Child: 50, type: 5, width: 32, height: 32
+Child: 51, type: 5, width: 32, height: 32
+Child: 52, type: 5, width: 32, height: 32
+Child: 53, type: 0, width: 8192, height: 16391
+Child: 54, type: 0, width: 8188, height: 16391
+Child: 55, type: 0, width: 16391, height: 8192
+Child: 56, type: 0, width: 16391, height: 8182
+Child: 57, type: 0, width: 512, height: 334
+Child: 58, type: 5, width: 256, height: 16384
+Child: 59, type: 5, width: 256, height: 16391
+Child: 60, type: 5, width: 16391, height: 167
+Child: 61, type: 5, width: 16391, height: 166

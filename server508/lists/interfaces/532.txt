@@ -1,0 +1,2 @@
+Child: 0, message: Museum Kudos:
+Child: 1, message: 

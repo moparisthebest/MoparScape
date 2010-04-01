@@ -1,0 +1,30 @@
+Child: 0, type: 0, width: 519, height: 23
+Child: 1, type: 0, width: 56, height: 22
+Child: 2, type: 5, width: 56, height: 22
+Child: 3, message: All
+Child: 4, type: 0, width: 56, height: 22
+Child: 5, type: 5, width: 56, height: 22
+Child: 6, message: Game
+Child: 7, type: 0, width: 56, height: 22
+Child: 8, type: 5, width: 56, height: 22
+Child: 9, message: Public
+Child: 10, message: On
+Child: 11, type: 0, width: 56, height: 22
+Child: 12, type: 5, width: 56, height: 22
+Child: 13, message: Private
+Child: 14, message: On
+Child: 15, type: 0, width: 56, height: 22
+Child: 16, type: 5, width: 56, height: 22
+Child: 17, message: Clan
+Child: 18, message: On
+Child: 19, type: 0, width: 56, height: 22
+Child: 20, type: 5, width: 56, height: 22
+Child: 21, message: Trade
+Child: 22, message: On
+Child: 23, type: 0, width: 56, height: 22
+Child: 24, type: 5, width: 56, height: 22
+Child: 25, message: Assist
+Child: 26, message: On
+Child: 27, type: 0, width: 111, height: 22
+Child: 28, type: 5, width: 111, height: 22
+Child: 29, message: Report Abuse

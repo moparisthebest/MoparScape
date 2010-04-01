@@ -1,0 +1,7 @@
+Child: 0, type: 0, width: 382, height: 32
+Child: 1, type: 0, width: 341, height: 77
+Child: 2, message: Complete the Maze as fast as possible!
+Child: 3, message: There is...
+Child: 4, message: %1%
+Child: 5, message: ... of the Reward left!
+Child: 6, type: 0, width: 354, height: 89

@@ -1,0 +1,26 @@
+Child: 0, type: 6, width: 556, height: 411
+Child: 1, type: 6, width: 261, height: 81
+Child: 2, type: 6, width: 261, height: 243
+Child: 3, type: 6, width: 63, height: 319
+Child: 4, type: 6, width: 63, height: 319
+Child: 5, type: 6, width: 63, height: 319
+Child: 6, type: 6, width: 39, height: 26
+Child: 7, type: 6, width: 25, height: 21
+Child: 8, type: 6, width: 39, height: 26
+Child: 9, type: 6, width: 39, height: 11
+Child: 10, type: 6, width: 39, height: 11
+Child: 11, type: 6, width: 35, height: 20
+Child: 12, type: 6, width: 54, height: 24
+Child: 13, type: 6, width: 39, height: 25
+Child: 14, type: 6, width: 39, height: 25
+Child: 15, message: DIAMOND
+Child: 16, message: COINS
+Child: 17, message: RING
+Child: 18, message: U N L O C K
+Child: 19, type: 6, width: 54, height: 33
+Child: 20, type: 6, width: 54, height: 33
+Child: 21, type: 6, width: 54, height: 33
+Child: 22, type: 6, width: 54, height: 33
+Child: 23, type: 6, width: 54, height: 33
+Child: 24, type: 6, width: 54, height: 33
+Child: 25, message: For each column, make the MIDDLE picture match the word at the bottom.<br><br>Then click UNLOCK.

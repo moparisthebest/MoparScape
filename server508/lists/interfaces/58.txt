@@ -1,0 +1,19 @@
+Child: 0, message: Zamorak = %1
+Child: 1, message: %1 = Saradomin
+Child: 2, type: 6, width: 25, height: 32
+Child: 3, type: 6, width: 25, height: 32
+Child: 4, message: 
+Child: 5, message: 
+Child: 6, type: 0, width: 106, height: 148
+Child: 7, message: Health %1%
+Child: 8, message: %1 Min
+Child: 9, type: 6, width: 24, height: 29
+Child: 10, type: 6, width: 15, height: 23
+Child: 11, message: Locked
+Child: 12, type: 6, width: 26, height: 18
+Child: 13, message: Collapsed
+Child: 14, type: 6, width: 26, height: 18
+Child: 15, message: Collapsed
+Child: 16, type: 6, width: 26, height: 20
+Child: 17, message: Operational
+Child: 18, message: 

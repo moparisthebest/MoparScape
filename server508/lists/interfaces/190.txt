@@ -1,0 +1,16 @@
+Child: 0, type: 6, width: 32, height: 32
+Child: 1, type: 6, width: 32, height: 32
+Child: 2, type: 6, width: 32, height: 32
+Child: 3, type: 6, width: 32, height: 31
+Child: 4, type: 6, width: 32, height: 32
+Child: 5, type: 6, width: 32, height: 32
+Child: 6, message: Which shape is blue?
+Child: 7, type: 5, width: 72, height: 36
+Child: 8, type: 5, width: 72, height: 36
+Child: 9, type: 5, width: 72, height: 36
+Child: 10, message: Shape1
+Child: 11, message: Shape2
+Child: 12, message: Shape3
+Child: 13, type: 5, width: 26, height: 23
+Child: 14, type: 5, width: 26, height: 23
+Child: 15, type: 0, width: 32, height: 32

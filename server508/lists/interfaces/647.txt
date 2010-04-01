@@ -1,0 +1,31 @@
+Child: 0, type: 3, width: 488, height: 305
+Child: 1, type: 5, width: 485, height: 300
+Child: 2, type: 5, width: 32, height: 241
+Child: 3, type: 5, width: 32, height: 32
+Child: 4, type: 5, width: 32, height: 243
+Child: 5, type: 5, width: 424, height: 34
+Child: 6, type: 5, width: 423, height: 32
+Child: 7, type: 5, width: 16, height: 16
+Child: 8, type: 5, width: 32, height: 32
+Child: 9, type: 5, width: 32, height: 32
+Child: 10, type: 5, width: 32, height: 32
+Child: 11, type: 5, width: 465, height: 32
+Child: 12, type: 5, width: 32, height: 32
+Child: 13, type: 5, width: 32, height: 32
+Child: 14, type: 6, width: 0, height: 0
+Child: 15, type: 6, width: 0, height: 0
+Child: 16, type: 5, width: 475, height: 32
+Child: 17, type: 5, width: 41, height: 224
+Child: 18, type: 5, width: 28, height: 27
+Child: 19, message: Items being dropped
+Child: 20, message: Items ready to be dropped
+Child: 21, type: 0, width: 16, height: 224
+Child: 22, type: 0, width: 17, height: 225
+Child: 23, type: 5, width: 25, height: 25
+Child: 24, message: 00
+Child: 25, type: 0, width: 59, height: 30
+Child: 26, message: Accept
+Child: 27, type: 0, width: 223, height: 220
+Child: 28, type: 0, width: 214, height: 222
+Child: 29, type: 0, width: 413, height: 35
+Child: 30, message: (Once you press Accept items can't be taken out of the chest!)

@@ -1,0 +1,4 @@
+Child: 0, type: 6, width: 69, height: 68
+Child: 1, message: Draughts
+Child: 2, message: Rank: %1
+Child: 3, type: 0, width: 88, height: 122

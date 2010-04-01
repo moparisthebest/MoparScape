@@ -1,0 +1,37 @@
+Child: 0, type: 3, width: 465, height: 289
+Child: 1, type: 5, width: 451, height: 275
+Child: 2, type: 5, width: 32, height: 32
+Child: 3, type: 5, width: 32, height: 226
+Child: 4, type: 5, width: 32, height: 225
+Child: 5, type: 5, width: 32, height: 32
+Child: 6, type: 5, width: 401, height: 32
+Child: 7, type: 5, width: 401, height: 32
+Child: 8, type: 5, width: 32, height: 32
+Child: 9, type: 5, width: 32, height: 32
+Child: 10, type: 5, width: 32, height: 32
+Child: 11, type: 5, width: 32, height: 32
+Child: 12, type: 5, width: 443, height: 32
+Child: 13, type: 5, width: 32, height: 216
+Child: 14, type: 5, width: 170, height: 32
+Child: 15, type: 5, width: 32, height: 216
+Child: 16, type: 5, width: 170, height: 32
+Child: 17, type: 5, width: 32, height: 32
+Child: 18, type: 5, width: 32, height: 32
+Child: 19, type: 5, width: 32, height: 32
+Child: 20, type: 5, width: 148, height: 32
+Child: 21, type: 5, width: 147, height: 32
+Child: 22, type: 5, width: 32, height: 154
+Child: 23, type: 5, width: 32, height: 154
+Child: 24, type: 5, width: 32, height: 32
+Child: 25, type: 5, width: 32, height: 196
+Child: 26, type: 5, width: 32, height: 32
+Child: 27, type: 5, width: 32, height: 32
+Child: 28, message: Gravestones
+Child: 29, message: 
+Child: 30, message: 
+Child: 31, type: 0, width: 176, height: 205
+Child: 32, type: 0, width: 16, height: 207
+Child: 33, type: 5, width: 90, height: 56
+Child: 34, type: 0, width: 90, height: 56
+Child: 35, message: 
+Child: 36, type: 5, width: 16, height: 16

@@ -1,0 +1,40 @@
+Child: 0, type: 0, width: 512, height: 334
+Child: 1, type: 3, width: 465, height: 21
+Child: 2, type: 3, width: 465, height: 22
+Child: 3, message: Alex
+Child: 4, message: HP 50/78
+Child: 5, type: 0, width: 125, height: 40
+Child: 6, type: 3, width: 117, height: 22
+Child: 7, type: 3, width: 117, height: 22
+Child: 8, type: 0, width: 125, height: 40
+Child: 9, message: Tim
+Child: 10, message: HP 88/88
+Child: 11, type: 3, width: 117, height: 22
+Child: 12, type: 3, width: 117, height: 22
+Child: 13, type: 0, width: 125, height: 40
+Child: 14, message: Matt
+Child: 15, message: HP 24/54
+Child: 16, type: 3, width: 117, height: 22
+Child: 17, type: 3, width: 117, height: 22
+Child: 18, type: 0, width: 125, height: 40
+Child: 19, message: Martin
+Child: 20, message: HP 61/62
+Child: 21, type: 3, width: 117, height: 22
+Child: 22, type: 3, width: 117, height: 22
+Child: 23, type: 6, width: 30, height: 30
+Child: 24, type: 6, width: 30, height: 30
+Child: 25, type: 6, width: 30, height: 30
+Child: 26, type: 6, width: 30, height: 30
+Child: 27, type: 0, width: 512, height: 334
+Child: 28, type: 5, width: 17, height: 13
+Child: 29, message: Wave 1
+Child: 30, type: 5, width: 17, height: 13
+Child: 31, message: Poison tofu
+Child: 32, type: 5, width: 17, height: 13
+Child: 33, message: Tofu
+Child: 34, type: 5, width: 17, height: 13
+Child: 35, message: Defender
+Child: 36, type: 6, width: 17, height: 17
+Child: 37, type: 6, width: 17, height: 17
+Child: 38, type: 6, width: 17, height: 17
+Child: 39, type: 6, width: 17, height: 17

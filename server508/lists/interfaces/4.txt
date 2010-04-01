@@ -1,0 +1,10 @@
+Child: 0, type: 0, width: 182, height: 215
+Child: 1, type: 6, width: 142, height: 27
+Child: 2, type: 6, width: 124, height: 11
+Child: 3, type: 6, width: 109, height: 79
+Child: 4, type: 6, width: 89, height: 57
+Child: 5, message: Water Collected
+Child: 6, message: Time Left
+Child: 7, type: 6, width: 33, height: 29
+Child: 8, message: %1
+Child: 9, type: 0, width: 182, height: 190

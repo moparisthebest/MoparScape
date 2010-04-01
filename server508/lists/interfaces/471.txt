@@ -1,0 +1,29 @@
+Child: 0, message: X
+Child: 1, message: X
+Child: 2, message: %1
+Child: 3, message: %1
+Child: 4, message: 
+Child: 5, message: Relax
+Child: 6, message: 
+Child: 7, message: Balloon Controls
+Child: 8, message: Bail 
+Child: 9, message: 
+Child: 10, message: 
+Child: 11, type: 6, width: 32, height: 32
+Child: 12, type: 6, width: 32, height: 32
+Child: 13, type: 6, width: 32, height: 32
+Child: 14, type: 6, width: 32, height: 32
+Child: 15, type: 0, width: 74, height: 53
+Child: 16, type: 6, width: 32, height: 32
+Child: 17, type: 6, width: 32, height: 32
+Child: 18, type: 6, width: 32, height: 32
+Child: 19, type: 6, width: 32, height: 32
+Child: 20, type: 6, width: 32, height: 32
+Child: 21, type: 6, width: 32, height: 32
+Child: 22, type: 6, width: 32, height: 32
+Child: 23, type: 6, width: 32, height: 32
+Child: 24, type: 6, width: 32, height: 32
+Child: 25, type: 6, width: 32, height: 32
+Child: 26, type: 0, width: 70, height: 91
+Child: 27, type: 0, width: 190, height: 261
+Child: 28, type: 0, width: 115, height: 43

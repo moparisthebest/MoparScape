@@ -1,0 +1,59 @@
+Child: 0, type: 0, width: 512, height: 334
+Child: 1, type: 3, width: 479, height: 304
+Child: 2, type: 5, width: 467, height: 290
+Child: 3, type: 5, width: 28, height: 229
+Child: 4, type: 5, width: 32, height: 32
+Child: 5, type: 5, width: 32, height: 32
+Child: 6, type: 5, width: 32, height: 32
+Child: 7, type: 5, width: 320, height: 23
+Child: 8, type: 5, width: 129, height: 28
+Child: 9, type: 5, width: 32, height: 32
+Child: 10, type: 5, width: 32, height: 32
+Child: 11, type: 5, width: 419, height: 32
+Child: 12, type: 5, width: 32, height: 32
+Child: 13, type: 5, width: 25, height: 248
+Child: 14, type: 5, width: 32, height: 32
+Child: 15, type: 5, width: 301, height: 23
+Child: 16, type: 5, width: 106, height: 32
+Child: 17, type: 5, width: 32, height: 32
+Child: 18, type: 3, width: 314, height: 246
+Child: 19, message: Aquarius
+Child: 20, message: Aries
+Child: 21, message: Cancer
+Child: 22, message: Capricorn
+Child: 23, message: Gemini
+Child: 24, message: Leo
+Child: 25, message: Libra
+Child: 26, message: Pisces
+Child: 27, message: Sagittarius
+Child: 28, message: Scorpio
+Child: 29, message: Taurus
+Child: 30, message: Virgo
+Child: 31, message: Star Chart Viewer
+Child: 32, type: 3, width: 317, height: 49
+Child: 33, type: 3, width: 317, height: 59
+Child: 34, type: 3, width: 317, height: 64
+Child: 35, type: 3, width: 317, height: 78
+Child: 36, type: 3, width: 4, height: 231
+Child: 37, type: 3, width: 300, height: 4
+Child: 38, type: 5, width: 16, height: 16
+Child: 39, type: 9, width: 0, height: 228
+Child: 40, type: 9, width: 0, height: 228
+Child: 41, type: 9, width: 0, height: 228
+Child: 42, type: 9, width: 0, height: 228
+Child: 43, type: 9, width: 0, height: 228
+Child: 44, type: 9, width: 0, height: 228
+Child: 45, type: 9, width: 0, height: 228
+Child: 46, type: 9, width: 0, height: 228
+Child: 47, type: 9, width: 286, height: 0
+Child: 48, type: 9, width: 286, height: 0
+Child: 49, type: 9, width: 286, height: 0
+Child: 50, type: 9, width: 286, height: 0
+Child: 51, type: 9, width: 286, height: 0
+Child: 52, type: 9, width: 286, height: 0
+Child: 53, type: 9, width: 286, height: 0
+Child: 54, type: 9, width: 286, height: 0
+Child: 55, type: 6, width: 239, height: 175
+Child: 56, type: 3, width: 175, height: 24
+Child: 57, message: Aquarius
+Child: 58, type: 5, width: 32, height: 228

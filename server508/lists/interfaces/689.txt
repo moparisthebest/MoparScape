@@ -1,0 +1,10 @@
+Child: 0, type: 0, width: 494, height: 62
+Child: 1, type: 3, width: 83, height: 37
+Child: 2, type: 3, width: 89, height: 4
+Child: 3, type: 3, width: 89, height: 4
+Child: 4, type: 3, width: 4, height: 37
+Child: 5, type: 3, width: 4, height: 37
+Child: 6, type: 3, width: 91, height: 45
+Child: 7, message: Points
+Child: 8, message: None
+Child: 9, message: 

@@ -1,0 +1,12 @@
+Child: 0, type: 6, width: 513, height: 346
+Child: 1, type: 0, width: 151, height: 199
+Child: 2, type: 0, width: 16, height: 199
+Child: 3, type: 0, width: 16, height: 199
+Child: 4, type: 0, width: 151, height: 199
+Child: 5, type: 0, width: 462, height: 252
+Child: 6, type: 5, width: 26, height: 23
+Child: 7, message: Text
+Child: 8, message: Text
+Child: 9, message: This is an interface type test.
+Child: 10, message: This is an interface type test.
+Child: 11, type: 0, width: 512, height: 334

@@ -1,0 +1,8 @@
+Child: 0, type: 0, width: 387, height: 287
+Child: 1, type: 0, width: 342, height: 215
+Child: 2, message: Resources Collected
+inventory type: 90 slots, width: 9, height: 10, 3
+Child: 4, type: 6, width: 55, height: 81
+Child: 5, type: 5, width: 26, height: 23
+Child: 6, type: 5, width: 26, height: 23
+Child: 7, type: 0, width: 32, height: 32

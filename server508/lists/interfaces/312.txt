@@ -1,0 +1,3 @@
+Child: 0, type: 6, width: 475, height: 91
+Child: 1, message: This sneaky gublinch wanted to set up a webcam conversation with a player! The player refused and sensibly used the Report Abuse button to enable us to catch him.
+Child: 2, type: 5, width: 23, height: 23

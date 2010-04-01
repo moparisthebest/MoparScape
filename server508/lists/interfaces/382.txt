@@ -1,0 +1,30 @@
+Child: 0, type: 0, width: 512, height: 334
+Child: 1, type: 3, width: 373, height: 243
+Child: 2, type: 5, width: 361, height: 236
+Child: 3, type: 5, width: 32, height: 202
+Child: 4, type: 5, width: 32, height: 32
+Child: 5, type: 5, width: 32, height: 205
+Child: 6, type: 5, width: 341, height: 32
+Child: 7, type: 5, width: 32, height: 32
+Child: 8, type: 5, width: 32, height: 32
+Child: 9, type: 5, width: 32, height: 32
+Child: 10, type: 5, width: 358, height: 32
+Child: 11, type: 5, width: 32, height: 32
+Child: 12, type: 5, width: 32, height: 32
+Child: 13, type: 5, width: 16, height: 16
+Child: 14, type: 6, width: 24, height: 28
+Child: 15, type: 6, width: 24, height: 28
+Child: 16, type: 6, width: 24, height: 28
+Child: 17, type: 6, width: 24, height: 28
+Child: 18, type: 5, width: 90, height: 56
+Child: 19, type: 5, width: 90, height: 56
+Child: 20, type: 5, width: 19, height: 19
+Child: 21, type: 5, width: 19, height: 19
+Child: 22, message: WARNING!
+Child: 23, message: If you go any further you will enter the Wilderness. This is a very dangerous area, haunted by ghosts! The further north you go, the more dangerous it becomes.
+Child: 24, message: Enter Wilderness
+Child: 25, message: Don't go
+Child: 26, type: 0, width: 255, height: 20
+Child: 27, message: Don't ask me this again
+Child: 28, type: 5, width: 19, height: 19
+Child: 29, type: 5, width: 310, height: 32

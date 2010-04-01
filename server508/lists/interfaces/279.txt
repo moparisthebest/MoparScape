@@ -1,0 +1,48 @@
+Child: 0, type: 5, width: 5000, height: 5000
+Child: 1, type: 3, width: 512, height: 334
+Child: 2, type: 6, width: 154, height: 166
+Child: 3, type: 6, width: 156, height: 167
+Child: 4, type: 6, width: 204, height: 115
+Child: 5, type: 6, width: 190, height: 108
+Child: 6, type: 6, width: 169, height: 49
+Child: 7, type: 5, width: 72, height: 36
+Child: 8, type: 5, width: 72, height: 36
+Child: 9, message: Player's Cat
+Child: 10, message: Opponent's Cat
+Child: 11, message: Vs
+Child: 12, message: ACCEPT
+Child: 13, message: DECLINE
+Child: 14, message: Amount
+Child: 15, message: Amount
+Child: 16, message: 0
+Child: 17, message: 0
+Child: 18, type: 6, width: 31, height: 30
+Child: 19, type: 6, width: 31, height: 30
+Child: 20, type: 6, width: 27, height: 9
+Child: 21, type: 6, width: 27, height: 27
+Child: 22, type: 5, width: 119, height: 36
+Child: 23, type: 5, width: 119, height: 36
+Child: 24, message: Your Limit:
+Child: 25, message: Their Limit:
+Child: 26, message: 1000
+Child: 27, message: 1000
+Child: 28, type: 0, width: 512, height: 334
+Child: 29, type: 0, width: 16391, height: 16391
+Child: 30, type: 0, width: 16391, height: 16391
+Child: 31, type: 5, width: 32, height: 334
+Child: 32, type: 5, width: 462, height: 32
+Child: 33, type: 5, width: 512, height: 32
+Child: 34, type: 5, width: 32, height: 334
+Child: 35, type: 5, width: 32, height: 32
+Child: 36, type: 5, width: 32, height: 32
+Child: 37, type: 5, width: 32, height: 32
+Child: 38, type: 5, width: 32, height: 32
+Child: 39, type: 0, width: 8192, height: 16391
+Child: 40, type: 0, width: 8188, height: 16391
+Child: 41, type: 0, width: 16391, height: 8192
+Child: 42, type: 0, width: 16391, height: 8182
+Child: 43, type: 0, width: 512, height: 334
+Child: 44, type: 5, width: 256, height: 16384
+Child: 45, type: 5, width: 256, height: 16391
+Child: 46, type: 5, width: 16391, height: 167
+Child: 47, type: 5, width: 16391, height: 166

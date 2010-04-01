@@ -1,0 +1,87 @@
+Child: 0, type: 3, width: 513, height: 336
+Child: 1, type: 6, width: 489, height: 625
+Child: 2, type: 5, width: 26, height: 23
+Child: 3, message: Correct tumbler and height
+Child: 4, message: Correct height, wrong tumbler
+Child: 5, message: Wrong height, wrong tumbler
+Child: 6, message: Selected tumbler height
+Child: 7, message: 0/5
+Child: 8, message: Tumbler
+Child: 9, message: Guess
+Child: 10, type: 3, width: 125, height: 175
+Child: 11, type: 3, width: 174, height: 62
+Child: 12, type: 6, width: 43, height: 81
+Child: 13, type: 6, width: 42, height: 80
+Child: 14, message: Try Lock
+Child: 15, message: 1
+Child: 16, message: 2
+Child: 17, message: 3
+Child: 18, message: 4
+Child: 19, message: Select a tumbler
+Child: 20, message: 1
+Child: 21, message: 2
+Child: 22, message: 3
+Child: 23, message: 4
+Child: 24, type: 6, width: 16, height: 16
+Child: 25, type: 6, width: 16, height: 16
+Child: 26, type: 6, width: 16, height: 16
+Child: 27, type: 6, width: 16, height: 16
+Child: 28, type: 6, width: 16, height: 16
+Child: 29, type: 6, width: 16, height: 16
+Child: 30, type: 6, width: 16, height: 16
+Child: 31, type: 6, width: 16, height: 16
+Child: 32, type: 6, width: 16, height: 16
+Child: 33, type: 6, width: 16, height: 16
+Child: 34, type: 6, width: 16, height: 16
+Child: 35, type: 6, width: 16, height: 16
+Child: 36, type: 6, width: 16, height: 16
+Child: 37, type: 6, width: 16, height: 16
+Child: 38, type: 6, width: 16, height: 16
+Child: 39, type: 6, width: 16, height: 16
+Child: 40, type: 6, width: 16, height: 16
+Child: 41, type: 6, width: 16, height: 16
+Child: 42, type: 6, width: 16, height: 16
+Child: 43, type: 6, width: 16, height: 16
+Child: 44, type: 6, width: 16, height: 16
+Child: 45, type: 6, width: 16, height: 16
+Child: 46, type: 6, width: 16, height: 16
+Child: 47, type: 6, width: 16, height: 16
+Child: 48, type: 6, width: 16, height: 16
+Child: 49, type: 6, width: 16, height: 16
+Child: 50, type: 6, width: 16, height: 16
+Child: 51, type: 6, width: 16, height: 16
+Child: 52, type: 6, width: 16, height: 16
+Child: 53, type: 6, width: 16, height: 16
+Child: 54, type: 6, width: 16, height: 16
+Child: 55, type: 6, width: 16, height: 16
+Child: 56, type: 6, width: 16, height: 16
+Child: 57, type: 6, width: 16, height: 16
+Child: 58, type: 6, width: 16, height: 16
+Child: 59, type: 6, width: 16, height: 16
+Child: 60, type: 6, width: 16, height: 16
+Child: 61, type: 6, width: 16, height: 16
+Child: 62, type: 6, width: 16, height: 16
+Child: 63, type: 6, width: 16, height: 16
+Child: 64, type: 6, width: 17, height: 17
+Child: 65, type: 6, width: 17, height: 17
+Child: 66, type: 6, width: 17, height: 17
+Child: 67, type: 0, width: 512, height: 334
+Child: 68, type: 0, width: 16391, height: 16391
+Child: 69, type: 0, width: 16391, height: 16391
+Child: 70, type: 5, width: 32, height: 334
+Child: 71, type: 5, width: 462, height: 32
+Child: 72, type: 5, width: 512, height: 32
+Child: 73, type: 5, width: 32, height: 334
+Child: 74, type: 5, width: 32, height: 32
+Child: 75, type: 5, width: 32, height: 32
+Child: 76, type: 5, width: 32, height: 32
+Child: 77, type: 5, width: 32, height: 32
+Child: 78, type: 0, width: 8192, height: 16391
+Child: 79, type: 0, width: 8188, height: 16391
+Child: 80, type: 0, width: 16391, height: 8192
+Child: 81, type: 0, width: 16391, height: 8182
+Child: 82, type: 0, width: 512, height: 334
+Child: 83, type: 5, width: 256, height: 16384
+Child: 84, type: 5, width: 256, height: 16391
+Child: 85, type: 5, width: 16391, height: 167
+Child: 86, type: 5, width: 16391, height: 166

@@ -1,0 +1,3 @@
+Child: 0, type: 6, width: 475, height: 91
+Child: 1, message: This cheeky gublinch claimed to be a Jagex Moderator! He was reported straight away and dealt with.
+Child: 2, type: 5, width: 23, height: 23

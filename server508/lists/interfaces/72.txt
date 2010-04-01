@@ -1,0 +1,8 @@
+Child: 0, type: 5, width: 57, height: 13
+Child: 1, type: 5, width: 57, height: 13
+Child: 2, type: 6, width: 64, height: 96
+Child: 3, message: 
+Child: 4, message: 
+Child: 5, message: 
+Child: 6, message: What would you like to make in the churn?
+Child: 7, message: Churn Cheese

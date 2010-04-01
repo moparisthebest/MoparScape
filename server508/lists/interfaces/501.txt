@@ -1,0 +1,50 @@
+Child: 0, type: 6, width: 693, height: 445
+Child: 1, type: 6, width: 245, height: 180
+Child: 2, type: 0, width: 425, height: 110
+Child: 3, message: 
+Child: 4, message: 
+Child: 5, message: 
+Child: 6, message: 
+Child: 7, message: 
+Child: 8, type: 0, width: 149, height: 52
+Child: 9, type: 0, width: 148, height: 48
+Child: 10, type: 0, width: 150, height: 47
+Child: 11, type: 0, width: 150, height: 49
+Child: 12, type: 0, width: 150, height: 51
+Child: 13, type: 5, width: 26, height: 23
+Child: 14, type: 6, width: 58, height: 80
+Child: 15, type: 6, width: 63, height: 43
+Child: 16, type: 6, width: 73, height: 40
+Child: 17, type: 6, width: 40, height: 39
+Child: 18, type: 6, width: 30, height: 67
+Child: 19, type: 6, width: 147, height: 43
+Child: 20, message: Cannon barrel
+Child: 21, type: 6, width: 147, height: 43
+Child: 22, message: Fuse
+Child: 23, type: 6, width: 147, height: 43
+Child: 24, message: Ramrod
+Child: 25, type: 6, width: 147, height: 43
+Child: 26, message: Cannonball
+Child: 27, type: 6, width: 147, height: 43
+Child: 28, message: Cannon cannister
+Child: 29, type: 0, width: 512, height: 334
+Child: 30, type: 0, width: 512, height: 334
+Child: 31, type: 0, width: 16391, height: 16391
+Child: 32, type: 0, width: 16391, height: 16391
+Child: 33, type: 5, width: 32, height: 334
+Child: 34, type: 5, width: 462, height: 32
+Child: 35, type: 5, width: 512, height: 32
+Child: 36, type: 5, width: 32, height: 334
+Child: 37, type: 5, width: 32, height: 32
+Child: 38, type: 5, width: 32, height: 32
+Child: 39, type: 5, width: 32, height: 32
+Child: 40, type: 5, width: 32, height: 32
+Child: 41, type: 0, width: 8192, height: 16391
+Child: 42, type: 0, width: 8188, height: 16391
+Child: 43, type: 0, width: 16391, height: 8192
+Child: 44, type: 0, width: 16391, height: 8182
+Child: 45, type: 0, width: 512, height: 334
+Child: 46, type: 5, width: 256, height: 16384
+Child: 47, type: 5, width: 256, height: 16391
+Child: 48, type: 5, width: 16391, height: 167
+Child: 49, type: 5, width: 16391, height: 166

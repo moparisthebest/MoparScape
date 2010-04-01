@@ -1,0 +1,5 @@
+Child: 0, message: 
+Child: 1, message: 
+Child: 2, message: Open your stats menu and click on the flashing icon for more information.
+Child: 3, message: Click here to continue
+Child: 4, type: 5, width: 55, height: 54

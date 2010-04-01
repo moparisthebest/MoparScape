@@ -1,0 +1,60 @@
+Child: 0, type: 0, width: 512, height: 334
+Child: 1, message: However nice your friend is in RuneScape, they are still a stranger to you in real life. We would suggest that you have fun and enjoy the player's company in-game, but leave it there. If you are at all concerned, speak to a parent, friend or adult that you trust.
+Child: 2, message: Incorrect!
+Child: 3, message: Correct!
+Child: 4, message: Be polite and say no, but if the other player is persistent you can use the report abuse button and ignore functions, which can both be found at the bottom of your game window. If you are at all concerned, speak to a parent, friend or adult that you trust.
+Child: 5, type: 3, width: 512, height: 334
+Child: 6, type: 5, width: 449, height: 230
+Child: 7, type: 5, width: 25, height: 174
+Child: 8, type: 5, width: 32, height: 32
+Child: 9, type: 5, width: 32, height: 32
+Child: 10, type: 5, width: 391, height: 32
+Child: 11, type: 5, width: 32, height: 175
+Child: 12, type: 5, width: 32, height: 32
+Child: 13, type: 5, width: 32, height: 32
+Child: 14, type: 5, width: 387, height: 25
+Child: 15, type: 0, width: 389, height: 160
+Child: 16, type: 0, width: 389, height: 160
+Child: 17, type: 0, width: 97, height: 42
+Child: 18, type: 0, width: 97, height: 42
+Child: 19, type: 3, width: 97, height: 42
+Child: 20, message: Next
+Child: 21, type: 6, width: 487, height: 335
+Child: 22, type: 6, width: 193, height: 151
+Child: 23, type: 6, width: 33, height: 34
+Child: 24, type: 6, width: 31, height: 34
+Child: 25, message: Question:
+Child: 26, message: Player Safety Test
+Child: 27, type: 5, width: 26, height: 23
+Child: 28, message: A friend you met playing RuneScape has asked to meet you in real life. What should you do?
+Child: 29, message: Meet them. They've been a friend in-game for a while now and they're really nice
+Child: 30, message: Say no and do not meet them
+Child: 31, type: 9, width: 19, height: 1
+Child: 32, type: 9, width: 0, height: 19
+Child: 33, type: 9, width: 19, height: 1
+Child: 34, type: 9, width: 0, height: 20
+Child: 35, type: 9, width: 19, height: 1
+Child: 36, type: 9, width: 0, height: 19
+Child: 37, type: 9, width: 19, height: 1
+Child: 38, type: 9, width: 0, height: 20
+Child: 39, type: 9, width: 248, height: 0
+Child: 40, type: 0, width: 513, height: 335
+Child: 41, type: 0, width: 16391, height: 16391
+Child: 42, type: 0, width: 16391, height: 16391
+Child: 43, type: 5, width: 32, height: 334
+Child: 44, type: 5, width: 462, height: 32
+Child: 45, type: 5, width: 512, height: 32
+Child: 46, type: 5, width: 32, height: 334
+Child: 47, type: 5, width: 32, height: 32
+Child: 48, type: 5, width: 32, height: 32
+Child: 49, type: 5, width: 32, height: 32
+Child: 50, type: 5, width: 32, height: 32
+Child: 51, type: 0, width: 8192, height: 16391
+Child: 52, type: 0, width: 8188, height: 16391
+Child: 53, type: 0, width: 16391, height: 8192
+Child: 54, type: 0, width: 16391, height: 8182
+Child: 55, type: 0, width: 512, height: 334
+Child: 56, type: 5, width: 256, height: 16384
+Child: 57, type: 5, width: 256, height: 16391
+Child: 58, type: 5, width: 16391, height: 167
+Child: 59, type: 5, width: 16391, height: 166

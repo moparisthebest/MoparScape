@@ -1,0 +1,24 @@
+Child: 0, type: 3, width: 512, height: 335
+Child: 1, type: 5, width: 26, height: 23
+Child: 2, type: 6, width: 491, height: 151
+Child: 3, type: 0, width: 512, height: 334
+Child: 4, type: 0, width: 16391, height: 16391
+Child: 5, type: 0, width: 16391, height: 16391
+Child: 6, type: 5, width: 32, height: 334
+Child: 7, type: 5, width: 462, height: 32
+Child: 8, type: 5, width: 512, height: 32
+Child: 9, type: 5, width: 32, height: 334
+Child: 10, type: 5, width: 32, height: 32
+Child: 11, type: 5, width: 32, height: 32
+Child: 12, type: 5, width: 32, height: 32
+Child: 13, type: 5, width: 32, height: 32
+Child: 14, type: 0, width: 8192, height: 16391
+Child: 15, type: 0, width: 8188, height: 16391
+Child: 16, type: 0, width: 16391, height: 8192
+Child: 17, type: 0, width: 16391, height: 8182
+Child: 18, type: 0, width: 512, height: 334
+Child: 19, type: 5, width: 256, height: 16384
+Child: 20, type: 5, width: 256, height: 16391
+Child: 21, type: 5, width: 16391, height: 167
+Child: 22, type: 5, width: 16391, height: 166
+Child: 23, message: ---

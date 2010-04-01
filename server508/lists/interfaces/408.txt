@@ -1,0 +1,29 @@
+Child: 0, message: %1 Min
+Child: 1, message: %100
+Child: 2, type: 6, width: 27, height: 28
+Child: 3, type: 6, width: 27, height: 28
+Child: 4, type: 6, width: 27, height: 28
+Child: 5, type: 6, width: 27, height: 28
+Child: 6, type: 6, width: 25, height: 26
+Child: 7, type: 6, width: 32, height: 32
+Child: 8, type: 6, width: 32, height: 32
+Child: 9, type: 6, width: 32, height: 32
+Child: 10, type: 6, width: 32, height: 32
+Child: 11, message: 0
+Child: 12, type: 6, width: 26, height: 31
+Child: 13, message: 100
+Child: 14, message: 100
+Child: 15, message: 100
+Child: 16, message: 100
+Child: 17, type: 6, width: 39, height: 39
+Child: 18, type: 0, width: 32, height: 32
+Child: 19, type: 6, width: 39, height: 39
+Child: 20, type: 0, width: 32, height: 32
+Child: 21, type: 6, width: 39, height: 39
+Child: 22, type: 0, width: 32, height: 32
+Child: 23, type: 6, width: 39, height: 39
+Child: 24, type: 0, width: 32, height: 32
+Child: 25, message: W
+Child: 26, message: E
+Child: 27, message: SE
+Child: 28, message: SW

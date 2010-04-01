@@ -1,0 +1,30 @@
+Child: 0, type: 3, width: 16391, height: 16391
+Child: 1, type: 6, width: 167, height: 299
+Child: 2, type: 6, width: 167, height: 299
+Child: 3, type: 6, width: 513, height: 456
+Child: 4, message: Lumbridge
+Child: 5, message: Champion's Guild
+Child: 6, message: Barbarian Village
+Child: 7, message: Edgeville
+Child: 8, message: Wilderness
+Child: 9, message: You Journey on the canoe....
+Child: 10, type: 0, width: 512, height: 334
+Child: 11, type: 0, width: 16391, height: 16391
+Child: 12, type: 0, width: 16391, height: 16391
+Child: 13, type: 5, width: 32, height: 334
+Child: 14, type: 5, width: 462, height: 32
+Child: 15, type: 5, width: 512, height: 32
+Child: 16, type: 5, width: 32, height: 334
+Child: 17, type: 5, width: 32, height: 32
+Child: 18, type: 5, width: 32, height: 32
+Child: 19, type: 5, width: 32, height: 32
+Child: 20, type: 5, width: 32, height: 32
+Child: 21, type: 0, width: 8192, height: 16391
+Child: 22, type: 0, width: 8188, height: 16391
+Child: 23, type: 0, width: 16391, height: 8192
+Child: 24, type: 0, width: 16391, height: 8182
+Child: 25, type: 0, width: 512, height: 334
+Child: 26, type: 5, width: 256, height: 16384
+Child: 27, type: 5, width: 256, height: 16391
+Child: 28, type: 5, width: 16391, height: 167
+Child: 29, type: 5, width: 16391, height: 166

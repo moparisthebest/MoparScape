@@ -1,0 +1,29 @@
+Child: 0, type: 3, width: 514, height: 334
+Child: 1, type: 6, width: 258, height: 364
+Child: 2, type: 6, width: 70, height: 89
+Child: 3, type: 6, width: 82, height: 84
+Child: 4, type: 6, width: 74, height: 91
+Child: 5, type: 6, width: 32, height: 32
+Child: 6, type: 6, width: 32, height: 32
+Child: 7, type: 6, width: 74, height: 91
+Child: 8, type: 6, width: 32, height: 32
+Child: 9, type: 6, width: 84, height: 81
+Child: 10, type: 6, width: 32, height: 32
+Child: 11, type: 6, width: 258, height: 364
+Child: 12, type: 6, width: 74, height: 91
+Child: 13, type: 6, width: 32, height: 32
+Child: 14, type: 6, width: 32, height: 32
+Child: 15, type: 6, width: 32, height: 32
+Child: 16, type: 6, width: 465, height: 75
+Child: 17, type: 6, width: 32, height: 32
+Child: 18, type: 6, width: 32, height: 32
+Child: 19, type: 5, width: 26, height: 23
+Child: 20, message: Choose a combination
+Child: 21, message: Teleport to this location
+Child: 22, message: Teleport to this location
+Child: 23, type: 0, width: 83, height: 166
+Child: 24, type: 0, width: 83, height: 166
+Child: 25, type: 0, width: 83, height: 166
+Child: 26, type: 0, width: 83, height: 166
+Child: 27, type: 0, width: 83, height: 166
+Child: 28, type: 0, width: 83, height: 166

@@ -1,0 +1,28 @@
+Child: 0, type: 6, width: 480, height: 301
+Child: 1, type: 6, width: 136, height: 156
+Child: 2, type: 6, width: 136, height: 156
+Child: 3, type: 6, width: 26, height: 26
+Child: 4, type: 6, width: 46, height: 26
+Child: 5, type: 6, width: 46, height: 35
+Child: 6, type: 6, width: 26, height: 26
+Child: 7, type: 6, width: 46, height: 26
+Child: 8, type: 6, width: 46, height: 35
+Child: 9, type: 6, width: 26, height: 26
+Child: 10, type: 6, width: 46, height: 26
+Child: 11, type: 6, width: 46, height: 35
+Child: 12, type: 6, width: 18, height: 17
+Child: 13, type: 6, width: 46, height: 26
+Child: 14, type: 6, width: 48, height: 30
+Child: 15, type: 6, width: 46, height: 26
+Child: 16, type: 6, width: 47, height: 31
+Child: 17, type: 6, width: 18, height: 17
+Child: 18, type: 6, width: 18, height: 17
+Child: 19, message: Congratulations!  Your team won!
+Child: 20, message: The final score was:
+Child: 21, message: You were awarded 999 Pieces of Eight!
+Child: 22, message: 99
+Child: 23, message: 99
+Child: 24, message: :
+Child: 25, message: 
+Child: 26, type: 5, width: 26, height: 23
+Child: 27, type: 0, width: 512, height: 334

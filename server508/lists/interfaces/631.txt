@@ -1,0 +1,110 @@
+Child: 0, type: 5, width: 497, height: 302
+Child: 1, type: 5, width: 32, height: 252
+Child: 2, type: 5, width: 32, height: 32
+Child: 3, type: 0, width: 512, height: 334
+Child: 4, type: 5, width: 32, height: 251
+Child: 5, type: 5, width: 447, height: 34
+Child: 6, type: 5, width: 448, height: 32
+Child: 7, type: 5, width: 32, height: 32
+Child: 8, type: 5, width: 32, height: 32
+Child: 9, type: 5, width: 32, height: 32
+Child: 10, type: 5, width: 32, height: 301
+Child: 11, type: 5, width: 308, height: 32
+Child: 12, type: 5, width: 32, height: 32
+Child: 13, type: 5, width: 32, height: 32
+Child: 14, type: 5, width: 155, height: 32
+Child: 15, type: 5, width: 170, height: 32
+Child: 16, type: 5, width: 170, height: 32
+Child: 17, type: 5, width: 170, height: 32
+Child: 18, type: 5, width: 170, height: 32
+Child: 19, type: 5, width: 32, height: 210
+Child: 20, type: 5, width: 324, height: 32
+Child: 21, type: 5, width: 32, height: 32
+Child: 22, type: 5, width: 308, height: 32
+Child: 23, type: 5, width: 16, height: 16
+Child: 24, message: Opponent:
+Child: 25, message: namehhhhhhhh
+Child: 26, message: Opponent's Level:
+Child: 27, message: 126
+Child: 28, message: AAAAAAAAAAAAAAAA
+Child: 29, message: No Ranged
+Child: 30, type: 5, width: 15, height: 15
+Child: 31, message: No Melee
+Child: 32, type: 5, width: 15, height: 15
+Child: 33, message: No Magic
+Child: 34, type: 5, width: 15, height: 15
+Child: 35, message: Fun Weapons
+Child: 36, type: 5, width: 15, height: 15
+Child: 37, message: No Forfeit
+Child: 38, type: 5, width: 15, height: 15
+Child: 39, message: No Drinks
+Child: 40, type: 5, width: 15, height: 15
+Child: 41, message: No Food
+Child: 42, type: 5, width: 15, height: 15
+Child: 43, message: No Prayer
+Child: 44, type: 5, width: 15, height: 15
+Child: 45, message: No Movement
+Child: 46, type: 5, width: 15, height: 15
+Child: 47, message: Obstacles
+Child: 48, type: 5, width: 15, height: 15
+Child: 49, type: 6, width: 0, height: 0
+Child: 50, message: No Special Attacks
+Child: 51, type: 5, width: 15, height: 15
+Child: 52, message: Enable Summoning
+Child: 53, type: 5, width: 15, height: 15
+Child: 54, type: 0, width: 16, height: 210
+Child: 55, type: 0, width: 123, height: 33
+Child: 56, type: 0, width: 141, height: 210
+Child: 57, type: 5, width: 36, height: 36
+Child: 58, type: 5, width: 36, height: 36
+Child: 59, type: 5, width: 36, height: 36
+Child: 60, type: 5, width: 36, height: 36
+Child: 61, type: 5, width: 36, height: 36
+Child: 62, type: 5, width: 36, height: 36
+Child: 63, type: 5, width: 36, height: 36
+Child: 64, type: 5, width: 36, height: 36
+Child: 65, type: 5, width: 36, height: 36
+Child: 66, type: 5, width: 36, height: 36
+Child: 67, type: 5, width: 36, height: 36
+Child: 68, type: 5, width: 32, height: 32
+Child: 69, type: 5, width: 32, height: 32
+Child: 70, type: 5, width: 32, height: 32
+Child: 71, type: 5, width: 32, height: 32
+Child: 72, type: 5, width: 32, height: 32
+Child: 73, type: 5, width: 32, height: 32
+Child: 74, type: 5, width: 32, height: 32
+Child: 75, type: 5, width: 32, height: 32
+Child: 76, type: 5, width: 32, height: 32
+Child: 77, type: 5, width: 32, height: 32
+Child: 78, type: 5, width: 32, height: 32
+Child: 79, type: 5, width: 36, height: 36
+Child: 80, type: 5, width: 36, height: 36
+Child: 81, type: 5, width: 36, height: 36
+Child: 82, type: 5, width: 36, height: 36
+Child: 83, type: 5, width: 36, height: 36
+Child: 84, type: 5, width: 36, height: 36
+Child: 85, type: 5, width: 36, height: 36
+Child: 86, type: 5, width: 36, height: 36
+Child: 87, type: 5, width: 36, height: 36
+Child: 88, type: 5, width: 36, height: 36
+Child: 89, type: 5, width: 36, height: 36
+Child: 90, type: 0, width: 156, height: 206
+Child: 91, type: 0, width: 162, height: 214
+Child: 92, message: 0
+Child: 93, message: 0
+Child: 94, message: Max Stake:
+Child: 95, message: Max Stake:
+Child: 96, message: Your stake:
+Child: 97, message: Opponent's stake:
+Child: 98, type: 0, width: 16, height: 100
+Child: 99, type: 0, width: 16, height: 100
+Child: 100, type: 0, width: 80, height: 24
+Child: 101, message: Accept
+Child: 102, type: 0, width: 80, height: 24
+Child: 103, type: 0, width: 126, height: 100
+Child: 104, type: 0, width: 126, height: 100
+Child: 105, type: 5, width: 32, height: 32
+Child: 106, message: VS
+Child: 107, type: 0, width: 80, height: 24
+Child: 108, type: 0, width: 80, height: 24
+Child: 109, message: Decline

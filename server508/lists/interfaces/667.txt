@@ -1,0 +1,48 @@
+Child: 0, type: 5, width: 482, height: 297
+Child: 1, message: Equip Your Character...
+Child: 2, type: 6, width: 105, height: 195
+Child: 3, type: 5, width: 26, height: 23
+Child: 4, type: 5, width: 32, height: 50
+Child: 5, type: 5, width: 32, height: 130
+Child: 6, type: 5, width: 32, height: 50
+Child: 7, type: 5, width: 48, height: 32
+Child: 8, type: 5, width: 82, height: 32
+Child: 9, type: 5, width: 36, height: 36
+Child: 10, type: 5, width: 36, height: 36
+Child: 11, type: 5, width: 36, height: 36
+Child: 12, type: 5, width: 36, height: 36
+Child: 13, type: 5, width: 36, height: 36
+Child: 14, type: 5, width: 36, height: 36
+Child: 15, type: 5, width: 36, height: 36
+Child: 16, type: 5, width: 36, height: 36
+Child: 17, type: 5, width: 36, height: 36
+Child: 18, type: 5, width: 36, height: 36
+Child: 19, type: 5, width: 36, height: 36
+Child: 20, type: 0, width: 163, height: 199
+Child: 21, type: 0, width: 146, height: 261
+Child: 22, message: Attack bonus
+Child: 23, message: Defence bonus
+Child: 24, message: Stab: +120
+Child: 25, message: Slash:+120
+Child: 26, message: Crush:+120
+Child: 27, message: Magic: +120
+Child: 28, message: Range: +120
+Child: 29, message: Stab: +120
+Child: 30, message: Slash: +120
+Child: 31, message: Crush: +120
+Child: 32, message: Magic: +120
+Child: 33, message: Range: +120
+Child: 34, message: Summoning: +120
+Child: 35, message: Other bonuses
+Child: 36, message: Strength: +120
+Child: 37, message: Prayer: +120
+Child: 38, message: %1kg
+Child: 39, type: 5, width: 17, height: 18
+Child: 40, type: 5, width: 32, height: 32
+Child: 41, type: 5, width: 32, height: 32
+Child: 42, type: 5, width: 32, height: 32
+Child: 43, type: 5, width: 32, height: 32
+Child: 44, type: 5, width: 32, height: 240
+Child: 45, type: 5, width: 32, height: 239
+Child: 46, type: 5, width: 425, height: 32
+Child: 47, type: 5, width: 426, height: 32

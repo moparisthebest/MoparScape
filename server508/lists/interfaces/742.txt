@@ -1,0 +1,84 @@
+Child: 0, type: 3, width: 488, height: 305
+Child: 1, type: 0, width: 512, height: 334
+Child: 2, type: 5, width: 485, height: 300
+Child: 3, type: 5, width: 474, height: 32
+Child: 4, type: 5, width: 33, height: 242
+Child: 5, type: 5, width: 32, height: 243
+Child: 6, type: 5, width: 423, height: 32
+Child: 7, type: 5, width: 32, height: 32
+Child: 8, type: 5, width: 32, height: 32
+Child: 9, type: 5, width: 32, height: 32
+Child: 10, type: 5, width: 423, height: 32
+Child: 11, type: 5, width: 32, height: 32
+Child: 12, type: 5, width: 16, height: 16
+Child: 13, type: 5, width: 32, height: 32
+Child: 14, type: 5, width: 32, height: 16
+Child: 15, type: 5, width: 32, height: 16
+Child: 16, type: 5, width: 32, height: 16
+Child: 17, type: 5, width: 32, height: 16
+Child: 18, message: Graphics Options
+Child: 19, type: 0, width: 220, height: 20
+Child: 20, message: Visible levels
+Child: 21, type: 0, width: 220, height: 20
+Child: 22, message: Remove roofs
+Child: 23, type: 0, width: 220, height: 20
+Child: 24, message: Ground decoration
+Child: 25, type: 0, width: 220, height: 20
+Child: 26, message: Texture detail
+Child: 27, type: 0, width: 220, height: 20
+Child: 28, message: Idle animations
+Child: 29, type: 0, width: 220, height: 20
+Child: 30, message: Flickering effects
+Child: 31, type: 0, width: 220, height: 20
+Child: 32, message: Ground textures
+Child: 33, type: 0, width: 220, height: 20
+Child: 34, message: Character shadows
+Child: 35, type: 0, width: 220, height: 20
+Child: 36, message: Scenery shadows
+Child: 37, type: 0, width: 220, height: 20
+Child: 38, message: Lighting Detail
+Child: 39, type: 0, width: 220, height: 20
+Child: 40, message: Water detail
+Child: 41, type: 0, width: 220, height: 20
+Child: 42, message: Fog
+Child: 43, type: 0, width: 220, height: 20
+Child: 44, type: 0, width: 90, height: 15
+Child: 45, type: 0, width: 90, height: 52
+Child: 46, type: 0, width: 88, height: 50
+Child: 47, type: 0, width: 90, height: 15
+Child: 48, type: 0, width: 90, height: 52
+Child: 49, type: 0, width: 88, height: 50
+Child: 50, type: 0, width: 90, height: 15
+Child: 51, type: 0, width: 90, height: 52
+Child: 52, type: 0, width: 88, height: 50
+Child: 53, type: 0, width: 90, height: 15
+Child: 54, type: 0, width: 90, height: 52
+Child: 55, type: 0, width: 88, height: 50
+Child: 56, type: 0, width: 90, height: 15
+Child: 57, type: 0, width: 90, height: 52
+Child: 58, type: 0, width: 88, height: 50
+Child: 59, type: 0, width: 90, height: 15
+Child: 60, type: 0, width: 90, height: 52
+Child: 61, type: 0, width: 88, height: 50
+Child: 62, type: 0, width: 90, height: 15
+Child: 63, type: 0, width: 90, height: 52
+Child: 64, type: 0, width: 88, height: 50
+Child: 65, type: 0, width: 90, height: 15
+Child: 66, type: 0, width: 90, height: 52
+Child: 67, type: 0, width: 88, height: 50
+Child: 68, type: 0, width: 90, height: 15
+Child: 69, type: 0, width: 90, height: 52
+Child: 70, type: 0, width: 88, height: 50
+Child: 71, type: 0, width: 90, height: 15
+Child: 72, type: 0, width: 90, height: 52
+Child: 73, type: 0, width: 88, height: 50
+Child: 74, type: 0, width: 90, height: 15
+Child: 75, type: 0, width: 90, height: 52
+Child: 76, type: 0, width: 88, height: 50
+Child: 77, type: 0, width: 90, height: 15
+Child: 78, type: 0, width: 90, height: 52
+Child: 79, type: 0, width: 88, height: 50
+Child: 80, type: 0, width: 90, height: 15
+Child: 81, type: 0, width: 90, height: 52
+Child: 82, type: 0, width: 88, height: 50
+Child: 83, message: Anti-aliasing

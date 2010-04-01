@@ -1,0 +1,35 @@
+Child: 0, type: 5, width: 88, height: 60
+Child: 1, type: 5, width: 88, height: 60
+Child: 2, type: 5, width: 88, height: 60
+Child: 3, type: 5, width: 88, height: 60
+Child: 4, type: 5, width: 32, height: 32
+Child: 5, type: 5, width: 32, height: 32
+Child: 6, type: 5, width: 32, height: 32
+Child: 7, type: 5, width: 32, height: 32
+Child: 8, type: 5, width: 32, height: 32
+Child: 9, type: 5, width: 32, height: 32
+Child: 10, type: 5, width: 39, height: 31
+Child: 11, type: 5, width: 32, height: 32
+Child: 12, type: 5, width: 32, height: 32
+Child: 13, type: 5, width: 32, height: 32
+Child: 14, type: 5, width: 32, height: 32
+Child: 15, type: 5, width: 32, height: 32
+Child: 16, type: 5, width: 32, height: 32
+Child: 17, type: 5, width: 32, height: 32
+Child: 18, type: 5, width: 32, height: 32
+Child: 19, type: 5, width: 32, height: 32
+Child: 20, message: Schematic 1
+Child: 21, message: Schematic 2
+Child: 22, message: Schematic 3
+Child: 23, message: Show/Select
+Child: 24, type: 5, width: 17, height: 17
+Child: 25, type: 5, width: 17, height: 16
+Child: 26, type: 5, width: 17, height: 18
+Child: 27, type: 5, width: 18, height: 16
+Child: 28, type: 5, width: 19, height: 16
+Child: 29, type: 5, width: 19, height: 17
+Child: 30, type: 6, width: 41, height: 41
+Child: 31, type: 6, width: 41, height: 41
+Child: 32, type: 6, width: 43, height: 42
+Child: 33, type: 6, width: 41, height: 42
+Child: 34, type: 6, width: 41, height: 42

@@ -1,0 +1,30 @@
+Child: 0, type: 6, width: 35, height: 35
+Child: 1, type: 5, width: 350, height: 36
+Child: 2, type: 5, width: 39, height: 39
+Child: 3, type: 5, width: 352, height: 30
+Child: 4, type: 5, width: 39, height: 39
+Child: 5, type: 0, width: 487, height: 45
+Child: 6, type: 5, width: 21, height: 21
+Child: 7, message: Bolrie's Diary
+Child: 8, message: Chapter 1. Bad advice
+Child: 9, message: In which Bolrie is advised by
+Child: 10, message: a mysterious stranger, and
+Child: 11, message: ambition is fed.
+Child: 12, message: 
+Child: 13, message: Chapter 2. The King is dead
+Child: 14, message: In which a great king dies
+Child: 15, message: and the search for a new
+Child: 16, message: one begins.
+Child: 17, message: 
+Child: 18, message: 
+Child: 19, message: Chapter 3. Eyes opened
+Child: 20, message: In which a secret is revealed,
+Child: 21, message: an old foe reappears and
+Child: 22, message: ambitions end.
+Child: 23, message: 
+Child: 24, message: Finally, I understand my
+Child: 25, message: failings and my true enemies.
+Child: 26, message: I dedicate the rest of my
+Child: 27, message: shattered life to the task of
+Child: 28, message: eradicating them both.
+Child: 29, message:  Bolrie

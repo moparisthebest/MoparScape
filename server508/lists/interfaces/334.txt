@@ -1,0 +1,47 @@
+Child: 0, type: 3, width: 488, height: 305
+Child: 1, type: 5, width: 485, height: 300
+Child: 2, type: 5, width: 32, height: 241
+Child: 3, type: 5, width: 32, height: 32
+Child: 4, type: 5, width: 32, height: 243
+Child: 5, type: 5, width: 424, height: 34
+Child: 6, type: 5, width: 16, height: 16
+Child: 7, type: 5, width: 32, height: 32
+Child: 8, type: 5, width: 32, height: 32
+Child: 9, type: 5, width: 32, height: 32
+Child: 10, type: 5, width: 465, height: 32
+Child: 11, type: 5, width: 32, height: 32
+Child: 12, type: 5, width: 32, height: 32
+Child: 13, type: 5, width: 32, height: 32
+Child: 14, type: 5, width: 32, height: 32
+Child: 15, type: 5, width: 32, height: 222
+Child: 16, type: 5, width: 34, height: 36
+Child: 17, type: 3, width: 233, height: 250
+Child: 18, type: 0, width: 235, height: 232
+Child: 19, type: 3, width: 234, height: 251
+Child: 20, type: 3, width: 65, height: 25
+Child: 21, type: 3, width: 67, height: 24
+Child: 22, type: 5, width: 32, height: 32
+Child: 23, type: 5, width: 32, height: 32
+Child: 24, type: 5, width: 32, height: 32
+Child: 25, type: 5, width: 32, height: 32
+Child: 26, type: 5, width: 32, height: 32
+Child: 27, type: 5, width: 423, height: 32
+Child: 28, type: 5, width: 32, height: 32
+Child: 29, type: 5, width: 32, height: 32
+Child: 30, type: 5, width: 32, height: 32
+Child: 31, message: You are about to give:
+Child: 32, message: In return you will receive:
+Child: 33, message: Are you sure you want to make this trade?
+Child: 34, message: There is <col=ff0000>NO WAY<col=ffffff> to reverse a trade if you change your mind.
+Child: 35, message: Accept
+Child: 36, message: Decline
+Child: 37, message: Item
+Child: 38, message: Item
+Child: 39, message: Item
+Child: 40, message: Item
+Child: 41, message: Item
+Child: 42, message: Item
+Child: 43, type: 0, width: 32, height: 32
+Child: 44, message: Trading with:<br>Unknown
+Child: 45, message: Trade modified
+Child: 46, message: Trade modified

@@ -1,0 +1,4 @@
+Child: 0, type: 6, width: 621, height: 186
+Child: 1, message: Rum
+Child: 2, message: Deal
+Child: 3, type: 0, width: 512, height: 334

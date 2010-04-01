@@ -1,0 +1,57 @@
+Child: 0, type: 3, width: 16391, height: 16391
+Child: 1, type: 0, width: 512, height: 334
+Child: 2, type: 0, width: 512, height: 334
+Child: 3, message: Bounty Hunters
+Child: 4, message: Players who hunt and kill assigned targets
+Child: 5, message: 1)
+Child: 6, message: 2)
+Child: 7, message: 3)
+Child: 8, message: 4)
+Child: 9, message: 5)
+Child: 10, message: 6)
+Child: 11, message: 7)
+Child: 12, message: 8)
+Child: 13, message: 9)
+Child: 14, message: 10)
+Child: 15, message: Nobody yet
+Child: 16, message: Nobody yet
+Child: 17, message: Nobody yet
+Child: 18, message: Nobody yet
+Child: 19, message: Nobody yet
+Child: 20, message: Nobody yet
+Child: 21, message: Nobody yet
+Child: 22, message: Nobody yet
+Child: 23, message: Nobody yet
+Child: 24, message: Nobody yet
+Child: 25, message: 0
+Child: 26, message: 0
+Child: 27, message: 0
+Child: 28, message: 0
+Child: 29, message: 0
+Child: 30, message: 0
+Child: 31, message: 0
+Child: 32, message: 0
+Child: 33, message: 0
+Child: 34, message: 0
+Child: 35, type: 3, width: 512, height: 334
+Child: 36, type: 6, width: 661, height: 715
+Child: 37, type: 5, width: 26, height: 23
+Child: 38, type: 0, width: 16391, height: 16391
+Child: 39, type: 0, width: 16391, height: 16391
+Child: 40, type: 5, width: 32, height: 334
+Child: 41, type: 5, width: 462, height: 32
+Child: 42, type: 5, width: 512, height: 32
+Child: 43, type: 5, width: 32, height: 334
+Child: 44, type: 5, width: 32, height: 32
+Child: 45, type: 5, width: 32, height: 32
+Child: 46, type: 5, width: 32, height: 32
+Child: 47, type: 5, width: 32, height: 32
+Child: 48, type: 0, width: 8192, height: 16391
+Child: 49, type: 0, width: 8188, height: 16391
+Child: 50, type: 0, width: 16391, height: 8192
+Child: 51, type: 0, width: 16391, height: 8182
+Child: 52, type: 0, width: 512, height: 334
+Child: 53, type: 5, width: 256, height: 16384
+Child: 54, type: 5, width: 256, height: 16391
+Child: 55, type: 5, width: 16391, height: 167
+Child: 56, type: 5, width: 16391, height: 166

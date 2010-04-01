@@ -1,0 +1,35 @@
+Child: 0, type: 6, width: 32, height: 32
+Child: 1, type: 6, width: 17, height: 14
+Child: 2, type: 6, width: 17, height: 14
+Child: 3, type: 6, width: 17, height: 14
+Child: 4, type: 6, width: 17, height: 14
+Child: 5, type: 6, width: 17, height: 14
+Child: 6, type: 6, width: 17, height: 14
+Child: 7, type: 6, width: 17, height: 14
+Child: 8, type: 6, width: 17, height: 14
+Child: 9, type: 6, width: 17, height: 14
+Child: 10, type: 6, width: 17, height: 14
+Child: 11, type: 6, width: 17, height: 14
+Child: 12, message: Port Tyras
+Child: 13, message: Port Phasmatys
+Child: 14, message: Catherby
+Child: 15, message: Shipyard
+Child: 16, message:  Karamja
+Child: 17, message: Brimhaven
+Child: 18, message: Port Khazard
+Child: 19, message: Port Sarim
+Child: 20, message: Mos Le'Harmless
+Child: 21, message: Crandor
+Child: 22, message: Oo'glog
+Child: 23, type: 0, width: 101, height: 14
+Child: 24, type: 0, width: 117, height: 16
+Child: 25, type: 0, width: 69, height: 17
+Child: 26, type: 0, width: 100, height: 15
+Child: 27, type: 0, width: 128, height: 17
+Child: 28, type: 0, width: 76, height: 18
+Child: 29, type: 0, width: 93, height: 16
+Child: 30, type: 0, width: 136, height: 15
+Child: 31, type: 0, width: 114, height: 17
+Child: 32, type: 0, width: 61, height: 15
+Child: 33, type: 0, width: 101, height: 19
+Child: 34, type: 5, width: 26, height: 23

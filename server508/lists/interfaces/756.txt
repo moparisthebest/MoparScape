@@ -1,0 +1,69 @@
+Child: 0, type: 3, width: 334, height: 221
+Child: 1, type: 5, width: 322, height: 212
+Child: 2, type: 3, width: 88, height: 31
+Child: 3, type: 0, width: 100, height: 43
+Child: 4, type: 0, width: 100, height: 43
+Child: 5, message: Challenge
+Child: 6, type: 0, width: 100, height: 43
+Child: 7, message: Challenge
+Child: 8, type: 0, width: 100, height: 43
+Child: 9, message: Challenge
+Child: 10, message: Draughts: Options
+Child: 11, message: Challenge
+Child: 12, type: 5, width: 15, height: 15
+Child: 13, type: 5, width: 15, height: 15
+Child: 14, type: 0, width: 113, height: 100
+Child: 15, type: 5, width: 15, height: 15
+Child: 16, type: 5, width: 15, height: 15
+Child: 17, message: 30 seconds
+Child: 18, message: 1 minute
+Child: 19, message: 2 minutes
+Child: 20, message: 15 seconds
+Child: 21, message: Time per move:
+Child: 22, type: 0, width: 191, height: 179
+Child: 23, message: Choose piece:
+Child: 24, type: 6, width: 32, height: 33
+Child: 25, type: 6, width: 32, height: 33
+Child: 26, type: 6, width: 32, height: 33
+Child: 27, type: 6, width: 32, height: 33
+Child: 28, type: 6, width: 32, height: 33
+Child: 29, type: 6, width: 32, height: 33
+Child: 30, type: 6, width: 32, height: 33
+Child: 31, type: 6, width: 32, height: 33
+Child: 32, type: 6, width: 32, height: 33
+Child: 33, type: 6, width: 32, height: 33
+Child: 34, type: 6, width: 32, height: 33
+Child: 35, type: 6, width: 32, height: 33
+Child: 36, type: 5, width: 15, height: 15
+Child: 37, type: 5, width: 15, height: 15
+Child: 38, type: 5, width: 15, height: 15
+Child: 39, type: 5, width: 15, height: 15
+Child: 40, type: 5, width: 15, height: 15
+Child: 41, type: 5, width: 15, height: 15
+Child: 42, type: 5, width: 15, height: 15
+Child: 43, type: 5, width: 15, height: 15
+Child: 44, type: 5, width: 15, height: 15
+Child: 45, type: 5, width: 15, height: 15
+Child: 46, type: 5, width: 15, height: 15
+Child: 47, type: 5, width: 15, height: 15
+Child: 48, message: Ranked
+Child: 49, type: 0, width: 512, height: 334
+Child: 50, type: 5, width: 15, height: 15
+Child: 51, type: 5, width: 16, height: 16
+Child: 52, type: 5, width: 32, height: 32
+Child: 53, type: 5, width: 32, height: 32
+Child: 54, type: 5, width: 32, height: 32
+Child: 55, type: 5, width: 32, height: 32
+Child: 56, type: 5, width: 32, height: 155
+Child: 57, type: 5, width: 32, height: 32
+Child: 58, type: 5, width: 32, height: 32
+Child: 59, type: 5, width: 32, height: 155
+Child: 60, type: 5, width: 270, height: 32
+Child: 61, type: 5, width: 269, height: 32
+Child: 62, type: 5, width: 314, height: 25
+Child: 63, type: 5, width: 32, height: 32
+Child: 64, type: 5, width: 32, height: 32
+Child: 65, type: 5, width: 32, height: 32
+Child: 66, type: 5, width: 32, height: 32
+Child: 67, type: 5, width: 36, height: 32
+Child: 68, type: 5, width: 36, height: 32
