@@ -30,8 +30,8 @@ public class Class120
 	    return null;
 	if ((is.length ^ 0xffffffff) < -137 && !Class104.aBoolean1780) {
 	    try {
-		Class15 class15
-		    = (Class15) Class.forName("Class15_Sub1").newInstance();
+		//xxx Class15 class15 = (Class15) Class.forName("Class15_Sub1").newInstance();
+            Class15 class15 = new Class15_Sub1();
 		class15.method277(is, true);
 		return class15;
 	    } catch (Throwable throwable) {

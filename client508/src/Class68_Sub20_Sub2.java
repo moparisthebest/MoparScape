@@ -108,7 +108,8 @@ public class Class68_Sub20_Sub2 extends Class68_Sub20
 	try {
 	    if (i < 56)
 		return null;
-	    return (Class97) Class.forName("Class97_Sub1").newInstance();
+	    //xxx return (Class97) Class.forName("Class97_Sub1").newInstance();
+        return new Class97_Sub1();
 	} catch (Throwable throwable) {
 	    return null;
 	}

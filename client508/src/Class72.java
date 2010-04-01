@@ -287,7 +287,8 @@ public abstract class Class72
 	    method1349(null, false);
 	anInt1301++;
 	try {
-	    return (Class50) Class.forName("Class50_Sub1").newInstance();
+	    //return (Class50) Class.forName("Class50_Sub1").newInstance();
+        return new Class50_Sub1();
 	} catch (Throwable throwable) {
 	    return new Class50_Sub2();
 	}

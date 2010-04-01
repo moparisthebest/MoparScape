@@ -167,8 +167,8 @@ public class Class28
 				    int i_15_) {
 	anInt527++;
 	try {
-	    Class var_class = Class.forName("Class72_Sub2");
-	    Class72 class72 = (Class72) var_class.newInstance();
+	    //xxx Class72 class72 = (Class72) Class.forName("Class72_Sub2").newInstance();
+        Class72 class72 = new Class72_Sub2();
 	    if (i_15_ >= -12)
 		method393(-53, false);
 	    class72.method1356(component, i, -121, i_14_);

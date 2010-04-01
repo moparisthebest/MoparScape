@@ -132,7 +132,8 @@ public class Class68_Sub20_Sub3 extends Class68_Sub20
 	if (i != 3253)
 	    method1056(-92);
 	try {
-	    return (Class105) Class.forName("Class105_Sub1").newInstance();
+	    //xxx return (Class105) Class.forName("Class105_Sub1").newInstance();
+        return new Class105_Sub1();
 	} catch (Throwable throwable) {
 	    return null;
 	}

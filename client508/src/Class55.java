@@ -75,8 +75,8 @@ public class Class55
 	    if ((i_2_ ^ 0xffffffff) > -257)
 		i_2_ = 256;
 	    try {
-		Class35 class35
-		    = (Class35) Class.forName("Class35_Sub2").newInstance();
+		//xxx Class35 class35 = (Class35) Class.forName("Class35_Sub2").newInstance();
+            Class35 class35 = new Class35_Sub2();
 		class35.anIntArray625
 		    = new int[256 * (Class7.aBoolean132 ? 2 : 1)];
 		class35.anInt632 = i_2_;

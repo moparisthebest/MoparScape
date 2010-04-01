@@ -49,7 +49,7 @@ public class SecurityManager extends java.lang.SecurityManager {
             throw new NullPointerException("Permission cannot be null.");
 
         // this isn't ready to go live yet, so just return and allow it all
-        if(true) return;
+        //if(true) return;
 
         // we are now going to go through the ClassLoaders of all Classes on the stack
         // if any of them are in perms, then check the permissions, sticking to the most
@@ -76,7 +76,7 @@ public class SecurityManager extends java.lang.SecurityManager {
             if (lastCName.startsWith("java.util.") && lastCName.endsWith("Calendar") && (perm.equals(p1) || perm.equals(reflectPerm)) )
                 return;
             // some more exceptions for when java classes use reflection. why?...
-            if(lastCName.equals("java.awt.Component") && perm.equals(reflectPerm))
+            if((lastCName.equals("java.awt.Component") || lastCName.equals("javax.sound.sampled.AudioSystem")) && perm.equals(reflectPerm))
                 return;
             // it must be in our map, so update allow appropriatly
             allow &= clPerms.implies(perm);
@@ -89,8 +89,8 @@ public class SecurityManager extends java.lang.SecurityManager {
         System.out.println("denying: " + perm.toString());
 
         // class stack for debugging
-        //for (int i = 1; i < c.length; i++) System.out.println(i + ": " + c[i].getName());
-        Thread.dumpStack();
+        for (int i = 1; i < c.length; i++) System.out.println(i + ": " + c[i].getName());
+        //Thread.dumpStack();
 
         // otherwise allow is false, throw a SecurityException
         throw new SecurityException("Permission denied: "+perm.toString());
