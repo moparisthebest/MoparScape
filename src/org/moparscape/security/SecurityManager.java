@@ -19,6 +19,7 @@ public class SecurityManager extends java.lang.SecurityManager {
     // two permissions allowed if using java.util.GregorianCalendar
     private Permission p1 = new java.lang.RuntimePermission("accessClassInPackage.sun.util.resources");
     private Permission reflectPerm = new java.lang.reflect.ReflectPermission("suppressAccessChecks");
+    private Permission classLoaderPerm = new java.lang.RuntimePermission("createClassLoader");
 
     public void addPermissions(ClassLoader cl, Permissions perms) {
         //if the key already exists, just return, we only support setting the permissions once
@@ -73,11 +74,30 @@ public class SecurityManager extends java.lang.SecurityManager {
             // java.lang.RuntimePermission accessClassInPackage.sun.util.resources
             // java.lang.reflect.ReflectPermission suppressAccessChecks
             String lastCName = c[i - 1].getName();
-            if (lastCName.startsWith("java.util.") && lastCName.endsWith("Calendar") && (perm.equals(p1) || perm.equals(reflectPerm)) )
+            if (lastCName.startsWith("java.util.") && lastCName.endsWith("Calendar") && (perm.equals(p1) || perm.equals(reflectPerm)))
                 return;
             // some more exceptions for when java classes use reflection. why?...
-            if((lastCName.equals("java.awt.Component") || lastCName.equals("javax.sound.sampled.AudioSystem")) && perm.equals(reflectPerm))
+            if (lastCName.equals("javax.sound.sampled.AudioSystem") && perm.equals(reflectPerm))
                 return;
+            if (lastCName.equals("java.awt.Component") || lastCName.equals("sun.font.FontDesignMetrics")) {
+                // component uses reflection, and sometimes creates a classloader, yay...
+                if (perm.equals(reflectPerm) || perm.equals(classLoaderPerm))
+                    return;
+                // it also loads about a million fonts, with no platform independent way to handle this, so we are going to kludge it
+                // we are going to allow reading (only) of all .ttf files
+                if (perm instanceof java.io.FilePermission && perm.getActions().equals("read")) {
+                    // most end with .ttf
+                    if (perm.getName().endsWith(".ttf"))
+                        return;
+                    // some end with .ttc
+                    if (perm.getName().endsWith(".ttc"))
+                        return;
+                    // others are named something stupid, like 'ttf-arabeyes', or even 'kochi'
+                    // something they all have in common (at least on linux) is they all contain 'fonts' in the path
+                    if (perm.getName().toLowerCase().contains("font"))
+                        return;
+                }
+            }
             // it must be in our map, so update allow appropriatly
             allow &= clPerms.implies(perm);
         }
@@ -90,7 +110,7 @@ public class SecurityManager extends java.lang.SecurityManager {
 
         // class stack for debugging
         for (int i = 1; i < c.length; i++) System.out.println(i + ": " + c[i].getName());
-        //Thread.dumpStack();
+        Thread.dumpStack();
 
         // otherwise allow is false, throw a SecurityException
         throw new SecurityException("Permission denied: "+perm.toString());

@@ -36,7 +36,7 @@ public class client extends RSApplet {
     public static int serverPort = 43594;
     public static int ondemandPort = 43594;
     public static int jaggrabPort = 43595;
-    public static String cacheDir = System.getProperty("user.home") + "/.moparscape/cache317/";
+    public static String cacheDir = "~/.moparscape/cache317/";
     public static String serverAddress = "localhost";
     boolean maplock, hpOn, zoomOn;
     int mapface, zoom, fwdbwd, lftrit;
@@ -2209,7 +2209,11 @@ public class client extends RSApplet {
         // xxx added in following two lines
         signlink.storeid = 32;
         try {
-            signlink.startpriv(InetAddress.getLocalHost());
+            //xxx orig: signlink.startpriv(InetAddress.getLocalHost());
+            // from javadocs:
+            // If the host is null then an InetAddress  representing an address of the loopback interface is returned.
+            // in other words, localhost, done this way so nothing needs to be resolved
+            signlink.startpriv(InetAddress.getByName(null));
         } catch (Exception e) {
             e.printStackTrace();
         }
