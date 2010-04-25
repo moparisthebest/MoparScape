@@ -1,8 +1,7 @@
-public class server implements Runnable {
+public class server implements Runnable, org.moparscape.iface.ServerInterface {
 
-    public server() {
-
-
+    public void startServer(String workingDirectory){
+         main(new String[]{workingDirectory});
     }
 
     public static String workingDir = null;

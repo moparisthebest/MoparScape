@@ -18,31 +18,20 @@
  * Email me at admin@moparisthebest.com , I read it but don't usually respond.
  */
 
-package org.moparscape.classloader;
-
-import java.io.FileOutputStream;
-import java.io.PrintStream;
+package org.moparscape.iface;
 
 /**
- * This calculates CRCs for a list of jars and outputs them to the requested file, or stdout.
  * @author mopar
  */
-public class CRCJar {
+public interface ServerInterface {
 
-    public static void main(String[] args) throws Exception {
-        if (args.length < 2) {
-            System.out.println("Usage: CRCJar logFile jarFile...");
-            return;
-        }
-        PrintStream log;
-        if(args[0].equals("-"))
-            log = System.out;
-        else
-            log = new PrintStream(new FileOutputStream(args[0]));
+    public static final long serialVersionUID = 42L;
 
-        for (int x= 1; x < args.length; ++x) {
-            CRCClassLoader cl = new CRCClassLoader(args[x]);
-            log.println(args[x] + " crc: " + cl.getCRC());
-        }
-    }
+    /**
+     * This is called by moparscape to start the server
+     * @param workingDirectory Files server needs are in here, and this is the only place you have permission to read
+     * and write.
+     */
+    public void startServer(String workingDirectory);
+
 }

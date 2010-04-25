@@ -1,14 +1,11 @@
 /**
- * Created by IntelliJ IDEA.
- * User: mopar
- * Date: Feb 28, 2010
- * Time: 8:56:51 PM
- * To change this template use File | Settings | File Templates.
+ * Starts rs2hd for moparscape.
  */
-public class server {
+public class server implements org.moparscape.iface.ServerInterface {
 
-    public static void main(String[] args) {
-        System.setProperty("python.home", args[0]+"libs/cachedir/");
-        com.rs2hd.Main.main(args);
+    public void startServer(String workingDirectory) {
+        System.setProperty("python.home", workingDirectory + "libs/cachedir/");
+        com.rs2hd.Main.main(new String[]{workingDirectory});
     }
+
 }
