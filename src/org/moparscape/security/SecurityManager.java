@@ -78,7 +78,7 @@ public class SecurityManager extends java.lang.SecurityManager {
             throw new NullPointerException("Permission cannot be null.");
 
         // this isn't ready to go live yet, so just return and allow it all
-        //if(true) return;
+        if(true) return;
 
         // if this is the allowed socket, allow it
         if(allowedSocket.implies(perm))
