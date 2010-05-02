@@ -8,4 +8,12 @@ public class server implements org.moparscape.iface.ServerInterface {
         com.rs2hd.Main.main(new String[]{workingDirectory});
     }
 
+    public static void main(String[] args){
+        if(args.length != 1){
+            System.err.println("Fatal Error: Working directory must be first argument! (Try './')");
+            return;
+        }
+        new server().startServer(args[0]);
+    }
+
 }

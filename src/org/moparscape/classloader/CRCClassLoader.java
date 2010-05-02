@@ -62,8 +62,8 @@ public class CRCClassLoader extends ClassLoader {
         this.pd = parent.getProtectionDomain();
     }
 
-    public CRCClassLoader(String jarFileLoc, String backupURL, long expectedCRC, Class parent) throws IOException {
-        this(jarFileLoc, backupURL, expectedCRC);
+    public CRCClassLoader(String jarFileLoc, String backupURL, long expectedCRC, Class parent, boolean crcMismatchException) throws IOException {
+        this(jarFileLoc, backupURL, expectedCRC, crcMismatchException);
         this.parent = parent.getClassLoader();
         this.pd = parent.getProtectionDomain();
     }
@@ -75,7 +75,7 @@ public class CRCClassLoader extends ClassLoader {
      *
      * @param jarFileLoc The location of the jar file to load on the disk
      */
-    public CRCClassLoader(String jarFileLoc, String backupURL, long expectedCRC) throws IOException {
+    public CRCClassLoader(String jarFileLoc, String backupURL, long expectedCRC, boolean crcMismatchException) throws IOException {
         super();
 
         // wrap this one in a try / catch, so we can retry if it throws an exception
@@ -107,8 +107,13 @@ public class CRCClassLoader extends ClassLoader {
 
         setup(jarFileLoc);
 
-        if (getCRC() != expectedCRC)
-            throw new IOException("CRC checksum failed. crc:" + getCRC() + " expected:" + expectedCRC);
+        if (getCRC() != expectedCRC) {
+            String s = "CRC checksum failed. crc:" + getCRC() + " expected:" + expectedCRC;
+            if (crcMismatchException)
+                throw new IOException(s);
+            else
+                System.err.println(s);
+        }
     }
 
     public void addJar(String jarFileLoc) throws IOException {
@@ -122,14 +127,14 @@ public class CRCClassLoader extends ClassLoader {
     private void setup(String jarFileLoc, boolean updateCRC) throws IOException {
         File f = new File(jarFileLoc);
         if (!f.exists()) {
-            System.out.println("Jar file doesn't exist: " + jarFileLoc);
+            System.err.println("Jar file doesn't exist: " + jarFileLoc);
             return;
         }
 
         JarFile jf = new JarFile(f);
         Enumeration entries = jf.entries();
 
-        if(updateCRC)
+        if (updateCRC)
             classes = new HashMap<String, byte[]>();
 
         CRC32 crc = null;
@@ -186,7 +191,7 @@ public class CRCClassLoader extends ClassLoader {
         if (classBytes == null) {
             if (parent == null)
                 throw new ClassNotFoundException("Couldn't find class " + name);
-            System.out.println("Couldn't find class '" + name + "' trying parent class loader.");
+            //System.out.println("Couldn't find class '" + name + "' trying parent class loader.");
             return parent.loadClass(name);
         }
         Class foundClass = defineClass(name, classBytes, 0, classBytes.length, pd);

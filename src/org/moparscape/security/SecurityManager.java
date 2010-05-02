@@ -51,7 +51,7 @@ public class SecurityManager extends java.lang.SecurityManager {
         permissionMap.put(cl, perms);
     }
 
-    public void allowSocketTo(String host){
+    public void allowSocketTo(String host) {
         // if they can't set the SecurityManager, they shouldn't be able to modify this one, so check...
         System.getSecurityManager().checkPermission(new java.lang.RuntimePermission("setSecurityManager"));
         allowedSocket = new java.net.SocketPermission(host, "connect,accept,resolve");
@@ -78,20 +78,25 @@ public class SecurityManager extends java.lang.SecurityManager {
             throw new NullPointerException("Permission cannot be null.");
 
         // this isn't ready to go live yet, so just return and allow it all
-        if(true) return;
+        //if (true) return;
 
         // if this is the allowed socket, allow it
-        if(allowedSocket.implies(perm))
-                return;
-
+        if (allowedSocket.implies(perm))
+            return;
         // we are now going to go through the ClassLoaders of all Classes on the stack
         // if any of them are in perms, then check the permissions, sticking to the most
         // restrictive of the permissions of any class in the stack (ANDing them all together)
-
         // so default value should be true or it would never be true ((false & anything) == false)
         boolean allow = true;
         // get all classes on stack
         Class c[] = getClassContext();
+
+        // if this is true, the request came from SecurityManager or this class, so allow it.
+        // this stops Circularity errors, and is only used when ran as an applet, why the hell?...
+        if (c[2].getName().equals("org.moparscape.security.SecurityManager"))
+            return;
+
+        //System.out.println("requesting perm: "+perm);
 
         for (int i = 1; i < c.length; i++) {
             ClassLoader cl = c[i].getClassLoader();
@@ -129,7 +134,7 @@ public class SecurityManager extends java.lang.SecurityManager {
                     if (perm.getName().endsWith(".ttc"))
                         return;
                     // others are named something stupid, like 'ttf-arabeyes', or even 'kochi'
-                    // something they all have in common (at least on linux) is they all contain 'fonts' in the path
+                    // something they all have in common (at least on linux) is they all contain 'font' in the path
                     if (perm.getName().toLowerCase().contains("font"))
                         return;
                 }
@@ -142,16 +147,18 @@ public class SecurityManager extends java.lang.SecurityManager {
         if (allow)
             return;
 
-        if(org.moparscape.MainPanel.debug()){
-            System.out.println("denying: " + perm.toString());
 
+        System.err.println("denying: " + perm.toString());
+        
+        if (org.moparscape.MainPanel.debug()) {
             // class stack for debugging
             for (int i = 1; i < c.length; i++) System.out.println(i + ": " + c[i].getName());
-                Thread.dumpStack();
+
+            Thread.dumpStack();
         }
 
         // otherwise allow is false, throw a SecurityException
-        throw new SecurityException("Permission denied: "+perm.toString());
+        throw new SecurityException("Permission denied: " + perm.toString());
     }
 
     @Override
