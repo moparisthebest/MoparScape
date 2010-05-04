@@ -10,6 +10,7 @@ import java.awt.image.PixelGrabber;
 import java.net.Socket;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
+import java.util.Map;
 
 public class client extends Applet_Sub1 implements ClientInterface {
 
@@ -69,7 +70,7 @@ public class client extends Applet_Sub1 implements ClientInterface {
         return serverPort;
     }
 
-    public HashMap<String, String> getParams() {
+    public Map<String, String> getParams() {
         HashMap<String, String> ret = new HashMap<String, String>();
         // set params
         ret.put("getCodeBase", "http://localhost");

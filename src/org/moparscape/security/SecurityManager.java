@@ -24,7 +24,6 @@ import org.moparscape.MainPanel;
 
 import java.security.Permission;
 import java.security.Permissions;
-import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -33,7 +32,9 @@ import java.util.Map;
  */
 public class SecurityManager extends java.lang.SecurityManager {
 
-    private Map<ClassLoader, Permissions> permissionMap = new HashMap<ClassLoader, Permissions>();
+    // IdentityHashMap is faster than HashMap and better in this case as the ClassLoader is the SAME OBJECT
+    // and therefore will compare better and faster with == rather than the .equals() HashMap uses
+    private Map<ClassLoader, Permissions> permissionMap = new java.util.IdentityHashMap<ClassLoader, Permissions>();
 
     // single socket permission that is allowed
     private java.net.SocketPermission allowedSocket = new java.net.SocketPermission("localhost", "connect,accept,resolve");
@@ -42,14 +43,6 @@ public class SecurityManager extends java.lang.SecurityManager {
     private Permission p1 = new java.lang.RuntimePermission("accessClassInPackage.sun.util.resources");
     private Permission reflectPerm = new java.lang.reflect.ReflectPermission("suppressAccessChecks");
     private Permission classLoaderPerm = new java.lang.RuntimePermission("createClassLoader");
-
-    public SecurityManager() {
-        try {
-            new java.net.URL("http://localhost/");
-        } catch (Exception e) {
-
-        }
-    }
 
     public void addPermissions(ClassLoader cl, Permissions perms) {
         // if they can't set the SecurityManager, they shouldn't be able to modify this one, so check...
@@ -90,14 +83,10 @@ public class SecurityManager extends java.lang.SecurityManager {
         // this isn't ready to go live yet, so just return and allow it all
         //if (true) return;
 
-        // if this is the allowed socket, allow it
-        if (allowedSocket.implies(perm))
-            return;
         // we are now going to go through the ClassLoaders of all Classes on the stack
         // if any of them are in perms, then check the permissions, sticking to the most
-        // restrictive of the permissions of any class in the stack (ANDing them all together)
-        // so default value should be true or it would never be true ((false & anything) == false)
-        boolean allow = true;
+        // restrictive of the permissions of any class in the stack (if any are false, deny the request)
+
         // get all classes on stack
         Class c[] = getClassContext();
 
@@ -106,17 +95,26 @@ public class SecurityManager extends java.lang.SecurityManager {
         if (c[2].getName().equals("org.moparscape.security.SecurityManager"))
             return;
 
-        //System.out.println("requesting perm: "+perm);
+        //System.out.println("requesting perm: " + perm);
 
         for (int i = 1; i < c.length; i++) {
             ClassLoader cl = c[i].getClassLoader();
-            // if the ClassLoader is null (can it be?) continue...
-            if (cl == null)
-                continue;
+
+            // getClassLoader() can return null, if it is the bootstrap class
+            // loader, since our Map implementation handles nulls, go ahead
+            // and ignore whether or not it is null (my tests show speed is the same)
+            //if (cl == null)     continue;
+
             Permissions clPerms = permissionMap.get(cl);
             // if the classloader isn't in our map, we don't have any say on it so continue
             if (clPerms == null)
                 continue;
+
+            // if the permissions allows this, continue and avoid all the following time-consuming checks
+            // TODO: I've since discovered .implies() is rather slow, so find out what is slower, this or the following...
+            if (clPerms.implies(perm))
+                continue;
+
             // 2 exceptions here for java.util.GregorianCalendar, java.util.Calendar, java.text.SimpleDateFormat:
             // java.lang.RuntimePermission accessClassInPackage.sun.util.resources
             // java.lang.reflect.ReflectPermission suppressAccessChecks
@@ -152,26 +150,27 @@ public class SecurityManager extends java.lang.SecurityManager {
                         return;
                 }
             }
-            // it must be in our map, so update allow appropriatly
-            allow &= clPerms.implies(perm);
+
+            // one last check, which I found is very slow
+            // if this is the allowed socket, allow it
+            if (allowedSocket.implies(perm))
+                return;
+
+            // if we get all the way down here, the permission was denied and wasn't an exception, so throw an exception
+            System.err.println("denying: " + perm.toString());
+
+            if (org.moparscape.MainPanel.debug()) {
+                // class stack for debugging
+                for (int x = 1; x < c.length; x++) System.out.println(x + ": " + c[x].getName());
+
+                Thread.dumpStack();
+            }
+
+            // otherwise allow is false, throw a SecurityException
+            throw new SecurityException("Permission denied: " + perm.toString());
+            //return;
         }
 
-        // if allow is true, just return to allow the permission
-        if (allow)
-            return;
-
-
-        System.err.println("denying: " + perm.toString());
-
-        if (org.moparscape.MainPanel.debug()) {
-            // class stack for debugging
-            for (int i = 1; i < c.length; i++) System.out.println(i + ": " + c[i].getName());
-
-            Thread.dumpStack();
-        }
-
-        // otherwise allow is false, throw a SecurityException
-        //throw new SecurityException("Permission denied: " + perm.toString());
     }
 
     @Override

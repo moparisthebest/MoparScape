@@ -21,6 +21,8 @@
 package org.moparscape.iface;
 
 /**
+ * This interface must be implemented for moparscape to load this as a server.
+ * For two different working examples, check the 317 and 508 clients implementing this interface.
  * @author mopar
  */
 public interface ServerInterface {

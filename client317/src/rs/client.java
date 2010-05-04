@@ -27,6 +27,7 @@ import java.net.InetAddress;
 import java.net.Socket;
 import java.net.URL;
 import java.util.HashMap;
+import java.util.Map;
 
 public class client extends RSApplet {
 
@@ -92,7 +93,7 @@ public class client extends RSApplet {
         return serverPort;
     }
 
-    public HashMap<String, String> getParams() {
+    public Map<String, String> getParams() {
         HashMap<String, String> ret = new HashMap<String, String>();
         // set params
         ret.put("getCodeBase", "http://localhost");
