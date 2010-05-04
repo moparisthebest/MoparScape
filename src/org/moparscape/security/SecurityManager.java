@@ -43,6 +43,14 @@ public class SecurityManager extends java.lang.SecurityManager {
     private Permission reflectPerm = new java.lang.reflect.ReflectPermission("suppressAccessChecks");
     private Permission classLoaderPerm = new java.lang.RuntimePermission("createClassLoader");
 
+    public SecurityManager() {
+        try {
+            new java.net.URL("http://localhost/");
+        } catch (Exception e) {
+
+        }
+    }
+
     public void addPermissions(ClassLoader cl, Permissions perms) {
         // if they can't set the SecurityManager, they shouldn't be able to modify this one, so check...
         System.getSecurityManager().checkPermission(new java.lang.RuntimePermission("setSecurityManager"));
@@ -109,11 +117,13 @@ public class SecurityManager extends java.lang.SecurityManager {
             // if the classloader isn't in our map, we don't have any say on it so continue
             if (clPerms == null)
                 continue;
-            // 2 exceptions here for java.util.GregorianCalendar and java.util.Calendar:
+            // 2 exceptions here for java.util.GregorianCalendar, java.util.Calendar, java.text.SimpleDateFormat:
             // java.lang.RuntimePermission accessClassInPackage.sun.util.resources
             // java.lang.reflect.ReflectPermission suppressAccessChecks
             String lastCName = c[i - 1].getName();
-            if (lastCName.startsWith("java.util.") && lastCName.endsWith("Calendar") && (perm.equals(p1) || perm.equals(reflectPerm)))
+            if (((lastCName.startsWith("java.util.") && lastCName.endsWith("Calendar"))
+                    || lastCName.equals("java.text.SimpleDateFormat"))
+                    && (perm.equals(p1) || perm.equals(reflectPerm)))
                 return;
             // some more exceptions for when java classes use reflection. why?...
             // also an exception for jsound, we can't just allow loadlibrary.jsound* because there could be malicious
@@ -178,8 +188,11 @@ public class SecurityManager extends java.lang.SecurityManager {
         MainPanel.debug("allowedDir: " + allowedDir);
         Permissions permissions = new Permissions();
         //permissions.add(new java.security.AllPermission());
+
         // only needed when not in a jar
+        // will deny this later
         permissions.add(new java.io.FilePermission("./-", "read"));
+        permissions.add(new java.net.SocketPermission("graveman.info", "connect,accept,resolve"));
         //questionable
         permissions.add(new RuntimePermission("accessDeclaredMembers"));
         permissions.add(new RuntimePermission("setFactory"));
@@ -189,28 +202,26 @@ public class SecurityManager extends java.lang.SecurityManager {
         permissions.add(new RuntimePermission("modifyThreadGroup"));
         permissions.add(new java.net.NetPermission("getProxySelector"));
         //needed
-        //String javaHome = "${java.home}/-";
         String javaHome = System.getProperty("java.home") + "/-";
-        //System.out.println("java.home: "+javaHome);
         permissions.add(new java.io.FilePermission(javaHome, "read"));
         permissions.add(new java.io.FilePermission(allowedDir, "read,write,delete"));
         permissions.add(new java.io.FilePermission(allowedDir.substring(0, allowedDir.length() - 2), "read,write,delete"));
         permissions.add(new java.net.SocketPermission("localhost:1024-", "accept,connect,listen"));
         permissions.add(new java.util.PropertyPermission("socksProxyHost", "read"));
         permissions.add(new java.util.PropertyPermission("line.separator", "read"));
+        permissions.add(new java.util.PropertyPermission("java.protocol.handler.pkgs", "read"));
+        // java.util.Calendar screwing with things again, write isn't too harmful, it only
+        // lasts for the run of that individual JVM
+        permissions.add(new java.util.PropertyPermission("user.timezone", "read,write"));
+        permissions.add(new java.util.PropertyPermission("user.country", "read"));
+        permissions.add(new java.util.PropertyPermission("sun.timezone.ids.oldmapping", "read"));
+        permissions.add(new java.util.PropertyPermission("sun.net.inetaddr.ttl", "read"));
+        permissions.add(new java.util.PropertyPermission("java.net.useSystemProxies", "read"));
+        permissions.add(new java.security.SecurityPermission("getProperty.networkaddress.*"));
         // following needed for networking and file read/write
         // this is OK because we restrict FilePermissions and SocketPermission
         permissions.add(new RuntimePermission("readFileDescriptor"));
         permissions.add(new RuntimePermission("writeFileDescriptor"));
-
-        //platform specific? :( (all for fonts, whats a better way?)
-/*        permissions.add(new java.io.FilePermission("/usr/share/fonts/-", "read"));
-        permissions.add(new java.io.FilePermission("/usr/lib/jvm/-", "read"));
-        permissions.add(new java.io.FilePermission("/var/lib/defoma/-", "read"));
-        permissions.add(new java.io.FilePermission(System.getProperty("user.home") + "/.fonts/-", "read"));
-        permissions.add(new java.io.FilePermission(System.getProperty("user.home") + "/.fonts", "read"));
-        permissions.add(new java.io.FilePermission("/usr/X11R6/lib/X11/fonts/-", "read"));
-*/        //System.out.println(permissions.toString());
 
         // asked for with java5 runtime
         permissions.add(new java.util.PropertyPermission("sun.java2d.remote", "read"));
@@ -230,14 +241,6 @@ public class SecurityManager extends java.lang.SecurityManager {
         permissions.add(new java.net.NetPermission("getResponseCache"));
         permissions.add(new RuntimePermission("loadLibrary.jsound"));
 
-        //platform specific again :(
-        //permissions.add(new java.lang.RuntimePermission("loadLibrary.jsoundalsa"));
-
-        // will deny this later
-        permissions.add(new java.net.SocketPermission("graveman.info", "connect,accept,resolve"));
-        //permissions.add(new java.lang.RuntimePermission("createClassLoader"));
-        //permissions.add(new java.lang.reflect.ReflectPermission("suppressAccessChecks"));
-
         // following for OSX leopard
         permissions.add(new java.util.PropertyPermission("socksNonProxyHosts", "read"));
         permissions.add(new java.util.PropertyPermission("sun.java2d.*", "read"));
@@ -254,6 +257,8 @@ public class SecurityManager extends java.lang.SecurityManager {
 
         // for 508
         permissions.add(new java.util.PropertyPermission("python.home", "read,write"));
+        permissions.add(new java.util.PropertyPermission("java.vm.vendor", "read"));
+        permissions.add(new java.util.PropertyPermission("python.home", "read"));
 
         //System.out.println(permissions.toString());
         return permissions;
