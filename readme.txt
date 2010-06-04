@@ -7,4 +7,12 @@ To do this, your client must have a class with the name 'client' in the default 
 the org.moparscape.iface.ClientInterface interface.  For more info on how to implement that interface,
 refer to the javadocs of the interface itself.
 
-You can als
+You can also write a custom server for your client.  It must have a class with the name 'server' in the
+default package, which implements the org.moparscape.iface.ServerInterface interface. For more info on how
+to implement that interface, refer to the javadocs of the interface itself.
+
+If you have any questions, concerns, or bugs to report, post them on this thread:
+http://www.moparscape.org/smf/index.php/topic,427512.0.html
+
+Thanks,
+moparisthebest
