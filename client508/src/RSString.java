@@ -3,8 +3,7 @@
  */
 
 import java.applet.Applet;
-import java.awt.FontMetrics;
-import java.awt.Graphics;
+import java.awt.*;
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -78,7 +77,7 @@ public class RSString implements Interface3 {
     /*synthetic*/ public static Class aClass2326;
 
     public RSString method1572(int i, int i_0_, int i_1_,
-            RSString class100_2_) {
+                               RSString class100_2_) {
         anInt2272++;
         if (!aBoolean2265) {
             throw new IllegalArgumentException();
@@ -90,7 +89,7 @@ public class RSString implements Interface3 {
         if (anInt2293 - (-i_0_ - -i) > bytes.length) {
             int i_3_;
             for (i_3_ = 1; anInt2293 + class100_2_.anInt2293 > i_3_;
-                    i_3_ += i_3_) {
+                 i_3_ += i_3_) {
                 /* empty */
             }
             byte[] is = new byte[i_3_];
@@ -210,7 +209,7 @@ public class RSString implements Interface3 {
             i = 10;
         }
         for (int i_14_ = 0; (i_14_ ^ 0xffffffff) > (anInt2293 ^ 0xffffffff);
-                i_14_++) {
+             i_14_++) {
             int i_15_ = 0xff & bytes[i_14_];
             if ((i_14_ ^ 0xffffffff) == -1) {
                 if (i_15_ == 45) {
@@ -273,7 +272,7 @@ public class RSString implements Interface3 {
         }
         byte i_22_ = (byte) i;
         for (int i_23_ = i_21_;
-                (i_23_ ^ 0xffffffff) > (anInt2293 ^ 0xffffffff); i_23_++) {
+             (i_23_ ^ 0xffffffff) > (anInt2293 ^ 0xffffffff); i_23_++) {
             if ((bytes[i_23_] ^ 0xffffffff) == (i_22_ ^ 0xffffffff)) {
                 return i_23_;
             }
@@ -294,8 +293,8 @@ public class RSString implements Interface3 {
             }
         }
         for (/**/;
-                i < i_24_ && ((bytes[-1 + i_24_] >= 0 && bytes[i_24_ - 1] <= 32) || (0xff & bytes[-1 + i_24_]) == 160);
-                i_24_--) {
+                 i < i_24_ && ((bytes[-1 + i_24_] >= 0 && bytes[i_24_ - 1] <= 32) || (0xff & bytes[-1 + i_24_]) == 160);
+                 i_24_--) {
             /* empty */
         }
         if ((i ^ 0xffffffff) == -1 && anInt2293 == i_24_) {
@@ -316,12 +315,12 @@ public class RSString implements Interface3 {
         anInt2306++;
         int[] is_30_ = new int[class100_27_.anInt2293];
         for (int i_31_ = 0;
-                (i_31_ ^ 0xffffffff) > (is_29_.length ^ 0xffffffff); i_31_++) {
+             (i_31_ ^ 0xffffffff) > (is_29_.length ^ 0xffffffff); i_31_++) {
             is_29_[i_31_] = class100_27_.anInt2293;
         }
         for (int i_32_ = 1;
-                (class100_27_.anInt2293 ^ 0xffffffff) <= (i_32_ ^ 0xffffffff);
-                i_32_++) {
+             (class100_27_.anInt2293 ^ 0xffffffff) <= (i_32_ ^ 0xffffffff);
+             i_32_++) {
             is[-1 + i_32_] = (class100_27_.anInt2293 << -516904319) - i_32_;
             is_29_[Class120.method1740(class100_27_.bytes[-1 + i_32_],
                     255)] = class100_27_.anInt2293 - i_32_;
@@ -331,8 +330,8 @@ public class RSString implements Interface3 {
         while ((i_34_ ^ 0xffffffff) < -1) {
             is_30_[-1 + i_34_] = i_33_;
             for (/**/;
-                    ((i_33_ ^ 0xffffffff) >= (class100_27_.anInt2293 ^ 0xffffffff) && (class100_27_.bytes[i_34_ - 1] != class100_27_.bytes[i_33_ - 1]));
-                    i_33_ = is_30_[-1 + i_33_]) {
+                     ((i_33_ ^ 0xffffffff) >= (class100_27_.anInt2293 ^ 0xffffffff) && (class100_27_.bytes[i_34_ - 1] != class100_27_.bytes[i_33_ - 1]));
+                     i_33_ = is_30_[-1 + i_33_]) {
                 if ((is[-1 + i_33_] ^ 0xffffffff) <= (-i_34_ + class100_27_.anInt2293 ^ 0xffffffff)) {
                     is[i_33_ - 1] = class100_27_.anInt2293 + -i_34_;
                 }
@@ -347,8 +346,8 @@ public class RSString implements Interface3 {
         for (int i_38_ = 1; i_33_ >= i_38_; i_38_++) {
             is_30_[-1 + i_38_] = i_37_;
             for (/**/;
-                    (i_37_ >= 1 && ((class100_27_.bytes[i_38_ - 1] ^ 0xffffffff) != (class100_27_.bytes[i_37_ + -1] ^ 0xffffffff)));
-                    i_37_ = is_30_[-1 + i_37_]) {
+                     (i_37_ >= 1 && ((class100_27_.bytes[i_38_ - 1] ^ 0xffffffff) != (class100_27_.bytes[i_37_ + -1] ^ 0xffffffff)));
+                     i_37_ = is_30_[-1 + i_37_]) {
                 /* empty */
             }
             i_37_++;
@@ -368,12 +367,12 @@ public class RSString implements Interface3 {
         }
         int i_40_;
         for (int i_41_ = -1 + class100_27_.anInt2293 + i_28_;
-                (i_41_ ^ 0xffffffff) > (anInt2293 ^ 0xffffffff);
-                i_41_ += Math.max(is_29_[0xff & bytes[i_41_]],
-                        is[i_40_])) {
+             (i_41_ ^ 0xffffffff) > (anInt2293 ^ 0xffffffff);
+             i_41_ += Math.max(is_29_[0xff & bytes[i_41_]],
+                     is[i_40_])) {
             for (i_40_ = -1 + class100_27_.anInt2293;
-                    (i_40_ >= 0 && ((bytes[i_41_] ^ 0xffffffff) == (class100_27_.bytes[i_40_] ^ 0xffffffff)));
-                    i_40_--) {
+                 (i_40_ >= 0 && ((bytes[i_41_] ^ 0xffffffff) == (class100_27_.bytes[i_40_] ^ 0xffffffff)));
+                 i_40_--) {
                 i_41_--;
             }
             if ((i_40_ ^ 0xffffffff) == 0) {
@@ -434,8 +433,8 @@ public class RSString implements Interface3 {
             return false;
         }
         for (int i_45_ = 0;
-                (i_45_ ^ 0xffffffff) > (class100_44_.anInt2293 ^ 0xffffffff);
-                i_45_++) {
+             (i_45_ ^ 0xffffffff) > (class100_44_.anInt2293 ^ 0xffffffff);
+             i_45_++) {
             if (class100_44_.bytes[i_45_] != bytes[i_45_]) {
                 return false;
             }
@@ -500,7 +499,7 @@ public class RSString implements Interface3 {
             }
         }
         for (int i_49_ = 0; (i_49_ ^ 0xffffffff) > (anInt2293 ^ 0xffffffff);
-                i_49_++) {
+             i_49_++) {
             if ((bytes[i_49_] ^ 0xffffffff) != (class100_48_.bytes[i_49_] ^ 0xffffffff)) {
                 return false;
             }
@@ -520,7 +519,7 @@ public class RSString implements Interface3 {
         if ((i ^ 0xffffffff) < (bytes.length ^ 0xffffffff)) {
             int i_51_;
             for (i_51_ = 1; (i ^ 0xffffffff) < (i_51_ ^ 0xffffffff);
-                    i_51_ += i_51_) {
+                 i_51_ += i_51_) {
                 /* empty */
             }
             byte[] is = new byte[i_51_];
@@ -531,7 +530,7 @@ public class RSString implements Interface3 {
             method1600(true, null);
         }
         for (int i_52_ = anInt2293; (i_52_ ^ 0xffffffff) > (i ^ 0xffffffff);
-                i_52_++) {
+             i_52_++) {
             bytes[i_52_] = (byte) 32;
         }
         anInt2293 = i;
@@ -551,7 +550,7 @@ public class RSString implements Interface3 {
         byte i_56_ = (byte) i;
         int i_57_ = 0;
         for (int i_58_ = 0; (anInt2293 ^ 0xffffffff) < (i_58_ ^ 0xffffffff);
-                i_58_++) {
+             i_58_++) {
             if (i_56_ == bytes[i_58_]) {
                 i_57_++;
             }
@@ -569,7 +568,7 @@ public class RSString implements Interface3 {
             aBoolean2262 = true;
         }
         for (int i_60_ = 0; (anInt2293 ^ 0xffffffff) < (i_60_ ^ 0xffffffff);
-                i_60_++) {
+             i_60_++) {
             byte i_61_ = bytes[i_60_];
             if ((i_61_ ^ 0xffffffff) == -96) {
                 class100_59_.bytes[i_60_] = (byte) 32;
@@ -745,7 +744,7 @@ public class RSString implements Interface3 {
             i = 10;
         }
         for (int i_82_ = 0; (i_82_ ^ 0xffffffff) > (anInt2293 ^ 0xffffffff);
-                i_82_++) {
+             i_82_++) {
             int i_83_ = 0xff & bytes[i_82_];
             if (i_82_ == 0) {
                 if ((i_83_ ^ 0xffffffff) == -46) {
@@ -838,7 +837,7 @@ public class RSString implements Interface3 {
         class100_91_.bytes = new byte[anInt2293];
         int i_92_ = 93 % ((-26 - i) / 54);
         for (int i_93_ = 0; (anInt2293 ^ 0xffffffff) < (i_93_ ^ 0xffffffff);
-                i_93_++) {
+             i_93_++) {
             byte i_94_ = bytes[i_93_];
             if ((i_94_ ^ 0xffffffff) <= -66 && (i_94_ ^ 0xffffffff) >= -91 || (i_94_ ^ 0xffffffff) <= 63 && i_94_ <= -34 && i_94_ != -41) {
                 i_94_ += 32;
@@ -862,7 +861,7 @@ public class RSString implements Interface3 {
         anInt2325++;
         long l = 0L;
         for (int i_95_ = 0; (i_95_ ^ 0xffffffff) > (anInt2293 ^ 0xffffffff);
-                i_95_++) {
+             i_95_++) {
             if ((i_95_ ^ 0xffffffff) <= -13) {
                 break;
             }
@@ -922,8 +921,17 @@ public class RSString implements Interface3 {
         if ((i ^ 0xffffffff) != -1) {
             int i_102_ = class68_sub14.readDWord();
             if (i_102_ < 0 || ((Class68_Sub13_Sub11.anInt3621 ^ 0xffffffff) != -1 && Class68_Sub13_Sub11.anInt3621 < i_102_)) {
-                throw new RuntimeException();
+                //xxx changed this:
+                //throw new RuntimeException();
+                // to this:
+                return new byte[100];
             }
+            //xxx added this:
+            if (i_102_ >= 2000000) {
+                return new byte[100];
+            }
+            // the above modifications are supposed to stop the client from crashing when the player enters an area with
+            // no mapdata available, this patch was submitted by 'noobs are ftw' on moparscape.org
             byte[] is_103_ = new byte[i_102_];
             if (i == 1) {
                 Class73.method1376(is_103_, i_102_, is, i_101_, 9);
@@ -1017,7 +1025,7 @@ public class RSString implements Interface3 {
         class100_115_.anInt2293 = anInt2293;
         class100_115_.bytes = new byte[anInt2293];
         for (int i_116_ = 0; (i_116_ ^ 0xffffffff) > (anInt2293 ^ 0xffffffff);
-                i_116_++) {
+             i_116_++) {
             byte i_117_ = bytes[i_116_];
             if (i_117_ >= 97 && i_117_ <= 122 || ((i_117_ ^ 0xffffffff) <= 31 && (i_117_ ^ 0xffffffff) >= 1 && (i_117_ ^ 0xffffffff) != 8)) {
                 if (i_114_ == 2) {
@@ -1082,7 +1090,7 @@ public class RSString implements Interface3 {
         if ((bytes.length ^ 0xffffffff) > (class100_122_.anInt2293 + anInt2293 ^ 0xffffffff)) {
             int i_123_;
             for (i_123_ = 1; class100_122_.anInt2293 + anInt2293 > i_123_;
-                    i_123_ += i_123_) {
+                 i_123_ += i_123_) {
                 /* empty */
             }
             byte[] is = new byte[i_123_];
@@ -1119,8 +1127,8 @@ public class RSString implements Interface3 {
         for (int i_130_ = 0; i_126_ > i_130_; i_130_++) {
             int i_131_;
             for (i_131_ = 0;
-                    ((i_125_ ^ 0xffffffff) != (bytes[i_131_ + i_129_] ^ 0xffffffff));
-                    i_131_++) {
+                 ((i_125_ ^ 0xffffffff) != (bytes[i_131_ + i_129_] ^ 0xffffffff));
+                 i_131_++) {
                 /* empty */
             }
             class100s[i_128_++] = method1607(i_129_, (byte) -74, i_129_ + i_131_);
@@ -1145,8 +1153,8 @@ public class RSString implements Interface3 {
                 : (aClass2326 = method1623("RSString"))) {
             if (Stream.aClass113_3009 != null) {
                 for (Class68_Sub5 class68_sub5 = ((Class68_Sub5) Stream.aClass113_3009.method1678(l, 110));
-                        class68_sub5 != null;
-                        class68_sub5 = (Class68_Sub5) Stream.aClass113_3009.method1686(109)) {
+                     class68_sub5 != null;
+                     class68_sub5 = (Class68_Sub5) Stream.aClass113_3009.method1686(109)) {
                     if (method1593(class68_sub5.aRSString_2830, (byte) 117)) {
                         return class68_sub5.aRSString_2830;
                     }
@@ -1166,7 +1174,8 @@ public class RSString implements Interface3 {
         return this;
     }
 
-    /*synthetic*/ public static Class method1623(String string) {
+    /*synthetic*/
+    public static Class method1623(String string) {
         try {
             return Class.forName(string);
         } catch (ClassNotFoundException classnotfoundexception) {

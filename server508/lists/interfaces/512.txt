@@ -1,1 +1,0 @@
-inventory type: 28 slots, width: 4, height: 7, 0

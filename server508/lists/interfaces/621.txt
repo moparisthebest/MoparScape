@@ -1,1 +1,0 @@
-Child: 0, type: 0, width: 162, height: 250

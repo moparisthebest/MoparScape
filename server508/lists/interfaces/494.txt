@@ -1,3 +1,0 @@
-Child: 0, message: XX
-Child: 1, message: Time until next wave:
-Child: 2, message: (exit room to cancel)
