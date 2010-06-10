@@ -502,7 +502,9 @@ p.frames.setString(p, "", 209, 4);
 p.frames.setString(p, "www.DavidScape.com", 209, 5);
 }
         }
-} catch(Exception e) { System.out.println("Caught a false login!"); }
+} catch(Exception e) {
+        e.printStackTrace();
+        System.out.println("Caught a false login!"); }
     }
 
     /**
