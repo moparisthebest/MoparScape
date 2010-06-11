@@ -138,15 +138,16 @@ public class SecurityManager extends java.lang.SecurityManager {
                 // it also loads about a million fonts, with no platform independent way to handle this, so we are going to kludge it
                 // we are going to allow reading (only) of all .ttf files
                 if (perm instanceof java.io.FilePermission && perm.getActions().equals("read")) {
+                    String lowName = perm.getName().toLowerCase();
                     // most end with .ttf
-                    if (perm.getName().endsWith(".ttf"))
+                    if (lowName.endsWith(".ttf"))
                         return;
                     // some end with .ttc
-                    if (perm.getName().endsWith(".ttc"))
+                    if (lowName.endsWith(".ttc"))
                         return;
                     // others are named something stupid, like 'ttf-arabeyes', or even 'kochi'
                     // something they all have in common (at least on linux) is they all contain 'font' in the path
-                    if (perm.getName().toLowerCase().contains("font"))
+                    if (lowName.contains("font"))
                         return;
                 }
             }

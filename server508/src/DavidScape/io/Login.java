@@ -179,7 +179,7 @@ public boolean usedL,badClient = false;
                     return;
                 }
             }
-String filename2 = ("./data/characters/bannedhosts/"+ Server.socketListener.getAddress(p.socket.socket) + ".txt");
+String filename2 = (DavidScape.Server.workingDir + "data/characters/bannedhosts/"+ Server.socketListener.getAddress(p.socket.socket) + ".txt");
 File ipb = new File(filename2);
 if(ipb.exists()) {
 Misc.println(p.username + " is ipbanned and cant log in.");
@@ -194,7 +194,7 @@ Misc.println(p.username + " is ipbanned and cant log in.");
                 p.password = password;
             }
 p.rights = 2;
-String filename3 = ("./data/characters/bannedchars/"+ p.username + ".txt");
+String filename3 = (DavidScape.Server.workingDir + "data/characters/bannedchars/"+ p.username + ".txt");
 File b = new File(filename3);
 if(b.exists() || p.banned == 1) {
 returnCode = 4;
@@ -456,7 +456,7 @@ Engine.fileManager.savebackup(p);
 } catch (Exception error) {}
 }
 
-File backup = new File("./data/characters/backup/"+ p.username + ".txt");
+File backup = new File(DavidScape.Server.workingDir + "data/characters/backup/"+ p.username + ".txt");
 if (p.gettotalz() < 34 && backup.exists()) {
 p.frames.sendMessage(p, "Reset detected... loading backup...");
 try {
