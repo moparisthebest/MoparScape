@@ -20,7 +20,7 @@
 
 package org.moparscape.userver;
 
-import org.moparscape.MainPanel;
+import org.moparscape.Debug;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
@@ -168,7 +168,7 @@ public abstract class Server extends Thread {
     }
 
     public void handleException(Exception e) {
-        if (MainPanel.debug()) {
+        if (Debug.debug()) {
             //String myName = this.getClass().getName();
             //if (myName.equals("org.moparscape.userver.v508.OndemandServer443"))  return;
             System.err.print("Server error: ");

@@ -87,25 +87,32 @@ public class CRCClassLoader extends ClassLoader {
                 return;
         } catch (IOException e) {
             //e.printStackTrace();
+            // if we don't have a backupURL, just go ahead and rethrow this exception, can't do anything more
+            if (backupURL == null)
+                throw e;
         }
 
-        System.out.println("CRC checksum failed, downloading new file.");
+        if (backupURL != null) {
 
-//        URLConnection uc = new URL(backupURL).openConnection();
-//        InputStream in = uc.getInputStream();
-//        FileOutputStream fos = new FileOutputStream(jarFileLoc);
-//        byte[] buffer = new byte[1024];
-//        int len;
-//        while ((len = in.read(buffer)) >= 0)
+            System.out.println("CRC checksum failed, downloading new file.");
+
+//          URLConnection uc = new URL(backupURL).openConnection();
+//          InputStream in = uc.getInputStream();
+//          FileOutputStream fos = new FileOutputStream(jarFileLoc);
+//          byte[] buffer = new byte[1024];
+//          int len;
+//          while ((len = in.read(buffer)) >= 0)
 //            fos.write(buffer, 0, len);
-//        fos.flush();
-//        in.close();
-//        fos.close();
+//          fos.flush();
+//          in.close();
+//          fos.close();
 
-        // use Update instead
-        new Update(backupURL, jarFileLoc, true);
+            // use Update instead
+            new Update(backupURL, jarFileLoc, true);
 
-        setup(jarFileLoc);
+            setup(jarFileLoc);
+
+        }
 
         if (getCRC() != expectedCRC) {
             String s = "CRC checksum failed. crc:" + getCRC() + " expected:" + expectedCRC;

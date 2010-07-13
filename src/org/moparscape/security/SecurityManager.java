@@ -20,7 +20,7 @@
 
 package org.moparscape.security;
 
-import org.moparscape.MainPanel;
+import org.moparscape.Debug;
 
 import java.security.Permission;
 import java.security.Permissions;
@@ -50,7 +50,8 @@ public class SecurityManager extends java.lang.SecurityManager {
         //if the key already exists, just return, we only support setting the permissions once
         if (permissionMap.containsKey(cl))
             return;
-        perms.setReadOnly();
+
+        perms.setReadOnly();  // no need for this anymore
         permissionMap.put(cl, perms);
     }
 
@@ -160,7 +161,7 @@ public class SecurityManager extends java.lang.SecurityManager {
             // if we get all the way down here, the permission was denied and wasn't an exception, so throw an exception
             System.err.println("denying: " + perm.toString());
 
-            if (org.moparscape.MainPanel.debug()) {
+            if (Debug.debug()) {
                 // class stack for debugging
                 for (int x = 1; x < c.length; x++) System.out.println(x + ": " + c[x].getName());
 
@@ -185,7 +186,7 @@ public class SecurityManager extends java.lang.SecurityManager {
         // java.library.path=/opt/jdk1.6.0_18/jre/lib/i386/server:/opt/jdk1.6.0_18/jre/lib/i386:/opt/jdk1.6.0_18/jre/../lib/i386:.::/usr/java/packages/lib/i386:/lib:/usr/lib
         // to allow recursively everything under allowedDir
         allowedDir += "-";
-        MainPanel.debug("allowedDir: " + allowedDir);
+        Debug.debug("allowedDir: " + allowedDir);
         Permissions permissions = new Permissions();
         //permissions.add(new java.security.AllPermission());
 
