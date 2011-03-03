@@ -17,9 +17,10 @@ public class client extends Applet_Sub1 implements ClientInterface {
     public static java.awt.event.KeyListener keyListener;
     public static int[] bgImage = null;
     public static int serverPort = 43594;
-    public static int ondemandPort = 43596;
-    public static int jaggrabPort = 43597;
-    public static String cacheDir = System.getProperty("user.home") + "/.moparscape/cache508/";
+    public static int ondemandPort = 43594;
+    public static int jaggrabPort = 43594;
+    //public static String cacheDir = System.getProperty("user.home") + "/.moparscape/cache508/";
+    public static String cacheDir = "/home/mopar/IdeaProjects/508official/cache508/";
     boolean maplock, hpOn, zoomOn;
     int mapface, zoom, fwdbwd, lftrit;
 
@@ -32,7 +33,8 @@ public class client extends Applet_Sub1 implements ClientInterface {
     }
 
     public void setCacheDir(String cacheDir) {
-        client.cacheDir = cacheDir;
+        //client.cacheDir = cacheDir;
+        System.out.println("running updated client!!!!!!!!!!!!!!!!!!!!!!!!!!!!!432old_client");
     }
 
     public void setOndemandPort(int port) {
@@ -1864,7 +1866,8 @@ public class client extends Applet_Sub1 implements ClientInterface {
 
     public static void main(String[] args) {
         try {
-            String[] strings = new String[]{"0", "live", "live", "software", "members", "english", "game0"};
+            //String[] strings = new String[]{"0", "live", "live", "software", "members", "english", "game0"};
+            String[] strings = new String[]{"66", "live", "live", "software", "members", "english", "game1"};
             if (strings.length < 7 || strings.length > 8)
                 Class21renamed.method329(28);
             Class106.anInt1799 = Integer.parseInt(strings[0]);
