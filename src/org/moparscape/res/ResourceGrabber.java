@@ -23,8 +23,10 @@ package org.moparscape.res;
 import javax.swing.*;
 import java.awt.*;
 import java.io.*;
+import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.zip.CRC32;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
@@ -52,7 +54,10 @@ public class ResourceGrabber {
     private static final String javaClientURL = "http://www.moparscape.org/libs/";
 
     public static void main(String[] args) throws IOException {
-          extractFile("/home/mopar/tests/extest/client.zip.gz", "/home/mopar/tests/extest/");
+        //downloadHTTP("https://www.moparscape.org/libs/client.zip.gz", "/home/mopar/tests/extest");
+        //extractFile("/home/mopar/tests/extest/client.zip.gz", "/home/mopar/tests/extest/");
+        download("https://www.moparscape.org/libs/client.zip.gz", "/home/mopar/tests/extest", true, 98233333, new String[]{"client_test.linux.x86",  "client_test.osx.i386"});
+        download("https://www.moparscape.org/libs/client.zip.gz", "/home/mopar/tests/extest", true, 98233333, new String[]{"combined"});
     }
 
     /**
@@ -63,7 +68,7 @@ public class ResourceGrabber {
      * @throws IOException Passed from calls this method makes.
      */
     public static void download(String url, String savePath) throws IOException {
-
+        download(url, savePath, false);
     }
 
     /**
@@ -74,150 +79,33 @@ public class ResourceGrabber {
      * @throws IOException Passed from calls this method makes.
      */
     public static void downloadExtract(String url, String savePath) throws IOException {
-
+        download(url, savePath, true);
     }
 
-    private static void writeStream(InputStream in, OutputStream out) throws IOException {
-        writeStream(in, out, null);
-    }
-
-    private static void writeStream(InputStream in, OutputStream out, JProgressBar pB) throws IOException {
-        byte[] buffer = new byte[1024];
-        int len;
-        while ((len = in.read(buffer)) >= 0) {
-            out.write(buffer, 0, len);
-            if (pB != null)
-                pB.setValue(pB.getValue() + len);
+    public static void download(String url, String savePath, boolean extract, long crc, String[] fileList) throws IOException {
+        if (!savePath.endsWith("/"))
+            savePath += "/";
+        // checksum all files in the filelist
+        CRC32 crc32 = new CRC32();
+        OutputStream os = new NullOutputStream();
+        for (String file : fileList) {
+            System.out.println("crc so far: "+crc32.getValue());
+            writeStream(new ChecksumInputStream(new FileInputStream(savePath + file), crc32), os);
         }
-        // if its a ZipInputStream we don't want to close it
-        if(!(in instanceof ZipInputStream))
-            in.close();
-        out.close();
+        String s = "CRC checksum failed. crc:" + crc32.getValue() + " expected:" + crc;
+        System.out.println(s);
     }
 
-    /**
-     * Currently supports .zip, .gz, and .zip.gz
-     * @param fileName
-     * @param savePath
-     * @throws IOException
-     */
-    private static void extractFile(String fileName, String savePath) throws IOException {
-        boolean checkProgress = true;
-        FileInputStream fis = new FileInputStream(fileName);
-        InputStream is = null;
+    public static void download(String url, String savePath, boolean extract) throws IOException {
+        if (isTorrent(url)) {
 
-        if(fileName.endsWith(".zip.gz"))
-            is = new GZIPInputStream(fis);
-        else if(fileName.endsWith(".gz")){
-            // strip .gz off the end
-            fileName = new File(fileName).getName();
-            fileName = fileName.substring(0, fileName.length()-3);
-            if(badExtension(fileName))
-                return;
-            if (checkProgress)
-                    System.out.println("Extracting File: " + fileName);
-            writeStream(new GZIPInputStream(fis), new FileOutputStream(savePath + fileName));
-            return;
-        }else if(fileName.endsWith(".zip")){
-                is = fis;
-        }else{
-            // otherwise this file can't be extracted, so just return for now
-            return;
+        } else {
+            String toExtract = downloadHTTP(url, savePath);
+            if (extract)
+                extractFile(toExtract, savePath);
         }
-        ZipInputStream zin = new ZipInputStream(is);
-        ZipEntry entry;
-        while ((entry = zin.getNextEntry()) != null) {
-            if (entry.isDirectory()){ // Checks if the entry is a directory.
-                File folder = new File(savePath + entry.getName());
-                deleteDirectory(folder);
-                if (checkProgress)
-                    System.out.println("Creating Directory: " + entry.getName());
-                folder.mkdir();
-            }else{// If the entry isn't a directory, then it should be a file?
-                if(badExtension(entry.getName()))
-                    continue;
-                if (checkProgress)
-                    System.out.println("Extracting File: " + entry.getName());
-                writeStream(zin, new FileOutputStream(savePath + entry.getName()));
-            }
-        }
-        zin.close();
     }
 
-    private static boolean downloadFile(String url, String savePath) throws IOException {
-        boolean checkProgress = true;
-        URLConnection jarUC = new URL(url).openConnection();
-        String userAgent = System.getProperty("http.agent");
-        if (userAgent == null)
-            userAgent = "Mozilla/5.0";
-        jarUC.setRequestProperty("User-Agent", userAgent);
-        long length = jarUC.getContentLength();
-        InputStream in = jarUC.getInputStream();
-        JFrame dlFrame = null;
-        JProgressBar progressBar = null;
-        if (checkProgress) {
-            dlFrame = new JFrame("Download Progress");
-            dlFrame.setLayout(new BorderLayout());
-            progressBar = new JProgressBar(0, (int) length);
-            progressBar.setValue(0);
-            progressBar.setStringPainted(true);
-            dlFrame.getContentPane().add(new JLabel("Downloading " + url), BorderLayout.NORTH);
-            dlFrame.getContentPane().add(progressBar, BorderLayout.CENTER);
-            dlFrame.getContentPane().add(new JLabel("as " + savePath + "..."), BorderLayout.SOUTH);
-            //dlFrame.setContentPane(progressBar);
-            dlFrame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-            dlFrame.setResizable(false);
-            dlFrame.pack();
-            // sets the frame to appear in the middle of the screen
-            // when called after pack()
-            dlFrame.setLocationRelativeTo(null);
-            dlFrame.setVisible(true);
 
-            System.out.println("Downloading " + savePath + "...");
-        }
 
-        writeStream(in, new FileOutputStream(savePath), progressBar);
-
-        if (dlFrame != null)
-            dlFrame.dispose();
-        //File file = new File(saveAs);
-        //System.out.println("length: "+length+" file.length(): "+file.length());
-        //if (length != file.length())
-        //    return false;
-        if (checkProgress)
-            System.out.println(savePath + " downloaded...");
-        return true;
-    }
-
-    public static boolean deleteDirectory(File path) {
-        if (path.exists()) {
-            File[] files = path.listFiles();
-            for (int i = 0; i < files.length; i++) {
-                if (files[i].isDirectory()) {
-                    deleteDirectory(files[i]);
-                } else {
-                    files[i].delete();
-                }
-            }
-        }
-        return (path.delete());
-    }
-
-    private static boolean badExtension(String file) {
-        String[] badExts = new String[]{".exe", ".bat", ".cmd", ".com", ".sh", ".bash"};
-        for(String badExt : badExts)
-            if(file.endsWith(badExt))
-                return true;
-        return false;
-    }
-
-    /**
-     * Reports whether a url describes a torrent or not.
-     *
-     * @param url URL to resource.
-     * @return true if this is a torrent, false otherwise.
-     */
-    private static boolean isTorrent(String url) {
-        return url.startsWith("magnet:") || url.endsWith(".torrent");
-    }
 }
