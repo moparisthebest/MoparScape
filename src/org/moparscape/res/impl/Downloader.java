@@ -21,6 +21,7 @@
 package org.moparscape.res.impl;
 
 import org.moparscape.res.ChecksumInputStream;
+import org.moparscape.res.DownloadListener;
 
 import javax.swing.*;
 import java.awt.*;
@@ -36,8 +37,40 @@ import java.util.zip.*;
  */
 public abstract class Downloader {
 
-    public abstract String download(String url, String savePath) throws IOException;
+    public abstract void download(String url, String savePath, DownloadListener callback);
 
+    /**
+     * Downloads resource specified by url to savePath.
+     *
+     * @param url      This can be any URL Java can natively handle, in addition to magnet links, and torrent files both locally and at http and https URLs.
+     * @param savePath Directory to save the URL to.
+     * @throws IOException Passed from calls this method makes.
+
+    public static void download(String url, String savePath) throws IOException {
+        download(url, savePath, false);
+    }
+*/
+    /**
+     * Downloads resource specified by url to savePath, then extracts the downloaded file. Current supported types are .zip.gz, .zip, and .gz.
+     *
+     * @param url      This can be any URL Java can natively handle, in addition to magnet links, and torrent files both locally and at http and https URLs.
+     * @param savePath Directory to save the URL to, and extract the supported files to.
+     * @throws IOException Passed from calls this method makes.
+     */
+/*    public static void downloadExtract(String url, String savePath) throws IOException {
+        download(url, savePath, true);
+    }
+
+    public static void download(String url, String savePath, boolean extract) throws IOException {
+        if (isTorrent(url)) {
+
+        } else {
+            String toExtract = "";//new HTTPDownloader.download(url, savePath);
+            if (extract)
+                extractFile(toExtract, savePath);
+        }
+    }
+  */
     protected static void writeStream(InputStream in, OutputStream out) throws IOException {
         byte[] buffer = new byte[1024];
         int len;
@@ -57,64 +90,61 @@ public abstract class Downloader {
      * @param savePath
      * @throws IOException
      */
-    protected static void extractFile(String fileName, String savePath) throws IOException {
-        boolean checkProgress = true;
-
+    public static void extractFile(String fileName, String savePath, DownloadListener callback) {
         File file = new File(fileName);
-        long length = file.length();
+        try {
+            long length = file.length();
 
-        InputStream is = new FileInputStream(file);
-        ProgressInputStream pis = null;
-        if (checkProgress) {
-            pis = new ProgressInputStream(is, fileName, savePath, length, ProgressFrame.Type.EXTRACT);
-            is = pis;
-        }
+            InputStream is = new FileInputStream(file);
+            if (callback != null) {
+                callback.extracting("Extracting " + fileName, length, "to " + savePath + "...");
+                is = new ProgressInputStream(is, callback);
+            }
 
-
-        if (fileName.endsWith(".zip.gz"))
-            is = new GZIPInputStream(is);
-        else if (fileName.endsWith(".gz")) {
-            // strip .gz off the end
-            fileName = file.getName();
-            fileName = fileName.substring(0, fileName.length() - 3);
-            if (badExtension(fileName))
+            if (fileName.endsWith(".zip.gz"))
+                is = new GZIPInputStream(is);
+            else if (fileName.endsWith(".gz")) {
+                // strip .gz off the end
+                fileName = file.getName();
+                fileName = fileName.substring(0, fileName.length() - 3);
+                if (badExtension(fileName))
+                    return;
+                if (callback != null)
+                    callback.setInfo("Extracting File: " + fileName);
+                writeStream(new GZIPInputStream(is), new FileOutputStream(savePath + fileName));
                 return;
-            if (checkProgress) {
-                pis.setText("Extracting File: " + fileName);
-                System.out.println("Extracting File: " + fileName);
+            } else if (fileName.endsWith(".zip")) {
+                // if we are here, the streams are all set up to unzip below, so don't do anything
+            } else {
+                // otherwise this file can't be extracted, so just return for now
+                if (callback != null)
+                    callback.error("Extraction of this file type is unsupported: " + fileName);
+                return;
             }
-            writeStream(new GZIPInputStream(is), new FileOutputStream(savePath + fileName));
-            return;
-        } else if (fileName.endsWith(".zip")) {
-            // if we are here, the streams are all set up to unzip below, so don't do anything
-        } else {
-            // otherwise this file can't be extracted, so just return for now
-            return;
-        }
-        ZipInputStream zin = new ZipInputStream(is);
-        ZipEntry entry;
-        while ((entry = zin.getNextEntry()) != null) {
-            String name = entry.getName();
-            if (entry.isDirectory()) { // Checks if the entry is a directory.
-                File folder = new File(savePath + name);
-                deleteDirectory(folder);
-                if (checkProgress) {
-                    pis.setText("Creating Directory: " + name);
-                    System.out.println("Creating Directory: " + name);
+            ZipInputStream zin = new ZipInputStream(is);
+            ZipEntry entry;
+            while ((entry = zin.getNextEntry()) != null) {
+                String name = entry.getName();
+                if (entry.isDirectory()) { // Checks if the entry is a directory.
+                    File folder = new File(savePath + name);
+                    deleteDirectory(folder);
+                    if (callback != null)
+                        callback.setInfo("Creating Directory: " + name);
+                    folder.mkdir();
+                } else {// If the entry isn't a directory, then it should be a file?
+                    if (badExtension(entry.getName()))
+                        continue;
+                    if (callback != null)
+                        callback.setInfo("Extracting File: " + name);
+                    writeStream(zin, new FileOutputStream(savePath + name));
                 }
-                folder.mkdir();
-            } else {// If the entry isn't a directory, then it should be a file?
-                if (badExtension(entry.getName()))
-                    continue;
-                if (checkProgress) {
-                    pis.setText("Extracting File: " + name);
-                    System.out.println("Extracting File: " + name);
-                }
-                writeStream(zin, new FileOutputStream(savePath + name));
+                try{ Thread.sleep(1000); }catch(InterruptedException e){ e.printStackTrace(); }
             }
-            //try{ Thread.sleep(1000); }catch(InterruptedException e){ e.printStackTrace(); }
+            zin.close();
+        } catch (IOException e) {
+            if (callback != null)
+                    callback.error("Extraction of this file failed: " + file.getAbsolutePath());
         }
-        zin.close();
     }
 
     /**
@@ -127,21 +157,23 @@ public abstract class Downloader {
      * @return
      */
     public static long checksum(String savePath, Checksum cs, String[] list, final boolean whitelist) {
-        if(cs == null)
+        if (!savePath.endsWith("/"))
+            savePath += "/";
+        if (cs == null)
             cs = new CRC32();
         FileFilter ff = null;
         if (list != null) {
             final File[] flist = new File[list.length];
             for (int x = 0; x < list.length; ++x)
-                flist[x] = new File(list[x]);
+                flist[x] = new File(savePath + list[x]);
             ff = new FileFilter() {
-                    public boolean accept(File name) {
-                        for (File f : flist)
-                            if (f.equals(name))
-                                return whitelist;
-                        return true;
-                    }
-                };
+                public boolean accept(File name) {
+                    for (File f : flist)
+                        if (f.equals(name))
+                            return whitelist;
+                    return !whitelist;
+                }
+            };
         }
         recursiveChecksum(new File(savePath), cs, new NullOutputStream(), ff);
         return cs.getValue();
@@ -151,11 +183,11 @@ public abstract class Downloader {
         if (!path.exists())
             return;
         for (File file : path.listFiles(filter)) {
-            System.out.println("Checking filename: "+file.getAbsolutePath());
+            System.out.println("Checksum so far: " + cs.getValue());
+            System.out.println("Checking filename: " + file.getAbsolutePath());
             if (file.isDirectory()) {
                 recursiveChecksum(file, cs, nos, filter);
             } else {
-                System.out.println("Checksum so far: " + cs.getValue());
                 try {
                     writeStream(new ChecksumInputStream(new FileInputStream(file), cs), nos);
                 } catch (Exception e) {
@@ -277,45 +309,38 @@ public abstract class Downloader {
 
     protected static class ProgressInputStream extends FilterInputStream {
 
-        private ProgressFrame pf = null;
+        private DownloadListener dl = null;
 
-        protected ProgressInputStream(InputStream in, String url, String savePath, long length, ProgressFrame.Type pType) {
+        protected ProgressInputStream(InputStream in, DownloadListener dl) {
             super(in);
-            pf = new ProgressFrame(url, savePath, length, pType);
-        }
-
-        protected ProgressInputStream(InputStream in, String url, String savePath, long length) {
-            this(in, url, savePath, length, ProgressFrame.Type.HTTP);
-        }
-
-        public void setText(String text) {
-            pf.setText(text);
+            this.dl = dl;
         }
 
         @Override
         public int read() throws IOException {
             int byteValue = super.read();
-            if (byteValue != -1) pf.addProgress(1);
+            if (byteValue != -1) dl.incrementProgress(1);
             return byteValue;
         }
 
         @Override
         public int read(byte[] b) throws IOException {
             int bytesRead = super.read(b);
-            if (bytesRead != -1) pf.addProgress(bytesRead);
+            if (bytesRead != -1) dl.incrementProgress(bytesRead);
             return bytesRead;
         }
 
         @Override
         public int read(byte[] b, int off, int len) throws IOException {
             int bytesRead = super.read(b, off, len);
-            if (bytesRead != -1) pf.addProgress(bytesRead);
+            if (bytesRead != -1) dl.incrementProgress(bytesRead);
             return bytesRead;
         }
 
         @Override
         public void close() throws IOException {
-            pf.dispose();
+            //dl.finished();
+            //dl.stopped();
             super.close();
         }
     }

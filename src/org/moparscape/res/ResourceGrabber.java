@@ -20,16 +20,13 @@
 
 package org.moparscape.res;
 
+import org.moparscape.res.impl.Downloader;
+import org.moparscape.res.impl.HTTPDownloader;
+
 import javax.swing.*;
 import java.awt.*;
-import java.io.*;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.net.URLConnection;
-import java.util.zip.CRC32;
-import java.util.zip.GZIPInputStream;
-import java.util.zip.ZipEntry;
-import java.util.zip.ZipInputStream;
+import java.io.IOException;
+import java.util.*;
 
 /**
  * This class is meant to retrieve resources from a variety of URLs, including all supported by Java in addition to
@@ -53,59 +50,194 @@ public class ResourceGrabber {
     private static final String javaClientLocation = "/tmp/";
     private static final String javaClientURL = "http://www.moparscape.org/libs/";
 
-    public static void main(String[] args) throws IOException {
+    private JFrame frame = null;
+    Set<Integer> downloadItems = Collections.synchronizedSet(new HashSet<Integer>(5));
+
+    // this is only meant to be accessed by getUID(), which is synchronized
+    private int currentUID = 0;
+
+    public static void main(String[] args) throws Exception {
         //downloadHTTP("https://www.moparscape.org/libs/client.zip.gz", "/home/mopar/tests/extest");
         //extractFile("/home/mopar/tests/extest/client.zip.gz", "/home/mopar/tests/extest/");
-        download("https://www.moparscape.org/libs/client.zip.gz", "/home/mopar/tests/extest", true, 98233333, new String[]{"client_test.linux.x86",  "client_test.osx.i386"});
-        download("https://www.moparscape.org/libs/client.zip.gz", "/home/mopar/tests/extest", true, 98233333, new String[]{"combined"});
+        //download("https://www.moparscape.org/libs/client.zip.gz", "/home/mopar/tests/extest", true, 98233333, new String[]{"client_test.linux.x86",  "client_test.osx.i386"});
+        //download("https://www.moparscape.org/libs/client.zip.gz", "/home/mopar/tests/extest", true, 98233333, new String[]{"combined"});
+        /*System.out.println("checksum: " + Downloader.checksum("/home/mopar/tests/extest", null, null, true));
+        System.out.println("checksum: " + Downloader.checksum("/home/mopar/tests/extest", new Adler32(), null, true));
+        System.out.println("checksum: " + Downloader.checksum("/home/mopar/tests/extest", null, new String[]{"client_test.linux.x86", "client.zip.gz"}, true));
+        System.out.println("checksum: " + Downloader.checksum("/home/mopar/tests/extest", null, new String[]{"client_test.linux.x86", "client.zip.gz"}, false));
+          */
+        //System.out.println("filename: " + new URL("http://moparisthebest.com/bob/tom/cache.zip").getFile());
+        ResourceGrabber rg = new ResourceGrabber();
+        rg.download("http://www.moparisthebest.com/downloads/cedegaSRC.tar.gz", "/home/mopar/tests/extest", true);
+        //rg.download("http://mirror01.th.ifl.net/releases//maverick/ubuntu-10.10-desktop-i386.iso", "/home/mopar/tests/extest", false);
+        //Thread.sleep(2000);
+        rg.download("https://www.moparscape.org/libs/client.zip.gz", "/home/mopar/tests/extest", true);
     }
 
-    /**
-     * Downloads resource specified by url to savePath.
-     *
-     * @param url      This can be any URL Java can natively handle, in addition to magnet links, and torrent files both locally and at http and https URLs.
-     * @param savePath Directory to save the URL to.
-     * @throws IOException Passed from calls this method makes.
-     */
-    public static void download(String url, String savePath) throws IOException {
-        download(url, savePath, false);
+    private int download(String url, String savePath, boolean extract) {
+        int uid = getUID();
+        new HTTPDownloader().download(url, savePath, new DlListener(uid, extract));
+        return uid;
     }
 
-    /**
-     * Downloads resource specified by url to savePath, then extracts the downloaded file. Current supported types are .zip.gz, .zip, and .gz.
-     *
-     * @param url      This can be any URL Java can natively handle, in addition to magnet links, and torrent files both locally and at http and https URLs.
-     * @param savePath Directory to save the URL to, and extract the supported files to.
-     * @throws IOException Passed from calls this method makes.
-     */
-    public static void downloadExtract(String url, String savePath) throws IOException {
-        download(url, savePath, true);
+    private synchronized int getUID() {
+        return this.currentUID++;
     }
 
-    public static void download(String url, String savePath, boolean extract, long crc, String[] fileList) throws IOException {
-        if (!savePath.endsWith("/"))
-            savePath += "/";
-        // checksum all files in the filelist
-        CRC32 crc32 = new CRC32();
-        OutputStream os = new NullOutputStream();
-        for (String file : fileList) {
-            System.out.println("crc so far: "+crc32.getValue());
-            writeStream(new ChecksumInputStream(new FileInputStream(savePath + file), crc32), os);
+    private synchronized void checkFrame(boolean create) {
+        if (create && frame == null) {
+            frame = new JFrame("Resource Grabber");
+            frame.setLayout(new BoxLayout(frame.getContentPane(), BoxLayout.Y_AXIS));
+
+            frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+            frame.setResizable(false);
+            frame.pack();
+            // sets the frame to appear in the middle of the screen
+            // when called after pack()
+            frame.setLocationRelativeTo(null);
+            frame.setVisible(true);
+        }else if(!create && frame != null && downloadItems.isEmpty()){
+            frame.dispose();
+            frame = null;
         }
-        String s = "CRC checksum failed. crc:" + crc32.getValue() + " expected:" + crc;
-        System.out.println(s);
     }
 
-    public static void download(String url, String savePath, boolean extract) throws IOException {
-        if (isTorrent(url)) {
+    private synchronized void pack(){
+        if(frame != null)
+            frame.pack();
+    }
 
-        } else {
-            String toExtract = downloadHTTP(url, savePath);
+
+    private class DlListener implements DownloadListener {
+
+        int uid;
+        boolean extract;
+        DownloadItemPanel dip = null;
+
+        public DlListener(int uid, boolean extract) {
+            this.uid = uid;
+            this.extract = extract;
+        }
+
+        public void incrementProgress(int inc) {
+            //DownloadItemPanel dip = downloadItems.get(uid);
+            if (dip != null)
+                dip.addProgress(inc);
+            pack();
+        }
+
+        public void setTitle(String title) {
+            //DownloadItemPanel dip = downloadItems.get(uid);
+            if (dip != null)
+                dip.setTitle(title);
+            pack();
+        }
+
+        public void setInfo(String info) {
+            //DownloadItemPanel dip = downloadItems.get(uid);
+            if (dip != null)
+                dip.setInfo(info);
+            pack();
+        }
+
+        public void starting(String title, long length, String info) {
+            checkFrame(true);
+            dip = new DownloadItemPanel(title, length, info);
+            downloadItems.add(uid);
+            //downloadItems.put(uid, dip);
+            frame.getContentPane().add(dip);
+            pack();
+        }
+
+        public void extracting(final String title, final long length, final String info) {
+            //DownloadItemPanel dip = downloadItems.get(uid);
+            if (dip != null){
+
+                SwingUtilities.invokeLater(
+                        new Runnable(){
+                            public void run(){
+                                dip.reset(title, length, info);
+                            }
+                        }
+                );
+                //dip.reset(title, length, info);
+                /*
+                frame.getContentPane().remove(dip);
+                dip = new DownloadItemPanel(title, length, info);
+                frame.getContentPane().add(dip);
+                */
+            }
+            pack();
+        }
+
+        public void finished(String savePath, String... filesDownloaded) {
             if (extract)
-                extractFile(toExtract, savePath);
+                for (String file : filesDownloaded)
+                    Downloader.extractFile(file, savePath, this);
+        }
+
+        public void stopped() {
+            //System.out.println("Stopped uid: " + uid);
+            //DownloadItemPanel dip = downloadItems.get(uid);
+            if (dip != null){
+                frame.getContentPane().remove(dip);
+            }
+            downloadItems.remove(uid);
+            checkFrame(false);
+            pack();
+        }
+
+        public void error(String msg) {
+            //To change body of implemented methods use File | Settings | File Templates.
         }
     }
 
+    private class DownloadItemPanel extends JPanel {
 
+        private final static String sep = "<html><hr><hr>";
+        private final static String end = "</html>";
 
+        JProgressBar progressBar = null;
+        JLabel titleLabel = null;
+        JLabel infoLabel = null;
+
+        String origInfo = null;
+
+        public DownloadItemPanel(String title, long length, String info) {
+            super(new BorderLayout());
+            this.add(this.titleLabel = new JLabel(sep+title+end), BorderLayout.NORTH);
+            this.add(this.infoLabel = new JLabel(origInfo = info), BorderLayout.SOUTH);
+
+            progressBar = new JProgressBar(0, (int) length);
+            progressBar.setValue(0);
+            progressBar.setStringPainted(true);
+            this.add(progressBar, BorderLayout.CENTER);
+        }
+
+        public void reset(String title, long length, String info){
+            //if(true) return;
+            titleLabel.setText(sep+title+end);
+            infoLabel.setText(origInfo = info);
+
+            progressBar.setValue(0);
+            progressBar.setMaximum((int) length);
+        }
+
+        public void addProgress(int progress) {
+            progressBar.setValue(progressBar.getValue() + progress);
+        }
+
+        public void setProgress(int progress) {
+            progressBar.setValue(progress);
+        }
+
+        public void setTitle(String title) {
+            titleLabel.setText(sep+title+end);
+        }
+
+        public void setInfo(String info) {
+            infoLabel.setText("<html>" + origInfo + "<hr>" + info + end);
+        }
+
+    }
 }
