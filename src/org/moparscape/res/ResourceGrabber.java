@@ -29,6 +29,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.net.MalformedURLException;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * This class is meant to retrieve resources from a variety of URLs, including all supported by Java in addition to
@@ -59,7 +60,7 @@ public class ResourceGrabber {
     private JFrame frame = null;
     private javax.swing.Timer timer = null;
 
-    private final ArrayList<Object> downloadItems = new ArrayList<Object>(5);
+    private final List<DlListener> downloadItems = new ArrayList<DlListener>(5);
 
     // this is only meant to be accessed by getUID(), which is synchronized
     private int currentUID = 0;
@@ -75,7 +76,6 @@ public class ResourceGrabber {
         System.out.println("checksum: " + Downloader.checksum("/home/mopar/tests/extest", null, new String[]{"client_test.linux.x86", "client.zip.gz"}, false));
           */
         //System.out.println("filename: " + new URL("http://moparisthebest.com/bob/tom/cache.zip").getFile());
-        ALTest.main(args);System.exit(0);
         ResourceGrabber rg = new ResourceGrabber();
         System.out.println("before downloads...");
         //rg.download("http://www.moparisthebest.com/downloads/cedegaSRC.tar.gz", "/home/mopar/tests/extest", true);
@@ -87,13 +87,17 @@ public class ResourceGrabber {
     }
 
     public void wait(int uid) throws InterruptedException {
-        synchronized (downloadItems) {
-            System.out.println("wait downloads size: "+downloadItems.size());
-            System.out.println("wait downloads contains(uid): "+downloadItems.contains(new Integer(uid)));
-            System.out.println("wait downloads contains(DlListener): "+downloadItems.contains(new DlListener(uid, false)));
-            while(downloadItems.contains(uid))
+        //synchronized (downloadItems) {
+            DownloadHandle dh = new DownloadHandle(uid);
+            while (downloadItems.contains(dh))
                 Thread.sleep(delay);
-        }
+            while(true){
+                synchronized (downloadItems) {
+                for (final DlListener dll : downloadItems)
+                    dll
+                }
+            }
+        //}
     }
 
     public int download(String url, String savePath, boolean extract) throws MalformedURLException {
@@ -118,11 +122,11 @@ public class ResourceGrabber {
         return this.currentUID++;
     }
 
-    private Downloader getSupportedDownloader(String url) throws MalformedURLException{
-        for(Downloader dl : this.downloaders)
-            if(dl.supportsURL(url))
+    private Downloader getSupportedDownloader(String url) throws MalformedURLException {
+        for (Downloader dl : this.downloaders)
+            if (dl.supportsURL(url))
                 return dl;
-        throw new MalformedURLException("Unsupported URL: "+url);
+        throw new MalformedURLException("Unsupported URL: " + url);
     }
 
 
@@ -130,8 +134,7 @@ public class ResourceGrabber {
 
         public void actionPerformed(ActionEvent e) {
             synchronized (downloadItems) {
-                for (final Object o : downloadItems) {
-                    final DlListener dll = (DlListener)o;
+                for (final DlListener dll : downloadItems) {
                     //System.out.println("uid   : " + dll.uid);
                     //System.out.println("status: " + dll.getStatus().toString());
                     switch (dll.getStatus()) {
@@ -178,6 +181,8 @@ public class ResourceGrabber {
                             }
                             break;
                         case FINISHED:
+                            if(dll.waiter != null)
+                                dll.waiter.interrupt();
                             break;
                         case EXTRACTING:
                             dll.setRunning();
@@ -221,11 +226,26 @@ public class ResourceGrabber {
 
     }
 
+    private class DownloadHandle {
+        int uid;
+
+        private DownloadHandle(int uid) {
+            this.uid = uid;
+        }
+
+        @Override
+        public boolean equals(Object other) {
+            return ((other instanceof DlListener) && ((DlListener) other).uid == this.uid) ||
+                    ((other instanceof DownloadHandle) && ((DownloadHandle) other).uid == this.uid);
+        }
+    }
+
     private class DlListener extends AbstractDownloadListener {
 
         int uid;
         boolean extract;
         DownloadItemPanel dip = null;
+        Thread waiter = null;
 
         public DlListener(int uid, boolean extract) {
             this.uid = uid;
@@ -249,14 +269,15 @@ public class ResourceGrabber {
 
         /**
          * This needs to be hacked to be equal to either another DlListener, or an integer uid value
+         *
          * @param other
          * @return
          */
         @Override
         public boolean equals(Object other) {
-            System.out.println("DlListener equals: "+other);
+            //System.out.println("DlListener equals: " + other);
             return ((other instanceof DlListener) && ((DlListener) other).uid == this.uid) ||
-                    ((other instanceof Integer) && other.equals(this.uid));
+                    ((other instanceof DownloadHandle) && ((DownloadHandle) other).uid == this.uid);
         }
     }
 
