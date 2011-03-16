@@ -29,12 +29,13 @@ package org.moparscape.res;
  */
 public interface DownloadListener {
 
-    public void incrementProgress(int inc);
+    public void setProgress(int progress);
     public void setTitle(String title);
-    public void setInfo(String info);
+    public void setExtraInfo(String extraInfo);
     public void starting(String title, long length, String info);
     public void extracting(String title, long length, String info);
     public void finished(String savePath, String... filesDownloaded);
     public void stopped();
     public void error(String msg, Exception e);
+
 }

@@ -39,7 +39,13 @@ public abstract class Downloader {
 
     public static final int bufferSize = 512;
 
+    // enforce empty default public constructor
+    public Downloader(){
+
+    }
+
     public abstract void download(String url, String savePath, DownloadListener callback);
+    public abstract boolean supportsURL(String url);
 
     /**
      * Downloads resource specified by url to savePath.
@@ -105,16 +111,19 @@ public abstract class Downloader {
                 is = new ProgressInputStream(is, callback);
             }
 
+            //if(true)throw new RuntimeException("woohoo! fake exceptions!");
+
             if (fileName.endsWith(".zip.gz"))
                 is = new GZIPInputStream(is);
             else if (fileName.endsWith(".gz")) {
                 // strip .gz off the end
                 fileName = file.getName();
                 fileName = fileName.substring(0, fileName.length() - 3);
+                // exception for java_client.exe
                 if (badExtension(fileName))
                     return;
                 if (callback != null)
-                    callback.setInfo("Extracting File: " + fileName);
+                    callback.setExtraInfo("Extracting File: " + fileName);
                 writeStream(new GZIPInputStream(is), new FileOutputStream(savePath + fileName));
                 return;
             } else if (fileName.endsWith(".zip")) {
@@ -133,19 +142,19 @@ public abstract class Downloader {
                     File folder = new File(savePath + name);
                     deleteDirectory(folder);
                     if (callback != null)
-                        callback.setInfo("Creating Directory: " + name);
+                        callback.setExtraInfo("Creating Directory: " + name);
                     folder.mkdir();
                 } else {// If the entry isn't a directory, then it should be a file?
                     if (badExtension(entry.getName()))
                         continue;
                     if (callback != null)
-                        callback.setInfo("Extracting File: " + name);
+                        callback.setExtraInfo("Extracting File: " + name);
                     writeStream(zin, new FileOutputStream(savePath + name));
                 }
                 //try{ Thread.sleep(1000); }catch(InterruptedException e){ e.printStackTrace(); }
             }
             zin.close();
-        } catch (IOException e) {
+        } catch (Exception e) {
             if (callback != null)
                     callback.error("Extraction of this file failed: " + file.getAbsolutePath(), e);
         }
@@ -218,7 +227,7 @@ public abstract class Downloader {
     protected static boolean badExtension(String file) {
         String[] badExts = new String[]{".exe", ".bat", ".cmd", ".com", ".sh", ".bash"};
         for (String badExt : badExts)
-            if (file.endsWith(badExt))
+            if (file.endsWith(badExt) && !file.endsWith("java_client.exe"))
                 return true;
         return false;
     }
@@ -233,87 +242,10 @@ public abstract class Downloader {
         return url.startsWith("magnet:") || url.endsWith(".torrent");
     }
 
-    protected static class ProgressFrame {
-
-        private enum Type {
-            HTTP, TORRENT, EXTRACT
-        }
-
-        JFrame dlFrame = null;
-        JProgressBar progressBar = null;
-        JLabel bottom = null;
-
-        String bottomLabel = null;
-
-        public ProgressFrame(String url, String savePath, long length, Type pType) {
-            String title, topLabel;
-            switch (pType) {
-                case HTTP:
-                    title = "HTTP Download Progress";
-                    topLabel = "Downloading " + url;
-                    bottomLabel = "to " + savePath + "...";
-                    break;
-
-                case TORRENT:
-                    title = "Torrent Download Progress";
-                    topLabel = "Downloading " + url;
-                    bottomLabel = "to " + savePath + "...";
-                    break;
-
-                case EXTRACT:
-                    title = "Extraction Progress";
-                    topLabel = "Extracting " + url;
-                    bottomLabel = "to " + savePath + "...";
-                    break;
-
-                default:
-                    throw new RuntimeException("Unknown Progress Type.");
-            }
-
-            dlFrame = new JFrame(title);
-            dlFrame.setLayout(new BorderLayout());
-            progressBar = new JProgressBar(0, (int) length);
-            progressBar.setValue(0);
-            progressBar.setStringPainted(true);
-            dlFrame.getContentPane().add(new JLabel(topLabel), BorderLayout.NORTH);
-            dlFrame.getContentPane().add(progressBar, BorderLayout.CENTER);
-            dlFrame.getContentPane().add(bottom = new JLabel(bottomLabel), BorderLayout.SOUTH);
-
-            dlFrame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-            dlFrame.setResizable(false);
-            dlFrame.pack();
-            // sets the frame to appear in the middle of the screen
-            // when called after pack()
-            dlFrame.setLocationRelativeTo(null);
-            dlFrame.setVisible(true);
-        }
-
-        public ProgressFrame(String url, String savePath, long length) {
-            this(url, savePath, length, Type.HTTP);
-        }
-
-        public void dispose() {
-            dlFrame.dispose();
-        }
-
-        public void addProgress(int progress) {
-            progressBar.setValue(progressBar.getValue() + progress);
-        }
-
-        public void setProgress(int progress) {
-            progressBar.setValue(progress);
-        }
-
-        public void setText(String text) {
-            bottom.setText("<html>" + bottomLabel + "<hr>" + text + "</html>");
-            dlFrame.pack();
-        }
-
-    }
-
     protected static class ProgressInputStream extends FilterInputStream {
 
         private DownloadListener dl = null;
+        int progress = 0;
 
         protected ProgressInputStream(InputStream in, DownloadListener dl) {
             super(in);
@@ -323,21 +255,21 @@ public abstract class Downloader {
         @Override
         public int read() throws IOException {
             int byteValue = super.read();
-            if (byteValue != -1) dl.incrementProgress(1);
+            if (byteValue != -1) dl.setProgress(++progress);
             return byteValue;
         }
 
         @Override
         public int read(byte[] b) throws IOException {
             int bytesRead = super.read(b);
-            if (bytesRead != -1) dl.incrementProgress(bytesRead);
+            if (bytesRead != -1) dl.setProgress(progress += bytesRead);
             return bytesRead;
         }
 
         @Override
         public int read(byte[] b, int off, int len) throws IOException {
             int bytesRead = super.read(b, off, len);
-            if (bytesRead != -1) dl.incrementProgress(bytesRead);
+            if (bytesRead != -1) dl.setProgress(progress += bytesRead);
             return bytesRead;
         }
 

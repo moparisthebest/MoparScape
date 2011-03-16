@@ -27,6 +27,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 
@@ -37,7 +38,7 @@ import java.net.URLConnection;
  * Time: 3:20 PM
  * To change this template use File | Settings | File Templates.
  */
-public class HTTPDownloader extends Downloader {
+public class URLDownloader extends Downloader {
 
     public void download(final String url, final String savePath, final DownloadListener callback) {
         new Thread() {
@@ -78,5 +79,15 @@ public class HTTPDownloader extends Downloader {
                 }
             }
         }.start();
+    }
+
+    public boolean supportsURL(String url) {
+        // if it's a supported URL, return true
+        try {
+            new URL(url);
+            return true;
+        } catch (MalformedURLException e) {
+            return false;
+        }
     }
 }

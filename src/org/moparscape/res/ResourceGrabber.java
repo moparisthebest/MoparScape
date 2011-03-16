@@ -21,13 +21,14 @@
 package org.moparscape.res;
 
 import org.moparscape.res.impl.Downloader;
-import org.moparscape.res.impl.HTTPDownloader;
+import org.moparscape.res.impl.URLDownloader;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Set;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.net.MalformedURLException;
+import java.util.ArrayList;
 
 /**
  * This class is meant to retrieve resources from a variety of URLs, including all supported by Java in addition to
@@ -50,9 +51,15 @@ public class ResourceGrabber {
 
     private static final String javaClientLocation = "/tmp/";
     private static final String javaClientURL = "http://www.moparscape.org/libs/";
+    private final Downloader[] downloaders = new Downloader[]{new URLDownloader()};
+
+    private static final int delay = 500; //milliseconds
+    private static final int errorTicks = 20; // errorTicks * delay is how long errors will stay onscreen
 
     private JFrame frame = null;
-    Set<Integer> downloadItems = Collections.synchronizedSet(new HashSet<Integer>(5));
+    private javax.swing.Timer timer = null;
+
+    private final ArrayList<Object> downloadItems = new ArrayList<Object>(5);
 
     // this is only meant to be accessed by getUID(), which is synchronized
     private int currentUID = 0;
@@ -68,16 +75,42 @@ public class ResourceGrabber {
         System.out.println("checksum: " + Downloader.checksum("/home/mopar/tests/extest", null, new String[]{"client_test.linux.x86", "client.zip.gz"}, false));
           */
         //System.out.println("filename: " + new URL("http://moparisthebest.com/bob/tom/cache.zip").getFile());
+        ALTest.main(args);System.exit(0);
         ResourceGrabber rg = new ResourceGrabber();
+        System.out.println("before downloads...");
         //rg.download("http://www.moparisthebest.com/downloads/cedegaSRC.tar.gz", "/home/mopar/tests/extest", true);
         //rg.download("http://mirror01.th.ifl.net/releases//maverick/ubuntu-10.10-desktop-i386.iso", "/home/mopar/tests/extest", false);
-        //Thread.sleep(2000);
-        rg.download("https://www.moparscape.org/libs/client.zip.gz", "/home/mopar/tests/extest", true);
+        //Thread.sleep(30000);
+        int clientZipUID = rg.download("https://www.moparscape.org/libs/client.zip.gz", "/home/mopar/tests/extest", true);
+        rg.wait(clientZipUID);
+        System.out.println("after downloads...");
     }
 
-    private int download(String url, String savePath, boolean extract) {
+    public void wait(int uid) throws InterruptedException {
+        synchronized (downloadItems) {
+            System.out.println("wait downloads size: "+downloadItems.size());
+            System.out.println("wait downloads contains(uid): "+downloadItems.contains(new Integer(uid)));
+            System.out.println("wait downloads contains(DlListener): "+downloadItems.contains(new DlListener(uid, false)));
+            while(downloadItems.contains(uid))
+                Thread.sleep(delay);
+        }
+    }
+
+    public int download(String url, String savePath, boolean extract) throws MalformedURLException {
+        Downloader dlr = getSupportedDownloader(url);
+
         int uid = getUID();
-        new HTTPDownloader().download(url, savePath, new DlListener(uid, extract));
+        DlListener dll = new DlListener(uid, extract);
+        dlr.download(url, savePath, dll);
+        synchronized (downloadItems) {
+            downloadItems.add(dll);
+        }
+        if (timer == null) {
+            timer = new Timer(delay, new GUIUpdater());
+            timer.start();
+        } else if (!timer.isRunning()) {
+            timer.start();
+        }
         return uid;
     }
 
@@ -85,29 +118,52 @@ public class ResourceGrabber {
         return this.currentUID++;
     }
 
-    private synchronized void checkFrame(final JPanel jp, int uid) {
-        // not allowed
-        if (jp == null)
-            return;
+    private Downloader getSupportedDownloader(String url) throws MalformedURLException{
+        for(Downloader dl : this.downloaders)
+            if(dl.supportsURL(url))
+                return dl;
+        throw new MalformedURLException("Unsupported URL: "+url);
+    }
 
-        boolean add = !downloadItems.contains(uid);
-        //System.out.println((add ? "adding" : "removing") + ": " + uid);
-        if (add)
-            downloadItems.add(uid);
-        else
-            downloadItems.remove(uid);
-        // handle UIDs
 
-        // if we are trying to add a panel and the frame is null
-        if (add && frame == null) {
-            try {
-                SwingUtilities.invokeAndWait(
-                        new Runnable() {
-                            public void run() {
+    private class GUIUpdater implements ActionListener {
+
+        public void actionPerformed(ActionEvent e) {
+            synchronized (downloadItems) {
+                for (final Object o : downloadItems) {
+                    final DlListener dll = (DlListener)o;
+                    //System.out.println("uid   : " + dll.uid);
+                    //System.out.println("status: " + dll.getStatus().toString());
+                    switch (dll.getStatus()) {
+                        case NOT_STARTED:
+                            break;
+                        case RUNNING:
+                            // if its already running, we need to just update it
+                            if (dll.title != null)
+                                dll.dip.setTitle(dll.title);
+                            //if (dll.progress != 0)
+                            //    dll.dip.setProgress(dll.progress);
+                            if (dll.extraInfo != null)
+                                dll.dip.setInfo(dll.extraInfo);
+                            // set them all not to update
+                            dll.title = null;
+                            dll.extraInfo = null;
+                            break;
+                        // then we need to start it up
+                        case STARTING:
+                            dll.setRunning();
+                            // this means we are RE-starting for some reason, so it's already added to the frame
+                            if (dll.dip != null) {
+                                dll.dip.reset(dll.title, dll.length, dll.info);
+                                break;
+                            }
+                            // otherwise, start fresh
+                            dll.dip = new DownloadItemPanel(dll.title, dll.length, dll.info);
+                            if (frame == null) {
                                 frame = new JFrame("Resource Grabber");
                                 frame.setLayout(new BoxLayout(frame.getContentPane(), BoxLayout.Y_AXIS));
 
-                                frame.getContentPane().add(jp);
+                                frame.getContentPane().add(dll.dip);
 
                                 frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
                                 frame.setResizable(false);
@@ -116,56 +172,56 @@ public class ResourceGrabber {
                                 // when called after pack()
                                 frame.setLocationRelativeTo(null);
                                 frame.setVisible(true);
-
+                                // or if we are trying to add a panel and the frame is already set up
+                            } else {
+                                frame.getContentPane().add(dll.dip);
                             }
-                        }
-                );
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            // or if we are trying to add a panel and the frame is already set up
-        } else if (add) {
-            SwingUtilities.invokeLater(
-                    new Runnable() {
-                        public void run() {
-                            if (frame != null) {
-                                frame.getContentPane().add(jp);
-                                frame.pack();
-                            }
-                        }
+                            break;
+                        case FINISHED:
+                            break;
+                        case EXTRACTING:
+                            dll.setRunning();
+                            dll.dip.reset(dll.title, dll.length, dll.info);
+                            break;
+                        case STOPPED:
+                            // since we are already in the event thread, this executes right after this exits
+                            // or at least never at the same time, which is all we need to worry about.
+                            SwingUtilities.invokeLater(
+                                    new Runnable() {
+                                        public void run() {
+                                            synchronized (downloadItems) {
+                                                downloadItems.remove(dll);
+                                                if (frame == null)
+                                                    return;
+                                                frame.getContentPane().remove(dll.dip);
+                                                if (downloadItems.isEmpty()) {
+                                                    frame.dispose();
+                                                    frame = null;
+                                                    timer.stop();
+                                                }
+                                            }
+                                        }
+                                    });
+                            break;
+                        case ERROR:
+                            //System.out.println("Error uid: " + dll.uid);
+                            if (dll.extraInfo != null)
+                                dll.dip.error(dll.extraInfo);
+                            dll.extraInfo = null;
+                            // timeout error, once we reach errorTicks ticks change it to stopped
+                            //System.out.println("error tick: " + dll.progress);
+                            if (dll.progress++ > errorTicks)
+                                dll.setStopped();
                     }
-            );
-            // else we are not trying to remove a panel, and destroy the frame if there are no more items
-        } else if (frame != null && downloadItems.isEmpty()) {
-            try {
-                SwingUtilities.invokeAndWait(
-                        new Runnable() {
-                            public void run() {
-                                frame.dispose();
-                                frame = null;
-
-                            }
-                        }
-                );
-            } catch (Exception e) {
-                e.printStackTrace();
+                }
             }
-            // or just remove a single panel
-        } else if (frame != null) {
-            SwingUtilities.invokeLater(
-                    new Runnable() {
-                        public void run() {
-                            if (frame != null) {
-                                frame.getContentPane().remove(jp);
-                                frame.pack();
-                            }
-                        }
-                    }
-            );
+            if (frame != null)
+                frame.pack();
         }
+
     }
 
-    private class DlListener implements DownloadListener {
+    private class DlListener extends AbstractDownloadListener {
 
         int uid;
         boolean extract;
@@ -176,59 +232,31 @@ public class ResourceGrabber {
             this.extract = extract;
         }
 
-        public void incrementProgress(int inc) {
-            //DownloadItemPanel dip = downloadItems.get(uid);
+        @Override
+        public void setProgress(int progress) {
+            //super.setProgress(progress);
+            // it is safe to update the progress outside of the event thread, and it looks cleaner, so do it
             if (dip != null)
-                dip.addProgress(inc);
-        }
-
-        public void setTitle(String title) {
-            //DownloadItemPanel dip = downloadItems.get(uid);
-            if (dip != null)
-                dip.setTitle(title);
-        }
-
-        public void setInfo(String info) {
-            //DownloadItemPanel dip = downloadItems.get(uid);
-            if (dip != null)
-                dip.setInfo(info);
-        }
-
-        public void starting(String title, long length, String info) {
-            dip = new DownloadItemPanel(title, length, info);
-            checkFrame(dip, uid);
-        }
-
-        public void extracting(final String title, final long length, final String info) {
-            //DownloadItemPanel dip = downloadItems.get(uid);
-            if (dip != null) {
-                dip.reset(title, length, info);
-                //dip.reset(title, length, info);
-                /*
-                frame.getContentPane().remove(dip);
-                dip = new DownloadItemPanel(title, length, info);
-                frame.getContentPane().add(dip);
-                */
-            }
+                dip.setProgress(progress);
         }
 
         public void finished(String savePath, String... filesDownloaded) {
             if (extract)
                 for (String file : filesDownloaded)
                     Downloader.extractFile(file, savePath, this);
+            super.finished(savePath, filesDownloaded);
         }
 
-        public void stopped() {
-            //System.out.println("Stopped uid: " + uid);
-            //DownloadItemPanel dip = downloadItems.get(uid);
-            checkFrame(dip, uid);
-        }
-
-        public void error(String msg, Exception e) {
-            //To change body of implemented methods use File | Settings | File Templates.
-            System.out.println("Error uid: " + uid);
-            System.out.println(msg);
-            e.printStackTrace();
+        /**
+         * This needs to be hacked to be equal to either another DlListener, or an integer uid value
+         * @param other
+         * @return
+         */
+        @Override
+        public boolean equals(Object other) {
+            System.out.println("DlListener equals: "+other);
+            return ((other instanceof DlListener) && ((DlListener) other).uid == this.uid) ||
+                    ((other instanceof Integer) && other.equals(this.uid));
         }
     }
 
@@ -248,90 +276,50 @@ public class ResourceGrabber {
             this.add(this.titleLabel = new JLabel(sep + title + end), BorderLayout.NORTH);
             this.add(this.infoLabel = new JLabel(origInfo = info), BorderLayout.SOUTH);
 
-            progressBar = new JProgressBar(0, (int) length);
-            progressBar.setValue(0);
-            progressBar.setStringPainted(true);
+            progressBar = new JProgressBar(0, 100);
+            this.setLength(length);
             this.add(progressBar, BorderLayout.CENTER);
         }
 
         public void reset(final String title, final long length, final String info) {
-            try {
-                SwingUtilities.invokeAndWait(
-                        new Runnable() {
-                            public void run() {
-                                titleLabel.setText(sep + title + end);
-                                infoLabel.setText(origInfo = info);
 
-                                progressBar.setValue(0);
-                                progressBar.setMaximum((int) length);
-                                if (frame != null)
-                                    frame.pack();
-                            }
-                        }
-                );
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+            if (title != null)
+                titleLabel.setText(sep + title + end);
+            if (info != null)
+                infoLabel.setText(origInfo = info);
+
+            this.setLength(length);
+
         }
 
         public void error(final String error) {
-            try {
-                SwingUtilities.invokeAndWait(
-                        new Runnable() {
-                            public void run() {
-                                infoLabel.setText("<html>" + origInfo + "<hr>Error: " + error + end);
-                                progressBar.setIndeterminate(true);
-                                if (frame != null)
-                                    frame.pack();
-                            }
-                        }
-                );
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+            this.setInfo("Error: " + error);
+            this.setLength(-1);
         }
 
-        public void addProgress(int progress) {
-            this.setProgress(progressBar.getValue() + progress);
+        private void setLength(long length) {
+            if (length != -1) {
+                progressBar.setValue(0);
+                progressBar.setMaximum((int) length);
+                progressBar.setIndeterminate(false);
+                progressBar.setStringPainted(true);
+            } else {
+                progressBar.setIndeterminate(true);
+                progressBar.setStringPainted(false);
+            }
+
         }
 
         public void setProgress(final int progress) {
-            try {
-                SwingUtilities.invokeAndWait(
-                        new Runnable() {
-                            public void run() {
-                                progressBar.setValue(progress);
-                            }
-                        }
-                );
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+            progressBar.setValue(progress);
         }
 
         public void setTitle(final String title) {
-              setLabel(this.titleLabel, frame, title);
+            this.titleLabel.setText(sep + title + end);
         }
 
         public void setInfo(final String info) {
-            setLabel(this.infoLabel, frame, "<html>" + origInfo + "<hr>" + info + end);
+            this.infoLabel.setText("<html>" + origInfo + "<hr>" + info + end);
         }
     }
-
-    private static void setLabel(final JLabel jl, final JFrame jf, final String content) {
-        try {
-            SwingUtilities.invokeAndWait(
-                    new Runnable() {
-                        public void run() {
-                            jl.setText(content);
-                            if (jf != null)
-                                jf.pack();
-                        }
-                    }
-            );
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
 }
