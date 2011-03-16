@@ -25,8 +25,9 @@ import org.moparscape.res.impl.HTTPDownloader;
 
 import javax.swing.*;
 import java.awt.*;
-import java.io.IOException;
-import java.util.*;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * This class is meant to retrieve resources from a variety of URLs, including all supported by Java in addition to
@@ -68,7 +69,7 @@ public class ResourceGrabber {
           */
         //System.out.println("filename: " + new URL("http://moparisthebest.com/bob/tom/cache.zip").getFile());
         ResourceGrabber rg = new ResourceGrabber();
-        rg.download("http://www.moparisthebest.com/downloads/cedegaSRC.tar.gz", "/home/mopar/tests/extest", true);
+        //rg.download("http://www.moparisthebest.com/downloads/cedegaSRC.tar.gz", "/home/mopar/tests/extest", true);
         //rg.download("http://mirror01.th.ifl.net/releases//maverick/ubuntu-10.10-desktop-i386.iso", "/home/mopar/tests/extest", false);
         //Thread.sleep(2000);
         rg.download("https://www.moparscape.org/libs/client.zip.gz", "/home/mopar/tests/extest", true);
@@ -84,29 +85,85 @@ public class ResourceGrabber {
         return this.currentUID++;
     }
 
-    private synchronized void checkFrame(boolean create) {
-        if (create && frame == null) {
-            frame = new JFrame("Resource Grabber");
-            frame.setLayout(new BoxLayout(frame.getContentPane(), BoxLayout.Y_AXIS));
+    private synchronized void checkFrame(final JPanel jp, int uid) {
+        // not allowed
+        if (jp == null)
+            return;
 
-            frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-            frame.setResizable(false);
-            frame.pack();
-            // sets the frame to appear in the middle of the screen
-            // when called after pack()
-            frame.setLocationRelativeTo(null);
-            frame.setVisible(true);
-        }else if(!create && frame != null && downloadItems.isEmpty()){
-            frame.dispose();
-            frame = null;
+        boolean add = !downloadItems.contains(uid);
+        //System.out.println((add ? "adding" : "removing") + ": " + uid);
+        if (add)
+            downloadItems.add(uid);
+        else
+            downloadItems.remove(uid);
+        // handle UIDs
+
+        // if we are trying to add a panel and the frame is null
+        if (add && frame == null) {
+            try {
+                SwingUtilities.invokeAndWait(
+                        new Runnable() {
+                            public void run() {
+                                frame = new JFrame("Resource Grabber");
+                                frame.setLayout(new BoxLayout(frame.getContentPane(), BoxLayout.Y_AXIS));
+
+                                frame.getContentPane().add(jp);
+
+                                frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+                                frame.setResizable(false);
+                                frame.pack();
+                                // sets the frame to appear in the middle of the screen
+                                // when called after pack()
+                                frame.setLocationRelativeTo(null);
+                                frame.setVisible(true);
+
+                            }
+                        }
+                );
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            // or if we are trying to add a panel and the frame is already set up
+        } else if (add) {
+            SwingUtilities.invokeLater(
+                    new Runnable() {
+                        public void run() {
+                            if (frame != null) {
+                                frame.getContentPane().add(jp);
+                                frame.pack();
+                            }
+                        }
+                    }
+            );
+            // else we are not trying to remove a panel, and destroy the frame if there are no more items
+        } else if (frame != null && downloadItems.isEmpty()) {
+            try {
+                SwingUtilities.invokeAndWait(
+                        new Runnable() {
+                            public void run() {
+                                frame.dispose();
+                                frame = null;
+
+                            }
+                        }
+                );
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            // or just remove a single panel
+        } else if (frame != null) {
+            SwingUtilities.invokeLater(
+                    new Runnable() {
+                        public void run() {
+                            if (frame != null) {
+                                frame.getContentPane().remove(jp);
+                                frame.pack();
+                            }
+                        }
+                    }
+            );
         }
     }
-
-    private synchronized void pack(){
-        if(frame != null)
-            frame.pack();
-    }
-
 
     private class DlListener implements DownloadListener {
 
@@ -123,43 +180,29 @@ public class ResourceGrabber {
             //DownloadItemPanel dip = downloadItems.get(uid);
             if (dip != null)
                 dip.addProgress(inc);
-            pack();
         }
 
         public void setTitle(String title) {
             //DownloadItemPanel dip = downloadItems.get(uid);
             if (dip != null)
                 dip.setTitle(title);
-            pack();
         }
 
         public void setInfo(String info) {
             //DownloadItemPanel dip = downloadItems.get(uid);
             if (dip != null)
                 dip.setInfo(info);
-            pack();
         }
 
         public void starting(String title, long length, String info) {
-            checkFrame(true);
             dip = new DownloadItemPanel(title, length, info);
-            downloadItems.add(uid);
-            //downloadItems.put(uid, dip);
-            frame.getContentPane().add(dip);
-            pack();
+            checkFrame(dip, uid);
         }
 
         public void extracting(final String title, final long length, final String info) {
             //DownloadItemPanel dip = downloadItems.get(uid);
-            if (dip != null){
-
-                SwingUtilities.invokeLater(
-                        new Runnable(){
-                            public void run(){
-                                dip.reset(title, length, info);
-                            }
-                        }
-                );
+            if (dip != null) {
+                dip.reset(title, length, info);
                 //dip.reset(title, length, info);
                 /*
                 frame.getContentPane().remove(dip);
@@ -167,7 +210,6 @@ public class ResourceGrabber {
                 frame.getContentPane().add(dip);
                 */
             }
-            pack();
         }
 
         public void finished(String savePath, String... filesDownloaded) {
@@ -179,16 +221,14 @@ public class ResourceGrabber {
         public void stopped() {
             //System.out.println("Stopped uid: " + uid);
             //DownloadItemPanel dip = downloadItems.get(uid);
-            if (dip != null){
-                frame.getContentPane().remove(dip);
-            }
-            downloadItems.remove(uid);
-            checkFrame(false);
-            pack();
+            checkFrame(dip, uid);
         }
 
-        public void error(String msg) {
+        public void error(String msg, Exception e) {
             //To change body of implemented methods use File | Settings | File Templates.
+            System.out.println("Error uid: " + uid);
+            System.out.println(msg);
+            e.printStackTrace();
         }
     }
 
@@ -205,7 +245,7 @@ public class ResourceGrabber {
 
         public DownloadItemPanel(String title, long length, String info) {
             super(new BorderLayout());
-            this.add(this.titleLabel = new JLabel(sep+title+end), BorderLayout.NORTH);
+            this.add(this.titleLabel = new JLabel(sep + title + end), BorderLayout.NORTH);
             this.add(this.infoLabel = new JLabel(origInfo = info), BorderLayout.SOUTH);
 
             progressBar = new JProgressBar(0, (int) length);
@@ -214,30 +254,84 @@ public class ResourceGrabber {
             this.add(progressBar, BorderLayout.CENTER);
         }
 
-        public void reset(String title, long length, String info){
-            //if(true) return;
-            titleLabel.setText(sep+title+end);
-            infoLabel.setText(origInfo = info);
+        public void reset(final String title, final long length, final String info) {
+            try {
+                SwingUtilities.invokeAndWait(
+                        new Runnable() {
+                            public void run() {
+                                titleLabel.setText(sep + title + end);
+                                infoLabel.setText(origInfo = info);
 
-            progressBar.setValue(0);
-            progressBar.setMaximum((int) length);
+                                progressBar.setValue(0);
+                                progressBar.setMaximum((int) length);
+                                if (frame != null)
+                                    frame.pack();
+                            }
+                        }
+                );
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        public void error(final String error) {
+            try {
+                SwingUtilities.invokeAndWait(
+                        new Runnable() {
+                            public void run() {
+                                infoLabel.setText("<html>" + origInfo + "<hr>Error: " + error + end);
+                                progressBar.setIndeterminate(true);
+                                if (frame != null)
+                                    frame.pack();
+                            }
+                        }
+                );
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
 
         public void addProgress(int progress) {
-            progressBar.setValue(progressBar.getValue() + progress);
+            this.setProgress(progressBar.getValue() + progress);
         }
 
-        public void setProgress(int progress) {
-            progressBar.setValue(progress);
+        public void setProgress(final int progress) {
+            try {
+                SwingUtilities.invokeAndWait(
+                        new Runnable() {
+                            public void run() {
+                                progressBar.setValue(progress);
+                            }
+                        }
+                );
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
 
-        public void setTitle(String title) {
-            titleLabel.setText(sep+title+end);
+        public void setTitle(final String title) {
+              setLabel(this.titleLabel, frame, title);
         }
 
-        public void setInfo(String info) {
-            infoLabel.setText("<html>" + origInfo + "<hr>" + info + end);
+        public void setInfo(final String info) {
+            setLabel(this.infoLabel, frame, "<html>" + origInfo + "<hr>" + info + end);
         }
-
     }
+
+    private static void setLabel(final JLabel jl, final JFrame jf, final String content) {
+        try {
+            SwingUtilities.invokeAndWait(
+                    new Runnable() {
+                        public void run() {
+                            jl.setText(content);
+                            if (jf != null)
+                                jf.pack();
+                        }
+                    }
+            );
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 }

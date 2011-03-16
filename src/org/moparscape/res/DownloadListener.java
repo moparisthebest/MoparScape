@@ -36,5 +36,5 @@ public interface DownloadListener {
     public void extracting(String title, long length, String info);
     public void finished(String savePath, String... filesDownloaded);
     public void stopped();
-    public void error(String msg);
+    public void error(String msg, Exception e);
 }

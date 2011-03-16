@@ -37,6 +37,8 @@ import java.util.zip.*;
  */
 public abstract class Downloader {
 
+    public static final int bufferSize = 512;
+
     public abstract void download(String url, String savePath, DownloadListener callback);
 
     /**
@@ -72,10 +74,12 @@ public abstract class Downloader {
     }
   */
     protected static void writeStream(InputStream in, OutputStream out) throws IOException {
-        byte[] buffer = new byte[1024];
+        byte[] buffer = new byte[bufferSize];
         int len;
         while ((len = in.read(buffer)) >= 0) {
             out.write(buffer, 0, len);
+            //if(in instanceof ZipInputStream) try{ Thread.sleep(1); }catch(InterruptedException e){ e.printStackTrace(); }
+
         }
         // if its a ZipInputStream we don't want to close it
         if (!(in instanceof ZipInputStream))
@@ -118,7 +122,7 @@ public abstract class Downloader {
             } else {
                 // otherwise this file can't be extracted, so just return for now
                 if (callback != null)
-                    callback.error("Extraction of this file type is unsupported: " + fileName);
+                    callback.error("Extraction of this file type is unsupported: " + fileName, null);
                 return;
             }
             ZipInputStream zin = new ZipInputStream(is);
@@ -138,12 +142,12 @@ public abstract class Downloader {
                         callback.setInfo("Extracting File: " + name);
                     writeStream(zin, new FileOutputStream(savePath + name));
                 }
-                try{ Thread.sleep(1000); }catch(InterruptedException e){ e.printStackTrace(); }
+                //try{ Thread.sleep(1000); }catch(InterruptedException e){ e.printStackTrace(); }
             }
             zin.close();
         } catch (IOException e) {
             if (callback != null)
-                    callback.error("Extraction of this file failed: " + file.getAbsolutePath());
+                    callback.error("Extraction of this file failed: " + file.getAbsolutePath(), e);
         }
     }
 

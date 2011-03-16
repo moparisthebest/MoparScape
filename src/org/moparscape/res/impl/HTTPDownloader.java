@@ -74,7 +74,7 @@ public class HTTPDownloader extends Downloader {
                     }
                 } catch (IOException e) {
                     if (callback != null)
-                        callback.error("Error downloading file: " + url);
+                        callback.error("Error downloading file: " + url, e);
                 }
             }
         }.start();
