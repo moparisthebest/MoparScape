@@ -79,7 +79,7 @@ public abstract class Downloader {
         }
     }
   */
-    protected static void writeStream(InputStream in, OutputStream out) throws IOException {
+    public static void writeStream(InputStream in, OutputStream out) throws IOException {
         byte[] buffer = new byte[bufferSize];
         int len;
         while ((len = in.read(buffer)) >= 0) {
@@ -160,56 +160,6 @@ public abstract class Downloader {
         }
     }
 
-    /**
-     * This function recursively checksums an entire directory, optionally applying a whitelist or a blacklist
-     *
-     * @param savePath
-     * @param cs
-     * @param list
-     * @param whitelist true if whitelist, false if blacklist.
-     * @return
-     */
-    public static long checksum(String savePath, Checksum cs, String[] list, final boolean whitelist) {
-        if (!savePath.endsWith("/"))
-            savePath += "/";
-        if (cs == null)
-            cs = new CRC32();
-        FileFilter ff = null;
-        if (list != null) {
-            final File[] flist = new File[list.length];
-            for (int x = 0; x < list.length; ++x)
-                flist[x] = new File(savePath + list[x]);
-            ff = new FileFilter() {
-                public boolean accept(File name) {
-                    for (File f : flist)
-                        if (f.equals(name))
-                            return whitelist;
-                    return !whitelist;
-                }
-            };
-        }
-        recursiveChecksum(new File(savePath), cs, new NullOutputStream(), ff);
-        return cs.getValue();
-    }
-
-    private static void recursiveChecksum(File path, Checksum cs, NullOutputStream nos, FileFilter filter) {
-        if (!path.exists())
-            return;
-        for (File file : path.listFiles(filter)) {
-            System.out.println("Checksum so far: " + cs.getValue());
-            System.out.println("Checking filename: " + file.getAbsolutePath());
-            if (file.isDirectory()) {
-                recursiveChecksum(file, cs, nos, filter);
-            } else {
-                try {
-                    writeStream(new ChecksumInputStream(new FileInputStream(file), cs), nos);
-                } catch (Exception e) {
-                    // if there is an exception, just ignore it
-                }
-            }
-        }
-    }
-
     protected static boolean deleteDirectory(File path) {
         if (path.exists()) {
             File[] files = path.listFiles();
@@ -230,16 +180,6 @@ public abstract class Downloader {
             if (file.endsWith(badExt) && !file.endsWith("java_client.exe"))
                 return true;
         return false;
-    }
-
-    /**
-     * Reports whether a url describes a torrent or not.
-     *
-     * @param url URL to resource.
-     * @return true if this is a torrent, false otherwise.
-     */
-    protected static boolean isTorrent(String url) {
-        return url.startsWith("magnet:") || url.endsWith(".torrent");
     }
 
     protected static class ProgressInputStream extends FilterInputStream {
@@ -279,25 +219,6 @@ public abstract class Downloader {
             //dl.stopped();
             super.close();
         }
-    }
-
-    protected static class NullOutputStream extends OutputStream {
-
-        @Override
-        public void write(byte[] b, int off, int len) {
-
-        }
-
-        @Override
-        public void write(int b) {
-
-        }
-
-        @Override
-        public void write(byte[] b) throws IOException {
-
-        }
-
     }
 
 }

@@ -82,11 +82,16 @@ public class ResourceGrabber {
         //rg.download("http://mirror01.th.ifl.net/releases//maverick/ubuntu-10.10-desktop-i386.iso", "/home/mopar/tests/extest", false);
         //Thread.sleep(30000);
         int clientZipUID = rg.download("https://www.moparscape.org/libs/client.zip.gz", "/home/mopar/tests/extest", true);
-        System.out.println("returned: '"+rg.wait(clientZipUID)+"' after downloads...");
+        System.out.println("returned: '" + rg.wait(clientZipUID) + "' after downloads...");
 
     }
 
     public boolean wait(int uid) {
+        // -1 is a special value meaning return immediately
+        // maybe because CRC was already correct and download not needed
+        if (uid == -1)
+            return true;
+
         DlListener dll = null;
         // grab the listener for this uid
         synchronized (downloadItems) {
@@ -117,19 +122,30 @@ public class ResourceGrabber {
     }
 
     public int download(String url, String savePath, boolean extract) throws MalformedURLException {
+        return this.download(url, savePath, extract, null);
+    }
+
+    public int download(String url, String savePath, boolean extract, ChecksumInfo ci) throws MalformedURLException {
+
+        // check crc if we are supposed to
+        if (ci != null && ci.checksumMatch(savePath))
+            return -1;  // this signifies that the crc matches (instant success)
+        // otherwise go ahead and download it.
+
         Downloader dlr = getSupportedDownloader(url);
 
         int uid = getUID();
-        DlListener dll = new DlListener(uid, extract);
+        DlListener dll = new DlListener(uid, extract, ci);
         dlr.download(url, savePath, dll);
         synchronized (downloadItems) {
             downloadItems.add(dll);
-        }
-        if (timer == null) {
-            timer = new Timer(delay, new GUIUpdater());
-            timer.start();
-        } else if (!timer.isRunning()) {
-            timer.start();
+
+            if (timer == null) {
+                timer = new Timer(delay, new GUIUpdater());
+                timer.start();
+            } else if (!timer.isRunning()) {
+                timer.start();
+            }
         }
         return uid;
     }
@@ -244,11 +260,13 @@ public class ResourceGrabber {
 
         int uid;
         boolean extract;
+        ChecksumInfo ci;
         DownloadItemPanel dip = null;
 
-        public DlListener(int uid, boolean extract) {
+        public DlListener(int uid, boolean extract, ChecksumInfo ci) {
             this.uid = uid;
             this.extract = extract;
+            this.ci = ci;
         }
 
         @Override
@@ -260,10 +278,17 @@ public class ResourceGrabber {
         }
 
         public void finished(String savePath, String... filesDownloaded) {
+            // if we are supposed to extract it, do so
             if (extract)
                 for (String file : filesDownloaded)
                     Downloader.extractFile(file, savePath, this);
-            super.finished(savePath, filesDownloaded);
+
+            // check crc if we are supposed to
+            if (ci != null && !ci.checksumMatch(savePath))
+                error("CRC Mismatch", null);
+            else
+                super.finished(savePath, filesDownloaded);
+
             synchronized (this) {
                 this.notify();//waiter.interrupt();
             }
