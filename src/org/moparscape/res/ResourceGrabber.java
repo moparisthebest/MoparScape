@@ -78,26 +78,42 @@ public class ResourceGrabber {
         //System.out.println("filename: " + new URL("http://moparisthebest.com/bob/tom/cache.zip").getFile());
         ResourceGrabber rg = new ResourceGrabber();
         System.out.println("before downloads...");
-        //rg.download("http://www.moparisthebest.com/downloads/cedegaSRC.tar.gz", "/home/mopar/tests/extest", true);
+        rg.download("http://www.moparisthebest.com/downloads/cedegaSRC.tar.gz", "/home/mopar/tests/extest", true);
         //rg.download("http://mirror01.th.ifl.net/releases//maverick/ubuntu-10.10-desktop-i386.iso", "/home/mopar/tests/extest", false);
         //Thread.sleep(30000);
         int clientZipUID = rg.download("https://www.moparscape.org/libs/client.zip.gz", "/home/mopar/tests/extest", true);
-        rg.wait(clientZipUID);
-        System.out.println("after downloads...");
+        System.out.println("returned: '"+rg.wait(clientZipUID)+"' after downloads...");
+
     }
 
-    public void wait(int uid) throws InterruptedException {
-        //synchronized (downloadItems) {
-            DownloadHandle dh = new DownloadHandle(uid);
-            while (downloadItems.contains(dh))
-                Thread.sleep(delay);
-            while(true){
-                synchronized (downloadItems) {
-                for (final DlListener dll : downloadItems)
-                    dll
+    public boolean wait(int uid) {
+        DlListener dll = null;
+        // grab the listener for this uid
+        synchronized (downloadItems) {
+            for (final DlListener d : downloadItems) {
+                if (d.uid == uid) {
+                    dll = d;
+                    break;
                 }
             }
-        //}
+        }
+        // if we couldn't find one, the download is finished, return
+        if (dll == null)
+            return true; // we don't really know how it ended, just return true I guess...
+        AbstractDownloadListener.Status status = dll.getStatus();
+        while (status != AbstractDownloadListener.Status.FINISHED
+                && status != AbstractDownloadListener.Status.STOPPED
+                && status != AbstractDownloadListener.Status.ERROR) {
+            try {
+                synchronized (dll) {
+                    dll.wait();
+                }
+            } catch (InterruptedException e) {
+                // just ignore it, let the loop go around again
+            }
+            status = dll.getStatus();
+        }
+        return status != AbstractDownloadListener.Status.ERROR;
     }
 
     public int download(String url, String savePath, boolean extract) throws MalformedURLException {
@@ -181,8 +197,6 @@ public class ResourceGrabber {
                             }
                             break;
                         case FINISHED:
-                            if(dll.waiter != null)
-                                dll.waiter.interrupt();
                             break;
                         case EXTRACTING:
                             dll.setRunning();
@@ -226,26 +240,11 @@ public class ResourceGrabber {
 
     }
 
-    private class DownloadHandle {
-        int uid;
-
-        private DownloadHandle(int uid) {
-            this.uid = uid;
-        }
-
-        @Override
-        public boolean equals(Object other) {
-            return ((other instanceof DlListener) && ((DlListener) other).uid == this.uid) ||
-                    ((other instanceof DownloadHandle) && ((DownloadHandle) other).uid == this.uid);
-        }
-    }
-
     private class DlListener extends AbstractDownloadListener {
 
         int uid;
         boolean extract;
         DownloadItemPanel dip = null;
-        Thread waiter = null;
 
         public DlListener(int uid, boolean extract) {
             this.uid = uid;
@@ -265,6 +264,9 @@ public class ResourceGrabber {
                 for (String file : filesDownloaded)
                     Downloader.extractFile(file, savePath, this);
             super.finished(savePath, filesDownloaded);
+            synchronized (this) {
+                this.notify();//waiter.interrupt();
+            }
         }
 
         /**
@@ -276,8 +278,7 @@ public class ResourceGrabber {
         @Override
         public boolean equals(Object other) {
             //System.out.println("DlListener equals: " + other);
-            return ((other instanceof DlListener) && ((DlListener) other).uid == this.uid) ||
-                    ((other instanceof DownloadHandle) && ((DownloadHandle) other).uid == this.uid);
+            return ((other != null) && (other instanceof DlListener) && (((DlListener) other).uid == this.uid));
         }
     }
 
