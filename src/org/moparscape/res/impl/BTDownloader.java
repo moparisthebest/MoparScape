@@ -23,6 +23,7 @@ package org.moparscape.res.impl;
 import org.moparscape.res.ChecksumInfo;
 import org.moparscape.res.DownloadListener;
 
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.util.HashMap;
 
@@ -41,6 +42,7 @@ public class BTDownloader extends Downloader {
     private String remoteBinSuffix = ".gz";
     private String binDir = "/home/mopar/.moparscape/bin/";
     private String binName = "java_client.";
+    private String programArgs = "";
 
     private Process proc = null;
     private HashMap<String, DownloadListener> activeDls = new HashMap<String, DownloadListener>();
@@ -82,8 +84,8 @@ public class BTDownloader extends Downloader {
                 }
 
                 try {
-                    if(!callback.download(remoteBinDir + binName + remoteBinSuffix, binDir, true, new ChecksumInfo(crc, new String[]{binName}))){
-                        callback.error("Failed to download '"+remoteBinDir + binName + remoteBinSuffix+"', cannot continue.", null);
+                    if (!callback.download(remoteBinDir + binName + remoteBinSuffix, binDir, true, new ChecksumInfo(crc, new String[]{binName}))) {
+                        callback.error("Failed to download '" + remoteBinDir + binName + remoteBinSuffix + "', cannot continue.", null);
                         return;
                     }
 
@@ -92,6 +94,17 @@ public class BTDownloader extends Downloader {
                     return;
                 }
 
+                String[] cmd = new String[]{binDir + binName, programArgs, url, savePath};
+                try {
+                    proc = Runtime.getRuntime().exec(cmd);
+                } catch (IOException e) {
+                    callback.error("Program Execution failed.", e);
+                    return;
+                }
+
+                // read startup code here, then add to activeDls if successful
+
+            }else{ // then the process is already running, so just add the download (maybe same code as right above this)
 
             }
         }
