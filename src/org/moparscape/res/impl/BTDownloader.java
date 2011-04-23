@@ -20,8 +20,10 @@
 
 package org.moparscape.res.impl;
 
+import org.moparscape.res.ChecksumInfo;
 import org.moparscape.res.DownloadListener;
 
+import java.net.MalformedURLException;
 import java.util.HashMap;
 
 /**
@@ -35,7 +37,10 @@ public class BTDownloader extends Downloader {
 
     private final Object lock = this;
 
-    private String binDir = "";
+    private String remoteBinDir = "http://www.moparscape.org/libs/";
+    private String remoteBinSuffix = ".gz";
+    private String binDir = "/home/mopar/.moparscape/bin/";
+    private String binName = "java_client.";
 
     private Process proc = null;
     private HashMap<String, DownloadListener> activeDls = new HashMap<String, DownloadListener>();
@@ -44,14 +49,50 @@ public class BTDownloader extends Downloader {
 
     @Override
     public void download(String url, String savePath, DownloadListener callback) {
-        synchronized (lock){
+        if (callback == null)
+            return;
+        synchronized (lock) {
             // if the download is already running, return
-            if(activeDls.containsKey(url))
+            if (activeDls.containsKey(url))
                 return;
             // if the process hasn't been started yet, boot it up
-            if(proc == null){
+            if (proc == null) {
                 String osName = System.getProperty("os.name").toLowerCase();
-          String osArch = System.getProperty("os.arch").toLowerCase();
+                String osArch = System.getProperty("os.arch").toLowerCase();
+
+                long crc;
+                // if it's windows, run 32-bit windows executable
+                if (osName.contains("win")) {
+                    binName += "win32.exe";
+                    crc = 9089203;
+                    // if it's a mac, we want to either ppc or i386
+                } else if (osName.contains("mac")) {
+                    if (osArch.contains("ppc")) {
+                        binName += "osx.ppc";
+                        crc = 9089203;
+                    } else {
+                        binName += "osx.i386";
+                        crc = 9089203;
+                    }
+                } else {
+                    if (!osName.contains("linux"))
+                        System.out.println("ATTENTION: Could not find a supported OS/Architecture, trying the Linux executable...");
+                    binName += "linux.x86";
+                    crc = 9089203;
+                }
+
+                try {
+                    if(!callback.download(remoteBinDir + binName + remoteBinSuffix, binDir, true, new ChecksumInfo(crc, new String[]{binName}))){
+                        callback.error("Failed to download '"+remoteBinDir + binName + remoteBinSuffix+"', cannot continue.", null);
+                        return;
+                    }
+
+                } catch (MalformedURLException e) {
+                    callback.error("Invalid URL", e);
+                    return;
+                }
+
+
             }
         }
     }

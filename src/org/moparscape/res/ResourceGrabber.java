@@ -135,7 +135,7 @@ public class ResourceGrabber {
         Downloader dlr = getSupportedDownloader(url);
 
         int uid = getUID();
-        DlListener dll = new DlListener(uid, extract, ci);
+        DlListener dll = new DlListener(uid, extract, ci, this);
         dlr.download(url, savePath, dll);
         synchronized (downloadItems) {
             downloadItems.add(dll);
@@ -262,11 +262,13 @@ public class ResourceGrabber {
         boolean extract;
         ChecksumInfo ci;
         DownloadItemPanel dip = null;
+        ResourceGrabber rg = null;
 
-        public DlListener(int uid, boolean extract, ChecksumInfo ci) {
+        public DlListener(int uid, boolean extract, ChecksumInfo ci, ResourceGrabber rg) {
             this.uid = uid;
             this.extract = extract;
             this.ci = ci;
+            this.rg = rg;
         }
 
         @Override
@@ -277,6 +279,7 @@ public class ResourceGrabber {
                 dip.setProgress(progress);
         }
 
+        @Override
         public void finished(String savePath, String... filesDownloaded) {
             // if we are supposed to extract it, do so
             if (extract)
@@ -294,8 +297,12 @@ public class ResourceGrabber {
             }
         }
 
+        public boolean download(String url, String savePath, boolean extract, ChecksumInfo ci) throws MalformedURLException {
+            return rg.wait(rg.download(url, savePath, extract, ci));
+        }
+
         /**
-         * This needs to be hacked to be equal to either another DlListener, or an integer uid value
+         * Checks equality with another Object
          *
          * @param other
          * @return

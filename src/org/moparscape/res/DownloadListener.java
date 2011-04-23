@@ -37,5 +37,5 @@ public interface DownloadListener {
     public void finished(String savePath, String... filesDownloaded);
     public void stopped();
     public void error(String msg, Exception e);
-
+    public boolean download(String url, String savePath, boolean extract, ChecksumInfo ci) throws java.net.MalformedURLException;
 }
