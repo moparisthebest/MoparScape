@@ -98,6 +98,8 @@ public abstract class AbstractDownloadListener implements DownloadListener{
         status = Status.ERROR;
         this.extraInfo = msg;
         progress = 0;
-        //e.printStackTrace();
+        System.out.println("error!");
+        System.out.println(msg);
+        if(e != null) e.printStackTrace();
     }
 }

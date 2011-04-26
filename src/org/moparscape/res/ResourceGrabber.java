@@ -20,6 +20,7 @@
 
 package org.moparscape.res;
 
+import org.moparscape.res.impl.BTDownloader;
 import org.moparscape.res.impl.Downloader;
 import org.moparscape.res.impl.URLDownloader;
 
@@ -52,7 +53,7 @@ public class ResourceGrabber {
 
     private static final String javaClientLocation = "/tmp/";
     private static final String javaClientURL = "http://www.moparscape.org/libs/";
-    private final Downloader[] downloaders = new Downloader[]{new URLDownloader()};
+    private final Downloader[] downloaders = new Downloader[]{new BTDownloader(), new URLDownloader()};
 
     private static final int delay = 500; //milliseconds
     private static final int errorTicks = 20; // errorTicks * delay is how long errors will stay onscreen
@@ -76,12 +77,18 @@ public class ResourceGrabber {
         System.out.println("checksum: " + Downloader.checksum("/home/mopar/tests/extest", null, new String[]{"client_test.linux.x86", "client.zip.gz"}, false));
           */
         //System.out.println("filename: " + new URL("http://moparisthebest.com/bob/tom/cache.zip").getFile());
+        /*String s = "result: x";
+        for(String p : s.split(":"))
+            System.out.println("part: '"+p.trim()+"'");
+        if(true) return;  */
         ResourceGrabber rg = new ResourceGrabber();
         System.out.println("before downloads...");
-        rg.download("http://www.moparisthebest.com/downloads/cedegaSRC.tar.gz", "/home/mopar/tests/extest", true);
+        //rg.download("http://www.moparisthebest.com/downloads/cedegaSRC.tar.gz", "/home/mopar/tests/extest", true);
         //rg.download("http://mirror01.th.ifl.net/releases//maverick/ubuntu-10.10-desktop-i386.iso", "/home/mopar/tests/extest", false);
         //Thread.sleep(30000);
-        int clientZipUID = rg.download("https://www.moparscape.org/libs/client.zip.gz", "/home/mopar/tests/extest", true);
+        //int clientZipUID = rg.download("https://www.moparscape.org/libs/client.zip.gz", "/home/mopar/tests/extest", true);
+        //int clientZipUID = rg.download("https://www.moparscape.org/libs/client.zip.torrent", "/home/mopar/tests/extest", true);
+        int clientZipUID = rg.download("magnet:?xt=urn:btih:bcf2e587afd4d3b1bdd8ece5150d9fb4d2958af4&dn=ubuntu+desktop+10.10+i386&tr=http%3A%2F%2Fdenis.stalker.h3q.com%3A6969%2Fannounce", "/home/mopar/tests/extest");
         System.out.println("returned: '" + rg.wait(clientZipUID) + "' after downloads...");
 
     }
@@ -121,6 +128,10 @@ public class ResourceGrabber {
         return status != AbstractDownloadListener.Status.ERROR;
     }
 
+    public int download(String url, String savePath) throws MalformedURLException {
+        return this.download(url, savePath, false, null);
+    }
+
     public int download(String url, String savePath, boolean extract) throws MalformedURLException {
         return this.download(url, savePath, extract, null);
     }
@@ -131,7 +142,6 @@ public class ResourceGrabber {
         if (ci != null && ci.checksumMatch(savePath))
             return -1;  // this signifies that the crc matches (instant success)
         // otherwise go ahead and download it.
-
         Downloader dlr = getSupportedDownloader(url);
 
         int uid = getUID();
@@ -228,7 +238,8 @@ public class ResourceGrabber {
                                                 downloadItems.remove(dll);
                                                 if (frame == null)
                                                     return;
-                                                frame.getContentPane().remove(dll.dip);
+                                                if(dll.dip != null)
+                                                    frame.getContentPane().remove(dll.dip);
                                                 if (downloadItems.isEmpty()) {
                                                     frame.dispose();
                                                     frame = null;
@@ -240,7 +251,7 @@ public class ResourceGrabber {
                             break;
                         case ERROR:
                             //System.out.println("Error uid: " + dll.uid);
-                            if (dll.extraInfo != null)
+                            if (dll.extraInfo != null && dll.dip != null)
                                 dll.dip.error(dll.extraInfo);
                             dll.extraInfo = null;
                             // timeout error, once we reach errorTicks ticks change it to stopped
