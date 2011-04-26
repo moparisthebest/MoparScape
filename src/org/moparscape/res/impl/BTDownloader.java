@@ -83,6 +83,7 @@ public class BTDownloader extends Downloader {
                     crc = 9089203;
                 }
 
+                // now that we have the binary name, verify we have the latest and the CRC is correct
                 try {
                     if (!callback.download(remoteBinDir + binName + remoteBinSuffix, binDir, true, new ChecksumInfo(crc, new String[]{binName}))) {
                         callback.error("Failed to download '" + remoteBinDir + binName + remoteBinSuffix + "', cannot continue.", null);
@@ -94,6 +95,7 @@ public class BTDownloader extends Downloader {
                     return;
                 }
 
+                // now we have the correct binary, so lets run the thing!
                 String[] cmd = new String[]{binDir + binName, programArgs, url, savePath};
                 try {
                     proc = Runtime.getRuntime().exec(cmd);

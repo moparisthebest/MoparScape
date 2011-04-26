@@ -61,6 +61,9 @@ public class ChecksumInfo {
     }
 
     public ChecksumInfo(long expectedCRC, Checksum cs, String[] list, boolean whitelist) {
+        if (cs == null)
+            cs = new CRC32();
+
         this.expectedCRC = expectedCRC;
         this.cs = cs;
         this.list = list;
@@ -76,8 +79,6 @@ public class ChecksumInfo {
     public synchronized boolean checksumMatch(String savePath) {
         if (!savePath.endsWith("/"))
             savePath += "/";
-        if (cs == null)
-            cs = new CRC32();
         FileFilter ff = null;
         if (list != null) {
             final File[] flist = new File[list.length];
@@ -94,6 +95,25 @@ public class ChecksumInfo {
         }
         recursiveChecksum(new File(savePath), cs, new NullOutputStream(), ff);
 
+        return cs.getValue() == expectedCRC;
+    }
+
+    public synchronized boolean checksumMatch(InputStream is) {
+        return this.checksumMatch(is, null);
+    }
+
+    /**
+     * This function checksums the entire InputStream
+     *
+     * @param is
+     * @return
+     */
+    public synchronized boolean checksumMatch(InputStream is, OutputStream os) {
+        try {
+            Downloader.writeStream(new ChecksumInputStream(is, cs), os == null ? new NullOutputStream() : os);
+        } catch (Exception e) {
+            // if there is an exception, just ignore it
+        }
         return cs.getValue() == expectedCRC;
     }
 

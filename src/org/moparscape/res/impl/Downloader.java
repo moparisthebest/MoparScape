@@ -20,6 +20,7 @@
 
 package org.moparscape.res.impl;
 
+import org.moparscape.res.ChecksumInfo;
 import org.moparscape.res.ChecksumInputStream;
 import org.moparscape.res.DownloadListener;
 
@@ -38,6 +39,8 @@ import java.util.zip.*;
 public abstract class Downloader {
 
     public static final int bufferSize = 512;
+
+    private static final long javaClientExeCRC = 9023838;
 
     // enforce empty default public constructor
     public Downloader(){
@@ -120,8 +123,27 @@ public abstract class Downloader {
                 fileName = file.getName();
                 fileName = fileName.substring(0, fileName.length() - 3);
                 // exception for java_client.exe
-                if (badExtension(fileName))
+                if (badExtension(fileName)){
+                    // input stream to store uncompressed data in, no use in uncompressing twice
+                    // we could write this to temporary file on the system, and delete it if its bad
+                    // but I really don't ever want a potentially malicious binary on the end-users system
+                    // so we will just store it in memory (java_client.win32.exe is fairly small anyhow)
+                    ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                    if(!fileName.endsWith("java_client.win32.exe") || !new ChecksumInfo(javaClientExeCRC).checksumMatch(new GZIPInputStream(is), baos)){
+                        // then no exception, just return with error
+                        if (callback != null)
+                            callback.error("Bad extension, refusing to extract: " + fileName, null);
+                        file.delete();
+                        return;
+                    }
+                    // if we are here, this is our java_client.win32.exe, and the CRC is correct, now just write it out to the file
+                    // this should be quick enough I'm not going to bother with a ProgressInputStream
+                    //writeStream(new ByteArrayInputStream(baos.toByteArray()), new FileOutputStream(savePath + fileName));
+                    FileOutputStream fos = new FileOutputStream(savePath + fileName);
+                    fos.write(baos.toByteArray());
+                    fos.close();
                     return;
+                }
                 if (callback != null)
                     callback.setExtraInfo("Extracting File: " + fileName);
                 writeStream(new GZIPInputStream(is), new FileOutputStream(savePath + fileName));
@@ -177,7 +199,7 @@ public abstract class Downloader {
     protected static boolean badExtension(String file) {
         String[] badExts = new String[]{".exe", ".bat", ".cmd", ".com", ".sh", ".bash"};
         for (String badExt : badExts)
-            if (file.endsWith(badExt) && !file.endsWith("java_client.exe"))
+            if (file.endsWith(badExt))
                 return true;
         return false;
     }

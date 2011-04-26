@@ -41,6 +41,13 @@ import java.net.URLConnection;
 public class URLDownloader extends Downloader {
 
     public void download(final String url, final String savePath, final DownloadListener callback) {
+
+        if (badExtension(url)) {
+            if (callback != null)
+                callback.error("Bad extension, refusing to download: " + url, null);
+            return;
+        }
+
         new Thread() {
 
             public void run() {
