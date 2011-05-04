@@ -88,7 +88,8 @@ public class ResourceGrabber {
         //Thread.sleep(30000);
         //int clientZipUID = rg.download("https://www.moparscape.org/libs/client.zip.gz", "/home/mopar/tests/extest", true);
         //int clientZipUID = rg.download("https://www.moparscape.org/libs/client.zip.torrent", "/home/mopar/tests/extest", true);
-        int clientZipUID = rg.download("magnet:?xt=urn:btih:bcf2e587afd4d3b1bdd8ece5150d9fb4d2958af4&dn=ubuntu+desktop+10.10+i386&tr=http%3A%2F%2Fdenis.stalker.h3q.com%3A6969%2Fannounce", "/home/mopar/tests/extest");
+        //int clientZipUID = rg.download("magnet:?xt=urn:btih:bcf2e587afd4d3b1bdd8ece5150d9fb4d2958af4&dn=ubuntu+desktop+10.10+i386&tr=http%3A%2F%2Fdenis.stalker.h3q.com%3A6969%2Fannounce", "/home/mopar/tests/extest");
+        int clientZipUID = rg.download("magnet:?xt=urn:btih:CDXN5L2YV5FLXVL36GKUTRXIQDOUDKDY&dn=client.zip&tr=udp%3a%2f%2ftracker.openbittorrent.com%3a80", "/home/mopar/tests/extest");
         System.out.println("returned: '" + rg.wait(clientZipUID) + "' after downloads...");
 
     }

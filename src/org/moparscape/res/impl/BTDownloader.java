@@ -62,11 +62,11 @@ public class BTDownloader extends Downloader {
     }
 
     private synchronized String readNextTag(String tag, String fallback) {
-        //System.out.println("in readNextTag, tag: "+tag);
+        System.out.println("in readNextTag, tag: " + tag);
         String line = null;
         try {
             while ((line = stdin.readLine()) != null) {
-                //System.out.println("debug line: " + line);
+                System.out.println("debug line: " + line);
                 if (line.startsWith(tag))
                     return line.split(delim)[1].trim();
                 else if (fallback != null && line.startsWith(fallback))
@@ -195,7 +195,8 @@ public class BTDownloader extends Downloader {
         private final String[] tagNames = new String[]{"name", "state", "total_download", "total_upload",
                 "download_rate", "upload_rate", "progress_ppm"};
         //private String[] tags = new String[tagNames.length];
-        private Map<String, String> tags = new HashMap<String, String>(tagNames.length + 1, 1);
+        // a load factor of 2 with the max size of the hashmap should stop this from ever being resized, I think.
+        private Map<String, String> tags = new HashMap<String, String>(tagNames.length, 2);
 
         private int counter = 0;
 
@@ -215,18 +216,27 @@ public class BTDownloader extends Downloader {
                             continue;
                         for (String tagName : tagNames)
                             tags.put(tagName, readNextTag(tagName, "delim"));
-                        String extraInfo = new Formatter().format(template,
-                                tags.get("state"),
-                                tags.get("total_download"),
-                                tags.get("download_rate"),
-                                tags.get("total_upload"),
-                                tags.get("upload_rate")
-                        ).toString();
-                        //System.out.println("extraInfo: "+extraInfo);
-                        if(tags.get("name") != null)
-                            callback.setTitle("Downloading " + tags.get("name"));
-                        callback.setExtraInfo(extraInfo);
-                        callback.setProgress(Integer.parseInt(tags.get("progress_ppm")));
+                        String state = tags.get("state");
+                        // if we are not seeding
+                        if (state != null && !state.equals("seeding")) {
+                            String extraInfo = new Formatter().format(template,
+                                    state,
+                                    tags.get("total_download"),
+                                    tags.get("download_rate"),
+                                    tags.get("total_upload"),
+                                    tags.get("upload_rate")
+                            ).toString();
+                            //System.out.println("extraInfo: "+extraInfo);
+                            String name = tags.get("name");
+                            if (name != null && name.length() != 0)
+                                callback.setTitle("Downloading " + name);
+                            callback.setExtraInfo(extraInfo);
+                            callback.setProgress(Integer.parseInt(tags.get("progress_ppm")));
+                        } else {
+                            // if we are seeding, then we are finished, but not yet stopped..
+                            if(callback.)
+                            callback.finished();
+                        }
                     }
                 }
                 try {
