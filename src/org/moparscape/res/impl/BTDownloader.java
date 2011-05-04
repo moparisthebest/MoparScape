@@ -28,6 +28,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.Formatter;
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by IntelliJ IDEA.
@@ -61,14 +62,14 @@ public class BTDownloader extends Downloader {
     }
 
     private synchronized String readNextTag(String tag, String fallback) {
-        System.out.println("in readNextTag");
+        //System.out.println("in readNextTag, tag: "+tag);
         String line = null;
         try {
             while ((line = stdin.readLine()) != null) {
-                System.out.println("debug line: " + line);
+                //System.out.println("debug line: " + line);
                 if (line.startsWith(tag))
                     return line.split(delim)[1].trim();
-                else if(fallback != null && line.startsWith(fallback))
+                else if (fallback != null && line.startsWith(fallback))
                     return null;
             }
         } catch (IOException e) {
@@ -173,7 +174,7 @@ public class BTDownloader extends Downloader {
             } else { // then the process is already running, so just add the download (maybe same code as right above this)
                 // start the torrent
                 // syntax 'a torrenturl\n savepath\n'
-                inputCommands("a", url+"\n", savePath+"\n");
+                inputCommands("a", url + "\n", savePath + "\n");
             }
 
             String result = readNextTag("result");
@@ -181,7 +182,7 @@ public class BTDownloader extends Downloader {
                 callback.error("Adding torrent has failed.", null);
                 return;
             }
-            callback.starting("Downloading " + url, -1, "to " + savePath + "...");
+            callback.starting("Downloading " + url, 1000000, "to " + savePath + "...");
             activeDls.put(result, callback);
 
         }
@@ -191,9 +192,12 @@ public class BTDownloader extends Downloader {
 
         private boolean run = true;
         private static final String template = "State: %s<br>Down: %s (%s) Up: %s (%s)";
-        private final String[] tagNames = new String[]{"state", "total_download", "total_upload",
-                "download_rate", "upload_rate"};
-        private String[] tags = new String[tagNames.length];
+        private final String[] tagNames = new String[]{"name", "state", "total_download", "total_upload",
+                "download_rate", "upload_rate", "progress_ppm"};
+        //private String[] tags = new String[tagNames.length];
+        private Map<String, String> tags = new HashMap<String, String>(tagNames.length + 1, 1);
+
+        private int counter = 0;
 
         @Override
         public void run() {
@@ -202,25 +206,35 @@ public class BTDownloader extends Downloader {
                     if (!run)
                         return;
                     // refresh the info
+                    System.out.println("Sending r");
                     inputCommands("r");
                     String hash = null;
-                    while((hash = readNextTag("info_hash", "done")) != null){
+                    while ((hash = readNextTag("info_hash", "done")) != null) {
                         DownloadListener callback = activeDls.get(hash);
-                        if(callback == null)
+                        if (callback == null)
                             continue;
-                        for(int x = 0; x < tagNames.length; ++x)
-                            tags[x] = readNextTag(tagNames[x], "delim");
+                        for (String tagName : tagNames)
+                            tags.put(tagName, readNextTag(tagName, "delim"));
                         String extraInfo = new Formatter().format(template,
-                                tags[0],
-                                tags[1],
-                                tags[3],
-                                tags[2],
-                                tags[4]
-                                ).toString();
+                                tags.get("state"),
+                                tags.get("total_download"),
+                                tags.get("download_rate"),
+                                tags.get("total_upload"),
+                                tags.get("upload_rate")
+                        ).toString();
+                        //System.out.println("extraInfo: "+extraInfo);
+                        if(tags.get("name") != null)
+                            callback.setTitle("Downloading " + tags.get("name"));
                         callback.setExtraInfo(extraInfo);
+                        callback.setProgress(Integer.parseInt(tags.get("progress_ppm")));
                     }
                 }
                 try {
+                    if (counter++ == -1) {
+                        inputCommands("q");
+                        System.out.println("exit code: " + proc.waitFor());
+                        System.exit(0);
+                    }
                     Thread.sleep(delay);
                 } catch (InterruptedException e) {
                     // just ignore
