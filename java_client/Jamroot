@@ -1,0 +1,24 @@
+import modules ;
+
+BOOST_ROOT = [ modules.peek : BOOST_ROOT ] ;
+
+#use-project /torrent : /home/mopar/biggerdaddy/libtorrent/libtorrent-rasterbar-0.15.5/ ;
+use-project /torrent : /home/mopar/biggerdaddy/libtorrent/libtorrent-rasterbar-trunk/trunk/ ;
+
+if $(BOOST_ROOT)
+{
+	use-project /boost : $(BOOST_ROOT) ;
+}
+
+project java_client
+   : requirements
+	<threading>multi <library>/torrent//torrent
+	: default-build
+	<link>static
+   ;
+
+exe java_client : java_client.cpp ;
+
+exe client_test : client_test.cpp ;
+exe make_torrent : make_torrent.cpp ;
+exe dump_torrent : dump_torrent.cpp ;

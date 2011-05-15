@@ -46,7 +46,7 @@ public class BTDownloader extends Downloader {
     private String remoteBinDir = "http://www.moparscape.org/libs/";
     private String remoteBinSuffix = ".gz";
     //private String binDir = "/home/mopar/.moparscape/bin/";
-    private String binDir = "/home/mopar/biggerdaddy/libtorrent/java_client/dist/";
+    private String binDir = "/home/mopar/IdeaProjects/MoparScape4/java_client/dist/";
     private String binName = "java_client.";
     private String programArgs = "";
 
@@ -234,7 +234,7 @@ public class BTDownloader extends Downloader {
                             callback.setProgress(Integer.parseInt(tags.get("progress_ppm")));
                         } else {
                             // if we are seeding, then we are finished, but not yet stopped..
-                            if(callback.)
+                            if(callback != null)
                             callback.finished();
                         }
                     }
