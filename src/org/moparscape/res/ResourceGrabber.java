@@ -299,6 +299,7 @@ public class ResourceGrabber {
                     Downloader.extractFile(file, savePath, this);
 
             // check crc if we are supposed to
+            // TODO: should we only check filesDownloaded?
             if (ci != null && !ci.checksumMatch(savePath))
                 error("CRC Mismatch", null);
             else

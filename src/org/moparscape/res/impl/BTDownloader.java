@@ -30,6 +30,9 @@ import java.util.Formatter;
 import java.util.HashMap;
 import java.util.Map;
 
+import static org.moparscape.res.DownloadListener.Status;
+import static org.moparscape.res.DownloadListener.Status.*;
+
 /**
  * Created by IntelliJ IDEA.
  * User: mopar
@@ -42,6 +45,7 @@ public class BTDownloader extends Downloader {
     private final Object lock = this;
     private static final String delim = ":";
     private static final int delay = 500; //milliseconds
+    private static final float requiredSeedRatio = 2;
 
     private String remoteBinDir = "http://www.moparscape.org/libs/";
     private String remoteBinSuffix = ".gz";
@@ -192,13 +196,12 @@ public class BTDownloader extends Downloader {
 
         private boolean run = true;
         private static final String template = "State: %s<br>Down: %s (%s) Up: %s (%s)";
+        private static final String delim = "delim";
         private final String[] tagNames = new String[]{"name", "state", "total_download", "total_upload",
-                "download_rate", "upload_rate", "progress_ppm"};
+                "total_upload_ratio", "download_rate", "upload_rate", "progress_ppm", "save_path", "file_list"};
         //private String[] tags = new String[tagNames.length];
         // a load factor of 2 with the max size of the hashmap should stop this from ever being resized, I think.
         private Map<String, String> tags = new HashMap<String, String>(tagNames.length, 2);
-
-        private int counter = 0;
 
         @Override
         public void run() {
@@ -214,11 +217,17 @@ public class BTDownloader extends Downloader {
                         DownloadListener callback = activeDls.get(hash);
                         if (callback == null)
                             continue;
-                        for (String tagName : tagNames)
-                            tags.put(tagName, readNextTag(tagName, "delim"));
+                        // read all the tag names we are interested in
+                        for (String tagName : tagNames) {
+                            String value = readNextTag(tagName, delim);
+                            // if value is null, then we have reached delim, or an error has occured, either way, leave
+                            if (value == null)
+                                break;
+                            tags.put(tagName, value);
+                        }
                         String state = tags.get("state");
                         // if we are not seeding
-                        if (state != null && !state.equals("seeding")) {
+                        if (state != null && !state.equals("seeding") && !state.equals("finished")) {
                             String extraInfo = new Formatter().format(template,
                                     state,
                                     tags.get("total_download"),
@@ -233,19 +242,49 @@ public class BTDownloader extends Downloader {
                             callback.setExtraInfo(extraInfo);
                             callback.setProgress(Integer.parseInt(tags.get("progress_ppm")));
                         } else {
-                            // if we are seeding, then we are finished, but not yet stopped..
-                            if(callback != null)
-                            callback.finished();
+                            Status status = callback.getStatus();
+                            if (status == RUNNING || status == STARTING) {
+                                // if we are seeding, then we are finished, but not yet stopped..
+                                for (String s : tags.get("file_list").split(", "))
+                                    System.out.println("extracting file: " + s);
+                                callback.finished(tags.get("save_path"), tags.get("file_list").split(", "));
+                            } else if (status == FINISHED) {
+                                // then we need to calculate if we have seeded enough to stop the torrent
+                                try {
+                                    float total_upload_ratio = Float.parseFloat(tags.get("total_upload_ratio"));
+                                    // if this is true, we are going to stop the torrent
+                                    if (total_upload_ratio >= requiredSeedRatio) {
+                                        inputCommands("d", hash);
+                                        // if torrent removal is successful
+                                        String result = readNextTag("result", delim);
+                                        if (result != null && result.equals("true")) {
+                                            callback.stopped();
+                                            // if there are no more activeDls, might as well shut down the torrent client
+                                            if (activeDls.isEmpty()) {
+                                                inputCommands("q");
+                                                Process p = proc;
+                                                proc = null;
+                                                stdin = null;
+                                                stdout = null;
+                                                // stop reading thread (this thread)
+                                                readThread.stopThread();
+                                                readThread = null;
+                                                System.out.println("java_client exit code: " + p.waitFor());
+                                            }
+                                        }
+                                    }// TODO: show the seeding progress as well, probably here...
+                                } catch (NumberFormatException e) {
+                                    // just ignore this and keep it running
+                                } catch (InterruptedException e) {
+                                    // guess we should assume proc ended, even though the call to waitFor was interrupted...
+                                }
+                            }
                         }
                     }
                 }
                 try {
-                    if (counter++ == -1) {
-                        inputCommands("q");
-                        System.out.println("exit code: " + proc.waitFor());
-                        System.exit(0);
-                    }
-                    Thread.sleep(delay);
+                    if (run)
+                        Thread.sleep(delay);
                 } catch (InterruptedException e) {
                     // just ignore
                 }

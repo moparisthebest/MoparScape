@@ -879,6 +879,7 @@ int main(int argc, char* argv[])
                     tag("state", ( (s.paused && !s.auto_managed)?"paused": ((s.paused && s.auto_managed)?"queued":state_str[s.state]) ) );
                     tag("total_download", add_suffix(s.total_download));
                     tag("total_upload", add_suffix(s.total_upload));
+				tag("total_upload_ratio", (s.total_download == 0 ? 0 : s.total_upload / s.total_download) );
                     tag("download_rate", add_suffix(s.download_rate, "/s"));
                     tag("upload_rate", add_suffix(s.upload_rate, "/s"));
                     tag("down_bandwidth_queue", s.down_bandwidth_queue);
@@ -908,6 +909,37 @@ int main(int argc, char* argv[])
 			else
 			{
                     tag("state", state_str[s.state]);
+			}
+
+			// if seeding
+			if (s.state == torrent_status::seeding || s.state == torrent_status::finished)
+			{
+				const torrent_info& t = s.handle.get_torrent_info();
+				tag("num_files", t.num_files());
+				tag("save_path", s.handle.save_path());
+				int index = 0;
+				std::string file_list("");
+				for (torrent_info::file_iterator i = t.begin_files();
+					i != t.end_files(); ++i, ++index)
+					{/*
+						int first = t.map_file(index, 0, 0).piece;
+						int last = t.map_file(index, (std::max)(size_type(i->size)-1, size_type(0)), 0).piece;
+						printf("  %11"PRId64" %c%c%c%c [ %4d, %4d ] %7u %s %s %s%s\n"
+										, i->size
+										, (i->pad_file?'p':'-')
+										, (i->executable_attribute?'x':'-')
+										, (i->hidden_attribute?'h':'-')
+										, (i->symlink_attribute?'l':'-')
+										, first, last
+										, boost::uint32_t(t.files().mtime(*i))
+										, t.files().hash(*i) != sha1_hash(0) ? to_hex(t.files().hash(*i).to_string()).c_str() : ""
+										, t.files().file_path(*i).c_str()
+										, i->symlink_attribute ? "-> ": ""
+										, i->symlink_attribute && i->symlink_index != -1 ? t.files().symlink(*i).c_str() : "");
+						*/
+						file_list += ((index == 0) ? "" : ", ")+t.files().file_path(*i);
+					}
+				tag("file_list", file_list);
 			}
 
 			if (print_trackers)

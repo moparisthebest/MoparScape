@@ -28,14 +28,27 @@ package org.moparscape.res;
  * To change this template use File | Settings | File Templates.
  */
 public interface DownloadListener {
+    public static enum Status {
+        NOT_STARTED, RUNNING, STARTING, FINISHED, EXTRACTING, STOPPED, ERROR
+    }
+
+    public Status getStatus();
 
     public void setProgress(int progress);
+
     public void setTitle(String title);
+
     public void setExtraInfo(String extraInfo);
+
     public void starting(String title, long length, String info);
+
     public void extracting(String title, long length, String info);
+
     public void finished(String savePath, String... filesDownloaded);
+
     public void stopped();
+
     public void error(String msg, Exception e);
+
     public boolean download(String url, String savePath, boolean extract, ChecksumInfo ci) throws java.net.MalformedURLException;
 }

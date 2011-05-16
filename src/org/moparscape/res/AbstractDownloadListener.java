@@ -29,10 +29,6 @@ package org.moparscape.res;
  */
 public abstract class AbstractDownloadListener implements DownloadListener{
 
-    public enum Status {
-            NOT_STARTED, RUNNING, STARTING, FINISHED, EXTRACTING, STOPPED, ERROR
-    }
-
     private Status status = Status.NOT_STARTED;
 
     protected long length;
