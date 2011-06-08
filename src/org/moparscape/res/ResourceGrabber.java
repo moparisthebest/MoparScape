@@ -88,8 +88,9 @@ public class ResourceGrabber {
         //Thread.sleep(30000);
         //int clientZipUID = rg.download("https://www.moparscape.org/libs/client.zip.gz", "/home/mopar/tests/extest", true);
         //int clientZipUID = rg.download("https://www.moparscape.org/libs/client.zip.torrent", "/home/mopar/tests/extest", true);
-        //int clientZipUID = rg.download("magnet:?xt=urn:btih:bcf2e587afd4d3b1bdd8ece5150d9fb4d2958af4&dn=ubuntu+desktop+10.10+i386&tr=http%3A%2F%2Fdenis.stalker.h3q.com%3A6969%2Fannounce", "/home/mopar/tests/extest");
-        int clientZipUID = rg.download("magnet:?xt=urn:btih:CDXN5L2YV5FLXVL36GKUTRXIQDOUDKDY&dn=client.zip&tr=udp%3a%2f%2ftracker.openbittorrent.com%3a80", "/home/mopar/tests/extest");
+        //int clientZipUID = rg.download("magnet:?xt=urn:btih:a38d02c287893842a32825aa866e00828a318f07&dn=Ubuntu+11.04+%28Final%29&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&tr=udp%3A%2F%2Ftracker.ccc.de%3A80", "/home/mopar/tests/extest");
+        int clientZipUID = rg.download("magnet:?xt=urn:btih:87171cac4b10b28e8ceb00df18a883bbf3363fca&dn=House+S07E23+Moving+On+HDTV+XviD-2HD+%5Beztv%5D&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&tr=udp%3A%2F%2Ftracker.ccc.de%3A80", "/home/mopar/tests/extest");
+        //int clientZipUID = rg.download("magnet:?xt=urn:btih:CDXN5L2YV5FLXVL36GKUTRXIQDOUDKDY&dn=client.zip&tr=udp%3a%2f%2ftracker.openbittorrent.com%3a80", "/home/mopar/tests/dldir");
         System.out.println("returned: '" + rg.wait(clientZipUID) + "' after downloads...");
 
     }
@@ -183,7 +184,14 @@ public class ResourceGrabber {
                     switch (dll.getStatus()) {
                         case NOT_STARTED:
                             break;
+                        case FINISHED:
                         case RUNNING:
+                            // check if we have called reset
+                            if(dll.info != null){
+                                dll.dip.reset(dll.title, dll.length, dll.info);
+                                dll.info = null;
+                                break;
+                            }
                             // if its already running, we need to just update it
                             if (dll.title != null)
                                 dll.dip.setTitle(dll.title);
@@ -201,6 +209,7 @@ public class ResourceGrabber {
                             // this means we are RE-starting for some reason, so it's already added to the frame
                             if (dll.dip != null) {
                                 dll.dip.reset(dll.title, dll.length, dll.info);
+                                dll.info = null;
                                 break;
                             }
                             // otherwise, start fresh
@@ -222,8 +231,6 @@ public class ResourceGrabber {
                             } else {
                                 frame.getContentPane().add(dll.dip);
                             }
-                            break;
-                        case FINISHED:
                             break;
                         case EXTRACTING:
                             dll.setRunning();

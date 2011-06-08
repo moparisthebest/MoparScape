@@ -40,6 +40,8 @@ public interface DownloadListener {
 
     public void setExtraInfo(String extraInfo);
 
+    public void reset(String title, long length, String info);
+
     public void starting(String title, long length, String info);
 
     public void extracting(String title, long length, String info);

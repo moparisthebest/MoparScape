@@ -52,7 +52,7 @@ public class BTDownloader extends Downloader {
     //private String binDir = "/home/mopar/.moparscape/bin/";
     private String binDir = "/home/mopar/IdeaProjects/MoparScape4/java_client/dist/";
     private String binName = "java_client.";
-    private String programArgs = "";
+    private String programArgs = "-d 100 -D 100";
 
     private Process proc = null;
     private BufferedReader stdin = null;
@@ -70,6 +70,7 @@ public class BTDownloader extends Downloader {
         String line = null;
         try {
             while ((line = stdin.readLine()) != null) {
+                 if (line.startsWith(tag))
                 System.out.println("debug line: " + line);
                 if (line.startsWith(tag))
                     return line.split(delim)[1].trim();
@@ -243,11 +244,12 @@ public class BTDownloader extends Downloader {
                             callback.setProgress(Integer.parseInt(tags.get("progress_ppm")));
                         } else {
                             Status status = callback.getStatus();
-                            if (status == RUNNING || status == STARTING) {
+                            if ((status == RUNNING || status == STARTING)) {
                                 // if we are seeding, then we are finished, but not yet stopped..
                                 for (String s : tags.get("file_list").split(", "))
                                     System.out.println("extracting file: " + s);
                                 callback.finished(tags.get("save_path"), tags.get("file_list").split(", "));
+                                callback.reset("Seeding", (long) (requiredSeedRatio * 100), "from " + tags.get("save_path") + "...");
                             } else if (status == FINISHED) {
                                 // then we need to calculate if we have seeded enough to stop the torrent
                                 try {
@@ -259,6 +261,7 @@ public class BTDownloader extends Downloader {
                                         String result = readNextTag("result", delim);
                                         if (result != null && result.equals("true")) {
                                             callback.stopped();
+                                            activeDls.remove(hash);
                                             // if there are no more activeDls, might as well shut down the torrent client
                                             if (activeDls.isEmpty()) {
                                                 inputCommands("q");
@@ -269,10 +272,26 @@ public class BTDownloader extends Downloader {
                                                 // stop reading thread (this thread)
                                                 readThread.stopThread();
                                                 readThread = null;
+                                                //p.waitFor();
                                                 System.out.println("java_client exit code: " + p.waitFor());
                                             }
                                         }
-                                    }// TODO: show the seeding progress as well, probably here...
+                                    } else {
+                                        // show the seeding progress here...
+                                        String name = tags.get("name");
+                                        if (name != null && name.length() != 0)
+                                            callback.setTitle("Seeding " + name);
+                                        callback.setProgress((int) (total_upload_ratio * 100));
+                                        String extraInfo = new Formatter().format(template,
+                                                state,
+                                                tags.get("total_download"),
+                                                tags.get("download_rate"),
+                                                tags.get("total_upload"),
+                                                tags.get("upload_rate")
+                                        ).toString();
+                                        //System.out.println("extraInfo: "+extraInfo);
+                                        callback.setExtraInfo(extraInfo);
+                                    }
                                 } catch (NumberFormatException e) {
                                     // just ignore this and keep it running
                                 } catch (InterruptedException e) {

@@ -62,18 +62,21 @@ public abstract class AbstractDownloadListener implements DownloadListener{
         this.extraInfo = extraInfo;
     }
 
-    public void starting(String title, long length, String info) {
-        status = Status.STARTING;
+    public void reset(String title, long length, String info){
         this.title = title;
         this.length = length;
         this.info = info;
+
+    }
+
+    public void starting(String title, long length, String info) {
+        status = Status.STARTING;
+        reset(title, length, info);
     }
 
     public void extracting(String title, long length, String info) {
         status = Status.EXTRACTING;
-        this.title = title;
-        this.length = length;
-        this.info = info;
+        reset(title, length, info);
     }
 
     public void finished(String savePath, String... filesDownloaded) {
