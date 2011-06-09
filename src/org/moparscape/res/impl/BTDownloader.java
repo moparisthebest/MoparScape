@@ -52,7 +52,7 @@ public class BTDownloader extends Downloader {
     //private String binDir = "/home/mopar/.moparscape/bin/";
     private String binDir = "/home/mopar/IdeaProjects/MoparScape4/java_client/dist/";
     private String binName = "java_client.";
-    private String programArgs = "-d 100 -D 100";
+    private String programArgs = "-b -d 100 -D 100 -f /home/mopar/onefifty/java_client.log";
 
     private Process proc = null;
     private BufferedReader stdin = null;
@@ -60,18 +60,49 @@ public class BTDownloader extends Downloader {
     private ReadThread readThread = null;
     private HashMap<String, DownloadListener> activeDls = new HashMap<String, DownloadListener>();
 
+    public BTDownloader() {
+        Runtime.getRuntime().addShutdownHook(new Thread() {
+            @Override
+            public void run() {
+                //if(true) return;
+                synchronized (lock) {
+                    if (readThread != null) {
+                        // stop reading thread (this thread)
+                        readThread.stopThread();
+                        readThread = null;
+                        //p.waitFor();
+                    }
+                    if (proc != null) {
+                        inputCommands("q");
+                        Process p = proc;
+                        proc = null;
+                        stdin = null;
+                        stdout = null;
+
+                        try {
+                            System.out.println("java_client exit code: " + p.waitFor());
+                        } catch (InterruptedException e) {
+                            // guess we should assume proc ended, even though the call to waitFor was interrupted...
+                        }
+                        // lets be sure to destroy it too
+                        p.destroy();
+                    }
+                }
+            }
+        });
+    }
+
     //private synchronized boolean startProcess()
     private synchronized String readNextTag(String tag) {
         return readNextTag(tag, null);
     }
 
     private synchronized String readNextTag(String tag, String fallback) {
-        System.out.println("in readNextTag, tag: " + tag);
+        //System.out.println("in readNextTag, tag: " + tag);
         String line = null;
         try {
             while ((line = stdin.readLine()) != null) {
-                 if (line.startsWith(tag))
-                System.out.println("debug line: " + line);
+                //if (line.startsWith(tag))                    System.out.println("debug line: " + line);
                 if (line.startsWith(tag))
                     return line.split(delim)[1].trim();
                 else if (fallback != null && line.startsWith(fallback))

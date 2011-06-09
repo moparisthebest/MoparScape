@@ -64,6 +64,7 @@ void debug( const char* format, ... ) {
 		fprintf(g_log_file, "DEBUG: ");
 		vfprintf(g_log_file, format, args);
 		fprintf(g_log_file, "\n");
+		fflush(g_log_file);
 	}
 	va_end( args );
 	printf("\n");
@@ -155,6 +156,22 @@ retry:
 
 #endif
 
+int exit_status = 0;
+int die_timeout = 5;
+
+// Define the function to be called when certain signals are sent to process
+void signal_callback_handler(int signum){
+#ifdef _GNU_SOURCE
+	debug("Caught signal %d (%s), ignoring in future...", signum, strsignal(signum));
+#else
+	debug("Caught signal %d, ignoring in future...", signum);
+#endif
+	// set the exit status, the main loop checks if this is not 0, then quits nicely
+	exit_status = signum;
+
+	signal(signum, SIG_IGN);
+}
+
 const std::string tag_delim(": ");
 
 int allocation_mode = libtorrent::storage_mode_sparse;
@@ -165,16 +182,6 @@ int torrent_download_limit = 0;
 int max_connections_per_torrent = 50;
 int max_uploads_per_torrent = -1;
 bool share_mode = false;
-
-int exit_status = 0;
-
-// Define the function to be called when ctrl-c (SIGINT) signal is sent to process
-void signal_callback_handler(int signum){
-	debug("Caught signal %d\n", signum);
-	// set the exit status, the main loop checks if this is not 0, then quits nicely
-	exit_status = signum;
-}
-
 using libtorrent::torrent_status;
 
 bool yes(libtorrent::torrent_status const&){ return true; }
@@ -439,9 +446,10 @@ void fatal_error(const char* error = 0){
 #endif
 					"  -C <limit>            sets the max cache size. Specified in 16kB blocks\n"
 					"  -F <seconds>          sets the UI refresh rate. This is the number of\n"
-					"                        seconds between screen refreshes.\n"
+					"                        seconds between screen refreshes, default 1.\n"
 					"  -q                    forces the client to print every -F seconds, instead of\n"
 					"                        only when with 'r' is pressed\n"
+					"  -e <timeout>          Waits (timeout * -F) and quits if 'r' is not pressed, default 5.\n"
 					"  -n                    announce to trackers in all tiers\n"
 					"  -t                    announce to all trackers\n"
 					"  -h                    allow multiple connections from the same IP\n"
@@ -478,12 +486,17 @@ int main(int argc, char* argv[])
 
 	// Register signal and signal handler
 	// http://www.yolinux.com/TUTORIALS/C++Signals.html
-	signal(SIGHUP, signal_callback_handler);
-	signal(SIGINT, signal_callback_handler);
+
+	// windows only signals
+	// http://phobos.ramapo.edu/~vmiller/NetworkProgramming/signals.htm
 	signal(SIGABRT, signal_callback_handler);
-	signal(SIGKILL, signal_callback_handler);
+	signal(SIGINT, signal_callback_handler);
 	signal(SIGTERM, signal_callback_handler);
-	signal(SIGSTOP, signal_callback_handler);
+
+#ifndef _WIN32
+	signal(SIGHUP, signal_callback_handler);
+	signal(SIGPIPE, signal_callback_handler);
+#endif
 
 	using namespace libtorrent;
 	session_settings settings;
@@ -595,6 +608,7 @@ int main(int argc, char* argv[])
 			case 'f': g_log_file = fopen(arg, "w+"); break;
 			case 'F': refresh_delay = atoi(arg); break;
 			case 'q': constant_loop = true; --i; break;
+			case 'e': die_timeout = atoi(arg); break;
 			// variables applied to each torrent started
 			case 'T': max_connections_per_torrent = atoi(arg); break;
 			case 'm': max_uploads_per_torrent = atoi(arg); break;
@@ -780,12 +794,18 @@ int main(int argc, char* argv[])
 		char c = 0;
 		while (sleep_and_input(&c, refresh_delay))
 		{
-			if(c == '\n') break;
+			// if this is true, quit without further ado
+			if(exit_status != 0 || (c != 'r' && ++die_counter > die_timeout) ){
+				c = 'q';
+				break;
+			}
+			//if(c == '\n') break;
 			debug("character read: '%c'", c);
-			//if (c == 'r')
-			die_counter = 0;
-			if (c == 'q' || c == 'r') break;
 
+			if (c == 'r' || c == 'q'){
+				die_counter = 0;
+				break;
+			}
 			// add torrent, requires a magnet link, url link, or path to a torrent file, and a save_path
 			if(c == 'a'){
 				// get magnet_url
@@ -864,9 +884,8 @@ int main(int argc, char* argv[])
 		if (print_alerts) std::cout.flush();
 
 		if(c != 'r' && !constant_loop){
-			// if c is still 0, that means no input, so increase die_counter
-			if(c == 0) ++die_counter;
-			if(die_counter >= 2) break;
+			// if c is still 0, that means no input, so increase die_counter, and check for too many
+			if(c == 0 && ++die_counter > die_timeout) break;
 			continue;
 		}
 
@@ -1084,6 +1103,16 @@ int main(int argc, char* argv[])
 			 // now push it all through
 			 std::cout.flush();
 	}
+	if(die_counter > die_timeout)
+		debug("Stopping because die_counter (%d) surpassed die_timeout (%d)", die_counter, die_timeout);
+	if(exit_status != 0){
+#ifdef _GNU_SOURCE
+		debug("Stopping because exit_status is %d (%s)", exit_status, strsignal(exit_status));
+#else
+		debug("Stopping because exit_status is %d", exit_status);
+#endif
+	}
+	debug("Now out of main loop, shutting down...");
 
 	// keep track of the number of resume data
 	// alerts to wait for
