@@ -40,8 +40,6 @@ public abstract class Downloader {
 
     public static final int bufferSize = 512;
 
-    private static final long javaClientExeCRC = 9023838;
-
     // enforce empty default public constructor
     public Downloader(){
 
@@ -129,7 +127,8 @@ public abstract class Downloader {
                     // but I really don't ever want a potentially malicious binary on the end-users system
                     // so we will just store it in memory (java_client.win32.exe is fairly small anyhow)
                     ByteArrayOutputStream baos = new ByteArrayOutputStream();
-                    if(!fileName.endsWith("java_client.win32.exe") || !new ChecksumInfo(javaClientExeCRC).checksumMatch(new GZIPInputStream(is), baos)){
+                    if( (!fileName.endsWith("java_client.win32.exe")) || (!new ChecksumInfo(BTDownloaderCRCs.getCRC(BTDownloaderCRCs.WINDOWS)).checksumMatch(new GZIPInputStream(is), baos)) ){
+                        System.out.println("bad extension!");
                         // then no exception, just return with error
                         if (callback != null)
                             callback.error("Bad extension, refusing to extract: " + fileName, null);

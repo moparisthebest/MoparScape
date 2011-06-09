@@ -27,7 +27,7 @@ package org.moparscape.res;
  * Time: 9:36 PM
  * To change this template use File | Settings | File Templates.
  */
-public abstract class AbstractDownloadListener implements DownloadListener{
+public abstract class AbstractDownloadListener implements DownloadListener {
 
     private Status status = Status.NOT_STARTED;
 
@@ -37,8 +37,9 @@ public abstract class AbstractDownloadListener implements DownloadListener{
     protected int progress = 0;
     protected String title = null;
     protected String extraInfo = null;
+    protected Exception exception = null;
 
-    public Status getStatus(){
+    public Status getStatus() {
         return status;
     }
 
@@ -62,7 +63,7 @@ public abstract class AbstractDownloadListener implements DownloadListener{
         this.extraInfo = extraInfo;
     }
 
-    public void reset(String title, long length, String info){
+    public void reset(String title, long length, String info) {
         this.title = title;
         this.length = length;
         this.info = info;
@@ -81,24 +82,37 @@ public abstract class AbstractDownloadListener implements DownloadListener{
 
     public void finished(String savePath, String... filesDownloaded) {
         // if it's an error, we want to ignore stopped
-        if(status == Status.ERROR)
+        if (status == Status.ERROR)
             return;
         status = Status.FINISHED;
+
+        synchronized (this) {
+            this.notify();//waiter.interrupt();
+        }
     }
 
     public void stopped() {
         // if it's an error, we want to ignore stopped
-        if(status == Status.ERROR)
+        if (status == Status.ERROR)
             return;
         status = Status.STOPPED;
     }
 
     public void error(String msg, Exception e) {
+        // if we already have an error, chances are it will cause more
+        // this is here to preserve the original error
+        if(status == Status.ERROR)
+            return;
         status = Status.ERROR;
         this.extraInfo = msg;
+        this.exception = e;
         progress = 0;
-        System.out.println("error!");
-        System.out.println(msg);
-        if(e != null) e.printStackTrace();
+        //System.out.println("error!");
+        //System.out.println(msg);
+        //if (e != null) e.printStackTrace();
+
+        synchronized (this) {
+            this.notify();//waiter.interrupt();
+        }
     }
 }

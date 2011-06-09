@@ -28,6 +28,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -51,9 +53,7 @@ import java.util.List;
  */
 public class ResourceGrabber {
 
-    private static final String javaClientLocation = "/tmp/";
-    private static final String javaClientURL = "http://www.moparscape.org/libs/";
-    private final Downloader[] downloaders = new Downloader[]{new BTDownloader(), new URLDownloader()};
+    private final Downloader[] downloaders;
 
     private static final int delay = 500; //milliseconds
     private static final int errorTicks = 20; // errorTicks * delay is how long errors will stay onscreen
@@ -81,21 +81,35 @@ public class ResourceGrabber {
         for(String p : s.split(":"))
             System.out.println("part: '"+p.trim()+"'");
         if(true) return;  */
-        ResourceGrabber rg = new ResourceGrabber();
+        ResourceGrabber rg = new ResourceGrabber(System.getProperty("user.home") + "/.moparscape/bin/");
         System.out.println("before downloads...");
+        int clientZipUID = -1;
+        try{
         //rg.download("http://www.moparisthebest.com/downloads/cedegaSRC.tar.gz", "/home/mopar/tests/extest", true);
         //rg.download("http://mirror01.th.ifl.net/releases//maverick/ubuntu-10.10-desktop-i386.iso", "/home/mopar/tests/extest", false);
         //Thread.sleep(30000);
         //int clientZipUID = rg.download("https://www.moparscape.org/libs/client.zip.gz", "/home/mopar/tests/extest", true);
         //int clientZipUID = rg.download("https://www.moparscape.org/libs/client.zip.torrent", "/home/mopar/tests/extest", true);
         //int clientZipUID = rg.download("magnet:?xt=urn:btih:a38d02c287893842a32825aa866e00828a318f07&dn=Ubuntu+11.04+%28Final%29&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&tr=udp%3A%2F%2Ftracker.ccc.de%3A80", "/home/mopar/tests/extest");
-        int clientZipUID = rg.download("magnet:?xt=urn:btih:87171cac4b10b28e8ceb00df18a883bbf3363fca&dn=House+S07E23+Moving+On+HDTV+XviD-2HD+%5Beztv%5D&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&tr=udp%3A%2F%2Ftracker.ccc.de%3A80", "/home/mopar/tests/extest");
+        clientZipUID = rg.download("magnet:?xt=urn:btih:87171cac4b10b28e8ceb00df18a883bbf3363fca&dn=House+S07E23+Moving+On+HDTV+XviD-2HD+%5Beztv%5D&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&tr=udp%3A%2F%2Ftracker.ccc.de%3A80", "/home/mopar/tests/extest");
+        }catch(Exception e){
+
+        }
         //int clientZipUID = rg.download("magnet:?xt=urn:btih:CDXN5L2YV5FLXVL36GKUTRXIQDOUDKDY&dn=client.zip&tr=udp%3a%2f%2ftracker.openbittorrent.com%3a80", "/home/mopar/tests/dldir");
         System.out.println("returned: '" + rg.wait(clientZipUID) + "' after downloads...");
 
     }
 
-    public boolean wait(int uid) {
+    public ResourceGrabber(String binDir) throws FileNotFoundException{
+        File f = new File(binDir);
+        if(!f.exists() && !f.isDirectory() && !f.mkdirs())
+            throw new FileNotFoundException();
+        if (!binDir.endsWith("/"))
+            binDir += "/";
+        downloaders = new Downloader[]{new BTDownloader(binDir), new URLDownloader()};
+    }
+
+    public boolean wait(int uid) throws Exception {
         // -1 is a special value meaning return immediately
         // maybe because CRC was already correct and download not needed
         if (uid == -1)
@@ -127,6 +141,8 @@ public class ResourceGrabber {
             }
             status = dll.getStatus();
         }
+        if(dll.exception != null)
+            throw dll.exception;
         return status != AbstractDownloadListener.Status.ERROR;
     }
 
@@ -308,16 +324,12 @@ public class ResourceGrabber {
             // check crc if we are supposed to
             // TODO: should we only check filesDownloaded?
             if (ci != null && !ci.checksumMatch(savePath))
-                error("CRC Mismatch", null);
+                error(String.format("CRC Mismatch. expected: %d actual: %d", ci.getExpectedChecksum(), ci.getChecksum()), null);
             else
                 super.finished(savePath, filesDownloaded);
-
-            synchronized (this) {
-                this.notify();//waiter.interrupt();
-            }
         }
 
-        public boolean download(String url, String savePath, boolean extract, ChecksumInfo ci) throws MalformedURLException {
+        public boolean download(String url, String savePath, boolean extract, ChecksumInfo ci) throws Exception {
             return rg.wait(rg.download(url, savePath, extract, ci));
         }
 

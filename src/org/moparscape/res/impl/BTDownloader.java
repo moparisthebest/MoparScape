@@ -20,12 +20,11 @@
 
 package org.moparscape.res.impl;
 
+import org.moparscape.res.ChecksumInfo;
 import org.moparscape.res.DownloadListener;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
+import java.io.*;
+import java.net.MalformedURLException;
 import java.util.Formatter;
 import java.util.HashMap;
 import java.util.Map;
@@ -42,6 +41,8 @@ import static org.moparscape.res.DownloadListener.Status.*;
  */
 public class BTDownloader extends Downloader {
 
+    private static final boolean devMode = false;
+
     private final Object lock = this;
     private static final String delim = ":";
     private static final int delay = 500; //milliseconds
@@ -49,10 +50,9 @@ public class BTDownloader extends Downloader {
 
     private String remoteBinDir = "http://www.moparscape.org/libs/";
     private String remoteBinSuffix = ".gz";
-    //private String binDir = "/home/mopar/.moparscape/bin/";
-    private String binDir = "/home/mopar/IdeaProjects/MoparScape4/java_client/dist/";
+    private String binDir;
     private String binName = "java_client.";
-    private String programArgs = "-b -d 100 -D 100 -f /home/mopar/onefifty/java_client.log";
+    private String programArgs = "";
 
     private Process proc = null;
     private BufferedReader stdin = null;
@@ -60,76 +60,89 @@ public class BTDownloader extends Downloader {
     private ReadThread readThread = null;
     private HashMap<String, DownloadListener> activeDls = new HashMap<String, DownloadListener>();
 
-    public BTDownloader() {
+    public BTDownloader(String binDir) {
+        new File(binDir).mkdirs();
+        if (!binDir.endsWith("/"))
+            binDir += "/";
+        this.binDir = binDir;
+        if (devMode) {
+            this.binDir = "/home/mopar/IdeaProjects/MoparScape4/java_client/dist/";
+            programArgs = "-b -d 100 -D 100 -f /home/mopar/onefifty/java_client.log";
+        }
         Runtime.getRuntime().addShutdownHook(new Thread() {
             @Override
             public void run() {
                 //if(true) return;
-                synchronized (lock) {
-                    if (readThread != null) {
-                        // stop reading thread (this thread)
-                        readThread.stopThread();
-                        readThread = null;
-                        //p.waitFor();
-                    }
-                    if (proc != null) {
-                        inputCommands("q");
-                        Process p = proc;
-                        proc = null;
-                        stdin = null;
-                        stdout = null;
-
-                        try {
-                            System.out.println("java_client exit code: " + p.waitFor());
-                        } catch (InterruptedException e) {
-                            // guess we should assume proc ended, even though the call to waitFor was interrupted...
-                        }
-                        // lets be sure to destroy it too
-                        p.destroy();
-                    }
-                }
+                shutdownProcess();
             }
         });
     }
 
-    //private synchronized boolean startProcess()
-    private synchronized String readNextTag(String tag) {
+    private void shutdownProcess() {
+        this.shutdownProcess(null);
+    }
+
+    private void shutdownProcess(Exception cause) {
+        synchronized (lock) {
+            if (readThread != null) {
+                // stop reading thread (this thread)
+                readThread.stopThread();
+                readThread = null;
+                //p.waitFor();
+            }
+            if (proc != null) {
+                try {
+                    inputCommands("q");
+                } catch (IOException e) {
+                    // just ignore, it probably already shut down
+                }
+                Process p = proc;
+                proc = null;
+                stdin = null;
+                stdout = null;
+
+                try {
+                    System.out.println("java_client exit code: " + p.waitFor());
+                } catch (InterruptedException e) {
+                    // guess we should assume proc ended, even though the call to waitFor was interrupted...
+                }
+                // lets be sure to destroy it too
+                p.destroy();
+            }
+            // set error status for all activeDls and remove them, if the JVM isn't shutting down
+            if (cause != null && !activeDls.isEmpty()) {
+                for (DownloadListener dl : activeDls.values()) {
+                    dl.error("I think java_client process ended? Aborting all torrent downloads.", cause);
+                }
+            }
+        }
+    }
+
+    private synchronized String readNextTag(String tag) throws IOException {
         return readNextTag(tag, null);
     }
 
-    private synchronized String readNextTag(String tag, String fallback) {
+    private synchronized String readNextTag(String tag, String fallback) throws IOException {
         //System.out.println("in readNextTag, tag: " + tag);
         String line = null;
-        try {
-            while ((line = stdin.readLine()) != null) {
-                //if (line.startsWith(tag))                    System.out.println("debug line: " + line);
-                if (line.startsWith(tag))
-                    return line.split(delim)[1].trim();
-                else if (fallback != null && line.startsWith(fallback))
-                    return null;
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-            return null;
+        while ((line = stdin.readLine()) != null) {
+            //if (line.startsWith(tag)) System.out.println("debug line: " + line);
+            if (line.startsWith(tag))
+                return line.split(delim)[1].trim();
+            else if (fallback != null && line.startsWith(fallback))
+                return null;
         }
-        System.out.println("stream is over? so soon?");
-        return null;
+        throw new IOException("stream is over? so soon? process must have ended...");
     }
 
-    private synchronized void inputCommands(String... commands) {
-        try {
-            for (String command : commands)
-                stdout.write(command, 0, command.length());
-            stdout.flush();
-        } catch (IOException e) {
-            e.printStackTrace();
-            //return null;
-        }
+    private synchronized void inputCommands(String... commands) throws IOException {
+        for (String command : commands)
+            stdout.write(command, 0, command.length());
+        stdout.flush();
     }
 
     @Override
     public void download(String url, String savePath, DownloadListener callback) {
-        System.out.println("in btdownloader download()");
         if (callback == null)
             return;
         synchronized (lock) {
@@ -139,41 +152,45 @@ public class BTDownloader extends Downloader {
             // if the process hasn't been started yet, boot it up
             if (proc == null) {
                 String osName = System.getProperty("os.name").toLowerCase();
-                String osArch = System.getProperty("os.arch").toLowerCase();
+                //osName = "mac";
+                osName = "win";
 
                 long crc;
                 // if it's windows, run 32-bit windows executable
                 if (osName.contains("win")) {
                     binName += "win32.exe";
-                    crc = 9089203;
+                    crc = BTDownloaderCRCs.WINDOWS;
                     // if it's a mac, we want to either ppc or i386
                 } else if (osName.contains("mac")) {
+                    String osArch = System.getProperty("os.arch").toLowerCase();
                     if (osArch.contains("ppc")) {
                         binName += "osx.ppc";
-                        crc = 9089203;
+                        crc = BTDownloaderCRCs.OSXPPC;
                     } else {
                         binName += "osx.i386";
-                        crc = 9089203;
+                        crc = BTDownloaderCRCs.OSX386;
                     }
                 } else {
                     // it should also work for FreeBSD and some others that support Linux executables
                     if (!osName.contains("linux"))
                         System.out.println("ATTENTION: Could not find a supported OS/Architecture, trying the Linux executable...");
                     binName += "linux.x86";
-                    crc = 9089203;
+                    crc = BTDownloaderCRCs.LINUX;
                 }
-                /*
-              // now that we have the binary name, verify we have the latest and the CRC is correct
-              try {
-                  if (!callback.download(remoteBinDir + binName + remoteBinSuffix, binDir, true, new ChecksumInfo(crc, new String[]{binName}))) {
-                      callback.error("Failed to download '" + remoteBinDir + binName + remoteBinSuffix + "', cannot continue.", null);
-                      return;
-                  }
+                crc = BTDownloaderCRCs.getCRC((int) crc);
 
-              } catch (MalformedURLException e) {
-                  callback.error("Invalid URL", e);
-                  return;
-              }  */
+                // now that we have the binary name, verify we have the latest and the CRC is correct, if not in devMode
+                if (!devMode)
+                    try {
+                        if (!callback.download(remoteBinDir + binName + remoteBinSuffix, binDir, true, new ChecksumInfo(crc, new String[]{binName}))) {
+                            callback.error("Failed to download '" + remoteBinDir + binName + remoteBinSuffix + "', cannot continue.", null);
+                            return;
+                        }
+
+                    } catch (Exception e) {
+                        callback.error("java_client bin download error.", e);
+                        return;
+                    }
 
                 // now we have the correct binary, so lets run the thing!
                 if (programArgs == null)
@@ -185,6 +202,8 @@ public class BTDownloader extends Downloader {
                 String[] cmd = new String[pargs.length + 3];
                 // program name (first)
                 cmd[0] = binDir + binName;
+                // set file to executable, just to be safe
+                new File(cmd[0]).setExecutable(true);
                 // url (second to last)
                 cmd[cmd.length - 2] = url;
                 // savePath (last)
@@ -210,10 +229,23 @@ public class BTDownloader extends Downloader {
             } else { // then the process is already running, so just add the download (maybe same code as right above this)
                 // start the torrent
                 // syntax 'a torrenturl\n savepath\n'
-                inputCommands("a", url + "\n", savePath + "\n");
+                try {
+                    inputCommands("a", url + "\n", savePath + "\n");
+                } catch (IOException e) {
+                    activeDls.put("doesn't matter, shutting down", callback);
+                    shutdownProcess(e);
+                    return;
+                }
             }
 
-            String result = readNextTag("result");
+            String result;
+            try {
+                result = readNextTag("result");
+            } catch (IOException e) {
+                activeDls.put("doesn't matter, shutting down", callback);
+                shutdownProcess(e);
+                return;
+            }
             if (result == null || result.length() != 40) {
                 callback.error("Adding torrent has failed.", null);
                 return;
@@ -241,102 +273,94 @@ public class BTDownloader extends Downloader {
                 synchronized (lock) {
                     if (!run)
                         return;
-                    // refresh the info
-                    System.out.println("Sending r");
-                    inputCommands("r");
-                    String hash = null;
-                    while ((hash = readNextTag("info_hash", "done")) != null) {
-                        DownloadListener callback = activeDls.get(hash);
-                        if (callback == null)
-                            continue;
-                        // read all the tag names we are interested in
-                        for (String tagName : tagNames) {
-                            String value = readNextTag(tagName, delim);
-                            // if value is null, then we have reached delim, or an error has occured, either way, leave
-                            if (value == null)
-                                break;
-                            tags.put(tagName, value);
-                        }
-                        String state = tags.get("state");
-                        // if we are not seeding
-                        if (state != null && !state.equals("seeding") && !state.equals("finished")) {
-                            String extraInfo = new Formatter().format(template,
-                                    state,
-                                    tags.get("total_download"),
-                                    tags.get("download_rate"),
-                                    tags.get("total_upload"),
-                                    tags.get("upload_rate")
-                            ).toString();
-                            //System.out.println("extraInfo: "+extraInfo);
-                            String name = tags.get("name");
-                            if (name != null && name.length() != 0)
-                                callback.setTitle("Downloading " + name);
-                            callback.setExtraInfo(extraInfo);
-                            callback.setProgress(Integer.parseInt(tags.get("progress_ppm")));
-                        } else {
-                            Status status = callback.getStatus();
-                            if ((status == RUNNING || status == STARTING)) {
-                                // if we are seeding, then we are finished, but not yet stopped..
-                                for (String s : tags.get("file_list").split(", "))
-                                    System.out.println("extracting file: " + s);
-                                callback.finished(tags.get("save_path"), tags.get("file_list").split(", "));
-                                callback.reset("Seeding", (long) (requiredSeedRatio * 100), "from " + tags.get("save_path") + "...");
-                            } else if (status == FINISHED) {
-                                // then we need to calculate if we have seeded enough to stop the torrent
-                                try {
-                                    float total_upload_ratio = Float.parseFloat(tags.get("total_upload_ratio"));
-                                    // if this is true, we are going to stop the torrent
-                                    if (total_upload_ratio >= requiredSeedRatio) {
-                                        inputCommands("d", hash);
-                                        // if torrent removal is successful
-                                        String result = readNextTag("result", delim);
-                                        if (result != null && result.equals("true")) {
-                                            callback.stopped();
-                                            activeDls.remove(hash);
-                                            // if there are no more activeDls, might as well shut down the torrent client
-                                            if (activeDls.isEmpty()) {
-                                                inputCommands("q");
-                                                Process p = proc;
-                                                proc = null;
-                                                stdin = null;
-                                                stdout = null;
-                                                // stop reading thread (this thread)
-                                                readThread.stopThread();
-                                                readThread = null;
-                                                //p.waitFor();
-                                                System.out.println("java_client exit code: " + p.waitFor());
+                    try {
+                        // refresh the info
+                        inputCommands("r");
+                        String hash = null;
+                        while ((hash = readNextTag("info_hash", "done")) != null) {
+                            DownloadListener callback = activeDls.get(hash);
+                            if (callback == null)
+                                continue;
+                            // read all the tag names we are interested in
+                            for (String tagName : tagNames) {
+                                String value = readNextTag(tagName, delim);
+                                // if value is null, then we have reached delim, or an error has occured, either way, leave
+                                if (value == null)
+                                    break;
+                                tags.put(tagName, value);
+                            }
+                            String state = tags.get("state");
+                            // if we are not seeding
+                            if (state != null && !state.equals("seeding") && !state.equals("finished")) {
+                                String extraInfo = new Formatter().format(template,
+                                        state,
+                                        tags.get("total_download"),
+                                        tags.get("download_rate"),
+                                        tags.get("total_upload"),
+                                        tags.get("upload_rate")
+                                ).toString();
+                                //System.out.println("extraInfo: "+extraInfo);
+                                String name = tags.get("name");
+                                if (name != null && name.length() != 0)
+                                    callback.setTitle("Downloading " + name);
+                                callback.setExtraInfo(extraInfo);
+                                callback.setProgress(Integer.parseInt(tags.get("progress_ppm")));
+                            } else {
+                                Status status = callback.getStatus();
+                                if ((status == RUNNING || status == STARTING)) {
+                                    // if we are seeding, then we are finished, but not yet stopped..
+                                    //for (String s : tags.get("file_list").split(", ")) System.out.println("extracting file: " + s);
+                                    callback.finished(tags.get("save_path"), tags.get("file_list").split(", "));
+                                    callback.reset("Seeding", (long) (requiredSeedRatio * 100), "from " + tags.get("save_path") + "...");
+                                } else if (status == FINISHED) {
+                                    // then we need to calculate if we have seeded enough to stop the torrent
+                                    try {
+                                        float total_upload_ratio = Float.parseFloat(tags.get("total_upload_ratio"));
+                                        // if this is true, we are going to stop the torrent
+                                        if (total_upload_ratio >= requiredSeedRatio) {
+                                            inputCommands("d", hash);
+                                            // if torrent removal is successful
+                                            String result = readNextTag("result", delim);
+                                            if (result != null && result.equals("true")) {
+                                                callback.stopped();
+                                                activeDls.remove(hash);
+                                                // if there are no more activeDls, might as well shut down the torrent client
+                                                if (activeDls.isEmpty())
+                                                    shutdownProcess();
                                             }
+                                        } else {
+                                            // show the seeding progress here...
+                                            String name = tags.get("name");
+                                            if (name != null && name.length() != 0)
+                                                callback.setTitle("Seeding " + name);
+                                            callback.setProgress((int) (total_upload_ratio * 100));
+                                            String extraInfo = new Formatter().format(template,
+                                                    state,
+                                                    tags.get("total_download"),
+                                                    tags.get("download_rate"),
+                                                    tags.get("total_upload"),
+                                                    tags.get("upload_rate")
+                                            ).toString();
+                                            //System.out.println("extraInfo: "+extraInfo);
+                                            callback.setExtraInfo(extraInfo);
                                         }
-                                    } else {
-                                        // show the seeding progress here...
-                                        String name = tags.get("name");
-                                        if (name != null && name.length() != 0)
-                                            callback.setTitle("Seeding " + name);
-                                        callback.setProgress((int) (total_upload_ratio * 100));
-                                        String extraInfo = new Formatter().format(template,
-                                                state,
-                                                tags.get("total_download"),
-                                                tags.get("download_rate"),
-                                                tags.get("total_upload"),
-                                                tags.get("upload_rate")
-                                        ).toString();
-                                        //System.out.println("extraInfo: "+extraInfo);
-                                        callback.setExtraInfo(extraInfo);
+                                    } catch (NumberFormatException e) {
+                                        // just ignore this and keep it running
                                     }
-                                } catch (NumberFormatException e) {
-                                    // just ignore this and keep it running
-                                } catch (InterruptedException e) {
-                                    // guess we should assume proc ended, even though the call to waitFor was interrupted...
                                 }
                             }
                         }
+                    } catch (IOException e) {
+                        System.out.println("IOException caught, I think process ended? Aborting all torrent downloads.");
+                        //e.printStackTrace();
+                        shutdownProcess(e);
                     }
-                }
-                try {
-                    if (run)
-                        Thread.sleep(delay);
-                } catch (InterruptedException e) {
-                    // just ignore
+                    try {
+                        if (run)
+                            Thread.sleep(delay);
+                    } catch (InterruptedException e) {
+                        // just ignore
+                    }
                 }
             }
         }

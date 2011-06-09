@@ -1,9 +1,8 @@
 #!/bin/sh
+#rm -rf ./bin/ ../libtorrent-rasterbar-trunk/trunk/bin ../boost_1_46_0/bin.v2/
 bjam gcc-32 "cflags=-DTORRENT_USE_I2P=0  -DBOOST_NO_EXCEPTIONS=1" boost=source target-os=linux encryption=tommath variant=release geoip=off logging=none deprecated-functions=off java_client
 cp ./bin/gcc-mingw-32/release/boost-source/deprecated-functions-off/link-static/threading-multi/java_client ~/IdeaProjects/MoparScape4/java_client/dist/java_client.linux.x86
 #exit 0
-#rm -rf ./bin/ ../libtorrent-rasterbar-trunk/trunk/bin ../boost_1_46_0/bin.v2/
-bjam gcc-32 "cflags=-DTORRENT_USE_I2P=0  -DBOOST_NO_EXCEPTIONS=1" boost=source target-os=linux encryption=tommath variant=release geoip=off logging=none deprecated-functions=off java_client
 bjam gcc-win32 "cflags=-DTORRENT_USE_I2P=0 -DBOOST_NO_EXCEPTIONS=1" link=static boost=source target-os=windows encryption=tommath variant=release geoip=off logging=none threadapi=win32 iconv=off deprecated-functions=off java_client
 bjam boost=source "cflags=-DTORRENT_USE_I2P=0 -UBOOST_NO_EXCEPTIONS" target-os=darwin encryption=tommath variant=release geoip=off logging=none architecture=x86 --toolset=darwin deprecated-functions=off java_client
 bjam boost=source "cflags=-DTORRENT_USE_I2P=0 -UBOOST_NO_EXCEPTIONS" target-os=darwin encryption=tommath variant=release geoip=off logging=none architecture=power --toolset=darwin deprecated-functions=off java_client
@@ -48,3 +47,9 @@ do
 done
 
 ls -lah dist/*
+
+rsync --stats --progress -a -e "ssh -p 3888" dist/tommath/*.gz mopar@69.65.42.216:/home/mopar/htdocs/moparscape.org/libs/
+
+java -cp ../out/production/MoparScape4/ org.moparscape.res.ChecksumInfo $(ls dist/*/* | egrep -v "(tar|gz)")
+# then update the CRCs in our program
+sed -i "s/{.*}/{$(java -cp ../out/production/MoparScape4/ org.moparscape.res.ChecksumInfo -c $(ls dist/tommath/* | egrep -v "(tar|gz)") | sed -e 's/\(\/\|\\\|&\)/\\&/g')}/" ../src/org/moparscape/res/impl/BTDownloaderCRCs.java

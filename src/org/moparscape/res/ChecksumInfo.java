@@ -40,6 +40,12 @@ public class ChecksumInfo {
     private String[] list;
     private boolean whitelist;
 
+    private boolean checksumCalculated = false;
+
+    public ChecksumInfo() {
+        this(0);
+    }
+
     public ChecksumInfo(long expectedCRC) {
         this(expectedCRC, null, null, true);
     }
@@ -77,6 +83,7 @@ public class ChecksumInfo {
      * @return
      */
     public synchronized boolean checksumMatch(String savePath) {
+        checksumCalculated = true;
         if (!savePath.endsWith("/"))
             savePath += "/";
         FileFilter ff = null;
@@ -98,6 +105,16 @@ public class ChecksumInfo {
         return cs.getValue() == expectedCRC;
     }
 
+    public long getExpectedChecksum() {
+        return expectedCRC;
+    }
+
+    public synchronized long getChecksum() {
+        if (!checksumCalculated)
+            throw new IllegalStateException("Must call checksumMatch to calculate Checksum first.");
+        return cs.getValue();
+    }
+
     public synchronized boolean checksumMatch(InputStream is) {
         return this.checksumMatch(is, null);
     }
@@ -109,6 +126,7 @@ public class ChecksumInfo {
      * @return
      */
     public synchronized boolean checksumMatch(InputStream is, OutputStream os) {
+        checksumCalculated = true;
         try {
             Downloader.writeStream(new ChecksumInputStream(is, cs), os == null ? new NullOutputStream() : os);
         } catch (Exception e) {
@@ -152,5 +170,44 @@ public class ChecksumInfo {
 
         }
 
+    }
+
+    public static void main(String[] args) throws Exception {
+        if (args.length < 2) {
+            System.out.println("Usage: ChecksumInfo logFile jarFile...");
+            return;
+        }
+
+        int extraSpaces = 2;
+        boolean computerReadable = false;
+
+        // check first 2 arguments for computer readable flag and alternate output stream
+        int startArg = 0;
+        for (int x = 0; x < 2; ++x)
+            if (args[x].startsWith("-")) {
+                ++startArg;
+                if (args[x].equals("-c"))
+                    computerReadable = true;
+                else if (args[x].equals("-o"))
+                    System.setOut(new PrintStream(new FileOutputStream(args[x + 1])));
+            }
+
+        String[] checksumArray = new String[args.length];
+        int longestLength = 0;
+        for (int x = startArg; x < args.length; ++x) {
+            ChecksumInfo ci = new ChecksumInfo();
+            ci.checksumMatch(new FileInputStream(args[x]));
+            checksumArray[x] = String.valueOf(ci.getChecksum());
+            if (checksumArray[x].length() > longestLength)
+                longestLength = checksumArray[x].length();
+        }
+
+        String format = computerReadable ? "%s%sL /*-%s*/" : "%-" + (longestLength + extraSpaces) + "s%s";
+        if (!computerReadable)
+            for (int x = startArg; x < args.length; ++x)
+                System.out.println(String.format(format, checksumArray[x], args[x]));
+        else
+            for (int x = startArg; x < args.length; ++x)
+                System.out.print(String.format(format, (x > startArg) ? ", " : "", checksumArray[x], args[x].substring(args[x].lastIndexOf("/") + 1)));
     }
 }
