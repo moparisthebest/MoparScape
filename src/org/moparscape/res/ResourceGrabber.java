@@ -323,10 +323,13 @@ public class ResourceGrabber {
 
             // check crc if we are supposed to
             // TODO: should we only check filesDownloaded?
+            System.out.println("savePath: "+savePath);
             if (ci != null && !ci.checksumMatch(savePath))
                 error(String.format("CRC Mismatch. expected: %d actual: %d", ci.getExpectedChecksum(), ci.getChecksum()), null);
             else
                 super.finished(savePath, filesDownloaded);
+
+            System.out.println(String.format("CRC succeded. expected: %d actual: %d", ci.getExpectedChecksum(), ci.getChecksum()));
         }
 
         public boolean download(String url, String savePath, boolean extract, ChecksumInfo ci) throws Exception {

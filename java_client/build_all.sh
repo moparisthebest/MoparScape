@@ -46,9 +46,9 @@ do
 	gzip -c $f > $f.gz
 done
 
-ls -lah dist/*
-
 rsync --stats --progress -a -e "ssh -p 3888" dist/tommath/*.gz mopar@69.65.42.216:/home/mopar/htdocs/moparscape.org/libs/
+
+ls -lah dist/*
 
 java -cp ../out/production/MoparScape4/ org.moparscape.res.ChecksumInfo $(ls dist/*/* | egrep -v "(tar|gz)")
 # then update the CRCs in our program
