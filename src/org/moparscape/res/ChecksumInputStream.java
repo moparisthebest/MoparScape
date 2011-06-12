@@ -60,18 +60,18 @@ public class ChecksumInputStream extends FilterInputStream {
         if (byteValue != -1) cs.update(byteValue);
         return byteValue;
     }
-
+/*
     @Override
     public int read(byte[] b) throws IOException {
         int bytesRead = super.read(b);
         if (bytesRead != -1) cs.update(b, 0, b.length);
         return bytesRead;
     }
-
+*/
     @Override
     public int read(byte[] b, int off, int len) throws IOException {
         int bytesRead = super.read(b, off, len);
-        if (bytesRead != -1) cs.update(b, off, len);
+        if (bytesRead != -1) cs.update(b, off, bytesRead);
         return bytesRead;
     }
 

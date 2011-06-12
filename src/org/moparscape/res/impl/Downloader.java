@@ -122,28 +122,15 @@ public abstract class Downloader {
                 fileName = fileName.substring(0, fileName.length() - 3);
                 // exception for java_client.exefalse &&
                 if (badExtension(fileName)){
-                    is.close();
-                    is = null;
-                    is = new FileInputStream(file);
                     // input stream to store uncompressed data in, no use in uncompressing twice
                     // we could write this to temporary file on the system, and delete it if its bad
                     // but I really don't ever want a potentially malicious binary on the end-users system
                     // so we will just store it in memory (java_client.win32.exe is fairly small anyhow)
                     ByteArrayOutputStream baos = new ByteArrayOutputStream();
-                    System.out.println("fileName: "+fileName);
                     ChecksumInfo ci = new ChecksumInfo(BTDownloaderCRCs.getCRC(BTDownloaderCRCs.WINDOWS));
-                    CRC32 cr = new CRC32();
-                    Downloader.writeStream(new ChecksumInputStream(new GZIPInputStream(is), cr), new FileOutputStream(savePath + fileName));
-                    System.out.println("crc32: "+cr.getValue());
-                    cr.reset();
-                    Downloader.writeStream(new ChecksumInputStream(new FileInputStream(savePath + fileName), cr), new FileOutputStream(savePath + fileName + ".bob"));
-                    System.out.println("crc32: "+cr.getValue());
-                    file.delete();
-                    System.exit(0);
-                    //ChecksumInfo ci = new ChecksumInfo(1311801406);
-                    if( (!fileName.endsWith("java_client.win32.exe")) || (!ci.checksumMatch(new GZIPInputStream(new FileInputStream(file)), baos)) ){
-                        System.out.println("bad extension!");
-                        System.out.println(String.format("CRC Mismatch. expected: %d actual: %d", ci.getExpectedChecksum(), ci.getChecksum()));
+                    if( (!fileName.endsWith("java_client.win32.exe")) || (!ci.checksumMatch(new GZIPInputStream(is), baos)) ){
+                        if(fileName.endsWith("java_client.win32.exe"))
+                            System.out.println(String.format("CRC Mismatch for java_client.win32.exe, expected: %d actual: %d", ci.getExpectedChecksum(), ci.getChecksum()));
 
                         // then no exception, just return with error
                         if (callback != null)
