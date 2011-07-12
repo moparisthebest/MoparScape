@@ -56,7 +56,7 @@ public class ResourceGrabber {
     private final Downloader[] downloaders;
 
     private static final int delay = 500; //milliseconds
-    private static final int errorTicks = 20; // errorTicks * delay is how long errors will stay onscreen
+    private static final int errorTicks = 60; // errorTicks * delay is how long errors will stay onscreen
 
     private JFrame frame = null;
     private javax.swing.Timer timer = null;
@@ -67,6 +67,57 @@ public class ResourceGrabber {
     private int currentUID = 0;
 
     public static void main(String[] args) throws Exception {
+        if (args.length == 0 || (args.length % 4) != 0) {
+            System.out.println("Usage: ResourceGrabber [[TORRENT|MAGNETURL|URL] SAVE_PATH EXTRACT CRC]\n" +
+                    "TORRENT is a path to a .torrent file\n" +
+                    "MAGNETURL is a magnet link\n" +
+                    "URL is a url to a torrent file\n" +
+                    "SAVE_PATH is the absolute path to save the torrent and .resume file to\n" +
+                    "EXTRACT is true if you wish to extract the downloaded file\n" +
+                    "CRC if not 0 will only download the file if the CRC does not match, it will checksum every file in the save_path recursively.\n\n" +
+                    "You can specify as many downloads on the command line as you wish.");
+            return;
+        }
+        ResourceGrabber rg = new ResourceGrabber(System.getProperty("user.home") + "/.moparscape/bin/");
+        int[] uids = new int[args.length / 4];
+        for (int x = 0; x < uids.length; ++x) {
+            int argIndex = x * 4;
+            String url = args[argIndex];
+            String savePath = args[argIndex + 1];
+            boolean extract = args[argIndex + 2].equalsIgnoreCase("true");
+            long crc = 0;
+            try {
+                crc = Long.parseLong(args[argIndex + 3]);
+            } catch (NumberFormatException e) {
+
+            }
+            System.out.println(String.format("Starting download %d, url: '%s' savePath: '%s' extract: '%b' crc: '%d'",
+                    x + 1, url, savePath, extract, crc));
+            uids[x] = rg.download(url, savePath, extract, crc == 0 ? null : new ChecksumInfo(crc));
+            System.out.println("Started download " + (x + 1));
+        }
+        System.out.println("Started all downloads, now waiting until they all finish!");
+        for (int x = 0; x < uids.length; ++x) {
+            boolean result = false;
+            try {
+                result = rg.wait(uids[x]);
+            } catch (Exception e) {
+                System.out.println(String.format("Download %d failed, here is the exception:", x + 1));
+                e.printStackTrace();
+                continue;
+            }
+
+            if (uids[x] == -1)
+                System.out.println(String.format("Download %d finished instantly, CRC must have matched!", x + 1));
+            else if (result)
+                System.out.println(String.format("Download %d finished successfully!", x + 1));
+            else
+                System.out.println(String.format("Download %d failed, don't know why...", x + 1));
+        }
+        System.out.println("All downloads are finished, exiting program...");
+    }
+
+    public static void main2(String[] args) throws Exception {
         //downloadHTTP("https://www.moparscape.org/libs/client.zip.gz", "/home/mopar/tests/extest");
         //extractFile("/home/mopar/tests/extest/client.zip.gz", "/home/mopar/tests/extest/");
         //download("https://www.moparscape.org/libs/client.zip.gz", "/home/mopar/tests/extest", true, 98233333, new String[]{"client_test.linux.x86",  "client_test.osx.i386"});
@@ -84,15 +135,15 @@ public class ResourceGrabber {
         ResourceGrabber rg = new ResourceGrabber(System.getProperty("user.home") + "/.moparscape/bin/");
         System.out.println("before downloads...");
         int clientZipUID = -1;
-        try{
-        //rg.download("http://www.moparisthebest.com/downloads/cedegaSRC.tar.gz", "/home/mopar/tests/extest", true);
-        //rg.download("http://mirror01.th.ifl.net/releases//maverick/ubuntu-10.10-desktop-i386.iso", "/home/mopar/tests/extest", false);
-        //Thread.sleep(30000);
-        //int clientZipUID = rg.download("https://www.moparscape.org/libs/client.zip.gz", "/home/mopar/tests/extest", true);
-        //int clientZipUID = rg.download("https://www.moparscape.org/libs/client.zip.torrent", "/home/mopar/tests/extest", true);
-        //int clientZipUID = rg.download("magnet:?xt=urn:btih:a38d02c287893842a32825aa866e00828a318f07&dn=Ubuntu+11.04+%28Final%29&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&tr=udp%3A%2F%2Ftracker.ccc.de%3A80", "/home/mopar/tests/extest");
-        clientZipUID = rg.download("magnet:?xt=urn:btih:87171cac4b10b28e8ceb00df18a883bbf3363fca&dn=House+S07E23+Moving+On+HDTV+XviD-2HD+%5Beztv%5D&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&tr=udp%3A%2F%2Ftracker.ccc.de%3A80", "/home/mopar/tests/extest");
-        }catch(Exception e){
+        try {
+            //rg.download("http://www.moparisthebest.com/downloads/cedegaSRC.tar.gz", "/home/mopar/tests/extest", true);
+            //rg.download("http://mirror01.th.ifl.net/releases//maverick/ubuntu-10.10-desktop-i386.iso", "/home/mopar/tests/extest", false);
+            //Thread.sleep(30000);
+            //int clientZipUID = rg.download("https://www.moparscape.org/libs/client.zip.gz", "/home/mopar/tests/extest", true);
+            //int clientZipUID = rg.download("https://www.moparscape.org/libs/client.zip.torrent", "/home/mopar/tests/extest", true);
+            //int clientZipUID = rg.download("magnet:?xt=urn:btih:a38d02c287893842a32825aa866e00828a318f07&dn=Ubuntu+11.04+%28Final%29&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&tr=udp%3A%2F%2Ftracker.ccc.de%3A80", "/home/mopar/tests/extest");
+            clientZipUID = rg.download("magnet:?xt=urn:btih:87171cac4b10b28e8ceb00df18a883bbf3363fca&dn=House+S07E23+Moving+On+HDTV+XviD-2HD+%5Beztv%5D&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&tr=udp%3A%2F%2Ftracker.ccc.de%3A80", "/home/mopar/tests/extest");
+        } catch (Exception e) {
 
         }
         //int clientZipUID = rg.download("magnet:?xt=urn:btih:CDXN5L2YV5FLXVL36GKUTRXIQDOUDKDY&dn=client.zip&tr=udp%3a%2f%2ftracker.openbittorrent.com%3a80", "/home/mopar/tests/dldir");
@@ -100,9 +151,9 @@ public class ResourceGrabber {
 
     }
 
-    public ResourceGrabber(String binDir) throws FileNotFoundException{
+    public ResourceGrabber(String binDir) throws FileNotFoundException {
         File f = new File(binDir);
-        if(!f.exists() && !f.isDirectory() && !f.mkdirs())
+        if (!f.exists() && !f.isDirectory() && !f.mkdirs())
             throw new FileNotFoundException();
         if (!binDir.endsWith("/"))
             binDir += "/";
@@ -141,7 +192,7 @@ public class ResourceGrabber {
             }
             status = dll.getStatus();
         }
-        if(dll.exception != null)
+        if (dll.exception != null)
             throw dll.exception;
         return status != AbstractDownloadListener.Status.ERROR;
     }
@@ -203,7 +254,7 @@ public class ResourceGrabber {
                         case FINISHED:
                         case RUNNING:
                             // check if we have called reset
-                            if(dll.info != null){
+                            if (dll.info != null) {
                                 dll.dip.reset(dll.title, dll.length, dll.info);
                                 dll.info = null;
                                 break;
@@ -262,7 +313,7 @@ public class ResourceGrabber {
                                                 downloadItems.remove(dll);
                                                 if (frame == null)
                                                     return;
-                                                if(dll.dip != null)
+                                                if (dll.dip != null)
                                                     frame.getContentPane().remove(dll.dip);
                                                 if (downloadItems.isEmpty()) {
                                                     frame.dispose();

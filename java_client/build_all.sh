@@ -1,7 +1,11 @@
-#!/bin/sh
-#rm -rf ./bin/ ../libtorrent-rasterbar-trunk/trunk/bin ../boost_1_46_0/bin.v2/
+#!/bin/bash
+# all working at revision 5346
+if [ "$1" == "clean" ]; then
+	echo "cleaning previous builds"
+	rm -rf ./bin/ /home/mopar/biggerdaddy/libtorrent/libtorrent-rasterbar-trunk/trunk/bin /home/mopar/biggerdaddy/libtorrent/boost_1_46_0/bin.v2/
+fi
 bjam gcc-32 "cflags=-DTORRENT_USE_I2P=0  -DBOOST_NO_EXCEPTIONS=1" boost=source target-os=linux encryption=tommath variant=release geoip=off logging=none deprecated-functions=off java_client
-cp ./bin/gcc-mingw-32/release/boost-source/deprecated-functions-off/link-static/threading-multi/java_client ~/IdeaProjects/MoparScape4/java_client/dist/java_client.linux.x86
+#cp ./bin/gcc-mingw-32/release/boost-source/deprecated-functions-off/link-static/threading-multi/java_client ~/IdeaProjects/MoparScape4/java_client/dist/java_client.linux.x86
 #exit 0
 bjam gcc-win32 "cflags=-DTORRENT_USE_I2P=0 -DBOOST_NO_EXCEPTIONS=1" link=static boost=source target-os=windows encryption=tommath variant=release geoip=off logging=none threadapi=win32 iconv=off deprecated-functions=off java_client
 bjam boost=source "cflags=-DTORRENT_USE_I2P=0 -UBOOST_NO_EXCEPTIONS" target-os=darwin encryption=tommath variant=release geoip=off logging=none architecture=x86 --toolset=darwin deprecated-functions=off java_client
@@ -43,7 +47,7 @@ tar cf dist/openssl/java_client.openssl.tar dist/openssl/*
 
 for f in dist/*/*
 do
-	gzip -c $f > $f.gz
+	gzip --rsyncable -c $f > $f.gz
 done
 
 rsync --stats --progress -a -e "ssh -p 3888" dist/tommath/*.gz mopar@69.65.42.216:/home/mopar/htdocs/moparscape.org/libs/

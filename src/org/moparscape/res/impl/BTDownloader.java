@@ -153,7 +153,7 @@ public class BTDownloader extends Downloader {
             if (proc == null) {
                 String osName = System.getProperty("os.name").toLowerCase();
                 //osName = "mac";
-                osName = "win";
+                //osName = "win";
 
                 long crc;
                 // if it's windows, run 32-bit windows executable
