@@ -157,7 +157,6 @@ retry:
 #endif
 
 int exit_status = 0;
-int die_timeout = 5;
 
 // Define the function to be called when certain signals are sent to process
 void signal_callback_handler(int signum){
@@ -174,6 +173,7 @@ void signal_callback_handler(int signum){
 
 const std::string tag_delim(": ");
 
+int die_timeout = 10;
 int allocation_mode = libtorrent::storage_mode_sparse;
 //float preferred_ratio = 0.f;
 float preferred_ratio = 1.f;
@@ -449,7 +449,7 @@ void fatal_error(const char* error = 0){
 					"                        seconds between screen refreshes, default 1.\n"
 					"  -q                    forces the client to print every -F seconds, instead of\n"
 					"                        only when with 'r' is pressed\n"
-					"  -e <timeout>          Waits (timeout * -F) and quits if 'r' is not pressed, default 5.\n"
+					"  -e <timeout>          Waits (timeout * -F) and quits if 'r' is not pressed, default 10.\n"
 					"  -n                    announce to trackers in all tiers\n"
 					"  -t                    announce to all trackers\n"
 					"  -h                    allow multiple connections from the same IP\n"
