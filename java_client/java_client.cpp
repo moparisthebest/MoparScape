@@ -83,6 +83,26 @@ void debug( const char* format, ... ) {
 
 bool sleep_and_input(char* c, int sleep)
 {
+	void *input = GetStdHandle(STD_INPUT_HANDLE);
+	int wait_result = WaitForSingleObject(input, sleep*1000);
+	if (wait_result ==  WAIT_TIMEOUT) {
+		/* it timed out - no input */
+		debug("wait timed out, no input");
+		return false;
+	} else if (wait_result == WAIT_OBJECT_0){
+		/* it signaled in time - input available */
+		*c = _getch();
+		return true;
+	} else if (wait_result == WAIT_FAILED || wait_result == WAIT_ABANDONED) {
+		/* some shit went wrong */
+		debug("somethting went wrong with wait");
+		return false;
+	}
+	return false;
+};
+/*
+bool sleep_and_input(char* c, int sleep)
+{
 	for (int i = 0; i < sleep * 2; ++i)
 	{
 		if (_kbhit())
@@ -94,7 +114,7 @@ bool sleep_and_input(char* c, int sleep)
 	}
 	return false;
 };
-
+*/
 #else
 #define EXE ""
 

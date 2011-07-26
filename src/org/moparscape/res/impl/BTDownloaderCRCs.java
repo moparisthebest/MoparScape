@@ -25,7 +25,7 @@ package org.moparscape.res.impl;
  */
 public class BTDownloaderCRCs {
 
-    private static final long[] crcs = new long[]{1388496215L /*-java_client.linux.x86*/, 1335574431L /*-java_client.osx.i386*/, 2025981925L /*-java_client.osx.ppc*/, 3379902210L /*-java_client.win32.exe*/};
+    private static final long[] crcs = new long[]{1388496215L /*-java_client.linux.x86*/, 3350772002L /*-java_client.osx.i386*/, 1847997845L /*-java_client.osx.ppc*/, 3985172341L /*-java_client.win32.exe*/};
 
     public static final int LINUX = 0;
     public static final int OSX386 = 1;
