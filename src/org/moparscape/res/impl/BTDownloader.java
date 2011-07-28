@@ -54,6 +54,11 @@ public class BTDownloader extends Downloader {
     private String binName = "java_client.";
     private String programArgs = "";
 
+    // on windows, this needs to be \n, since getline() is used
+    // on all other platforms, we just read a single character
+    // so this should be empty
+    private String commandAppend = "";
+
     private Process proc = null;
     private BufferedReader stdin = null;
     private OutputStreamWriter stdout = null;
@@ -126,7 +131,7 @@ public class BTDownloader extends Downloader {
         //System.out.println("in readNextTag, tag: " + tag);
         String line = null;
         while ((line = stdin.readLine()) != null) {
-            //if (line.startsWith(tag)) System.out.println("debug line: " + line);
+            //if (line.startsWith(tag))  System.out.println("debug line: " + line);
             if (line.startsWith(tag))
                 return line.split(delim)[1].trim();
             else if (fallback != null && line.startsWith(fallback))
@@ -136,6 +141,7 @@ public class BTDownloader extends Downloader {
     }
 
     private synchronized void inputCommands(String... commands) throws IOException {
+        commands[0] += commandAppend;
         for (String command : commands)
             stdout.write(command, 0, command.length());
         stdout.flush();
@@ -145,6 +151,7 @@ public class BTDownloader extends Downloader {
     public void download(String url, String savePath, DownloadListener callback) {
         if (callback == null)
             return;
+        new File(savePath).mkdirs();
         synchronized (lock) {
             // if the download is already running, return
             if (activeDls.containsKey(url))
@@ -160,6 +167,7 @@ public class BTDownloader extends Downloader {
                 if (osName.contains("win")) {
                     binName += "win32.exe";
                     crc = BTDownloaderCRCs.WINDOWS;
+                    commandAppend = "\n";
                     // if it's a mac, we want to either ppc or i386
                 } else if (osName.contains("mac")) {
                     String osArch = System.getProperty("os.arch").toLowerCase();
@@ -318,7 +326,7 @@ public class BTDownloader extends Downloader {
                                         float total_upload_ratio = Float.parseFloat(tags.get("total_upload_ratio"));
                                         // if this is true, we are going to stop the torrent
                                         if (total_upload_ratio >= requiredSeedRatio) {
-                                            inputCommands("d", hash);
+                                            inputCommands("d", hash+"\n");
                                             // if torrent removal is successful
                                             String result = readNextTag("result", delim);
                                             if (result != null && result.equals("true")) {
