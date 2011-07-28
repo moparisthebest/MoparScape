@@ -79,42 +79,37 @@ void debug( const char* format, ... ) {
 #endif
 
 #include <windows.h>
-#include <conio.h>
+#include <process.h>
+
+std::string thread_char;
+bool thread_running = false;
+
+void Thread( void* pParams )
+{
+	// waits for enter to be pressed, doesn't include newline
+	//std::cin >> thread_char;
+	std::getline(std::cin, thread_char);
+	thread_running = false;
+}
 
 bool sleep_and_input(char* c, int sleep)
 {
-	void *input = GetStdHandle(STD_INPUT_HANDLE);
-	int wait_result = WaitForSingleObject(input, sleep*1000);
-	if (wait_result ==  WAIT_TIMEOUT) {
-		/* it timed out - no input */
-		debug("wait timed out, no input");
+	if(thread_running){
+		Sleep(sleep*1000);
 		return false;
-	} else if (wait_result == WAIT_OBJECT_0){
-		/* it signaled in time - input available */
-		*c = _getch();
+	}
+	if(!thread_char.empty()){
+		//strncpy(c, &thread_char, 1);
+		thread_char.copy(c,1,0);
+		thread_char.clear();
+		// we don't want to start the thread again here, since after we return from
+		// this function we might want to read from stdin someplace else
 		return true;
-	} else if (wait_result == WAIT_FAILED || wait_result == WAIT_ABANDONED) {
-		/* some shit went wrong */
-		debug("somethting went wrong with wait");
-		return false;
 	}
+	thread_running = true;
+	_beginthread(Thread, 0, NULL);
 	return false;
 };
-/*
-bool sleep_and_input(char* c, int sleep)
-{
-	for (int i = 0; i < sleep * 2; ++i)
-	{
-		if (_kbhit())
-		{
-			*c = _getch();
-			return true;
-		}
-		Sleep(500);
-	}
-	return false;
-};
-*/
 #else
 #define EXE ""
 
@@ -193,7 +188,7 @@ void signal_callback_handler(int signum){
 
 const std::string tag_delim(": ");
 
-int die_timeout = 10;
+int die_timeout = 5;
 int allocation_mode = libtorrent::storage_mode_sparse;
 //float preferred_ratio = 0.f;
 float preferred_ratio = 1.f;
@@ -469,7 +464,7 @@ void fatal_error(const char* error = 0){
 					"                        seconds between screen refreshes, default 1.\n"
 					"  -q                    forces the client to print every -F seconds, instead of\n"
 					"                        only when with 'r' is pressed\n"
-					"  -e <timeout>          Waits (timeout * -F) and quits if 'r' is not pressed, default 10.\n"
+					"  -e <timeout>          Waits (timeout * -F) and quits if 'r' is not pressed, default 5.\n"
 					"  -n                    announce to trackers in all tiers\n"
 					"  -t                    announce to all trackers\n"
 					"  -h                    allow multiple connections from the same IP\n"

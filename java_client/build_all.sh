@@ -1,5 +1,12 @@
 #!/bin/bash
 # all working at revision 5346
+if [ "$1" == "win" ]; then
+	echo "building windows then pushing to killer3"
+	bjam gcc-win32 "cflags=-DTORRENT_USE_I2P=0 -DBOOST_NO_EXCEPTIONS=1" link=static boost=source target-os=windows encryption=tommath variant=release geoip=off logging=none threadapi=win32 iconv=off deprecated-functions=off java_client
+	i586-mingw32msvc-strip bin/gcc-mingw-win32/release/boost-source/deprecated-functions-off/iconv-off/link-static/target-os-windows/threadapi-win32/threading-multi/java_client.exe
+	scp bin/gcc-mingw-win32/release/boost-source/deprecated-functions-off/iconv-off/link-static/target-os-windows/threadapi-win32/threading-multi/java_client.exe mopar@killer3:/home/mopar/java_client/java_client.win32.exe
+	exit 0
+fi
 if [ "$1" == "clean" ]; then
 	echo "cleaning previous builds"
 	rm -rf ./bin/ /home/mopar/biggerdaddy/libtorrent/libtorrent-rasterbar-trunk/trunk/bin /home/mopar/biggerdaddy/libtorrent/boost_1_46_0/bin.v2/
