@@ -60,6 +60,7 @@ public class ResourceGrabber {
 
     private JFrame frame = null;
     private javax.swing.Timer timer = null;
+    private String title = "Resource Grabber";
 
     private final List<DlListener> downloadItems = new ArrayList<DlListener>(5);
 
@@ -151,13 +152,19 @@ public class ResourceGrabber {
 
     }
 
-    public ResourceGrabber(String binDir) throws FileNotFoundException {
+    public ResourceGrabber(String binDir, String title) throws FileNotFoundException {
+        if(title != null)
+            this.title = title;
         File f = new File(binDir);
         if (!f.exists() && !f.isDirectory() && !f.mkdirs())
             throw new FileNotFoundException();
         if (!binDir.endsWith("/"))
             binDir += "/";
         downloaders = new Downloader[]{new BTDownloader(binDir), new URLDownloader()};
+    }
+
+    public ResourceGrabber(String binDir) throws FileNotFoundException {
+        this(binDir, null);
     }
 
     public boolean wait(int uid) throws Exception {
@@ -282,7 +289,7 @@ public class ResourceGrabber {
                             // otherwise, start fresh
                             dll.dip = new DownloadItemPanel(dll.title, dll.length, dll.info);
                             if (frame == null) {
-                                frame = new JFrame("Resource Grabber");
+                                frame = new JFrame(title);
                                 frame.setLayout(new BoxLayout(frame.getContentPane(), BoxLayout.Y_AXIS));
 
                                 frame.getContentPane().add(dll.dip);

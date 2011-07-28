@@ -83,6 +83,8 @@ public class ChecksumInfo {
      * @return
      */
     public synchronized boolean checksumMatch(String savePath) {
+        if(checksumCalculated)
+            cs.reset();
         checksumCalculated = true;
         if (!savePath.endsWith("/"))
             savePath += "/";
@@ -126,6 +128,8 @@ public class ChecksumInfo {
      * @return
      */
     public synchronized boolean checksumMatch(InputStream is, OutputStream os) {
+        if(checksumCalculated)
+            cs.reset();
         checksumCalculated = true;
         try {
             Downloader.writeStream(new ChecksumInputStream(is, cs), os == null ? new NullOutputStream() : os);

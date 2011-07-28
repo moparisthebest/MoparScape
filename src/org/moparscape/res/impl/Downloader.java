@@ -144,6 +144,7 @@ public abstract class Downloader {
                     //writeStream(new ByteArrayInputStream(baos.toByteArray()), new FileOutputStream(savePath + fileName));
                     FileOutputStream fos = new FileOutputStream(savePath + fileName);
                     fos.write(baos.toByteArray());
+                    fos.flush();
                     fos.close();
                     return;
                 }
