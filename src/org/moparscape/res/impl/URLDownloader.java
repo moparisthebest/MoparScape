@@ -52,13 +52,18 @@ public class URLDownloader extends Downloader {
 
             public void run() {
                 try {
-                    // first make savedTo dir
-                    new File(savePath).mkdirs();
-                    String sp = savePath;
-                    if (!sp.endsWith("/"))
-                        sp += "/";
-
-                    String savedTo = sp + url.substring(url.lastIndexOf('/') + 1);
+                    // lets detect how we want to save this, if the path ends in a /, save the file named as-is in that folder
+                    // but if it ends in anything else, save the file to that file exactly
+                    String saveTo;
+                    if (savePath.endsWith("/")) {
+                        // first make savePath dir
+                        new File(savePath).mkdirs();
+                        saveTo = savePath + url.substring(url.lastIndexOf('/') + 1);
+                    } else {
+                        // create all directories except last file
+                        new File(savePath.substring(0, savePath.lastIndexOf('/'))).mkdirs();
+                        saveTo = savePath;
+                    }
                     URLConnection uc = new URL(url).openConnection();
                     if (uc instanceof HttpURLConnection) {
                         String userAgent = System.getProperty("http.agent");
@@ -70,14 +75,14 @@ public class URLDownloader extends Downloader {
                     InputStream in = uc.getInputStream();
 
                     if (callback != null) {
-                        callback.starting("Downloading " + url, length, "to " + savedTo + "...");
+                        callback.starting("Downloading " + url, length, "to " + saveTo + "...");
                         in = new ProgressInputStream(in, callback);
                     }
 
-                    writeStream(in, new FileOutputStream(savedTo));
+                    writeStream(in, new FileOutputStream(saveTo));
 
                     if (callback != null) {
-                        callback.finished(sp, savedTo);
+                        callback.finished(savePath, saveTo);
                         callback.stopped();
                     }
                 } catch (IOException e) {

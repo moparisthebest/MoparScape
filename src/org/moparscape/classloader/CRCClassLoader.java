@@ -20,8 +20,6 @@
 
 package org.moparscape.classloader;
 
-import org.moparscape.Update;
-
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
@@ -108,7 +106,9 @@ public class CRCClassLoader extends ClassLoader {
 //          fos.close();
 
             // use Update instead
-            new Update(backupURL, jarFileLoc, true);
+            //new Update(backupURL, jarFileLoc, true);
+            // use ResourceGrabber
+            org.moparscape.res.ResourceGrabber.getRG().downloadWaitCatch(backupURL, jarFileLoc);
 
             setup(jarFileLoc);
 

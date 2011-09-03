@@ -46,12 +46,15 @@ import java.util.List;
  * This is for security reasons.  The only exception to this rule is it will download java_client.exe for internal
  * purposes, but will only run it if the CRC is correct.
  * <p/>
- * This class is currently NOT thread-safe, so if you try and use it in a multi-threaded environment it will almost
- * certainly break in unexpected and bad ways.  Synchronize around it if you must.
+ * This class should be thread-safe.
+ * <p/>
+ * Only one instance of this class needs to be instantiated per-VM.  Currently this is enforced via the constructors.
  *
  * @author moparisthebest
  */
 public class ResourceGrabber {
+
+    private static ResourceGrabber _instance = null;
 
     private final Downloader[] downloaders;
 
@@ -79,7 +82,7 @@ public class ResourceGrabber {
                     "You can specify as many downloads on the command line as you wish.");
             return;
         }
-        ResourceGrabber rg = new ResourceGrabber(System.getProperty("user.home") + "/.moparscape/bin/");
+        ResourceGrabber rg = getResourceGrabber(System.getProperty("user.home") + "/.moparscape/bin/");
         int[] uids = new int[args.length / 4];
         for (int x = 0; x < uids.length; ++x) {
             int argIndex = x * 4;
@@ -133,7 +136,7 @@ public class ResourceGrabber {
         for(String p : s.split(":"))
             System.out.println("part: '"+p.trim()+"'");
         if(true) return;  */
-        ResourceGrabber rg = new ResourceGrabber(System.getProperty("user.home") + "/.moparscape/bin/");
+        ResourceGrabber rg = getResourceGrabber(System.getProperty("user.home") + "/.moparscape/bin/");
         System.out.println("before downloads...");
         int clientZipUID = -1;
         try {
@@ -152,7 +155,7 @@ public class ResourceGrabber {
 
     }
 
-    public ResourceGrabber(String binDir, String title) throws FileNotFoundException {
+    private ResourceGrabber(String binDir, String title) throws FileNotFoundException {
         if(title != null)
             this.title = title;
         File f = new File(binDir);
@@ -163,8 +166,28 @@ public class ResourceGrabber {
         downloaders = new Downloader[]{new BTDownloader(binDir), new URLDownloader()};
     }
 
-    public ResourceGrabber(String binDir) throws FileNotFoundException {
+    private ResourceGrabber(String binDir) throws FileNotFoundException {
         this(binDir, null);
+    }
+
+    public synchronized static ResourceGrabber getResourceGrabber(String binDir, String title) throws FileNotFoundException{
+        if(_instance == null)
+            _instance = new ResourceGrabber(binDir, title);
+        return _instance;
+    }
+
+    public synchronized static ResourceGrabber getResourceGrabber() throws IllegalStateException{
+        if(_instance == null)
+            throw new IllegalStateException("Must call getResourceGrabber method with parameters first.");
+        return _instance;
+    }
+
+    public static ResourceGrabber getRG() throws IllegalStateException{
+        return getResourceGrabber();
+    }
+
+    public static ResourceGrabber getResourceGrabber(String binDir) throws FileNotFoundException{
+        return getResourceGrabber(binDir, null);
     }
 
     public boolean wait(int uid) throws Exception {
@@ -234,6 +257,35 @@ public class ResourceGrabber {
             }
         }
         return uid;
+    }
+
+    public boolean downloadWait(String url, String savePath) throws Exception {
+        return this.downloadWait(url, savePath, false, null);
+    }
+
+    public boolean downloadWait(String url, String savePath, boolean extract) throws Exception {
+        return this.downloadWait(url, savePath, extract, null);
+    }
+
+    public boolean downloadWait(String url, String savePath, boolean extract, ChecksumInfo ci) throws Exception {
+        return this.wait(this.download(url, savePath, extract, ci));
+    }
+
+    public boolean downloadWaitCatch(String url, String savePath) {
+        return this.downloadWaitCatch(url, savePath, false, null);
+    }
+
+    public boolean downloadWaitCatch(String url, String savePath, boolean extract) {
+        return this.downloadWaitCatch(url, savePath, extract, null);
+    }
+
+    public boolean downloadWaitCatch(String url, String savePath, boolean extract, ChecksumInfo ci) {
+        try{
+            return this.wait(this.download(url, savePath, extract, ci));
+        }catch(Exception e){
+            // ignore, just return false
+            return false;
+        }
     }
 
     private synchronized int getUID() {
