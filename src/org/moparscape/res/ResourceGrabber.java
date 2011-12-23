@@ -156,7 +156,7 @@ public class ResourceGrabber {
     }
 
     private ResourceGrabber(String binDir, String title) throws FileNotFoundException {
-        if(title != null)
+        if (title != null)
             this.title = title;
         File f = new File(binDir);
         if (!f.exists() && !f.isDirectory() && !f.mkdirs())
@@ -170,27 +170,44 @@ public class ResourceGrabber {
         this(binDir, null);
     }
 
-    public synchronized static ResourceGrabber getResourceGrabber(String binDir, String title) throws FileNotFoundException{
-        if(_instance == null)
+    public synchronized static ResourceGrabber getResourceGrabber(String binDir, String title) throws FileNotFoundException {
+        if (_instance == null)
             _instance = new ResourceGrabber(binDir, title);
         return _instance;
     }
 
-    public synchronized static ResourceGrabber getResourceGrabber() throws IllegalStateException{
-        if(_instance == null)
+    public synchronized static ResourceGrabber getResourceGrabber() throws IllegalStateException {
+        if (_instance == null)
             throw new IllegalStateException("Must call getResourceGrabber method with parameters first.");
         return _instance;
     }
 
-    public static ResourceGrabber getRG() throws IllegalStateException{
+    public static ResourceGrabber getRG() throws IllegalStateException {
         return getResourceGrabber();
     }
 
-    public static ResourceGrabber getResourceGrabber(String binDir) throws FileNotFoundException{
+    public static ResourceGrabber getResourceGrabber(String binDir) throws FileNotFoundException {
         return getResourceGrabber(binDir, null);
     }
 
+    public boolean waitCatch(int uid) {
+        return waitCatch(uid, 0L);
+    }
+
+    public boolean waitCatch(int uid, long timeout) {
+        try {
+            return this.wait(uid, timeout);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
     public boolean wait(int uid) throws Exception {
+        return wait(uid, 0L);
+    }
+
+    public boolean wait(int uid, long timeout) throws Exception {
         // -1 is a special value meaning return immediately
         // maybe because CRC was already correct and download not needed
         if (uid == -1)
@@ -210,17 +227,28 @@ public class ResourceGrabber {
         if (dll == null)
             return true; // we don't really know how it ended, just return true I guess...
         AbstractDownloadListener.Status status = dll.getStatus();
+        long startTime = System.currentTimeMillis();
+        long elapsedTime;
         while (status != AbstractDownloadListener.Status.FINISHED
                 && status != AbstractDownloadListener.Status.STOPPED
                 && status != AbstractDownloadListener.Status.ERROR) {
             try {
                 synchronized (dll) {
-                    dll.wait();
+                    dll.wait(timeout);
                 }
             } catch (InterruptedException e) {
                 // just ignore it, let the loop go around again
             }
             status = dll.getStatus();
+
+            elapsedTime = System.currentTimeMillis() - startTime;
+            // check and make sure we haven't gone over our allotted time
+            if (elapsedTime >= timeout)
+                return status == AbstractDownloadListener.Status.FINISHED
+                        || status == AbstractDownloadListener.Status.STOPPED;
+            else
+                timeout -= elapsedTime; // if not, adjust timeout accordingly
+
         }
         if (dll.exception != null)
             throw dll.exception;
@@ -280,9 +308,9 @@ public class ResourceGrabber {
     }
 
     public boolean downloadWaitCatch(String url, String savePath, boolean extract, ChecksumInfo ci) {
-        try{
+        try {
             return this.wait(this.download(url, savePath, extract, ci));
-        }catch(Exception e){
+        } catch (Exception e) {
             // ignore, just return false
             return false;
         }
