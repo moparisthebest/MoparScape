@@ -52,18 +52,7 @@ public class URLDownloader extends Downloader {
 
             public void run() {
                 try {
-                    // lets detect how we want to save this, if the path ends in a /, save the file named as-is in that folder
-                    // but if it ends in anything else, save the file to that file exactly
-                    String saveTo;
-                    if (savePath.endsWith("/")) {
-                        // first make savePath dir
-                        new File(savePath).mkdirs();
-                        saveTo = savePath + url.substring(url.lastIndexOf('/') + 1);
-                    } else {
-                        // create all directories except last file
-                        new File(savePath.substring(0, savePath.lastIndexOf('/'))).mkdirs();
-                        saveTo = savePath;
-                    }
+                    String saveTo = saveTo(url, savePath);
                     URLConnection uc = new URL(url).openConnection();
                     if (uc instanceof HttpURLConnection) {
                         String userAgent = System.getProperty("http.agent");
@@ -93,6 +82,21 @@ public class URLDownloader extends Downloader {
         }.start();
     }
 
+    private String saveTo(String url, String savePath) {
+        // lets detect how we want to save this, if the path ends in a /, save the file named as-is in that folder
+        // but if it ends in anything else, save the file to that file exactly
+        String saveTo;
+        if (savePath.endsWith("/")) {
+            // first make savePath dir
+            new File(savePath).mkdirs();
+            return savePath + url.substring(url.lastIndexOf('/') + 1);
+        } else {
+            // create all directories except last file
+            new File(savePath.substring(0, savePath.lastIndexOf('/'))).mkdirs();
+            return savePath;
+        }
+    }
+
     public boolean supportsURL(String url) {
         // if it's a supported URL, return true
         try {
@@ -101,5 +105,23 @@ public class URLDownloader extends Downloader {
         } catch (MalformedURLException e) {
             return false;
         }
+    }
+
+    @Override
+    public String uniqueFoldername(String url) {
+        if (url == null || !supportsURL(url))
+            return null;
+
+        url = url.toLowerCase().replaceFirst(".*://", "").replaceAll("/+", ".").replaceAll("(^\\.|\\.$)", "");
+
+        return url;
+    }
+
+    @Override
+    public void guessFilenames(String url, String savePath, java.util.List<String> files) {
+        super.guessFilenames(url, savePath, files);
+        String saveTo = saveTo(url, savePath);
+        if (!files.contains(saveTo))
+            files.add(saveTo);
     }
 }

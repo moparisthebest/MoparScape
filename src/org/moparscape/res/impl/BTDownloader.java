@@ -386,6 +386,24 @@ public class BTDownloader extends Downloader {
      */
     @Override
     public boolean supportsURL(String url) {
+        if(url == null)
+            return false;
+        url = url.toLowerCase();
         return url.startsWith("magnet:") || url.endsWith(".torrent");
+    }
+
+    @Override
+    public String uniqueFoldername(String url) {
+        if (url == null || !supportsURL(url))
+            return null;
+        url = url.toLowerCase();
+        if (url.startsWith("magnet:")) {
+            url = url.substring(url.indexOf("xt=") + 3, url.length());
+            url = url.substring(0, url.indexOf("&"));
+            url = url.substring(url.lastIndexOf(":") + 1, url.length()).toLowerCase();
+        } else {
+            url = url.replaceFirst(".*://", "").replaceAll("/+", ".").replaceAll("(^\\.|\\.$)", "");
+        }
+        return url;
     }
 }

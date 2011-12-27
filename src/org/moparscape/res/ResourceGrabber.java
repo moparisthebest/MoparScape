@@ -20,6 +20,7 @@
 
 package org.moparscape.res;
 
+import org.moparscape.Debug;
 import org.moparscape.res.impl.BTDownloader;
 import org.moparscape.res.impl.Downloader;
 import org.moparscape.res.impl.URLDownloader;
@@ -163,6 +164,7 @@ public class ResourceGrabber {
             throw new FileNotFoundException();
         if (!binDir.endsWith("/"))
             binDir += "/";
+        // order matters here
         downloaders = new Downloader[]{new BTDownloader(binDir), new URLDownloader()};
     }
 
@@ -198,7 +200,7 @@ public class ResourceGrabber {
         try {
             return this.wait(uid, timeout);
         } catch (Exception e) {
-            e.printStackTrace();
+            Debug.debug(e);
             return false;
         }
     }
@@ -264,15 +266,28 @@ public class ResourceGrabber {
     }
 
     public int download(String url, String savePath, boolean extract, ChecksumInfo ci) throws MalformedURLException {
+        return this.download(url, savePath, extract, null, null);
+    }
 
+    public int download(String url, String savePath, boolean extract, ChecksumInfo ci, java.util.List<String> files) throws MalformedURLException {
+
+        Downloader dlr = getSupportedDownloader(url);
+
+        // if a list of files are requested, try to make the Downloader take an educated guess
+        // also append to savePath a unique folder name
+        if(files != null){
+            if(!savePath.endsWith("/"))
+                savePath += "/";
+            savePath = savePath + dlr.uniqueFoldername(url) + "/";
+            dlr.guessFilenames(url, savePath, files);
+        }
         // check crc if we are supposed to
         if (ci != null && ci.checksumMatch(savePath))
             return -1;  // this signifies that the crc matches (instant success)
-        // otherwise go ahead and download it.
-        Downloader dlr = getSupportedDownloader(url);
 
+        // otherwise go ahead and download it.
         int uid = getUID();
-        DlListener dll = new DlListener(uid, extract, ci, this);
+        DlListener dll = new DlListener(uid, extract, ci, files, this);
         dlr.download(url, savePath, dll);
         synchronized (downloadItems) {
             downloadItems.add(dll);
@@ -309,7 +324,36 @@ public class ResourceGrabber {
 
     public boolean downloadWaitCatch(String url, String savePath, boolean extract, ChecksumInfo ci) {
         try {
-            return this.wait(this.download(url, savePath, extract, ci));
+            return this.downloadWait(url, savePath, extract, ci);
+        } catch (Exception e) {
+            // ignore, just return false
+            return false;
+        }
+    }
+
+    public boolean downloadToUniqueFolderWait(String url, String parentFolder, java.util.List<String> files) throws Exception {
+        return this.downloadToUniqueFolderWait(url, parentFolder, false, null, files);
+    }
+
+    public boolean downloadToUniqueFolderWait(String url, String parentFolder, boolean extract, java.util.List<String> files) throws Exception {
+        return this.downloadToUniqueFolderWait(url, parentFolder, extract, null, files);
+    }
+
+    public boolean downloadToUniqueFolderWait(String url, String parentFolder, boolean extract, ChecksumInfo ci, java.util.List<String> files) throws Exception {
+        return this.wait(this.download(url, parentFolder, extract, ci, files));
+    }
+
+    public boolean downloadToUniqueFolderWaitCatch(String url, String parentFolder, java.util.List<String> files) {
+        return this.downloadToUniqueFolderWaitCatch(url, parentFolder, false, null, files);
+    }
+
+    public boolean downloadToUniqueFolderWaitCatch(String url, String parentFolder, boolean extract, java.util.List<String> files) {
+        return this.downloadToUniqueFolderWaitCatch(url, parentFolder, extract, null, files);
+    }
+
+    public boolean downloadToUniqueFolderWaitCatch(String url, String parentFolder, boolean extract, ChecksumInfo ci, java.util.List<String> files) {
+        try {
+            return this.downloadToUniqueFolderWait(url, parentFolder, extract, ci, files);
         } catch (Exception e) {
             // ignore, just return false
             return false;
@@ -434,13 +478,15 @@ public class ResourceGrabber {
         int uid;
         boolean extract;
         ChecksumInfo ci;
+        java.util.List<String> files;
         DownloadItemPanel dip = null;
         ResourceGrabber rg = null;
 
-        public DlListener(int uid, boolean extract, ChecksumInfo ci, ResourceGrabber rg) {
+        public DlListener(int uid, boolean extract, ChecksumInfo ci, java.util.List<String> files, ResourceGrabber rg) {
             this.uid = uid;
             this.extract = extract;
             this.ci = ci;
+            this.files = files;
             this.rg = rg;
         }
 
@@ -458,6 +504,10 @@ public class ResourceGrabber {
             if (extract)
                 for (String file : filesDownloaded)
                     Downloader.extractFile(file, savePath, this);
+
+            // if we want a list of files, grab one
+            if(files != null)
+                Downloader.listFiles(savePath, files);
 
             // check crc if we are supposed to
             // TODO: should we only check filesDownloaded? Then we can't specify extracted files to CRC only.

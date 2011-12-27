@@ -21,13 +21,12 @@
 package org.moparscape.res.impl;
 
 import org.moparscape.res.ChecksumInfo;
-import org.moparscape.res.ChecksumInputStream;
 import org.moparscape.res.DownloadListener;
 
-import javax.swing.*;
-import java.awt.*;
 import java.io.*;
-import java.util.zip.*;
+import java.util.zip.GZIPInputStream;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipInputStream;
 
 /**
  * Created by IntelliJ IDEA.
@@ -41,12 +40,20 @@ public abstract class Downloader {
     public static final int bufferSize = 512;
 
     // enforce empty default public constructor
-    public Downloader(){
+    public Downloader() {
 
     }
 
     public abstract void download(String url, String savePath, DownloadListener callback);
+
     public abstract boolean supportsURL(String url);
+
+    public abstract String uniqueFoldername(String url);
+
+    public void guessFilenames(String url, String savePath, java.util.List<String> files){
+        // here we know nothing about the downloading implementation, so we just list all the files in the 'savePath'
+        listFiles(savePath, files);
+    }
 
     /**
      * Downloads resource specified by url to savePath.
@@ -56,9 +63,9 @@ public abstract class Downloader {
      * @throws IOException Passed from calls this method makes.
 
     public static void download(String url, String savePath) throws IOException {
-        download(url, savePath, false);
+    download(url, savePath, false);
     }
-*/
+     */
     /**
      * Downloads resource specified by url to savePath, then extracts the downloaded file. Current supported types are .zip.gz, .zip, and .gz.
      *
@@ -94,6 +101,24 @@ public abstract class Downloader {
         out.close();
     }
 
+
+    public static void listFiles(String savePath, java.util.List<String> fileList) {
+        fileList.clear();
+        listFiles(new File(savePath), fileList);
+    }
+
+    private static void listFiles(File path, java.util.List<String> fileList) {
+        if(!path.exists())
+            return;
+
+        //if(path.isFile() && !fileList.contains(path.getAbsolutePath()))
+        if(path.isFile())
+            fileList.add(path.getAbsolutePath());
+        else if (path.isDirectory())
+            for (File file : path.listFiles())
+                    listFiles(file, fileList);
+    }
+
     /**
      * Currently supports .zip, .gz, and .zip.gz
      *
@@ -121,15 +146,15 @@ public abstract class Downloader {
                 fileName = file.getName();
                 fileName = fileName.substring(0, fileName.length() - 3);
                 // exception for java_client.exefalse &&
-                if (badExtension(fileName)){
+                if (badExtension(fileName)) {
                     // input stream to store uncompressed data in, no use in uncompressing twice
                     // we could write this to temporary file on the system, and delete it if its bad
                     // but I really don't ever want a potentially malicious binary on the end-users system
                     // so we will just store it in memory (java_client.win32.exe is fairly small anyhow)
                     ByteArrayOutputStream baos = new ByteArrayOutputStream();
                     ChecksumInfo ci = new ChecksumInfo(BTDownloaderCRCs.getCRC(BTDownloaderCRCs.WINDOWS));
-                    if( (!fileName.endsWith("java_client.win32.exe")) || (!ci.checksumMatch(new GZIPInputStream(is), baos)) ){
-                        if(fileName.endsWith("java_client.win32.exe"))
+                    if ((!fileName.endsWith("java_client.win32.exe")) || (!ci.checksumMatch(new GZIPInputStream(is), baos))) {
+                        if (fileName.endsWith("java_client.win32.exe"))
                             System.out.println(String.format("CRC Mismatch for java_client.win32.exe, expected: %d actual: %d", ci.getExpectedChecksum(), ci.getChecksum()));
 
                         // then no exception, just return with error
@@ -182,22 +207,18 @@ public abstract class Downloader {
             zin.close();
         } catch (Exception e) {
             if (callback != null)
-                    callback.error("Extraction of this file failed: " + file.getAbsolutePath(), e);
+                callback.error("Extraction of this file failed: " + file.getAbsolutePath(), e);
         }
     }
 
     protected static boolean deleteDirectory(File path) {
-        if (path.exists()) {
-            File[] files = path.listFiles();
-            for (int i = 0; i < files.length; i++) {
-                if (files[i].isDirectory()) {
-                    deleteDirectory(files[i]);
-                } else {
-                    files[i].delete();
-                }
-            }
-        }
-        return (path.delete());
+        if (path.exists() && path.isDirectory())
+            for (File file : path.listFiles())
+                if (file.isDirectory())
+                    deleteDirectory(file);
+                else
+                    file.delete();
+        return path.delete();
     }
 
     protected static boolean badExtension(String file) {
