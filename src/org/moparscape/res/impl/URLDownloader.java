@@ -121,7 +121,9 @@ public class URLDownloader extends Downloader {
     public void guessFilenames(String url, String savePath, java.util.List<String> files) {
         super.guessFilenames(url, savePath, files);
         String saveTo = saveTo(url, savePath);
-        if (!files.contains(saveTo))
-            files.add(saveTo);
+        synchronized (files) {
+            if (!files.contains(saveTo))
+                files.add(saveTo);
+        }
     }
 }

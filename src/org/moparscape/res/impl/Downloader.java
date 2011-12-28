@@ -50,7 +50,7 @@ public abstract class Downloader {
 
     public abstract String uniqueFoldername(String url);
 
-    public void guessFilenames(String url, String savePath, java.util.List<String> files){
+    public void guessFilenames(String url, String savePath, java.util.List<String> files) {
         // here we know nothing about the downloading implementation, so we just list all the files in the 'savePath'
         listFiles(savePath, files);
     }
@@ -103,20 +103,27 @@ public abstract class Downloader {
 
 
     public static void listFiles(String savePath, java.util.List<String> fileList) {
-        fileList.clear();
-        listFiles(new File(savePath), fileList);
+        synchronized (fileList) {
+            fileList.clear();
+            listFiles(new File(savePath), fileList);
+        }
     }
 
+    /**
+     *
+     * @param path
+     * @param fileList This must be synchronized around before calling this method
+     */
     private static void listFiles(File path, java.util.List<String> fileList) {
-        if(!path.exists())
+        if (!path.exists())
             return;
 
         //if(path.isFile() && !fileList.contains(path.getAbsolutePath()))
-        if(path.isFile())
+        if (path.isFile())
             fileList.add(path.getAbsolutePath());
         else if (path.isDirectory())
             for (File file : path.listFiles())
-                    listFiles(file, fileList);
+                listFiles(file, fileList);
     }
 
     /**

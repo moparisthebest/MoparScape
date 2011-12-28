@@ -33,6 +33,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.net.MalformedURLException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -68,7 +69,7 @@ public class ResourceGrabber {
 
     private final List<DlListener> downloadItems = new ArrayList<DlListener>(5);
 
-    // this is only meant to be accessed by getUID(), which is synchronized
+    // this is only meant to be accessed by getNewUID(), which is synchronized
     private int currentUID = 0;
 
     public static void main(String[] args) throws Exception {
@@ -209,22 +210,23 @@ public class ResourceGrabber {
         return wait(uid, 0L);
     }
 
+    private DlListener listenerForUID(int uid) {
+        // grab the listener for this uid
+        synchronized (downloadItems) {
+            for (final DlListener d : downloadItems)
+                if (d.uid == uid)
+                    return d;
+        }
+        return null;
+    }
+
     public boolean wait(int uid, long timeout) throws Exception {
         // -1 is a special value meaning return immediately
         // maybe because CRC was already correct and download not needed
         if (uid == -1)
             return true;
 
-        DlListener dll = null;
-        // grab the listener for this uid
-        synchronized (downloadItems) {
-            for (final DlListener d : downloadItems) {
-                if (d.uid == uid) {
-                    dll = d;
-                    break;
-                }
-            }
-        }
+        DlListener dll = this.listenerForUID(uid);
         // if we couldn't find one, the download is finished, return
         if (dll == null)
             return true; // we don't really know how it ended, just return true I guess...
@@ -269,24 +271,44 @@ public class ResourceGrabber {
         return this.download(url, savePath, extract, null, null);
     }
 
-    public int download(String url, String savePath, boolean extract, ChecksumInfo ci, java.util.List<String> files) throws MalformedURLException {
+    public String uniqueFoldername(String url, String savePath) {
+        return this.uniqueFoldername(url, savePath, null);
+    }
 
-        Downloader dlr = getSupportedDownloader(url);
+    public String uniqueFoldername(String url, String savePath, java.util.List<String> files) {
+        Downloader dlr;
+        try {
+            dlr = getSupportedDownloader(url);
+        } catch (MalformedURLException e) {
+            return null;
+        }
+        // append to savePath a unique folder name
+        if (!savePath.endsWith("/"))
+            savePath += "/";
+        savePath = savePath + dlr.uniqueFoldername(url) + "/";
+
+        // if a list of files are requested, try to make the Downloader take an educated guess
+        if (files != null)
+            dlr.guessFilenames(url, savePath, files);
+
+        return savePath;
+    }
+
+    public int download(String url, String savePath, boolean extract, ChecksumInfo ci, java.util.List<String> files) throws MalformedURLException {
 
         // if a list of files are requested, try to make the Downloader take an educated guess
         // also append to savePath a unique folder name
-        if(files != null){
-            if(!savePath.endsWith("/"))
-                savePath += "/";
-            savePath = savePath + dlr.uniqueFoldername(url) + "/";
-            dlr.guessFilenames(url, savePath, files);
-        }
+        if (files != null)
+            savePath = uniqueFoldername(url, savePath, files);
+
         // check crc if we are supposed to
         if (ci != null && ci.checksumMatch(savePath))
             return -1;  // this signifies that the crc matches (instant success)
 
         // otherwise go ahead and download it.
-        int uid = getUID();
+        Downloader dlr = getSupportedDownloader(url);
+
+        int uid = getNewUID();
         DlListener dll = new DlListener(uid, extract, ci, files, this);
         dlr.download(url, savePath, dll);
         synchronized (downloadItems) {
@@ -360,7 +382,7 @@ public class ResourceGrabber {
         }
     }
 
-    private synchronized int getUID() {
+    private synchronized int getNewUID() {
         return this.currentUID++;
     }
 
@@ -369,6 +391,48 @@ public class ResourceGrabber {
             if (dl.supportsURL(url))
                 return dl;
         throw new MalformedURLException("Unsupported URL: " + url);
+    }
+
+    public java.util.List<String> getFileList(int uid) {
+        return this.listenerForUID(uid).files;
+    }
+
+    public String firstFileEndsWithIgnoreCase(String url, String savePath, String... suffixes) {
+        java.util.List<String> files = new ArrayList<String>(2);
+        this.uniqueFoldername(url, savePath, files);
+        return this.firstFileEndsWithIgnoreCase(files, suffixes);
+    }
+
+    public String firstFileEndsWith(String url, String savePath, String... suffixes) {
+        java.util.List<String> files = new ArrayList<String>(2);
+        this.uniqueFoldername(url, savePath, files);
+        return this.firstFileEndsWith(files, suffixes);
+    }
+
+    public String firstFileEndsWithIgnoreCase(int uid, String... suffixes) {
+        return this.firstFileEndsWith(getFileList(uid), true, suffixes);
+    }
+
+    public String firstFileEndsWith(int uid, String... suffixes) {
+        return this.firstFileEndsWith(getFileList(uid), false, suffixes);
+    }
+
+    public String firstFileEndsWithIgnoreCase(java.util.List<String> files, String... suffixes) {
+        return this.firstFileEndsWith(files, true, suffixes);
+    }
+
+    public String firstFileEndsWith(java.util.List<String> files, String... suffixes) {
+        return this.firstFileEndsWith(files, false, suffixes);
+    }
+
+    public String firstFileEndsWith(java.util.List<String> files, boolean ignoreCase, String... suffixes) {
+        synchronized (files) {
+            for (String file : files)
+                for (String suffix : suffixes)
+                    if ((ignoreCase && file.toLowerCase().endsWith(suffix.toLowerCase())) || file.endsWith(suffix))
+                        return file;
+        }
+        return null;
     }
 
 
@@ -506,7 +570,7 @@ public class ResourceGrabber {
                     Downloader.extractFile(file, savePath, this);
 
             // if we want a list of files, grab one
-            if(files != null)
+            if (files != null)
                 Downloader.listFiles(savePath, files);
 
             // check crc if we are supposed to
