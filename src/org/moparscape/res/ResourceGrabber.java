@@ -198,8 +198,16 @@ public class ResourceGrabber {
     }
 
     public boolean waitCatch(int uid, long timeout) {
+        return waitCatch(uid, timeout, false);
+    }
+
+    public boolean waitCatch(int uid, boolean freeResults) {
+        return waitCatch(uid, 0L, freeResults);
+    }
+
+    public boolean waitCatch(int uid, long timeout, boolean freeResults) {
         try {
-            return this.wait(uid, timeout);
+            return this.wait(uid, timeout, freeResults);
         } catch (Exception e) {
             Debug.debug(e);
             return false;
@@ -210,7 +218,19 @@ public class ResourceGrabber {
         return wait(uid, 0L);
     }
 
+    public boolean wait(int uid, long timeout) throws Exception {
+        return wait(uid, timeout, false);
+    }
+
+    public boolean wait(int uid, boolean freeResults) throws Exception {
+        return wait(uid, 0L, freeResults);
+    }
+
     private DlListener listenerForUID(int uid) {
+        // -1 is a special value meaning return immediately
+        // maybe because CRC was already correct and download not needed
+        if (uid == -1)
+            return null;
         // grab the listener for this uid
         synchronized (downloadItems) {
             for (final DlListener d : downloadItems)
@@ -220,18 +240,14 @@ public class ResourceGrabber {
         return null;
     }
 
-    public boolean wait(int uid, long timeout) throws Exception {
-        // -1 is a special value meaning return immediately
-        // maybe because CRC was already correct and download not needed
-        if (uid == -1)
-            return true;
+    public boolean wait(int uid, long timeout, boolean freeResults) throws Exception {
 
         DlListener dll = this.listenerForUID(uid);
         // if we couldn't find one, the download is finished, return
         if (dll == null)
             return true; // we don't really know how it ended, just return true I guess...
-        AbstractDownloadListener.Status status = dll.getStatus();
-        long startTime = System.currentTimeMillis();
+        DownloadListener.Status status = dll.getStatus();
+        long startTime = timeout > 0L ? System.currentTimeMillis() : 0L;
         long elapsedTime;
         while (status != AbstractDownloadListener.Status.FINISHED
                 && status != AbstractDownloadListener.Status.STOPPED
@@ -245,15 +261,22 @@ public class ResourceGrabber {
             }
             status = dll.getStatus();
 
-            elapsedTime = System.currentTimeMillis() - startTime;
-            // check and make sure we haven't gone over our allotted time
-            if (elapsedTime >= timeout)
-                return status == AbstractDownloadListener.Status.FINISHED
-                        || status == AbstractDownloadListener.Status.STOPPED;
-            else
-                timeout -= elapsedTime; // if not, adjust timeout accordingly
+            if (timeout > 0L) {
+                elapsedTime = System.currentTimeMillis() - startTime;
+                // check and make sure we haven't gone over our allotted time
+                if (elapsedTime >= timeout) {
+                    if (freeResults)
+                        dll.autoRemove = true;
+                    return status == AbstractDownloadListener.Status.FINISHED
+                            || status == AbstractDownloadListener.Status.STOPPED;
+                } else
+                    timeout -= elapsedTime; // if not, adjust timeout accordingly
+            }
 
         }
+        if (freeResults)
+            dll.autoRemove = true;
+
         if (dll.exception != null)
             throw dll.exception;
         return status != AbstractDownloadListener.Status.ERROR;
@@ -268,7 +291,7 @@ public class ResourceGrabber {
     }
 
     public int download(String url, String savePath, boolean extract, ChecksumInfo ci) throws MalformedURLException {
-        return this.download(url, savePath, extract, null, null);
+        return this.download(url, savePath, extract, null, false);
     }
 
     public String uniqueFoldername(String url, String savePath) {
@@ -294,12 +317,14 @@ public class ResourceGrabber {
         return savePath;
     }
 
-    public int download(String url, String savePath, boolean extract, ChecksumInfo ci, java.util.List<String> files) throws MalformedURLException {
+    public int download(String url, String savePath, boolean extract, ChecksumInfo ci, boolean uniqueFolder) throws MalformedURLException {
 
         // if a list of files are requested, try to make the Downloader take an educated guess
         // also append to savePath a unique folder name
-        if (files != null)
+        java.util.List<String> files = newThreadSafeList();
+        if (uniqueFolder) {
             savePath = uniqueFoldername(url, savePath, files);
+        }
 
         // check crc if we are supposed to
         if (ci != null && ci.checksumMatch(savePath))
@@ -353,29 +378,41 @@ public class ResourceGrabber {
         }
     }
 
-    public boolean downloadToUniqueFolderWait(String url, String parentFolder, java.util.List<String> files) throws Exception {
-        return this.downloadToUniqueFolderWait(url, parentFolder, false, null, files);
+    public int downloadToUniqueFolder(String url, String parentFolder) throws MalformedURLException {
+        return this.downloadToUniqueFolder(url, parentFolder, false, null);
     }
 
-    public boolean downloadToUniqueFolderWait(String url, String parentFolder, boolean extract, java.util.List<String> files) throws Exception {
-        return this.downloadToUniqueFolderWait(url, parentFolder, extract, null, files);
+    public int downloadToUniqueFolder(String url, String parentFolder, boolean extract) throws MalformedURLException {
+        return this.downloadToUniqueFolder(url, parentFolder, extract, null);
     }
 
-    public boolean downloadToUniqueFolderWait(String url, String parentFolder, boolean extract, ChecksumInfo ci, java.util.List<String> files) throws Exception {
-        return this.wait(this.download(url, parentFolder, extract, ci, files));
+    public int downloadToUniqueFolder(String url, String parentFolder, boolean extract, ChecksumInfo ci) throws MalformedURLException {
+        return this.download(url, parentFolder, extract, ci, true);
     }
 
-    public boolean downloadToUniqueFolderWaitCatch(String url, String parentFolder, java.util.List<String> files) {
-        return this.downloadToUniqueFolderWaitCatch(url, parentFolder, false, null, files);
+    public boolean downloadToUniqueFolderWait(String url, String parentFolder) throws Exception {
+        return this.downloadToUniqueFolderWait(url, parentFolder, false, null);
     }
 
-    public boolean downloadToUniqueFolderWaitCatch(String url, String parentFolder, boolean extract, java.util.List<String> files) {
-        return this.downloadToUniqueFolderWaitCatch(url, parentFolder, extract, null, files);
+    public boolean downloadToUniqueFolderWait(String url, String parentFolder, boolean extract) throws Exception {
+        return this.downloadToUniqueFolderWait(url, parentFolder, extract, null);
     }
 
-    public boolean downloadToUniqueFolderWaitCatch(String url, String parentFolder, boolean extract, ChecksumInfo ci, java.util.List<String> files) {
+    public boolean downloadToUniqueFolderWait(String url, String parentFolder, boolean extract, ChecksumInfo ci) throws Exception {
+        return this.wait(this.download(url, parentFolder, extract, ci, true));
+    }
+
+    public boolean downloadToUniqueFolderWaitCatch(String url, String parentFolder) {
+        return this.downloadToUniqueFolderWaitCatch(url, parentFolder, false, null);
+    }
+
+    public boolean downloadToUniqueFolderWaitCatch(String url, String parentFolder, boolean extract) {
+        return this.downloadToUniqueFolderWaitCatch(url, parentFolder, extract, null);
+    }
+
+    public boolean downloadToUniqueFolderWaitCatch(String url, String parentFolder, boolean extract, ChecksumInfo ci) {
         try {
-            return this.downloadToUniqueFolderWait(url, parentFolder, extract, ci, files);
+            return this.downloadToUniqueFolderWait(url, parentFolder, extract, ci);
         } catch (Exception e) {
             // ignore, just return false
             return false;
@@ -393,28 +430,70 @@ public class ResourceGrabber {
         throw new MalformedURLException("Unsupported URL: " + url);
     }
 
+    public void freeResources(int uid) {
+        DlListener dll = this.listenerForUID(uid);
+        if (dll != null)
+            dll.freeResources();
+    }
+
     public java.util.List<String> getFileList(int uid) {
-        return this.listenerForUID(uid).files;
+        DlListener dll = this.listenerForUID(uid);
+        return dll == null ? null : dll.getFileList();
+    }
+
+    private java.util.List<String> newThreadSafeList() {
+        return Collections.synchronizedList(this.newList());
+    }
+
+    private java.util.List<String> newThreadSafeList(int initalSize) {
+        return Collections.synchronizedList(this.newList(initalSize));
+    }
+
+    private java.util.List<String> newList() {
+        return new ArrayList<String>();
+    }
+
+    private java.util.List<String> newList(int initalSize) {
+        return new ArrayList<String>(initalSize);
+    }
+
+    public String firstFileEndsWithIgnoreCase(String url, String savePath, int uid, String... suffixes) {
+        return this.firstFileEndsWith(url, savePath, uid, true, suffixes);
+    }
+
+    public String firstFileEndsWith(String url, String savePath, int uid, String... suffixes) {
+        return this.firstFileEndsWith(url, savePath, uid, false, suffixes);
+    }
+
+    public String firstFileEndsWith(String url, String savePath, int uid, boolean ignoreCase, String... suffixes) {
+        return this.listenerForUID(uid) == null ? this.firstFileEndsWith(uid, ignoreCase, suffixes) : this.firstFileEndsWith(url, savePath, ignoreCase, suffixes);
     }
 
     public String firstFileEndsWithIgnoreCase(String url, String savePath, String... suffixes) {
-        java.util.List<String> files = new ArrayList<String>(2);
-        this.uniqueFoldername(url, savePath, files);
-        return this.firstFileEndsWithIgnoreCase(files, suffixes);
+        return this.firstFileEndsWith(url, savePath, true, suffixes);
     }
 
     public String firstFileEndsWith(String url, String savePath, String... suffixes) {
-        java.util.List<String> files = new ArrayList<String>(2);
+        return this.firstFileEndsWith(url, savePath, false, suffixes);
+    }
+
+    public String firstFileEndsWith(String url, String savePath, boolean ignoreCase, String... suffixes) {
+        // no need for concurrent because only we have access to this list and it will only be accessed in a single thread
+        java.util.List<String> files = newList(2);
         this.uniqueFoldername(url, savePath, files);
-        return this.firstFileEndsWith(files, suffixes);
+        return this.firstFileEndsWith(files, ignoreCase, suffixes);
     }
 
     public String firstFileEndsWithIgnoreCase(int uid, String... suffixes) {
-        return this.firstFileEndsWith(getFileList(uid), true, suffixes);
+        return this.firstFileEndsWith(uid, true, suffixes);
     }
 
     public String firstFileEndsWith(int uid, String... suffixes) {
-        return this.firstFileEndsWith(getFileList(uid), false, suffixes);
+        return this.firstFileEndsWith(uid, false, suffixes);
+    }
+
+    public String firstFileEndsWith(int uid, boolean ignoreCase, String... suffixes) {
+        return this.firstFileEndsWith(getFileList(uid), ignoreCase, suffixes);
     }
 
     public String firstFileEndsWithIgnoreCase(java.util.List<String> files, String... suffixes) {
@@ -426,11 +505,18 @@ public class ResourceGrabber {
     }
 
     public String firstFileEndsWith(java.util.List<String> files, boolean ignoreCase, String... suffixes) {
+        if (files == null || suffixes.length < 1)
+            return null;
+
         synchronized (files) {
             for (String file : files)
                 for (String suffix : suffixes)
-                    if ((ignoreCase && file.toLowerCase().endsWith(suffix.toLowerCase())) || file.endsWith(suffix))
+                    if ((ignoreCase && suffix != null && file.toLowerCase().endsWith(suffix.toLowerCase())) || file.endsWith(suffix))
                         return file;
+            // if the last value in suffixes is null, that is a special meaning to return the first file if no
+            // others can be found that matches the previous ones
+            if (suffixes[suffixes.length - 1] == null)
+                return files.isEmpty() ? null : files.get(0);
         }
         return null;
     }
@@ -447,6 +533,7 @@ public class ResourceGrabber {
                         case NOT_STARTED:
                             break;
                         case FINISHED:
+                            break;
                         case RUNNING:
                             // check if we have called reset
                             if (dll.info != null) {
@@ -499,6 +586,8 @@ public class ResourceGrabber {
                             dll.dip.reset(dll.title, dll.length, dll.info);
                             break;
                         case STOPPED:
+                            if (!dll.autoRemove)
+                                break;
                             // since we are already in the event thread, this executes right after this exits
                             // or at least never at the same time, which is all we need to worry about.
                             SwingUtilities.invokeLater(
@@ -526,7 +615,7 @@ public class ResourceGrabber {
                             dll.extraInfo = null;
                             // timeout error, once we reach errorTicks ticks change it to stopped
                             //System.out.println("error tick: " + dll.progress);
-                            if (dll.progress++ > errorTicks)
+                            if (dll.autoRemove && (dll.progress++ > errorTicks))
                                 dll.setStopped();
                     }
                 }
@@ -546,12 +635,16 @@ public class ResourceGrabber {
         DownloadItemPanel dip = null;
         ResourceGrabber rg = null;
 
+        boolean autoRemove = false;
+
         public DlListener(int uid, boolean extract, ChecksumInfo ci, java.util.List<String> files, ResourceGrabber rg) {
             this.uid = uid;
             this.extract = extract;
             this.ci = ci;
             this.files = files;
             this.rg = rg;
+
+            //this.autoRemove = (files == null);
         }
 
         @Override
@@ -563,7 +656,7 @@ public class ResourceGrabber {
         }
 
         @Override
-        public void finished(String savePath, String... filesDownloaded) {
+        public synchronized void finished(String savePath, String... filesDownloaded) {
             // if we are supposed to extract it, do so
             if (extract)
                 for (String file : filesDownloaded)
@@ -580,6 +673,16 @@ public class ResourceGrabber {
                 error(String.format("CRC Mismatch. expected: %d actual: %d", ci.getExpectedChecksum(), ci.getChecksum()), null);
             else
                 super.finished(savePath, filesDownloaded);
+        }
+
+        public synchronized void freeResources() {
+            ci = null;
+            files = null;
+            autoRemove = true;
+        }
+
+        public synchronized java.util.List<String> getFileList() {
+            return files;
         }
 
         public boolean download(String url, String savePath, boolean extract, ChecksumInfo ci) throws Exception {
