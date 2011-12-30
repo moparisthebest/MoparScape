@@ -404,6 +404,6 @@ public class BTDownloader extends Downloader {
         } else {
             url = url.replaceFirst(".*://", "").replaceAll("/+", ".").replaceAll("(^\\.|\\.$)", "");
         }
-        return url;
+        return url+"/";
     }
 }

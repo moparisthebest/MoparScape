@@ -114,7 +114,7 @@ public class URLDownloader extends Downloader {
 
         url = url.toLowerCase().replaceFirst(".*://", "").replaceAll("/+", ".").replaceAll("(^\\.|\\.$)", "");
 
-        return url;
+        return url+"/";
     }
 
     @Override

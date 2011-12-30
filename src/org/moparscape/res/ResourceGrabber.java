@@ -294,6 +294,10 @@ public class ResourceGrabber {
         return this.download(url, savePath, extract, null, false);
     }
 
+    public String uniqueFoldername(String url) {
+        return this.uniqueFoldername(url, null, null);
+    }
+
     public String uniqueFoldername(String url, String savePath) {
         return this.uniqueFoldername(url, savePath, null);
     }
@@ -306,9 +310,13 @@ public class ResourceGrabber {
             return null;
         }
         // append to savePath a unique folder name
-        if (!savePath.endsWith("/"))
-            savePath += "/";
-        savePath = savePath + dlr.uniqueFoldername(url) + "/";
+        if (savePath != null) {
+            if (!savePath.endsWith("/"))
+                savePath += "/";
+            savePath = savePath + dlr.uniqueFoldername(url);
+        }else{
+            return dlr.uniqueFoldername(url);
+        }
 
         // if a list of files are requested, try to make the Downloader take an educated guess
         if (files != null)
@@ -428,6 +436,15 @@ public class ResourceGrabber {
             if (dl.supportsURL(url))
                 return dl;
         throw new MalformedURLException("Unsupported URL: " + url);
+    }
+
+    public boolean supportedURL(String url) {
+        try {
+            this.getSupportedDownloader(url);
+            return true;
+        } catch (MalformedURLException e) {
+            return false;
+        }
     }
 
     public void freeResources(int uid) {
@@ -673,6 +690,9 @@ public class ResourceGrabber {
                 error(String.format("CRC Mismatch. expected: %d actual: %d", ci.getExpectedChecksum(), ci.getChecksum()), null);
             else
                 super.finished(savePath, filesDownloaded);
+
+            // we can at least free this now
+            ci = null;
         }
 
         public synchronized void freeResources() {
