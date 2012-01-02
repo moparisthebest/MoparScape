@@ -366,7 +366,7 @@ public class ResourceGrabber {
     }
 
     public boolean downloadWait(String url, String savePath, boolean extract, ChecksumInfo ci) throws Exception {
-        return this.wait(this.download(url, savePath, extract, ci));
+        return this.wait(this.download(url, savePath, extract, ci), true);
     }
 
     public boolean downloadWaitCatch(String url, String savePath) {

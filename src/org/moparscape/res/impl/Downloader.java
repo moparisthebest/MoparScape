@@ -93,7 +93,7 @@ public abstract class Downloader {
         while ((len = in.read(buffer)) >= 0) {
             out.write(buffer, 0, len);
             //if(in instanceof ZipInputStream) try{ Thread.sleep(1); }catch(InterruptedException e){ e.printStackTrace(); }
-
+            //if(in instanceof ProgressInputStream) try{ Thread.sleep(1); }catch(InterruptedException e){ e.printStackTrace(); }
         }
         // if its a ZipInputStream we don't want to close it
         if (!(in instanceof ZipInputStream))
@@ -212,13 +212,15 @@ public abstract class Downloader {
                 //try{ Thread.sleep(1000); }catch(InterruptedException e){ e.printStackTrace(); }
             }
             zin.close();
+            if (callback != null)
+                callback.setExtraInfo("File extraction completed successfully!");
         } catch (Exception e) {
             if (callback != null)
                 callback.error("Extraction of this file failed: " + file.getAbsolutePath(), e);
         }
     }
 
-    protected static boolean deleteDirectory(File path) {
+    public static boolean deleteDirectory(File path) {
         if (path.exists() && path.isDirectory())
             for (File file : path.listFiles())
                 if (file.isDirectory())
