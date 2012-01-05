@@ -83,16 +83,15 @@ public class ChecksumInfo {
      * @return
      */
     public synchronized boolean checksumMatch(String savePath) {
-        if(checksumCalculated)
+        if (checksumCalculated)
             cs.reset();
         checksumCalculated = true;
-        if (!savePath.endsWith("/"))
-            savePath += "/";
+        File savePathFile = new File(savePath);
         FileFilter ff = null;
-        if (list != null) {
+        if (list != null && savePathFile.isDirectory()) {
             final File[] flist = new File[list.length];
             for (int x = 0; x < list.length; ++x)
-                flist[x] = new File(savePath + list[x]);
+                flist[x] = new File(savePathFile, list[x]);
             ff = new FileFilter() {
                 public boolean accept(File name) {
                     for (File f : flist)
@@ -102,7 +101,7 @@ public class ChecksumInfo {
                 }
             };
         }
-        recursiveChecksum(new File(savePath), cs, new NullOutputStream(), ff);
+        recursiveChecksum(savePathFile, cs, new NullOutputStream(), ff);
 
         return cs.getValue() == expectedCRC;
     }
@@ -128,7 +127,7 @@ public class ChecksumInfo {
      * @return
      */
     public synchronized boolean checksumMatch(InputStream is, OutputStream os) {
-        if(checksumCalculated)
+        if (checksumCalculated)
             cs.reset();
         checksumCalculated = true;
         try {
@@ -142,38 +141,20 @@ public class ChecksumInfo {
     private static void recursiveChecksum(File path, Checksum cs, NullOutputStream nos, FileFilter filter) {
         if (!path.exists())
             return;
+        if (path.isFile()) {
+            try {
+                Downloader.writeStream(new ChecksumInputStream(new FileInputStream(path), cs), nos);
+            } catch (Exception e) {
+                // if there is an exception, just ignore it
+            }
+            return;
+        }
         for (File file : path.listFiles(filter)) {
             System.out.println("Checksum so far: " + cs.getValue());
             System.out.println("Checking filename: " + file.getAbsolutePath());
-            if (file.isDirectory()) {
-                recursiveChecksum(file, cs, nos, filter);
-            } else {
-                try {
-                    Downloader.writeStream(new ChecksumInputStream(new FileInputStream(file), cs), nos);
-                } catch (Exception e) {
-                    // if there is an exception, just ignore it
-                }
-            }
+
+            recursiveChecksum(file, cs, nos, filter);
         }
-    }
-
-    private static class NullOutputStream extends OutputStream {
-
-        @Override
-        public void write(byte[] b, int off, int len) {
-
-        }
-
-        @Override
-        public void write(int b) {
-
-        }
-
-        @Override
-        public void write(byte[] b) throws IOException {
-
-        }
-
     }
 
     public static void main(String[] args) throws Exception {

@@ -21,12 +21,12 @@
 package org.moparscape.res.impl;
 
 import org.moparscape.res.ChecksumInfo;
+import org.moparscape.res.ChecksumInputStream;
 import org.moparscape.res.DownloadListener;
 
 import java.io.*;
-import java.util.zip.GZIPInputStream;
-import java.util.zip.ZipEntry;
-import java.util.zip.ZipInputStream;
+import java.util.Random;
+import java.util.zip.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -110,7 +110,6 @@ public abstract class Downloader {
     }
 
     /**
-     *
      * @param path
      * @param fileList This must be synchronized around before calling this method
      */
@@ -126,6 +125,32 @@ public abstract class Downloader {
                 listFiles(file, fileList);
     }
 
+    public static boolean supportsExtraction(String file) {
+        return extMatch(file, ".zip.gz", ".zip", ".gz");
+    }
+
+    public static long crcExtractFile(String fileName){
+        Checksum crc = new CRC32();
+        extractFile(fileName, crc);
+        return crc.getValue();
+    }
+
+    public static boolean extractFile(String fileName, Checksum cs) {
+        return extractFile(fileName, null, null, cs);
+    }
+
+    public static boolean extractFile(String fileName, String savePath) {
+        return extractFile(fileName, savePath, null, null);
+    }
+
+    public static boolean extractFile(String fileName, String savePath, Checksum cs) {
+        return extractFile(fileName, savePath, null, cs);
+    }
+
+    public static boolean extractFile(String fileName, String savePath, DownloadListener callback) {
+        return extractFile(fileName, savePath, callback, null);
+    }
+
     /**
      * Currently supports .zip, .gz, and .zip.gz
      *
@@ -133,7 +158,9 @@ public abstract class Downloader {
      * @param savePath
      * @throws IOException
      */
-    public static void extractFile(String fileName, String savePath, DownloadListener callback) {
+    public static boolean extractFile(String fileName, String savePath, DownloadListener callback, Checksum cs) {
+        if(savePath != null && !savePath.endsWith("/"))
+            savePath += "/";
         File file = new File(fileName);
         try {
             long length = file.length();
@@ -143,9 +170,11 @@ public abstract class Downloader {
                 callback.extracting("Extracting " + fileName, length, "to " + savePath + "...");
                 is = new ProgressInputStream(is, callback);
             }
+            if(cs != null)
+                is = new ChecksumInputStream(is, cs);
 
             //if(true)throw new RuntimeException("woohoo! fake exceptions!");
-
+            fileName = fileName.toLowerCase();
             if (fileName.endsWith(".zip.gz"))
                 is = new GZIPInputStream(is);
             else if (fileName.endsWith(".gz")) {
@@ -168,35 +197,35 @@ public abstract class Downloader {
                         if (callback != null)
                             callback.error("Bad extension, refusing to extract: " + fileName, null);
                         file.delete();
-                        return;
+                        return false;
                     }
-                    System.out.println("exe passes");
+                    //System.out.println("exe passes");
                     // if we are here, this is our java_client.win32.exe, and the CRC is correct, now just write it out to the file
                     // this should be quick enough I'm not going to bother with a ProgressInputStream
                     //writeStream(new ByteArrayInputStream(baos.toByteArray()), new FileOutputStream(savePath + fileName));
-                    FileOutputStream fos = new FileOutputStream(savePath + fileName);
+                    OutputStream fos = getOutputStream(savePath, fileName);
                     fos.write(baos.toByteArray());
                     fos.flush();
                     fos.close();
-                    return;
+                    return true;
                 }
                 if (callback != null)
                     callback.setExtraInfo("Extracting File: " + fileName);
-                writeStream(new GZIPInputStream(is), new FileOutputStream(savePath + fileName));
-                return;
+                writeStream(new GZIPInputStream(is), getOutputStream(savePath, fileName));
+                return true;
             } else if (fileName.endsWith(".zip")) {
                 // if we are here, the streams are all set up to unzip below, so don't do anything
             } else {
                 // otherwise this file can't be extracted, so just return for now
                 if (callback != null)
                     callback.error("Extraction of this file type is unsupported: " + fileName, null);
-                return;
+                return false;
             }
             ZipInputStream zin = new ZipInputStream(is);
             ZipEntry entry;
             while ((entry = zin.getNextEntry()) != null) {
                 String name = entry.getName();
-                if (entry.isDirectory()) { // Checks if the entry is a directory.
+                if (entry.isDirectory() && savePath != null) { // Checks if the entry is a directory.
                     File folder = new File(savePath + name);
                     deleteDirectory(folder);
                     if (callback != null)
@@ -207,21 +236,50 @@ public abstract class Downloader {
                         continue;
                     if (callback != null)
                         callback.setExtraInfo("Extracting File: " + name);
-                    writeStream(zin, new FileOutputStream(savePath + name));
+                    writeStream(zin, getOutputStream(savePath, name));
                 }
                 //try{ Thread.sleep(1000); }catch(InterruptedException e){ e.printStackTrace(); }
             }
             zin.close();
             if (callback != null)
                 callback.setExtraInfo("File extraction completed successfully!");
+            return true;
         } catch (Exception e) {
             if (callback != null)
                 callback.error("Extraction of this file failed: " + file.getAbsolutePath(), e);
+            return false;
         }
     }
 
+    // helper method to supply NullOutputStream if savePath is null
+    private static OutputStream getOutputStream(String savePath, String fileName) throws FileNotFoundException{
+        if(savePath == null || fileName == null)
+            return new org.moparscape.res.NullOutputStream();
+        else
+            return new FileOutputStream(savePath + fileName);
+    }
+
+    public static File createTempDir() {
+        File baseDir = new File(System.getProperty("java.io.tmpdir"));
+        String baseName = System.currentTimeMillis() + "-tmp";
+
+        File tempDir = new File(baseDir, baseName);
+        if (tempDir.mkdir())
+            return tempDir;
+
+        // start generating random numbers until we find an open directory
+        Random r = new Random();
+        int tries = 100;
+        for (int i = 0; i < tries; i++) {
+            tempDir = new File(baseDir, baseName + r.nextInt(Integer.MAX_VALUE));
+            if (tempDir.mkdir())
+                return tempDir;
+        }
+        throw new IllegalStateException("Failed to create directory within " + tries + " tries, giving up.");
+    }
+
     public static boolean deleteDirectory(File path) {
-        if (path.exists() && path.isDirectory())
+        if (path != null && path.exists() && path.isDirectory())
             for (File file : path.listFiles())
                 if (file.isDirectory())
                     deleteDirectory(file);
@@ -231,8 +289,12 @@ public abstract class Downloader {
     }
 
     protected static boolean badExtension(String file) {
-        String[] badExts = new String[]{".exe", ".bat", ".cmd", ".com", ".sh", ".bash"};
-        for (String badExt : badExts)
+        return extMatch(file, ".exe", ".bat", ".cmd", ".com", ".sh", ".bash");
+    }
+
+    private static boolean extMatch(String file, String... extensions) {
+        file = file.toLowerCase();
+        for (String badExt : extensions)
             if (file.endsWith(badExt))
                 return true;
         return false;
