@@ -27,6 +27,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.*;
 import java.net.URLEncoder;
+import java.security.DigestOutputStream;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
@@ -40,7 +41,13 @@ public class MakeTorrent {
     private File torrentFile = null;
     private File sharedFile = null;
 
-    private String infoHash = null;
+    String[][] announceList = null;
+    String[] urlList = null;
+
+    private String sha1InfoHash = null;
+    private String base32InfoHash = null;
+
+    private String[] magnetLinks = null;
 
     public static MakeTorrent askForFile(Component parent) {
         JFileChooser fc = new JFileChooser();
@@ -55,20 +62,32 @@ public class MakeTorrent {
     }
 
     public MakeTorrent(String sharedFile) {
-        this(new File(sharedFile));
+        this(sharedFile, (String[]) null);
+    }
+
+    public MakeTorrent(String sharedFile, String... urlList) {
+        this(new File(sharedFile), urlList);
     }
 
     public MakeTorrent(File sharedFile) {
-        this(sharedFile, "udp://tracker.moparisthebest.com:2710/announce", "http://tracker.moparisthebest.com/announce");
+        this(sharedFile, (String[]) null);
     }
 
-    public MakeTorrent(File sharedFile, String... announceURL) {
+    public MakeTorrent(File sharedFile, String... urlList) {
+        this(sharedFile, new String[][]{new String[]{"udp://tracker.moparisthebest.com:2710/announce", "udp://exodus.desync.com:6969"}, new String[]{"http://exodus.desync.com:6969/announce", "http://tracker.moparisthebest.com/announce"}}, urlList);
+        //this(sharedFile, new String[][]{new String[]{"udp://tracker.moparisthebest.com:2710/announce", "http://tracker.moparisthebest.com/announce"}}, urlList);
+    }
+
+    public MakeTorrent(File sharedFile, String[][] announceList, String[] urlList) {
         this.sharedFile = sharedFile;
+        this.announceList = announceList;
+        this.urlList = urlList;
+
         String absolutePath = sharedFile.getAbsolutePath();
         System.out.println("Creating torrent from: " + absolutePath);
         torrentFile = new File(absolutePath + ".torrent");
         try {
-            this.createTorrent(announceURL);
+            this.createTorrent();
         } catch (Exception e) {
             System.out.println("Creating torrent failed: " + e.getMessage());
             Debug.debug(e);
@@ -100,14 +119,21 @@ public class MakeTorrent {
             Debug.debug(e);
             return;
         }
+        System.out.println("info hash of torrent: " + sha1InfoHash);
         System.out.println("CRC of torrent: " + crc);
-        String magnet = String.format("magnet:?xt=urn:sha1:%s&dn=%s", infoHash, urlEncode(sharedFile.getName()));
-        for (String tracker : announceURL)
-            magnet += "&tr=" + urlEncode(tracker);
-        System.out.println("magnet link: " + magnet);
+        String magTrackers = "";
+        for (String[] trackerList : announceList)
+            for (String tracker : trackerList)
+                magTrackers += "&tr=" + urlEncode(tracker);
+        String[][] magnetTypes = new String[][]{new String[]{"btih", base32InfoHash}, new String[]{"sha1", sha1InfoHash}};
+        this.magnetLinks = new String[magnetTypes.length];
+        for (int i = 0; i < this.magnetLinks.length; ++i) {
+            this.magnetLinks[i] = String.format("magnet:?xt=urn:%s:%s&dn=%s%s", magnetTypes[i][0], magnetTypes[i][1], urlEncode(sharedFile.getName()), magTrackers);
+            System.out.println("magnet link: " + this.magnetLinks[i]);
+        }
     }
 
-    public static String urlEncode(String url) {
+    public String urlEncode(String url) {
         try {
             return URLEncoder.encode(url, "UTF-8");
         } catch (Exception e) {
@@ -115,7 +141,7 @@ public class MakeTorrent {
         }
     }
 
-    public static long crcFile(String file) {
+    public long crcFile(String file) {
         ChecksumInfo ci = new ChecksumInfo();
         ci.checksumMatch(file);
         return ci.getChecksum();
@@ -128,12 +154,19 @@ public class MakeTorrent {
             encodeMap((Map) o, out);
         else if (o instanceof byte[])
             encodeBytes((byte[]) o, out);
-        else if (o instanceof String[])
-            encodeStringArray((String[]) o, out);
+        else if (o instanceof Object[])
+            encodeObjectArray((Object[]) o, out);
         else if (o instanceof Number)
             encodeLong(((Number) o).longValue(), out);
         else
             throw new Error("Unencodable type");
+    }
+
+    private void encodeObjectArray(Object[] list, OutputStream out) throws IOException {
+        out.write('l');
+        for (Object str : list)
+            encodeObject(str, out);
+        out.write('e');
     }
 
     private void encodeLong(long value, OutputStream out) throws IOException {
@@ -146,17 +179,6 @@ public class MakeTorrent {
         out.write(Integer.toString(bytes.length).getBytes("US-ASCII"));
         out.write(':');
         out.write(bytes);
-    }
-
-    private void encodeStringArray(String[] list, OutputStream out) throws IOException {
-        out.write('l');
-        out.write('l');
-
-        for (String str : list)
-            encodeString(str, out);
-
-        out.write('e');
-        out.write('e');
     }
 
     private void encodeString(String str, OutputStream out) throws IOException {
@@ -196,40 +218,61 @@ public class MakeTorrent {
         }
         in.close();
         byte[] sha1Digest = sha1.digest();
-        this.infoHash = new java.math.BigInteger(1, sha1Digest).toString(16);
+        this.sha1InfoHash = new java.math.BigInteger(1, sha1Digest).toString(16);
         if (pieceByteCount > 0)
             pieces.write(sha1Digest);
         return pieces.toByteArray();
     }
 
-    public void createTorrent(String... announceURL) throws IOException {
+    public void createTorrent() throws IOException {
         final int pieceLength = 512 * 1024;
         Map<String, Object> info = new HashMap<String, Object>();
         info.put("name", sharedFile.getName());
         info.put("length", sharedFile.length());
         info.put("piece length", pieceLength);
         info.put("pieces", hashPieces(sharedFile, pieceLength));
+        hashInfo(info);
         Map<String, Object> metainfo = new HashMap<String, Object>();
-        if (announceURL != null && announceURL.length > 0) {
-            metainfo.put("announce", announceURL[0]);
-            // todo: this currently doesn't work
-            if (announceURL.length > 1)
-                metainfo.put("announce-list", announceURL);
+        if (announceList != null && announceList.length > 0 && announceList[0] != null && announceList[0].length > 0) {
+            metainfo.put("announce", announceList[0][0]);
+            if (announceList.length > 1 || announceList[0].length > 1)
+                metainfo.put("announce-list", announceList);
         }
-        metainfo.put("created by", "libtorrent");
-        metainfo.put("creation date", 1325820676);
+        if (urlList != null && urlList.length > 0)
+            metainfo.put("url-list", (urlList.length == 1) ? urlList[0] : urlList);
+        //metainfo.put("created by", "libtorrent");
+        metainfo.put("created by", "ResourceGrabber");
+        //metainfo.put("creation date", 1325820676);
+        metainfo.put("creation date", 1325821361);
+        //metainfo.put("creation date", System.currentTimeMillis()/1000L);
         metainfo.put("info", info);
         OutputStream out = new FileOutputStream(torrentFile);
         encodeMap(metainfo, out);
         out.close();
     }
 
+    public void hashInfo(Object o) throws IOException {
+        MessageDigest sha1;
+        try {
+            sha1 = MessageDigest.getInstance("SHA");
+        } catch (NoSuchAlgorithmException e) {
+            throw new Error("SHA1 not supported");
+        }
+        encodeObject(o, new DigestOutputStream(new NullOutputStream(), sha1));
+        this.base32InfoHash = new Base32().encode(sha1.digest());
+        this.sha1InfoHash = new java.math.BigInteger(1, sha1.digest()).toString(16);
+    }
+
     public static void main(String[] args) throws Exception {
-        Debug.debug = true;
+        Debug.debug = true;      /*
+        MessageDigest sha1 = MessageDigest.getInstance("SHA");
+        Downloader.writeStream(new FileInputStream("/home/mopar/IdeaProjects/MoparScape4/cachedump/minimal317.9.zip"), new DigestOutputStream(new NullOutputStream(), sha1));
+        toReadable(sha1);
+        System.exit(0);   */
         //MakeTorrent.askForFile(null);
-        new MakeTorrent("/home/mopar/IdeaProjects/MoparScape4/cachedump/minimal317.9.zip");
+        new MakeTorrent("/home/mopar/IdeaProjects/MoparScape4/cachedump/minimal317.9.zip", "http://cache.hybridscape.com/minimal317.9.zip", "http://bob.com/tom");
         new MakeTorrent("/home/mopar/IdeaProjects/MoparScape4/cachedump/minimal317.9.zip.gz");
-        System.out.println("my crc: " + MakeTorrent.crcFile("/home/mopar/onefifty/cachetest/minimal317"));
+        //System.out.println("my crc: " + MakeTorrent.crcFile("/home/mopar/onefifty/cachetest/minimal317"));
 
         new MakeTorrent("/home/mopar/IdeaProjects/MoparScape4/dist/client317.jar");
         System.out.println("old CRC of jar: 48487200");
