@@ -20,17 +20,13 @@
 
 package org.moparscape.classloader;
 
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
+import org.moparscape.res.impl.Downloader;
+
+import java.io.*;
 import java.security.ProtectionDomain;
-import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.jar.JarEntry;
-import java.util.jar.JarFile;
-import java.util.zip.CRC32;
+import java.util.zip.*;
 
 /**
  * This is a class loader that loads classes from jars on the filesystem, optionally checking the CRC of the classes and
@@ -109,7 +105,7 @@ public class CRCClassLoader extends ClassLoader {
             //new Update(backupURL, jarFileLoc, true);
             // use ResourceGrabber
             int jarWait = org.moparscape.res.ResourceGrabber.getRG().download(backupURL, jarFileLoc);
-            if(org.moparscape.res.ResourceGrabber.getRG().waitCatch(jarWait)){
+            if (org.moparscape.res.ResourceGrabber.getRG().waitCatch(jarWait)) {
                 jarFileLoc = org.moparscape.res.ResourceGrabber.getRG().firstFileEndsWithIgnoreCase(jarWait, "jar");
                 org.moparscape.res.ResourceGrabber.getRG().freeResources(jarWait);
             }
@@ -142,9 +138,6 @@ public class CRCClassLoader extends ClassLoader {
             return;
         }
 
-        JarFile jf = new JarFile(f);
-        Enumeration entries = jf.entries();
-
         if (updateCRC)
             classes = new HashMap<String, byte[]>();
 
@@ -153,33 +146,36 @@ public class CRCClassLoader extends ClassLoader {
             crcVal = 0;
             crc = new CRC32();
         }
-
-        byte[] buffer = new byte[1024];
-
+        /*
+        JarFile jf = new JarFile(f);
+        Enumeration entries = jf.entries();
         while (entries.hasMoreElements()) {
             JarEntry entry = (JarEntry) entries.nextElement();
+        */
+        InputStream is = new FileInputStream(f);
+        if (jarFileLoc.toLowerCase().endsWith(".gz"))
+                is = new GZIPInputStream(is);
+        ZipInputStream in = new ZipInputStream(is);
+        ZipEntry entry;
+        while ((entry = in.getNextEntry()) != null) {
             if (entry.getName().endsWith(".class")) {
-                InputStream in = jf.getInputStream(entry);
+                //InputStream in = jf.getInputStream(entry);
                 ByteArrayOutputStream baos = new ByteArrayOutputStream();
-                int len;
-                while ((len = in.read(buffer)) >= 0)
-                    baos.write(buffer, 0, len);
-                baos.flush();
-                in.close();
-                baos.close();
-
-                // update crc
-                byte[] classArr = baos.toByteArray();
+                OutputStream out = baos;
                 if (updateCRC)
-                    crc.update(classArr);
+                    //in = new CheckedInputStream(in, crc);
+                    out = new CheckedOutputStream(out, crc);
+
+                Downloader.writeStream(in, out);
 
                 String className = entry.getName().substring(0, entry.getName().lastIndexOf(".")).replaceAll("/", ".");
                 //if (updateCRC)  System.out.println("class name: " + className);
                 // save class
-                classes.put(className, classArr);
+                classes.put(className, baos.toByteArray());
             }
         }
-        jf.close();
+        //jf.close();
+        in.close();
 
         if (updateCRC)
             crcVal = crc.getValue();

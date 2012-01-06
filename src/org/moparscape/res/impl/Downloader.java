@@ -21,7 +21,6 @@
 package org.moparscape.res.impl;
 
 import org.moparscape.res.ChecksumInfo;
-import org.moparscape.res.ChecksumInputStream;
 import org.moparscape.res.DownloadListener;
 
 import java.io.*;
@@ -170,8 +169,6 @@ public abstract class Downloader {
                 callback.extracting("Extracting " + fileName, length, "to " + savePath + "...");
                 is = new ProgressInputStream(is, callback);
             }
-            if(cs != null)
-                is = new ChecksumInputStream(is, cs);
 
             //if(true)throw new RuntimeException("woohoo! fake exceptions!");
             fileName = fileName.toLowerCase();
@@ -203,7 +200,7 @@ public abstract class Downloader {
                     // if we are here, this is our java_client.win32.exe, and the CRC is correct, now just write it out to the file
                     // this should be quick enough I'm not going to bother with a ProgressInputStream
                     //writeStream(new ByteArrayInputStream(baos.toByteArray()), new FileOutputStream(savePath + fileName));
-                    OutputStream fos = getOutputStream(savePath, fileName);
+                    OutputStream fos = getOutputStream(savePath, fileName, cs);
                     fos.write(baos.toByteArray());
                     fos.flush();
                     fos.close();
@@ -211,7 +208,7 @@ public abstract class Downloader {
                 }
                 if (callback != null)
                     callback.setExtraInfo("Extracting File: " + fileName);
-                writeStream(new GZIPInputStream(is), getOutputStream(savePath, fileName));
+                writeStream(new GZIPInputStream(is), getOutputStream(savePath, fileName, cs));
                 return true;
             } else if (fileName.endsWith(".zip")) {
                 // if we are here, the streams are all set up to unzip below, so don't do anything
@@ -222,6 +219,7 @@ public abstract class Downloader {
                 return false;
             }
             ZipInputStream zin = new ZipInputStream(is);
+
             ZipEntry entry;
             while ((entry = zin.getNextEntry()) != null) {
                 String name = entry.getName();
@@ -236,7 +234,8 @@ public abstract class Downloader {
                         continue;
                     if (callback != null)
                         callback.setExtraInfo("Extracting File: " + name);
-                    writeStream(zin, getOutputStream(savePath, name));
+                    //System.out.printf("Extracting File: '%s' crc so far: '%d'\n", name, cs == null? 0 : cs.getValue());
+                    writeStream(zin, getOutputStream(savePath, name, cs));
                 }
                 //try{ Thread.sleep(1000); }catch(InterruptedException e){ e.printStackTrace(); }
             }
@@ -252,11 +251,17 @@ public abstract class Downloader {
     }
 
     // helper method to supply NullOutputStream if savePath is null
-    private static OutputStream getOutputStream(String savePath, String fileName) throws FileNotFoundException{
+    private static OutputStream getOutputStream(String savePath, String fileName, Checksum cs) throws FileNotFoundException{
+        OutputStream ret = null;
         if(savePath == null || fileName == null)
-            return new org.moparscape.res.NullOutputStream();
+            ret = new org.moparscape.res.NullOutputStream();
         else
-            return new FileOutputStream(savePath + fileName);
+            ret = new FileOutputStream(savePath + fileName);
+
+        if(cs != null)
+            ret = new CheckedOutputStream(ret, cs);
+
+        return ret;
     }
 
     public static File createTempDir() {

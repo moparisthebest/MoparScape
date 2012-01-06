@@ -23,7 +23,9 @@ package org.moparscape.res;
 import org.moparscape.res.impl.Downloader;
 
 import java.io.*;
+import java.util.Arrays;
 import java.util.zip.CRC32;
+import java.util.zip.CheckedInputStream;
 import java.util.zip.Checksum;
 
 /**
@@ -131,7 +133,8 @@ public class ChecksumInfo {
             cs.reset();
         checksumCalculated = true;
         try {
-            Downloader.writeStream(new ChecksumInputStream(is, cs), os == null ? new NullOutputStream() : os);
+            //Downloader.writeStream(new ChecksumInputStream(is, cs), os == null ? new NullOutputStream() : os);
+            Downloader.writeStream(new CheckedInputStream(is, cs), os == null ? new NullOutputStream() : os);
         } catch (Exception e) {
             // if there is an exception, just ignore it
         }
@@ -143,15 +146,19 @@ public class ChecksumInfo {
             return;
         if (path.isFile()) {
             try {
-                Downloader.writeStream(new ChecksumInputStream(new FileInputStream(path), cs), nos);
+                //Downloader.writeStream(new ChecksumInputStream(new FileInputStream(path), cs), nos);
+                Downloader.writeStream(new CheckedInputStream(new FileInputStream(path), cs), nos);
             } catch (Exception e) {
                 // if there is an exception, just ignore it
             }
             return;
         }
-        for (File file : path.listFiles(filter)) {
-            System.out.println("Checksum so far: " + cs.getValue());
-            System.out.println("Checking filename: " + file.getAbsolutePath());
+        File[] children = path.listFiles(filter);
+        // checksums depend on order, so we must sort them
+        Arrays.sort(children);
+        for (File file : children) {
+            //System.out.println("Checksum so far: " + cs.getValue());
+            //System.out.println("Checking filename: " + file.getAbsolutePath());
 
             recursiveChecksum(file, cs, nos, filter);
         }
