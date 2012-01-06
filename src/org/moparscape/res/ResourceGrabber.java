@@ -600,7 +600,8 @@ public class ResourceGrabber {
                             break;
                         case EXTRACTING:
                             dll.setRunning();
-                            dll.dip.reset(dll.title, dll.length, dll.info);
+                            if(dll.dip != null)
+                                dll.dip.reset(dll.title, dll.length, dll.info);
                             break;
                         case STOPPED:
                             if (!dll.autoRemove)

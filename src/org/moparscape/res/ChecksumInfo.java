@@ -164,6 +164,12 @@ public class ChecksumInfo {
         }
     }
 
+    public static long crcFile(String file) {
+        ChecksumInfo ci = new ChecksumInfo();
+        ci.checksumMatch(file);
+        return ci.getChecksum();
+    }
+
     public static void main(String[] args) throws Exception {
         if (args.length < 2) {
             System.out.println("Usage: ChecksumInfo logFile jarFile...");
