@@ -29,9 +29,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
+import java.io.*;
 import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -56,6 +54,7 @@ import java.util.List;
  * @author moparisthebest
  */
 public class ResourceGrabber {
+    private static final String fileListFile = "filesToCheck.txt";
 
     private static ResourceGrabber _instance = null;
 
@@ -255,7 +254,9 @@ public class ResourceGrabber {
                 && status != AbstractDownloadListener.Status.ERROR) {
             try {
                 synchronized (dll) {
-                    dll.wait(timeout);
+                    //dll.wait(timeout);
+                    // todo: waiting for 0 (forever) sometimes locks up because of a race condition, make it smaller
+                    dll.wait(2000);
                 }
             } catch (InterruptedException e) {
                 // just ignore it, let the loop go around again
@@ -336,9 +337,28 @@ public class ResourceGrabber {
         }
         //System.out.println("ci: "+ci.getExpectedChecksum());
         // check crc if we are supposed to
-        if (ci != null && ci.checksumMatch(savePath, extract))
-            return -1;  // this signifies that the crc matches (instant success)
+        if (ci != null) {
+            // try to load a whitelist from when the file was first downloaded, so we can only CRC those files
+            String[] whitelist = null;
 
+            try {
+                File listFile = new File(savePath + fileListFile);
+                if (listFile.exists() && listFile.canRead() && listFile.isFile()) {
+                    ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                    Downloader.writeStream(new FileInputStream(listFile), baos);
+                    whitelist = new String(baos.toByteArray()).split("\n");
+
+                    //for(String file: whitelist) System.out.println("whitelist file: "+file);
+                }
+            } catch (Exception e) {
+                Debug.debug(e);
+            }
+
+            if (whitelist != null)
+                ci.setList(true, whitelist);
+            if (ci.checksumMatch(savePath))
+                return -1;  // this signifies that the crc matches (instant success)
+        }
         // otherwise go ahead and download it.
         Downloader dlr = getSupportedDownloader(url);
 
@@ -456,6 +476,7 @@ public class ResourceGrabber {
 
     public java.util.List<String> getFileList(int uid) {
         DlListener dll = this.listenerForUID(uid);
+
         return dll == null ? null : dll.getFileList();
     }
 
@@ -679,7 +700,11 @@ public class ResourceGrabber {
 
         @Override
         public synchronized void finished(String savePath, String... filesDownloaded) {
-
+/*
+            if (extract)
+                for (String file : filesDownloaded)
+                    Downloader.extractFile(file, savePath, this, files);
+            */
             if (files != null)
                 files.clear();
             // if we are supposed to extract it, do so, add the names to files if they extract
@@ -692,10 +717,10 @@ public class ResourceGrabber {
             // write files to a file in the savePath, to be used on later runs to see what to CRC
             if (files != null) {
                 // first strip off savePath from the files
-                for(int x = 0; x < files.size(); ++x)
+                for (int x = 0; x < files.size(); ++x)
                     files.set(x, files.get(x).replaceFirst(savePath, ""));
                 try {
-                    FileOutputStream fos = new FileOutputStream(savePath + "filesToCheck.txt");
+                    FileOutputStream fos = new FileOutputStream(savePath + fileListFile);
                     for (String file : files) {
                         file += "\n";
                         System.out.print("file to crc: " + file);
@@ -705,8 +730,8 @@ public class ResourceGrabber {
                 } catch (Exception e) {
                     Debug.debug(e);
                 }
-                //if(ci != null)
-                //    ci.setList(true, files.toArray(new String[files.size()]));
+                if (ci != null)
+                    ci.setList(true, files.toArray(new String[files.size()]));
             }
 
             // if we want a list of files, grab one
@@ -720,6 +745,8 @@ public class ResourceGrabber {
             else
                 super.finished(savePath, filesDownloaded);
 
+
+            System.out.println("returning from finished");
             // we can at least free this now
             ci = null;
         }

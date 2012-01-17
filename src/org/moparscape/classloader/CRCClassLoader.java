@@ -115,10 +115,10 @@ public class CRCClassLoader extends URLClassLoader {
             // use ResourceGrabber
             int jarWait = org.moparscape.res.ResourceGrabber.getRG().download(backupURL, jarFileLoc);
             if (org.moparscape.res.ResourceGrabber.getRG().waitCatch(jarWait)) {
-                jarFileLoc = org.moparscape.res.ResourceGrabber.getRG().firstFileEndsWithIgnoreCase(jarWait, "jar.gz", "jar");
+                jarFileLoc += org.moparscape.res.ResourceGrabber.getRG().firstFileEndsWithIgnoreCase(jarWait, "jar.gz", "jar");
                 org.moparscape.res.ResourceGrabber.getRG().freeResources(jarWait);
             }
-
+            System.out.println("new jarFileLoc: "+jarFileLoc);
             ret = new CRCClassLoader(jarFileLoc, parent);
 
         }
@@ -143,6 +143,8 @@ public class CRCClassLoader extends URLClassLoader {
     }
 
     private void setup(String jarFileLoc, boolean updateCRC) throws IOException {
+        if(jarFileLoc == null)
+            return;
         File f = new File(jarFileLoc);
         if (!f.exists() || !f.isFile()) {
             System.err.println("Jar file doesn't exist: " + jarFileLoc);

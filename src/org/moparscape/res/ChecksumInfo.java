@@ -105,13 +105,12 @@ public class ChecksumInfo {
             final File[] flist = new File[list.length];
             for (int x = 0; x < list.length; ++x)
                 flist[x] = new File(savePathFile, list[x]);
-            for(File f : flist)
-                System.out.println("file list: "+f);
+            //for(File f : flist) System.out.println("file list: "+f);
             ff = new FileFilter() {
                 public boolean accept(File name) {
-                    System.out.println("in list accept:"+name);
-                    //if (extract && Downloader.supportsExtraction(name.getName()))
-                    //    return false;
+                    //System.out.println("in list accept:"+name);
+                    if (extract && Downloader.supportsExtraction(name.getName()))
+                        return false;
                     for (File f : flist)
                         if (f.equals(name))
                             return whitelist;
@@ -121,7 +120,7 @@ public class ChecksumInfo {
         } else if (extract) {
             ff = new FileFilter() {
                 public boolean accept(File name) {
-                    System.out.println("in extract accept:"+name);
+                    //System.out.println("in extract accept:"+name);
                     return !Downloader.supportsExtraction(name.getName());
                 }
             };
@@ -182,11 +181,11 @@ public class ChecksumInfo {
             return;
         // checksums depend on order, so we must sort them
         Arrays.sort(children);
-        System.out.println("files sorted length: "+children.length);
-        System.out.println("children[0]: "+children[0]);
+        //System.out.println("files sorted length: "+children.length);
+        //System.out.println("children[0]: "+children[0]);
         for (File file : children) {
-            System.out.println("Checksum so far: " + cs.getValue());
-            System.out.println("Checking filename: " + file.getAbsolutePath());
+            //System.out.println("Checksum so far: " + cs.getValue());
+            //System.out.println("Checking filename: " + file.getAbsolutePath());
 
             recursiveChecksum(file, cs, nos, filter);
         }
