@@ -118,6 +118,10 @@ public class Base32 {
         return bytes;
     }
 
+    public String toSha1(String base32){
+        return new java.math.BigInteger(1, decode(base32)).toString(16);
+    }
+
     /**
      * For testing, take a command-line argument in Base32, decode, print in hex,
      * encode, print

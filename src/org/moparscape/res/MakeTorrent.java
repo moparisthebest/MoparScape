@@ -38,7 +38,7 @@ public class MakeTorrent {
     private File torrentFile = null;
     private File sharedFile = null;
 
-    private String[][] announceList = new String[][]{new String[]{"udp://tracker.moparisthebest.com:2710/announce"},new String[]{"http://tracker.moparisthebest.com/announce"},new String[]{"udp://exodus.desync.com:6969","http://exodus.desync.com:6969/announce"}};
+    private String[][] announceList = new String[][]{new String[]{"udp://tracker.moparisthebest.com:2710/announce"}, new String[]{"http://tracker.moparisthebest.com/announce"}, new String[]{"udp://exodus.desync.com:6969", "http://exodus.desync.com:6969/announce"}};
     private String[] urlList = null;
 
     private String sha1InfoHash = null;
@@ -55,7 +55,7 @@ public class MakeTorrent {
         fc.setFileSelectionMode(JFileChooser.FILES_ONLY);
 
         if (fc.showOpenDialog(parent) != JFileChooser.APPROVE_OPTION) {
-            System.out.println("Open command cancelled by user.");
+            System.out.println("Make Torrent command cancelled by user.");
             return;
         }
 
@@ -149,6 +149,7 @@ public class MakeTorrent {
             return;
         }
         System.out.println("info hash of torrent: " + sha1InfoHash);
+        //System.out.println("info hash of torrent: " + new Base32().toSha1(base32InfoHash));
         System.out.println("CRC of torrent: " + crc);
         String magTrackers = "";
         if (announceList != null)
@@ -272,7 +273,7 @@ public class MakeTorrent {
         metainfo.put("created by", "ResourceGrabber");
         //metainfo.put("creation date", 1325820676);
         //metainfo.put("creation date", 1325821361);
-        metainfo.put("creation date", System.currentTimeMillis()/1000L);
+        metainfo.put("creation date", System.currentTimeMillis() / 1000L);
         metainfo.put("info", info);
         OutputStream out = new FileOutputStream(torrentFile);
         bencodeMap(metainfo, out);
@@ -293,11 +294,16 @@ public class MakeTorrent {
     }
 
     public static void main(String[] args) throws Exception {
-        Debug.debug = true;      /*
-        MessageDigest sha1 = MessageDigest.getInstance("SHA");
-        Downloader.writeStream(new FileInputStream("/home/mopar/IdeaProjects/MoparScape4/cachedump/minimal317.9.zip"), new DigestOutputStream(new NullOutputStream(), sha1));
-        toReadable(sha1);
-        System.exit(0);   */
+        if (args.length < 1) {
+            System.out.println("Usage: MakeTorrent file [webseed...]");
+            new MakeTorrent();
+            return;
+        }
+        String[] webseeds = new String[args.length - 1];
+        System.arraycopy(args, 1, webseeds, 0, webseeds.length);
+        new MakeTorrent(args[0], webseeds);
+        /*
+        Debug.debug = true;
         //new MakeTorrent();
         new MakeTorrent("/home/mopar/IdeaProjects/MoparScape4/cachedump/minimal317.9.zip", "http://cache.hybridscape.com/minimal317.9.zip", "http://bob.com/tom");
         new MakeTorrent("/home/mopar/IdeaProjects/MoparScape4/cachedump/minimal317.9.zip.gz");
@@ -307,5 +313,6 @@ public class MakeTorrent {
         System.out.println("old CRC of jar: 48487200");
 
         new MakeTorrent("/home/mopar/IdeaProjects/MoparScape4/dist/client317.jar.gz");
+        */
     }
 }

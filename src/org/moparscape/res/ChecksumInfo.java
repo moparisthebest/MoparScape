@@ -49,31 +49,38 @@ public class ChecksumInfo {
     }
 
     public ChecksumInfo(long expectedCRC) {
-        this(expectedCRC, null, null, true);
+        this(expectedCRC, null, true);
     }
 
     public ChecksumInfo(long expectedCRC, Checksum cs) {
-        this(expectedCRC, cs, null, true);
+        this(expectedCRC, cs, true);
     }
 
     public ChecksumInfo(long expectedCRC, String[] list) {
-        this(expectedCRC, null, list, true);
+        this(expectedCRC, null, true, list);
     }
 
-    public ChecksumInfo(long expectedCRC, String[] list, boolean whitelist) {
-        this(expectedCRC, null, list, whitelist);
+    public ChecksumInfo(long expectedCRC, boolean whitelist, String... list) {
+        this(expectedCRC, null, whitelist, list);
     }
 
-    public ChecksumInfo(long expectedCRC, Checksum cs, String[] list) {
-        this(expectedCRC, cs, list, true);
+    public ChecksumInfo(long expectedCRC, Checksum cs, String... list) {
+        this(expectedCRC, cs, true, list);
     }
 
-    public ChecksumInfo(long expectedCRC, Checksum cs, String[] list, boolean whitelist) {
+    public ChecksumInfo(long expectedCRC, Checksum cs, boolean whitelist, String... list) {
         if (cs == null)
             cs = new CRC32();
 
         this.expectedCRC = expectedCRC;
         this.cs = cs;
+        this.setList(whitelist, list);
+    }
+
+    public void setList(boolean whitelist, String... list) {
+
+        if (list.length == 0)
+            list = null;
         this.list = list;
         this.whitelist = whitelist;
     }
@@ -84,22 +91,38 @@ public class ChecksumInfo {
      * @param savePath
      * @return
      */
-    public synchronized boolean checksumMatch(String savePath) {
+    public boolean checksumMatch(String savePath) {
+        return this.checksumMatch(savePath, false);
+    }
+
+    public synchronized boolean checksumMatch(String savePath, final boolean extract) {
         if (checksumCalculated)
             cs.reset();
         checksumCalculated = true;
         File savePathFile = new File(savePath);
         FileFilter ff = null;
-        if (list != null && savePathFile.isDirectory()) {
+        if (list != null && list.length > 0 && savePathFile.isDirectory()) {
             final File[] flist = new File[list.length];
             for (int x = 0; x < list.length; ++x)
                 flist[x] = new File(savePathFile, list[x]);
+            for(File f : flist)
+                System.out.println("file list: "+f);
             ff = new FileFilter() {
                 public boolean accept(File name) {
+                    System.out.println("in list accept:"+name);
+                    //if (extract && Downloader.supportsExtraction(name.getName()))
+                    //    return false;
                     for (File f : flist)
                         if (f.equals(name))
                             return whitelist;
                     return !whitelist;
+                }
+            };
+        } else if (extract) {
+            ff = new FileFilter() {
+                public boolean accept(File name) {
+                    System.out.println("in extract accept:"+name);
+                    return !Downloader.supportsExtraction(name.getName());
                 }
             };
         }
@@ -154,11 +177,16 @@ public class ChecksumInfo {
             return;
         }
         File[] children = path.listFiles(filter);
+        //File[] children = path.listFiles();
+        if(children.length == 0)
+            return;
         // checksums depend on order, so we must sort them
         Arrays.sort(children);
+        System.out.println("files sorted length: "+children.length);
+        System.out.println("children[0]: "+children[0]);
         for (File file : children) {
-            //System.out.println("Checksum so far: " + cs.getValue());
-            //System.out.println("Checking filename: " + file.getAbsolutePath());
+            System.out.println("Checksum so far: " + cs.getValue());
+            System.out.println("Checking filename: " + file.getAbsolutePath());
 
             recursiveChecksum(file, cs, nos, filter);
         }

@@ -31,6 +31,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -291,7 +292,7 @@ public class ResourceGrabber {
     }
 
     public int download(String url, String savePath, boolean extract, ChecksumInfo ci) throws MalformedURLException {
-        return this.download(url, savePath, extract, null, false);
+        return this.download(url, savePath, extract, ci, false);
     }
 
     public String uniqueFoldername(String url) {
@@ -314,7 +315,7 @@ public class ResourceGrabber {
             if (!savePath.endsWith("/"))
                 savePath += "/";
             savePath = savePath + dlr.uniqueFoldername(url);
-        }else{
+        } else {
             return dlr.uniqueFoldername(url);
         }
 
@@ -333,9 +334,9 @@ public class ResourceGrabber {
         if (uniqueFolder) {
             savePath = uniqueFoldername(url, savePath, files);
         }
-
+        //System.out.println("ci: "+ci.getExpectedChecksum());
         // check crc if we are supposed to
-        if (ci != null && ci.checksumMatch(savePath))
+        if (ci != null && ci.checksumMatch(savePath, extract))
             return -1;  // this signifies that the crc matches (instant success)
 
         // otherwise go ahead and download it.
@@ -497,7 +498,10 @@ public class ResourceGrabber {
     public String firstFileEndsWith(String url, String savePath, boolean ignoreCase, String... suffixes) {
         // no need for concurrent because only we have access to this list and it will only be accessed in a single thread
         java.util.List<String> files = newList(2);
-        this.uniqueFoldername(url, savePath, files);
+        if (url != null)
+            this.uniqueFoldername(url, savePath, files);
+        else
+            Downloader.listFiles(savePath, files);
         return this.firstFileEndsWith(files, ignoreCase, suffixes);
     }
 
@@ -600,7 +604,7 @@ public class ResourceGrabber {
                             break;
                         case EXTRACTING:
                             dll.setRunning();
-                            if(dll.dip != null)
+                            if (dll.dip != null)
                                 dll.dip.reset(dll.title, dll.length, dll.info);
                             break;
                         case STOPPED:
@@ -675,17 +679,41 @@ public class ResourceGrabber {
 
         @Override
         public synchronized void finished(String savePath, String... filesDownloaded) {
-            // if we are supposed to extract it, do so
-            if (extract)
-                for (String file : filesDownloaded)
-                    Downloader.extractFile(file, savePath, this);
+
+            if (files != null)
+                files.clear();
+            // if we are supposed to extract it, do so, add the names to files if they extract
+            for (String file : filesDownloaded)
+                if (!(extract && Downloader.supportsExtraction(file) &&
+                        Downloader.extractFile(file, savePath, this, files)) &&
+                        files != null)
+                    files.add(file);
+
+            // write files to a file in the savePath, to be used on later runs to see what to CRC
+            if (files != null) {
+                // first strip off savePath from the files
+                for(int x = 0; x < files.size(); ++x)
+                    files.set(x, files.get(x).replaceFirst(savePath, ""));
+                try {
+                    FileOutputStream fos = new FileOutputStream(savePath + "filesToCheck.txt");
+                    for (String file : files) {
+                        file += "\n";
+                        System.out.print("file to crc: " + file);
+                        fos.write(file.getBytes());
+                    }
+                    fos.close();
+                } catch (Exception e) {
+                    Debug.debug(e);
+                }
+                //if(ci != null)
+                //    ci.setList(true, files.toArray(new String[files.size()]));
+            }
 
             // if we want a list of files, grab one
-            if (files != null)
-                Downloader.listFiles(savePath, files);
+            //if (files != null)
+            //    Downloader.listFiles(savePath, files);
 
             // check crc if we are supposed to
-            // TODO: should we only check filesDownloaded? Then we can't specify extracted files to CRC only.
             //System.out.println("savePath: "+savePath);
             if (ci != null && !ci.checksumMatch(savePath))
                 error(String.format("CRC Mismatch. expected: %d actual: %d", ci.getExpectedChecksum(), ci.getChecksum()), null);

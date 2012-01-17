@@ -139,7 +139,7 @@ public abstract class Downloader {
     }
 
     public static boolean extractFile(String fileName, String savePath) {
-        return extractFile(fileName, savePath, null, null);
+        return extractFile(fileName, savePath, null, null, null);
     }
 
     public static boolean extractFile(String fileName, String savePath, Checksum cs) {
@@ -147,7 +147,15 @@ public abstract class Downloader {
     }
 
     public static boolean extractFile(String fileName, String savePath, DownloadListener callback) {
-        return extractFile(fileName, savePath, callback, null);
+        return extractFile(fileName, savePath, callback, null, null);
+    }
+
+    public static boolean extractFile(String fileName, String savePath, DownloadListener callback, Checksum cs){
+        return extractFile(fileName, savePath, callback, cs, null);
+    }
+
+    public static boolean extractFile(String fileName, String savePath, DownloadListener callback, java.util.List<String> files){
+        return extractFile(fileName, savePath, callback, null, files);
     }
 
     /**
@@ -157,7 +165,7 @@ public abstract class Downloader {
      * @param savePath
      * @throws IOException
      */
-    public static boolean extractFile(String fileName, String savePath, DownloadListener callback, Checksum cs) {
+    public static boolean extractFile(String fileName, String savePath, DownloadListener callback, Checksum cs, java.util.List<String> files) {
         if(savePath != null && !savePath.endsWith("/"))
             savePath += "/";
         File file = new File(fileName);
@@ -200,7 +208,7 @@ public abstract class Downloader {
                     // if we are here, this is our java_client.win32.exe, and the CRC is correct, now just write it out to the file
                     // this should be quick enough I'm not going to bother with a ProgressInputStream
                     //writeStream(new ByteArrayInputStream(baos.toByteArray()), new FileOutputStream(savePath + fileName));
-                    OutputStream fos = getOutputStream(savePath, fileName, cs);
+                    OutputStream fos = getOutputStream(savePath, fileName, cs, files);
                     fos.write(baos.toByteArray());
                     fos.flush();
                     fos.close();
@@ -208,7 +216,7 @@ public abstract class Downloader {
                 }
                 if (callback != null)
                     callback.setExtraInfo("Extracting File: " + fileName);
-                writeStream(new GZIPInputStream(is), getOutputStream(savePath, fileName, cs));
+                writeStream(new GZIPInputStream(is), getOutputStream(savePath, fileName, cs, files));
                 return true;
             } else if (fileName.endsWith(".zip")) {
                 // if we are here, the streams are all set up to unzip below, so don't do anything
@@ -235,7 +243,7 @@ public abstract class Downloader {
                     if (callback != null)
                         callback.setExtraInfo("Extracting File: " + name);
                     //System.out.printf("Extracting File: '%s' crc so far: '%d'\n", name, cs == null? 0 : cs.getValue());
-                    writeStream(zin, getOutputStream(savePath, name, cs));
+                    writeStream(zin, getOutputStream(savePath, name, cs, files));
                 }
                 //try{ Thread.sleep(1000); }catch(InterruptedException e){ e.printStackTrace(); }
             }
@@ -250,13 +258,17 @@ public abstract class Downloader {
         }
     }
 
-    // helper method to supply NullOutputStream if savePath is null
-    private static OutputStream getOutputStream(String savePath, String fileName, Checksum cs) throws FileNotFoundException{
+    // helper method to supply NullOutputStream if savePath is null, and to add the name to files if needed
+    private static OutputStream getOutputStream(String savePath, String fileName, Checksum cs, java.util.List<String> files) throws FileNotFoundException{
         OutputStream ret = null;
         if(savePath == null || fileName == null)
             ret = new org.moparscape.res.NullOutputStream();
-        else
-            ret = new FileOutputStream(savePath + fileName);
+        else{
+            String file = savePath + fileName;
+            ret = new FileOutputStream(file);
+            if(files != null)
+                files.add(file);
+        }
 
         if(cs != null)
             ret = new CheckedOutputStream(ret, cs);

@@ -20,6 +20,7 @@
 
 package org.moparscape.res.impl;
 
+import org.moparscape.res.Base32;
 import org.moparscape.res.ChecksumInfo;
 import org.moparscape.res.DownloadListener;
 
@@ -398,9 +399,12 @@ public class BTDownloader extends Downloader {
             return null;
         url = url.toLowerCase();
         if (url.startsWith("magnet:")) {
+            boolean base32 = url.contains("xt=urn:btih:");
             url = url.substring(url.indexOf("xt=") + 3, url.length());
             url = url.substring(0, url.indexOf("&"));
             url = url.substring(url.lastIndexOf(":") + 1, url.length()).toLowerCase();
+            if(base32)
+                url = new Base32().toSha1(url);
         } else {
             url = url.replaceFirst(".*://", "").replaceAll("/+", ".").replaceAll("(^\\.|\\.$)", "");
         }

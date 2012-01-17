@@ -21,18 +21,27 @@
 package org.moparscape.classloader;
 
 import org.moparscape.res.impl.Downloader;
+import sun.text.normalizer.UCharacterProperty;
 
 import java.io.*;
+import java.net.URL;
+import java.net.URLClassLoader;
 import java.security.ProtectionDomain;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.zip.*;
+import java.util.jar.JarEntry;
+import java.util.jar.JarInputStream;
+import java.util.zip.CRC32;
+import java.util.zip.CheckedOutputStream;
+import java.util.zip.GZIPInputStream;
 
 /**
  * This is a class loader that loads classes from jars on the filesystem, optionally checking the CRC of the classes and
  * grabbing new updated jars if the CRC doesn't match.
+ * <p/>
+ * todo: make this extend URLClassLoader so resources etc are handled automatically
  */
-public class CRCClassLoader extends ClassLoader {
+public class CRCClassLoader extends URLClassLoader {
 
     private Map<String, byte[]> classes = new HashMap<String, byte[]>();
     private long crcVal;
@@ -46,20 +55,20 @@ public class CRCClassLoader extends ClassLoader {
      * @param jarFileLoc The location of the jar file to load on the disk
      */
     public CRCClassLoader(String jarFileLoc) throws IOException {
-        super();
-        setup(jarFileLoc);
+        this(jarFileLoc, null);
     }
 
     public CRCClassLoader(String jarFileLoc, Class parent) throws IOException {
-        this(jarFileLoc);
-        this.parent = parent.getClassLoader();
-        this.pd = parent.getProtectionDomain();
+        super(new URL[]{new URL("file://"+jarFileLoc)}, parent == null ? null : parent.getClassLoader());
+        setup(jarFileLoc);
+        if (parent != null) {
+            this.parent = parent.getClassLoader();
+            this.pd = parent.getProtectionDomain();
+        }
     }
 
-    public CRCClassLoader(String jarFileLoc, String backupURL, long expectedCRC, Class parent, boolean crcMismatchException) throws IOException {
-        this(jarFileLoc, backupURL, expectedCRC, crcMismatchException);
-        this.parent = parent.getClassLoader();
-        this.pd = parent.getProtectionDomain();
+    public static CRCClassLoader newInstance(String jarFileLoc, String backupURL, long expectedCRC, boolean crcMismatchException) throws IOException {
+        return newInstance(jarFileLoc, backupURL, expectedCRC, null, crcMismatchException);
     }
 
     /**
@@ -69,16 +78,16 @@ public class CRCClassLoader extends ClassLoader {
      *
      * @param jarFileLoc The location of the jar file to load on the disk
      */
-    public CRCClassLoader(String jarFileLoc, String backupURL, long expectedCRC, boolean crcMismatchException) throws IOException {
-        super();
-
+    public static CRCClassLoader newInstance(String jarFileLoc, String backupURL, long expectedCRC, Class parent, boolean crcMismatchException) throws IOException {
+        //super(new URL[]{}, parent == null ? null : parent.getClassLoader());
+        CRCClassLoader ret = null;
         // wrap this one in a try / catch, so we can retry if it throws an exception
         try {
-            setup(jarFileLoc);
+            ret = new CRCClassLoader(jarFileLoc, parent);
 
             // check CRC
-            if (getCRC() == expectedCRC)
-                return;
+            if (ret.getCRC() == expectedCRC)
+                return ret;
         } catch (IOException e) {
             //e.printStackTrace();
             // if we don't have a backupURL, just go ahead and rethrow this exception, can't do anything more
@@ -106,25 +115,27 @@ public class CRCClassLoader extends ClassLoader {
             // use ResourceGrabber
             int jarWait = org.moparscape.res.ResourceGrabber.getRG().download(backupURL, jarFileLoc);
             if (org.moparscape.res.ResourceGrabber.getRG().waitCatch(jarWait)) {
-                jarFileLoc = org.moparscape.res.ResourceGrabber.getRG().firstFileEndsWithIgnoreCase(jarWait, "jar");
+                jarFileLoc = org.moparscape.res.ResourceGrabber.getRG().firstFileEndsWithIgnoreCase(jarWait, "jar.gz", "jar");
                 org.moparscape.res.ResourceGrabber.getRG().freeResources(jarWait);
             }
 
-            setup(jarFileLoc);
+            ret = new CRCClassLoader(jarFileLoc, parent);
 
         }
 
-        if (getCRC() != expectedCRC) {
-            String s = "CRC checksum failed. crc:" + getCRC() + " expected:" + expectedCRC;
+        if (ret.getCRC() != expectedCRC) {
+            String s = "CRC checksum failed. crc:" + ret.getCRC() + " expected:" + expectedCRC;
             if (crcMismatchException)
                 throw new IOException(s);
             else
                 System.err.println(s);
         }
+        return ret;
     }
 
     public void addJar(String jarFileLoc) throws IOException {
-        this.setup(jarFileLoc, false);
+        //this.setup(jarFileLoc, false);
+        super.addURL(new URL("file://"+jarFileLoc));
     }
 
     private void setup(String jarFileLoc) throws IOException {
@@ -154,10 +165,10 @@ public class CRCClassLoader extends ClassLoader {
         */
         InputStream is = new FileInputStream(f);
         if (jarFileLoc.toLowerCase().endsWith(".gz"))
-                is = new GZIPInputStream(is);
-        ZipInputStream in = new ZipInputStream(is);
-        ZipEntry entry;
-        while ((entry = in.getNextEntry()) != null) {
+            is = new GZIPInputStream(is);
+        JarInputStream in = new JarInputStream(is);
+        JarEntry entry;
+        while ((entry = in.getNextJarEntry()) != null) {
             if (entry.getName().endsWith(".class")) {
                 //InputStream in = jf.getInputStream(entry);
                 ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -195,14 +206,9 @@ public class CRCClassLoader extends ClassLoader {
     public Class<?> findClass(String name) throws ClassNotFoundException {
         //System.out.println("CRCClassLoader: Requesting class '" + name + "'");
         byte[] classBytes = classes.get(name);
-        if (classBytes == null) {
-            if (parent == null)
-                throw new ClassNotFoundException("Couldn't find class " + name);
-            //System.out.println("Couldn't find class '" + name + "' trying parent class loader.");
-            return parent.loadClass(name);
-        }
-        Class foundClass = defineClass(name, classBytes, 0, classBytes.length, pd);
-        return foundClass;
+        if (classBytes == null)
+            return super.findClass(name);
+        return defineClass(name, classBytes, 0, classBytes.length, pd);
     }
 
 }

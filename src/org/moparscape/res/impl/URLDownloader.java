@@ -112,6 +112,9 @@ public class URLDownloader extends Downloader {
         if (url == null || !supportsURL(url))
             return null;
 
+        // strip the ending file off (then guessing filenames won't work correctly)
+        //url = url.substring(0, url.lastIndexOf('/'));
+
         url = url.toLowerCase().replaceFirst(".*://", "").replaceAll("/+", ".").replaceAll("(^\\.|\\.$)", "");
 
         return url+"/";
