@@ -19,6 +19,15 @@ project java_client
 
 exe java_client : java_client.cpp ;
 
+project java_client_human
+   : requirements
+	<threading>multi <library>/torrent//torrent
+	: default-build
+	<link>static
+   ;
+
+exe java_client_human : java_client_human.cpp ;
+
 exe client_test : client_test.cpp ;
 exe make_torrent : make_torrent.cpp ;
 exe dump_torrent : dump_torrent.cpp ;

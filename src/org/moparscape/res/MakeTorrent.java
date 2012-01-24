@@ -173,18 +173,18 @@ public class MakeTorrent {
     }
 
     @SuppressWarnings("unchecked")
-    private void bencodeObject(Object o, OutputStream out) throws IOException {
+    private void bencode(Object o, OutputStream out) throws IOException {
         try {
             if (o instanceof String)
-                bencodeString((String) o, out);
+                bencode((String) o, out);
             else if (o instanceof Map)
-                bencodeMap((Map<String, Object>) o, out);
+                bencode((Map<String, Object>) o, out);
             else if (o instanceof Number)
-                bencodeLong(((Number) o).longValue(), out);
+                bencode(((Number) o).longValue(), out);
             else if (o instanceof byte[])
-                bencodeBytes((byte[]) o, out);
+                bencode((byte[]) o, out);
             else if (o instanceof Object[])
-                bencodeObjectArray((Object[]) o, out);
+                bencode((Object[]) o, out);
             else
                 throw new Error("Unencodable type");
         } catch (ClassCastException e) {
@@ -193,36 +193,36 @@ public class MakeTorrent {
         }
     }
 
-    private void bencodeObjectArray(Object[] list, OutputStream out) throws IOException {
+    private void bencode(Object[] list, OutputStream out) throws IOException {
         out.write('l');
         for (Object str : list)
-            bencodeObject(str, out);
+            bencode(str, out);
         out.write('e');
     }
 
-    private void bencodeLong(long value, OutputStream out) throws IOException {
+    private void bencode(long value, OutputStream out) throws IOException {
         out.write('i');
         out.write(Long.toString(value).getBytes("US-ASCII"));
         out.write('e');
     }
 
-    private void bencodeString(String str, OutputStream out) throws IOException {
-        bencodeBytes(str.getBytes("UTF-8"), out);
+    private void bencode(String str, OutputStream out) throws IOException {
+        bencode(str.getBytes("UTF-8"), out);
     }
 
-    private void bencodeBytes(byte[] bytes, OutputStream out) throws IOException {
+    private void bencode(byte[] bytes, OutputStream out) throws IOException {
         out.write(Integer.toString(bytes.length).getBytes("US-ASCII"));
         out.write(':');
         out.write(bytes);
     }
 
-    private void bencodeMap(Map<String, Object> map, OutputStream out) throws IOException {
+    private void bencode(Map<String, Object> map, OutputStream out) throws IOException {
         // Sort the map. A generic encoder should sort by key bytes
         SortedMap<String, Object> sortedMap = new TreeMap<String, Object>(map);
         out.write('d');
         for (String key : sortedMap.keySet()) {
-            bencodeString(key, out);
-            bencodeObject(sortedMap.get(key), out);
+            bencode(key, out);
+            bencode(sortedMap.get(key), out);
         }
         out.write('e');
     }
@@ -276,7 +276,7 @@ public class MakeTorrent {
         metainfo.put("creation date", System.currentTimeMillis() / 1000L);
         metainfo.put("info", info);
         OutputStream out = new FileOutputStream(torrentFile);
-        bencodeMap(metainfo, out);
+        bencode(metainfo, out);
         out.close();
     }
 
@@ -287,14 +287,14 @@ public class MakeTorrent {
         } catch (NoSuchAlgorithmException e) {
             throw new Error("SHA1 not supported");
         }
-        bencodeObject(o, new DigestOutputStream(new NullOutputStream(), sha1));
+        bencode(o, new DigestOutputStream(new NullOutputStream(), sha1));
         byte[] hash = sha1.digest();
         this.base32InfoHash = new Base32().encode(hash);
         this.sha1InfoHash = new java.math.BigInteger(1, hash).toString(16);
     }
 
     public static void main(String[] args) throws Exception {
-        if (args.length < 1) {
+    /*    if (args.length < 1) {
             System.out.println("Usage: MakeTorrent file [webseed...]");
             new MakeTorrent();
             return;
@@ -302,7 +302,7 @@ public class MakeTorrent {
         String[] webseeds = new String[args.length - 1];
         System.arraycopy(args, 1, webseeds, 0, webseeds.length);
         new MakeTorrent(args[0], webseeds);
-        /*
+        */
         Debug.debug = true;
         //new MakeTorrent();
         new MakeTorrent("/home/mopar/IdeaProjects/MoparScape4/cachedump/minimal317.9.zip", "http://cache.hybridscape.com/minimal317.9.zip", "http://bob.com/tom");
@@ -313,6 +313,6 @@ public class MakeTorrent {
         System.out.println("old CRC of jar: 48487200");
 
         new MakeTorrent("/home/mopar/IdeaProjects/MoparScape4/dist/client317.jar.gz");
-        */
+
     }
 }

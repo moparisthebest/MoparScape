@@ -508,7 +508,7 @@ public class ResourceGrabber {
     }
 
     public String firstFileEndsWith(String url, String savePath, int uid, boolean ignoreCase, String... suffixes) {
-        return this.listenerForUID(uid) == null ? this.firstFileEndsWith(uid, ignoreCase, suffixes) : this.firstFileEndsWith(url, savePath, ignoreCase, suffixes);
+        return this.listenerForUID(uid) != null ? this.firstFileEndsWith(uid, ignoreCase, suffixes) : this.firstFileEndsWith(url, savePath, ignoreCase, suffixes);
     }
 
     public String firstFileEndsWithIgnoreCase(String url, String savePath, String... suffixes) {

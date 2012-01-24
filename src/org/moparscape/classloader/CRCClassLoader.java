@@ -20,6 +20,7 @@
 
 package org.moparscape.classloader;
 
+import org.moparscape.Debug;
 import org.moparscape.res.impl.Downloader;
 import sun.text.normalizer.UCharacterProperty;
 
@@ -87,7 +88,6 @@ public class CRCClassLoader extends URLClassLoader {
             ret = new CRCClassLoader(jarFileLoc, parent);
 
             // check CRC
-            System.out.println("ret1: "+ret);
             if (ret.successfullyLoaded(expectedCRC))
                 return ret;
         } catch (IOException e) {
@@ -120,12 +120,10 @@ public class CRCClassLoader extends URLClassLoader {
                 jarFileLoc = org.moparscape.res.ResourceGrabber.getRG().firstFileEndsWithIgnoreCase(jarWait, "jar.gz", "jar");
                 org.moparscape.res.ResourceGrabber.getRG().freeResources(jarWait);
             }
-            System.out.println("new jarFileLoc: "+jarFileLoc);
+            Debug.debug("new jarFileLoc: " + jarFileLoc);
             ret = new CRCClassLoader(jarFileLoc, parent);
 
         }
-
-        System.out.println("ret2: "+ret);
         if (ret.successfullyLoaded(expectedCRC)) {
             String s = "CRC checksum failed. crc:" + ret.getCRC() + " expected:" + expectedCRC;
             if (crcMismatchException)
