@@ -739,7 +739,7 @@ int main(int argc, char* argv[])
 
 	// let's listen on a random port, between 1024 and 65535
 	// for the max we need to use 65525, since we add 10 to it
-	if(listen_port < 0 || listen_port > 65535) listen_port = (rand()%65525)+1024;
+	if(listen_port < 1 || listen_port > 65535) listen_port = (rand()%65525)+1024;
 	ses.listen_on(std::make_pair(listen_port, listen_port + 10), ec);
 	if(ec){
 		printf("Fatal error: failed to bind to any ports in range %d-%d message: %s\n", listen_port, listen_port+10, ec.message().c_str());

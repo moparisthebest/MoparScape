@@ -19,8 +19,7 @@ public class client extends Applet_Sub1 implements ClientInterface {
     public static int serverPort = 43594;
     public static int ondemandPort = 43594;
     public static int jaggrabPort = 43594;
-    //public static String cacheDir = System.getProperty("user.home") + "/.moparscape/cache508/";
-    public static String cacheDir = "/home/mopar/IdeaProjects/508official/cache508/";
+    public static String cacheDir = System.getProperty("user.home") + "/.moparscape/cache508/";
     boolean maplock, hpOn, zoomOn;
     int mapface, zoom, fwdbwd, lftrit;
 
@@ -33,8 +32,7 @@ public class client extends Applet_Sub1 implements ClientInterface {
     }
 
     public void setCacheDir(String cacheDir) {
-        //client.cacheDir = cacheDir;
-        System.out.println("running updated client!!!!!!!!!!!!!!!!!!!!!!!!!!!!!432old_client");
+        client.cacheDir = cacheDir;
     }
 
     public void setOndemandPort(int port) {

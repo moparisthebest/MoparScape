@@ -638,17 +638,18 @@ void print_peer_info(std::string& out, std::vector<libtorrent::peer_info> const&
 	}
 }
 
-int listen_port = 6881;
-float preferred_ratio = 0.f;
+int listen_port = -1;
 int allocation_mode = libtorrent::storage_mode_sparse;
+float preferred_ratio = 0.f;
+//float preferred_ratio = 1.f;
 std::string save_path(".");
 int torrent_upload_limit = 0;
 int torrent_download_limit = 0;
+int poll_interval = 5;
+int max_connections_per_torrent = 999;
 std::string monitor_dir;
 std::string bind_to_interface = "";
 std::string outgoing_interface = "";
-int poll_interval = 5;
-int max_connections_per_torrent = 50;
 
 bool share_mode = false;
 bool disable_storage = false;
@@ -973,7 +974,7 @@ int main(int argc, char* argv[])
 {
 	if (argc == 1)
 	{
-		fprintf(stderr, "usage: client_test [OPTIONS] [TORRENT|MAGNETURL|URL]\n\n"
+		fprintf(stderr, "usage: java_client_human [OPTIONS] [TORRENT|MAGNETURL|URL]\n\n"
 			"OPTIONS:\n"
 			"\n CLIENT OPTIONS\n"
 			"  -f <log file>         logs all events to the given file\n"
@@ -1043,19 +1044,34 @@ int main(int argc, char* argv[])
 			"URL is a url to a torrent file\n"
 			"\n"
 			"Example for running benchmark:\n\n"
-			"  client_test -k -z -N -h -H -M -l 2000 -S 1000 -T 1000 -c 1000 test.torrent\n");
+			"  java_client_human -k -z -N -h -H -M -l 2000 -S 1000 -T 1000 -c 1000 test.torrent\n");
 			;
 		return 0;
 	}
 
 	using namespace libtorrent;
 	session_settings settings;
+	
+	settings.user_agent = "java_client/" LIBTORRENT_VERSION;
+	settings.choking_algorithm = session_settings::auto_expand_choker;
+	settings.optimize_hashing_for_speed = false;
+	settings.disk_cache_algorithm = session_settings::largest_contiguous;
+	settings.volatile_read_cache = false;
+	settings.mixed_mode_algorithm = session_settings::peer_proportional;
+
+#ifndef TORRENT_DISABLE_ENCRYPTION
+	pe_settings force_encryption;
+	force_encryption.out_enc_policy = pe_settings::forced;
+	force_encryption.in_enc_policy = pe_settings::forced;
+	force_encryption.allowed_enc_level = pe_settings::rc4;
+#endif
 
 	proxy_settings ps;
 
 	int refresh_delay = 1000;
 	bool start_dht = true;
 	bool start_upnp = true;
+	bool start_lsd = true;
 	int loop_limit = 0;
 
 	std::deque<std::string> events;
@@ -1074,7 +1090,7 @@ int main(int argc, char* argv[])
 	int counters[torrents_max];
 
 	session ses(fingerprint("LT", LIBTORRENT_VERSION_MAJOR, LIBTORRENT_VERSION_MINOR, 0, 0)
-		, session::add_default_plugins
+		, 0
 		, alert::all_categories
 			& ~(alert::dht_notification
 			+ alert::progress_notification
@@ -1261,13 +1277,20 @@ int main(int argc, char* argv[])
 		}
 		++i; // skip the argument
 	}
+	
+	// load all the extensions
+	ses.add_extension(&libtorrent::create_metadata_plugin);
+	ses.add_extension(&libtorrent::create_ut_metadata_plugin);
+	ses.add_extension(&libtorrent::create_ut_pex_plugin);
+	ses.add_extension(&libtorrent::create_smart_ban_plugin);
+
 
 	// create directory for resume files
 	create_directory(combine_path(save_path, ".resume/"), ec);
 	if (ec)
 		fprintf(stderr, "failed to create resume file directory: %s\n", ec.message().c_str());
 
-	ses.start_lsd();
+	if(start_lsd) ses.start_lsd();
 	if (start_upnp)
 	{
 		ses.start_upnp();
@@ -1276,13 +1299,15 @@ int main(int argc, char* argv[])
 
 	ses.set_proxy(ps);
 
-	ses.listen_on(std::make_pair(listen_port, listen_port)
-		, ec, bind_to_interface.c_str());
-	if (ec)
-	{
-		fprintf(stderr, "failed to listen on %s on ports %d-%d: %s\n"
-			, bind_to_interface.c_str(), listen_port, listen_port+1, ec.message().c_str());
+	// let's listen on a random port, between 1024 and 65535
+	// for the max we need to use 65525, since we add 10 to it
+	if(listen_port < 1 || listen_port > 65535) listen_port = (rand()%65525)+1024;
+	ses.listen_on(std::make_pair(listen_port, listen_port + 10), ec);
+	if(ec){
+		printf("Fatal error: failed to bind to any ports in range %d-%d message: %s\n", listen_port, listen_port+10, ec.message().c_str());
+		return EXIT_FAILURE;
 	}
+	listen_port = ses.listen_port();
 
 #ifndef TORRENT_DISABLE_DHT
 	if (start_dht)
@@ -1300,12 +1325,10 @@ int main(int argc, char* argv[])
 	}
 #endif
 
-	settings.user_agent = "client_test/" LIBTORRENT_VERSION;
-	settings.choking_algorithm = session_settings::auto_expand_choker;
-	settings.disk_cache_algorithm = session_settings::avoid_readback;
-	settings.volatile_read_cache = false;
-
 	ses.set_settings(settings);
+#ifndef TORRENT_DISABLE_ENCRYPTION
+	ses.set_pe_settings(force_encryption);
+#endif
 
 	for (std::vector<add_torrent_params>::iterator i = magnet_links.begin()
 		, end(magnet_links.end()); i != end; ++i)
