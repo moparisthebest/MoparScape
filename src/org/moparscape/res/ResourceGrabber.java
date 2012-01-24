@@ -344,6 +344,9 @@ public class ResourceGrabber {
             try {
                 File listFile = new File(savePath + fileListFile);
                 if (listFile.exists() && listFile.canRead() && listFile.isFile()) {
+                    // if this file exists, and expectedChecksum is 0, just return -1 (already downloaded)
+                    if(ci.getExpectedChecksum() == 0)
+                        return -1;
                     ByteArrayOutputStream baos = new ByteArrayOutputStream();
                     Downloader.writeStream(new FileInputStream(listFile), baos);
                     whitelist = new String(baos.toByteArray()).split("\n");
@@ -716,14 +719,15 @@ public class ResourceGrabber {
 
             // write files to a file in the savePath, to be used on later runs to see what to CRC
             if (files != null) {
+                String[] fileArray = files.toArray(new String[files.size()]);
                 // first strip off savePath from the files
-                for (int x = 0; x < files.size(); ++x)
-                    files.set(x, files.get(x).replaceFirst(savePath, ""));
+                for (int x = 0; x < fileArray.length; ++x)
+                    fileArray[x] = fileArray[x].replaceFirst(savePath, "");
                 try {
                     FileOutputStream fos = new FileOutputStream(savePath + fileListFile);
-                    for (String file : files) {
+                    for (String file : fileArray) {
                         file += "\n";
-                        System.out.print("file to crc: " + file);
+                        //System.out.print("file to crc: " + file);
                         fos.write(file.getBytes());
                     }
                     fos.close();
@@ -731,7 +735,7 @@ public class ResourceGrabber {
                     Debug.debug(e);
                 }
                 if (ci != null)
-                    ci.setList(true, files.toArray(new String[files.size()]));
+                    ci.setList(true, fileArray);
             }
 
             // if we want a list of files, grab one
@@ -746,9 +750,15 @@ public class ResourceGrabber {
                 super.finished(savePath, filesDownloaded);
 
 
-            System.out.println("returning from finished");
+            //System.out.println("returning from finished");
             // we can at least free this now
             ci = null;
+        }
+
+        public void error(String msg, Exception e) {
+            Debug.debug("Error: "+msg);
+            Debug.debug(e);
+            super.error(msg, e);
         }
 
         public synchronized void freeResources() {

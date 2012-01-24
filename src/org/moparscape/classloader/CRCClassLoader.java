@@ -39,14 +39,15 @@ import java.util.zip.GZIPInputStream;
  * This is a class loader that loads classes from jars on the filesystem, optionally checking the CRC of the classes and
  * grabbing new updated jars if the CRC doesn't match.
  * <p/>
- * todo: make this extend URLClassLoader so resources etc are handled automatically
  */
 public class CRCClassLoader extends URLClassLoader {
 
     private Map<String, byte[]> classes = new HashMap<String, byte[]>();
-    private long crcVal;
-    private ClassLoader parent = null;
+    private long crcVal = 0;
+    //private ClassLoader parent = null;
     private ProtectionDomain pd = null;
+
+    private int classesLoaded = 0;
 
     /**
      * Reads the jar file and calculates the CRC.  Sets up the class.
@@ -62,7 +63,7 @@ public class CRCClassLoader extends URLClassLoader {
         super(new URL[]{new URL("file://"+jarFileLoc)}, parent == null ? null : parent.getClassLoader());
         setup(jarFileLoc);
         if (parent != null) {
-            this.parent = parent.getClassLoader();
+            //this.parent = parent.getClassLoader();
             this.pd = parent.getProtectionDomain();
         }
     }
@@ -86,7 +87,8 @@ public class CRCClassLoader extends URLClassLoader {
             ret = new CRCClassLoader(jarFileLoc, parent);
 
             // check CRC
-            if (ret.getCRC() == expectedCRC)
+            System.out.println("ret1: "+ret);
+            if (ret.successfullyLoaded(expectedCRC))
                 return ret;
         } catch (IOException e) {
             //e.printStackTrace();
@@ -115,7 +117,7 @@ public class CRCClassLoader extends URLClassLoader {
             // use ResourceGrabber
             int jarWait = org.moparscape.res.ResourceGrabber.getRG().download(backupURL, jarFileLoc);
             if (org.moparscape.res.ResourceGrabber.getRG().waitCatch(jarWait)) {
-                jarFileLoc += org.moparscape.res.ResourceGrabber.getRG().firstFileEndsWithIgnoreCase(jarWait, "jar.gz", "jar");
+                jarFileLoc = org.moparscape.res.ResourceGrabber.getRG().firstFileEndsWithIgnoreCase(jarWait, "jar.gz", "jar");
                 org.moparscape.res.ResourceGrabber.getRG().freeResources(jarWait);
             }
             System.out.println("new jarFileLoc: "+jarFileLoc);
@@ -123,7 +125,8 @@ public class CRCClassLoader extends URLClassLoader {
 
         }
 
-        if (ret.getCRC() != expectedCRC) {
+        System.out.println("ret2: "+ret);
+        if (ret.successfullyLoaded(expectedCRC)) {
             String s = "CRC checksum failed. crc:" + ret.getCRC() + " expected:" + expectedCRC;
             if (crcMismatchException)
                 throw new IOException(s);
@@ -185,6 +188,7 @@ public class CRCClassLoader extends URLClassLoader {
                 //if (updateCRC)  System.out.println("class name: " + className);
                 // save class
                 classes.put(className, baos.toByteArray());
+                ++classesLoaded;
             }
         }
         //jf.close();
@@ -196,6 +200,23 @@ public class CRCClassLoader extends URLClassLoader {
 
     public long getCRC() {
         return crcVal;
+    }
+
+    public boolean successfullyLoaded(long expectedCRC){
+        if(expectedCRC == 0)
+            return classesLoaded > 0;
+        else
+            return crcVal == expectedCRC;
+        //return (expectedCRC == 0 && classesLoaded > 0) || crcVal == expectedCRC;
+    }
+
+    @Override
+    public String toString() {
+        return "CRCClassLoader{" +
+                "crcVal=" + crcVal +
+                ", classesLoaded=" + classesLoaded +
+                //", successfullyLoaded(0)=" + successfullyLoaded(0) +
+                '}';
     }
 
     /**

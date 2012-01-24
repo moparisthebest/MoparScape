@@ -197,6 +197,17 @@ public class ChecksumInfo {
         return ci.getChecksum();
     }
 
+    @Override
+    public String toString() {
+        return "ChecksumInfo{" +
+                "expectedCRC=" + expectedCRC +
+                ", cs=" + cs +
+                ", list=" + (list == null ? null : Arrays.asList(list)) +
+                ", whitelist=" + whitelist +
+                ", checksumCalculated=" + checksumCalculated +
+                '}';
+    }
+
     public static void main(String[] args) throws Exception {
         if (args.length < 2) {
             System.out.println("Usage: ChecksumInfo logFile jarFile...");
