@@ -276,7 +276,6 @@ public class RSApplet extends Applet
             charQueue[writeIndex] = j;
             writeIndex = writeIndex + 1 & 0x7f;
         }
-        client.keyListener.keyPressed(keyevent);
     }
 
     public final void keyReleased(KeyEvent keyevent) {
