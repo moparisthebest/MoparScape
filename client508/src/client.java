@@ -107,21 +107,24 @@ public class client extends Applet_Sub1 implements ClientInterface {
     public void setBackground(java.awt.Image image) {
         if (image == null)
             return;
-        int w = image.getWidth(null);
-        int h = image.getHeight(null);
-        BufferedImage bi = new BufferedImage(956, 503, BufferedImage.TYPE_INT_ARGB);
-        int onEachSide = (956-766)/2;
+        System.out.println("in new setbackground!!!!!!!!!!!");
+        int newWidth = 956;
+        int newHeight = 503;
+        int oldWidth = image.getWidth(null);
+        int oldHeight = image.getHeight(null);
+        BufferedImage bi = new BufferedImage(newWidth, newHeight, BufferedImage.TYPE_INT_ARGB);
+        int onEachSide = (newWidth-oldWidth)/2;
         bi.getGraphics().drawImage(image,
-                onEachSide, 0, 956-onEachSide, 503,
-                0, 0, 766, 503,
+                onEachSide, 0, newWidth-onEachSide, newHeight,
+                0, 0, oldWidth, oldHeight,
                 null);
 /*        // this kind of stretches the image, but might be needed with HD
         bi.getGraphics().drawImage(image,
                 0, 0, 956, 503,
                 0, 0, 766, 503,
                 null);
-*/      bgImage = new int[956 * 503];
-        PixelGrabber pixelgrabber = new PixelGrabber(bi, 0, 0, 956, 503, bgImage, 0, 956);
+*/      bgImage = new int[newWidth * newHeight];
+        PixelGrabber pixelgrabber = new PixelGrabber(bi, 0, 0, newWidth, newHeight, bgImage, 0, newWidth);
         try {
             pixelgrabber.grabPixels();
         } catch (Exception e) {
