@@ -72,7 +72,7 @@ public class ResourceGrabber {
     // this is only meant to be accessed by getNewUID(), which is synchronized
     private int currentUID = 0;
 
-    public static void main(String[] args) throws Exception {
+    public static void main1(String[] args) throws Exception {
         if (args.length == 0 || (args.length % 4) != 0) {
             System.out.println("Usage: ResourceGrabber [[TORRENT|MAGNETURL|URL] SAVE_PATH EXTRACT CRC]\n" +
                     "TORRENT is a path to a .torrent file\n" +
@@ -123,7 +123,7 @@ public class ResourceGrabber {
         System.out.println("All downloads are finished, exiting program...");
     }
 
-    public static void main2(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception {
         //downloadHTTP("https://www.moparscape.org/libs/client.zip.gz", "/home/mopar/tests/extest");
         //extractFile("/home/mopar/tests/extest/client.zip.gz", "/home/mopar/tests/extest/");
         //download("https://www.moparscape.org/libs/client.zip.gz", "/home/mopar/tests/extest", true, 98233333, new String[]{"client_test.linux.x86",  "client_test.osx.i386"});
@@ -140,6 +140,12 @@ public class ResourceGrabber {
         if(true) return;  */
         ResourceGrabber rg = getResourceGrabber(System.getProperty("user.home") + "/.moparscape/bin/");
         System.out.println("before downloads...");
+        rg.download("http://www.moparisthebest.com/downloads/cedegaSRC.tar.gz", "/home/mopar/tests/extest", true, null, true, new CompleteRunnable() {
+            @Override
+            public void run() {
+                System.out.println("download complete bitches! uid: "+this.uid+" exception: "+this.ex);
+            }
+        });/*
         int clientZipUID = -1;
         try {
             //rg.download("http://www.moparisthebest.com/downloads/cedegaSRC.tar.gz", "/home/mopar/tests/extest", true);
@@ -153,7 +159,7 @@ public class ResourceGrabber {
 
         }
         //int clientZipUID = rg.download("magnet:?xt=urn:btih:CDXN5L2YV5FLXVL36GKUTRXIQDOUDKDY&dn=client.zip&tr=udp%3a%2f%2ftracker.openbittorrent.com%3a80", "/home/mopar/tests/dldir");
-        System.out.println("returned: '" + rg.wait(clientZipUID) + "' after downloads...");
+        System.out.println("returned: '" + rg.wait(clientZipUID) + "' after downloads..."); */
 
     }
 
@@ -384,6 +390,27 @@ public class ResourceGrabber {
         return uid;
     }
 
+
+    public void download(final String url, final String savePath, final boolean extract, final ChecksumInfo ci, final boolean uniqueFolder, final CompleteRunnable run) {
+        final ResourceGrabber rg = this;
+        new Thread(){
+
+            public void run(){
+                int uid = -1;
+                try{
+                    uid = rg.download(url, savePath, extract, ci, uniqueFolder);
+                    rg.wait(uid, false);
+                }catch (Exception e){
+                    run.setEx(e);
+                }
+                run.setUid(uid);
+                run.run();
+                rg.freeResources(uid);
+            }
+
+        }.start();
+    }
+
     public boolean downloadWait(String url, String savePath) throws Exception {
         return this.downloadWait(url, savePath, false, null);
     }
@@ -393,7 +420,11 @@ public class ResourceGrabber {
     }
 
     public boolean downloadWait(String url, String savePath, boolean extract, ChecksumInfo ci) throws Exception {
-        return this.wait(this.download(url, savePath, extract, ci), true);
+        return this.downloadWait(url, savePath, extract, ci, false);
+    }
+
+    public boolean downloadWait(String url, String savePath, boolean extract, ChecksumInfo ci, boolean uniqueFolder) throws Exception {
+        return this.wait(this.download(url, savePath, extract, ci, uniqueFolder), true);
     }
 
     public boolean downloadWaitCatch(String url, String savePath) {
@@ -453,6 +484,8 @@ public class ResourceGrabber {
             return false;
         }
     }
+
+
 
     private synchronized int getNewUID() {
         return this.currentUID++;
