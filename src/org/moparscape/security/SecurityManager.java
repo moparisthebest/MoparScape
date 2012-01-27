@@ -129,7 +129,7 @@ public class SecurityManager extends java.lang.SecurityManager {
             // code in a custom library named jsoundhacks and it would be allowed to load, so we only allow
             // loadlibrary.jsound* if the next class on the stack is javax.sound.sampled.AudioSystem
             // known examples are jsoundds and jsoundalsa
-            if (lastCName.equals("javax.sound.sampled.AudioSystem") && (perm.equals(reflectPerm) || perm.getName().startsWith("loadLibrary.jsound")))
+            if ((lastCName.equals("javax.sound.sampled.AudioSystem") || lastCName.equals("sun.audio.AudioPlayer")) && (perm.equals(reflectPerm) || perm.getName().startsWith("loadLibrary.jsound")))
                 return;
             // or sun.java2d.SunGraphics2D for Mac OSX Leopard...
             if (lastCName.equals("java.awt.Component") || lastCName.equals("sun.font.FontDesignMetrics") || lastCName.equals("sun.java2d.SunGraphics2D")) {
@@ -211,6 +211,7 @@ public class SecurityManager extends java.lang.SecurityManager {
         permissions.add(new java.util.PropertyPermission("socksProxyHost", "read"));
         permissions.add(new java.util.PropertyPermission("line.separator", "read"));
         permissions.add(new java.util.PropertyPermission("java.protocol.handler.pkgs", "read"));
+        permissions.add(new RuntimePermission("accessClassInPackage.sun.audio"));
         // java.util.Calendar screwing with things again, write isn't too harmful, it only
         // lasts for the run of that individual JVM
         permissions.add(new java.util.PropertyPermission("user.timezone", "read,write"));

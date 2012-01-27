@@ -32,7 +32,6 @@ import java.util.Map;
 public class client extends RSApplet {
 
     // crc: 3885748779
-    public static java.awt.event.KeyListener keyListener;
     public static java.awt.Image bgImage = null;
     public static int serverPort = 43594;
     public static int ondemandPort = 43594;
@@ -79,7 +78,8 @@ public class client extends RSApplet {
     }
 
     public void setKeyListener(java.awt.event.KeyListener kl) {
-        keyListener = kl;
+        //keyListener = kl;
+        this.addKeyListener(kl);
     }
 
     // implemented

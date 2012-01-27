@@ -336,39 +336,41 @@ public class ResourceGrabber {
             savePath = uniqueFoldername(url, savePath, files);
         }
         //System.out.println("ci: "+ci.getExpectedChecksum());
+        // check if file was already downloaded
+        File listFile = new File(savePath + fileListFile);
+        boolean listFileExists = listFile.exists() && listFile.canRead() && listFile.isFile();
+        // if this file exists, and ci is null, or expectedChecksum is 0, just return -1 (already downloaded)
+        if (listFileExists && (ci == null || ci.getExpectedChecksum() == 0))
+            return -1;
         // check crc if we are supposed to
         if (ci != null) {
             // try to load a whitelist from when the file was first downloaded, so we can only CRC those files
-            String[] whitelist = null;
-
-            try {
-                File listFile = new File(savePath + fileListFile);
-                if (listFile.exists() && listFile.canRead() && listFile.isFile()) {
-                    // if this file exists, and expectedChecksum is 0, just return -1 (already downloaded)
-                    if(ci.getExpectedChecksum() == 0)
-                        return -1;
+            if (listFileExists)
+                try {
                     ByteArrayOutputStream baos = new ByteArrayOutputStream();
                     Downloader.writeStream(new FileInputStream(listFile), baos);
-                    whitelist = new String(baos.toByteArray()).split("\n");
+                    String[] whitelist = new String(baos.toByteArray()).split("\n");
 
                     //for(String file: whitelist) System.out.println("whitelist file: "+file);
-                }
-            } catch (Exception e) {
-                Debug.debug(e);
-            }
 
-            if (whitelist != null)
-                ci.setList(true, whitelist);
+                    ci.setList(true, whitelist);
+                } catch (Exception e) {
+                    Debug.debug(e);
+                }
+
             if (ci.checksumMatch(savePath))
                 return -1;  // this signifies that the crc matches (instant success)
         }
+
         // otherwise go ahead and download it.
         Downloader dlr = getSupportedDownloader(url);
 
         int uid = getNewUID();
         DlListener dll = new DlListener(uid, extract, ci, files, this);
         dlr.download(url, savePath, dll);
-        synchronized (downloadItems) {
+        synchronized (downloadItems)
+
+        {
             downloadItems.add(dll);
 
             if (timer == null) {
@@ -378,6 +380,7 @@ public class ResourceGrabber {
                 timer.start();
             }
         }
+
         return uid;
     }
 
@@ -756,7 +759,7 @@ public class ResourceGrabber {
         }
 
         public void error(String msg, Exception e) {
-            Debug.debug("Error: "+msg);
+            Debug.debug("Error: " + msg);
             Debug.debug(e);
             super.error(msg, e);
         }
