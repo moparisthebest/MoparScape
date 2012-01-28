@@ -27,13 +27,24 @@ package org.moparscape.res;
  * Time: 12:29 PM
  * To change this template use File | Settings | File Templates.
  */
-public abstract class CompleteRunnable {
+public abstract class CompleteRunnable implements Runnable {
 
+    protected ResourceGrabber rg = null;
     protected int uid = -1;
+    protected String url = null;
+    protected String savePath = null;
+    protected boolean extract, uniqueFolder;
+    protected ChecksumInfo ci = null;
     protected Exception ex = null;
 
-    public void setUid(int uid) {
+    public void set(ResourceGrabber rg, int uid, String url, String savePath, boolean extract, ChecksumInfo ci, boolean uniqueFolder) {
+        this.rg = rg;
         this.uid = uid;
+        this.url = url;
+        this.savePath = savePath;
+        this.extract = extract;
+        this.ci = ci;
+        this.uniqueFolder = uniqueFolder;
     }
 
     public void setEx(Exception ex) {

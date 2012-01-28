@@ -21,6 +21,7 @@
 package org.moparscape.res;
 
 import org.moparscape.res.impl.Downloader;
+import sun.reflect.generics.tree.ReturnType;
 
 import java.io.*;
 import java.util.Arrays;
@@ -46,6 +47,16 @@ public class ChecksumInfo {
 
     public ChecksumInfo() {
         this(0);
+    }
+
+    public static ChecksumInfo getChecksumInfo(String expectedCRC) {
+        long eCRC = 0;
+        try{
+            eCRC = Long.parseLong(expectedCRC);
+        }catch(Exception e){
+            return null;  // should I do this?
+        }
+        return new ChecksumInfo(eCRC, null, true);
     }
 
     public ChecksumInfo(long expectedCRC) {

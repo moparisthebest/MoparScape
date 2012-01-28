@@ -143,7 +143,7 @@ public class ResourceGrabber {
         rg.download("http://www.moparisthebest.com/downloads/cedegaSRC.tar.gz", "/home/mopar/tests/extest", true, null, true, new CompleteRunnable() {
             @Override
             public void run() {
-                System.out.println("download complete bitches! uid: "+this.uid+" exception: "+this.ex);
+                System.out.println("download complete bitches! uid: " + this.uid + " exception: " + this.ex);
             }
         });/*
         int clientZipUID = -1;
@@ -346,23 +346,23 @@ public class ResourceGrabber {
         File listFile = new File(savePath + fileListFile);
         boolean listFileExists = listFile.exists() && listFile.canRead() && listFile.isFile();
         // if this file exists, and ci is null, or expectedChecksum is 0, just return -1 (already downloaded)
+        //System.out.printf("listFileExists: '%b', ci: '%s'\n", listFileExists, ci);
         if (listFileExists && (ci == null || ci.getExpectedChecksum() == 0))
             return -1;
         // check crc if we are supposed to
-        if (ci != null) {
+        if (ci != null && listFileExists) {
             // try to load a whitelist from when the file was first downloaded, so we can only CRC those files
-            if (listFileExists)
-                try {
-                    ByteArrayOutputStream baos = new ByteArrayOutputStream();
-                    Downloader.writeStream(new FileInputStream(listFile), baos);
-                    String[] whitelist = new String(baos.toByteArray()).split("\n");
+            try {
+                ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                Downloader.writeStream(new FileInputStream(listFile), baos);
+                String[] whitelist = new String(baos.toByteArray()).split("\n");
 
-                    //for(String file: whitelist) System.out.println("whitelist file: "+file);
+                //for(String file: whitelist) System.out.println("whitelist file: "+file);
 
-                    ci.setList(true, whitelist);
-                } catch (Exception e) {
-                    Debug.debug(e);
-                }
+                ci.setList(true, whitelist);
+            } catch (Exception e) {
+                Debug.debug(e);
+            }
 
             if (ci.checksumMatch(savePath))
                 return -1;  // this signifies that the crc matches (instant success)
@@ -391,19 +391,26 @@ public class ResourceGrabber {
     }
 
 
-    public void download(final String url, final String savePath, final boolean extract, final ChecksumInfo ci, final boolean uniqueFolder, final CompleteRunnable run) {
+    public void download(final String url, final String savePath, final boolean extract, final ChecksumInfo ci, final boolean uniqueFolder, final Runnable run) {
         final ResourceGrabber rg = this;
-        new Thread(){
+        final CompleteRunnable crun;
+        if (run instanceof CompleteRunnable)
+            crun = (CompleteRunnable) run;
+        else
+            crun = null;
+        new Thread() {
 
-            public void run(){
+            public void run() {
                 int uid = -1;
-                try{
+                try {
                     uid = rg.download(url, savePath, extract, ci, uniqueFolder);
                     rg.wait(uid, false);
-                }catch (Exception e){
-                    run.setEx(e);
+                } catch (Exception e) {
+                    if (crun != null)
+                        crun.setEx(e);
                 }
-                run.setUid(uid);
+                if (crun != null)
+                    crun.set(rg, uid, url, savePath, extract, ci, uniqueFolder);
                 run.run();
                 rg.freeResources(uid);
             }
@@ -484,7 +491,6 @@ public class ResourceGrabber {
             return false;
         }
     }
-
 
 
     private synchronized int getNewUID() {

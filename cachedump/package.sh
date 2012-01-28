@@ -1,5 +1,5 @@
 #!/bin/bash
-max_processes=6
+max_processes=8
 #max_processes=0
 NUM=0
 QUEUE=""
@@ -13,7 +13,7 @@ else
 	function queue {
 		QUEUE="$QUEUE $1"
 		NUM=$(($NUM+1))
-		echo "QUEUE '$1': $QUEUE"
+#		echo "QUEUE '$1': $QUEUE"
 		wait_processes $max_processes
 	}
 fi
@@ -36,7 +36,7 @@ function dequeue {
 		fi
 	done
 	NUM=$(($NUM-1))
-	echo "DEQUEUE '$1': $QUEUE"
+#	echo "DEQUEUE '$1': $QUEUE"
 }
 
 function checkqueue {
