@@ -51,5 +51,18 @@ public abstract class CompleteRunnable implements Runnable {
         this.ex = ex;
     }
 
+    @Override
+    public String toString() {
+        return "CompleteRunnable{" +
+                "uid=" + uid +
+                ", url='" + url + '\'' +
+                ", savePath='" + savePath + '\'' +
+                ", extract=" + extract +
+                ", uniqueFolder=" + uniqueFolder +
+                ", ci=" + ci +
+                ", ex=" + ex +
+                '}';
+    }
+
     public abstract void run();
 }

@@ -45,6 +45,7 @@ public class CRCClassLoader extends URLClassLoader {
 
     private Map<String, byte[]> classes = new HashMap<String, byte[]>();
     private long crcVal = 0;
+    private boolean fileExists = false;
     //private ClassLoader parent = null;
     private ProtectionDomain pd = null;
 
@@ -99,7 +100,9 @@ public class CRCClassLoader extends URLClassLoader {
 
         if (backupURL != null) {
 
-            System.out.println("CRC checksum failed, downloading new file.");
+            //if(ret == null || ret.getCRC() != 0)
+            if(ret != null && ret.fileExists())
+                System.out.println("CRC checksum failed, downloading new file.");
 
 //          URLConnection uc = new URL(backupURL).openConnection();
 //          InputStream in = uc.getInputStream();
@@ -124,7 +127,7 @@ public class CRCClassLoader extends URLClassLoader {
             ret = new CRCClassLoader(jarFileLoc, parent);
 
         }
-        if (ret.successfullyLoaded(expectedCRC)) {
+        if (!ret.successfullyLoaded(expectedCRC) && ret.getCRC() != 0) {
             String s = "CRC checksum failed. crc:" + ret.getCRC() + " expected:" + expectedCRC;
             if (crcMismatchException)
                 throw new IOException(s);
@@ -147,10 +150,12 @@ public class CRCClassLoader extends URLClassLoader {
         if(jarFileLoc == null)
             return;
         File f = new File(jarFileLoc);
-        if (!f.exists() || !f.isFile()) {
-            System.err.println("Jar file doesn't exist: " + jarFileLoc);
+        fileExists = f.exists() && f.isFile() && f.canRead();
+        if (!fileExists) {
+            Debug.debug("Jar file doesn't exist: " + jarFileLoc);
             return;
         }
+
 
         if (updateCRC)
             classes = new HashMap<String, byte[]>();
@@ -200,6 +205,10 @@ public class CRCClassLoader extends URLClassLoader {
         return crcVal;
     }
 
+    public boolean fileExists(){
+        return this.fileExists;
+    }
+
     public boolean successfullyLoaded(long expectedCRC){
         if(expectedCRC == 0)
             return classesLoaded > 0;
@@ -213,6 +222,7 @@ public class CRCClassLoader extends URLClassLoader {
         return "CRCClassLoader{" +
                 "crcVal=" + crcVal +
                 ", classesLoaded=" + classesLoaded +
+                ", fileExists=" + fileExists +
                 //", successfullyLoaded(0)=" + successfullyLoaded(0) +
                 '}';
     }

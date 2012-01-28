@@ -347,7 +347,7 @@ public class ResourceGrabber {
         boolean listFileExists = listFile.exists() && listFile.canRead() && listFile.isFile();
         // if this file exists, and ci is null, or expectedChecksum is 0, just return -1 (already downloaded)
         //System.out.printf("listFileExists: '%b', ci: '%s'\n", listFileExists, ci);
-        if (listFileExists && (ci == null || ci.getExpectedChecksum() == 0))
+        if (listFileExists && (ci != null && ci.getExpectedChecksum() == 0))
             return -1;
         // check crc if we are supposed to
         if (ci != null && listFileExists) {
@@ -614,8 +614,10 @@ public class ResourceGrabber {
         public void actionPerformed(ActionEvent e) {
             synchronized (downloadItems) {
                 for (final DlListener dll : downloadItems) {
+                    System.out.println("dll: "+dll);
                     //System.out.println("uid   : " + dll.uid);
                     //System.out.println("status: " + dll.getStatus().toString());
+                    //todo: to make sure we hit all statuses in order, perhaps a synchronized queue and pop statuses from the stack?
                     switch (dll.getStatus()) {
                         case NOT_STARTED:
                             break;
@@ -827,6 +829,15 @@ public class ResourceGrabber {
         public boolean equals(Object other) {
             //System.out.println("DlListener equals: " + other);
             return ((other != null) && (other instanceof DlListener) && (((DlListener) other).uid == this.uid));
+        }
+
+        @Override
+        public String toString() {
+            return "DlListener{" +
+                    "uid=" + uid +
+                    ", autoRemove=" + autoRemove +
+                    ", status=" + getStatus().toString() +
+                    '}';
         }
     }
 
