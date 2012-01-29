@@ -20,6 +20,10 @@
 
 package org.moparscape.res;
 
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+
 /**
  * Created by IntelliJ IDEA.
  * User: mopar
@@ -30,6 +34,8 @@ package org.moparscape.res;
 public abstract class AbstractDownloadListener implements DownloadListener {
 
     private Status status = Status.NOT_STARTED;
+    // we are going to synchronize around this ourselves
+    private Queue<Status> statusQueue = new LinkedList<Status>();
 
     protected long length;
     protected String info;
@@ -43,12 +49,34 @@ public abstract class AbstractDownloadListener implements DownloadListener {
         return status;
     }
 
-    public void setRunning() {
-        status = Status.RUNNING;
+    private synchronized void setStatus(Status stat){
+        status = stat;
+        statusQueue.offer(stat);
+    }
+    /*
+    private synchronized void printQueue(){
+        int i = 0;
+        for(Status s : (LinkedList<Status>)statusQueue)
+            System.out.println("queue["+(i++)+"]: "+s);
+        System.out.println("status: "+status);
+    } */
+
+    public synchronized Status pollStatus(){
+        //printQueue();
+        return statusQueue.poll();
+    }
+
+    public synchronized Status peekStatus(){
+        //printQueue();
+        Status ret = statusQueue.peek();
+        if(ret == null)
+            ret = status;
+        return ret;
+        //return statusQueue.peek();
     }
 
     public void setStopped() {
-        status = Status.STOPPED;
+        setStatus(Status.STOPPED);
     }
 
     public void setProgress(int progress) {
@@ -71,20 +99,22 @@ public abstract class AbstractDownloadListener implements DownloadListener {
     }
 
     public void starting(String title, long length, String info) {
-        status = Status.STARTING;
+        setStatus(Status.STARTING);
         reset(title, length, info);
+        setStatus(Status.RUNNING);
     }
 
     public void extracting(String title, long length, String info) {
-        status = Status.EXTRACTING;
+        setStatus(Status.EXTRACTING);
         reset(title, length, info);
+        setStatus(Status.RUNNING);
     }
 
     public void finished(String savePath, String... filesDownloaded) {
         // if it's an error, we want to ignore stopped
         if (status == Status.ERROR)
             return;
-        status = Status.FINISHED;
+        setStatus(Status.FINISHED);
 
         synchronized (this) {
             this.notify();//waiter.interrupt();
@@ -95,7 +125,7 @@ public abstract class AbstractDownloadListener implements DownloadListener {
         // if it's an error, we want to ignore stopped
         if (status == Status.ERROR)
             return;
-        status = Status.STOPPED;
+        setStatus(Status.STOPPED);
     }
 
     public void error(String msg, Exception e) {
@@ -103,7 +133,7 @@ public abstract class AbstractDownloadListener implements DownloadListener {
         // this is here to preserve the original error
         if(status == Status.ERROR)
             return;
-        status = Status.ERROR;
+        setStatus(Status.ERROR);
         this.extraInfo = msg;
         this.exception = e;
         progress = 0;

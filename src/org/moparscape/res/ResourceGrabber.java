@@ -262,7 +262,13 @@ public class ResourceGrabber {
                 synchronized (dll) {
                     //dll.wait(timeout);
                     // todo: waiting for 0 (forever) sometimes locks up because of a race condition, make it smaller
-                    dll.wait(2000);
+                    //dll.wait(2000);
+                    // maybe this will work instead, now that we are synchronized around dll
+                    status = dll.getStatus();
+                    if ((status != AbstractDownloadListener.Status.FINISHED
+                            && status != AbstractDownloadListener.Status.STOPPED
+                            && status != AbstractDownloadListener.Status.ERROR))
+                        dll.wait(timeout);
                 }
             } catch (InterruptedException e) {
                 // just ignore it, let the loop go around again
@@ -614,99 +620,106 @@ public class ResourceGrabber {
         public void actionPerformed(ActionEvent e) {
             synchronized (downloadItems) {
                 for (final DlListener dll : downloadItems) {
-                    System.out.println("dll: "+dll);
-                    //System.out.println("uid   : " + dll.uid);
-                    //System.out.println("status: " + dll.getStatus().toString());
-                    //todo: to make sure we hit all statuses in order, perhaps a synchronized queue and pop statuses from the stack?
-                    switch (dll.getStatus()) {
-                        case NOT_STARTED:
-                            break;
-                        case FINISHED:
-                            break;
-                        case RUNNING:
-                            // check if we have called reset
-                            if (dll.info != null) {
-                                dll.dip.reset(dll.title, dll.length, dll.info);
-                                dll.info = null;
+                    /*System.out.println("-------------------------------------------------------------");
+                    System.out.println("uid: " + dll.uid);
+                    System.out.println("dll: " + dll);
+                    System.out.println("-------------------------------------------------------------");
+                    */
+                    DownloadListener.Status status = dll.pollStatus();
+                    if (status == null)
+                        status = dll.getStatus();
+                    while (status != null) {
+                        switch (status) {
+                            case NOT_STARTED:
                                 break;
-                            }
-                            // if its already running, we need to just update it
-                            if (dll.title != null)
-                                dll.dip.setTitle(dll.title);
-                            //if (dll.progress != 0)
-                            //    dll.dip.setProgress(dll.progress);
-                            if (dll.extraInfo != null)
-                                dll.dip.setInfo(dll.extraInfo);
-                            // set them all not to update
-                            dll.title = null;
-                            dll.extraInfo = null;
-                            break;
-                        // then we need to start it up
-                        case STARTING:
-                            dll.setRunning();
-                            // this means we are RE-starting for some reason, so it's already added to the frame
-                            if (dll.dip != null) {
-                                dll.dip.reset(dll.title, dll.length, dll.info);
-                                dll.info = null;
+                            case FINISHED:
                                 break;
-                            }
-                            // otherwise, start fresh
-                            dll.dip = new DownloadItemPanel(dll.title, dll.length, dll.info);
-                            if (frame == null) {
-                                frame = new JFrame(title);
-                                frame.setLayout(new BoxLayout(frame.getContentPane(), BoxLayout.Y_AXIS));
+                            case RUNNING:
+                                // check if we have called reset
+                                if (dll.info != null) {
+                                    dll.dip.reset(dll.title, dll.length, dll.info);
+                                    dll.info = null;
+                                    break;
+                                }
+                                // if its already running, we need to just update it
+                                if (dll.title != null)
+                                    dll.dip.setTitle(dll.title);
+                                //if (dll.progress != 0)
+                                //    dll.dip.setProgress(dll.progress);
+                                if (dll.extraInfo != null)
+                                    dll.dip.setInfo(dll.extraInfo);
+                                // set them all not to update
+                                dll.title = null;
+                                dll.extraInfo = null;
+                                break;
+                            // then we need to start it up
+                            case STARTING:
+                                //dll.setRunning();
+                                // this means we are RE-starting for some reason, so it's already added to the frame
+                                if (dll.dip != null) {
+                                    dll.dip.reset(dll.title, dll.length, dll.info);
+                                    dll.info = null;
+                                    break;
+                                }
+                                // otherwise, start fresh
+                                dll.dip = new DownloadItemPanel(dll.title, dll.length, dll.info);
+                                if (frame == null) {
+                                    frame = new JFrame(title);
+                                    frame.setLayout(new BoxLayout(frame.getContentPane(), BoxLayout.Y_AXIS));
 
-                                frame.getContentPane().add(dll.dip);
+                                    frame.getContentPane().add(dll.dip);
 
-                                frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-                                frame.setResizable(false);
-                                frame.pack();
-                                // sets the frame to appear in the middle of the screen
-                                // when called after pack()
-                                frame.setLocationRelativeTo(null);
-                                frame.setVisible(true);
-                                // or if we are trying to add a panel and the frame is already set up
-                            } else {
-                                frame.getContentPane().add(dll.dip);
-                            }
-                            break;
-                        case EXTRACTING:
-                            dll.setRunning();
-                            if (dll.dip != null)
-                                dll.dip.reset(dll.title, dll.length, dll.info);
-                            break;
-                        case STOPPED:
-                            if (!dll.autoRemove)
+                                    frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+                                    frame.setResizable(false);
+                                    frame.pack();
+                                    // sets the frame to appear in the middle of the screen
+                                    // when called after pack()
+                                    frame.setLocationRelativeTo(null);
+                                    frame.setVisible(true);
+                                    // or if we are trying to add a panel and the frame is already set up
+                                } else {
+                                    frame.getContentPane().add(dll.dip);
+                                }
                                 break;
-                            // since we are already in the event thread, this executes right after this exits
-                            // or at least never at the same time, which is all we need to worry about.
-                            SwingUtilities.invokeLater(
-                                    new Runnable() {
-                                        public void run() {
-                                            synchronized (downloadItems) {
-                                                downloadItems.remove(dll);
-                                                if (frame == null)
-                                                    return;
-                                                if (dll.dip != null)
-                                                    frame.getContentPane().remove(dll.dip);
-                                                if (downloadItems.isEmpty()) {
-                                                    frame.dispose();
-                                                    frame = null;
-                                                    timer.stop();
+                            case EXTRACTING:
+                                //dll.setRunning();
+                                if (dll.dip != null)
+                                    dll.dip.reset(dll.title, dll.length, dll.info);
+                                break;
+                            case STOPPED:
+                                if (!dll.autoRemove)
+                                    break;
+                                // since we are already in the event thread, this executes right after this exits
+                                // or at least never at the same time, which is all we need to worry about.
+                                SwingUtilities.invokeLater(
+                                        new Runnable() {
+                                            public void run() {
+                                                synchronized (downloadItems) {
+                                                    downloadItems.remove(dll);
+                                                    if (frame == null)
+                                                        return;
+                                                    if (dll.dip != null)
+                                                        frame.getContentPane().remove(dll.dip);
+                                                    if (downloadItems.isEmpty()) {
+                                                        frame.dispose();
+                                                        frame = null;
+                                                        timer.stop();
+                                                    }
                                                 }
                                             }
-                                        }
-                                    });
-                            break;
-                        case ERROR:
-                            //System.out.println("Error uid: " + dll.uid);
-                            if (dll.extraInfo != null && dll.dip != null)
-                                dll.dip.error(dll.extraInfo);
-                            dll.extraInfo = null;
-                            // timeout error, once we reach errorTicks ticks change it to stopped
-                            //System.out.println("error tick: " + dll.progress);
-                            if (dll.autoRemove && (dll.progress++ > errorTicks))
-                                dll.setStopped();
+                                        });
+                                break;
+                            case ERROR:
+                                //System.out.println("Error uid: " + dll.uid);
+                                if (dll.extraInfo != null && dll.dip != null)
+                                    dll.dip.error(dll.extraInfo);
+                                dll.extraInfo = null;
+                                // timeout error, once we reach errorTicks ticks change it to stopped
+                                //System.out.println("error tick: " + dll.progress);
+                                if (dll.autoRemove && (dll.progress++ > errorTicks))
+                                    dll.setStopped();
+                        }
+                        status = dll.pollStatus();
                     }
                 }
             }
@@ -788,7 +801,7 @@ public class ResourceGrabber {
 
             // check crc if we are supposed to
             //System.out.println("savePath: "+savePath);
-            if (ci != null && !ci.checksumMatch(savePath))
+            if (ci != null && ci.getExpectedChecksum() != 0 && !ci.checksumMatch(savePath))
                 error(String.format("CRC Mismatch. expected: %d actual: %d", ci.getExpectedChecksum(), ci.getChecksum()), null);
             else
                 super.finished(savePath, filesDownloaded);
@@ -836,7 +849,7 @@ public class ResourceGrabber {
             return "DlListener{" +
                     "uid=" + uid +
                     ", autoRemove=" + autoRemove +
-                    ", status=" + getStatus().toString() +
+                    ", status=" + peekStatus().toString() +
                     '}';
         }
     }
