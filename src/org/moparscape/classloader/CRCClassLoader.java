@@ -22,7 +22,6 @@ package org.moparscape.classloader;
 
 import org.moparscape.Debug;
 import org.moparscape.res.impl.Downloader;
-import sun.text.normalizer.UCharacterProperty;
 
 import java.io.*;
 import java.net.URL;
@@ -62,7 +61,7 @@ public class CRCClassLoader extends URLClassLoader {
     }
 
     public CRCClassLoader(String jarFileLoc, Class parent) throws IOException {
-        super(new URL[]{new URL("file://"+jarFileLoc)}, parent == null ? null : parent.getClassLoader());
+        super(new URL[]{new URL("file://" + jarFileLoc)}, parent == null ? null : parent.getClassLoader());
         setup(jarFileLoc);
         if (parent != null) {
             //this.parent = parent.getClassLoader();
@@ -101,7 +100,7 @@ public class CRCClassLoader extends URLClassLoader {
         if (backupURL != null) {
 
             //if(ret == null || ret.getCRC() != 0)
-            if(ret != null && ret.fileExists())
+            if (ret != null && ret.fileExists())
                 System.out.println("CRC checksum failed, downloading new file.");
 
 //          URLConnection uc = new URL(backupURL).openConnection();
@@ -139,7 +138,7 @@ public class CRCClassLoader extends URLClassLoader {
 
     public void addJar(String jarFileLoc) throws IOException {
         //this.setup(jarFileLoc, false);
-        super.addURL(new URL("file://"+jarFileLoc));
+        super.addURL(new URL("file://" + jarFileLoc));
     }
 
     private void setup(String jarFileLoc) throws IOException {
@@ -147,7 +146,7 @@ public class CRCClassLoader extends URLClassLoader {
     }
 
     private void setup(String jarFileLoc, boolean updateCRC) throws IOException {
-        if(jarFileLoc == null)
+        if (jarFileLoc == null)
             return;
         File f = new File(jarFileLoc);
         fileExists = f.exists() && f.isFile() && f.canRead();
@@ -205,12 +204,12 @@ public class CRCClassLoader extends URLClassLoader {
         return crcVal;
     }
 
-    public boolean fileExists(){
+    public boolean fileExists() {
         return this.fileExists;
     }
 
-    public boolean successfullyLoaded(long expectedCRC){
-        if(expectedCRC == 0)
+    public boolean successfullyLoaded(long expectedCRC) {
+        if (expectedCRC == 0)
             return classesLoaded > 0;
         else
             return crcVal == expectedCRC;
@@ -227,6 +226,31 @@ public class CRCClassLoader extends URLClassLoader {
                 '}';
     }
 
+    /*
+    protected synchronized Class<?> loadClass(String name, boolean resolve)
+            throws ClassNotFoundException {
+        System.out.println("loadClass called: "+name);
+        // First, check if the class has already been loaded
+        Class c = findLoadedClass(name);
+        if (c == null) {
+            try {
+                c = super.loadClass(name, false);
+            } catch (ClassNotFoundException e) {
+                // ClassNotFoundException thrown if class not found
+                // from the non-null parent class loader
+            }
+            if (c == null) {
+                // If still not found, then invoke findClass in order
+                // to find the class.
+                c = findClass(name);
+            }
+        }
+        if (resolve) {
+            resolveClass(c);
+        }
+        return c;
+    }
+*/
     /**
      * Is called by the ClassLoader when the requested class
      * is not found in its cache. The parent is only used when
@@ -235,7 +259,7 @@ public class CRCClassLoader extends URLClassLoader {
      * @param name The name of the class
      */
     public Class<?> findClass(String name) throws ClassNotFoundException {
-        //System.out.println("CRCClassLoader: Requesting class '" + name + "'");
+        System.out.println("CRCClassLoader: Requesting class '" + name + "'");
         byte[] classBytes = classes.get(name);
         if (classBytes == null)
             return super.findClass(name);

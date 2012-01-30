@@ -347,12 +347,11 @@ public class ResourceGrabber {
         if (uniqueFolder) {
             savePath = uniqueFoldername(url, savePath, files);
         }
-        //System.out.println("ci: "+ci.getExpectedChecksum());
         // check if file was already downloaded
         File listFile = new File(savePath + fileListFile);
         boolean listFileExists = listFile.exists() && listFile.canRead() && listFile.isFile();
         // if this file exists, and ci is null, or expectedChecksum is 0, just return -1 (already downloaded)
-        //System.out.printf("listFileExists: '%b', ci: '%s'\n", listFileExists, ci);
+        //System.out.printf("url: '%s', listFileExists: '%b', ci: '%s'\n", url, listFileExists, ci);
         if (listFileExists && (ci != null && ci.getExpectedChecksum() == 0))
             return -1;
         // check crc if we are supposed to
@@ -620,11 +619,12 @@ public class ResourceGrabber {
         public void actionPerformed(ActionEvent e) {
             synchronized (downloadItems) {
                 for (final DlListener dll : downloadItems) {
-                    /*System.out.println("-------------------------------------------------------------");
+                    /*
+                    System.out.println("-------------------------------------------------------------");
                     System.out.println("uid: " + dll.uid);
                     System.out.println("dll: " + dll);
                     System.out.println("-------------------------------------------------------------");
-                    */
+*/
                     DownloadListener.Status status = dll.pollStatus();
                     if (status == null)
                         status = dll.getStatus();
@@ -850,6 +850,7 @@ public class ResourceGrabber {
                     "uid=" + uid +
                     ", autoRemove=" + autoRemove +
                     ", status=" + peekStatus().toString() +
+                    ", dip=" + dip +
                     '}';
         }
     }
@@ -914,6 +915,16 @@ public class ResourceGrabber {
 
         public void setInfo(final String info) {
             this.infoLabel.setText("<html>" + origInfo + "<hr>" + info + end);
+        }
+
+        @Override
+        public String toString() {
+            return "DownloadItemPanel{" +
+                    "infoLabel=" + infoLabel.getText() +
+                    ", titleLabel=" + titleLabel.getText()  +
+                    ", origInfo='" + origInfo  + '\'' +
+                    ", progressBar=" + progressBar.getPercentComplete() +
+                    '}';
         }
     }
 }

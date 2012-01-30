@@ -53,13 +53,6 @@ public abstract class AbstractDownloadListener implements DownloadListener {
         status = stat;
         statusQueue.offer(stat);
     }
-    /*
-    private synchronized void printQueue(){
-        int i = 0;
-        for(Status s : (LinkedList<Status>)statusQueue)
-            System.out.println("queue["+(i++)+"]: "+s);
-        System.out.println("status: "+status);
-    } */
 
     public synchronized Status pollStatus(){
         //printQueue();
@@ -74,6 +67,13 @@ public abstract class AbstractDownloadListener implements DownloadListener {
         return ret;
         //return statusQueue.peek();
     }
+    /*
+    private synchronized void printQueue(){
+        int i = 0;
+        for(Status s : (LinkedList<Status>)statusQueue)
+            System.out.println("queue["+(i++)+"]: "+s);
+        System.out.println("status: "+status);
+    } */
 
     public void setStopped() {
         setStatus(Status.STOPPED);
@@ -126,6 +126,11 @@ public abstract class AbstractDownloadListener implements DownloadListener {
         if (status == Status.ERROR)
             return;
         setStatus(Status.STOPPED);
+
+        // lets go ahead and notify ourselves again anyhow, can't hurt
+        synchronized (this) {
+            this.notify();
+        }
     }
 
     public void error(String msg, Exception e) {
