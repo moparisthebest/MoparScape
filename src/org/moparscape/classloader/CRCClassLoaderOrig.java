@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2010  moparisthebest
+ * Copyright (C) 2012  moparisthebest
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -24,8 +24,6 @@ import org.moparscape.Debug;
 import org.moparscape.res.impl.Downloader;
 
 import java.io.*;
-import java.net.URL;
-import java.net.URLClassLoader;
 import java.security.ProtectionDomain;
 import java.util.HashMap;
 import java.util.Map;
@@ -39,8 +37,9 @@ import java.util.zip.GZIPInputStream;
  * This is a class loader that loads classes from jars on the filesystem, optionally checking the CRC of the classes and
  * grabbing new updated jars if the CRC doesn't match.
  * <p/>
+ * todo: make this extend URLClassLoader so resources etc are handled automatically
  */
-public class CRCClassLoader extends URLClassLoader {
+public class CRCClassLoaderOrig extends ClassLoader {
 
     private Map<String, byte[]> classes = new HashMap<String, byte[]>();
     private long crcVal = 0;
@@ -56,13 +55,12 @@ public class CRCClassLoader extends URLClassLoader {
      *
      * @param jarFileLoc The location of the jar file to load on the disk
      */
-    public CRCClassLoader(String jarFileLoc) throws IOException {
+    public CRCClassLoaderOrig(String jarFileLoc) throws IOException {
         this(jarFileLoc, null);
     }
 
-    public CRCClassLoader(String jarFileLoc, Class parent) throws IOException {
-        //super(new URL[]{new URL("file://" + jarFileLoc)}, parent == null ? null : parent.getClassLoader());
-        super(new URL[]{new URL("file://" + jarFileLoc)}, null);
+    public CRCClassLoaderOrig(String jarFileLoc, Class parent) throws IOException {
+        //super(parent == null ? getSystemClassLoader() : parent.getClassLoader());
         setup(jarFileLoc);
         if (parent != null) {
             this.parent = parent.getClassLoader();
@@ -70,7 +68,7 @@ public class CRCClassLoader extends URLClassLoader {
         }
     }
 
-    public static CRCClassLoader newInstance(String jarFileLoc, String backupURL, long expectedCRC, boolean crcMismatchException) throws IOException {
+    public static CRCClassLoaderOrig newInstance(String jarFileLoc, String backupURL, long expectedCRC, boolean crcMismatchException) throws IOException {
         return newInstance(jarFileLoc, backupURL, expectedCRC, null, crcMismatchException);
     }
 
@@ -81,12 +79,11 @@ public class CRCClassLoader extends URLClassLoader {
      *
      * @param jarFileLoc The location of the jar file to load on the disk
      */
-    public static CRCClassLoader newInstance(String jarFileLoc, String backupURL, long expectedCRC, Class parent, boolean crcMismatchException) throws IOException {
-        //super(new URL[]{}, parent == null ? null : parent.getClassLoader());
-        CRCClassLoader ret = null;
+    public static CRCClassLoaderOrig newInstance(String jarFileLoc, String backupURL, long expectedCRC, Class parent, boolean crcMismatchException) throws IOException {
+        CRCClassLoaderOrig ret = null;
         // wrap this one in a try / catch, so we can retry if it throws an exception
         try {
-            ret = new CRCClassLoader(jarFileLoc, parent);
+            ret = new CRCClassLoaderOrig(jarFileLoc, parent);
 
             // check CRC
             if (ret.successfullyLoaded(expectedCRC))
@@ -124,7 +121,7 @@ public class CRCClassLoader extends URLClassLoader {
                 org.moparscape.res.ResourceGrabber.getRG().freeResources(jarWait);
             }
             Debug.debug("new jarFileLoc: " + jarFileLoc);
-            ret = new CRCClassLoader(jarFileLoc, parent);
+            ret = new CRCClassLoaderOrig(jarFileLoc, parent);
 
         }
         if (!ret.successfullyLoaded(expectedCRC) && ret.getCRC() != 0) {
@@ -138,17 +135,26 @@ public class CRCClassLoader extends URLClassLoader {
     }
 
     public void addJar(String jarFileLoc) throws IOException {
-        //this.setup(jarFileLoc, false);
-        super.addURL(new URL("file://" + jarFileLoc));
+        this.setup(jarFileLoc, false);
     }
 
     private void setup(String jarFileLoc) throws IOException {
         this.setup(jarFileLoc, true);
     }
 
+    public boolean successfullyLoaded(long expectedCRC) {
+        if (expectedCRC == 0)
+            return classesLoaded > 0;
+        else
+            return crcVal == expectedCRC;
+        //return (expectedCRC == 0 && classesLoaded > 0) || crcVal == expectedCRC;
+    }
+
+    public boolean fileExists() {
+        return this.fileExists;
+    }
+
     private void setup(String jarFileLoc, boolean updateCRC) throws IOException {
-        if (jarFileLoc == null)
-            return;
         File f = new File(jarFileLoc);
         fileExists = f.exists() && f.isFile() && f.canRead();
         if (!fileExists) {
@@ -205,95 +211,15 @@ public class CRCClassLoader extends URLClassLoader {
         return crcVal;
     }
 
-    public boolean fileExists() {
-        return this.fileExists;
-    }
-
-    public boolean successfullyLoaded(long expectedCRC) {
-        if (expectedCRC == 0)
-            return classesLoaded > 0;
-        else
-            return crcVal == expectedCRC;
-        //return (expectedCRC == 0 && classesLoaded > 0) || crcVal == expectedCRC;
-    }
-
     @Override
     public String toString() {
-        return "CRCClassLoader{" +
+        return "CRCClassLoaderOrig{" +
                 "crcVal=" + crcVal +
                 ", classesLoaded=" + classesLoaded +
                 ", fileExists=" + fileExists +
                 //", successfullyLoaded(0)=" + successfullyLoaded(0) +
                 '}';
     }
-
-    /*
-    protected synchronized Class<?> loadClass(String name, boolean resolve)
-            throws ClassNotFoundException {
-        System.out.println("loadClass called: "+name);
-        // First, check if the class has already been loaded
-        Class c = findLoadedClass(name);
-        System.out.println("past findLoadedClass: "+c);
-        if (c == null) {
-            try {
-                c = super.loadClass(name, false);
-                System.out.println("past super.loadClass: "+c);
-            } catch (ClassNotFoundException e) {
-                // ClassNotFoundException thrown if class not found
-                // from the non-null parent class loader
-            }
-            if (c == null) {
-                // If still not found, then invoke findClass in order
-                // to find the class.
-                c = findClass(name);
-                System.out.println("past findClass: "+c);
-            }
-        }
-        if (resolve) {
-            resolveClass(c);
-        }
-        System.out.println("returning: "+c);
-        return c;
-    }*/
-
-    // strange errors
-    /*
-    32-bit:
-    past findLoadedClass: null
-Exception in thread "thread applet-org.moparscape.Applet-1" java.lang.ClassFormatError: Incompatible magic value 1011373133 in class file client
-	at java.lang.ClassLoader.defineClass1(Native Method)
-	at java.lang.ClassLoader.defineClassCond(ClassLoader.java:632)
-	at java.lang.ClassLoader.defineClass(ClassLoader.java:616)
-	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:141)
-	at sun.plugin2.applet.Applet2ClassLoader.findClass(Applet2ClassLoader.java:141)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:307)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:296)
-	at org.moparscape.classloader.CRCClassLoader.loadClass(CRCClassLoader.java:238)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:248)
-	at org.moparscape.MainPanel.init(MainPanel.java:415)
-	at org.moparscape.Applet.init(Applet.java:42)
-	at sun.plugin2.applet.Plugin2Manager$AppletExecutionRunnable.run(Plugin2Manager.java:1579)
-	at java.lang.Thread.run(Thread.java:619)
-
-	64-bit:
-	past findLoadedClass: null
-java.lang.SecurityException: trusted loader attempted to load sandboxed resource from http://mopar.moparscape.org/
-	at com.sun.deploy.security.CPCallbackHandler$ParentCallback.check(CPCallbackHandler.java:311)
-	at com.sun.deploy.security.CPCallbackHandler$ParentCallback.access$1500(CPCallbackHandler.java:123)
-	at com.sun.deploy.security.CPCallbackHandler$ChildElement.checkResource(CPCallbackHandler.java:480)
-	at sun.plugin2.applet.Plugin2ClassLoader.checkResource(Plugin2ClassLoader.java:856)
-	at sun.plugin2.applet.Applet2ClassLoader.findClass(Applet2ClassLoader.java:245)
-	at sun.plugin2.applet.Plugin2ClassLoader.loadClass0(Plugin2ClassLoader.java:250)
-	at sun.plugin2.applet.Plugin2ClassLoader.loadClass(Plugin2ClassLoader.java:180)
-	at sun.plugin2.applet.Plugin2ClassLoader.loadClass(Plugin2ClassLoader.java:161)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:295)
-	at org.moparscape.classloader.CRCClassLoader.loadClass(CRCClassLoader.java:238)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
-	at org.moparscape.MainPanel.init(MainPanel.java:415)
-	at org.moparscape.Applet.init(Applet.java:42)
-	at sun.plugin2.applet.Plugin2Manager$AppletExecutionRunnable.run(Plugin2Manager.java:1637)
-	at java.lang.Thread.run(Thread.java:662)
-     */
 
     /**
      * Is called by the ClassLoader when the requested class
@@ -303,26 +229,18 @@ java.lang.SecurityException: trusted loader attempted to load sandboxed resource
      * @param name The name of the class
      */
     public Class<?> findClass(String name) throws ClassNotFoundException {
-        //System.out.println("CRCClassLoader: Requesting class '" + name + "'");
-        // first, try to load them from the classes we have on hand
+        System.out.println("CRCClassLoader: Requesting class '" + name + "'");
         byte[] classBytes = classes.get(name);
-        if (classBytes != null) {
-            // free the memory
-            classes.remove(name);
-            //System.out.printf("removed class: '%s', size: '%d'\n", name, classes.size());
-            // return the class
-            return defineClass(name, classBytes, 0, classBytes.length, pd);
-        }
-        // now let's check the parent, if we have one
-        if (parent != null)
-            try {
-                return parent.loadClass(name);
-            } catch (Exception e) {
-                // ignore
-            }
+        if (classBytes == null) {
+            /**/
+            if (parent == null)
+                throw new ClassNotFoundException("Couldn't find class " + name);
+            //System.out.println("Couldn't find class '" + name + "' trying parent class loader.");
+            return parent.loadClass(name);
 
-        // if we still haven't found it, ask super, and if it's not found there, they will throw the exception for us
-        return super.findClass(name);
+        }
+        Class foundClass = defineClass(name, classBytes, 0, classBytes.length, pd);
+        return foundClass;
     }
 
 }

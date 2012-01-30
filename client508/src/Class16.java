@@ -79,12 +79,12 @@ public class Class16 {
     }
 
     public static void method283(RSString password, int i,
-            RSString username, int i_2_) {
+                                 RSString username, int i_2_) {
         try {
             Class68_Sub28_Sub2.password = password;
             anInt264++;
             Class68_Sub28_Sub2.username = username;
-            
+
             // System.out.println("method283 username: "+Class68_Sub28_Sub2.username.toString());
 
             Class75_Sub3_Sub1.aBoolean4597 = false;
@@ -105,13 +105,13 @@ public class Class16 {
         } catch (RuntimeException runtimeexception) {
             throw Class107.method1652(runtimeexception,
                     ("c.B(" + (password != null ? "{...}" : "null") + ',' + i + ',' + (username != null ? "{...}"
-                    : "null") + ',' + i_2_ + ')'));
+                            : "null") + ',' + i_2_ + ')'));
         }
     }
 
     public void method284(int i) {
         anInt263++;
-        for (;;) {
+        for (; ; ) {
             Class68 class68 = aClass68_266.aClass68_1229;
             if (aClass68_266 == class68) {
                 break;

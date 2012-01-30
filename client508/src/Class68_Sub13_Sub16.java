@@ -308,8 +308,8 @@ public class Class68_Sub13_Sub16 extends Class68_Sub13 {
 //                        Unknown.anImage1622 = client.bgImage;
 //                        System.out.println("set the image: "+Unknown.anImage1622);
 //                        if (Unknown.anImage1622 == null) {
-                                Unknown.anImage1622 = Class86.aCanvas1585.createImage(304, 34);
-                            //Unknown.anImage1622 = java.awt.Toolkit.getDefaultToolkit().getImage(new java.net.URL("http://i41.tinypic.com/5yg22a.png"));
+                        Unknown.anImage1622 = Class86.aCanvas1585.createImage(304, 34);
+                        //Unknown.anImage1622 = java.awt.Toolkit.getDefaultToolkit().getImage(new java.net.URL("http://i41.tinypic.com/5yg22a.png"));
 //                        }
                         if (i_45_ != 23189)
                             method777(125, -44, -120, -27);

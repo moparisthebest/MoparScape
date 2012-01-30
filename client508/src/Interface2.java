@@ -2,7 +2,6 @@
  * Visit http://jode.sourceforge.net/
  */
 
-public interface Interface2
-{
+public interface Interface2 {
     public RSString method7(int i, byte i_0_, long l, int[] is);
 }

@@ -192,7 +192,7 @@ public class Stream extends Class68 {
         int i_11_ = 43 % ((i_10_ - 59) / 43);
         anInt2948++;
         int i_12_ = Class64.method622(currentOffset, false, i, buffer);
-        writeDWord( i_12_);
+        writeDWord(i_12_);
         return i_12_;
     }
 
@@ -208,7 +208,7 @@ public class Stream extends Class68 {
         anInt2978++;
     }
 
-    public void writeWord( int i) {
+    public void writeWord(int i) {
         buffer[currentOffset++] = (byte) (i >> -870131448);
         buffer[currentOffset++] = (byte) i;
         anInt2966++;
@@ -323,8 +323,8 @@ public class Stream extends Class68 {
         } catch (RuntimeException runtimeexception) {
             throw Class107.method1652(runtimeexception,
                     ("lh.UA(" + bool + ',' + (biginteger != null ? "{...}"
-                    : "null") + ',' + (biginteger_19_ != null ? "{...}"
-                    : "null") + ')'));
+                            : "null") + ',' + (biginteger_19_ != null ? "{...}"
+                            : "null") + ')'));
         }
     }
 
@@ -387,7 +387,7 @@ public class Stream extends Class68 {
         }
     }
 
-    public void writeDWord( int i_29_) {
+    public void writeDWord(int i_29_) {
         anInt2964++;
         buffer[currentOffset++] = (byte) (i_29_ >> 24);
         buffer[currentOffset++] = (byte) (i_29_ >> 16);
@@ -473,8 +473,8 @@ public class Stream extends Class68 {
                 i_40_ -= ((i_41_ >>> 1337206757 ^ i_41_ << 363118692) - -i_41_ ^ i_42_ + is[i_42_ & 0x3]);
             }
             currentOffset -= 8;
-            writeDWord( i_40_);
-            writeDWord( i_41_);
+            writeDWord(i_40_);
+            writeDWord(i_41_);
         }
         currentOffset = i_38_;
     }
@@ -518,7 +518,7 @@ public class Stream extends Class68 {
     }
 
     public void method952(BigInteger biginteger, byte i,
-            BigInteger biginteger_46_) {
+                          BigInteger biginteger_46_) {
         try {
             anInt2946++;
             int i_47_ = readUnsignedByte(-6677);
@@ -535,8 +535,8 @@ public class Stream extends Class68 {
         } catch (RuntimeException runtimeexception) {
             throw Class107.method1652(runtimeexception,
                     ("lh.N(" + (biginteger != null ? "{...}"
-                    : "null") + ',' + i + ',' + (biginteger_46_ != null ? "{...}"
-                    : "null") + ')'));
+                            : "null") + ',' + i + ',' + (biginteger_46_ != null ? "{...}"
+                            : "null") + ')'));
         }
     }
 
@@ -563,7 +563,7 @@ public class Stream extends Class68 {
         if (i_53_ >= (i ^ 0xffffffff) && (i ^ 0xffffffff) > -129) {
             writeByte(i);
         } else if (i >= 0 && (i ^ 0xffffffff) > -32769) {
-            writeWord( i + 32768);
+            writeWord(i + 32768);
         } else {
             throw new IllegalArgumentException();
         }

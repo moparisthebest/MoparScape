@@ -49,7 +49,7 @@ public class GameSocket implements Runnable {
         anInt1120++;
     }
 
-    public void queueBytes( int i, byte[] is)
+    public void queueBytes(int i, byte[] is)
             throws IOException {
         anInt1150++;
         if (!closed) {
@@ -62,7 +62,7 @@ public class GameSocket implements Runnable {
             }
             synchronized (this) {
                 for (int i_2_ = 0;
-                        (i_2_ ^ 0xffffffff) > (i ^ 0xffffffff); i_2_++) {
+                     (i_2_ ^ 0xffffffff) > (i ^ 0xffffffff); i_2_++) {
                     buffer[buffIndex] = is[i_2_];
                     buffIndex = (1 + buffIndex) % 5000;
                     if (((anInt1124 - -4900) % 5000 ^ 0xffffffff) == (buffIndex ^ 0xffffffff)) {
@@ -79,7 +79,7 @@ public class GameSocket implements Runnable {
 
     public void run() {
         try {
-            for (;;) {
+            for (; ; ) {
                 int i;
                 int i_3_;
                 synchronized (this) {
@@ -136,15 +136,15 @@ public class GameSocket implements Runnable {
         anInt1122++;
     }
 
-    public void flushInputStream( int j, byte[] is)
+    public void flushInputStream(int j, byte[] is)
             throws IOException {
         flushInputStream(j, 0, is);
     }
 
-    public void flushInputStream( int j, int i, byte[] is)
+    public void flushInputStream(int j, int i, byte[] is)
             throws IOException {
         anInt1140++;
-   //     int i_6_ = 74 % ((i - 47) / 41);
+        //     int i_6_ = 74 % ((i - 47) / 41);
         if (!closed) {
             while (j > 0) {
                 int k = inputStream.read(is, i, j);
@@ -165,8 +165,8 @@ public class GameSocket implements Runnable {
         Class68_Sub13_Sub19.aClass92_Sub1Array3745 = new Class92_Sub1[Class104.aClass92_Sub1Array1779.length];
         Class68_Sub20_Sub17.aClass92_Sub1Array4431 = new Class92_Sub1[Class104.aClass92_Sub1Array1779.length];
         for (int i_8_ = 0;
-                ((Class104.aClass92_Sub1Array1779.length ^ 0xffffffff) < (i_8_ ^ 0xffffffff));
-                i_8_++) {
+             ((Class104.aClass92_Sub1Array1779.length ^ 0xffffffff) < (i_8_ ^ 0xffffffff));
+             i_8_++) {
             Class104.aClass92_Sub1Array1779[i_8_].method1532();
             Class112.aClass92_Sub1Array1886[i_8_] = Class104.aClass92_Sub1Array1779[i_8_].method1535();
             Class104.aClass92_Sub1Array1779[i_8_].method1532();
@@ -213,8 +213,8 @@ public class GameSocket implements Runnable {
             int i_12_ = -10 + (int) (Math.random() * 21.0);
             int i_13_ = (int) (41.0 * Math.random()) - 20;
             for (int i_14_ = 0;
-                    (Stream.aSpriteArray3006.length > i_14_);
-                    i_14_++) {
+                 (Stream.aSpriteArray3006.length > i_14_);
+                 i_14_++) {
                 Stream.aSpriteArray3006[i_14_].method1130(i_10_ + i_13_, i_11_ + i_13_, i_13_ + i_12_);
             }
             Class104.aClass92_Sub1Array1779[0].method1533(i_10_ + i_13_, i_13_ + i_11_, i_12_ + i_13_);
@@ -258,11 +258,11 @@ public class GameSocket implements Runnable {
     }
 
     public static void method595(int i, int i_15_, int i_16_, int i_17_,
-            int i_18_) {
+                                 int i_18_) {
         if (i == -6) {
             if (i_18_ <= i_16_) {
                 for (int i_19_ = i_18_;
-                        (i_16_ ^ 0xffffffff) < (i_19_ ^ 0xffffffff); i_19_++) {
+                     (i_16_ ^ 0xffffffff) < (i_19_ ^ 0xffffffff); i_19_++) {
                     Class68_Sub22.anIntArrayArray3132[i_19_][i_15_] = i_17_;
                 }
             } else {
@@ -307,8 +307,8 @@ public class GameSocket implements Runnable {
         Class13_Sub1.method254(-12915, false);
         Class68_Sub13_Sub19.anInt3748 = 0;
         for (int i_21_ = 0;
-                ((i_21_ ^ 0xffffffff) > (Class23.aByteArrayArray490.length ^ 0xffffffff));
-                i_21_++) {
+             ((i_21_ ^ 0xffffffff) > (Class23.aByteArrayArray490.length ^ 0xffffffff));
+             i_21_++) {
             if ((Class96.anIntArray1699[i_21_] ^ 0xffffffff) != 0 && Class23.aByteArrayArray490[i_21_] == null) {
                 Class23.aByteArrayArray490[i_21_] = Class92.aClass21_Sub1_1644.method338(0, 0, Class96.anIntArray1699[i_21_]);
                 if (Class23.aByteArrayArray490[i_21_] == null) {
@@ -336,15 +336,15 @@ public class GameSocket implements Runnable {
         }
         if (Class97.aClass68_Sub20_Sub16_1702 == null || !(Class68_Sub20_Sub5.aClass21_Sub1_4221.method347((byte) -101,
                 (Class68_Sub20_Sub13_Sub2.method1166(2, (new RSString[]{Class97.aClass68_Sub20_Sub16_1702.aRSString_4412,
-                    Class71.aRSString_1296})))))) {
+                        Class71.aRSString_1296})))))) {
             Class68_Sub13_Sub21.aClass91_3788 = null;
         } else if (!Class68_Sub20_Sub5.aClass21_Sub1_4221.method354(0, (Class68_Sub20_Sub13_Sub2.method1166(2, (new RSString[]{Class97.aClass68_Sub20_Sub16_1702.aRSString_4412,
-                    Class71.aRSString_1296}))))) {
+                Class71.aRSString_1296}))))) {
             Class68_Sub13_Sub19.anInt3748++;
             bool = false;
         } else {
             Class68_Sub13_Sub21.aClass91_3788 = Class90.method1510((Class68_Sub20_Sub13_Sub2.method1166(2, (new RSString[]{(Class97.aClass68_Sub20_Sub16_1702.aRSString_4412),
-                        Class71.aRSString_1296}))),
+                    Class71.aRSString_1296}))),
                     12666,
                     Class68_Sub20_Sub5.aClass21_Sub1_4221);
         }
@@ -354,8 +354,8 @@ public class GameSocket implements Runnable {
             Class45.anInt925 = 0;
             bool = true;
             for (int i_22_ = 0;
-                    ((Class23.aByteArrayArray490.length ^ 0xffffffff) < (i_22_ ^ 0xffffffff));
-                    i_22_++) {
+                 ((Class23.aByteArrayArray490.length ^ 0xffffffff) < (i_22_ ^ 0xffffffff));
+                 i_22_++) {
                 byte[] is = Class68_Sub20_Sub11.aByteArrayArray4332[i_22_];
                 if (is != null) {
                     int i_23_ = -Class36.anInt643 + (Class119.anIntArray2089[i_22_] >> -1503568216) * 64;
@@ -373,8 +373,8 @@ public class GameSocket implements Runnable {
                 if (Class21renamed.anInt480 != 0) {
                     Class74.method1381(true,
                             (Class68_Sub20_Sub13_Sub2.method1166(2,
-                            (new RSString[]{Class68_Sub13_Sub19.aRSString_3742,
-                                Class101.aRSString_1743}))),
+                                    (new RSString[]{Class68_Sub13_Sub19.aRSString_3742,
+                                            Class101.aRSString_1743}))),
                             -16678);
                 }
                 if (i < 78) {
@@ -451,21 +451,21 @@ public class GameSocket implements Runnable {
                     int i_35_ = (6 + Class43.anInt732) / 8;
                     for (int i_36_ = i_32_ + -1; i_36_ <= 1 + i_34_; i_36_++) {
                         for (int i_37_ = i_33_ - 1; i_37_ <= 1 + i_35_;
-                                i_37_++) {
+                             i_37_++) {
                             if (i_32_ > i_36_ || i_36_ > i_34_ || (i_33_ ^ 0xffffffff) < (i_37_ ^ 0xffffffff) || (i_35_ ^ 0xffffffff) > (i_37_ ^ 0xffffffff)) {
                                 Class92.aClass21_Sub1_1644.method330((Class68_Sub20_Sub13_Sub2.method1166(2,
                                         (new RSString[]{Class83.aRSString_1525,
-                                            Class68_Sub13_Sub24.method816(i_36_,
-                                            0),
-                                            Class68_Sub20_Sub5.aRSString_4223,
-                                            Class68_Sub13_Sub24.method816(i_37_, 0)}))),
+                                                Class68_Sub13_Sub24.method816(i_36_,
+                                                        0),
+                                                Class68_Sub20_Sub5.aRSString_4223,
+                                                Class68_Sub13_Sub24.method816(i_37_, 0)}))),
                                         118);
                                 Class92.aClass21_Sub1_1644.method330((Class68_Sub20_Sub13_Sub2.method1166(2,
                                         (new RSString[]{Class68_Sub20_Sub16.aRSString_4424,
-                                            Class68_Sub13_Sub24.method816(i_36_,
-                                            0),
-                                            Class68_Sub20_Sub5.aRSString_4223,
-                                            Class68_Sub13_Sub24.method816(i_37_, 0)}))),
+                                                Class68_Sub13_Sub24.method816(i_36_,
+                                                        0),
+                                                Class68_Sub20_Sub5.aRSString_4223,
+                                                Class68_Sub13_Sub24.method816(i_37_, 0)}))),
                                         114);
                             }
                         }

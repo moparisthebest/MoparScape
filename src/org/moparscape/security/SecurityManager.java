@@ -243,6 +243,9 @@ public class SecurityManager extends java.lang.SecurityManager {
         permissions.add(new java.net.NetPermission("getResponseCache"));
         permissions.add(new RuntimePermission("loadLibrary.jsound"));
 
+        // needed for RSC
+        permissions.add(new java.util.PropertyPermission("http.nonProxyHosts", "read"));
+
         // following for OSX leopard
         permissions.add(new java.util.PropertyPermission("socksNonProxyHosts", "read"));
         permissions.add(new java.util.PropertyPermission("sun.java2d.*", "read"));

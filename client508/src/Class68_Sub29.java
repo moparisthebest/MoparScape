@@ -27,7 +27,7 @@ public class Class68_Sub29 extends Class68 {
     public static int anInt3249;
 
     public static Sprite method1319(int i, Class21renamed class21,
-            int i_0_) {
+                                    int i_0_) {
         anInt3247++;
         if (i_0_ < 53) {
             aRSStringArray3248 = null;
@@ -75,14 +75,14 @@ public class Class68_Sub29 extends Class68 {
             method1325(93, null);
         }
         for (int i_11_ = 0;
-                (i_11_ ^ 0xffffffff) > (Class1_Sub2.anInt2435 ^ 0xffffffff);
-                i_11_++) {
+             (i_11_ ^ 0xffffffff) > (Class1_Sub2.anInt2435 ^ 0xffffffff);
+             i_11_++) {
             Class34.anIntArray596[i_11_]--;
             if (Class34.anIntArray596[i_11_] < -10) {
                 Class1_Sub2.anInt2435--;
                 for (int i_12_ = i_11_;
-                        ((i_12_ ^ 0xffffffff) > (Class1_Sub2.anInt2435 ^ 0xffffffff));
-                        i_12_++) {
+                     ((i_12_ ^ 0xffffffff) > (Class1_Sub2.anInt2435 ^ 0xffffffff));
+                     i_12_++) {
                     Login.anIntArray1515[i_12_] = Login.anIntArray1515[i_12_ - -1];
                     Class3.aClass46Array80[i_12_] = Class3.aClass46Array80[i_12_ + 1];
                     PacketParser.anIntArray1876[i_12_] = PacketParser.anIntArray1876[1 + i_12_];
@@ -180,7 +180,7 @@ public class Class68_Sub29 extends Class68 {
                 method1324(36);
             }
             for (int i_24_ = 0; (i_21_ ^ 0xffffffff) < (i_24_ ^ 0xffffffff);
-                    i_24_++) {
+                 i_24_++) {
                 int i_25_ = (int) (l % (long) i);
                 if ((i_25_ ^ 0xffffffff) > -1) {
                     i_25_ = -i_25_;
@@ -202,8 +202,8 @@ public class Class68_Sub29 extends Class68 {
     }
 
     public static void method1323(int i, int i_26_, int i_27_, int i_28_,
-            int i_29_, int i_30_, int i_31_, int i_32_,
-            int i_33_) {
+                                  int i_29_, int i_30_, int i_31_, int i_32_,
+                                  int i_33_) {
         anInt3229++;
         int i_34_ = i_33_ + -i_29_;
         int i_35_ = (-i_28_ + i_30_ << 1948975632) / i_34_;

@@ -166,8 +166,8 @@ public class Class68_Sub28_Sub1 extends Class68_Sub28 {
     public void method1234(int i, int i_11_) {
         if ((0x2 & anIntArray4524[i_11_] ^ 0xffffffff) != -1) {
             for (Class68_Sub26 class68_sub26 = (Class68_Sub26) aClass68_Sub28_Sub2_4527.aClass16_4542.method293((byte) 76);
-                    class68_sub26 != null;
-                    class68_sub26 = (Class68_Sub26) aClass68_Sub28_Sub2_4527.aClass16_4542.method290((byte) -118)) {
+                 class68_sub26 != null;
+                 class68_sub26 = (Class68_Sub26) aClass68_Sub28_Sub2_4527.aClass16_4542.method290((byte) -118)) {
                 if (i_11_ == class68_sub26.anInt3193 && (aClass68_Sub26ArrayArray4511[i_11_][class68_sub26.anInt3198]) == null && (class68_sub26.anInt3188 ^ 0xffffffff) > -1) {
                     class68_sub26.anInt3188 = 0;
                 }
@@ -180,8 +180,8 @@ public class Class68_Sub28_Sub1 extends Class68_Sub28 {
     }
 
     public synchronized boolean method1235(byte i, Class68_Sub12 class68_sub12,
-            Class14 class14, int i_12_,
-            Class21renamed class21) {
+                                           Class14 class14, int i_12_,
+                                           Class21renamed class21) {
         try {
             if (i >= -6) {
                 return true;
@@ -194,8 +194,8 @@ public class Class68_Sub28_Sub1 extends Class68_Sub28 {
             }
             boolean bool = true;
             for (Class68_Sub16 class68_sub16 = ((Class68_Sub16) class68_sub12.aClass113_2917.method1679(-32642));
-                    class68_sub16 != null;
-                    class68_sub16 = (Class68_Sub16) class68_sub12.aClass113_2917.method1683((byte) -126)) {
+                 class68_sub16 != null;
+                 class68_sub16 = (Class68_Sub16) class68_sub12.aClass113_2917.method1683((byte) -126)) {
                 int i_13_ = (int) class68_sub16.aLong1218;
                 Class68_Sub27 class68_sub27 = ((Class68_Sub27) aClass113_4516.method1678((long) i_13_, 85));
                 if (class68_sub27 == null) {
@@ -220,7 +220,7 @@ public class Class68_Sub28_Sub1 extends Class68_Sub28 {
         } catch (RuntimeException runtimeexception) {
             throw Class107.method1652(runtimeexception,
                     ("dd.D(" + i + ',' + (class68_sub12 != null ? "{...}"
-                    : "null") + ',' + (class14 != null ? "{...}" : "null") + ',' + i_12_ + ',' + (class21 != null ? "{...}" : "null") + ')'));
+                            : "null") + ',' + (class14 != null ? "{...}" : "null") + ',' + i_12_ + ',' + (class21 != null ? "{...}" : "null") + ')'));
         }
     }
 
@@ -230,8 +230,8 @@ public class Class68_Sub28_Sub1 extends Class68_Sub28 {
             aClass68_Sub26ArrayArray4476 = null;
         }
         for (Class68_Sub27 class68_sub27 = (Class68_Sub27) aClass113_4516.method1679(-32642);
-                class68_sub27 != null;
-                class68_sub27 = (Class68_Sub27) aClass113_4516.method1683((byte) -113)) {
+             class68_sub27 != null;
+             class68_sub27 = (Class68_Sub27) aClass113_4516.method1683((byte) -113)) {
             class68_sub27.method1220(4);
         }
     }
@@ -246,8 +246,8 @@ public class Class68_Sub28_Sub1 extends Class68_Sub28 {
             anIntArray4494 = null;
         }
         for (Class68_Sub26 class68_sub26 = (Class68_Sub26) aClass68_Sub28_Sub2_4527.aClass16_4542.method293((byte) 76);
-                class68_sub26 != null;
-                class68_sub26 = (Class68_Sub26) aClass68_Sub28_Sub2_4527.aClass16_4542.method290((byte) -106)) {
+             class68_sub26 != null;
+             class68_sub26 = (Class68_Sub26) aClass68_Sub28_Sub2_4527.aClass16_4542.method290((byte) -106)) {
             if ((i ^ 0xffffffff) > -1 || class68_sub26.anInt3193 == i) {
                 if (class68_sub26.aClass68_Sub28_Sub3_3185 != null) {
                     class68_sub26.aClass68_Sub28_Sub3_3185.method1288(Class93.anInt1660 / 100);
@@ -435,7 +435,7 @@ public class Class68_Sub28_Sub1 extends Class68_Sub28 {
     }
 
     public static void method1241(int i, int i_40_, int i_41_, int i_42_,
-            int i_43_) {
+                                  int i_43_) {
         GroundData.anInt677 = i_41_;
         Class35.anInt605 = i_40_;
         anInt4515++;
@@ -490,8 +490,8 @@ public class Class68_Sub28_Sub1 extends Class68_Sub28 {
         anInt4488++;
         if ((0x2 & anIntArray4524[i]) != 0) {
             for (Class68_Sub26 class68_sub26 = (Class68_Sub26) aClass68_Sub28_Sub2_4527.aClass16_4542.method289(i_55_ ^ 0x7768);
-                    class68_sub26 != null;
-                    class68_sub26 = (Class68_Sub26) aClass68_Sub28_Sub2_4527.aClass16_4542.method280((byte) -75)) {
+                 class68_sub26 != null;
+                 class68_sub26 = (Class68_Sub26) aClass68_Sub28_Sub2_4527.aClass16_4542.method280((byte) -75)) {
                 if (i == class68_sub26.anInt3193 && class68_sub26.anInt3188 < 0) {
                     aClass68_Sub26ArrayArray4511[i][class68_sub26.anInt3198] = null;
                     aClass68_Sub26ArrayArray4511[i][i_53_] = class68_sub26;
@@ -556,8 +556,8 @@ public class Class68_Sub28_Sub1 extends Class68_Sub28 {
 
     public synchronized void method1246(boolean bool) {
         for (Class68_Sub27 class68_sub27 = (Class68_Sub27) aClass113_4516.method1679(-32642);
-                class68_sub27 != null;
-                class68_sub27 = (Class68_Sub27) aClass113_4516.method1683((byte) -114)) {
+             class68_sub27 != null;
+             class68_sub27 = (Class68_Sub27) aClass113_4516.method1683((byte) -114)) {
             class68_sub27.method647(-17554);
         }
         anInt4463++;
@@ -576,8 +576,8 @@ public class Class68_Sub28_Sub1 extends Class68_Sub28 {
             aClass68_Sub26ArrayArray4511[i_60_][i] = null;
             if ((0x2 & anIntArray4524[i_60_] ^ 0xffffffff) != -1) {
                 for (Class68_Sub26 class68_sub26_61_ = (Class68_Sub26) aClass68_Sub28_Sub2_4527.aClass16_4542.method293((byte) 76);
-                        class68_sub26_61_ != null;
-                        class68_sub26_61_ = (Class68_Sub26) aClass68_Sub28_Sub2_4527.aClass16_4542.method290((byte) 42)) {
+                     class68_sub26_61_ != null;
+                     class68_sub26_61_ = (Class68_Sub26) aClass68_Sub28_Sub2_4527.aClass16_4542.method290((byte) 42)) {
                     if (class68_sub26.anInt3193 == class68_sub26_61_.anInt3193 && class68_sub26_61_.anInt3188 < 0 && class68_sub26 != class68_sub26_61_) {
                         class68_sub26.anInt3188 = 0;
                         break;
@@ -627,8 +627,8 @@ public class Class68_Sub28_Sub1 extends Class68_Sub28 {
 
     public void method1251(int i, byte i_63_) {
         for (Class68_Sub26 class68_sub26 = (Class68_Sub26) aClass68_Sub28_Sub2_4527.aClass16_4542.method293((byte) 76);
-                class68_sub26 != null;
-                class68_sub26 = (Class68_Sub26) aClass68_Sub28_Sub2_4527.aClass16_4542.method290((byte) -121)) {
+             class68_sub26 != null;
+             class68_sub26 = (Class68_Sub26) aClass68_Sub28_Sub2_4527.aClass16_4542.method290((byte) -121)) {
             if ((i < 0 || class68_sub26.anInt3193 == i) && class68_sub26.anInt3188 < 0) {
                 aClass68_Sub26ArrayArray4511[class68_sub26.anInt3193][class68_sub26.anInt3198] = null;
                 class68_sub26.anInt3188 = 0;
@@ -641,7 +641,7 @@ public class Class68_Sub28_Sub1 extends Class68_Sub28 {
     }
 
     public boolean method1252(int i, int i_64_, Class68_Sub26 class68_sub26,
-            byte i_65_, int[] is) {
+                              byte i_65_, int[] is) {
         try {
             anInt4472++;
             if (i_65_ != -68) {
@@ -689,8 +689,8 @@ public class Class68_Sub28_Sub1 extends Class68_Sub28 {
                             d * (double) class20.anInt418)) + 0.5);
                 }
                 for (/**/;
-                        ((-2 + class20.aByteArray407.length > class68_sub26.anInt3187) && ((0xff00 & ((class20.aByteArray407[class68_sub26.anInt3187 + 2]) << -1967673784) ^ 0xffffffff) > (class68_sub26.anInt3199 ^ 0xffffffff)));
-                        class68_sub26.anInt3187 += 2) {
+                         ((-2 + class20.aByteArray407.length > class68_sub26.anInt3187) && ((0xff00 & ((class20.aByteArray407[class68_sub26.anInt3187 + 2]) << -1967673784) ^ 0xffffffff) > (class68_sub26.anInt3199 ^ 0xffffffff)));
+                         class68_sub26.anInt3187 += 2) {
                     /* empty */
                 }
                 if (((class20.aByteArray407.length + -2 ^ 0xffffffff) == (class68_sub26.anInt3187 ^ 0xffffffff)) && (class20.aByteArray407[class68_sub26.anInt3187 - -1] == 0)) {
@@ -705,8 +705,8 @@ public class Class68_Sub28_Sub1 extends Class68_Sub28 {
                     class68_sub26.anInt3188 += 128;
                 }
                 for (/**/;
-                        ((-2 + class20.aByteArray405.length > class68_sub26.anInt3197) && ((class68_sub26.anInt3188 ^ 0xffffffff) < (((class20.aByteArray405[2 + class68_sub26.anInt3197]) << 901730312 & 0xff00) ^ 0xffffffff)));
-                        class68_sub26.anInt3197 += 2) {
+                         ((-2 + class20.aByteArray405.length > class68_sub26.anInt3197) && ((class68_sub26.anInt3188 ^ 0xffffffff) < (((class20.aByteArray405[2 + class68_sub26.anInt3197]) << 901730312 & 0xff00) ^ 0xffffffff)));
+                         class68_sub26.anInt3197 += 2) {
                     /* empty */
                 }
                 if (class68_sub26.anInt3197 == class20.aByteArray405.length - 2) {
@@ -739,7 +739,7 @@ public class Class68_Sub28_Sub1 extends Class68_Sub28 {
         } catch (RuntimeException runtimeexception) {
             throw Class107.method1652(runtimeexception,
                     ("dd.AA(" + i + ',' + i_64_ + ',' + (class68_sub26 != null ? "{...}"
-                    : "null") + ',' + i_65_ + ',' + (is != null ? "{...}" : "null") + ')'));
+                            : "null") + ',' + i_65_ + ',' + (is != null ? "{...}" : "null") + ')'));
         }
     }
 
@@ -792,8 +792,8 @@ public class Class68_Sub28_Sub1 extends Class68_Sub28 {
     public void method1254(int i, byte i_70_) {
         if ((0x4 & anIntArray4524[i] ^ 0xffffffff) != -1) {
             for (Class68_Sub26 class68_sub26 = (Class68_Sub26) aClass68_Sub28_Sub2_4527.aClass16_4542.method293((byte) 76);
-                    class68_sub26 != null;
-                    class68_sub26 = (Class68_Sub26) aClass68_Sub28_Sub2_4527.aClass16_4542.method290((byte) -125)) {
+                 class68_sub26 != null;
+                 class68_sub26 = (Class68_Sub26) aClass68_Sub28_Sub2_4527.aClass16_4542.method290((byte) -125)) {
                 if ((i ^ 0xffffffff) == (class68_sub26.anInt3193 ^ 0xffffffff)) {
                     class68_sub26.anInt3180 = 0;
                 }
@@ -878,7 +878,7 @@ public class Class68_Sub28_Sub1 extends Class68_Sub28 {
     }
 
     public synchronized void method1259(boolean bool, boolean bool_81_,
-            Class68_Sub12 class68_sub12) {
+                                        Class68_Sub12 class68_sub12) {
         anInt4456++;
         method1249(111);
         aClass10_4467.method217(class68_sub12.aByteArray2916);
@@ -899,7 +899,7 @@ public class Class68_Sub28_Sub1 extends Class68_Sub28 {
     }
 
     public static void doAction(Class68_Sub29 class68_sub29, byte i,
-            int i_83_) {
+                                int i_83_) {
         // System.out.println("doAction("+class68_sub29+", "+i+", "+i_83_+")");
         anInt4499++;
         Object[] objects = class68_sub29.anObjectArray3237;
@@ -924,8 +924,8 @@ public class Class68_Sub28_Sub1 extends Class68_Sub28 {
                 Class94.anIntArray1677 = new int[class68_sub20_sub14.anInt4379];
                 int i_91_ = 0;
                 for (int i_92_ = 1;
-                        (objects.length ^ 0xffffffff) < (i_92_ ^ 0xffffffff);
-                        i_92_++) {
+                     (objects.length ^ 0xffffffff) < (i_92_ ^ 0xffffffff);
+                     i_92_++) {
                     if (!(objects[i_92_] instanceof Integer)) {
                         if (objects[i_92_] instanceof RSString) {
                             RSString class100 = (RSString) objects[i_92_];
@@ -978,13 +978,13 @@ public class Class68_Sub28_Sub1 extends Class68_Sub28 {
                     anInt4491 = -17;
                 }
                 int i_94_ = 0;
-                for (;;) {
+                for (; ; ) {
                     i_94_++;
                     if (i_83_ < i_94_) {
                         throw new RuntimeException("slow");
                     }
                     i_87_ = is_88_[++i_86_];
-                   // System.out.println("i_87_: "+i_87_);
+                    // System.out.println("i_87_: "+i_87_);
                     if (i_87_ < 100) {
                         if ((i_87_ ^ 0xffffffff) == -1) {
                             Class68_Sub13.anIntArray2924[i_85_++] = is[i_86_];
@@ -1115,13 +1115,13 @@ public class Class68_Sub28_Sub1 extends Class68_Sub28 {
                             int[] is_102_ = new int[class68_sub20_sub14_101_.anInt4379];
                             RSString[] class100s = (new RSString[class68_sub20_sub14_101_.anInt4370]);
                             for (int i_103_ = 0;
-                                    i_103_ < class68_sub20_sub14_101_.anInt4373;
-                                    i_103_++) {
+                                 i_103_ < class68_sub20_sub14_101_.anInt4373;
+                                 i_103_++) {
                                 is_102_[i_103_] = (Class68_Sub13.anIntArray2924[(i_85_ + (-class68_sub20_sub14_101_.anInt4373 + i_103_))]);
                             }
                             for (int i_104_ = 0;
-                                    ((i_104_ ^ 0xffffffff) > (class68_sub20_sub14_101_.anInt4371 ^ 0xffffffff));
-                                    i_104_++) {
+                                 ((i_104_ ^ 0xffffffff) > (class68_sub20_sub14_101_.anInt4371 ^ 0xffffffff));
+                                 i_104_++) {
                                 class100s[i_104_] = (Class68_Sub15.stringArray[i_104_ + (i_89_ - (class68_sub20_sub14_101_.anInt4371))]);
                             }
                             i_85_ -= class68_sub20_sub14_101_.anInt4373;
@@ -1356,8 +1356,8 @@ public class Class68_Sub28_Sub1 extends Class68_Sub28 {
                                             }
                                             Object[] objects_128_ = (new Object[1 + (class100.method1590((byte) -107))]);
                                             for (int i_129_ = (-1 + objects_128_.length);
-                                                    (i_129_ ^ 0xffffffff) <= -2;
-                                                    i_129_--) {
+                                                 (i_129_ ^ 0xffffffff) <= -2;
+                                                 i_129_--) {
                                                 if ((class100.method1578(-1 + i_129_, 7178)) != 115) {
                                                     objects_128_[i_129_] = (new Integer(Class68_Sub13.anIntArray2924[--i_85_]));
                                                 } else {
@@ -1574,8 +1574,8 @@ public class Class68_Sub28_Sub1 extends Class68_Sub28 {
                                                                 } else {
                                                                     int i_132_ = (class45.aClass45Array769).length;
                                                                     for (int i_133_ = 0;
-                                                                            (i_133_ < class45.aClass45Array769.length);
-                                                                            i_133_++) {
+                                                                         (i_133_ < class45.aClass45Array769.length);
+                                                                         i_133_++) {
                                                                         if ((class45.aClass45Array769[i_133_]) == null) {
                                                                             i_132_ = i_133_;
                                                                             break;
@@ -2043,11 +2043,11 @@ public class Class68_Sub28_Sub1 extends Class68_Sub28 {
                                                                                                             i_89_ -= 2;
                                                                                                             RSString class100 = Class68_Sub15.stringArray[i_89_];
                                                                                                             RSString class100_198_ = Class68_Sub15.stringArray[i_89_ + 1];
-                                                                                                            Class21renamed.stream.createFrame( 161);
+                                                                                                            Class21renamed.stream.createFrame(161);
                                                                                                             Class21renamed.stream.writeByte(Class13_Sub1.method250(class100, -125) + (Class13_Sub1.method250(class100_198_, -110) + 1));
                                                                                                             Class21renamed.stream.writeString((byte) -9, class100);
                                                                                                             Class21renamed.stream.writeString((byte) -9, class100_198_);
-                                                                                                            Class21renamed.stream.writeByte( i_197_);
+                                                                                                            Class21renamed.stream.writeByte(i_197_);
                                                                                                             break;
                                                                                                         }
                                                                                                         if ((i_87_ ^ 0xffffffff) == -5402) {
@@ -2751,9 +2751,9 @@ public class Class68_Sub28_Sub1 extends Class68_Sub28 {
                                                                                                     Class68_Sub13_Sub4.anInt3497 = Class68_Sub13.anIntArray2924[1 + i_85_];
                                                                                                     Class68_Sub4.anInt2813 = Class68_Sub13.anIntArray2924[2 + i_85_];
                                                                                                     Class21renamed.stream.createFrame(212);
-                                                                                                    Class21renamed.stream.writeByte( GroundData.anInt686);
-                                                                                                    Class21renamed.stream.writeByte( Class68_Sub13_Sub4.anInt3497);
-                                                                                                    Class21renamed.stream.writeByte( Class68_Sub4.anInt2813);
+                                                                                                    Class21renamed.stream.writeByte(GroundData.anInt686);
+                                                                                                    Class21renamed.stream.writeByte(Class68_Sub13_Sub4.anInt3497);
+                                                                                                    Class21renamed.stream.writeByte(Class68_Sub4.anInt2813);
                                                                                                     break;
                                                                                                 }
                                                                                                 if ((i_87_ ^ 0xffffffff) == -5003) {
@@ -2762,10 +2762,10 @@ public class Class68_Sub28_Sub1 extends Class68_Sub28 {
                                                                                                     int i_240_ = Class68_Sub13.anIntArray2924[i_85_];
                                                                                                     RSString class100 = Class68_Sub15.stringArray[--i_89_];
                                                                                                     int i_241_ = Class68_Sub13.anIntArray2924[i_85_ - -1];
-                                                                                                    Class21renamed.stream.createFrame( 159);
+                                                                                                    Class21renamed.stream.createFrame(159);
                                                                                                     Class21renamed.stream.writeQWord(true, class100.toLong(10908));
-                                                                                                    Class21renamed.stream.writeByte( -1 + i_240_);
-                                                                                                    Class21renamed.stream.writeByte( i_241_);
+                                                                                                    Class21renamed.stream.writeByte(-1 + i_240_);
+                                                                                                    Class21renamed.stream.writeByte(i_241_);
                                                                                                     break;
                                                                                                 }
                                                                                                 if (i_87_ == 5003) {
@@ -2927,11 +2927,11 @@ public class Class68_Sub28_Sub1 extends Class68_Sub28 {
                                                                                                             i_247_ = 2;
                                                                                                             class100 = class100.method1615(Class68_Sub3.aRSString_2799.method1590((byte) -104), true);
                                                                                                         }
-                                                                                                        Class21renamed.stream.createFrame( 222);
-                                                                                                        Class21renamed.stream.writeByte( 0);
+                                                                                                        Class21renamed.stream.createFrame(222);
+                                                                                                        Class21renamed.stream.writeByte(0);
                                                                                                         int i_248_ = Class21renamed.stream.currentOffset;
-                                                                                                        Class21renamed.stream.writeByte( i_246_);
-                                                                                                        Class21renamed.stream.writeByte( i_247_);
+                                                                                                        Class21renamed.stream.writeByte(i_246_);
+                                                                                                        Class21renamed.stream.writeByte(i_247_);
                                                                                                         Class13_Sub2.method258(Class21renamed.stream, i + -124, class100);
                                                                                                         Class21renamed.stream.method935(-i_248_ + Class21renamed.stream.currentOffset, 119);
                                                                                                     }
@@ -2943,7 +2943,7 @@ public class Class68_Sub28_Sub1 extends Class68_Sub28 {
                                                                                                     RSString class100_249_ = Class68_Sub15.stringArray[i_89_ + 1];
                                                                                                     if (Class68_Sub13_Sub13.anInt3663 != 0 || Class25.anInt517 != 1 && Class30.anInt552 != 1) {
                                                                                                         Class68_Sub13_Sub15.anInt3689++;
-                                                                                                        Class21renamed.stream.createFrame( 178);
+                                                                                                        Class21renamed.stream.createFrame(178);
                                                                                                         Class21renamed.stream.writeByte(0);
                                                                                                         int i_250_ = Class21renamed.stream.currentOffset;
                                                                                                         Class21renamed.stream.writeQWord(true, class100.toLong(i ^ 0x2ae0));
@@ -3074,12 +3074,12 @@ public class Class68_Sub28_Sub1 extends Class68_Sub28 {
                                                                                                     break;
                                                                                                 }
                                                                                                 if (i_87_ == 5059) {
-                                                                                                    Class21renamed.stream.createFrame( 250);
+                                                                                                    Class21renamed.stream.createFrame(250);
                                                                                                     Class21renamed.stream.writeByte(0);
                                                                                                     PacketStream.anInt4129++;
                                                                                                     int i_267_ = Class21renamed.stream.currentOffset;
                                                                                                     Class21renamed.stream.writeByte(0);
-                                                                                                    Class21renamed.stream.writeWord( aClass58_4498.anInt1089);
+                                                                                                    Class21renamed.stream.writeWord(aClass58_4498.anInt1089);
                                                                                                     aClass58_4498.aClass68_Sub20_Sub8_1099.method1081(-33, aClass58_4498.anIntArray1090, Class21renamed.stream);
                                                                                                     Class21renamed.stream.method935(-i_267_ + Class21renamed.stream.currentOffset, 125);
                                                                                                     break;
@@ -3091,7 +3091,7 @@ public class Class68_Sub28_Sub1 extends Class68_Sub28 {
                                                                                                     Class21renamed.stream.writeByte(0);
                                                                                                     int i_268_ = Class21renamed.stream.currentOffset;
                                                                                                     Class21renamed.stream.writeQWord(true, class100.toLong(10908));
-                                                                                                    Class21renamed.stream.writeWord( aClass58_4498.anInt1089);
+                                                                                                    Class21renamed.stream.writeWord(aClass58_4498.anInt1089);
                                                                                                     aClass58_4498.aClass68_Sub20_Sub8_1099.method1081(-94, aClass58_4498.anIntArray1090, Class21renamed.stream);
                                                                                                     Class21renamed.stream.method935(Class21renamed.stream.currentOffset - i_268_, 120);
                                                                                                     break;
@@ -3102,7 +3102,7 @@ public class Class68_Sub28_Sub1 extends Class68_Sub28 {
                                                                                                     Class21renamed.stream.writeByte(0);
                                                                                                     int i_269_ = Class21renamed.stream.currentOffset;
                                                                                                     Class21renamed.stream.writeByte(1);
-                                                                                                    Class21renamed.stream.writeWord( aClass58_4498.anInt1089);
+                                                                                                    Class21renamed.stream.writeWord(aClass58_4498.anInt1089);
                                                                                                     aClass58_4498.aClass68_Sub20_Sub8_1099.method1081(-90, aClass58_4498.anIntArray1090, Class21renamed.stream);
                                                                                                     Class21renamed.stream.method935(Class21renamed.stream.currentOffset - i_269_, i + 2);
                                                                                                     break;
@@ -3840,7 +3840,7 @@ public class Class68_Sub28_Sub1 extends Class68_Sub28 {
                                                                         i_382_ = class100.method1619((byte) -62);
                                                                     }
                                                                     Class21renamed.stream.createFrame(43);
-                                                                    Class21renamed.stream.writeDWord( i_382_);
+                                                                    Class21renamed.stream.writeDWord(i_382_);
                                                                     break;
                                                                 }
                                                                 if ((i_87_ ^ 0xffffffff) == -3106) {
@@ -4354,8 +4354,8 @@ public class Class68_Sub28_Sub1 extends Class68_Sub28 {
                                 if ((class45.aClass45Array769.length ^ 0xffffffff) >= (i_400_ ^ 0xffffffff)) {
                                     Class45[] class45s = new Class45[1 + i_400_];
                                     for (int i_401_ = 0;
-                                            (class45.aClass45Array769.length > i_401_);
-                                            i_401_++) {
+                                         (class45.aClass45Array769.length > i_401_);
+                                         i_401_++) {
                                         class45s[i_401_] = class45.aClass45Array769[i_401_];
                                     }
                                     class45.aClass45Array769 = class45s;
@@ -4448,7 +4448,7 @@ public class Class68_Sub28_Sub1 extends Class68_Sub28 {
                     RSString class100 = Class21renamed.method339(-18982, 30);
                     class100.method1618(Class124.aRSString_2154, 12147).method1618(class68_sub20_sub14.aRSString_4369, i ^ 0x2f0f);
                     for (int i_407_ = Class76.anInt1355 + -1; i_407_ >= 0;
-                            i_407_--) {
+                         i_407_--) {
                         class100.method1618(Class68_Sub20_Sub4.aRSString_4219, 12147).method1618((Class68_Sub13_Sub9.aClass43Array3570[i_407_].aClass68_Sub20_Sub14_733.aRSString_4369),
                                 12147);
                     }
@@ -4460,7 +4460,7 @@ public class Class68_Sub28_Sub1 extends Class68_Sub28 {
                         Class48.method520(Class68_Sub13_Sub19.aRSString_3739,
                                 i ^ ~0x21,
                                 (Class68_Sub20_Sub13_Sub2.method1166(2, (new RSString[]{Class59.aRSString_1111,
-                                    (class68_sub20_sub14.aRSString_4369)}))),
+                                        (class68_sub20_sub14.aRSString_4369)}))),
                                 0);
                     }
                     Class71.method1339(("CS2 - scr:" + class68_sub20_sub14.aLong1218 + " op:" + i_87_ + new String(class100.method1575((byte) -79))),

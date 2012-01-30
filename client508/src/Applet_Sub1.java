@@ -4,11 +4,7 @@
 
 import java.applet.Applet;
 import java.applet.AppletContext;
-import java.awt.Container;
-import java.awt.Frame;
-import java.awt.Graphics;
-import java.awt.Insets;
-import java.awt.Rectangle;
+import java.awt.*;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 import java.awt.event.WindowEvent;
@@ -129,8 +125,8 @@ public abstract class Applet_Sub1 extends Applet
             while ((Class16.aLong277 ^ 0xffffffffffffffffL) == -1L || ((Class36.method438(17161) ^ 0xffffffffffffffffL) > (Class16.aLong277 ^ 0xffffffffffffffffL))) {
                 Class68_Sub13_Sub22.anInt3810 = (Class68_Sub20_Sub13.aClass50_4364.method532(Class109.anInt1839, -19, Class76.anInt1345));
                 for (int i = 0;
-                        ((i ^ 0xffffffff) > (Class68_Sub13_Sub22.anInt3810 ^ 0xffffffff));
-                        i++)
+                     ((i ^ 0xffffffff) > (Class68_Sub13_Sub22.anInt3810 ^ 0xffffffff));
+                     i++)
                     method30((byte) -71);
                 method25(-16633);
                 Canvas_Sub1.method46(Class75_Sub1_Sub1.signlink,
@@ -307,7 +303,7 @@ public abstract class Applet_Sub1 extends Applet
     }
 
     public void method21(int i, int i_8_, int i_9_, int i_10_, String string,
-            int i_11_, int i_12_) {
+                         int i_11_, int i_12_) {
         anInt40++;
         do {
             try {
@@ -417,8 +413,8 @@ public abstract class Applet_Sub1 extends Applet
         if (string.endsWith("127.0.0.1"))
             return true;
         for (/**/;
-                (string.length() > 0 && (string.charAt(string.length() + -1) ^ 0xffffffff) <= -49 && (string.charAt(-1 + string.length()) ^ 0xffffffff) >= -58);
-                string = string.substring(0, -1 + string.length())) {
+                 (string.length() > 0 && (string.charAt(string.length() + -1) ^ 0xffffffff) <= -49 && (string.charAt(-1 + string.length()) ^ 0xffffffff) >= -58);
+                 string = string.substring(0, -1 + string.length())) {
             /* empty */
         }
         if (string.endsWith("192.168.1."))
@@ -430,7 +426,7 @@ public abstract class Applet_Sub1 extends Applet
     public abstract void method27(int i);
 
     public static void method28(int i, int i_17_, int i_18_, int i_19_,
-            int i_20_, int i_21_, int i_22_, int i_23_) {
+                                int i_20_, int i_21_, int i_22_, int i_23_) {
         anInt18++;
         if (i_20_ != 1000)
             anInt7 = -56;

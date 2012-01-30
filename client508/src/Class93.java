@@ -2,8 +2,7 @@
  * Visit http://jode.sourceforge.net/
  */
 
-public class Class93
-{
+public class Class93 {
     public static int anInt1660;
     public boolean aBoolean1661;
     public static Class98 aClass98_1662 = new Class98(64);
@@ -15,10 +14,10 @@ public class Class93
     public static int anInt1668;
     public static boolean aBoolean1669 = false;
     public RSString aRSString_1670;
-    
+
     public static void method1540(int i) {
-	aClass98_1662 = null;
-	if (i > 29)
-	    aClass14_1667 = null;
+        aClass98_1662 = null;
+        if (i > 29)
+            aClass14_1667 = null;
     }
 }

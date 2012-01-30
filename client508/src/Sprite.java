@@ -1201,7 +1201,7 @@ public class Sprite extends Class68_Sub20_Sub10 {
     */
 
     public Sprite(int i, int i_336_, int i_337_, int i_338_, int w, int h, int[] is) {
- //       String hash = getMD5(toByteArray(is));
+        //       String hash = getMD5(toByteArray(is));
         //System.out.println("hash: "+hash);
         anInt4305 = i;
         anInt4313 = i_336_;
@@ -1217,8 +1217,8 @@ public class Sprite extends Class68_Sub20_Sub10 {
             pixels = client.bgImage;
         }
         // logo (at login screen, after cache is loaded): new sprite w:348 h:114 i:360 i_336_:123 i_337_:6 i_338_:5
-        if (w == 348 && h == 114 &&  i_337_ == 6 && i_338_ == 5) { //LOGO
-    //        System.out.println("LOADING NO LOGO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        if (w == 348 && h == 114 && i_337_ == 6 && i_338_ == 5) { //LOGO
+            //        System.out.println("LOADING NO LOGO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
             pixels = new int[w * h];
         }
     }

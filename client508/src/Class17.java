@@ -74,7 +74,7 @@ public class Class17 {
     }
 
     public static void method297(int i, int i_2_, int i_3_, int i_4_, int i_5_,
-            int i_6_) {
+                                 int i_6_) {
         anInt285++;
         Class34.method416(i_4_, (byte) -17, i_2_,
                 Class68_Sub22.anIntArrayArray3132[i_3_++], i);
@@ -90,7 +90,7 @@ public class Class17 {
     }
 
     public static void method298(int i, byte i_8_, int i_9_, RSString class100,
-            int i_10_) {
+                                 int i_10_) {
         Class45 class45 = Class66.method637(i, false, i_10_);
         anInt281++;
         if (class45 != null) {
@@ -115,62 +115,62 @@ public class Class17 {
                 if ((i_9_ ^ 0xffffffff) == -2) {
                     Class103.anInt1772++;
                     Class21renamed.stream.createFrame(233);
-                    Class21renamed.stream.writeDWord( i);
-                    Class21renamed.stream.writeWord( i_10_);
+                    Class21renamed.stream.writeDWord(i);
+                    Class21renamed.stream.writeWord(i_10_);
                 }
                 if ((i_9_ ^ 0xffffffff) == -3) {
                     Class71_Sub1.anInt3253++;
                     Class21renamed.stream.createFrame(21);
-                    Class21renamed.stream.writeDWord( i);
-                    Class21renamed.stream.writeWord( i_10_);
+                    Class21renamed.stream.writeDWord(i);
+                    Class21renamed.stream.writeWord(i_10_);
                 }
                 if (i_9_ == 3) {
                     Class102.anInt1750++;
                     Class21renamed.stream.createFrame(169);
-                    Class21renamed.stream.writeDWord( i);
-                    Class21renamed.stream.writeWord( i_10_);
+                    Class21renamed.stream.writeDWord(i);
+                    Class21renamed.stream.writeWord(i_10_);
                 }
                 if (i_9_ == 4) {
                     Class21renamed.stream.createFrame(214);
                     PacketStream.anInt4111++;
-                    Class21renamed.stream.writeDWord( i);
-                    Class21renamed.stream.writeWord( i_10_);
+                    Class21renamed.stream.writeDWord(i);
+                    Class21renamed.stream.writeWord(i_10_);
                 }
                 if (i_9_ == 5) {
                     Class57.anInt1079++;
                     Class21renamed.stream.createFrame(173);
-                    Class21renamed.stream.writeDWord( i);
-                    Class21renamed.stream.writeWord( i_10_);
+                    Class21renamed.stream.writeDWord(i);
+                    Class21renamed.stream.writeWord(i_10_);
                 }
                 if (i_9_ == 6) {
                     Class68_Sub13_Sub6.anInt3527++;
                     Class21renamed.stream.createFrame(232);
-                    Class21renamed.stream.writeDWord( i);
-                    Class21renamed.stream.writeWord( i_10_);
+                    Class21renamed.stream.writeDWord(i);
+                    Class21renamed.stream.writeWord(i_10_);
                 }
                 if ((i_9_ ^ 0xffffffff) == -8) {
                     Class75_Sub3_Sub1.anInt4600++;
                     Class21renamed.stream.createFrame(133);
-                    Class21renamed.stream.writeDWord( i);
-                    Class21renamed.stream.writeWord( i_10_);
+                    Class21renamed.stream.writeDWord(i);
+                    Class21renamed.stream.writeWord(i_10_);
                 }
                 if ((i_9_ ^ 0xffffffff) == -9) {
                     Class21renamed.stream.createFrame(102);
                     Class68_Sub13_Sub34.anInt4011++;
-                    Class21renamed.stream.writeDWord( i);
-                    Class21renamed.stream.writeWord( i_10_);
+                    Class21renamed.stream.writeDWord(i);
+                    Class21renamed.stream.writeWord(i_10_);
                 }
                 if (i_9_ == 9) {
                     Class21renamed.stream.createFrame(226);
                     Class72_Sub1.anInt3282++;
-                    Class21renamed.stream.writeDWord( i);
-                    Class21renamed.stream.writeWord( i_10_);
+                    Class21renamed.stream.writeDWord(i);
+                    Class21renamed.stream.writeWord(i_10_);
                 }
                 if (i_9_ == 10) {
                     Class29.anInt534++;
                     Class21renamed.stream.createFrame(90);
-                    Class21renamed.stream.writeDWord( i);
-                    Class21renamed.stream.writeWord( i_10_);
+                    Class21renamed.stream.writeDWord(i);
+                    Class21renamed.stream.writeWord(i_10_);
                 }
             }
         }

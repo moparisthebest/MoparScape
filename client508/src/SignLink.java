@@ -81,10 +81,10 @@ public class SignLink implements Runnable {
     }
 
     public void run() {
-        for (; ;) {
+        for (; ; ) {
             JagSocket class31;
             synchronized (this) {
-                for (; ;) {
+                for (; ; ) {
                     if (aBoolean1055)
                         return;
                     if (aClass31_1048 != null) {

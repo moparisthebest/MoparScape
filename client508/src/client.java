@@ -19,7 +19,7 @@ public class client extends Applet_Sub1 implements ClientInterface {
     public static int serverPort = 43594;
     public static int ondemandPort = 43594;
     public static int jaggrabPort = 43594;
-    public static String cacheDir = System.getProperty("user.home") + "/.moparscape/cache508/";
+    public static String cacheDir = "./cache508/";
     boolean maplock, hpOn, zoomOn;
     int mapface, zoom, fwdbwd, lftrit;
 
@@ -107,15 +107,14 @@ public class client extends Applet_Sub1 implements ClientInterface {
     public void setBackground(java.awt.Image image) {
         if (image == null)
             return;
-        System.out.println("in new setbackground!!!!!!!!!!!");
         int newWidth = 956;
         int newHeight = 503;
         int oldWidth = image.getWidth(null);
         int oldHeight = image.getHeight(null);
         BufferedImage bi = new BufferedImage(newWidth, newHeight, BufferedImage.TYPE_INT_ARGB);
-        int onEachSide = (newWidth-oldWidth)/2;
+        int onEachSide = (newWidth - oldWidth) / 2;
         bi.getGraphics().drawImage(image,
-                onEachSide, 0, newWidth-onEachSide, newHeight,
+                onEachSide, 0, newWidth - onEachSide, newHeight,
                 0, 0, oldWidth, oldHeight,
                 null);
 /*        // this kind of stretches the image, but might be needed with HD
@@ -123,7 +122,8 @@ public class client extends Applet_Sub1 implements ClientInterface {
                 0, 0, 956, 503,
                 0, 0, 766, 503,
                 null);
-*/      bgImage = new int[newWidth * newHeight];
+*/
+        bgImage = new int[newWidth * newHeight];
         PixelGrabber pixelgrabber = new PixelGrabber(bi, 0, 0, newWidth, newHeight, bgImage, 0, newWidth);
         try {
             pixelgrabber.grabPixels();
@@ -659,7 +659,7 @@ public class client extends Applet_Sub1 implements ClientInterface {
                     Class68_Sub13_Sub9.height);
         Class68_Sub22.anInt3148++;
         Class30.method404((byte) 113);
-        for (; ;) {
+        for (; ; ) {
             Class68_Sub29 class68_sub29 = (Class68_Sub29) Class35.aClass16_623.method294(-120);
             if (class68_sub29 == null)
                 break;
@@ -672,7 +672,7 @@ public class client extends Applet_Sub1 implements ClientInterface {
             }
             Class68_Sub13_Sub16.method776(class68_sub29, 16);
         }
-        for (; ;) {
+        for (; ; ) {
             Class68_Sub29 class68_sub29 = (Class68_Sub29) Class13_Sub1.aClass16_2627.method294(54);
             if (class68_sub29 == null)
                 break;
@@ -685,7 +685,7 @@ public class client extends Applet_Sub1 implements ClientInterface {
             }
             Class68_Sub13_Sub16.method776(class68_sub29, i + 15);
         }
-        for (; ;) {
+        for (; ; ) {
             Class68_Sub29 class68_sub29 = (Class68_Sub29) Class115.aClass16_1955.method294(103);
             if (class68_sub29 == null)
                 break;
@@ -776,21 +776,15 @@ public class client extends Applet_Sub1 implements ClientInterface {
         return class45.anInt763;
     }
 
-     private void doUpdateServernew(int i)
-    {
+    private void doUpdateServernew(int i) {
         anInt2385++;
-        if (i == 0)
-        {
-            if (Class75_Sub1_Sub1.anInt4585 >= 4)
-            {
+        if (i == 0) {
+            if (Class75_Sub1_Sub1.anInt4585 >= 4) {
                 this.error_fatal(i + 690, "js5crc");
                 GameException.anInt2233 = 1000;
-            } else
-            {
-                if (Class68_Sub10.anInt2911 >= 4)
-                {
-                    if (GameException.anInt2233 == 0 || GameException.anInt2233 == 5)
-                    {
+            } else {
+                if (Class68_Sub10.anInt2911 >= 4) {
+                    if (GameException.anInt2233 == 0 || GameException.anInt2233 == 5) {
                         this.error_fatal(690, "js5io");
                         GameException.anInt2233 = 1000;
                         return;
@@ -798,32 +792,25 @@ public class client extends Applet_Sub1 implements ClientInterface {
                     Class13_Sub2.anInt2654 = 3000;
                     Class68_Sub10.anInt2911 = 3;
                 }
-                if (Class13_Sub2.anInt2654-- <= 0)
-                {
-                    do
-                    {
-                        try
-                        {
-                            if (Class84.anInt1542 == 0)
-                            {
+                if (Class13_Sub2.anInt2654-- <= 0) {
+                    do {
+                        try {
+                            if (Class84.anInt1542 == 0) {
                                 //System.out.println(Class103.port);
                                 Class103.port = client.ondemandPort;
                                 Class68_Sub9.serverAddress = "localhost";
                                 Class68_Sub13_Sub9.unknownSocket = (Class75_Sub1_Sub1.signlink.newJagSocket(Class68_Sub9.serverAddress, (byte) 115, Class103.port));
                                 Class84.anInt1542++;
                             }
-                            if (Class84.anInt1542 == 1)
-                            {
-                                if (Class68_Sub13_Sub9.unknownSocket.anInt555 == 2)
-                                {
+                            if (Class84.anInt1542 == 1) {
+                                if (Class68_Sub13_Sub9.unknownSocket.anInt555 == 2) {
                                     resetUpdateServer(-5, -1);
                                     break;
                                 }
                                 if (Class68_Sub13_Sub9.unknownSocket.anInt555 == 1)
                                     Class84.anInt1542++;
                             }
-                            if (Class84.anInt1542 == 2)
-                            {
+                            if (Class84.anInt1542 == 2) {
                                 Class109.updateServer = new GameSocket((Socket) (Class68_Sub13_Sub9.unknownSocket.playerDefSocket), (Class75_Sub1_Sub1.signlink));
                                 Stream class68_sub14 = new Stream(5);
                                 class68_sub14.writeByte(15);
@@ -832,20 +819,15 @@ public class client extends Applet_Sub1 implements ClientInterface {
                                 Class84.anInt1542++;
                                 Class1_Sub6.aLong2585 = Class36.method438(17161);
                             }
-                            if (Class84.anInt1542 == 3)
-                            {
-                                if (GameException.anInt2233 != 0 && GameException.anInt2233 != 5 && Class109.updateServer.available() <= 0)
-                                {
-                                    if ((Class36.method438(i + 17161) - Class1_Sub6.aLong2585) > 30000L)
-                                    {
+                            if (Class84.anInt1542 == 3) {
+                                if (GameException.anInt2233 != 0 && GameException.anInt2233 != 5 && Class109.updateServer.available() <= 0) {
+                                    if ((Class36.method438(i + 17161) - Class1_Sub6.aLong2585) > 30000L) {
                                         resetUpdateServer(i - 5, -2);
                                         break;
                                     }
-                                } else
-                                {
+                                } else {
                                     int i_22_ = Class109.updateServer.read();
-                                    if (i_22_ != 0)
-                                    {
+                                    if (i_22_ != 0) {
                                         resetUpdateServer(-5, i_22_);
                                         break;
                                     }
@@ -860,8 +842,7 @@ public class client extends Applet_Sub1 implements ClientInterface {
                             Class68_Sub13_Sub9.unknownSocket = null;
                             Class84.anInt1542 = 0;
                             Class109.updateServer = null;
-                        } catch (java.io.IOException ioexception)
-                        {
+                        } catch (java.io.IOException ioexception) {
                             resetUpdateServer(-5, -3);
                         }
                         break;
@@ -901,7 +882,7 @@ public class client extends Applet_Sub1 implements ClientInterface {
                             }
                             if (Class84.anInt1540 == 1) {
                                 if (Class68_Sub13_Sub9.unknownSocket.anInt555 == 2) {
-                 //                   System.out.println("WARNING: this should not execute");
+                                    //                   System.out.println("WARNING: this should not execute");
                                     resetUpdateServer(-5, -1);
                                     break;
                                 }
@@ -922,14 +903,14 @@ public class client extends Applet_Sub1 implements ClientInterface {
                             if (Class84.anInt1540 == 3)
                                 if ((GameException.anInt2231 ^ 0xffffffff) != -1 && GameException.anInt2231 != 5 && (Class109.updateServer.available() ^ 0xffffffff) >= -1) {
                                     if (((Class36.method438(i + 17161) + -Class1_Sub6.aLong2585) ^ 0xffffffffffffffffL) < -30001L) {
-                       //                 System.out.println("WARNING: this should not execute");
+                                        //                 System.out.println("WARNING: this should not execute");
                                         resetUpdateServer(i + -5, -2);
                                         break;
                                     }
                                 } else {
                                     int i_22_ = Class109.updateServer.read();
                                     if ((i_22_ ^ 0xffffffff) != -1) {
-                 //                       System.out.println("WARNING: this should not execute");
+                                        //                       System.out.println("WARNING: this should not execute");
                                         resetUpdateServer(-5, i_22_);
                                         break;
                                     }
@@ -945,8 +926,8 @@ public class client extends Applet_Sub1 implements ClientInterface {
                             Class84.anInt1540 = 0;
                             Class109.updateServer = null;
                         } catch (java.io.IOException ioexception) {
-                 //           System.out.println("WARNING: this should not execute");
-                 //           ioexception.printStackTrace();
+                            //           System.out.println("WARNING: this should not execute");
+                            //           ioexception.printStackTrace();
                             resetUpdateServer(-5, -3);
                             break;
                         }

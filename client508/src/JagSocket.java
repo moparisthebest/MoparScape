@@ -2,8 +2,7 @@
  * Visit http://jode.sourceforge.net/
  */
 
-public class JagSocket
-{
+public class JagSocket {
     public Object hostname;
     public volatile int anInt555 = 0;
     public int priority;

@@ -42,7 +42,7 @@ public class Class65 {
 //        Image image = client.bgImage;
 //        System.out.println("set the image: "+image);
 //        if (image == null)
-           Image image = Class86.aCanvas1585.createImage(i_0_, i_3_);
+        Image image = Class86.aCanvas1585.createImage(i_0_, i_3_);
 //        else
 //            System.out.println("--------------not null image?");
         Graphics graphics = image.getGraphics();

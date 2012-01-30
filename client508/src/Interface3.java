@@ -2,6 +2,5 @@
  * Visit http://jode.sourceforge.net/
  */
 
-public interface Interface3
-{
+public interface Interface3 {
 }

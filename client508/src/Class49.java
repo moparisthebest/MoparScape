@@ -126,8 +126,8 @@ public class Class49 {
                         PlayerDefinition.connection.flushInputStream(8 * Class68_Sub8.aRSStringArray2872.length,
                                 (Class68_Sub13_Sub8.inStream.buffer));
                         for (int i_1_ = 0;
-                                i_1_ < Class68_Sub8.aRSStringArray2872.length;
-                                i_1_++)
+                             i_1_ < Class68_Sub8.aRSStringArray2872.length;
+                             i_1_++)
                             Class68_Sub8.aRSStringArray2872[i_1_] = (Class56.method570(Class68_Sub13_Sub8.inStream.readQWord(88),
                                     -1));
                         Class50.anInt980 = 21;
@@ -182,7 +182,7 @@ public class Class49 {
             if (is_10_ == null && Class43.anInt732 < 800) {
                 method524(16322);
                 for (int i_12_ = 0; (i ^ 0xffffffff) < (i_12_ ^ 0xffffffff);
-                        i_12_++)
+                     i_12_++)
                     Class68_Sub13_Sub37.method893(64, -73, 64, i_12_, i_9_,
                             i_11_);
             }
