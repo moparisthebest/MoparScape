@@ -52,6 +52,15 @@ public interface ClientInterface {
     public void setPort(int port);
 
     /**
+     * Returns the server's address.
+     * <p/>
+     * This *MUST* be implemented correctly.
+     *
+     * @return The address the client would try to connect to, as set by setServer().
+     */
+    public String getServer();
+
+    /**
      * Returns the server's port.
      * <p/>
      * This *MUST* be implemented correctly.
