@@ -7,10 +7,6 @@ import rs.graphics.Sprite;
 import rs.graphics.TextDrawingArea;
 import rs.stream.Stream;
 import rs.stream.StreamLoader;
-import rs.MRUNodes;
-import rs.client;
-import rs.TextClass;
-import rs.Class36;// Decompiled by Jad v1.5.8f. Copyright 2001 Pavel Kouznetsov.
 // Jad home page: http://www.kpdus.com/jad.html
 // Decompiler options: packimports(3) 
 
@@ -63,12 +59,12 @@ public final class RSInterface {
             }
             int k1 = stream.readUnsignedByte();
             if (k1 > 0) {
-                rsInterface.valueIndexArray = new int[k1][];
+                rsInterface.scripts = new int[k1][];
                 for (int l1 = 0; l1 < k1; l1++) {
                     int i3 = stream.readUnsignedWord();
-                    rsInterface.valueIndexArray[l1] = new int[i3];
+                    rsInterface.scripts[l1] = new int[i3];
                     for (int l4 = 0; l4 < i3; l4++)
-                        rsInterface.valueIndexArray[l1][l4] = stream.readUnsignedWord();
+                        rsInterface.scripts[l1][l4] = stream.readUnsignedWord();
 
                 }
 
@@ -314,7 +310,7 @@ public final class RSInterface {
     public boolean aBoolean223;
     public int scrollPosition;
     public String actions[];
-    public int valueIndexArray[][];
+    public int scripts[][];
     public boolean aBoolean227;
     public String aString228;
     public int anInt230;

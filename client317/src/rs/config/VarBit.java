@@ -17,7 +17,7 @@ public final class VarBit {
                 cache[j] = new VarBit();
             cache[j].readValues(stream);
             if (cache[j].aBoolean651)
-                Varp.cache[cache[j].anInt648].aBoolean713 = true;
+                Varp.cache[cache[j].setting].aBoolean713 = true;
         }
 
         if (stream.currentOffset != stream.buffer.length)
@@ -30,9 +30,9 @@ public final class VarBit {
             if (j == 0)
                 return;
             if (j == 1) {
-                anInt648 = stream.readUnsignedWord();
-                anInt649 = stream.readUnsignedByte();
-                anInt650 = stream.readUnsignedByte();
+                setting = stream.readUnsignedWord();
+                start = stream.readUnsignedByte();
+                end = stream.readUnsignedByte();
             } else if (j == 10)
                 stream.readString();
             else if (j == 2)
@@ -51,8 +51,8 @@ public final class VarBit {
     }
 
     public static VarBit cache[];
-    public int anInt648;
-    public int anInt649;
-    public int anInt650;
+    public int setting;
+    public int start;
+    public int end;
     private boolean aBoolean651;
 }

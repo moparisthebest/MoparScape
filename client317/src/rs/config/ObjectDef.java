@@ -151,10 +151,10 @@ public final class ObjectDef {
         int i = -1;
         if (anInt774 != -1) {
             VarBit varBit = VarBit.cache[anInt774];
-            int j = varBit.anInt648;
-            int k = varBit.anInt649;
-            int l = varBit.anInt650;
-            int i1 = client.anIntArray1232[l - k];
+            int j = varBit.setting;
+            int k = varBit.start;
+            int l = varBit.end;
+            int i1 = client.bitmasks[l - k];
             i = clientInstance.variousSettings[j] >> k & i1;
         } else if (anInt749 != -1)
             i = clientInstance.variousSettings[anInt749];

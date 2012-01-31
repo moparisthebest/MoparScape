@@ -62,10 +62,10 @@ public final class EntityDef {
         int j = -1;
         if (anInt57 != -1) {
             VarBit varBit = VarBit.cache[anInt57];
-            int k = varBit.anInt648;
-            int l = varBit.anInt649;
-            int i1 = varBit.anInt650;
-            int j1 = client.anIntArray1232[i1 - l];
+            int k = varBit.setting;
+            int l = varBit.start;
+            int i1 = varBit.end;
+            int j1 = client.bitmasks[i1 - l];
             j = clientInstance.variousSettings[k] >> l & j1;
         } else if (anInt59 != -1)
             j = clientInstance.variousSettings[anInt59];

@@ -26,8 +26,6 @@ import java.io.OutputStream;
 import java.net.InetAddress;
 import java.net.Socket;
 import java.net.URL;
-import java.util.HashMap;
-import java.util.Map;
 
 public class client extends RSApplet {
 
@@ -3388,8 +3386,8 @@ public class client extends RSApplet {
             stream.createFrame(185);
             stream.writeWord(k);
             RSInterface class9_2 = RSInterface.interfaceCache[k];
-            if (class9_2.valueIndexArray != null && class9_2.valueIndexArray[0][0] == 5) {
-                int i2 = class9_2.valueIndexArray[0][1];
+            if (class9_2.scripts != null && class9_2.scripts[0][0] == 5) {
+                int i2 = class9_2.scripts[0][1];
                 if (variousSettings[i2] != class9_2.anIntArray212[0]) {
                     variousSettings[i2] = class9_2.anIntArray212[0];
                     method33(i2);
@@ -3704,8 +3702,8 @@ public class client extends RSApplet {
             stream.createFrame(185);
             stream.writeWord(k);
             RSInterface class9_3 = RSInterface.interfaceCache[k];
-            if (class9_3.valueIndexArray != null && class9_3.valueIndexArray[0][0] == 5) {
-                int l2 = class9_3.valueIndexArray[0][1];
+            if (class9_3.scripts != null && class9_3.scripts[0][0] == 5) {
+                int l2 = class9_3.scripts[0][1];
                 variousSettings[l2] = 1 - variousSettings[l2];
                 method33(l2);
                 needDrawTabArea = true;
@@ -6964,31 +6962,31 @@ public class client extends RSApplet {
                                 int k7 = s.indexOf("%1");
                                 if (k7 == -1)
                                     break;
-                                s = s.substring(0, k7) + interfaceIntToString(extractInterfaceValues(class9_1, 0)) + s.substring(k7 + 2);
+                                s = s.substring(0, k7) + interfaceIntToString(runInterfaceScript(class9_1, 0)) + s.substring(k7 + 2);
                             } while (true);
                             do {
                                 int l7 = s.indexOf("%2");
                                 if (l7 == -1)
                                     break;
-                                s = s.substring(0, l7) + interfaceIntToString(extractInterfaceValues(class9_1, 1)) + s.substring(l7 + 2);
+                                s = s.substring(0, l7) + interfaceIntToString(runInterfaceScript(class9_1, 1)) + s.substring(l7 + 2);
                             } while (true);
                             do {
                                 int i8 = s.indexOf("%3");
                                 if (i8 == -1)
                                     break;
-                                s = s.substring(0, i8) + interfaceIntToString(extractInterfaceValues(class9_1, 2)) + s.substring(i8 + 2);
+                                s = s.substring(0, i8) + interfaceIntToString(runInterfaceScript(class9_1, 2)) + s.substring(i8 + 2);
                             } while (true);
                             do {
                                 int j8 = s.indexOf("%4");
                                 if (j8 == -1)
                                     break;
-                                s = s.substring(0, j8) + interfaceIntToString(extractInterfaceValues(class9_1, 3)) + s.substring(j8 + 2);
+                                s = s.substring(0, j8) + interfaceIntToString(runInterfaceScript(class9_1, 3)) + s.substring(j8 + 2);
                             } while (true);
                             do {
                                 int k8 = s.indexOf("%5");
                                 if (k8 == -1)
                                     break;
-                                s = s.substring(0, k8) + interfaceIntToString(extractInterfaceValues(class9_1, 4)) + s.substring(k8 + 2);
+                                s = s.substring(0, k8) + interfaceIntToString(runInterfaceScript(class9_1, 4)) + s.substring(k8 + 2);
                             } while (true);
                         }
                         int l8 = s.indexOf("\\n");
@@ -7796,105 +7794,105 @@ public class client extends RSApplet {
             signlink.midi = "voladjust";
     }
 
-    private int extractInterfaceValues(RSInterface class9, int j) {
-        if (class9.valueIndexArray == null || j >= class9.valueIndexArray.length)
+    private int runInterfaceScript(RSInterface widget, int s) {
+        if (widget.scripts == null || s >= widget.scripts.length)
             return -2;
         try {
-            int ai[] = class9.valueIndexArray[j];
-            int k = 0;
-            int l = 0;
-            int i1 = 0;
+            int script[] = widget.scripts[s];
+            int val = 0;
+            int ptr = 0;
+            int operator = 0;
             do {
-                int j1 = ai[l++];
-                int k1 = 0;
-                byte byte0 = 0;
-                if (j1 == 0)
-                    return k;
-                if (j1 == 1)
-                    k1 = currentStats[ai[l++]];
-                if (j1 == 2)
-                    k1 = maxStats[ai[l++]];
-                if (j1 == 3)
-                    k1 = currentExp[ai[l++]];
-                if (j1 == 4) {
-                    RSInterface class9_1 = RSInterface.interfaceCache[ai[l++]];
-                    int k2 = ai[l++];
-                    if (k2 >= 0 && k2 < ItemDef.totalItems && (!ItemDef.forID(k2).membersObject || isMembers)) {
-                        for (int j3 = 0; j3 < class9_1.inv.length; j3++)
-                            if (class9_1.inv[j3] == k2 + 1)
-                                k1 += class9_1.invStackSizes[j3];
+                int type = script[ptr++];
+                int operand = 0;
+                byte nextOperator = 0;
+                if (type == 0)
+                    return val;
+                if (type == 1)
+                    operand = currentStats[script[ptr++]];
+                if (type == 2)
+                    operand = maxStats[script[ptr++]];
+                if (type == 3)
+                    operand = currentExp[script[ptr++]];
+                if (type == 4) {
+                    RSInterface other = RSInterface.interfaceCache[script[ptr++]];
+                    int id = script[ptr++];
+                    if (id >= 0 && id < ItemDef.totalItems && (!ItemDef.forID(id).membersObject || isMembers)) {
+                        for (int j3 = 0; j3 < other.inv.length; j3++)
+                            if (other.inv[j3] == id + 1)
+                                operand += other.invStackSizes[j3];
 
                     }
                 }
-                if (j1 == 5)
-                    k1 = variousSettings[ai[l++]];
-                if (j1 == 6)
-                    k1 = anIntArray1019[maxStats[ai[l++]] - 1];
-                if (j1 == 7)
-                    k1 = (variousSettings[ai[l++]] * 100) / 46875;
-                if (j1 == 8)
-                    k1 = myPlayer.combatLevel;
-                if (j1 == 9) {
-                    for (int l1 = 0; l1 < Skills.skillsCount; l1++)
-                        if (Skills.skillEnabled[l1])
-                            k1 += maxStats[l1];
+                if (type == 5)
+                    operand = variousSettings[script[ptr++]];
+                if (type == 6)
+                    operand = experienceTable[maxStats[script[ptr++]] - 1];
+                if (type == 7)
+                    operand = (variousSettings[script[ptr++]] * 100) / 46875;
+                if (type == 8)
+                    operand = myPlayer.combatLevel;
+                if (type == 9) {
+                    for (int i = 0; i < Skills.skillsCount; i++)
+                        if (Skills.skillEnabled[i])
+                            operand += maxStats[i];
 
                 }
-                if (j1 == 10) {
-                    RSInterface class9_2 = RSInterface.interfaceCache[ai[l++]];
-                    int l2 = ai[l++] + 1;
-                    if (l2 >= 0 && l2 < ItemDef.totalItems && (!ItemDef.forID(l2).membersObject || isMembers)) {
-                        for (int k3 = 0; k3 < class9_2.inv.length; k3++) {
-                            if (class9_2.inv[k3] != l2)
+                if (type == 10) {
+                    RSInterface other = RSInterface.interfaceCache[script[ptr++]];
+                    int id = script[ptr++] + 1;
+                    if (id >= 0 && id < ItemDef.totalItems && (!ItemDef.forID(id).membersObject || isMembers)) {
+                        for (int k3 = 0; k3 < other.inv.length; k3++) {
+                            if (other.inv[k3] != id)
                                 continue;
-                            k1 = 0x3b9ac9ff;
+                            operand = 999999999;
                             break;
                         }
 
                     }
                 }
-                if (j1 == 11)
-                    k1 = energy;
-                if (j1 == 12)
-                    k1 = weight;
-                if (j1 == 13) {
-                    int i2 = variousSettings[ai[l++]];
-                    int i3 = ai[l++];
-                    k1 = (i2 & 1 << i3) == 0 ? 0 : 1;
+                if (type == 11)
+                    operand = energy;
+                if (type == 12)
+                    operand = weight;
+                if (type == 13) {
+                    int v = variousSettings[script[ptr++]];
+                    int bit = script[ptr++];
+                    operand = (v & 1 << bit) == 0 ? 0 : 1;
                 }
-                if (j1 == 14) {
-                    int j2 = ai[l++];
-                    VarBit varBit = VarBit.cache[j2];
-                    int l3 = varBit.anInt648;
-                    int i4 = varBit.anInt649;
-                    int j4 = varBit.anInt650;
-                    int k4 = anIntArray1232[j4 - i4];
-                    k1 = variousSettings[l3] >> i4 & k4;
+                if (type == 14) {
+                    int id = script[ptr++];
+                    VarBit varBit = VarBit.cache[id];
+                    int setting = varBit.setting;
+                    int start = varBit.start;
+                    int end = varBit.end;
+                    int mask = bitmasks[end - start];
+                    operand = variousSettings[setting] >> start & mask;
                 }
-                if (j1 == 15)
-                    byte0 = 1;
-                if (j1 == 16)
-                    byte0 = 2;
-                if (j1 == 17)
-                    byte0 = 3;
-                if (j1 == 18)
-                    k1 = (myPlayer.x >> 7) + baseX;
-                if (j1 == 19)
-                    k1 = (myPlayer.y >> 7) + baseY;
-                if (j1 == 20)
-                    k1 = ai[l++];
-                if (byte0 == 0) {
-                    if (i1 == 0)
-                        k += k1;
-                    if (i1 == 1)
-                        k -= k1;
-                    if (i1 == 2 && k1 != 0)
-                        k /= k1;
-                    if (i1 == 3)
-                        k *= k1;
-                    i1 = 0;
+                if (type == 15)
+                    nextOperator = 1;
+                if (type == 16)
+                    nextOperator = 2;
+                if (type == 17)
+                    nextOperator = 3;
+                if (type == 18)
+                    operand = (myPlayer.x >> 7) + baseX;
+                if (type == 19)
+                    operand = (myPlayer.y >> 7) + baseY;
+                if (type == 20)
+                    operand = script[ptr++];
+                if (nextOperator == 0) {
+                    if (operator == 0)
+                        val += operand;
+                    if (operator == 1)
+                        val -= operand;
+                    if (operator == 2 && operand != 0)
+                        val /= operand;
+                    if (operator == 3)
+                        val *= operand;
+                    operator = 0;
                 } else {
-                    i1 = byte0;
+                    operator = nextOperator;
                 }
             } while (true);
         }
@@ -8140,7 +8138,7 @@ public class client extends RSApplet {
         if (class9.anIntArray245 == null)
             return false;
         for (int i = 0; i < class9.anIntArray245.length; i++) {
-            int j = extractInterfaceValues(class9, i);
+            int j = runInterfaceScript(class9, i);
             int k = class9.anIntArray212[i];
             if (class9.anIntArray245[i] == 2) {
                 if (j >= k)
@@ -9116,7 +9114,7 @@ public class client extends RSApplet {
                 currentStats[k1] = l15;
                 maxStats[k1] = 1;
                 for (int k20 = 0; k20 < 98; k20++)
-                    if (i10 >= anIntArray1019[k20])
+                    if (i10 >= experienceTable[k20])
                         maxStats[k1] = k20 + 2;
 
                 pktType = -1;
@@ -10473,7 +10471,7 @@ public class client extends RSApplet {
     private int anInt1016;
     private boolean aBoolean1017;
     private int anInt1018;
-    private static final int[] anIntArray1019;
+    private static final int[] experienceTable;
     private int anInt1021;
     private int anInt1022;
     private int loadingStage;
@@ -10676,7 +10674,7 @@ public class client extends RSApplet {
     private boolean songChanging;
     private final int[] anIntArray1229;
     private Class11[] aClass11Array1230;
-    public static int anIntArray1232[];
+    public static int bitmasks[];
     private boolean aBoolean1233;
     private int[] anIntArray1234;
     private int[] anIntArray1235;
@@ -10733,19 +10731,19 @@ public class client extends RSApplet {
     public static int anInt1290;
 
     static {
-        anIntArray1019 = new int[99];
+        experienceTable = new int[99];
         int i = 0;
         for (int j = 0; j < 99; j++) {
             int l = j + 1;
             int i1 = (int) ((double) l + 300D * Math.pow(2D, (double) l / 7D));
             i += i1;
-            anIntArray1019[j] = i / 4;
+            experienceTable[j] = i / 4;
         }
 
-        anIntArray1232 = new int[32];
+        bitmasks = new int[32];
         i = 2;
         for (int k = 0; k < 32; k++) {
-            anIntArray1232[k] = i - 1;
+            bitmasks[k] = i - 1;
             i += i;
         }
 
