@@ -364,32 +364,6 @@ public class SecurityManager extends java.lang.SecurityManager {
         permissions.add(new java.util.PropertyPermission("http.nonProxyHosts", "read"));
         permissions.add(new java.security.SecurityPermission("getProperty.security.provider.*"));
         permissions.add(new java.security.SecurityPermission("getPolicy"));
-        /*
-        permissions.add(new java.lang.RuntimePermission("accessClassInPackage.sun.security.provider"));
-        permissions.add(new java.lang.RuntimePermission("accessClassInPackage.sun.security.rsa"));
-        permissions.add(new java.security.SecurityPermission("putProviderProperty.SunRsaSign"));
-        permissions.add(new java.security.SecurityPermission("getProperty.securerandom.source"));
-        permissions.add(new java.security.SecurityPermission("putProviderProperty.SunJSSE"));
-        permissions.add(new java.security.SecurityPermission("putProviderProperty.SunJCE"));
-        permissions.add(new java.util.PropertyPermission("sun.security.rsa.restrictRSAExponent", "read"));
-
-        permissions.add(new java.util.PropertyPermission("java.security.egd", "read"));
-        permissions.add(new java.util.PropertyPermission("com.sun.security.preserveOldDCEncoding", "read"));
-        permissions.add(new java.util.PropertyPermission("sun.security.key.serial.interop", "read"));
-        permissions.add(new java.lang.RuntimePermission("getProtectionDomain"));
-
-        permissions.add(new java.io.FilePermission("/dev/random", "read"));
-        permissions.add(new java.io.FilePermission("/dev/urandom", "read"));
-        permissions.add(new java.net.SocketPermission("killer-linux", "resolve"));
-        permissions.add(new java.io.FilePermission("/tmp", "read"));
-
-
-        permissions.add(new java.util.PropertyPermission("*", "read,write"));
-        permissions.add(new java.lang.reflect.ReflectPermission("suppressAccessChecks"));
-        permissions.add(new java.lang.RuntimePermission("createSecurityManager"));
-        permissions.add(new java.lang.RuntimePermission("createClassLoader"));
-
-         */
 
         // following for OSX leopard
         permissions.add(new java.util.PropertyPermission("socksNonProxyHosts", "read"));
