@@ -182,4 +182,12 @@ public interface ClientInterface {
      */
     public void setBackground(java.awt.Image image);
 
+    /**
+     * Sets the public RSA key the client should use.
+     * Optional, but good to allow your client to use any public key.
+     *
+     * @param rsaKeyBytes Image to use as the client background.
+     */
+    public void setPublicKey(byte[] rsaKeyBytes);
+
 }

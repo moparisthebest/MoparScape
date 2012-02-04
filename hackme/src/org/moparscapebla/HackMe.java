@@ -1,4 +1,4 @@
-package org.moparscape;
+package org.moparscapebla;
 
 import java.net.URL;
 import java.net.URLClassLoader;
@@ -21,16 +21,16 @@ public class HackMe {
     }
 
     public HackMe(String jar) throws Exception{
-        System.setSecurityManager(new org.moparscape.security.SecurityManager());
 
         URLClassLoader loader = new URLClassLoader(new URL[]{new URL(jar)});
+
+        System.setSecurityManager(new org.moparscape.security.SecurityManager());
 
         String allowedDir = "./allowed/";
         ((org.moparscape.security.SecurityManager)System.getSecurityManager()).addPermissions(loader, this.getPermissions(allowedDir));
 
-        Class c = loader.loadClass("MyEntry");
-
-        Object o = c.newInstance();
+        Object o = loader.loadClass("MyEntry").newInstance();
+        //Object o = new MyEntry();
 
         MyInterface mi = (MyInterface) o;
 
@@ -57,7 +57,7 @@ public class HackMe {
         System.out.println("doPrivateStaticStuff() prv_static_var: " + prv_static_var);
     }
 
-    private Permissions getPermissions(String allowedDir) {
+    public static Permissions getPermissions(String allowedDir) {
         //printSystemPropertiesExit();
         // java.library.path=/opt/jdk1.6.0_18/jre/lib/i386/server:/opt/jdk1.6.0_18/jre/lib/i386:/opt/jdk1.6.0_18/jre/../lib/i386:.::/usr/java/packages/lib/i386:/lib:/usr/lib
         // to allow recursively everything under allowedDir
@@ -72,7 +72,7 @@ public class HackMe {
         permissions.add(new java.io.FilePermission("./-", "read"));
         permissions.add(new java.security.SecurityPermission("putProviderProperty.SUN"));
         // very questionable
-        permissions.add(new java.lang.reflect.ReflectPermission("suppressAccessChecks"));
+        //permissions.add(new java.lang.reflect.ReflectPermission("suppressAccessChecks"));
         permissions.add(new java.net.NetPermission("getProxySelector"));
         //needed
         //String javaHome = "${java.home}/-";

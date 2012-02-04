@@ -1,4 +1,4 @@
-package org.moparscape;
+package org.moparscapebla;
 
 public interface MyInterface {
     public static final long serialVersionUID = 42L;

@@ -45,11 +45,31 @@ public class SecurityManager extends java.lang.SecurityManager {
     private static final Permission p1 = new java.lang.RuntimePermission("accessClassInPackage.sun.util.resources");
     private static final Permission reflectPerm = new java.lang.reflect.ReflectPermission("suppressAccessChecks");
     private static final Permission classLoaderPerm = new java.lang.RuntimePermission("createClassLoader");
-    private static final String[] safePackages = new String[]{"java.", "sun.", "javax."};
+
+    public static final String[] safePackages = new String[]{"java.", "sun.", "javax."};
+
+    private final String thisClassLowercase = this.getClass().getName().toLowerCase();
+    private final boolean allowManualOverride;
+
+
+    public SecurityManager() {
+        this(false);
+    }
+
+    public SecurityManager(boolean allowManualOverride) {
+        int choice = -1;
+
+        if (allowManualOverride)
+            choice = JOptionPane.showConfirmDialog(null, "Are you sure you want to allow manual override of the SecurityManager?\n" +
+                    "It is what keeps you safe from malicious code and viruses running on your computer.\n" +
+                    "You should only ever do this if you are a developer and know exactly what code you are running.", "Security Question", JOptionPane.YES_NO_OPTION);
+
+        this.allowManualOverride = (choice == JOptionPane.YES_OPTION);
+    }
 
     public void addPermissions(ClassLoader cl, Permissions perms) {
-        // if they can't set the SecurityManager, they shouldn't be able to modify this one, so check...
-        System.getSecurityManager().checkPermission(new java.lang.RuntimePermission("setSecurityManager"));
+        allowedToModifySecurityManager();
+        System.out.println("addPermissions allowed!");
         //if the key already exists, just return, we only support setting the permissions once
         if (permissionMap.containsKey(cl))
             return;
@@ -59,9 +79,20 @@ public class SecurityManager extends java.lang.SecurityManager {
     }
 
     public void allowSocketTo(String host) {
-        // if they can't set the SecurityManager, they shouldn't be able to modify this one, so check...
-        System.getSecurityManager().checkPermission(new java.lang.RuntimePermission("setSecurityManager"));
+        allowedToModifySecurityManager();
+        System.out.println("allowSocketTo allowed!");
         allowedSocket = new java.net.SocketPermission(host, "connect,accept,resolve");
+    }
+
+    /**
+     * We are allowed to modify this only if no classloaders from classes on the stack are in permissionMap
+     *
+     * @return
+     */
+    private void allowedToModifySecurityManager() {
+        for (Class c : getClassContext())
+            if (permissionMap.get(c.getClassLoader()) != null)
+                throw new SecurityException("You are not allowed to modify this SecurityManager.");
     }
 
     /**
@@ -84,6 +115,8 @@ public class SecurityManager extends java.lang.SecurityManager {
         if (perm == null)
             throw new NullPointerException("Permission cannot be null.");
 
+        //System.out.println("in checkPermission: "+perm.toString());
+
         // this isn't ready to go live yet, so just return and allow it all
         //if (true) return;
 
@@ -92,26 +125,29 @@ public class SecurityManager extends java.lang.SecurityManager {
         // restrictive of the permissions of any class in the stack (if any are false, deny the request)
 
         // get all classes on stack
-        Class classes[] = getClassContext();
+        Class[] classes = getClassContext();
 
-        // if this is true, the request came from SecurityManager or this class, so allow it.
+        // if this is true, the request came from this class, so allow it.
         // this stops Circularity errors, and is only used when ran as an applet, why the hell?...
-        boolean requestFromThisClass = true;
-        mainLoop:
-        for (Class c : classes) {
-            String className = c.getName().toLowerCase();
-            for (String safePackage : safePackages)
-                if (className.equals("org.moparscape.security.SecurityManager")) {
-                    break mainLoop;
-                } else if (!className.startsWith(safePackage)) {
-                    requestFromThisClass = false;
-                    break mainLoop;
+        for (int x = 1; x < classes.length; x++) {
+            String className = classes[x].getName().toLowerCase();
+            // if we get here and are still in the loop, request came from us, so return
+            if (className.equals(thisClassLowercase))
+                return;
+            // check if this class is in a 'safe package', classloaders used with this SecurityManager
+            // shouldn't allow potentially unsafe classes in these packages to be loaded
+            boolean unSafePackage = true;
+            for (String safePackage : safePackages) {
+                if (className.startsWith(safePackage)) {
+                    unSafePackage = false;
+                    break;
                 }
-
+            }
+            // then this class isn't in a 'safe' package or this class, the request didn't come from
+            // this class, so continue
+            if (unSafePackage)
+                break;
         }
-        System.out.println("requestFromThisClass: "+requestFromThisClass);
-        if (requestFromThisClass)
-            return;
 
         //System.out.println("requesting perm: " + perm);
 
@@ -169,11 +205,70 @@ public class SecurityManager extends java.lang.SecurityManager {
                         return;
                 }
             }
+            // java.security.KeyFactory also uses reflection
+            if (lastCName.equals("java.security.KeyFactory")) {
+                if (perm.equals(reflectPerm))
+                    return;
+                Permissions permissions = new Permissions();
+                permissions.add(new java.lang.RuntimePermission("accessClassInPackage.sun.security.provider"));
+                permissions.add(new java.util.PropertyPermission("java.security.egd", "read"));
+                permissions.add(new java.security.SecurityPermission("getProperty.securerandom.source"));
+                permissions.add(new java.lang.RuntimePermission("accessClassInPackage.sun.security.rsa"));
+                permissions.add(new java.security.SecurityPermission("putProviderProperty.SunRsaSign"));
+                permissions.add(new java.util.PropertyPermission("sun.security.rsa.restrictRSAExponent", "read"));
+                if (permissions.implies(perm))
+                    return;
+
+                if (perm instanceof java.io.FilePermission && perm.getActions().equals("read")) {
+                    String lowName = perm.getName().toLowerCase();
+                    if (lowName.contains("random"))
+                        return;
+                }
+            }
+
+            if (lastCName.equals("javax.crypto.Cipher")) {
+                if (perm.equals(reflectPerm) || perm.equals(classLoaderPerm))
+                    return;
+
+                Permissions permissions = new Permissions();
+                permissions.add(new java.lang.RuntimePermission("createSecurityManager"));
+                permissions.add(new java.security.SecurityPermission("putProviderProperty.SunJSSE"));
+                permissions.add(new java.util.PropertyPermission("com.sun.security.preserveOldDCEncoding", "read"));
+                permissions.add(new java.util.PropertyPermission("sun.security.key.serial.interop", "read"));
+                permissions.add(new java.security.SecurityPermission("putProviderProperty.SunJCE"));
+                permissions.add(new java.lang.RuntimePermission("getProtectionDomain"));
+                permissions.add(new java.lang.RuntimePermission("accessClassInPackage.sun.security.rsa"));
+                if (permissions.implies(perm))
+                    return;
+            }
+
 
             // one last check, which I found is very slow
             // if this is the allowed socket, allow it
             if (allowedSocket.implies(perm))
                 return;
+
+            if (allowManualOverride) {
+                String warning = "";
+                if (perm.equals(reflectPerm) || perm.equals(classLoaderPerm))
+                    warning = "\n\nBE EXTRA CAREFUL WITH THIS PERMISSION, IT WILL ALLOW MALICIOUS CODE TO" +
+                            "\nCOMPLETELY BYPASS THIS SECURITYMANAGER, YOU WON'T BE ASKED ANY MORE" +
+                            "\nQUESTIONS, AND BAD STUFF CAN HAPPEN!!!!! THIS IS YOUR FINAL WARNING.";
+                int choice = JOptionPane.showConfirmDialog(null, "The untrusted applet is requesting this permission, allow? (you probably shouldn't):\n" + perm.toString() + warning, "Security Question", JOptionPane.YES_NO_OPTION);
+                if (choice == JOptionPane.YES_OPTION) {
+                    if (Debug.debug()) {
+                        //Debug.debug("Manually allowing this permission:");
+                        String actions = "";
+                        if (!perm.getActions().isEmpty())
+                            actions = ", \"" + perm.getActions() + "\"";
+                        Debug.debug("permissions.add(new %s(\"%s\"%s));", perm.getClass().getName(), perm.getName(), actions);
+                    }
+                    //Debug.debug("new "+perm.getClass().getName()+"(")
+                    //clPerms.setReadOnly();
+                    clPerms.add(perm);
+                    return;
+                }
+            }
 
             // if we get all the way down here, the permission was denied and wasn't an exception, so throw an exception
             System.err.println("denying: " + perm.toString());
@@ -182,20 +277,12 @@ public class SecurityManager extends java.lang.SecurityManager {
                 // class stack for debugging
                 for (int x = 1; x < classes.length; x++) System.out.println(x + ": " + classes[x].getName());
 
-                Thread.dumpStack();
+                try {
+                    Thread.dumpStack();
+                } catch (Exception e) {
+                    // ignore
+                }
             }
-
-            int choice = -1;
-            //choice = JOptionPane.showConfirmDialog(null, "The untrusted applet is requesting this permission, allow? (you probably shouldn't):\n" + perm.toString(), "Security Question", JOptionPane.YES_NO_OPTION);
-            if (choice == JOptionPane.YES_OPTION) {
-                //clPerms.setReadOnly();
-                clPerms.add(perm);
-                return;
-            }
-
-            System.out.println("trying from SecurityManager");
-            System.getProperty("java.library.path2");
-            System.out.println("trying from SecurityManager Success");
 
             // otherwise allow is false, throw a SecurityException
             throw new SecurityException("Permission denied: " + perm.toString());
@@ -206,6 +293,7 @@ public class SecurityManager extends java.lang.SecurityManager {
 
     @Override
     public void checkPermission(Permission perm, Object context) {
+        //System.out.printf("perm: '%s' context: '%s", perm, context);
         // ignore context
         this.checkPermission(perm);
     }
@@ -275,11 +363,32 @@ public class SecurityManager extends java.lang.SecurityManager {
         // needed for RSC
         permissions.add(new java.util.PropertyPermission("http.nonProxyHosts", "read"));
         permissions.add(new java.security.SecurityPermission("getProperty.security.provider.*"));
+        permissions.add(new java.security.SecurityPermission("getPolicy"));
         /*
-        denying: (java.security.SecurityPermission getPolicy)
-denying: (java.security.SecurityPermission getPolicy)
-denying: (java.lang.RuntimePermission accessClassInPackage.sun.security.provider)
-denying: (java.lang.RuntimePermission accessClassInPackage.sun.security.rsa)
+        permissions.add(new java.lang.RuntimePermission("accessClassInPackage.sun.security.provider"));
+        permissions.add(new java.lang.RuntimePermission("accessClassInPackage.sun.security.rsa"));
+        permissions.add(new java.security.SecurityPermission("putProviderProperty.SunRsaSign"));
+        permissions.add(new java.security.SecurityPermission("getProperty.securerandom.source"));
+        permissions.add(new java.security.SecurityPermission("putProviderProperty.SunJSSE"));
+        permissions.add(new java.security.SecurityPermission("putProviderProperty.SunJCE"));
+        permissions.add(new java.util.PropertyPermission("sun.security.rsa.restrictRSAExponent", "read"));
+
+        permissions.add(new java.util.PropertyPermission("java.security.egd", "read"));
+        permissions.add(new java.util.PropertyPermission("com.sun.security.preserveOldDCEncoding", "read"));
+        permissions.add(new java.util.PropertyPermission("sun.security.key.serial.interop", "read"));
+        permissions.add(new java.lang.RuntimePermission("getProtectionDomain"));
+
+        permissions.add(new java.io.FilePermission("/dev/random", "read"));
+        permissions.add(new java.io.FilePermission("/dev/urandom", "read"));
+        permissions.add(new java.net.SocketPermission("killer-linux", "resolve"));
+        permissions.add(new java.io.FilePermission("/tmp", "read"));
+
+
+        permissions.add(new java.util.PropertyPermission("*", "read,write"));
+        permissions.add(new java.lang.reflect.ReflectPermission("suppressAccessChecks"));
+        permissions.add(new java.lang.RuntimePermission("createSecurityManager"));
+        permissions.add(new java.lang.RuntimePermission("createClassLoader"));
+
          */
 
         // following for OSX leopard
@@ -303,5 +412,15 @@ denying: (java.lang.RuntimePermission accessClassInPackage.sun.security.rsa)
 
         //System.out.println(permissions.toString());
         return permissions;
+    }
+
+    @Override
+    public String toString() {
+        return "SecurityManager{" +
+                "allowManualOverride=" + allowManualOverride +
+                ", thisClassLowercase='" + thisClassLowercase + '\'' +
+                ", allowedSocket=" + allowedSocket +
+                ", permissionMap=" + permissionMap +
+                '}';
     }
 }

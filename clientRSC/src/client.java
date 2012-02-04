@@ -24,6 +24,7 @@
  */
 
 import mudclient.Config;
+import mudclient.LoginDataEncryption;
 import org.moparscape.iface.ClientInterface;
 
 import java.awt.image.BufferedImage;
@@ -39,9 +40,6 @@ public class client extends mudclient.mudclient implements ClientInterface {
     int height = 344;
 
     public void setServer(String server) {
-        System.out.println("setServer");
-        System.getProperty("java.library.path");
-        System.out.println("setServerSuccess");
         Config.SERVER_IP = server;
     }
 
@@ -72,6 +70,10 @@ public class client extends mudclient.mudclient implements ClientInterface {
         ret.put("getCodeBase", "http://localhost");
         ret.put("getDocumentBase", "http://localhost/index.php");
         return ret;
+    }
+
+    public void setPublicKey(byte[] rsaKeyBytes) {
+        LoginDataEncryption.publicKeyBytes = rsaKeyBytes;
     }
 
     public void setBackground(java.awt.Image image) {
