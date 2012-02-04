@@ -22,6 +22,7 @@ package org.moparscape.security;
 
 import org.moparscape.Debug;
 
+import javax.swing.*;
 import java.security.Permission;
 import java.security.Permissions;
 import java.util.Map;
@@ -34,15 +35,17 @@ public class SecurityManager extends java.lang.SecurityManager {
 
     // IdentityHashMap is faster than HashMap and better in this case as the ClassLoader is the SAME OBJECT
     // and therefore will compare better and faster with == rather than the .equals() HashMap uses
-    private Map<ClassLoader, Permissions> permissionMap = new java.util.IdentityHashMap<ClassLoader, Permissions>();
+    private final Map<ClassLoader, Permissions> permissionMap = new java.util.IdentityHashMap<ClassLoader, Permissions>();
+
 
     // single socket permission that is allowed
     private java.net.SocketPermission allowedSocket = new java.net.SocketPermission("localhost", "connect,accept,resolve");
 
     // some permissions we need for special cases
-    private Permission p1 = new java.lang.RuntimePermission("accessClassInPackage.sun.util.resources");
-    private Permission reflectPerm = new java.lang.reflect.ReflectPermission("suppressAccessChecks");
-    private Permission classLoaderPerm = new java.lang.RuntimePermission("createClassLoader");
+    private static final Permission p1 = new java.lang.RuntimePermission("accessClassInPackage.sun.util.resources");
+    private static final Permission reflectPerm = new java.lang.reflect.ReflectPermission("suppressAccessChecks");
+    private static final Permission classLoaderPerm = new java.lang.RuntimePermission("createClassLoader");
+    private static final String[] safePackages = new String[]{"java.", "sun.", "javax."};
 
     public void addPermissions(ClassLoader cl, Permissions perms) {
         // if they can't set the SecurityManager, they shouldn't be able to modify this one, so check...
@@ -51,7 +54,7 @@ public class SecurityManager extends java.lang.SecurityManager {
         if (permissionMap.containsKey(cl))
             return;
 
-        perms.setReadOnly();  // no need for this anymore
+        //perms.setReadOnly();  // no need for this anymore
         permissionMap.put(cl, perms);
     }
 
@@ -89,17 +92,31 @@ public class SecurityManager extends java.lang.SecurityManager {
         // restrictive of the permissions of any class in the stack (if any are false, deny the request)
 
         // get all classes on stack
-        Class c[] = getClassContext();
+        Class classes[] = getClassContext();
 
         // if this is true, the request came from SecurityManager or this class, so allow it.
         // this stops Circularity errors, and is only used when ran as an applet, why the hell?...
-        if (c[2].getName().equals("org.moparscape.security.SecurityManager"))
+        boolean requestFromThisClass = true;
+        mainLoop:
+        for (Class c : classes) {
+            String className = c.getName().toLowerCase();
+            for (String safePackage : safePackages)
+                if (className.equals("org.moparscape.security.SecurityManager")) {
+                    break mainLoop;
+                } else if (!className.startsWith(safePackage)) {
+                    requestFromThisClass = false;
+                    break mainLoop;
+                }
+
+        }
+        System.out.println("requestFromThisClass: "+requestFromThisClass);
+        if (requestFromThisClass)
             return;
 
         //System.out.println("requesting perm: " + perm);
 
-        for (int i = 1; i < c.length; i++) {
-            ClassLoader cl = c[i].getClassLoader();
+        for (int i = 1; i < classes.length; i++) {
+            ClassLoader cl = classes[i].getClassLoader();
 
             // getClassLoader() can return null, if it is the bootstrap class
             // loader, since our Map implementation handles nulls, go ahead
@@ -119,7 +136,7 @@ public class SecurityManager extends java.lang.SecurityManager {
             // 2 exceptions here for java.util.GregorianCalendar, java.util.Calendar, java.text.SimpleDateFormat:
             // java.lang.RuntimePermission accessClassInPackage.sun.util.resources
             // java.lang.reflect.ReflectPermission suppressAccessChecks
-            String lastCName = c[i - 1].getName();
+            String lastCName = classes[i - 1].getName();
             if (((lastCName.startsWith("java.util.") && lastCName.endsWith("Calendar"))
                     || lastCName.equals("java.text.SimpleDateFormat"))
                     && (perm.equals(p1) || perm.equals(reflectPerm)))
@@ -163,10 +180,22 @@ public class SecurityManager extends java.lang.SecurityManager {
 
             if (Debug.debug()) {
                 // class stack for debugging
-                for (int x = 1; x < c.length; x++) System.out.println(x + ": " + c[x].getName());
+                for (int x = 1; x < classes.length; x++) System.out.println(x + ": " + classes[x].getName());
 
                 Thread.dumpStack();
             }
+
+            int choice = -1;
+            //choice = JOptionPane.showConfirmDialog(null, "The untrusted applet is requesting this permission, allow? (you probably shouldn't):\n" + perm.toString(), "Security Question", JOptionPane.YES_NO_OPTION);
+            if (choice == JOptionPane.YES_OPTION) {
+                //clPerms.setReadOnly();
+                clPerms.add(perm);
+                return;
+            }
+
+            System.out.println("trying from SecurityManager");
+            System.getProperty("java.library.path2");
+            System.out.println("trying from SecurityManager Success");
 
             // otherwise allow is false, throw a SecurityException
             throw new SecurityException("Permission denied: " + perm.toString());
@@ -245,6 +274,13 @@ public class SecurityManager extends java.lang.SecurityManager {
 
         // needed for RSC
         permissions.add(new java.util.PropertyPermission("http.nonProxyHosts", "read"));
+        permissions.add(new java.security.SecurityPermission("getProperty.security.provider.*"));
+        /*
+        denying: (java.security.SecurityPermission getPolicy)
+denying: (java.security.SecurityPermission getPolicy)
+denying: (java.lang.RuntimePermission accessClassInPackage.sun.security.provider)
+denying: (java.lang.RuntimePermission accessClassInPackage.sun.security.rsa)
+         */
 
         // following for OSX leopard
         permissions.add(new java.util.PropertyPermission("socksNonProxyHosts", "read"));

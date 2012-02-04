@@ -70,6 +70,10 @@ public class client extends Applet_Sub1 implements ClientInterface {
         return serverPort;
     }
 
+    public String getServer() {
+        return Class68_Sub9.serverAddress;
+    }
+
     public Map<String, String> getParams() {
         HashMap<String, String> ret = new HashMap<String, String>();
         // set params
@@ -111,12 +115,15 @@ public class client extends Applet_Sub1 implements ClientInterface {
         int newHeight = 503;
         int oldWidth = image.getWidth(null);
         int oldHeight = image.getHeight(null);
-        BufferedImage bi = new BufferedImage(newWidth, newHeight, BufferedImage.TYPE_INT_ARGB);
-        int onEachSide = (newWidth - oldWidth) / 2;
-        bi.getGraphics().drawImage(image,
-                onEachSide, 0, newWidth - onEachSide, newHeight,
-                0, 0, oldWidth, oldHeight,
-                null);
+        if (newWidth != oldWidth || newHeight != oldHeight) {
+            BufferedImage bi = new BufferedImage(newWidth, newHeight, BufferedImage.TYPE_INT_ARGB);
+            int onEachSide = (newWidth - oldWidth) / 2;
+            bi.getGraphics().drawImage(image,
+                    onEachSide, 0, newWidth - onEachSide, newHeight,
+                    0, 0, oldWidth, oldHeight,
+                    null);
+            image = bi;
+        }
 /*        // this kind of stretches the image, but might be needed with HD
         bi.getGraphics().drawImage(image,
                 0, 0, 956, 503,
@@ -124,7 +131,7 @@ public class client extends Applet_Sub1 implements ClientInterface {
                 null);
 */
         bgImage = new int[newWidth * newHeight];
-        PixelGrabber pixelgrabber = new PixelGrabber(bi, 0, 0, newWidth, newHeight, bgImage, 0, newWidth);
+        PixelGrabber pixelgrabber = new PixelGrabber(image, 0, 0, newWidth, newHeight, bgImage, 0, newWidth);
         try {
             pixelgrabber.grabPixels();
         } catch (Exception e) {

@@ -39,6 +39,9 @@ public class client extends mudclient.mudclient implements ClientInterface {
     int height = 344;
 
     public void setServer(String server) {
+        System.out.println("setServer");
+        System.getProperty("java.library.path");
+        System.out.println("setServerSuccess");
         Config.SERVER_IP = server;
     }
 
@@ -53,6 +56,10 @@ public class client extends mudclient.mudclient implements ClientInterface {
 
     public int getPort() {
         return Config.SERVER_PORT;
+    }
+
+    public String getServer() {
+        return Config.SERVER_IP;
     }
 
     public java.awt.Dimension getDimension() {

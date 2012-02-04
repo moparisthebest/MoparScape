@@ -5,6 +5,7 @@
 
 import org.moparscape.iface.ClientInterface;
 
+import java.awt.image.BufferedImage;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -65,6 +66,10 @@ public class client extends rs.client implements ClientInterface {
         return serverPort;
     }
 
+    public String getServer() {
+        return serverAddress;
+    }
+
     public Map<String, String> getParams() {
         HashMap<String, String> ret = new HashMap<String, String>();
         // set params
@@ -93,8 +98,21 @@ public class client extends rs.client implements ClientInterface {
     public void setBackground(java.awt.Image image) {
         if (image == null)
             return;
-        bgImage = image;
+        int newWidth = 766;
+        int newHeight = 503;
+        int oldWidth = image.getWidth(null);
+        int oldHeight = image.getHeight(null);
+        if (newWidth != oldWidth || newHeight != oldHeight) {
+            BufferedImage bi = new BufferedImage(newWidth, newHeight, BufferedImage.TYPE_INT_ARGB);
+            int onEachSide = (newWidth - oldWidth) / 2;
+            bi.getGraphics().drawImage(image,
+                    onEachSide, 0, newWidth - onEachSide, newHeight,
+                    0, 0, oldWidth, oldHeight,
+                    null);
+            image = bi;
+        }
         // mirror the right half, since 317 requires it
+        bgImage = image;
         int w = bgImage.getWidth(null);
         int h = bgImage.getHeight(null);
         bgImage.getGraphics().drawImage(bgImage,
