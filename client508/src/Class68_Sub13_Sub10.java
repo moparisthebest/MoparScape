@@ -8,7 +8,7 @@ public class Class68_Sub13_Sub10 extends Class68_Sub13 {
     public static RSString aRSString_3586;
     public static int anInt3587;
     public static RSString aRSString_3588
-            = Class112.method1668(43, "<col=ff9040>");
+            = RSString.newRsString("<col=ff9040>");
     public static int anInt3589;
     public static int anInt3590;
     public static int[] anIntArray3591;
@@ -157,9 +157,9 @@ public class Class68_Sub13_Sub10 extends Class68_Sub13 {
     }
 
     static {
-        aRSString_3586 = Class112.method1668(43, "rect_debug=");
+        aRSString_3586 = RSString.newRsString("rect_debug=");
         anInt3590 = 0;
-        aRSString_3593 = Class112.method1668(43, "<)4col> x");
+        aRSString_3593 = RSString.newRsString("<)4col> x");
         anInt3597 = 1;
         anInt3595 = -1;
     }

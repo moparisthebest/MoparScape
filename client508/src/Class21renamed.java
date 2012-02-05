@@ -59,7 +59,7 @@ public abstract class Class21renamed {
     public int[] anIntArray474;
     public int[] anIntArray475;
     public static long aLong476;
-    public static RSString aRSString_477 = Class112.method1668(43, "Okay");
+    public static RSString aRSString_477 = RSString.newRsString("Okay");
     public static RSString aRSString_478;
     public static int anInt479;
     public static int anInt480 = 0;
@@ -2329,6 +2329,6 @@ public abstract class Class21renamed {
     }
 
     static {
-        aRSString_478 = Class112.method1668(43, "<col=00ffff>");
+        aRSString_478 = RSString.newRsString("<col=00ffff>");
     }
 }

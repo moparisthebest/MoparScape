@@ -521,10 +521,10 @@ public class GameSocket implements Runnable {
             anIntArray1128[i_39_] = i / 4;
         }
         anInt1138 = 0;
-        aRSString_1141 = Class112.method1668(43, "::tele ");
-        aRSString_1146 = Class112.method1668(43, " )2> <col=ffff00>");
-        aRSString_1147 = Class112.method1668(43, ")1j");
+        aRSString_1141 = RSString.newRsString("::tele ");
+        aRSString_1146 = RSString.newRsString(" )2> <col=ffff00>");
+        aRSString_1147 = RSString.newRsString(")1j");
         aRSStringArray1139 = new RSString[100];
-        aRSString_1148 = Class112.method1668(43, "");
+        aRSString_1148 = RSString.newRsString("");
     }
 }

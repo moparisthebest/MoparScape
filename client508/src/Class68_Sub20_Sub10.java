@@ -20,7 +20,7 @@ public abstract class Class68_Sub20_Sub10 extends Class68_Sub20 {
     public static Class16 aClass16_4314;
     public int anInt4315;
     public static int anInt4316;
-    public static RSString aRSString_4317 = Class112.method1668(43, "null");
+    public static RSString aRSString_4317 = RSString.newRsString("null");
     public static Class124 aClass124_4318;
     public static int anInt4319;
     public static RSString aRSString_4320;
@@ -195,6 +195,6 @@ public abstract class Class68_Sub20_Sub10 extends Class68_Sub20 {
 
     static {
         aClass16_4314 = new Class16();
-        aRSString_4320 = Class112.method1668(43, "W-=hlen Sie eine Welt");
+        aRSString_4320 = RSString.newRsString("W-=hlen Sie eine Welt");
     }
 }

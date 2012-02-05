@@ -11,7 +11,7 @@ public class Class107 {
     public static int anInt1816;
     public static byte[][] aByteArrayArray1817;
     public static RSString aRSString_1818
-            = Class112.method1668(43, "blaugr-Un:");
+            = RSString.newRsString("blaugr-Un:");
     public static int anInt1819;
     public int anInt1820;
     public static int anInt1821;

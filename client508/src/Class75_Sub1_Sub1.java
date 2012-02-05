@@ -8,7 +8,7 @@ public class Class75_Sub1_Sub1 extends Class75_Sub1 {
     public static int anInt4578;
     public static int anInt4579;
     public static int anInt4580;
-    public static RSString aRSString_4581 = Class112.method1668(43, "::gc");
+    public static RSString aRSString_4581 = RSString.newRsString("::gc");
     public static int anInt4582;
     public static int anInt4583;
     public static int anInt4584;
@@ -536,7 +536,7 @@ public class Class75_Sub1_Sub1 extends Class75_Sub1 {
     static {
         aClass98_4577 = new Class98(5);
         anInt4585 = 0;
-        aRSString_4587 = Class112.method1668(43, "Lade Wordpack )2 ");
+        aRSString_4587 = RSString.newRsString("Lade Wordpack )2 ");
         aLogin_4588 = new Login(64);
         anInt4590 = 0;
     }

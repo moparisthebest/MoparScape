@@ -8,7 +8,7 @@ import java.net.URL;
 
 public class Class52 {
     public static RSString aRSString_993
-            = Class112.method1668(43,
+            = RSString.newRsString(
             "Your ignore list is full)3 Max of 100 users)3");
     public static int anInt994;
     public int anInt995;
@@ -18,14 +18,14 @@ public class Class52 {
     public static int anInt999;
     public static Class98 aClass98_1000;
     public JagSocket aClass31_1001;
-    public static RSString aRSString_1002 = Class112.method1668(43, " )2>");
+    public static RSString aRSString_1002 = RSString.newRsString(" )2>");
     public byte[] aByteArray1003;
     public static Class92[] aClass92Array1004;
     public static RSString aRSString_1005 = aRSString_993;
     public static int anInt1006 = 0;
     public long aLong1007;
     public int anInt1008;
-    public static RSString aRSString_1009 = Class112.method1668(43, ")4a=");
+    public static RSString aRSString_1009 = RSString.newRsString(")4a=");
     public static int anInt1010;
     public static Class21_Sub1 aClass21_Sub1_1011;
     public DataInputStream aDataInputStream1012;

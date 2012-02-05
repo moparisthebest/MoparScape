@@ -4,7 +4,7 @@
 
 public class Class68_Sub8 extends Class68 {
     public static RSString aRSString_2864
-            = Class112.method1668(43, "Sprites geladen)3");
+            = RSString.newRsString("Sprites geladen)3");
     public static int anInt2865;
     public static RSString aRSString_2866;
     public static int anInt2867;
@@ -20,8 +20,8 @@ public class Class68_Sub8 extends Class68 {
     public static int anInt2877;
     public int anInt2878;
     public static RSString aRSString_2879
-            = (Class112.method1668
-            (43, "You can(Wt add yourself to your own friend list)3"));
+            = (RSString.newRsString
+            ("You can(Wt add yourself to your own friend list)3"));
     public static int anInt2880;
 
     public static RSString method671(int[] is, long l, int i, int i_0_) {
@@ -136,7 +136,7 @@ public class Class68_Sub8 extends Class68 {
     }
 
     static {
-        aRSString_2871 = Class112.method1668(43, "null");
+        aRSString_2871 = RSString.newRsString("null");
         aRSString_2866 = aRSString_2879;
         anIntArrayArray2873 = new int[104][104];
         aClass98_2870 = new Class98(64);

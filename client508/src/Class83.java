@@ -4,8 +4,8 @@
 
 public class Class83 {
     public static RSString aRSString_1523;
-    public static RSString aRSString_1524 = Class112.method1668(43, "Spieler");
-    public static RSString aRSString_1525 = Class112.method1668(43, "m");
+    public static RSString aRSString_1524 = RSString.newRsString("Spieler");
+    public static RSString aRSString_1525 = RSString.newRsString("m");
     public static Class21renamed aClass21_1526;
     public static int anInt1527;
     public static RSString aRSString_1528;
@@ -25,8 +25,8 @@ public class Class83 {
     }
 
     static {
-        aRSString_1523 = Class112.method1668(43, "(U(Y");
-        aRSString_1530 = Class112.method1668(43, "AUS");
-        aRSString_1528 = Class112.method1668(43, ":clan:");
+        aRSString_1523 = RSString.newRsString("(U(Y");
+        aRSString_1530 = RSString.newRsString("AUS");
+        aRSString_1528 = RSString.newRsString(":clan:");
     }
 }

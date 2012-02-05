@@ -9,7 +9,7 @@ public class Class68_Sub16 extends Class68 {
     public static Class105 aClass105_3024;
     public static int anInt3025;
     public static RSString aRSString_3026
-            = Class112.method1668(43, "wishes to trade with you)3");
+            = RSString.newRsString("wishes to trade with you)3");
     public static RSString aRSString_3027 = aRSString_3026;
     public static Class103 aClass103_3028;
     public static int[] anIntArray3029;

@@ -47,7 +47,7 @@ public class Class120 {
     }
 
     static {
-        aRSString_2093 = Class112.method1668(43, "red:");
+        aRSString_2093 = RSString.newRsString("red:");
         aRSString_2096 = aRSString_2093;
         aBoolean2099 = false;
         aRSString_2092 = aRSString_2093;

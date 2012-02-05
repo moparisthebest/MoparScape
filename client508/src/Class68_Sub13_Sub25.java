@@ -332,12 +332,12 @@ public class Class68_Sub13_Sub25 extends Class68_Sub13 {
     }
 
     static {
-        aRSString_3851 = Class112.method1668(43, "mapscene");
+        aRSString_3851 = RSString.newRsString("mapscene");
         aShortArray3854 = new short[256];
-        aRSString_3864 = Class112.method1668(43, "Started 3d library");
+        aRSString_3864 = RSString.newRsString("Started 3d library");
         aRSString_3868 = aRSString_3864;
         anInt3858 = 0;
         anInt3853 = 0;
-        aRSString_3869 = Class112.method1668(43, "<img=0>");
+        aRSString_3869 = RSString.newRsString("<img=0>");
     }
 }

@@ -184,8 +184,8 @@ public abstract class Class68_Sub13 extends Class68 {
     static {
         anInt2923 = 0;
         anIntArray2920 = new int[]{1, -1, -1, 1};
-        aRSString_2928 = Class112.method1668(43, "cross");
-        aRSString_2922 = Class112.method1668(43, ":tradereq:");
+        aRSString_2928 = RSString.newRsString("cross");
+        aRSString_2922 = RSString.newRsString(":tradereq:");
         anIntArray2944 = new int[]{1, 1, 0, 0, 0, 8, 0, 0, 8};
     }
 }

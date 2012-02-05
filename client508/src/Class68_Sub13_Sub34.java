@@ -6,7 +6,7 @@ public class Class68_Sub13_Sub34 extends Class68_Sub13 {
     public static int anInt4002;
     public static int anInt4003;
     public static RSString aRSString_4004
-            = Class112.method1668(43, "::fpsoff");
+            = RSString.newRsString("::fpsoff");
     public static int anInt4005;
     public static int anInt4006;
     public static int anInt4007;
@@ -276,8 +276,8 @@ public class Class68_Sub13_Sub34 extends Class68_Sub13 {
     static {
         anIntArray4012 = new int[32];
         aRSString_4014
-                = (Class112.method1668
-                (43,
+                = (RSString.newRsString
+                (
                         "Sie k-Onnen sich selbst nicht auf Ihre Freunde)2Liste setzen(Q"));
     }
 }

@@ -12,7 +12,7 @@ public class Class127 {
     public static RSString aRSString_2208;
     public static int anInt2209;
     public static int anInt2210;
-    public static RSString aRSString_2211 = Class112.method1668(43, ":trade:");
+    public static RSString aRSString_2211 = RSString.newRsString(":trade:");
 
     public static void method1777(byte i) {
         anInt2210++;
@@ -166,7 +166,7 @@ public class Class127 {
     static {
         aRSStringArray2207 = new RSString[8];
         anInt2209 = 0;
-        aRSString_2206 = Class112.method1668(43, " has logged in)3");
+        aRSString_2206 = RSString.newRsString(" has logged in)3");
         aRSString_2208 = aRSString_2206;
     }
 }

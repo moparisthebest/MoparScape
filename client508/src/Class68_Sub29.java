@@ -308,7 +308,7 @@ public class Class68_Sub29 extends Class68 {
 
 
     static {
-        aRSString_3231 = Class112.method1668(43, "");
+        aRSString_3231 = RSString.newRsString("");
         aRSString_3235 = aRSString_3231;
     }
 }

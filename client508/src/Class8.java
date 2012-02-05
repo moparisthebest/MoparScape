@@ -31,7 +31,7 @@ public class Class8 {
     public static int anInt163 = 0;
     public static Class21renamed aClass21_164;
     public static RSString aRSString_165
-            = Class112.method1668(43, ":chalreq:");
+            = RSString.newRsString(":chalreq:");
 
     public static void method202(boolean bool) {
         anInt151++;

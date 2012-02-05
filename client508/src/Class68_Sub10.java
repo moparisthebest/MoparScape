@@ -428,8 +428,8 @@ public class Class68_Sub10 extends Class68 {
     static {
         anInt2908 = 0;
         anIntArray2906 = new int[32768];
-        aRSString_2901 = Class112.method1668(43, "loginscreen");
+        aRSString_2901 = RSString.newRsString("loginscreen");
         anInt2911 = -1;
-        aRSString_2900 = Class112.method1668(43, "::clientdrop");
+        aRSString_2900 = RSString.newRsString("::clientdrop");
     }
 }

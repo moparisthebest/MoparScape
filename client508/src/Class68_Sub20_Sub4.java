@@ -9,7 +9,7 @@ public class Class68_Sub20_Sub4 extends Class68_Sub20 {
     public static Class21_Sub1 aClass21_Sub1_4217;
     public static int anInt4218;
     public static RSString aRSString_4219
-            = Class112.method1668(43, "(U0a )2 via: ");
+            = RSString.newRsString("(U0a )2 via: ");
 
     public Class68_Sub20_Sub4(Class1_Sub1 class1_sub1) {
         aClass1_Sub1_4214 = class1_sub1;

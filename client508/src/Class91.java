@@ -15,7 +15,7 @@ public class Class91 {
     public static int anInt1639;
     public int[] anIntArray1640;
     public static RSString aRSString_1641
-            = Class112.method1668(43, "scrollbar");
+            = RSString.newRsString("scrollbar");
     public static RSString aRSString_1642;
     public static int anInt1643;
 
@@ -151,6 +151,6 @@ public class Class91 {
 
     static {
         aClass98_1636 = new Class98(64);
-        aRSString_1642 = Class112.method1668(43, "Texturen geladen)3");
+        aRSString_1642 = RSString.newRsString("Texturen geladen)3");
     }
 }

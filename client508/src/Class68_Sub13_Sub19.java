@@ -3,7 +3,7 @@
  */
 
 public class Class68_Sub13_Sub19 extends Class68_Sub13 {
-    public static RSString aRSString_3739 = Class112.method1668(43, "");
+    public static RSString aRSString_3739 = RSString.newRsString("");
     public static RSString aRSString_3740;
     public static RSString aRSString_3741;
     public static RSString aRSString_3742;
@@ -367,10 +367,10 @@ public class Class68_Sub13_Sub19 extends Class68_Sub13 {
     }
 
     static {
-        aRSString_3741 = Class112.method1668(43, "Loaded interfaces");
+        aRSString_3741 = RSString.newRsString("Loaded interfaces");
         aRSString_3740 = aRSString_3741;
         anInt3755 = 0;
-        aRSString_3754 = Class112.method1668(43, "Loading )2 please wait)3");
+        aRSString_3754 = RSString.newRsString("Loading )2 please wait)3");
         anInt3759 = 0;
         aRSString_3742 = aRSString_3754;
     }

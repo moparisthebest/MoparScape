@@ -45,7 +45,7 @@ public class ItemDef {
     public boolean aBoolean366;
     public static int anInt367;
     public static RSString aRSString_368
-            = Class112.method1668(43, "Lade Konfiguration )2 ");
+            = RSString.newRsString("Lade Konfiguration )2 ");
     public RSString[] aRSStringArray369;
     public int anInt370;
     public boolean aBoolean371;
@@ -73,7 +73,7 @@ public class ItemDef {
     public static int anInt393;
     public Class113 aClass113_394;
     public int anInt395;
-    public static RSString aRSString_396 = Class112.method1668(43, "Fps:");
+    public static RSString aRSString_396 = RSString.newRsString("Fps:");
     public int anInt397;
 
     public int method303(int i, byte i_0_, int i_1_) {

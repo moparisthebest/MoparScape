@@ -10,7 +10,7 @@ public class Class56 {
     public static int anInt1063;
     public static int anInt1064;
     public static short[][] aShortArrayArray1065;
-    public static RSString aRSString_1066 = Class112.method1668(43, "Mem:");
+    public static RSString aRSString_1066 = RSString.newRsString("Mem:");
     public static int anInt1067;
 
     public static void method569(boolean bool) {
@@ -88,7 +88,7 @@ public class Class56 {
     }
 
     static {
-        aRSString_1062 = Class112.method1668(43, " weitere Optionen");
+        aRSString_1062 = RSString.newRsString(" weitere Optionen");
         anInt1067 = 0;
         anInt1061 = 0;
     }

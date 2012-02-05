@@ -3,7 +3,7 @@
  */
 
 public class Class68_Sub25 extends Class68 {
-    public static RSString aRSString_3164 = Class112.method1668(43, "");
+    public static RSString aRSString_3164 = RSString.newRsString("");
     public byte[] aByteArray3165;
     public static int anInt3166;
     public static GameSocket updateSocketCopy;
@@ -11,7 +11,7 @@ public class Class68_Sub25 extends Class68 {
     public static int anInt3169;
     public Unknown aUnknown_3170;
     public static RSString aRSString_3171
-            = Class112.method1668(43, "event_opbase");
+            = RSString.newRsString("event_opbase");
     public static int[] anIntArray3172;
     public static int anInt3173;
     public static int anInt3174 = 99;

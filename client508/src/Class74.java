@@ -15,7 +15,7 @@ public class Class74 {
     public static RSString aRSString_1331;
     public static RSString aRSString_1332;
     public static int anInt1333;
-    public static RSString aRSString_1334 = Class112.method1668(43, "slide:");
+    public static RSString aRSString_1334 = RSString.newRsString("slide:");
     public static int[][][] anIntArrayArrayArray1335;
     public static int[][][] anIntArrayArrayArray1336;
     public static RSString aRSString_1337;
@@ -192,7 +192,7 @@ public class Class74 {
             class68_sub14.writeQWord(true, l);
             class68_sub14.writeDWord(
                     (int) (Math.random() * 9.9999999E7));
-            class68_sub14.writeString((byte) -9, class100);
+            class68_sub14.writeString(class100);
             class68_sub14.writeDWord(
                     (int) (9.9999999E7 * Math.random()));
             class68_sub14.writeWord(Class68_Sub13_Sub20.anInt3780);
@@ -205,8 +205,7 @@ public class Class74 {
             class68_sub14.writeWord(i_25_);
             class68_sub14.writeDWord(
                     (int) (9.9999999E7 * Math.random()));
-            class68_sub14.doKeys(false, Class68_Sub4.aBigInteger2814,
-                    Class68_Sub22.aBigInteger3136);
+            class68_sub14.doKeys();
             Class21renamed.stream.currentOffset = 0;
             Class21renamed.stream.writeByte(48);
             Class21renamed.stream.writeByte(
@@ -229,7 +228,7 @@ public class Class74 {
 
     static {
         aRSString_1332 = aRSString_1334;
-        aRSString_1337 = Class112.method1668(43, "Loading title screen )2 ");
+        aRSString_1337 = RSString.newRsString("Loading title screen )2 ");
         aRSString_1331 = aRSString_1337;
         aRSString_1338 = aRSString_1334;
     }

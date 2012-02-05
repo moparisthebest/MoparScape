@@ -7,7 +7,7 @@ public class Class102 {
     public static int anInt1747;
     public static boolean aBoolean1748;
     public static RSString aRSString_1749
-            = Class112.method1668(43, "www)2wtrc");
+            = RSString.newRsString("www)2wtrc");
     public static int anInt1750;
     public static RSString aRSString_1751;
     public static int anInt1752;
@@ -113,7 +113,7 @@ public class Class102 {
     static {
         aClass1_Sub6_Sub1Array1746 = new Class1_Sub6_Sub1[32768];
         aBoolean1748 = true;
-        aRSString_1754 = Class112.method1668(43, "OFF");
+        aRSString_1754 = RSString.newRsString("OFF");
         aRSString_1751 = aRSString_1754;
         anIntArray1757 = new int[50];
     }

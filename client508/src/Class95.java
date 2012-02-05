@@ -15,7 +15,7 @@ public class Class95 {
     public int[][] anIntArrayArray1688;
     public static int anInt1689;
     public int anInt1690;
-    public static RSString aRSString_1691 = Class112.method1668(43, "0(U");
+    public static RSString aRSString_1691 = RSString.newRsString("0(U");
     public static int anInt1692;
 
     public static void method1545(int i) {

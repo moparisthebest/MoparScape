@@ -12,7 +12,7 @@ public class Class108 {
     public static Class68_Sub20_Sub10[] aClass68_Sub20_Sub10Array1828;
     public static int anInt1829;
     public static boolean aBoolean1830 = true;
-    public static RSString aRSString_1831 = Class112.method1668(43, "Weiter");
+    public static RSString aRSString_1831 = RSString.newRsString("Weiter");
     public static Frame aFrame1832;
     public static Class68_Sub1[][][] aClass68_Sub1ArrayArrayArray1833;
 

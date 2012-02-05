@@ -8,7 +8,7 @@ public class Class68_Sub9 extends Class68 {
     public static String serverAddress;
     public int anInt2884;
     public static RSString aRSString_2885
-            = Class112.method1668(43, "Abbrechen");
+            = RSString.newRsString("Abbrechen");
     public static int anInt2886 = 0;
     public static boolean[][] aBooleanArrayArray2887;
     public int[] anIntArray2888;

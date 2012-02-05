@@ -83,6 +83,6 @@ public abstract class Class22 {
     static {
         anInt481 = -1;
         anInt485 = 0;
-        aRSString_488 = Class112.method1668(43, "compass");
+        aRSString_488 = RSString.newRsString("compass");
     }
 }

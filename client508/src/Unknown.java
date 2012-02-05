@@ -12,7 +12,7 @@ public class Unknown {
     public static byte aByte1615;
     public Class124 aClass124_1616 = null;
     public int anInt1617 = 65000;
-    public static RSString aRSString_1618 = Class112.method1668(43, "(U1");
+    public static RSString aRSString_1618 = RSString.newRsString("(U1");
     public static RSString aRSString_1619;
     public static int anInt1620;
     public static RSString aRSString_1621;
@@ -603,9 +603,9 @@ public class Unknown {
 
     static {
         aByte1615 = (byte) 0;
-        aRSString_1619 = Class112.method1668(43, "(U3");
+        aRSString_1619 = RSString.newRsString("(U3");
         aRSString_1611
-                = Class112.method1668(43, "m-Ochte mit Ihnen handeln)3");
-        aRSString_1621 = Class112.method1668(43, "<br>(X");
+                = RSString.newRsString("m-Ochte mit Ihnen handeln)3");
+        aRSString_1621 = RSString.newRsString("<br>(X");
     }
 }

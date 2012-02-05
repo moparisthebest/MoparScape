@@ -98,7 +98,7 @@ public class Class12 {
                                  i_9_++) {
                                 int i_10_ = class68_sub14.readDWord();
                                 is[i_9_] = new byte[i_10_];
-                                class68_sub14.method938(0, 0, i_10_, is[i_9_]);
+                                class68_sub14.readBytes(0, 0, i_10_, is[i_9_]);
                             }
                         }
                         Class[] var_classes = new Class[i_7_];
@@ -165,16 +165,16 @@ public class Class12 {
     }
 
     static {
-        aRSString_198 = Class112.method1668(43, "rot:");
+        aRSString_198 = RSString.newRsString("rot:");
         anInt199 = 0;
-        aRSString_205 = Class112.method1668(43, "Sat");
-        aRSString_197 = Class112.method1668(43, "Thu");
-        aRSString_207 = Class112.method1668(43, "Fri");
-        aRSString_206 = Class112.method1668(43, "Tue");
+        aRSString_205 = RSString.newRsString("Sat");
+        aRSString_197 = RSString.newRsString("Thu");
+        aRSString_207 = RSString.newRsString("Fri");
+        aRSString_206 = RSString.newRsString("Tue");
         anInt208 = 0;
-        aRSString_203 = Class112.method1668(43, "Wed");
-        aRSString_209 = Class112.method1668(43, "Sun");
-        aRSString_204 = Class112.method1668(43, "Mon");
+        aRSString_203 = RSString.newRsString("Wed");
+        aRSString_209 = RSString.newRsString("Sun");
+        aRSString_204 = RSString.newRsString("Mon");
         aRSStringArray200
                 = new RSString[]{aRSString_209, aRSString_204, aRSString_206,
                 aRSString_203, aRSString_197, aRSString_207,

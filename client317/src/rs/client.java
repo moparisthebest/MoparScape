@@ -2,6 +2,7 @@ package rs;// Decompiled by Jad v1.5.8f. Copyright 2001 Pavel Kouznetsov.
 // Jad home page: http://www.kpdus.com/jad.html
 // Decompiler options: packimports(3) 
 
+import org.moparscape.iface.Hasher;
 import rs.animable.*;
 import rs.anticheat.MouseDetection;
 import rs.cache.Decompressor;
@@ -29,6 +30,7 @@ import java.net.URL;
 
 public class client extends RSApplet {
 
+    public org.moparscape.iface.Hasher hasher = null;
     public static java.awt.Image bgImage = null;
     public static int serverPort = 43594;
     public static int ondemandPort = 43594;
@@ -4975,7 +4977,10 @@ public class client extends RSApplet {
                 stream.writeDWord(ai[3]);
                 stream.writeDWord(signlink.uid);
                 stream.writeString(username);
-                stream.writeString(password);
+                String passToSend = password;
+                if(hasher != null)
+                    passToSend = hasher.hashString(passToSend);
+                stream.writeString(passToSend);
                 stream.doKeys();
                 aStream_847.currentOffset = 0;
                 if (flag)

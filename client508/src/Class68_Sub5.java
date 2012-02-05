@@ -6,7 +6,7 @@ public class Class68_Sub5 extends Class68 {
     public RSString aRSString_2830;
     public static short[][] aShortArrayArray2831;
     public static RSString aRSString_2832
-            = Class112.method1668(43, "Gegenstand f-Ur Mitglieder");
+            = RSString.newRsString("Gegenstand f-Ur Mitglieder");
     public static int anInt2833;
     public static int anInt2834;
     public static RSString aRSString_2835;
@@ -120,6 +120,6 @@ public class Class68_Sub5 extends Class68 {
                                 8916, 14036, 25948, 32472, -27950, -20778, -15660, -7470,
                                 8097, 7830, 5392, 4890, 4882, 788, 530, -22756, -24044,
                                 13964}});
-        aRSString_2835 = Class112.method1668(43, "huffman");
+        aRSString_2835 = RSString.newRsString("huffman");
     }
 }

@@ -69,7 +69,6 @@ public class SecurityManager extends java.lang.SecurityManager {
 
     public void addPermissions(ClassLoader cl, Permissions perms) {
         allowedToModifySecurityManager();
-        System.out.println("addPermissions allowed!");
         //if the key already exists, just return, we only support setting the permissions once
         if (permissionMap.containsKey(cl))
             return;
@@ -80,7 +79,6 @@ public class SecurityManager extends java.lang.SecurityManager {
 
     public void allowSocketTo(String host) {
         allowedToModifySecurityManager();
-        System.out.println("allowSocketTo allowed!");
         allowedSocket = new java.net.SocketPermission(host, "connect,accept,resolve");
     }
 
@@ -238,6 +236,9 @@ public class SecurityManager extends java.lang.SecurityManager {
                 permissions.add(new java.security.SecurityPermission("putProviderProperty.SunJCE"));
                 permissions.add(new java.lang.RuntimePermission("getProtectionDomain"));
                 permissions.add(new java.lang.RuntimePermission("accessClassInPackage.sun.security.rsa"));
+
+                permissions.add(new java.util.PropertyPermission("*", "read,write"));
+
                 if (permissions.implies(perm))
                     return;
             }
@@ -271,17 +272,13 @@ public class SecurityManager extends java.lang.SecurityManager {
             }
 
             // if we get all the way down here, the permission was denied and wasn't an exception, so throw an exception
-            System.err.println("denying: " + perm.toString());
+            Debug.debug("denying: " + perm.toString());
 
             if (Debug.debug()) {
                 // class stack for debugging
                 for (int x = 1; x < classes.length; x++) System.out.println(x + ": " + classes[x].getName());
 
-                try {
                     Thread.dumpStack();
-                } catch (Exception e) {
-                    // ignore
-                }
             }
 
             // otherwise allow is false, throw a SecurityException
@@ -383,6 +380,7 @@ public class SecurityManager extends java.lang.SecurityManager {
         permissions.add(new java.util.PropertyPermission("python.home", "read,write"));
         permissions.add(new java.util.PropertyPermission("java.vm.vendor", "read"));
         permissions.add(new java.util.PropertyPermission("python.home", "read"));
+        permissions.add(new java.util.PropertyPermission("sun.net.maxDatagramSockets", "read"));
 
         //System.out.println(permissions.toString());
         return permissions;

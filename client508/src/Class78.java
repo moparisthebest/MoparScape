@@ -3,11 +3,11 @@
  */
 
 public class Class78 {
-    public static RSString aRSString_1387 = Class112.method1668(43, "lila:");
+    public static RSString aRSString_1387 = RSString.newRsString("lila:");
     public static Class21_Sub1 aClass21_Sub1_1388;
     public static RSString aRSString_1389;
     public static int anInt1390;
-    public static RSString aRSString_1391 = Class112.method1668(43, "Ok");
+    public static RSString aRSString_1391 = RSString.newRsString("Ok");
     public static int anInt1392;
     public static int anInt1393;
     public static int[] anIntArray1394;

@@ -71,7 +71,7 @@ public class Class29 {
 
     static {
         anInt537 = 0;
-        aRSString_538 = Class112.method1668(43, "Attack");
+        aRSString_538 = RSString.newRsString("Attack");
         aRSString_535 = aRSString_538;
     }
 }

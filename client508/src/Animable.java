@@ -14,7 +14,7 @@ public abstract class Animable {
     public static int anInt62;
     public static int anInt63;
     public static RSString aRSString_64
-            = Class112.method1668(43, "Bitte entfernen Sie ");
+            = RSString.newRsString("Bitte entfernen Sie ");
     public static int anInt65;
     public static Class35 aClass35_66;
     public static int anInt67;

@@ -8,7 +8,7 @@ import java.net.Socket;
 public class Class49 {
 
     public static int anInt962 = 0;
-    public static RSString aRSString_963 = Class112.method1668(43, "document)3cookie=(R");
+    public static RSString aRSString_963 = RSString.newRsString("document)3cookie=(R");
     public int anInt964;
     public static int anInt965;
     public static Interface4 anInterface4_966;

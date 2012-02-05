@@ -10,7 +10,7 @@ public class Class68_Sub26 extends Class68 {
     public static int anInt3182;
     public static int anInt3183;
     public static RSString aRSString_3184
-            = Class112.method1668(43, "Ausw-=hlen");
+            = RSString.newRsString("Ausw-=hlen");
     public Class68_Sub28_Sub3 aClass68_Sub28_Sub3_3185;
     public static int anInt3186;
     public int anInt3187;
@@ -76,6 +76,6 @@ public class Class68_Sub26 extends Class68 {
 
     static {
         anInt3183 = 2;
-        aRSString_3195 = Class112.method1668(43, "(Y");
+        aRSString_3195 = RSString.newRsString("(Y");
     }
 }

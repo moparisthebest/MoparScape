@@ -9,7 +9,7 @@ public class Class7 {
     public static int anInt120;
     public int anInt121;
     public static int anInt122;
-    public static RSString aRSString_123 = Class112.method1668(43, "p12_full");
+    public static RSString aRSString_123 = RSString.newRsString("p12_full");
     public static Class98 aClass98_124;
     public int anInt125;
     public boolean aBoolean126 = true;
@@ -103,7 +103,7 @@ public class Class7 {
 
     static {
         anInt122 = 0;
-        aRSString_127 = Class112.method1668(43, "(U5");
+        aRSString_127 = RSString.newRsString("(U5");
         anIntArrayArray130
                 = (new int[][]
                 {{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15},
@@ -112,7 +112,7 @@ public class Class7 {
                         {3, 7, 11, 15, 2, 6, 10, 14, 1, 5, 9, 13, 0, 4, 8, 12}});
         aClass98_124 = new Class98(50);
         anIntArray134 = new int[2];
-        aRSString_135 = Class112.method1668(43, " more options");
+        aRSString_135 = RSString.newRsString(" more options");
         aRSString_137 = aRSString_135;
     }
 }

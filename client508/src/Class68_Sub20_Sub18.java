@@ -96,7 +96,7 @@ public class Class68_Sub20_Sub18 extends Class68_Sub20 {
                         / 65535.0F)));
         }
         aRSString_4451
-                = Class112.method1668(43, " from your friend list first)3");
+                = RSString.newRsString(" from your friend list first)3");
         aRSString_4450 = aRSString_4451;
     }
 }

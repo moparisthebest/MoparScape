@@ -21,7 +21,7 @@ public class Class68_Sub13_Sub12 extends Class68_Sub13 {
             {4550, 4537, 5681, 5673, 5790, 6806, 8076, 4574}};
     public int anInt3630;
     public static RSString aRSString_3631
-            = Class112.method1668(43, "Connecting to update server");
+            = RSString.newRsString("Connecting to update server");
     public int anInt3632 = 0;
     public static int anInt3633;
     public static int anInt3634;
@@ -215,8 +215,8 @@ public class Class68_Sub13_Sub12 extends Class68_Sub13 {
 
     static {
         aCalendar3636 = Calendar.getInstance();
-        aRSString_3645 = Class112.method1668(43, "Lade Sprites )2 ");
+        aRSString_3645 = RSString.newRsString("Lade Sprites )2 ");
         aClass113_3647 = new Class113(16);
-        aRSString_3648 = Class112.method1668(43, "::errortest");
+        aRSString_3648 = RSString.newRsString("::errortest");
     }
 }

@@ -19,7 +19,7 @@ public class Class68_Sub13_Sub11 extends Class68_Sub13 {
     public static RSString aRSString_3611;
     public static int anInt3612;
     public int anInt3613 = 8192;
-    public static RSString aRSString_3614 = Class112.method1668(43, "K");
+    public static RSString aRSString_3614 = RSString.newRsString("K");
     public static int anInt3615;
     public static short aShort3616;
     public static int anInt3617;

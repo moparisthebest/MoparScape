@@ -13,7 +13,7 @@ public class Class68_Sub13_Sub17 extends Class68_Sub13 {
     public static int anInt3718;
     public static int[] anIntArray3719;
     public static RSString aRSString_3720
-            = Class112.method1668(43,
+            = RSString.newRsString(
             "RuneScape wird geladen )2 bitte warten)3)3)3");
     public static int anInt3721;
     public static int anInt3722;

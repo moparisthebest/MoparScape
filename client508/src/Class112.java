@@ -30,33 +30,6 @@ public class Class112 {
     public static int anInt1899;
     public static int anInt1900;
 
-    public static RSString method1668(int i, String string) {
-        byte[] is = string.getBytes();
-        anInt1885++;
-        int i_0_ = is.length;
-        RSString class100 = new RSString();
-        if (i != 43)
-            return null;
-        class100.bytes = new byte[i_0_];
-        int i_1_ = 0;
-        while (i_0_ > i_1_) {
-            int i_2_ = is[i_1_++] & 0xff;
-            if (i_2_ > 45 || i_2_ < 40) {
-                if ((i_2_ ^ 0xffffffff) != -1)
-                    class100.bytes[class100.anInt2293++]
-                            = (byte) i_2_;
-            } else {
-                if ((i_1_ ^ 0xffffffff) <= (i_0_ ^ 0xffffffff))
-                    break;
-                int i_3_ = 0xff & is[i_1_++];
-                class100.bytes[class100.anInt2293++]
-                        = (byte) (i_3_ + (-48 + (i_2_ + -40) * 43));
-            }
-        }
-        class100.method1587(true);
-        return class100.method1622(i + 4053);
-    }
-
     public Class1_Sub4 method1669(boolean bool) {
         anInt1888++;
         if (anIntArray1889 == null)

@@ -55,11 +55,11 @@ public class Class30 {
     }
 
     static {
-        aRSString_542 = Class112.method1668(43, "Suche nach Updates )2 ");
+        aRSString_542 = RSString.newRsString("Suche nach Updates )2 ");
         anIntArray548 = new int[25];
         anInt546 = 0;
         aClass16_541 = new Class16();
-        aRSString_551 = Class112.method1668(43, "W-=hlen Sie eine Option");
+        aRSString_551 = RSString.newRsString("W-=hlen Sie eine Option");
         anInt552 = 0;
         aClass128_550 = new Class128();
         aBoolean553 = false;

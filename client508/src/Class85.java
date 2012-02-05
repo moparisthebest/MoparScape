@@ -7,9 +7,9 @@ public class Class85 {
     public static int anInt1548;
     public static int anInt1549;
     public static RSString aRSString_1550
-            = Class112.method1668(43, "name_icons");
+            = RSString.newRsString("name_icons");
     public static int anInt1551;
-    public static RSString aRSString_1552 = Class112.method1668(43, "Players");
+    public static RSString aRSString_1552 = RSString.newRsString("Players");
     public static SignLink aSignLink_1553;
     public static byte[][][] aByteArrayArrayArray1554;
     public static int anInt1555;
@@ -97,10 +97,10 @@ public class Class85 {
     }
 
     static {
-        aRSString_1547 = Class112.method1668(43, "Loaded update list");
+        aRSString_1547 = RSString.newRsString("Loaded update list");
         anInt1549 = 500;
         anInt1548 = 0;
-        aRSString_1556 = Class112.method1668(43, "<col=ffff00>");
+        aRSString_1556 = RSString.newRsString("<col=ffff00>");
         aRSString_1559 = aRSString_1552;
         anIntArray1563 = new int[2048];
         aRSString_1564 = aRSString_1547;

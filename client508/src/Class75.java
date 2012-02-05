@@ -5,10 +5,10 @@
 public class Class75 {
     public static int anInt1339;
     public static RSString aRSString_1340
-            = Class112.method1668(43, "Mitglieder)2Welt");
+            = RSString.newRsString("Mitglieder)2Welt");
     public static RSString aRSString_1341;
     public static RSString aRSString_1342
-            = Class112.method1668(43, " from your ignore list first)3");
+            = RSString.newRsString(" from your ignore list first)3");
     public static Class16 aClass16_1343;
     public static Class65 aClass65_1344;
 

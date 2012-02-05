@@ -1100,14 +1100,14 @@ public class Class55 {
     }
 
     static {
-        aRSString_2045 = Class112.method1668(43, "purple:");
+        aRSString_2045 = RSString.newRsString("purple:");
         aRSString_2059 = aRSString_2045;
-        aRSString_2052 = Class112.method1668(43, "details");
+        aRSString_2052 = RSString.newRsString("details");
         aRSString_2063 = aRSString_2045;
-        aRSString_2064 = Class112.method1668(43, "hint_mapedge");
+        aRSString_2064 = RSString.newRsString("hint_mapedge");
         aRSStringArray2067 = new RSString[100];
-        aRSString_2070 = (Class112.method1668
-                (43, "Please wait )2 attempting to reestablish)3"));
+        aRSString_2070 = (RSString.newRsString
+                ("Please wait )2 attempting to reestablish)3"));
         aRSString_2053 = aRSString_2070;
     }
 }

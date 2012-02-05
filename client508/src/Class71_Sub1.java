@@ -15,7 +15,7 @@ public class Class71_Sub1 extends Class71 {
     public static int anInt3254;
     public static int[] anIntArray3255;
     public static RSString aRSString_3256
-            = Class112.method1668(43, "<col=ff0000>");
+            = RSString.newRsString("<col=ff0000>");
     public static RSString[] aRSStringArray3257 = new RSString[500];
 
     public static void method1343(boolean bool) {

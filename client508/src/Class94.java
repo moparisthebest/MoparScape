@@ -10,7 +10,7 @@ public class Class94 {
     public static int anInt1675;
     public static int anInt1676;
     public static int[] anIntArray1677;
-    public static RSString aRSString_1678 = Class112.method1668(43, ")1 ");
+    public static RSString aRSString_1678 = RSString.newRsString(")1 ");
 
     public static Class9 method1541(byte i, int i_0_) {
         anInt1675++;

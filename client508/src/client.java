@@ -8,12 +8,14 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.awt.image.PixelGrabber;
 import java.net.Socket;
+import java.security.interfaces.RSAPublicKey;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.Map;
 
 public class client extends Applet_Sub1 implements ClientInterface {
 
+    public static org.moparscape.iface.Hasher hasher = null;
     public static java.awt.event.KeyListener keyListener;
     public static int[] bgImage = null;
     public static int serverPort = 43594;
@@ -71,6 +73,8 @@ public class client extends Applet_Sub1 implements ClientInterface {
     }
 
     public String getServer() {
+        if(Class68_Sub9.serverAddress == null)
+            Class68_Sub9.serverAddress = "localhost";
         return Class68_Sub9.serverAddress;
     }
 
@@ -137,6 +141,15 @@ public class client extends Applet_Sub1 implements ClientInterface {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public void setPublicKey(RSAPublicKey key) {
+        Stream.publicKey = key.getPublicExponent();
+        Stream.modulus = key.getModulus();
+    }
+
+    public void setHasher(org.moparscape.iface.Hasher hasher){
+        client.hasher = hasher;
     }
 
     public static int anInt2366;
@@ -1919,29 +1932,4 @@ public class client extends Applet_Sub1 implements ClientInterface {
         anInt2378++;
     }
 
-    // moparisthebest added this for ease
-    public static RSString newRSString(String string) {
-        int i = 43;
-        byte[] is = string.getBytes();
-        int i_0_ = is.length;
-        RSString class100 = new RSString();
-        if (i != 43)
-            return null;
-        class100.bytes = new byte[i_0_];
-        int i_1_ = 0;
-        while (i_0_ > i_1_) {
-            int i_2_ = is[i_1_++] & 0xff;
-            if (i_2_ > 45 || i_2_ < 40) {
-                if ((i_2_ ^ 0xffffffff) != -1)
-                    class100.bytes[class100.anInt2293++] = (byte) i_2_;
-            } else {
-                if ((i_1_ ^ 0xffffffff) <= (i_0_ ^ 0xffffffff))
-                    break;
-                int i_3_ = 0xff & is[i_1_++];
-                class100.bytes[class100.anInt2293++] = (byte) (i_3_ + (-48 + (i_2_ + -40) * 43));
-            }
-        }
-        class100.method1587(true);
-        return class100.method1622(i + 4053);
-    }
 }

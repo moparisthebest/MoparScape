@@ -11,7 +11,7 @@ public class Class86
     public static Class21renamed aClass21_1566;
     public static int anInt1567 = 0;
     public static RSString aRSString_1568
-            = Class112.method1668(43, "Loading)3)3)3");
+            = RSString.newRsString("Loading)3)3)3");
     public static RSString aRSString_1569;
     public static int anInt1570;
     public static int anInt1571 = 0;
@@ -184,7 +184,7 @@ public class Class86
     }
 
     static {
-        aRSString_1569 = Class112.method1668(43, "sl_stars");
+        aRSString_1569 = RSString.newRsString("sl_stars");
         aLongArray1575 = new long[32];
         anInt1576 = -1;
         aRSString_1574 = aRSString_1568;

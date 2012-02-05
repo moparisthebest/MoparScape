@@ -9,12 +9,12 @@ public class Class68_Sub3 extends Class68 {
     public static int anInt2802;
     public int anInt2803;
     public static RSString aRSString_2804
-            = Class112.method1668(43, " <col=ffff00>");
+            = RSString.newRsString(" <col=ffff00>");
     public static int anInt2805;
     public static int anInt2806;
     public static RSString aRSString_2807;
     public boolean aBoolean2808 = false;
-    public static RSString aRSString_2809 = Class112.method1668(43, "wave2:");
+    public static RSString aRSString_2809 = RSString.newRsString("wave2:");
     public static int anInt2810;
     public static int anInt2811;
     public static int anInt2812;

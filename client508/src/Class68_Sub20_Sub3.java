@@ -329,7 +329,7 @@ public class Class68_Sub20_Sub3 extends Class68_Sub20 {
     }
 
     static {
-        aRSString_4194 = Class112.method1668(43, "Untersuchen");
+        aRSString_4194 = RSString.newRsString("Untersuchen");
         anInt4210 = -1;
     }
 }

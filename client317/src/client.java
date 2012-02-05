@@ -4,8 +4,10 @@
  */
 
 import org.moparscape.iface.ClientInterface;
+import rs.stream.Stream;
 
 import java.awt.image.BufferedImage;
+import java.security.interfaces.RSAPublicKey;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -119,6 +121,15 @@ public class client extends rs.client implements ClientInterface {
                 w / 2, 0, w, h,
                 w, 0, w / 2, h,
                 null);
+    }
+
+    public void setPublicKey(RSAPublicKey key) {
+        Stream.publicKey = key.getPublicExponent();
+        Stream.modulus = key.getModulus();
+    }
+
+    public void setHasher(org.moparscape.iface.Hasher hasher){
+        this.hasher = hasher;
     }
 
 }

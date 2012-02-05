@@ -8,7 +8,7 @@ public class Class114 {
     public Inflater anInflater1924;
     public static int anInt1925;
     public static RSString aRSString_1926
-            = Class112.method1668(43, "blinken3:");
+            = RSString.newRsString("blinken3:");
     public static int anInt1927;
     public static RSString aRSString_1928;
     public static int anInt1929;
@@ -797,10 +797,10 @@ public class Class114 {
 
     static {
         anInt1925 = -1;
-        aRSString_1928 = Class112.method1668(43, "k");
-        aRSString_1930 = Class112.method1668(43, " )2> <col=00ffff>");
+        aRSString_1928 = RSString.newRsString("k");
+        aRSString_1930 = RSString.newRsString(" )2> <col=00ffff>");
         anInt1927 = 0;
-        aRSString_1932 = Class112.method1668(43, "Spielwelt erstellt)3");
+        aRSString_1932 = RSString.newRsString("Spielwelt erstellt)3");
         aByteArrayArray1937 = new byte[1000][];
     }
 }

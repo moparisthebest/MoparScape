@@ -4,7 +4,7 @@
 
 public class Class1_Sub7 extends Animable {
     public static RSString aRSString_2590
-            = Class112.method1668(43, "Schlie-8en");
+            = RSString.newRsString("Schlie-8en");
     public static int anInt2591;
     public int anInt2592;
     public static int anInt2593;
@@ -27,7 +27,7 @@ public class Class1_Sub7 extends Animable {
     public static int anInt2610;
     public static RSString aRSString_2611;
     public static boolean aBoolean2612;
-    public static RSString aRSString_2613 = Class112.method1668(43, "green:");
+    public static RSString aRSString_2613 = RSString.newRsString("green:");
     public int anInt2614;
     public static int anInt2615;
     public static int anInt2616;

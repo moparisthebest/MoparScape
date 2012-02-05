@@ -4,11 +4,11 @@
 
 public class Class50_Sub2 extends Class50 {
     public static RSString aRSString_2729;
-    public static RSString aRSString_2730 = Class112.method1668(43, "Oct");
+    public static RSString aRSString_2730 = RSString.newRsString("Oct");
     public static RSString aRSString_2731;
     public static int anInt2732;
     public static int anInt2733;
-    public static RSString aRSString_2734 = Class112.method1668(43, "Mar");
+    public static RSString aRSString_2734 = RSString.newRsString("Mar");
     public int anInt2735;
     public static Class21renamed aClass21_2736;
     public static RSString aRSString_2737;
@@ -119,17 +119,17 @@ public class Class50_Sub2 extends Class50 {
     }
 
     static {
-        aRSString_2729 = Class112.method1668(43, "Dec");
-        aRSString_2739 = Class112.method1668(43, "Jun");
-        aRSString_2743 = Class112.method1668(43, "Jul");
+        aRSString_2729 = RSString.newRsString("Dec");
+        aRSString_2739 = RSString.newRsString("Jun");
+        aRSString_2743 = RSString.newRsString("Jul");
         anInt2745 = 1;
-        aRSString_2731 = Class112.method1668(43, "Aug");
-        aRSString_2737 = Class112.method1668(43, "Apr");
-        aRSString_2744 = Class112.method1668(43, "Sep");
-        aRSString_2752 = Class112.method1668(43, "Jan");
-        aRSString_2750 = Class112.method1668(43, "Nov");
-        aRSString_2746 = Class112.method1668(43, "May");
-        aRSString_2751 = Class112.method1668(43, "Feb");
+        aRSString_2731 = RSString.newRsString("Aug");
+        aRSString_2737 = RSString.newRsString("Apr");
+        aRSString_2744 = RSString.newRsString("Sep");
+        aRSString_2752 = RSString.newRsString("Jan");
+        aRSString_2750 = RSString.newRsString("Nov");
+        aRSString_2746 = RSString.newRsString("May");
+        aRSString_2751 = RSString.newRsString("Feb");
         aRSStringArray2740
                 = new RSString[]{aRSString_2752, aRSString_2751, aRSString_2734,
                 aRSString_2737, aRSString_2746, aRSString_2739,

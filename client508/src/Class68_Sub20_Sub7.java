@@ -7,7 +7,7 @@ public class Class68_Sub20_Sub7 extends Class68_Sub20 {
     public static int anInt4253;
     public static int anInt4254;
     public static int anInt4255;
-    public static RSString aRSString_4256 = Class112.method1668(43, ")4g");
+    public static RSString aRSString_4256 = RSString.newRsString(")4g");
     public static int anInt4257;
     public static int anInt4258;
     public static int anInt4259;
@@ -167,7 +167,7 @@ public class Class68_Sub20_Sub7 extends Class68_Sub20 {
         anInt4255 = 0;
         aLong4262 = 0L;
         anIntArray4263 = new int[]{1, 0, -1, 0};
-        aRSString_4267 = Class112.method1668(43, "(U");
+        aRSString_4267 = RSString.newRsString("(U");
         aShortArray4266 = new short[256];
     }
 }

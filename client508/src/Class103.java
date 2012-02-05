@@ -14,7 +14,7 @@ public class Class103 {
     public static int[] anIntArray1767 = new int[2000];
     public static int anInt1768;
     public static RSString aRSString_1769
-            = Class112.method1668(43, "<col=c0ff00>");
+            = RSString.newRsString("<col=c0ff00>");
     public static int anInt1770;
     public static RSString aRSString_1771;
     public static int anInt1772;
@@ -398,6 +398,6 @@ public class Class103 {
 
     static {
         aBoolean1762 = true;
-        aRSString_1771 = Class112.method1668(43, "showVideoAd");
+        aRSString_1771 = RSString.newRsString("showVideoAd");
     }
 }

@@ -7,7 +7,7 @@ public class Class4 {
     public static int anInt91;
     public static int anInt92;
     public static int anInt93 = 0;
-    public static RSString aRSString_94 = Class112.method1668(43, "(U2");
+    public static RSString aRSString_94 = RSString.newRsString("(U2");
     public static boolean[] aBooleanArray95 = new boolean[100];
     public static int[] anIntArray96;
     public static int anInt97;

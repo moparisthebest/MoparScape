@@ -5,7 +5,7 @@
 public class Class68_Sub13_Sub13 extends Class68_Sub13 {
     public static int anInt3649;
     public static RSString aRSString_3650
-            = Class112.method1668(43,
+            = RSString.newRsString(
             " steht bereits auf Ihrer Ignorieren)2Liste(Q");
     public static int anInt3651;
     public static int anInt3652;
@@ -230,6 +230,6 @@ public class Class68_Sub13_Sub13 extends Class68_Sub13 {
     }
 
     static {
-        aRSString_3657 = Class112.method1668(43, "Eingabeprozedur geladen)3");
+        aRSString_3657 = RSString.newRsString("Eingabeprozedur geladen)3");
     }
 }

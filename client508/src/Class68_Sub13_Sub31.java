@@ -459,8 +459,8 @@ public class Class68_Sub13_Sub31 extends Class68_Sub13 {
         anIntArray3969 = new int[5];
         anInt3975 = -1;
         aRSString_3976
-                = (Class112.method1668
-                (43,
+                = (RSString.newRsString
+                (
                         "Bitte warten Sie )2 es wird versucht)1 die Verbindung wiederherzustellen)3"));
     }
 }

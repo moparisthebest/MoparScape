@@ -493,7 +493,7 @@ public class Class68_Sub13_Sub36 extends Class68_Sub13 {
     }
 
     static {
-        aRSString_4032 = Class112.method1668(43, "Starting 3d library");
+        aRSString_4032 = RSString.newRsString("Starting 3d library");
         anInt4033 = 0;
         anIntArray4044 = new int[32];
         aRSString_4049 = aRSString_4032;

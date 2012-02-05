@@ -9,7 +9,7 @@ public class Class21_Sub1 extends Class21renamed {
     public volatile boolean aBoolean2696;
     public int anInt2697;
     public static RSString aRSString_2698
-            = Class112.method1668(43, "Musik)2Engine vorbereitet)3");
+            = RSString.newRsString("Musik)2Engine vorbereitet)3");
     public Unknown aUnknown_2699;
     public static int anInt2700;
     public int anInt2701;
@@ -410,10 +410,10 @@ public class Class21_Sub1 extends Class21renamed {
     }
 
     static {
-        aRSString_2695 = Class112.method1668(43, "<col=ffffff>");
+        aRSString_2695 = RSString.newRsString("<col=ffffff>");
         aLongArray2703 = new long[100];
         aBoolean2705 = false;
         aRSStringArray2710 = new RSString[1000];
-        aRSString_2702 = Class112.method1668(43, "(Udns");
+        aRSString_2702 = RSString.newRsString("(Udns");
     }
 }

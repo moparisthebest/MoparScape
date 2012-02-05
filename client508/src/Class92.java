@@ -16,7 +16,7 @@ public abstract class Class92 {
     public static int anInt1654;
     public int anInt1655;
     public static RSString aRSString_1656
-            = Class112.method1668(43, ")3runescape)3com)4l=");
+            = RSString.newRsString(")3runescape)3com)4l=");
     public int anInt1657;
     public int anInt1658;
     public int anInt1659;

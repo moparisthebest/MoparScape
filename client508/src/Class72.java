@@ -6,7 +6,7 @@ import java.awt.*;
 
 public abstract class Class72 {
     public static int anInt1301;
-    public static RSString aRSString_1302 = Class112.method1668(43, "www");
+    public static RSString aRSString_1302 = RSString.newRsString("www");
     public static int anInt1303;
     public static int anInt1304;
     public static Class65 aClass65_1305;
@@ -23,7 +23,7 @@ public abstract class Class72 {
     public static int anInt1316;
     public static int anInt1317;
     public static RSString aRSString_1318
-            = Class112.method1668(43, "Connection lost)3");
+            = RSString.newRsString("Connection lost)3");
     public static int anInt1319;
     public static int anInt1320;
     public static int anInt1321;

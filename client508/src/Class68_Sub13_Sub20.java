@@ -25,7 +25,7 @@ public class Class68_Sub13_Sub20 extends Class68_Sub13 {
     public static short[] aShortArray3779;
     public static int anInt3780;
     public static RSString aRSString_3781
-            = Class112.method1668(43, "Speicher wird zugewiesen)3");
+            = RSString.newRsString("Speicher wird zugewiesen)3");
     public static RSString aRSString_3782;
     public static RSString aRSString_3783;
     public static RSString aRSString_3784;
@@ -330,7 +330,7 @@ public class Class68_Sub13_Sub20 extends Class68_Sub13 {
     static {
         anInt3780 = 0;
         aShortArray3779 = new short[]{-10304, 9104, -1, -1, -1};
-        aRSString_3784 = Class112.method1668(43, "flash1:");
+        aRSString_3784 = RSString.newRsString("flash1:");
         aRSString_3783 = aRSString_3784;
         aRSString_3782 = aRSString_3784;
     }

@@ -19,7 +19,7 @@ public class Class68_Sub7 extends Class68 {
     public static RSString aRSString_2861;
     public static int anInt2862;
     public static RSString aRSString_2863
-            = Class112.method1668(43, "Prepared sound engine");
+            = RSString.newRsString("Prepared sound engine");
 
     public static void method665(Class68_Sub20_Sub1 class68_sub20_sub1,
                                  int i) {
@@ -152,7 +152,7 @@ public class Class68_Sub7 extends Class68 {
     }
 
     static {
-        aRSString_2858 = Class112.method1668(43, "null");
+        aRSString_2858 = RSString.newRsString("null");
         aRSString_2861 = aRSString_2863;
     }
 }

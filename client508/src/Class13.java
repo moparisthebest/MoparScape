@@ -5,9 +5,9 @@
 public abstract class Class13 {
     public static short[] aShortArray213;
     public static RSString aRSString_214
-            = Class112.method1668(43, "Update)2Liste geladen)3");
+            = RSString.newRsString("Update)2Liste geladen)3");
     public static RSString aRSString_215
-            = Class112.method1668(43, "not yet implemented");
+            = RSString.newRsString("not yet implemented");
     public int anInt216;
     public static int anInt217;
     public static RSString aRSString_218;
@@ -213,6 +213,6 @@ public abstract class Class13 {
     }
 
     static {
-        aRSString_218 = Class112.method1668(43, ":");
+        aRSString_218 = RSString.newRsString(":");
     }
 }

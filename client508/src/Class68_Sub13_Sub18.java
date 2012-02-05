@@ -4,12 +4,12 @@
 
 public class Class68_Sub13_Sub18 extends Class68_Sub13 {
     public static int anInt3726;
-    public static RSString aRSString_3727 = Class112.method1668(43, "wave:");
+    public static RSString aRSString_3727 = RSString.newRsString("wave:");
     public static RSString aRSString_3728 = aRSString_3727;
     public static int anInt3729;
     public static int anInt3730;
     public static RSString aRSString_3731;
-    public static RSString aRSString_3732 = Class112.method1668(43, "(U4");
+    public static RSString aRSString_3732 = RSString.newRsString("(U4");
     public static int anInt3733;
     public static int anInt3734;
     public static int anInt3735;

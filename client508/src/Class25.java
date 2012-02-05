@@ -5,7 +5,7 @@
 public class Class25 {
     public static int anInt510;
     public static RSString aRSString_511
-            = Class112.method1668(43, " )2> <col=ff9040>");
+            = RSString.newRsString(" )2> <col=ff9040>");
     public static int anInt512;
     public static Class21renamed aClass21_513;
     public static int anInt514;

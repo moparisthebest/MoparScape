@@ -207,9 +207,9 @@ public class Class1_Sub1 extends Animable {
     }
 
     static {
-        aRSString_2400 = Class112.method1668(43, "Location");
+        aRSString_2400 = RSString.newRsString("Location");
         aBoolean2414 = false;
-        aRSString_2411 = Class112.method1668(43, "::rect_debug");
+        aRSString_2411 = RSString.newRsString("::rect_debug");
         aRSString_2405 = aRSString_2400;
         aLogin_2395 = new Login(64);
         anInt2424 = -8 + (int) (Math.random() * 17.0);

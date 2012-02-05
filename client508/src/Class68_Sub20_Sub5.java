@@ -63,10 +63,10 @@ public class Class68_Sub20_Sub5 extends Class68_Sub20 {
     }
 
     static {
-        aRSString_4223 = Class112.method1668(43, "_");
+        aRSString_4223 = RSString.newRsString("_");
         anInt4225 = 0;
         anInt4229 = 0;
-        aRSString_4228 = (Class112.method1668
-                (43, "Clientscript error_fatal )2 check log for details"));
+        aRSString_4228 = (RSString.newRsString
+                ("Clientscript error_fatal )2 check log for details"));
     }
 }

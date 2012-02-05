@@ -5,11 +5,11 @@
 public class Class68_Sub20_Sub6 extends Class68_Sub20 {
     public static int[] anIntArray4230;
     public static int anInt4231;
-    public static RSString aRSString_4232 = Class112.method1668(43, " )2> ");
+    public static RSString aRSString_4232 = RSString.newRsString(" )2> ");
     public static int anInt4233;
     public boolean aBoolean4234;
     public static int anInt4235;
-    public static RSString aRSString_4236 = Class112.method1668(43, " ");
+    public static RSString aRSString_4236 = RSString.newRsString(" ");
     public static int anInt4237;
     public static int anInt4238;
     public boolean aBoolean4239;

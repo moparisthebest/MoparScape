@@ -28,6 +28,7 @@ import mudclient.LoginDataEncryption;
 import org.moparscape.iface.ClientInterface;
 
 import java.awt.image.BufferedImage;
+import java.security.interfaces.RSAPublicKey;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -72,8 +73,12 @@ public class client extends mudclient.mudclient implements ClientInterface {
         return ret;
     }
 
-    public void setPublicKey(byte[] rsaKeyBytes) {
-        LoginDataEncryption.publicKeyBytes = rsaKeyBytes;
+    public void setPublicKey(RSAPublicKey key) {
+        LoginDataEncryption.customPublicKey = key;
+    }
+
+    public void setHasher(org.moparscape.iface.Hasher hasher){
+        this.hasher = hasher;
     }
 
     public void setBackground(java.awt.Image image) {

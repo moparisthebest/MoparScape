@@ -119,14 +119,14 @@ public class Class106 {
 
     static {
         anInt1801 = 127;
-        aRSString_1800 = Class112.method1668(43, ")1");
+        aRSString_1800 = RSString.newRsString(")1");
         anIntArray1809 = new int[2000];
         aRSString_1808
-                = (Class112.method1668
-                (43,
+                = (RSString.newRsString
+                (
                         "Ihre Ignorieren)2Liste ist voll)1 Sie k-Onnen nur 100 Spieler darauf eintragen)3"));
         anInt1804 = 0;
-        aRSString_1810 = Class112.method1668(43, "Schrifts-=tze geladen)3");
+        aRSString_1810 = RSString.newRsString("Schrifts-=tze geladen)3");
         aClass113_1803 = new Class113(512);
     }
 }

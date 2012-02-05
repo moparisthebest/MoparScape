@@ -15,7 +15,7 @@ public class Class68_Sub20_Sub14 extends Class68_Sub20 {
     public static int anInt4378;
     public int anInt4379;
     public Class113[] aClass113Array4380;
-    public static RSString aRSString_4381 = Class112.method1668(43, "Type");
+    public static RSString aRSString_4381 = RSString.newRsString("Type");
     public static int anInt4382;
     public static RSString aRSString_4383;
     public static int anInt4384;
@@ -38,7 +38,7 @@ public class Class68_Sub20_Sub14 extends Class68_Sub20 {
     static {
         aRSString_4376 = aRSString_4381;
         aClass98_4372 = new Class98(30);
-        aRSString_4383 = Class112.method1668(43, "Please remove ");
+        aRSString_4383 = RSString.newRsString("Please remove ");
         aRSString_4386 = aRSString_4383;
         aRSString_4387 = aRSString_4383;
         anIntArray4385 = new int[128];

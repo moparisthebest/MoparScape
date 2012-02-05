@@ -9,7 +9,7 @@ public class Class68_Sub13_Sub6 extends Class68_Sub13 {
     public static RSString aRSString_3526;
     public static int anInt3527;
     public static RSString aRSString_3528;
-    public static RSString aRSString_3529 = Class112.method1668(43, "Feb");
+    public static RSString aRSString_3529 = RSString.newRsString("Feb");
     public static RSString aRSString_3530;
     public static int anInt3531;
     public static int anInt3532;
@@ -451,18 +451,18 @@ public class Class68_Sub13_Sub6 extends Class68_Sub13 {
     }
 
     static {
-        aRSString_3528 = Class112.method1668(43, "Dec");
-        aRSString_3526 = Class112.method1668(43, "Sep");
-        aRSString_3537 = Class112.method1668(43, "Nov");
-        aRSString_3534 = Class112.method1668(43, "May");
-        aRSString_3533 = Class112.method1668(43, "Oct");
-        aRSString_3538 = Class112.method1668(43, "Jan");
-        aRSString_3543 = Class112.method1668(43, "Jun");
-        aRSString_3539 = Class112.method1668(43, "Apr");
+        aRSString_3528 = RSString.newRsString("Dec");
+        aRSString_3526 = RSString.newRsString("Sep");
+        aRSString_3537 = RSString.newRsString("Nov");
+        aRSString_3534 = RSString.newRsString("May");
+        aRSString_3533 = RSString.newRsString("Oct");
+        aRSString_3538 = RSString.newRsString("Jan");
+        aRSString_3543 = RSString.newRsString("Jun");
+        aRSString_3539 = RSString.newRsString("Apr");
         anInt3532 = 0;
-        aRSString_3541 = Class112.method1668(43, "Jul");
-        aRSString_3530 = Class112.method1668(43, "Aug");
-        aRSString_3536 = Class112.method1668(43, "Mar");
+        aRSString_3541 = RSString.newRsString("Jul");
+        aRSString_3530 = RSString.newRsString("Aug");
+        aRSString_3536 = RSString.newRsString("Mar");
         aRSStringArray3524
                 = new RSString[]{aRSString_3538, aRSString_3529, aRSString_3536,
                 aRSString_3539, aRSString_3534, aRSString_3543,

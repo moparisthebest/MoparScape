@@ -17,7 +17,7 @@ public class RSString implements Interface3 {
     public static int anInt2266;
     public static int anInt2267;
     public byte[] bytes;
-    public static RSString aRSString_2269 = Class112.method1668(43, "Loading wordpack )2 ");
+    public static RSString aRSString_2269 = newRsString("Loading wordpack )2 ");
     public static int anInt2270;
     public static int anInt2271;
     public static int anInt2272;
@@ -75,6 +75,31 @@ public class RSString implements Interface3 {
     public static int anInt2324;
     public static int anInt2325;
     /*synthetic*/ public static Class aClass2326;
+
+    public static RSString newRsString(String string) {
+        byte[] is = string.getBytes();
+        Class112.anInt1885++;
+        int i_0_ = is.length;
+        RSString rsString = new RSString();
+        rsString.bytes = new byte[i_0_];
+        int i_1_ = 0;
+        while (i_0_ > i_1_) {
+            int i_2_ = is[i_1_++] & 0xff;
+            if (i_2_ > 45 || i_2_ < 40) {
+                if ((i_2_ ^ 0xffffffff) != -1)
+                    rsString.bytes[rsString.anInt2293++]
+                            = (byte) i_2_;
+            } else {
+                if ((i_1_ ^ 0xffffffff) <= (i_0_ ^ 0xffffffff))
+                    break;
+                int i_3_ = 0xff & is[i_1_++];
+                rsString.bytes[rsString.anInt2293++]
+                        = (byte) (i_3_ + (-48 + (i_2_ + -40) * 43));
+            }
+        }
+        rsString.method1587(true);
+        return rsString.method1622();
+    }
 
     public RSString method1572(int i, int i_0_, int i_1_,
                                RSString class100_2_) {
@@ -898,12 +923,9 @@ public class RSString implements Interface3 {
         return Class23.method379(25732, string_97_);
     }
 
-    public int method1611(int i, int i_98_, int i_99_, int i_100_, byte[] is) {
+    public int method1611(int i, int i_99_, int i_100_, byte[] is) {
         anInt2313++;
         Class39.method465(bytes, i_100_, is, i, i_99_ + -i_100_);
-        if (i_98_ != 255) {
-            method1603(-96);
-        }
         return -i_100_ + i_99_;
     }
 
@@ -942,7 +964,7 @@ public class RSString implements Interface3 {
             return is_103_;
         }
         byte[] is_104_ = new byte[i_101_];
-        class68_sub14.method938(0, 0, i_101_, is_104_);
+        class68_sub14.readBytes(0, 0, i_101_, is_104_);
         return is_104_;
     }
 
@@ -1146,7 +1168,7 @@ public class RSString implements Interface3 {
         return method1581(10, false);
     }
 
-    public RSString method1622(int i) {
+    public RSString method1622() {
         long l = method1580(-50);
         anInt2298++;
         synchronized (aClass2326 != null ? aClass2326
@@ -1164,9 +1186,6 @@ public class RSString implements Interface3 {
             }
             Class68_Sub5 class68_sub5 = new Class68_Sub5();
             class68_sub5.aRSString_2830 = this;
-            if (i != 4096) {
-                return null;
-            }
             aBoolean2265 = false;
             Stream.aClass113_3009.method1677((byte) -66, class68_sub5,
                     l);
@@ -1183,12 +1202,11 @@ public class RSString implements Interface3 {
         }
     }
 
-
     static {
         aBoolean2262 = true;
         aBoolean2279 = false;
-        aRSString_2305 = Class112.method1668(43, "<)4col>");
-        aRSString_2297 = Class112.method1668(43, "scape main");
+        aRSString_2305 = newRsString("<)4col>");
+        aRSString_2297 = newRsString("scape main");
         aRSString_2317 = aRSString_2269;
     }
 }

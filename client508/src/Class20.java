@@ -11,7 +11,7 @@ public class Class20 {
     public static RSString aRSString_401;
     public int anInt402;
     public static int anInt403;
-    public static RSString aRSString_404 = Class112.method1668(43, "Select");
+    public static RSString aRSString_404 = RSString.newRsString("Select");
     public byte[] aByteArray405;
     public static int anInt406;
     public byte[] aByteArray407;
@@ -663,9 +663,9 @@ public class Class20 {
     static {
         aRSString_401 = aRSString_404;
         anInt403 = 0;
-        aRSString_413 = Class112.method1668(43, "runes");
+        aRSString_413 = RSString.newRsString("runes");
         anInt412 = 0;
-        aRSString_421 = Class112.method1668(43, "cyan:");
+        aRSString_421 = RSString.newRsString("cyan:");
         aRSString_400 = aRSString_421;
         aRSString_399 = aRSString_421;
     }

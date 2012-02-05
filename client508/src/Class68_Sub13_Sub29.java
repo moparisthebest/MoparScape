@@ -8,10 +8,10 @@ public class Class68_Sub13_Sub29 extends Class68_Sub13 {
     public static RSString aRSString_3932;
     public static int anInt3933;
     public static RSString aRSString_3934
-            = Class112.method1668(43, "<col=00ff80>");
+            = RSString.newRsString("<col=00ff80>");
     public static int[] anIntArray3935;
     public static RSString aRSString_3936
-            = Class112.method1668(43, "mapfunction");
+            = RSString.newRsString("mapfunction");
     public int anInt3937 = 4;
     public static int anInt3938;
     public static RSString aRSString_3939;
@@ -127,8 +127,8 @@ public class Class68_Sub13_Sub29 extends Class68_Sub13 {
     }
 
     static {
-        aRSString_3932 = Class112.method1668(43, "Loaded fonts");
-        aRSString_3930 = Class112.method1668(43, "Loaded wordpack");
+        aRSString_3932 = RSString.newRsString("Loaded fonts");
+        aRSString_3930 = RSString.newRsString("Loaded wordpack");
         aRSString_3939 = aRSString_3930;
         aRSString_3940 = aRSString_3932;
         aBooleanArray3941 = new boolean[200];

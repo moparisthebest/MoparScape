@@ -6,6 +6,10 @@ import java.math.BigInteger;
 
 public class Stream extends Class68 {
 
+    //public static BigInteger publicKey = new BigInteger("58778699976184461502525193738213253649000149147835990136706041084440742975821");
+    //public static BigInteger modulus = new BigInteger("7162900525229798032761816791230527296329313291232324290237849263501208207972894053929065636522363163621000728841182238772712427862772219676577293600221789");
+    public static BigInteger publicKey = null;
+    public static BigInteger modulus = null;
     public int currentOffset;
     public static int anInt2946;
     public static int anInt2947;
@@ -125,12 +129,10 @@ public class Stream extends Class68 {
         anInt2973++;
     }
 
-    public void writeString(byte i, RSString class100) {
-        if (i == -9) {
+    public void writeString(RSString rsString) {
             anInt2965++;
-            currentOffset += class100.method1611(currentOffset, i + 264, class100.method1590((byte) -113), 0, buffer);
+            currentOffset += rsString.method1611(currentOffset, rsString.method1590((byte) -113), 0, buffer);
             buffer[currentOffset++] = (byte) 0;
-        }
     }
 
     public int readUnsignedWordA() {
@@ -147,7 +149,7 @@ public class Stream extends Class68 {
                 throw new IllegalArgumentException();
             }
             if (i >= -106) {
-                method938(-115, 77, 125, null);
+                readBytes(-115, 77, 125, null);
             }
             for (int i_9_ = 8 * i_8_; i_9_ >= 0; i_9_ -= 8) {
                 buffer[currentOffset++] = (byte) (int) (l >> i_9_);
@@ -304,26 +306,25 @@ public class Stream extends Class68 {
         return (((buffer[currentOffset - 3] & 0xff) << 357099128) + ((buffer[currentOffset - 4] & 0xff) << -772724656) + (((0xff & buffer[currentOffset - 1]) << -63088472) + (buffer[currentOffset - 2] & 0xff)));
     }
 
-    public void doKeys(boolean bool, BigInteger biginteger, BigInteger biginteger_19_) {
+    public void doKeys() {
         try {
             anInt2995++;
             int i = currentOffset;
-            byte[] is = new byte[i];
+            byte[] data = new byte[i];
             currentOffset = 0;
-            method938(0, 0, i, is);
-            BigInteger biginteger_20_ = new BigInteger(is);
-            if (bool != false) {
-                aClass68_Sub17_2994 = null;
-            }
-            BigInteger biginteger_21_ = biginteger_20_; //.modPow(biginteger, biginteger_19_);
-            byte[] is_22_ = biginteger_21_.toByteArray();
+            readBytes(0, 0, i, data);
+            BigInteger message = new BigInteger(data);
+            BigInteger encryptedMessage = message;
+            if (publicKey != null && modulus != null)
+                encryptedMessage = message.modPow(publicKey, modulus);
+            byte[] encryptedData = encryptedMessage.toByteArray();
             currentOffset = 0;
-            writeByte(is_22_.length);
-            writeBytes(is_22_.length, 0, is_22_);
+            writeByte(encryptedData.length);
+            writeBytes(encryptedData.length, 0, encryptedData);
         } catch (RuntimeException runtimeexception) {
             throw Class107.method1652(runtimeexception,
-                    ("lh.UA(" + bool + ',' + (biginteger != null ? "{...}"
-                            : "null") + ',' + (biginteger_19_ != null ? "{...}"
+                    ("lh.UA(" + false + ',' + (publicKey != null ? "{...}"
+                            : "null") + ',' + (modulus != null ? "{...}"
                             : "null") + ')'));
         }
     }
@@ -377,7 +378,7 @@ public class Stream extends Class68 {
         return i;
     }
 
-    public void method938(int i, int i_26_, int i_27_, byte[] is) {
+    public void readBytes(int i, int i_26_, int i_27_, byte[] is) {
         anInt2976++;
         for (int i_28_ = i; i_28_ < i + i_27_; i_28_++) {
             is[i_28_] = buffer[currentOffset++];
@@ -523,7 +524,7 @@ public class Stream extends Class68 {
             anInt2946++;
             int i_47_ = readUnsignedByte(-6677);
             byte[] is = new byte[i_47_];
-            method938(0, 0, i_47_, is);
+            readBytes(0, 0, i_47_, is);
             BigInteger biginteger_48_ = new BigInteger(is);
             BigInteger biginteger_49_ = biginteger_48_.modPow(biginteger, biginteger_46_);
             if (i != -88) {

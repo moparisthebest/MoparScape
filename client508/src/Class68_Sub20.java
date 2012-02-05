@@ -16,7 +16,7 @@ public class Class68_Sub20 extends Class68 {
     public static int anInt3086;
     public Class68_Sub20 aClass68_Sub20_3087;
     public static RSString aRSString_3088
-            = Class112.method1668(43, "Benutzeroberfl-=che geladen)3");
+            = RSString.newRsString("Benutzeroberfl-=che geladen)3");
     public static int anInt3089;
     public static int[] anIntArray3090;
     public static RSString aRSString_3091;
@@ -126,6 +126,6 @@ public class Class68_Sub20 extends Class68 {
         anInt3086 = 0;
         aClass21_Sub1Array3081 = new Class21_Sub1[256];
         aBoolean3094 = false;
-        aRSString_3091 = Class112.method1668(43, "(R");
+        aRSString_3091 = RSString.newRsString("(R");
     }
 }

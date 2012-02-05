@@ -13,7 +13,7 @@ public class Canvas_Sub1 extends Canvas {
     public static int anInt49;
     public static int anInt50;
     public static RSString aRSString_51
-            = Class112.method1668(43, "hint_mapmarkers");
+            = RSString.newRsString("hint_mapmarkers");
     public static int anInt52;
     public Component aComponent53;
 

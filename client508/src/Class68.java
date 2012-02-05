@@ -9,7 +9,7 @@ public class Class68 {
     public static int anInt1221;
     public static Class69[] aClass69Array1222 = new Class69[5000];
     public static RSString aRSString_1223
-            = Class112.method1668(43, "<col=ffffff>");
+            = RSString.newRsString("<col=ffffff>");
     public static int anInt1224;
     public static byte aByte1225;
     public static int anInt1226;
@@ -118,6 +118,6 @@ public class Class68 {
             anIntArray1219[i] = i_14_;
         }
         anInt1232 = 0;
-        aRSString_1230 = Class112.method1668(43, "Lade)3)3)3");
+        aRSString_1230 = RSString.newRsString("Lade)3)3)3");
     }
 }

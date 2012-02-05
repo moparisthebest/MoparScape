@@ -59,6 +59,6 @@ public class Class54 {
     }
 
     static {
-        aRSString_1030 = Class112.method1668(43, "k");
+        aRSString_1030 = RSString.newRsString("k");
     }
 }

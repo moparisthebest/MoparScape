@@ -10,7 +10,7 @@ public class Class68_Sub13_Sub26_Sub1 extends Class68_Sub13_Sub26 {
     public static int anInt4604;
     public static RSString aRSString_4605;
     public static RSString aRSString_4606
-            = Class112.method1668(43, "Created gameworld");
+            = RSString.newRsString("Created gameworld");
     public static Class45 aClass45_4607;
     public static RSString aRSString_4608;
     public static int[] anIntArray4609 = {0, 1, 2, 3};
@@ -116,11 +116,11 @@ public class Class68_Sub13_Sub26_Sub1 extends Class68_Sub13_Sub26 {
     }
 
     static {
-        aRSString_4608 = Class112.method1668(43, "Choose Option");
+        aRSString_4608 = RSString.newRsString("Choose Option");
         aClass45_4607 = null;
-        aRSString_4613 = Class112.method1668(43, "Ablegen");
+        aRSString_4613 = RSString.newRsString("Ablegen");
         aRSString_4605 = aRSString_4608;
-        aRSString_4602 = Class112.method1668(43, ":clanreq:");
+        aRSString_4602 = RSString.newRsString(":clanreq:");
         aRSString_4603 = aRSString_4606;
     }
 }

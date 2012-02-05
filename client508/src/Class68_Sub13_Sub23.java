@@ -6,14 +6,14 @@ public class Class68_Sub13_Sub23 extends Class68_Sub13 {
     public static int anInt3816;
     public static int anInt3817;
     public static int anInt3818;
-    public static RSString aRSString_3819 = Class112.method1668(43, "gr-Un:");
+    public static RSString aRSString_3819 = RSString.newRsString("gr-Un:");
     public int anInt3820 = 1;
     public static Class68_Sub20_Sub10[] aClass68_Sub20_Sub10Array3821;
     public int anInt3822 = 0;
     public static int anInt3823;
     public static int anInt3824;
     public static Class92[] aClass92Array3825;
-    public static RSString aRSString_3826 = Class112.method1668(43, "Stufe)2");
+    public static RSString aRSString_3826 = RSString.newRsString("Stufe)2");
     public static int anInt3827;
     public int anInt3828 = 0;
 

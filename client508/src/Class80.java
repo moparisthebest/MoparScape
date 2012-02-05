@@ -38,7 +38,7 @@ public class Class80 {
     public boolean aBoolean1438;
     public int anInt1439;
     public int anInt1440;
-    public static RSString aRSString_1441 = Class112.method1668(43, "null");
+    public static RSString aRSString_1441 = RSString.newRsString("null");
     public short[] aShortArray1442;
     public short[] aShortArray1443;
     public int anInt1444;
@@ -53,7 +53,7 @@ public class Class80 {
     public byte aByte1453;
     public int[] anIntArray1454;
     public static RSString aRSString_1455
-            = Class112.method1668(43, "Hierhin gehen");
+            = RSString.newRsString("Hierhin gehen");
     public int anInt1456;
     public int[][] anIntArrayArray1457;
     public int anInt1458;

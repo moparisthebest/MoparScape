@@ -5,9 +5,9 @@
 public class Class101 {
     public static int anInt1737;
     public static RSString aRSString_1738
-            = Class112.method1668(43, "blinken2:");
+            = RSString.newRsString("blinken2:");
     public static int anInt1739;
-    public static RSString aRSString_1740 = Class112.method1668(43, "weiss:");
+    public static RSString aRSString_1740 = RSString.newRsString("weiss:");
     public static int anInt1741;
     public static RSString aRSString_1742;
     public static RSString aRSString_1743;
@@ -67,8 +67,8 @@ public class Class101 {
     }
 
     static {
-        aRSString_1742 = Class112.method1668(43, "loc");
+        aRSString_1742 = RSString.newRsString("loc");
         anInt1745 = -1;
-        aRSString_1743 = Class112.method1668(43, "<br>(X100(U(Y");
+        aRSString_1743 = RSString.newRsString("<br>(X100(U(Y");
     }
 }

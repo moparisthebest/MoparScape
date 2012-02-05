@@ -18,7 +18,7 @@ public class Class124 {
     public static int anInt2139;
     public long aLong2140;
     public static RSString aRSString_2141
-            = Class112.method1668(43, "sl_flags");
+            = RSString.newRsString("sl_flags");
     public int anInt2142 = 0;
     public static RSString aRSString_2143;
     public static int anInt2144;
@@ -27,7 +27,7 @@ public class Class124 {
     public long aLong2147 = -1L;
     public static RSString aRSString_2148;
     public static RSString aRSString_2149
-            = Class112.method1668(43, "Please wait)3)3)3");
+            = RSString.newRsString("Please wait)3)3)3");
     public byte[] aByteArray2150;
     public static int anInt2151;
     public long aLong2152;
@@ -449,11 +449,11 @@ public class Class124 {
                 {0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1},
                 {0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1,
                         1}};
-        aRSString_2146 = Class112.method1668(43, "glow2:");
+        aRSString_2146 = RSString.newRsString("glow2:");
         aRSString_2143 = aRSString_2146;
-        aRSString_2154 = Class112.method1668(43, "(U0a )2 in: ");
+        aRSString_2154 = RSString.newRsString("(U0a )2 in: ");
         aBoolean2159 = false;
-        aRSString_2148 = Class112.method1668(43, "gelb:");
+        aRSString_2148 = RSString.newRsString("gelb:");
         aRSString_2136 = aRSString_2149;
         aRSString_2163 = aRSString_2146;
         anInt2164 = 0;

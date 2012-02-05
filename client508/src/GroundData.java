@@ -4,7 +4,7 @@
 
 public class GroundData {
     public static RSString aRSString_656
-            = Class112.method1668(43, "Bitte warten Sie)3)3)3");
+            = RSString.newRsString("Bitte warten Sie)3)3)3");
     public static int anInt657;
     public int anInt658;
     public static Class21_Sub1 aClass21_Sub1_659;

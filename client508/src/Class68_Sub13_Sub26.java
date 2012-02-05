@@ -15,7 +15,7 @@ public class Class68_Sub13_Sub26 extends Class68_Sub13 {
     public static int anInt3876 = 2;
     public static int anInt3877;
     public static RSString aRSString_3878
-            = Class112.method1668(43, "gleiten:");
+            = RSString.newRsString("gleiten:");
     public int anInt3879 = -1;
     public static int anInt3880 = 0;
     public int anInt3881;

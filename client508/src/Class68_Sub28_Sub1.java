@@ -2045,8 +2045,8 @@ public class Class68_Sub28_Sub1 extends Class68_Sub28 {
                                                                                                             RSString class100_198_ = Class68_Sub15.stringArray[i_89_ + 1];
                                                                                                             Class21renamed.stream.createFrame(161);
                                                                                                             Class21renamed.stream.writeByte(Class13_Sub1.method250(class100, -125) + (Class13_Sub1.method250(class100_198_, -110) + 1));
-                                                                                                            Class21renamed.stream.writeString((byte) -9, class100);
-                                                                                                            Class21renamed.stream.writeString((byte) -9, class100_198_);
+                                                                                                            Class21renamed.stream.writeString(class100);
+                                                                                                            Class21renamed.stream.writeString(class100_198_);
                                                                                                             Class21renamed.stream.writeByte(i_197_);
                                                                                                             break;
                                                                                                         }
@@ -3857,7 +3857,7 @@ public class Class68_Sub28_Sub1 extends Class68_Sub28 {
                                                                     Class21renamed.stream.createFrame(127);
                                                                     Class21renamed.stream.writeByte(
                                                                             1 + class100.method1590((byte) -99));
-                                                                    Class21renamed.stream.writeString((byte) -9,
+                                                                    Class21renamed.stream.writeString(
                                                                             class100);
                                                                     break;
                                                                 }
@@ -4566,7 +4566,7 @@ public class Class68_Sub28_Sub1 extends Class68_Sub28 {
 
     static {
         aShortArray4471 = new short[500];
-        aRSString_4480 = Class112.method1668(43, "Loading config )2 ");
+        aRSString_4480 = RSString.newRsString("Loading config )2 ");
         aBoolean4521 = true;
         aRSString_4509 = aRSString_4480;
     }

@@ -5,7 +5,7 @@
 public abstract class Class105 {
     public static Class16 aClass16_1790 = new Class16();
     public static int anInt1791;
-    public static RSString aRSString_1792 = Class112.method1668(43, ": ");
+    public static RSString aRSString_1792 = RSString.newRsString(": ");
     public static short[] aShortArray1793;
     public static int anInt1794;
     public static int[] anIntArray1795 = new int[100];

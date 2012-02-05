@@ -6,7 +6,7 @@ public class Class68_Sub13_Sub22 extends Class68_Sub13 {
     public static int[] anIntArray3805;
     public static short aShort3806 = 32767;
     public int anInt3807 = 1;
-    public static RSString aRSString_3808 = Class112.method1668(43, " x ");
+    public static RSString aRSString_3808 = RSString.newRsString(" x ");
     public static int anInt3809;
     public static int anInt3810;
     public static Class68_Sub20_Sub15 aClass68_Sub20_Sub15_3811;

@@ -95,7 +95,7 @@ public class Class68_Sub13_Sub2 extends Class68_Sub13 {
     }
 
     static {
-        aRSString_3458 = Class112.method1668(43, "leuchten1:");
+        aRSString_3458 = RSString.newRsString("leuchten1:");
         aClass98_3459 = new Class98(260);
     }
 }

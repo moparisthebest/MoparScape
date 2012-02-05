@@ -3,7 +3,7 @@
  */
 
 public class Class122 {
-    public static RSString aRSString_2111 = Class112.method1668(43, "Drop");
+    public static RSString aRSString_2111 = RSString.newRsString("Drop");
     public static RSString aRSString_2112;
     public static long[] aLongArray2113;
     public static int anInt2114;
@@ -48,6 +48,6 @@ public class Class122 {
         aRSString_2112 = aRSString_2111;
         aLongArray2113 = new long[32];
         aRSString_2118
-                = Class112.method1668(43, "Starte 3D)2Softwarebibliothek)3");
+                = RSString.newRsString("Starte 3D)2Softwarebibliothek)3");
     }
 }

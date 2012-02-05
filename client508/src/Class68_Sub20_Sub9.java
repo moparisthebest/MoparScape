@@ -6,7 +6,7 @@ public class Class68_Sub20_Sub9 extends Class68_Sub20 {
     public static int anInt4291;
     public static int anInt4292;
     public int anInt4293;
-    public static RSString aRSString_4294 = Class112.method1668(43, ":");
+    public static RSString aRSString_4294 = RSString.newRsString(":");
     public static int anInt4295;
     public static int anInt4296;
     public static int anInt4297;

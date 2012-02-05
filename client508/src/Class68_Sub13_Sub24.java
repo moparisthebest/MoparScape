@@ -249,10 +249,10 @@ public class Class68_Sub13_Sub24 extends Class68_Sub13 {
     }
 
     static {
-        aRSString_3838 = Class112.method1668(43, "Take");
-        aRSString_3839 = Class112.method1668(43, "overlay2");
+        aRSString_3838 = RSString.newRsString("Take");
+        aRSString_3839 = RSString.newRsString("overlay2");
         anInt3833 = 0;
-        aRSString_3847 = Class112.method1668(43, "Freie Welt");
+        aRSString_3847 = RSString.newRsString("Freie Welt");
         aRSString_3834 = aRSString_3838;
     }
 }

@@ -8,8 +8,8 @@ public class Class57 {
     public static int anInt1070;
     public long aLong1071;
     public static RSString aRSString_1072
-            = (Class112.method1668
-            (43,
+            = (RSString.newRsString
+            (
                     "Sie k-Onnen sich selbst nicht selbst auf Ihre Ignorieren)2Liste setzen(Q"));
     public Animable aClass1_1073;
     public int anInt1074;
@@ -26,7 +26,7 @@ public class Class57 {
     public static int anInt1084;
     public int anInt1085;
     public static RSString aRSString_1086
-            = Class112.method1668(43, "Members object");
+            = RSString.newRsString("Members object");
 
     public static boolean method573(int i, int i_0_) {
         if (i != 140)

@@ -295,7 +295,7 @@ public class Class68_Sub13_Sub4 extends Class68_Sub13 {
     static {
         aClass1_Sub6_Sub2Array3483 = new Class1_Sub6_Sub2[2048];
         anInt3497 = 0;
-        aRSString_3492 = Class112.method1668(43, "<img=1>");
+        aRSString_3492 = RSString.newRsString("<img=1>");
         anInt3501 = 2;
         anIntArrayArrayArray3503 = new int[2][][];
     }

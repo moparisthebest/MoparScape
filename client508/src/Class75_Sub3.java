@@ -3,13 +3,13 @@
  */
 
 public class Class75_Sub3 extends Class75 {
-    public static RSString aRSString_3318 = Class112.method1668(43, "welle2:");
+    public static RSString aRSString_3318 = RSString.newRsString("welle2:");
     public static int anInt3319;
     public static RSString aRSString_3320
-            = Class112.method1668(43, "; Expires=");
+            = RSString.newRsString("; Expires=");
     public static RSString aRSString_3321;
     public static RSString aRSString_3322
-            = Class112.method1668(43, "; version=1; path=)4; domain=");
+            = RSString.newRsString("; version=1; path=)4; domain=");
     public static int anInt3323;
     public static RSString aRSString_3324;
     public static int anInt3325;
@@ -17,7 +17,7 @@ public class Class75_Sub3 extends Class75 {
     public static int anInt3327 = -8 + (int) (Math.random() * 17.0);
     public static int anInt3328;
     public static RSString aRSString_3329
-            = Class112.method1668(43, "Loading fonts )2 ");
+            = RSString.newRsString("Loading fonts )2 ");
     public static int anInt3330 = 0;
 
     public static void method1399(int i, Class68 class68, Class68 class68_0_) {
@@ -57,7 +57,7 @@ public class Class75_Sub3 extends Class75 {
     static {
         anInt3328 = 0;
         aRSString_3324 = aRSString_3329;
-        aRSString_3326 = Class112.method1668(43, "Continue");
+        aRSString_3326 = RSString.newRsString("Continue");
         aRSString_3321 = aRSString_3326;
     }
 }

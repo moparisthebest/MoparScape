@@ -6,7 +6,7 @@ public class Class68_Sub24 extends Class68 {
     public static RSString aRSString_3152;
     public static int anInt3153 = 0;
     public static RSString aRSString_3154
-            = Class112.method1668(43, "Loading textures )2 ");
+            = RSString.newRsString("Loading textures )2 ");
     public static int anInt3155;
     public static int anInt3156;
     public static int anInt3157;
@@ -229,7 +229,7 @@ public class Class68_Sub24 extends Class68 {
 
     static {
         aRSString_3152 = aRSString_3154;
-        aRSString_3159 = Class112.method1668(43, "http:)4)4");
-        aRSString_3162 = Class112.method1668(43, "settings");
+        aRSString_3159 = RSString.newRsString("http:)4)4");
+        aRSString_3162 = RSString.newRsString("settings");
     }
 }

@@ -37,7 +37,7 @@ public class Class18 {
     public static int anInt317;
     public static int anInt318;
     public int[] anIntArray319;
-    public static RSString aRSString_320 = Class112.method1668(43, "M");
+    public static RSString aRSString_320 = RSString.newRsString("M");
     public int[][] anIntArrayArray321;
     public int[] anIntArray322;
     public byte[] aByteArray323;

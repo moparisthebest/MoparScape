@@ -11,7 +11,7 @@ public class Class84 implements Runnable {
     public static RSString aRSString_1536;
     public static Class21renamed aClass21_1537;
     public static RSString aRSString_1538
-            = Class112.method1668(43, " loggt sich ein)3");
+            = RSString.newRsString(" loggt sich ein)3");
     public static RSString aRSString_1539;
     public static int anInt1540;
     public static RSString aRSString_1541;
@@ -113,9 +113,9 @@ public class Class84 implements Runnable {
 
     static {
         anInt1535 = -1;
-        aRSString_1541 = Class112.method1668(43, "Unable to find ");
+        aRSString_1541 = RSString.newRsString("Unable to find ");
         anInt1540 = 0;
-        aRSString_1539 = Class112.method1668(43, "Versteckt");
+        aRSString_1539 = RSString.newRsString("Versteckt");
         aRSString_1536 = aRSString_1541;
     }
 }

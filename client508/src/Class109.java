@@ -4,11 +4,11 @@
 
 public class Class109 {
     public static RSString aRSString_1834
-            = Class112.method1668(43, "<col=ffffff> )4 ");
+            = RSString.newRsString("<col=ffffff> )4 ");
     public int[] anIntArray1835;
     public static short[] aShortArray1836;
     public static RSString aRSString_1837
-            = Class112.method1668(43, "headicons_prayer");
+            = RSString.newRsString("headicons_prayer");
     public static boolean aBoolean1838;
     public static int anInt1839 = 1;
     public static Class68_Sub20_Sub10[] aClass68_Sub20_Sub10Array1840;

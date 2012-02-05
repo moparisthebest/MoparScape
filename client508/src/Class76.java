@@ -8,7 +8,7 @@ public class Class76 {
     public static RSString aRSString_1347;
     public static int anInt1348;
     public int anInt1349;
-    public static RSString aRSString_1350 = Class112.method1668(43, "Use");
+    public static RSString aRSString_1350 = RSString.newRsString("Use");
     public static int anInt1351;
     public int anInt1352;
     public static int anInt1353;

@@ -379,7 +379,7 @@ public class Class68_Sub13_Sub16 extends Class68_Sub13 {
     }
 
     static {
-        aRSString_3694 = Class112.method1668(43, "cookiehost");
+        aRSString_3694 = RSString.newRsString("cookiehost");
         aLogin_3702 = new Login(128);
         aBoolean3709 = false;
     }

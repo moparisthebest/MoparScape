@@ -15,7 +15,7 @@ public class PacketStream extends Stream {
     public static int anInt4119;
     public static RSString aRSString_4120;
     public static RSString aRSString_4121
-            = Class112.method1668(43, "<col=ffff00>");
+            = RSString.newRsString("<col=ffff00>");
     public static int anInt4122;
     public static int anInt4123;
     public static int anInt4124;
@@ -188,10 +188,10 @@ public class PacketStream extends Stream {
         aClass1_Sub4Array4117 = new Class1_Sub4[4];
         anIntArray4110 = new int[2048];
         aRSString_4120
-                = Class112.method1668(43, "Ladevorgang )2 bitte warten Sie)3");
+                = RSString.newRsString("Ladevorgang )2 bitte warten Sie)3");
         aBoolean4127 = false;
         anIntArray4132 = new int[]{76, 8, 137, 4, 0, 1, 38, 2, 19};
         aClass98_4118 = new Class98(64);
-        aRSString_4134 = Class112.method1668(43, "sl_arrows");
+        aRSString_4134 = RSString.newRsString("sl_arrows");
     }
 }

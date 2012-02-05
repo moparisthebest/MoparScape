@@ -97,9 +97,9 @@ public class Class34 {
 
     static {
         anIntArray596 = new int[50];
-        aRSString_595 = Class112.method1668(43, "::noclip");
+        aRSString_595 = RSString.newRsString("::noclip");
         aClass23Array594 = new Class23[4];
-        aRSString_600 = Class112.method1668(43, "Cancel");
+        aRSString_600 = RSString.newRsString("Cancel");
         aRSString_598 = aRSString_600;
     }
 }

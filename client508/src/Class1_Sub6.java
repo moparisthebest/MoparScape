@@ -25,7 +25,7 @@ public abstract class Class1_Sub6 extends Animable {
     public static int anInt2536;
     public int anInt2537;
     public static RSString aRSString_2538
-            = Class112.method1668(43, "Select a world");
+            = RSString.newRsString("Select a world");
     public int anInt2539 = 0;
     public int anInt2540;
     public int anInt2541;
@@ -72,7 +72,7 @@ public abstract class Class1_Sub6 extends Animable {
     public int anInt2582;
     public boolean aBoolean2583;
     public static RSString aRSString_2584
-            = Class112.method1668(43, "hitbar_default");
+            = RSString.newRsString("hitbar_default");
     public static long aLong2585;
     public int anInt2586;
     public static int anInt2587;

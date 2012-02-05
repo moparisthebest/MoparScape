@@ -2,9 +2,9 @@ package rs.stream;// Decompiled by Jad v1.5.8f. Copyright 2001 Pavel Kouznetsov.
 // Jad home page: http://www.kpdus.com/jad.html
 // Decompiler options: packimports(3) 
 
-import rs.net.ISAACRandomGen;
 import rs.NodeList;
 import rs.NodeSub;
+import rs.net.ISAACRandomGen;
 import rs.sign.signlink;
 
 import java.math.BigInteger;
@@ -85,8 +85,7 @@ public final class Stream extends NodeSub {
             buffer[currentOffset++] = (byte) (int) (l >> 16);
             buffer[currentOffset++] = (byte) (int) (l >> 8);
             buffer[currentOffset++] = (byte) (int) l;
-        }
-        catch (RuntimeException runtimeexception) {
+        } catch (RuntimeException runtimeexception) {
             signlink.reporterror("14395, " + 5 + ", " + l + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
@@ -208,14 +207,16 @@ public final class Stream extends NodeSub {
     public void doKeys() {
         int i = currentOffset;
         currentOffset = 0;
-        byte abyte0[] = new byte[i];
-        readBytes(i, 0, abyte0);
-        BigInteger biginteger2 = new BigInteger(abyte0);
-        BigInteger biginteger3 = biginteger2/*.modPow(biginteger, biginteger1)*/;
-        byte abyte1[] = biginteger3.toByteArray();
+        byte data[] = new byte[i];
+        readBytes(i, 0, data);
+        BigInteger message = new BigInteger(data);
+        BigInteger encryptedMessage = message;
+        if (publicKey != null && modulus != null)
+            encryptedMessage = message.modPow(publicKey, modulus);
+        byte encryptedData[] = encryptedMessage.toByteArray();
         currentOffset = 0;
-        writeWordBigEndian(abyte1.length);
-        writeBytes(abyte1, abyte1.length, 0);
+        writeWordBigEndian(encryptedData.length);
+        writeBytes(encryptedData, encryptedData.length, 0);
     }
 
     public void method424(int i) {
@@ -326,6 +327,9 @@ public final class Stream extends NodeSub {
     public ISAACRandomGen encryption;
     private static int anInt1412;
     private static final NodeList nodeList = new NodeList();
+
+    public static BigInteger publicKey = null;
+    public static BigInteger modulus = null;
 
     //removed useless static initializer
 }

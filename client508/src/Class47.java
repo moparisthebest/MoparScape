@@ -5,14 +5,14 @@
 public class Class47 {
     public Animable aClass1_931;
     public int anInt932;
-    public static RSString aRSString_933 = Class112.method1668(43, "Mem:");
+    public static RSString aRSString_933 = RSString.newRsString("Mem:");
     public static int anInt934;
     public static RSString aRSString_935;
     public static int anInt936;
     public int anInt937;
     public static int anInt938;
     public static RSString aRSString_939
-            = Class112.method1668(43, "Angreifen");
+            = RSString.newRsString("Angreifen");
     public static int anInt940;
     public int anInt941;
     public static int anInt942;
@@ -38,7 +38,7 @@ public class Class47 {
     static {
         anInt934 = 0;
         anInt940 = 0;
-        aRSString_935 = Class112.method1668(43, "logo");
+        aRSString_935 = RSString.newRsString("logo");
         anInt938 = 0;
         anInt942 = 0;
         anInt944 = 0;

@@ -15,7 +15,7 @@ public class Class69 {
     public Animable aClass1_1242;
     public long aLong1243 = 0L;
     public static RSString aRSString_1244
-            = Class112.method1668(43, "(Y<)4col>");
+            = RSString.newRsString("(Y<)4col>");
     public static int anInt1245;
     public static RSString aRSString_1246;
     public static int anInt1247;
@@ -91,7 +91,7 @@ public class Class69 {
         aRSString_1251 = null;
         anApplet_Sub1_1241 = null;
         anIntArray1257 = new int[]{19, 55, 38, 155, 255, 110, 137, 205, 76};
-        aRSString_1246 = Class112.method1668(43, "white:");
+        aRSString_1246 = RSString.newRsString("white:");
         aRSString_1259 = aRSString_1246;
         aRSString_1236 = aRSString_1246;
     }

@@ -25,7 +25,7 @@ public class Class72_Sub1 extends Class72
     public static int[] anIntArray3273
             = {160, 192, 80, 96, 0, 144, 80, 48, 160};
     public static RSString aRSString_3274
-            = Class112.method1668(43, " has logged out)3");
+            = RSString.newRsString(" has logged out)3");
     public static int anInt3275;
     public static Class68_Sub20_Sub1_Sub1 aClass68_Sub20_Sub1_Sub1_3276;
     public static RSString aRSString_3277;
@@ -309,10 +309,10 @@ public class Class72_Sub1 extends Class72
 
     static {
         aRSString_3272 = aRSString_3274;
-        aRSString_3287 = Class112.method1668(43, "scrollen:");
-        aRSString_3281 = Class112.method1668(43, "scroll:");
+        aRSString_3287 = RSString.newRsString("scrollen:");
+        aRSString_3281 = RSString.newRsString("scroll:");
         aRSString_3288 = aRSString_3281;
-        aRSString_3279 = Class112.method1668(43, "Allocating memory");
+        aRSString_3279 = RSString.newRsString("Allocating memory");
         aRSString_3271 = aRSString_3281;
         aRSString_3277 = aRSString_3279;
     }

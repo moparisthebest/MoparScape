@@ -12,7 +12,7 @@ public class Class68_Sub20_Sub16 extends Class68_Sub20 {
     public RSString aRSString_4412;
     public boolean aBoolean4413;
     public static RSString aRSString_4414
-            = Class112.method1668(43, " <col=00ff80>");
+            = RSString.newRsString(" <col=00ff80>");
     public static int anInt4415;
     public static int[] anIntArray4416 = new int[256];
     public static Class65 aClass65_4417;
@@ -205,7 +205,7 @@ public class Class68_Sub20_Sub16 extends Class68_Sub20 {
 
     static {
         anInt4420 = 0;
-        aRSString_4424 = Class112.method1668(43, "l");
+        aRSString_4424 = RSString.newRsString("l");
         aClass92_Sub1_4425 = null;
         anInt4418 = 0;
     }

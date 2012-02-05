@@ -9,9 +9,9 @@ public class Class32 {
     public static Class45 aClass45_563;
     public int anInt564 = 0;
     public static int anInt565 = 0;
-    public static RSString aRSString_566 = Class112.method1668(43, ")2");
+    public static RSString aRSString_566 = RSString.newRsString(")2");
     public static RSString aRSString_567
-            = Class112.method1668(43, "Lade Schrifts-=tze )2 ");
+            = RSString.newRsString("Lade Schrifts-=tze )2 ");
     public static int anInt568;
     public static RSString aRSString_569;
     public static int anInt570;
@@ -88,9 +88,9 @@ public class Class32 {
     }
 
     static {
-        aRSString_571 = Class112.method1668(43, "Loading sprites )2 ");
+        aRSString_571 = RSString.newRsString("Loading sprites )2 ");
         aRSString_562 = aRSString_571;
-        aRSString_569 = Class112.method1668(43, "sl_back");
+        aRSString_569 = RSString.newRsString("sl_back");
         anInt574 = 0;
     }
 }

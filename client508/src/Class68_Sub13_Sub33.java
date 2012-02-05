@@ -13,7 +13,7 @@ public class Class68_Sub13_Sub33 extends Class68_Sub13 {
     public static int anInt3994;
     public static int anInt3995;
     public static RSString aRSString_3996
-            = Class112.method1668(43, "Walk here");
+            = RSString.newRsString("Walk here");
     public static int anInt3997;
     public int anInt3998 = 32768;
     public static Class114 aClass114_3999;

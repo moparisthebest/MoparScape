@@ -7,7 +7,7 @@ public class Class75_Sub3_Sub1 extends Class75_Sub3 {
     public static int anInt4593;
     public static int anInt4594;
     public static int anInt4595 = 0;
-    public static RSString aRSString_4596 = Class112.method1668(43, ")3");
+    public static RSString aRSString_4596 = RSString.newRsString(")3");
     public static boolean aBoolean4597;
     public static short aShort4598 = 32767;
     public static int[] anIntArray4599;

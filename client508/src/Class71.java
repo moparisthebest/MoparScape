@@ -9,7 +9,7 @@ public class Class71 {
     public static RSString aRSString_1288;
     public static RSString aRSString_1289;
     public static RSString aRSString_1290
-            = Class112.method1668(43, "Free world");
+            = RSString.newRsString("Free world");
     public static int anInt1291;
     public static int anInt1292;
     public static int anInt1293;
@@ -193,10 +193,10 @@ public class Class71 {
     }
 
     static {
-        aRSString_1288 = Class112.method1668(43, "Fps:");
+        aRSString_1288 = RSString.newRsString("Fps:");
         aRSString_1289 = aRSString_1290;
         anInt1293 = 0;
-        aRSString_1296 = Class112.method1668(43, "_labels");
+        aRSString_1296 = RSString.newRsString("_labels");
         anInt1298 = -1;
         anIntArray1294 = new int[100];
         aShortArray1300 = new short[]{960, 957, -21568, -21571, 22464};

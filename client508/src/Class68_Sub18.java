@@ -8,7 +8,7 @@ public class Class68_Sub18 extends Class68 {
     public Class68_Sub28_Sub3 aClass68_Sub28_Sub3_3040;
     public static int anInt3041;
     public int anInt3042;
-    public static RSString aRSString_3043 = Class112.method1668(43, "Nehmen");
+    public static RSString aRSString_3043 = RSString.newRsString("Nehmen");
     public int anInt3044;
     public Class116 aClass116_3045;
     public static int anInt3046;
@@ -17,7 +17,7 @@ public class Class68_Sub18 extends Class68 {
     public Class68_Sub28_Sub3 aClass68_Sub28_Sub3_3049;
     public Class1_Sub6_Sub2 aClass1_Sub6_Sub2_3050;
     public int anInt3051;
-    public static RSString aRSString_3052 = Class112.method1668(43, ")2");
+    public static RSString aRSString_3052 = RSString.newRsString(")2");
     public int[] anIntArray3053;
     public int anInt3054;
     public static int anInt3055;
@@ -133,9 +133,9 @@ public class Class68_Sub18 extends Class68 {
     }
 
     static {
-        aRSString_3048 = Class112.method1668(43, "M");
+        aRSString_3048 = RSString.newRsString("M");
         aBoolean3058 = false;
         anInt3046 = 0;
-        aRSString_3063 = Class112.method1668(43, "Wordpack geladen)3");
+        aRSString_3063 = RSString.newRsString("Wordpack geladen)3");
     }
 }

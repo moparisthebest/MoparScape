@@ -17,7 +17,7 @@ public class Class68_Sub13_Sub37 extends Class68_Sub13 {
     public static int anInt4059;
     public byte[] aByteArray4060;
     public static RSString aRSString_4061
-            = Class112.method1668(43, "leuchten2:");
+            = RSString.newRsString("leuchten2:");
     public static int anInt4062;
     public static int anInt4063;
     public static Class98 aClass98_4064;
@@ -512,7 +512,7 @@ public class Class68_Sub13_Sub37 extends Class68_Sub13 {
         anIntArray4056 = new int[]{1, 0, 0, 0, 1, 0, 2, 1, 1, 1, 0};
         anInt4062 = 0;
         aClass98_4064 = new Class98(50);
-        aRSString_4072 = Class112.method1668(43, "::rebuild");
+        aRSString_4072 = RSString.newRsString("::rebuild");
         anIntArray4075 = new int[500];
         anInt4073 = -1;
         anInt4077 = 0;

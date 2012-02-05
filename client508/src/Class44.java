@@ -112,7 +112,7 @@ public class Class44 {
             Class21renamed.stream
                     .writeByte(-1 + class100.method1590((byte) -96));
             Class21renamed.stream
-                    .writeString((byte) -9, class100.method1615(2, true));
+                    .writeString(class100.method1615(2, true));
         }
     }
 

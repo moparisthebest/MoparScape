@@ -6,7 +6,7 @@ public class Class64 {
     public int anInt1176;
     public int anInt1177;
     public static byte[][][] aByteArrayArrayArray1178;
-    public static RSString aRSString_1179 = Class112.method1668(43, "::fpson");
+    public static RSString aRSString_1179 = RSString.newRsString("::fpson");
     public static int[] anIntArray1180;
     public Animable aClass1_1181;
     public static int anInt1182;
@@ -72,7 +72,7 @@ public class Class64 {
 
     static {
         aByteArrayArrayArray1178 = new byte[4][104][104];
-        aRSString_1188 = Class112.method1668(43, "sch-Utteln:");
+        aRSString_1188 = RSString.newRsString("sch-Utteln:");
         anInt1190 = 0;
         anInt1191 = 5063219;
     }

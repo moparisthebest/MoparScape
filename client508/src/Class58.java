@@ -14,7 +14,7 @@ public class Class58 {
     public static RSString aRSString_1095;
     public static int anInt1096;
     public static Class21_Sub1 aClass21_Sub1_1097;
-    public static RSString aRSString_1098 = Class112.method1668(43, "level)2");
+    public static RSString aRSString_1098 = RSString.newRsString("level)2");
     public Class68_Sub20_Sub8 aClass68_Sub20_Sub8_1099;
 
     /*
@@ -94,7 +94,7 @@ public class Class58 {
                     }
                     if (!bool_9_ && Class116.anInt2011 == 0) {
                         Class95.aStream_1680.currentOffset = 0;
-                        Class68_Sub13_Sub8.inStream.method938(0, 0, chatTextSize, Class95.aStream_1680.buffer);
+                        Class68_Sub13_Sub8.inStream.readBytes(0, 0, chatTextSize, Class95.aStream_1680.buffer);
                         Class95.aStream_1680.currentOffset = 0;
                         int i_11_ = -1;
                         RSString class100;
@@ -131,7 +131,7 @@ public class Class58 {
                 int i_14_ = Class68_Sub13_Sub8.inStream.readUnsignedByte(i_0_ + 12542);
                 byte[] is = new byte[i_14_];
                 Stream class68_sub14 = new Stream(is);
-                Class68_Sub13_Sub8.inStream.method938(0, 0, i_14_, is);
+                Class68_Sub13_Sub8.inStream.readBytes(0, 0, i_14_, is);
                 Class68_Sub1.aStreamArray2755[i_1_] = class68_sub14;
                 class1_sub6_sub2.method159(class68_sub14, (byte) -82);
             }

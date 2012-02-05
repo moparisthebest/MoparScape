@@ -10,7 +10,7 @@ public class Class13_Sub1 extends Class13 {
     public static RSString aRSString_2624;
     public static int anInt2625;
     public static RSString aRSString_2626
-            = Class112.method1668(43, "Loading interfaces )2 ");
+            = RSString.newRsString("Loading interfaces )2 ");
     public static Class16 aClass16_2627;
     public int anInt2628;
     public int anInt2629;
@@ -19,7 +19,7 @@ public class Class13_Sub1 extends Class13 {
     public static int anInt2632;
     public static RSString aRSString_2633 = aRSString_2626;
     public int anInt2634;
-    public static RSString aRSString_2635 = Class112.method1668(43, "(Z");
+    public static RSString aRSString_2635 = RSString.newRsString("(Z");
     public static int anInt2636;
     public static int anInt2637;
     public static int anInt2638;
@@ -357,7 +357,7 @@ public class Class13_Sub1 extends Class13 {
     }
 
     static {
-        aRSString_2624 = Class112.method1668(43, ")4l=");
+        aRSString_2624 = RSString.newRsString(")4l=");
         aClass16_2627 = new Class16();
         anInt2639 = 0;
     }

@@ -3,13 +3,13 @@
  */
 
 public class Class67 {
-    public static RSString aRSString_1206 = Class112.method1668(43, ")3)3)3");
+    public static RSString aRSString_1206 = RSString.newRsString(")3)3)3");
     public static RSString aRSString_1207;
     public static RSString aRSString_1208;
     public static int anInt1209;
     public static boolean aBoolean1210;
     public static RSString aRSString_1211
-            = Class112.method1668(43, "Loaded input handler");
+            = RSString.newRsString("Loaded input handler");
     public static int anInt1212;
     public static RSString aRSString_1213;
     public static int anInt1214;
@@ -92,7 +92,7 @@ public class Class67 {
     static {
         aBoolean1210 = false;
         aRSString_1208
-                = Class112.method1668(43, " is already on your ignore list)3");
+                = RSString.newRsString(" is already on your ignore list)3");
         aRSString_1207 = aRSString_1211;
         aRSString_1213 = aRSString_1208;
     }

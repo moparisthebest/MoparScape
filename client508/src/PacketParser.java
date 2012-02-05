@@ -9,7 +9,7 @@ public class PacketParser {
     public static int[] anIntArray1861 = {2, 2, 4, 0, 1, 8, 0, 0, 0, 0, 2};
     public static int anInt1862;
     public static int[] anIntArray1863;
-    public static RSString aRSString_1864 = Class112.method1668(43, "shake:");
+    public static RSString aRSString_1864 = RSString.newRsString("shake:");
     public static int anInt1865;
     public static int anInt1866;
     public static RSString aRSString_1867 = aRSString_1864;

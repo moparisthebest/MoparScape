@@ -943,10 +943,10 @@ public class Class45 {
     }
 
     static {
-        aRSString_922 = Class112.method1668(43, "glow3:");
+        aRSString_922 = RSString.newRsString("glow3:");
         aRSString_923 = aRSString_922;
         aRSString_920 = aRSString_922;
-        aRSString_927 = Class112.method1668(43, "Close");
+        aRSString_927 = RSString.newRsString("Close");
         aRSString_924 = aRSString_927;
     }
 }

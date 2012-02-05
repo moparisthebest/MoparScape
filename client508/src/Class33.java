@@ -98,8 +98,8 @@ public class Class33 {
 
     static {
         aClass86_581 = new Class86();
-        aRSString_585 = Class112.method1668(43, " loggt sich aus)3");
-        aRSString_586 = Class112.method1668(43, "");
+        aRSString_585 = RSString.newRsString(" loggt sich aus)3");
+        aRSString_586 = RSString.newRsString("");
         anInt590 = 0;
     }
 }

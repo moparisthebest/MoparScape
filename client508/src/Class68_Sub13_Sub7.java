@@ -10,9 +10,9 @@ public class Class68_Sub13_Sub7 extends Class68_Sub13 {
     public static int anInt3549;
     public static int anInt3550;
     public static RSString aRSString_3551
-            = Class112.method1668(43, "cookieprefix");
+            = RSString.newRsString("cookieprefix");
     public static RSString aRSString_3552
-            = Class112.method1668(43, "Verbindung abgebrochen)3");
+            = RSString.newRsString("Verbindung abgebrochen)3");
     public static int anInt3553;
     public static int anInt3554;
     public static int anInt3555;

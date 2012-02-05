@@ -11,7 +11,7 @@ public class Class68_Sub1 extends Class68 {
     public Class7 aClass7_2758;
     public Class57 aClass57_2759;
     public static int anInt2760;
-    public static RSString aRSString_2761 = Class112.method1668(43, "Cabbage");
+    public static RSString aRSString_2761 = RSString.newRsString("Cabbage");
     public static int anInt2762;
     public int anInt2763;
     public Class76 aClass76_2764;

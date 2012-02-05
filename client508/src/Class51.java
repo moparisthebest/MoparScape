@@ -234,7 +234,7 @@ public class Class51 implements Interface2 {
     static {
         anInt2256 = 0;
         anInt2255 = 100;
-        aRSString_2260 = Class112.method1668(43, " ");
+        aRSString_2260 = RSString.newRsString(" ");
         aRSString_2258 = aRSString_2260;
     }
 }

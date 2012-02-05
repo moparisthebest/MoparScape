@@ -19,11 +19,11 @@ public abstract class Class50 {
     public static int anInt986;
     public static int anInt987;
     public static RSString aRSString_988
-            = Class112.method1668(43, "Fallen lassen");
-    public static RSString aRSString_989 = Class112.method1668(43, "::fps ");
+            = RSString.newRsString("Fallen lassen");
+    public static RSString aRSString_989 = RSString.newRsString("::fps ");
     public static int anInt990;
     public static int anInt991;
-    public static RSString aRSString_992 = Class112.method1668(43, "null");
+    public static RSString aRSString_992 = RSString.newRsString("null");
 
     public static void method527(int i) {
         aRSString_988 = null;
@@ -174,7 +174,7 @@ public abstract class Class50 {
                                     class68_sub14_sub1.writeByte(4);
                                 else {
                                     class68_sub14_sub1.writeByte(2);
-                                    class68_sub14_sub1.writeString((byte) -9,
+                                    class68_sub14_sub1.writeString(
                                             ((RSString)
                                                     object));
                                 }
@@ -241,7 +241,7 @@ public abstract class Class50 {
 
     static {
         aRSString_981
-                = Class112.method1668(43, " is already on your friend list)3");
+                = RSString.newRsString(" is already on your friend list)3");
         aRSString_985 = aRSString_981;
         aClass16_984 = new Class16();
     }

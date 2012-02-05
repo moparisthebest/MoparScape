@@ -20,7 +20,7 @@ public class Class68_Sub13_Sub27 extends Class68_Sub13 {
     public int anInt3899 = 0;
     public static int anInt3900;
     public static RSString aRSString_3901;
-    public static RSString aRSString_3902 = Class112.method1668(43, "<img=0>");
+    public static RSString aRSString_3902 = RSString.newRsString("<img=0>");
     public static int anInt3903;
     public static int anInt3904;
     public static byte[][] aByteArrayArray3905;
@@ -793,7 +793,7 @@ public class Class68_Sub13_Sub27 extends Class68_Sub13 {
     }
 
     static {
-        aRSString_3901 = Class112.method1668(43, "floorshadows");
+        aRSString_3901 = RSString.newRsString("floorshadows");
         aByteArrayArray3905 = new byte[50][];
         aClass98_3893 = new Class98(64);
         anInt3911 = -1;

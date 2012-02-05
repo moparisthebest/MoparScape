@@ -16,7 +16,7 @@ public class Class68_Sub20_Sub11 extends Class68_Sub20 {
     public static RSString aRSString_4331;
     public static byte[][] aByteArrayArray4332;
     public static RSString aRSString_4333
-            = Class112.method1668(43, ")3runescape)3com");
+            = RSString.newRsString(")3runescape)3com");
     public static RSString aRSString_4334;
     public int[] anIntArray4335;
     public static int anInt4336;
@@ -508,8 +508,8 @@ public class Class68_Sub20_Sub11 extends Class68_Sub20 {
     }
 
     static {
-        aRSString_4323 = Class112.method1668(43, ":duelstake:");
-        aRSString_4334 = Class112.method1668(43, "<col=ff7000>");
-        aRSString_4331 = Class112.method1668(43, "::qa_op_test");
+        aRSString_4323 = RSString.newRsString(":duelstake:");
+        aRSString_4334 = RSString.newRsString("<col=ff7000>");
+        aRSString_4331 = RSString.newRsString("::qa_op_test");
     }
 }

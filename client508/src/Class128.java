@@ -19,12 +19,12 @@ public class Class128 {
     public static int anInt2219;
     public static int anInt2220;
     public static RSString aRSString_2221
-            = Class112.method1668(43, "<col=40ff00>");
+            = RSString.newRsString("<col=40ff00>");
     public static int anInt2222;
     public static int anInt2223;
     public Class68_Sub20 aClass68_Sub20_2224 = new Class68_Sub20();
     public static RSString aRSString_2225
-            = Class112.method1668(43, "Zugewiesener Speicher)3");
+            = RSString.newRsString("Zugewiesener Speicher)3");
     public static int anInt2226;
     public static int anInt2227;
     public static boolean[] aBooleanArray2228 = new boolean[112];

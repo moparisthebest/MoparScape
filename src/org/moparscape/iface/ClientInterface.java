@@ -20,6 +20,8 @@
 
 package org.moparscape.iface;
 
+import java.security.interfaces.RSAPublicKey;
+
 /**
  * This interface must be implemented for moparscape to load this applet as a client.
  * For two different working examples, check the 317 and 508 clients implementing this interface.
@@ -186,8 +188,16 @@ public interface ClientInterface {
      * Sets the public RSA key the client should use.
      * Optional, but good to allow your client to use any public key.
      *
-     * @param rsaKeyBytes Image to use as the client background.
+     * @param key RSAPublicKey to use for encryption
      */
-    public void setPublicKey(byte[] rsaKeyBytes);
+    public void setPublicKey(RSAPublicKey key);
+
+    /**
+     * Sets the hasher you should use to hash your passwords before sending them across the network.
+     * Optional, but good to allow your client to hash passwordsp
+     *
+     * @param hasher Hasher to use for hashing strings
+     */
+    public void setHasher(org.moparscape.iface.Hasher hasher);
 
 }

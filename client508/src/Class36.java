@@ -3,7 +3,7 @@
  */
 
 public class Class36 {
-    public static RSString aRSString_639 = Class112.method1668(43, ")1p");
+    public static RSString aRSString_639 = RSString.newRsString(")1p");
     public static boolean aBoolean640 = false;
     public static int anInt641;
     public static int anInt642;

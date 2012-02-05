@@ -225,8 +225,8 @@ public class Class68_Sub13_Sub21 extends Class68_Sub13 {
         anIntArray3797 = new int[4096];
         aBoolean3796 = false;
         aRSString_3799
-                = (Class112.method1668
-                (43,
+                = (RSString.newRsString
+                (
                         "Your friend list is full)3 Max of 100 for free users)1 and 200 for members)3"));
         aRSString_3795 = aRSString_3799;
         aBoolean3793 = true;

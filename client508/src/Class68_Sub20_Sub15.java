@@ -6,14 +6,14 @@ public class Class68_Sub20_Sub15 extends Class68_Sub20 {
     public static int anInt4388;
     public static long[] aLongArray4389 = new long[1000];
     public static RSString aRSString_4390
-            = Class112.method1668(43, "showingVideoAd");
+            = RSString.newRsString("showingVideoAd");
     public byte aByte4391;
     public int anInt4392;
     public static RSString aRSString_4393;
     public Class21_Sub1 aClass21_Sub1_4394;
     public static int anInt4395;
     public static RSString aRSString_4396
-            = Class112.method1668(43, ":duelfriend:");
+            = RSString.newRsString(":duelfriend:");
     public static int anInt4397;
     public static int anInt4398;
     public static int anInt4399 = 127;
@@ -83,6 +83,6 @@ public class Class68_Sub20_Sub15 extends Class68_Sub20 {
 
     static {
         anInt4397 = 0;
-        aRSString_4393 = Class112.method1668(43, "underlay");
+        aRSString_4393 = RSString.newRsString("underlay");
     }
 }

@@ -14,8 +14,8 @@ public class Class125 implements Runnable {
     public static int anInt2173 = 0;
     public volatile Class35[] aClass35Array2174 = new Class35[2];
     public static RSString aRSString_2175
-            = (Class112.method1668
-            (43, "You can(Wt add yourself to your own ignore list)3"));
+            = (RSString.newRsString
+            ("You can(Wt add yourself to your own ignore list)3"));
     public volatile boolean aBoolean2176 = false;
     public static int anInt2177;
     public volatile boolean aBoolean2178 = false;

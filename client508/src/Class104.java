@@ -4,7 +4,7 @@
 
 public class Class104 {
     public static RSString aRSString_1775
-            = Class112.method1668(43, " zuerst von Ihrer Ignorieren)2Liste(Q");
+            = RSString.newRsString(" zuerst von Ihrer Ignorieren)2Liste(Q");
     public static int anInt1776;
     public static RSString aRSString_1777;
     public static int anInt1778;
@@ -102,8 +102,8 @@ public class Class104 {
     }
 
     static {
-        aRSString_1777 = Class112.method1668(43, ":assist:");
-        aRSString_1783 = Class112.method1668(43, "slr2)3ws?order=LPWM");
+        aRSString_1777 = RSString.newRsString(":assist:");
+        aRSString_1783 = RSString.newRsString("slr2)3ws?order=LPWM");
         anInt1784 = 0;
     }
 }

@@ -11,7 +11,7 @@ public class Class68_Sub20_Sub17 extends Class68_Sub20 {
     public static int anInt4436;
     public static int anInt4437;
     public static RSString aRSString_4438
-            = Class112.method1668(43, "leuchten3:");
+            = RSString.newRsString("leuchten3:");
     public static int anInt4439 = 0;
     public static Class68_Sub20_Sub10 aClass68_Sub20_Sub10_4440;
     public static Class45 aClass45_4441 = null;
@@ -710,6 +710,6 @@ public class Class68_Sub20_Sub17 extends Class68_Sub20 {
     }
 
     static {
-        aRSString_4435 = Class112.method1668(43, ")4a=");
+        aRSString_4435 = RSString.newRsString(")4a=");
     }
 }

@@ -7,20 +7,20 @@ public class Class48 {
     public static int anInt946;
     public static int anInt947;
     public static RSString aRSString_948
-            = Class112.method1668(43, " zuerst von Ihrer Freunde)2Liste(Q");
+            = RSString.newRsString(" zuerst von Ihrer Freunde)2Liste(Q");
     public static byte[][][] aByteArrayArrayArray949;
     public static int anInt950;
     public static int anInt951;
     public static RSString aRSString_952;
     public static RSString aRSString_953
-            = Class112.method1668(43, "<col=00ff00>");
+            = RSString.newRsString("<col=00ff00>");
     public static volatile int anInt954;
     public static short aShort955;
     public int anInt956;
     public static int anInt957;
     public int anInt958;
     public static RSString aRSString_959
-            = Class112.method1668(43, "MoparScape is loading )2 hold onto your butts)3)3)3");
+            = RSString.newRsString("MoparScape is loading )2 hold onto your butts)3)3)3");
     public static int[] anIntArray960;
     public static int anInt961;
 

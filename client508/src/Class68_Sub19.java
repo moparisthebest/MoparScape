@@ -4,7 +4,7 @@
 
 public class Class68_Sub19 extends Class68 {
     public static int anInt3065;
-    public static RSString aRSString_3066 = Class112.method1668(43, " (X");
+    public static RSString aRSString_3066 = RSString.newRsString(" (X");
     public int anInt3067;
     public static int anInt3068;
     public static Class92_Sub1[] aClass92_Sub1Array3069;

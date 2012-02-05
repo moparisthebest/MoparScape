@@ -108,10 +108,10 @@ public class Class118 {
             }
             aLongArray2076[i] = l;
         }
-        aRSString_2081 = Class112.method1668(43, "<br>");
-        aRSString_2082 = Class112.method1668(43, "Members only world");
+        aRSString_2081 = RSString.newRsString("<br>");
+        aRSString_2082 = RSString.newRsString("Members only world");
         aRSString_2083 = aRSString_2082;
-        aRSString_2084 = Class112.method1668(43, "skill)2");
+        aRSString_2084 = RSString.newRsString("skill)2");
         aRSString_2080 = aRSString_2084;
     }
 }

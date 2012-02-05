@@ -14,7 +14,7 @@ public class GameException extends RuntimeException {
     public static int anInt2238;
     public String aString2239;
     public static RSString aRSString_2240
-            = Class112.method1668(43, " <col=ffffff>");
+            = RSString.newRsString(" <col=ffffff>");
     public static int anInt2241;
     public static int anInt2242;
     public static RSString aRSString_2243;
@@ -364,8 +364,8 @@ public class GameException extends RuntimeException {
     }
 
     static {
-        aRSString_2232 = Class112.method1668(43, "http:)4)4");
-        aRSString_2244 = Class112.method1668(43, "glow1:");
+        aRSString_2232 = RSString.newRsString("http:)4)4");
+        aRSString_2244 = RSString.newRsString("glow1:");
         aRSString_2230 = aRSString_2244;
         anInt2231 = 0;
         aRSString_2243 = aRSString_2244;

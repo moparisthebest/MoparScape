@@ -18,7 +18,7 @@ public class Class90 implements Interface4 {
     public Class21renamed aClass21_2339;
     public Login aLogin_2340;
     public static RSString aRSString_2341
-            = Class112.method1668(43, "headicons_pk");
+            = RSString.newRsString("headicons_pk");
     public byte[] aByteArray2342;
     public static int anInt2343;
     public static int anInt2344;
@@ -1039,8 +1039,8 @@ public class Class90 implements Interface4 {
     static {
         anIntArray2335 = new int[128];
         aRSString_2354
-                = Class112.method1668(43, "Lade Benutzeroberfl-=che )2 ");
+                = RSString.newRsString("Lade Benutzeroberfl-=che )2 ");
         aRSString_2351 = null;
-        aRSString_2355 = Class112.method1668(43, "p11_full");
+        aRSString_2355 = RSString.newRsString("p11_full");
     }
 }

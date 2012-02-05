@@ -17,7 +17,7 @@ public class Class68_Sub20_Sub8 extends Class68_Sub20 {
     public static Class21renamed aClass21_4279;
     public static int anInt4280;
     public static int anInt4281;
-    public static RSString aRSString_4282 = Class112.method1668(43, "unzap");
+    public static RSString aRSString_4282 = RSString.newRsString("unzap");
     public static int anInt4283;
     public static int anInt4284;
     public int[] anIntArray4285;

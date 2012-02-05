@@ -9,7 +9,7 @@ public class Class68_Sub27 extends Class68 {
     public Class68_Sub11_Sub1[] aClass68_Sub11_Sub1Array3213;
     public static int anInt3214;
     public static RSString aRSString_3215
-            = Class112.method1668(43, "; Max)2Age=");
+            = RSString.newRsString("; Max)2Age=");
     public int[] anIntArray3216;
     public byte[] aByteArray3217;
     public static int anInt3218;

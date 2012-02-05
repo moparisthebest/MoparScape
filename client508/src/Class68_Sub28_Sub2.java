@@ -22,9 +22,9 @@ public class Class68_Sub28_Sub2 extends Class68_Sub28 {
     public static int anInt4547;
     public static RSString aRSString_4548;
     public static RSString aRSString_4549
-            = Class112.method1668(43, "Konfig geladen)3");
+            = RSString.newRsString("Konfig geladen)3");
     public static RSString aRSString_4550
-            = Class112.method1668(43, "Spieler kann nicht gefunden werden: ");
+            = RSString.newRsString("Spieler kann nicht gefunden werden: ");
     public static RSString username;
     public static RSString password;
     public static int anInt4553;
@@ -414,10 +414,10 @@ public class Class68_Sub28_Sub2 extends Class68_Sub28 {
     }
 
     static {
-        aRSString_4548 = Class112.method1668(43, "settings=");
+        aRSString_4548 = RSString.newRsString("settings=");
         anInt4547 = 0;
         anInt4545 = -1;
-        aRSString_4556 = Class112.method1668(43, "");
+        aRSString_4556 = RSString.newRsString("");
         password = aRSString_4556;
         username = aRSString_4556;
     }

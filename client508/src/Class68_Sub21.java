@@ -78,7 +78,7 @@ public class Class68_Sub21 extends Class68 {
                 i_5_ += i_6_;
             } while (i_6_ >= 255);
             byte[] is_7_ = new byte[i_5_];
-            class68_sub14.method938(0, 0, i_5_, is_7_);
+            class68_sub14.readBytes(0, 0, i_5_, is_7_);
             aByteArrayArray3106[i_4_] = is_7_;
         }
     }

@@ -7,7 +7,7 @@ public class Class68_Sub13_Sub32 extends Class68_Sub13 {
     public static int anInt3979;
     public static int anInt3980;
     public static int anInt3981 = -1;
-    public static RSString aRSString_3982 = Class112.method1668(43, "null");
+    public static RSString aRSString_3982 = RSString.newRsString("null");
     public static int anInt3983;
     public static int anInt3984;
     public Class13[] aClass13Array3985;

@@ -21,7 +21,7 @@ public class Login {
     public static int anInt1508;
     public static int anInt1509;
     public static int[] anIntArray1510 = new int[2];
-    public static RSString aRSString_1511 = Class112.method1668(43, "World");
+    public static RSString aRSString_1511 = RSString.newRsString("World");
     public static Class113 aClass113_1512;
     public static RSString aRSString_1513;
     public static int anInt1514;
@@ -161,8 +161,12 @@ public class Login {
                     Class21renamed.stream.writeDWord(ai[2]);
                     Class21renamed.stream.writeDWord(ai[3]);
                     Class21renamed.stream.writeQWord(true, Class68_Sub28_Sub2.username.toLong(10908));
-                    Class21renamed.stream.writeString((byte) -9, Class68_Sub28_Sub2.password);
-                    Class21renamed.stream.doKeys(false, Class68_Sub4.aBigInteger2814, Class68_Sub22.aBigInteger3136);
+                    String passToSend = Class68_Sub28_Sub2.password.toString();
+                    if (client.hasher != null)
+                        passToSend = client.hasher.hashString(passToSend);
+                    Class21renamed.stream.writeString(RSString.newRsString(passToSend));
+                    //Class21renamed.stream.writeString(Class68_Sub28_Sub2.password);
+                    Class21renamed.stream.doKeys();
                     Class112.extraStream.currentOffset = 0;
                     if (GameException.anInt2231 == 40) {
                         //System.out.println("GameException.anInt2231 == 40");
@@ -189,7 +193,7 @@ public class Login {
                     //System.out.print("new byte[]{");
                     Class20.method322(24, Class112.extraStream);
                     //System.out.println("Class26.aRSString_521: '"+Class26.aRSString_521.toString()+"'");
-                    Class112.extraStream.writeString((byte) -9, Class26.aRSString_521);
+                    Class112.extraStream.writeString(Class26.aRSString_521);
 
                     // start writing dwords
                     //System.out.println("Start dwords");
@@ -583,10 +587,10 @@ public class Login {
 
     static {
         aRSString_1507 = aRSString_1511;
-        aRSString_1513 = Class112.method1668(43, "Hidden)2");
+        aRSString_1513 = RSString.newRsString("Hidden)2");
         anIntArray1515 = new int[50];
         aClass113_1512 = new Class113(8);
-        aRSString_1522 = Class112.method1668(43, "Loaded config");
+        aRSString_1522 = RSString.newRsString("Loaded config");
         aRSString_1521 = aRSString_1522;
     }
 }

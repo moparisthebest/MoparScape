@@ -8,14 +8,14 @@ public abstract class Class97 {
     public static Class68_Sub20_Sub16 aClass68_Sub20_Sub16_1702;
     public static int anInt1703;
     public static RSString aRSString_1704
-            = Class112.method1668(43, "Loaded sprites");
+            = RSString.newRsString("Loaded sprites");
     public static RSString aRSString_1705;
     public static int anInt1706;
-    public static RSString aRSString_1707 = Class112.method1668(43, "flash3:");
+    public static RSString aRSString_1707 = RSString.newRsString("flash3:");
     public static int anInt1708;
     public static int anInt1709;
     public static RSString aRSString_1710
-            = Class112.method1668(43, "<col=80ff00>");
+            = RSString.newRsString("<col=80ff00>");
     public static long[] aLongArray1711 = new long[100];
     public static int anInt1712;
     public static RSString aRSString_1713;
@@ -72,9 +72,9 @@ public abstract class Class97 {
     public abstract void method1562(Component component, boolean bool);
 
     static {
-        aRSString_1713 = Class112.method1668(43, "Lade Texturen )2 ");
+        aRSString_1713 = RSString.newRsString("Lade Texturen )2 ");
         aRSString_1718 = aRSString_1704;
-        aRSString_1705 = Class112.method1668(43, "Hidden)2use");
+        aRSString_1705 = RSString.newRsString("Hidden)2use");
         aRSString_1719 = aRSString_1707;
     }
 }

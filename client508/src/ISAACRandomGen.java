@@ -463,11 +463,11 @@ public class ISAACRandomGen {
     }
 
     static {
-        aRSString_1478 = Class112.method1668(43, "<col=ffb000>");
-        aRSString_1488 = Class112.method1668(43, "<col=ff3000>");
+        aRSString_1478 = RSString.newRsString("<col=ffb000>");
+        aRSString_1488 = RSString.newRsString("<col=ff3000>");
         anInt1489 = -1;
         aBoolean1487 = true;
-        aRSString_1481 = Class112.method1668(43, "details");
+        aRSString_1481 = RSString.newRsString("details");
         aByteArray1496
                 = new byte[]{95, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106,
                 107, 108, 109, 110, 111, 112, 113, 114, 115, 116,

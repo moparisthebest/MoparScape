@@ -111,7 +111,7 @@ public class Class13_Sub2 extends Class13 {
     }
 
     static {
-        aRSString_2642 = Class112.method1668(43, "Hidden");
+        aRSString_2642 = RSString.newRsString("Hidden");
         anInt2652 = 0;
         aRSString_2647 = aRSString_2642;
     }

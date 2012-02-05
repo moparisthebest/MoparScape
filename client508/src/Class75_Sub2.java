@@ -6,8 +6,8 @@ public class Class75_Sub2 extends Class75 {
     public static RSString aRSString_3307;
     public static int anInt3308;
     public static RSString aRSString_3309
-            = (Class112.method1668
-            (43,
+            = (RSString.newRsString
+            (
                     "Ihre Freunde)2Liste ist voll(Q Maximale Eintr-=ge: Mitglieder 200)4freie Spieler 100"));
     public static Class68_Sub20_Sub10[] aClass68_Sub20_Sub10Array3310;
     public static Class124 aClass124_3311;
@@ -75,11 +75,11 @@ public class Class75_Sub2 extends Class75 {
     }
 
     static {
-        aRSString_3307 = Class112.method1668(43, "VOLL");
+        aRSString_3307 = RSString.newRsString("VOLL");
         anInt3313 = 0;
         safeMode = false;
         anInt3315 = 0;
-        aRSString_3312 = Class112.method1668(43, "FULL");
+        aRSString_3312 = RSString.newRsString("FULL");
         aRSString_3317 = aRSString_3312;
     }
 }

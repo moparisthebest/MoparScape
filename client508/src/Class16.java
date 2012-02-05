@@ -275,7 +275,7 @@ public class Class16 {
         anInt275 = 128;
         anInt276 = -1;
         anInt271 = 0;
-        aRSString_274 = Class112.method1668(43, ": ");
+        aRSString_274 = RSString.newRsString(": ");
         aLong277 = 0L;
         anInt273 = 0;
     }

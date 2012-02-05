@@ -8,7 +8,7 @@ public class Class68_Sub13_Sub3 extends Class68_Sub13 {
     public static int anInt3466;
     public static RSString aRSString_3467;
     public static RSString aRSString_3468;
-    public static RSString aRSString_3469 = Class112.method1668(43, ")4");
+    public static RSString aRSString_3469 = RSString.newRsString(")4");
     public static int anInt3470;
     public int anInt3471 = 2048;
     public static RSString aRSString_3472;
@@ -358,9 +358,9 @@ public class Class68_Sub13_Sub3 extends Class68_Sub13 {
     }
 
     static {
-        aRSString_3467 = Class112.method1668(43, "");
-        aRSString_3480 = Class112.method1668(43, "Null");
-        aRSString_3481 = Class112.method1668(43, "yellow:");
+        aRSString_3467 = RSString.newRsString("");
+        aRSString_3480 = RSString.newRsString("Null");
+        aRSString_3481 = RSString.newRsString("yellow:");
         aRSString_3468 = aRSString_3481;
         aRSString_3472 = aRSString_3481;
     }

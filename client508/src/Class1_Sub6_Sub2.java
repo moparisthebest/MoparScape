@@ -18,7 +18,7 @@ public class Class1_Sub6_Sub2 extends Class1_Sub6 {
     public Class1_Sub3 aClass1_Sub3_3411;
     public int anInt3412;
     public static RSString aRSString_3413
-            = Class112.method1668(43, "Lade Titelbild )2 ");
+            = RSString.newRsString("Lade Titelbild )2 ");
     public RSString aRSString_3414;
     public int anInt3415;
     public int anInt3416;
@@ -33,7 +33,7 @@ public class Class1_Sub6_Sub2 extends Class1_Sub6 {
     public short aShort3425;
     public short aShort3426;
     public int anInt3427;
-    public static RSString aRSString_3428 = Class112.method1668(43, "::");
+    public static RSString aRSString_3428 = RSString.newRsString("::");
     public static RSString aRSString_3429;
     public static int[] anIntArray3430 = new int[100];
     public int anInt3431;
@@ -541,9 +541,9 @@ public class Class1_Sub6_Sub2 extends Class1_Sub6 {
     }
 
     static {
-        aRSString_3429 = Class112.method1668(43, "blinken1:");
+        aRSString_3429 = RSString.newRsString("blinken1:");
         aLogin_3418 = new Login(64);
-        aRSString_3442 = Class112.method1668(43, "flash2:");
+        aRSString_3442 = RSString.newRsString("flash2:");
         aRSString_3440 = aRSString_3442;
         aRSString_3441 = aRSString_3442;
     }

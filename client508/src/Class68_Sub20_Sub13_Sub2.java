@@ -9,7 +9,7 @@ public class Class68_Sub20_Sub13_Sub2 extends Class68_Sub20_Sub13 {
     public static int anInt4620;
     public static RSString aRSString_4621;
     public static RSString aRSString_4622
-            = Class112.method1668(43, " steht bereits auf Ihrer Freunde)2Liste(Q");
+            = RSString.newRsString(" steht bereits auf Ihrer Freunde)2Liste(Q");
     public static RSString aRSString_4623;
     public static RSString aRSString_4624;
     public static int anInt4625;
@@ -64,10 +64,10 @@ public class Class68_Sub20_Sub13_Sub2 extends Class68_Sub20_Sub13 {
     }
 
     static {
-        aRSString_4621 = Class112.method1668(43, "<img=1>");
-        aRSString_4623 = Class112.method1668(43, " )2> <col=ffffff>");
+        aRSString_4621 = RSString.newRsString("<img=1>");
+        aRSString_4623 = RSString.newRsString(" )2> <col=ffffff>");
         aBoolean4629 = true;
-        aRSString_4631 = Class112.method1668(43, "Discard");
+        aRSString_4631 = RSString.newRsString("Discard");
         aRSString_4624 = aRSString_4631;
     }
 }

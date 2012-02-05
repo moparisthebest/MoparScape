@@ -5,14 +5,14 @@
 public class Class68_Sub2 extends Class68 {
     public int anInt2783;
     public int anInt2784;
-    public static RSString aRSString_2785 = Class112.method1668(43, "_labels");
+    public static RSString aRSString_2785 = RSString.newRsString("_labels");
     public int anInt2786;
     public int anInt2787;
     public int anInt2788;
     public int anInt2789;
     public int anInt2790;
     public int anInt2791;
-    public static RSString aRSString_2792 = Class112.method1668(43, "welle:");
+    public static RSString aRSString_2792 = RSString.newRsString("welle:");
     public int anInt2793;
     public int anInt2794 = 0;
     public int anInt2795 = -1;

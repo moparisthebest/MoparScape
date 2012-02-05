@@ -3,7 +3,7 @@
  */
 
 public class Class14 {
-    public static RSString aRSString_224 = Class112.method1668(43, "Art");
+    public static RSString aRSString_224 = RSString.newRsString("Art");
     public static int anInt225;
     public static int anInt226;
     public Class21renamed aClass21_227;
@@ -22,7 +22,7 @@ public class Class14 {
     public static int anInt240;
     public static Class84 aClass84_241;
     public Class113 aClass113_242 = new Class113(256);
-    public static RSString aRSString_243 = Class112.method1668(43, "Benutzen");
+    public static RSString aRSString_243 = RSString.newRsString("Benutzen");
 
     public static boolean method265(int i) {
         anInt234++;

@@ -9,7 +9,7 @@ public class Class119 {
     public static int anInt2088;
     public static int[] anIntArray2089;
     public static int anInt2090;
-    public static RSString aRSString_2091 = Class112.method1668(43, "Examine");
+    public static RSString aRSString_2091 = RSString.newRsString("Examine");
 
     public static void method1733(int i, int[][] is) {
         Class68_Sub22.anIntArrayArray3132 = is;

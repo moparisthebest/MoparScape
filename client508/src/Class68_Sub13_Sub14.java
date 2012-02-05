@@ -118,7 +118,7 @@ public class Class68_Sub13_Sub14 extends Class68_Sub13 {
     static {
         anIntArray3666 = new int[1000];
         aRSString_3669
-                = Class112.method1668(43, "3D)2Softwarebibliothek gestartet)3");
+                = RSString.newRsString("3D)2Softwarebibliothek gestartet)3");
         anInt3673 = 2;
         aLongArray3676 = new long[500];
     }

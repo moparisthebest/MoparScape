@@ -13,7 +13,7 @@ public class Class68_Sub13_Sub8 extends Class68_Sub13 {
     public static int anInt3563;
     public static Class113 aClass113_3564 = new Class113(32);
     public static RSString aRSString_3565;
-    public static RSString aRSString_3566 = Class112.method1668(43, "T");
+    public static RSString aRSString_3566 = RSString.newRsString("T");
 
     public static boolean method733(int i, int i_0_) {
         if (i != 0)
@@ -66,6 +66,6 @@ public class Class68_Sub13_Sub8 extends Class68_Sub13 {
     }
 
     static {
-        aRSString_3565 = Class112.method1668(43, "Standort");
+        aRSString_3565 = RSString.newRsString("Standort");
     }
 }

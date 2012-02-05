@@ -13,7 +13,7 @@ public class Class68_Sub13_Sub5 extends Class68_Sub13 {
     public static RSString aRSString_3517;
     public static int anInt3518 = -1;
     public static RSString aRSString_3519
-            = Class112.method1668(43, "Allocated memory");
+            = RSString.newRsString("Allocated memory");
     public static RSString aRSString_3520;
     public static RSString aRSString_3521;
     public static Class21_Sub1 aClass21_Sub1_3522;
@@ -80,7 +80,7 @@ public class Class68_Sub13_Sub5 extends Class68_Sub13 {
 
     static {
         aRSString_3517 = aRSString_3519;
-        aRSString_3521 = Class112.method1668(43, "Checking for updates )2 ");
+        aRSString_3521 = RSString.newRsString("Checking for updates )2 ");
         aRSString_3520 = aRSString_3521;
         aBigInteger3516
                 = (new BigInteger

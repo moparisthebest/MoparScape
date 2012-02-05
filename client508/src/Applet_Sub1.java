@@ -31,7 +31,7 @@ public abstract class Applet_Sub1 extends Applet
     public static int anInt14;
     public static int anInt15;
     public static int anInt16;
-    public static RSString aRSString_17 = (Class112.method1668(43, "http:)4)4advert)3runescape)3com)4banner)3ws?size=729"));
+    public static RSString aRSString_17 = (RSString.newRsString("http:)4)4advert)3runescape)3com)4banner)3ws?size=729"));
     public static int anInt18;
     public static int anInt19;
     public static int anInt20;
@@ -47,10 +47,10 @@ public abstract class Applet_Sub1 extends Applet
     public static int anInt30;
     public static RSString aRSString_31;
     public static int anInt32;
-    public static RSString aRSString_33 = (Class112.method1668(43, "; Expires=Thu)1 01)2Jan)21970 00:00:00 GMT; Max)2Age=0"));
+    public static RSString aRSString_33 = (RSString.newRsString("; Expires=Thu)1 01)2Jan)21970 00:00:00 GMT; Max)2Age=0"));
     public static int anInt34;
     public static int anInt35;
-    public static RSString aRSString_36 = Class112.method1668(43, "titlebg");
+    public static RSString aRSString_36 = RSString.newRsString("titlebg");
     public static int anInt37;
     public static int anInt38;
     public static int anInt39;
@@ -206,7 +206,7 @@ public abstract class Applet_Sub1 extends Applet
             class19.anInt358 = -2;// model offset 1
             class19.anInt391 = 3;// model offset 2
             class19.anInt390 = 14997;//Male model id
-            class19.aRSString_362 = Class112.method1668(43, "Dragon claws");//Item Name
+            class19.aRSString_362 = RSString.newRsString("Dragon claws");//Item Name
         }
         if (i_3_ == 14001) {//item id (whip id just for testing, you can change this)
             class19.anInt330 = 44576;//inventory/drop model
@@ -217,7 +217,7 @@ public abstract class Applet_Sub1 extends Applet
             class19.anInt391 = 0;// model offset 2
             class19.anInt390 = 40207;//Male model id
             class19.anInt347 = -1;//male sleeves
-            class19.aRSString_362 = Class112.method1668(43, "Dragon platebody");//Item Name
+            class19.aRSString_362 = RSString.newRsString("Dragon platebody");//Item Name
         }
         return class19;
     }

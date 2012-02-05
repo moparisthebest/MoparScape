@@ -7,9 +7,9 @@ public class Class37 {
     public static int anInt647;
     public static int anInt648;
     public static Interface2 anInterface2_649 = null;
-    public static RSString aRSString_650 = Class112.method1668(43, "b12_full");
+    public static RSString aRSString_650 = RSString.newRsString("b12_full");
     public static RSString aRSString_651;
-    public static RSString aRSString_652 = Class112.method1668(43, "null");
+    public static RSString aRSString_652 = RSString.newRsString("null");
     public static RSString aRSString_653;
     public static int[] anIntArray654;
     public static RSString aRSString_655;
@@ -50,8 +50,8 @@ public class Class37 {
     }
 
     static {
-        aRSString_651 = Class112.method1668(43, " GMT");
+        aRSString_651 = RSString.newRsString(" GMT");
         anIntArray654 = new int[500];
-        aRSString_655 = Class112.method1668(43, "Welt");
+        aRSString_655 = RSString.newRsString("Welt");
     }
 }

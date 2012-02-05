@@ -229,13 +229,13 @@ public class Class68_Sub13_Sub9 extends Class68_Sub13 {
     }
 
     static {
-        aRSString_3577 = Class112.method1668(43, "Fertigkeit)2");
+        aRSString_3577 = RSString.newRsString("Fertigkeit)2");
         aRSString_3581
-                = Class112.method1668(43, "Verbindung mit Update)2Server)3)3)3");
+                = RSString.newRsString("Verbindung mit Update)2Server)3)3)3");
         anIntArray3578
                 = new int[]{768, 1024, 1280, 512, 1536, 256, 0, 1792};
         aClass43Array3570 = new Class43[50];
         anIntArray3582 = new int[100];
-        aRSString_3580 = Class112.method1668(43, "hint_headicons");
+        aRSString_3580 = RSString.newRsString("hint_headicons");
     }
 }

@@ -8,7 +8,7 @@ public class Class68_Sub13_Sub35 extends Class68_Sub13 {
     public int anInt4018 = 0;
     public static int anInt4019;
     public static int anInt4020;
-    public static RSString aRSString_4021 = Class112.method1668(43, "mapflag");
+    public static RSString aRSString_4021 = RSString.newRsString("mapflag");
     public static int[] anIntArray4022
             = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
             19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35,

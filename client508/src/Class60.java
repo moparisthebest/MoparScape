@@ -5,7 +5,7 @@
 public class Class60 {
     public static int anInt1113;
     public static int anInt1114;
-    public static RSString aRSString_1115 = Class112.method1668(43, "overlay");
+    public static RSString aRSString_1115 = RSString.newRsString("overlay");
     public static int anInt1116;
     public static int anInt1117;
 

@@ -2,11 +2,8 @@
  * Visit http://jode.sourceforge.net/
  */
 
-import java.math.BigInteger;
-
 public class Class68_Sub4 extends Class68 {
     public static int anInt2813;
-    public static BigInteger aBigInteger2814;
     public static int anInt2815 = 0;
     public static int anInt2816;
     public int anInt2817;
@@ -59,7 +56,7 @@ public class Class68_Sub4 extends Class68 {
 
     public static void method658(int i) {
         aRSStringArray2827 = null;
-        aBigInteger2814 = null;
+        Stream.publicKey = null;
         if (i != 27392)
             method660(41, (byte) -106);
         anIntArray2828 = null;
@@ -318,10 +315,7 @@ public class Class68_Sub4 extends Class68 {
     static {
         anInt2813 = 0;
         aRSString_2819 = null;
-        aBigInteger2814
-                = (new BigInteger
-                ("58778699976184461502525193738213253649000149147835990136706041084440742975821"));
-        aRSString_2829 = Class112.method1668(43, "zap");
+        aRSString_2829 = RSString.newRsString("zap");
         anIntArray2828 = new int[200];
         aRSStringArray2827 = new RSString[100];
     }
