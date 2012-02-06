@@ -464,6 +464,10 @@ public class ResourceGrabber {
         return this.downloadToUniqueFolder(url, parentFolder, extract, null);
     }
 
+    public int downloadToUniqueFolder(String url, String parentFolder, ChecksumInfo ci) throws MalformedURLException {
+        return this.downloadToUniqueFolder(url, parentFolder, false, ci);
+    }
+
     public int downloadToUniqueFolder(String url, String parentFolder, boolean extract, ChecksumInfo ci) throws MalformedURLException {
         return this.download(url, parentFolder, extract, ci, true);
     }
