@@ -42,6 +42,8 @@ import java.util.zip.GZIPInputStream;
  */
 public class CRCClassLoader extends URLClassLoader {
 
+    public static final String[] illegalPackages = new String[]{"java.", "sun.", "javax."};
+
     private Map<String, byte[]> classes = new HashMap<String, byte[]>();
     private long crcVal = 0;
     private boolean fileExists = false;
@@ -224,6 +226,7 @@ public class CRCClassLoader extends URLClassLoader {
                 ", classesLoaded=" + classesLoaded +
                 ", fileExists=" + fileExists +
                 //", successfullyLoaded(0)=" + successfullyLoaded(0) +
+                ", classes" + classes +
                 '}';
     }
 
@@ -304,6 +307,19 @@ java.lang.SecurityException: trusted loader attempted to load sandboxed resource
      */
     public Class<?> findClass(String name) throws ClassNotFoundException {
         //System.out.println("CRCClassLoader: Requesting class '" + name + "'");
+        // let's make sure we don't provide a class in an illegal package
+        // only let the parent load it (probably system classloader, which won't allow a bad package anyway)
+        for (String pack : illegalPackages)
+            if (name.startsWith(pack)) {
+                // free the memory if it is taking up any
+                classes.remove(name);
+                // if the parent is null, we have no choice
+                if (parent == null)
+                    throw new ClassNotFoundException("Class '" + name + "' is in illegal package '" + pack + "'");
+                // otherwise let the parent worry about it
+                return parent.loadClass(name);
+            }
+
         // first, try to load them from the classes we have on hand
         byte[] classBytes = classes.get(name);
         if (classBytes != null) {

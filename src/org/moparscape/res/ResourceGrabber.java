@@ -607,7 +607,7 @@ public class ResourceGrabber {
         synchronized (files) {
             for (String file : files)
                 for (String suffix : suffixes)
-                    if ((ignoreCase && suffix != null && file.toLowerCase().endsWith(suffix.toLowerCase())) || file.endsWith(suffix))
+                    if (((ignoreCase && suffix != null && file.toLowerCase().endsWith(suffix.toLowerCase())) || file.endsWith(suffix))  && !file.endsWith(fileListFile))
                         return file;
             // if the last value in suffixes is null, that is a special meaning to return the first file if no
             // others can be found that matches the previous ones

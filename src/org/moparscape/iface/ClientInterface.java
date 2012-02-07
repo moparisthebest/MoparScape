@@ -81,6 +81,15 @@ public interface ClientInterface {
     public void setCacheDir(String cacheDir);
 
     /**
+     * Called to get the size of the client.
+     * <p/>
+     * This *MUST* be implemented correctly.
+     *
+     * @return Size of client.
+     */
+    public java.awt.Dimension getDimension();
+
+    /**
      * Gives the client a KeyListener to send left-over keyPressed events back to that the client doesn't recognize.
      * This is needed because the client grabs all key events and moparscape doesn't receive them,
      * causing the key bindings not to work. The way to implement this is to find your 'keyPressed(KeyEvent keyevent)'
@@ -165,16 +174,6 @@ public interface ClientInterface {
      * @return Should always return org.moparscape.userver.Server[2] (but each index can be null)
      */
     public org.moparscape.userver.Server[] getUpdateServers(String defaultLocation, String customLocation);
-
-    /**
-     * Called to get the size of the client.
-     * Currently moparscape ignores this and assumes it to be 765x503,
-     * this will change in the near future though when support for
-     * HD (and non-standard size SD) clients is added.
-     *
-     * @return Size of client.
-     */
-    public java.awt.Dimension getDimension();
 
     /**
      * Sets the background the client should use.

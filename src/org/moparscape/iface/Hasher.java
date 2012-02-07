@@ -25,7 +25,7 @@ import java.security.NoSuchAlgorithmException;
 
 public class Hasher {
 
-    MessageDigest md = null;
+    private MessageDigest md = null;
 
     /**
      * This reverts to a default of the SHA-1 algorithm
@@ -43,7 +43,7 @@ public class Hasher {
      * @param algorithm
      */
     public Hasher(String algorithm) {
-        if(algorithm == null)
+        if(algorithm == null || algorithm.equalsIgnoreCase("none"))
             return;
         try {
             md = MessageDigest.getInstance(algorithm);
@@ -67,7 +67,7 @@ public class Hasher {
      * @param toHash
      * @return
      */
-    public String hashString(String toHash) {
+    public synchronized String hashString(String toHash) {
         if (toHash == null)
             return null;
         if (md == null)

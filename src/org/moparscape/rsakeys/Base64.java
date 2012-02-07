@@ -18,7 +18,7 @@
  * Email me at admin@moparisthebest.com , I read it but don't usually respond.
  */
 
-package org.moparscape;
+package org.moparscape.rsakeys;
 
 /**
  * <p>Encodes and decodes to and from Base64 notation.</p>
