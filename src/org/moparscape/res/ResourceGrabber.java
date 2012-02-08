@@ -510,6 +510,10 @@ public class ResourceGrabber {
         for (Downloader dl : this.downloaders)
             if (dl.supportsURL(url))
                 return dl;
+        // if it's a file, put a "file://" in front of it
+        // or allow files
+        if (new File(url).exists())
+            return this.getSupportedDownloader("file://"+url);
         throw new MalformedURLException("Unsupported URL: " + url);
     }
 
