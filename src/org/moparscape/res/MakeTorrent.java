@@ -162,6 +162,8 @@ public class MakeTorrent {
             this.magnetLinks[i] = String.format("magnet:?xt=urn:%s:%s&dn=%s%s", magnetTypes[i][0], magnetTypes[i][1], urlEncode(sharedFile.getName()), magTrackers);
             System.out.println("magnet link: " + this.magnetLinks[i]);
         }
+        for(String url: urlList)
+            System.out.println("webseed: "+url);
     }
 
     public String urlEncode(String url) {
@@ -294,7 +296,8 @@ public class MakeTorrent {
     }
 
     public static void main(String[] args) throws Exception {
-    /*    if (args.length < 1) {
+        Debug.debug = true;
+        if (args.length < 1) {
             System.out.println("Usage: MakeTorrent file [webseed...]");
             new MakeTorrent();
             return;
@@ -302,8 +305,7 @@ public class MakeTorrent {
         String[] webseeds = new String[args.length - 1];
         System.arraycopy(args, 1, webseeds, 0, webseeds.length);
         new MakeTorrent(args[0], webseeds);
-        */
-        Debug.debug = true;
+       /*
         //new MakeTorrent();
         new MakeTorrent("/home/mopar/IdeaProjects/MoparScape4/cachedump/minimal317.9.zip", "http://cache.hybridscape.com/minimal317.9.zip", "http://bob.com/tom");
         new MakeTorrent("/home/mopar/IdeaProjects/MoparScape4/cachedump/minimal317.9.zip.gz");
@@ -313,6 +315,6 @@ public class MakeTorrent {
         System.out.println("old CRC of jar: 48487200");
 
         new MakeTorrent("/home/mopar/IdeaProjects/MoparScape4/dist/client317.jar.gz");
-
+*/
     }
 }
