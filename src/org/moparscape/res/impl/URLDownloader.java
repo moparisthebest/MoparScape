@@ -53,7 +53,16 @@ public class URLDownloader extends Downloader {
             public void run() {
                 try {
                     String saveTo = saveTo(url, savePath);
-                    URLConnection uc = new URL(url).openConnection();
+                    URL toDownload = null;
+                    try{
+                        toDownload = new URL(url);
+                    }catch(MalformedURLException e){
+                        if(new File(url).exists())
+                            toDownload = new URL("file://"+url);
+                        else
+                            throw e;
+                    }
+                    URLConnection uc = toDownload.openConnection();
                     if (uc instanceof HttpURLConnection) {
                         String userAgent = System.getProperty("http.agent");
                         if (userAgent == null)
@@ -71,7 +80,7 @@ public class URLDownloader extends Downloader {
                     writeStream(in, new FileOutputStream(saveTo));
 
                     if (callback != null) {
-                        callback.finished(savePath, saveTo);
+                        callback.finished(savePath, new File(saveTo).getName());
                         callback.stopped();
                     }
                 } catch (IOException e) {
@@ -103,7 +112,9 @@ public class URLDownloader extends Downloader {
             new URL(url);
             return true;
         } catch (MalformedURLException e) {
-            return false;
+            // if it's a file, put a "file://" in front of it
+            // or allow files
+            return new File(url).exists();
         }
     }
 
@@ -117,7 +128,7 @@ public class URLDownloader extends Downloader {
 
         url = url.toLowerCase().replaceFirst(".*://", "").replaceAll("/+", ".").replaceAll("(^\\.|\\.$)", "");
 
-        return url+"/";
+        return url + "/";
     }
 
     @Override

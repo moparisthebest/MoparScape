@@ -38,7 +38,9 @@ public class MakeTorrent {
     private File torrentFile = null;
     private File sharedFile = null;
 
-    private String[][] announceList = new String[][]{new String[]{"udp://tracker.moparisthebest.com:2710/announce"}, new String[]{"http://tracker.moparisthebest.com/announce"}, new String[]{"udp://exodus.desync.com:6969", "http://exodus.desync.com:6969/announce"}};
+    //private String[][] announceList = new String[][]{new String[]{"udp://tracker.moparisthebest.com:2710/announce"}, new String[]{"http://tracker.moparisthebest.com/announce"}, new String[]{"udp://exodus.desync.com:6969", "http://exodus.desync.com:6969/announce"}};
+    //private String[][] announceList = new String[][]{new String[]{"udp://tracker.moparisthebest.com:2710/announce"}};
+    private String[][] announceList = new String[][]{new String[]{"http://tracker.moparisthebest.com:2710/announce"}, new String[]{"http://tracker.moparisthebest.com/announce"}, new String[]{"udp://exodus.desync.com:6969", "http://exodus.desync.com:6969/announce"}};
     private String[] urlList = null;
 
     private String sha1InfoHash = null;
@@ -152,8 +154,8 @@ public class MakeTorrent {
         //System.out.println("info hash of torrent: " + new Base32().toSha1(base32InfoHash));
         System.out.println("CRC of torrent: " + crc);
         String magTrackers = "";
-        if (announceList != null)
-            for (String[] trackerList : announceList)
+        if (this.announceList != null)
+            for (String[] trackerList : this.announceList)
                 for (String tracker : trackerList)
                     magTrackers += "&tr=" + urlEncode(tracker);
         String[][] magnetTypes = new String[][]{new String[]{"btih", base32InfoHash}, new String[]{"sha1", sha1InfoHash}};
@@ -296,6 +298,8 @@ public class MakeTorrent {
     }
 
     public static void main(String[] args) throws Exception {
+        //new MakeTorrent("/home/mopar/IdeaProjects/MoparScape4/cachedump/minimal317.9.zip", "http://cache.hybridscape.com/minimal317.9.zip", "http://bob.com/tom");
+        //System.exit(0);
         Debug.debug = true;
         if (args.length < 1) {
             System.out.println("Usage: MakeTorrent file [webseed...]");

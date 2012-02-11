@@ -33,12 +33,13 @@ public abstract class CompleteRunnable implements Runnable {
     protected int uid = -1;
     protected String url = null;
     protected String savePath = null;
-    protected boolean extract, uniqueFolder;
+    protected boolean extract, uniqueFolder, success;
     protected ChecksumInfo ci = null;
     protected Exception ex = null;
 
-    public void set(ResourceGrabber rg, int uid, String url, String savePath, boolean extract, ChecksumInfo ci, boolean uniqueFolder) {
+    public void set(ResourceGrabber rg, boolean success, int uid, String url, String savePath, boolean extract, ChecksumInfo ci, boolean uniqueFolder) {
         this.rg = rg;
+        this.success = success;
         this.uid = uid;
         this.url = url;
         this.savePath = savePath;

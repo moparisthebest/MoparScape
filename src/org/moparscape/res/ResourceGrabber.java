@@ -396,31 +396,40 @@ public class ResourceGrabber {
     }
 
 
-    public void download(final String url, final String savePath, final boolean extract, final ChecksumInfo ci, final boolean uniqueFolder, final Runnable run) {
+    public int download(final String url, final String savePath, final boolean extract, final ChecksumInfo ci, final boolean uniqueFolder, final Runnable run) {
         final ResourceGrabber rg = this;
         final CompleteRunnable crun;
         if (run instanceof CompleteRunnable)
             crun = (CompleteRunnable) run;
         else
             crun = null;
+
+        int tryUid = -1;
+        try {
+            tryUid = rg.download(url, savePath, extract, ci, uniqueFolder);
+        } catch (Exception e) {
+            if (crun != null)
+                crun.setEx(e);
+        }
+        final int uid = tryUid;
         new Thread() {
 
             public void run() {
-                int uid = -1;
+                boolean success = false;
                 try {
-                    uid = rg.download(url, savePath, extract, ci, uniqueFolder);
-                    rg.wait(uid, false);
+                    success = rg.wait(uid, false);
                 } catch (Exception e) {
                     if (crun != null)
                         crun.setEx(e);
                 }
                 if (crun != null)
-                    crun.set(rg, uid, url, savePath, extract, ci, uniqueFolder);
+                    crun.set(rg, success, uid, url, savePath, extract, ci, uniqueFolder);
                 run.run();
                 rg.freeResources(uid);
             }
 
         }.start();
+        return uid;
     }
 
     public boolean downloadWait(String url, String savePath) throws Exception {
@@ -508,12 +517,10 @@ public class ResourceGrabber {
 
     private Downloader getSupportedDownloader(String url) throws MalformedURLException {
         for (Downloader dl : this.downloaders)
-            if (dl.supportsURL(url))
+            if (dl.supportsURL(url)) {
+                //System.out.println("url: " + url + " returning: " + dl);
                 return dl;
-        // if it's a file, put a "file://" in front of it
-        // or allow files
-        if (new File(url).exists())
-            return this.getSupportedDownloader("file://"+url);
+            }
         throw new MalformedURLException("Unsupported URL: " + url);
     }
 
@@ -611,7 +618,7 @@ public class ResourceGrabber {
         synchronized (files) {
             for (String file : files)
                 for (String suffix : suffixes)
-                    if (((ignoreCase && suffix != null && file.toLowerCase().endsWith(suffix.toLowerCase())) || file.endsWith(suffix))  && !file.endsWith(fileListFile))
+                    if (((ignoreCase && suffix != null && file.toLowerCase().endsWith(suffix.toLowerCase())) || file.endsWith(suffix)) && !file.endsWith(fileListFile))
                         return file;
             // if the last value in suffixes is null, that is a special meaning to return the first file if no
             // others can be found that matches the previous ones
@@ -627,12 +634,12 @@ public class ResourceGrabber {
         public void actionPerformed(ActionEvent e) {
             synchronized (downloadItems) {
                 for (final DlListener dll : downloadItems) {
-                    /*
+                    /**/
                     System.out.println("-------------------------------------------------------------");
                     System.out.println("uid: " + dll.uid);
                     System.out.println("dll: " + dll);
                     System.out.println("-------------------------------------------------------------");
-*/
+
                     DownloadListener.Status status = dll.pollStatus();
                     if (status == null)
                         status = dll.getStatus();
@@ -768,6 +775,8 @@ public class ResourceGrabber {
 
         @Override
         public synchronized void finished(String savePath, String... filesDownloaded) {
+            if (savePath != null && !savePath.endsWith("/"))
+                savePath += "/";
 /*
             if (extract)
                 for (String file : filesDownloaded)
@@ -776,11 +785,13 @@ public class ResourceGrabber {
             if (files != null)
                 files.clear();
             // if we are supposed to extract it, do so, add the names to files if they extract
-            for (String file : filesDownloaded)
+            for (String file : filesDownloaded) {
+                file = savePath + file;
                 if (!(extract && Downloader.supportsExtraction(file) &&
                         Downloader.extractFile(file, savePath, this, files)) &&
                         files != null)
                     files.add(file);
+            }
 
             // write files to a file in the savePath, to be used on later runs to see what to CRC
             if (files != null) {
@@ -837,7 +848,7 @@ public class ResourceGrabber {
         }
 
         public boolean download(String url, String savePath, boolean extract, ChecksumInfo ci) throws Exception {
-            return rg.wait(rg.download(url, savePath, extract, ci));
+            return rg.wait(rg.download(url, savePath, extract, ci), true);
         }
 
         /**
@@ -929,8 +940,8 @@ public class ResourceGrabber {
         public String toString() {
             return "DownloadItemPanel{" +
                     "infoLabel=" + infoLabel.getText() +
-                    ", titleLabel=" + titleLabel.getText()  +
-                    ", origInfo='" + origInfo  + '\'' +
+                    ", titleLabel=" + titleLabel.getText() +
+                    ", origInfo='" + origInfo + '\'' +
                     ", progressBar=" + progressBar.getPercentComplete() +
                     '}';
         }
