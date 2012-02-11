@@ -169,7 +169,7 @@ public abstract class Downloader {
     public static boolean extractFile(String fileName, String savePath, DownloadListener callback, Checksum cs, java.util.List<String> files) {
         if(savePath != null && !savePath.endsWith("/"))
             savePath += "/";
-        Debug.debug("extractFile: fileName: '%s', savePath: '%s'", fileName, savePath);
+        //Debug.debug("extractFile: fileName: '%s', savePath: '%s'", fileName, savePath);
         File file = new File(fileName);
         try {
             long length = file.length();

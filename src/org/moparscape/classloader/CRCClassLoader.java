@@ -211,6 +211,10 @@ public class CRCClassLoader extends URLClassLoader {
         return this.fileExists;
     }
 
+    public boolean successfullyLoaded() {
+        return this.successfullyLoaded(0);
+    }
+
     public boolean successfullyLoaded(long expectedCRC) {
         if (expectedCRC == 0)
             return classesLoaded > 0;

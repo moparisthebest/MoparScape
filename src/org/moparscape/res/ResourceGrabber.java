@@ -31,6 +31,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
 import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -172,7 +173,8 @@ public class ResourceGrabber {
         if (!binDir.endsWith("/"))
             binDir += "/";
         // order matters here
-        downloaders = new Downloader[]{new BTDownloader(binDir), new URLDownloader()};
+        //downloaders = new Downloader[]{new BTDownloader(binDir), new URLDownloader()};
+        downloaders = new Downloader[]{new URLDownloader()};
     }
 
     private ResourceGrabber(String binDir) throws FileNotFoundException {
@@ -362,13 +364,17 @@ public class ResourceGrabber {
                 Downloader.writeStream(new FileInputStream(listFile), baos);
                 String[] whitelist = new String(baos.toByteArray()).split("\n");
 
-                //for(String file: whitelist) System.out.println("whitelist file: "+file);
+                for(String file: whitelist) System.out.println("whitelist file: "+file);
 
                 ci.setList(true, whitelist);
             } catch (Exception e) {
                 Debug.debug(e);
             }
-
+            String archive = new URL(url).getFile();
+            archive = savePath+archive.substring(archive.lastIndexOf("/")+1, archive.length());
+            System.out.println("crcExtractFile: "+Downloader.crcExtractFile(archive)+" archive: "+archive);
+            ci.checksumMatch(savePath);
+            System.out.println("crc: "+ci.getChecksum()+" expected: "+ci.getExpectedChecksum()+ " checksum match: "+url);
             if (ci.checksumMatch(savePath))
                 return -1;  // this signifies that the crc matches (instant success)
         }
@@ -634,12 +640,12 @@ public class ResourceGrabber {
         public void actionPerformed(ActionEvent e) {
             synchronized (downloadItems) {
                 for (final DlListener dll : downloadItems) {
-                    /**/
+                    /*
                     System.out.println("-------------------------------------------------------------");
                     System.out.println("uid: " + dll.uid);
                     System.out.println("dll: " + dll);
                     System.out.println("-------------------------------------------------------------");
-
+*/
                     DownloadListener.Status status = dll.pollStatus();
                     if (status == null)
                         status = dll.getStatus();
