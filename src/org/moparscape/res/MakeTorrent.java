@@ -298,8 +298,14 @@ public class MakeTorrent {
     }
 
     public static void main(String[] args) throws Exception {
-        //new MakeTorrent("/home/mopar/IdeaProjects/MoparScape4/cachedump/minimal317.9.zip", "http://cache.hybridscape.com/minimal317.9.zip", "http://bob.com/tom");
-        //System.exit(0);
+        /*
+        new MakeTorrent("/home/mopar/IdeaProjects/MoparScape4/dist/server317.zip", "http://cache.hybridscape.com/minimal317.9.zip", "http://bob.com/tom");
+        System.out.println("----------------------------------------------");
+        new MakeTorrent("/home/mopar/IdeaProjects/MoparScape4/dist/torrents/server317.zip", "http://cache.hybridscape.com/minimal317.9.zip", "http://bob.com/tom");
+        System.out.println("----------------------------------------------");
+        new MakeTorrent("/home/mopar/.moparscape4/servers/default/317/server317.zip", "http://cache.hybridscape.com/minimal317.9.zip", "http://bob.com/tom");
+        System.exit(0);
+        */
         Debug.debug = true;
         if (args.length < 1) {
             System.out.println("Usage: MakeTorrent file [webseed...]");

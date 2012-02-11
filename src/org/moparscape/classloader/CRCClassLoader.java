@@ -212,6 +212,7 @@ public class CRCClassLoader extends URLClassLoader {
     }
 
     public boolean successfullyLoaded() {
+        //System.out.println("classesLoaded: "+classesLoaded);
         return this.successfullyLoaded(0);
     }
 

@@ -50,6 +50,8 @@ public abstract class Downloader {
 
     public abstract String uniqueFoldername(String url);
 
+    public abstract void destroy();
+
     public void guessFilenames(String url, String savePath, java.util.List<String> files) {
         // here we know nothing about the downloading implementation, so we just list all the files in the 'savePath'
         listFiles(savePath, files);

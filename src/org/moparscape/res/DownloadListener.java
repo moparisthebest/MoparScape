@@ -20,6 +20,8 @@
 
 package org.moparscape.res;
 
+import org.moparscape.res.impl.Downloader;
+
 /**
  * Created by IntelliJ IDEA.
  * User: mopar
@@ -52,5 +54,5 @@ public interface DownloadListener {
 
     public void error(String msg, Exception e);
 
-    public boolean download(String url, String savePath, boolean extract, ChecksumInfo ci) throws Exception;
+    public boolean download(String url, String savePath, boolean extract, ChecksumInfo ci, Downloader dl) throws Exception;
 }

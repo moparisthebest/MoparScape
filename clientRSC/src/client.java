@@ -77,7 +77,7 @@ public class client extends mudclient.mudclient implements ClientInterface {
         LoginDataEncryption.customPublicKey = key;
     }
 
-    public void setHasher(org.moparscape.iface.Hasher hasher){
+    public void setHasher(org.moparscape.iface.Hasher hasher) {
         this.hasher = hasher;
     }
 
@@ -149,6 +149,8 @@ public class client extends mudclient.mudclient implements ClientInterface {
     static {
         Config.CONF_DIR = "/home/mopar/.moparscape4/devCache/";
         Config.MEDIA_DIR = Config.CONF_DIR;
+        Config.SERVER_IP = "localhost";
+        Config.SERVER_PORT = 43594;
     }
 
 }

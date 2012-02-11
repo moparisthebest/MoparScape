@@ -50,9 +50,9 @@ public class ChecksumInfo {
 
     public static ChecksumInfo getChecksumInfo(String expectedCRC) {
         long eCRC = 0;
-        try{
+        try {
             eCRC = Long.parseLong(expectedCRC);
-        }catch(Exception e){
+        } catch (Exception e) {
             //return null;  // should I do this?
         }
         return new ChecksumInfo(eCRC, null, true);
@@ -101,41 +101,38 @@ public class ChecksumInfo {
      * @param savePath
      * @return
      */
-    public boolean checksumMatch(String savePath) {
-        return this.checksumMatch(savePath, false);
-    }
-
-    public synchronized boolean checksumMatch(String savePath, final boolean extract) {
+    public synchronized boolean checksumMatch(String savePath) {
         if (checksumCalculated)
             cs.reset();
         checksumCalculated = true;
         File savePathFile = new File(savePath);
-        FileFilter ff = null;
-        if (list != null && list.length > 0 && savePathFile.isDirectory()) {
-            final File[] flist = new File[list.length];
-            for (int x = 0; x < list.length; ++x)
-                flist[x] = new File(savePathFile, list[x]);
-            //for(File f : flist) System.out.println("file list: "+f);
-            ff = new FileFilter() {
-                public boolean accept(File name) {
-                    //System.out.println("in list accept:"+name);
-                    if (extract && Downloader.supportsExtraction(name.getName()))
-                        return false;
-                    for (File f : flist)
-                        if (f.equals(name))
-                            return whitelist;
-                    return !whitelist;
-                }
-            };
-        } else if (extract) {
-            ff = new FileFilter() {
-                public boolean accept(File name) {
-                    //System.out.println("in extract accept:"+name);
-                    return !Downloader.supportsExtraction(name.getName());
-                }
-            };
+        // if we are using a whitelist with a list, just do those files
+        if (whitelist && list != null && list.length > 0) {
+            NullOutputStream nos = new NullOutputStream();
+            for (String fileName : list)
+                checksumSingleFile(new File(savePathFile, fileName), cs, nos);
+            // then we are dealing with a blacklist, or no list
+        } else {
+            FileFilter ff = null;
+            if (list != null && list.length > 0 && savePathFile.isDirectory()) {
+                final File[] flist = new File[list.length];
+                for (int x = 0; x < list.length; ++x)
+                    flist[x] = new File(savePathFile, list[x]);
+                //for(File f : flist) System.out.println("file list: "+f);
+                ff = new FileFilter() {
+                    public boolean accept(File name) {
+                        //System.out.println("in list accept:"+name);
+                        if (name.isDirectory())
+                            return true;
+                        for (File f : flist)
+                            if (f.equals(name))
+                                return whitelist;
+                        return !whitelist;
+                    }
+                };
+            }
+            recursiveChecksum(savePathFile, cs, new NullOutputStream(), ff);
         }
-        recursiveChecksum(savePathFile, cs, new NullOutputStream(), ff);
 
         return cs.getValue() == expectedCRC;
     }
@@ -173,32 +170,37 @@ public class ChecksumInfo {
         return cs.getValue() == expectedCRC;
     }
 
-    private static void recursiveChecksum(File path, Checksum cs, NullOutputStream nos, FileFilter filter) {
-        if (!path.exists())
-            return;
-        if (path.isFile()) {
+    private static void checksumSingleFile(File path, Checksum cs, NullOutputStream nos) {
+        if (path.isFile())
             try {
+                //System.out.printf("checksuming File: '%s' crc so far: '%d'\n", path.getName(), cs.getValue());
                 //Downloader.writeStream(new ChecksumInputStream(new FileInputStream(path), cs), nos);
                 Downloader.writeStream(new CheckedInputStream(new FileInputStream(path), cs), nos);
             } catch (Exception e) {
                 // if there is an exception, just ignore it
             }
-            return;
-        }
-        File[] children = path.listFiles(filter);
-        //File[] children = path.listFiles();
-        if(children.length == 0)
-            return;
-        // checksums depend on order, so we must sort them
-        Arrays.sort(children);
-        //System.out.println("files sorted length: "+children.length);
-        //System.out.println("children[0]: "+children[0]);
-        for (File file : children) {
-            //System.out.println("Checksum so far: " + cs.getValue());
-            //System.out.println("Checking filename: " + file.getAbsolutePath());
+    }
 
-            recursiveChecksum(file, cs, nos, filter);
+    private static void recursiveChecksum(File path, Checksum cs, NullOutputStream nos, FileFilter filter) {
+        if (!path.exists())
+            return;
+        if (path.isDirectory()) {
+            File[] children = path.listFiles(filter);
+            //File[] children = path.listFiles();
+            if (children.length == 0)
+                return;
+            // checksums depend on order, so we must sort them
+            Arrays.sort(children);
+            //System.out.println("files sorted length: "+children.length);
+            //System.out.println("children[0]: "+children[0]);
+            for (File file : children) {
+                //System.out.println("Checksum so far: " + cs.getValue());
+                //System.out.println("Checking filename: " + file.getAbsolutePath());
+                recursiveChecksum(file, cs, nos, filter);
+            }
+            return;
         }
+        checksumSingleFile(path, cs, nos);
     }
 
     public static long crcFile(String file) {

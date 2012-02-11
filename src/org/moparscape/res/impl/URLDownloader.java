@@ -42,6 +42,8 @@ public class URLDownloader extends Downloader {
 
     public void download(final String url, final String savePath, final DownloadListener callback) {
 
+        //System.out.printf("URLDownloader: url: '%s', savePath: '%s'\n", url, savePath);
+
         if (badExtension(url)) {
             if (callback != null)
                 callback.error("Bad extension, refusing to download: " + url, null);
@@ -83,7 +85,7 @@ public class URLDownloader extends Downloader {
                         callback.finished(savePath, new File(saveTo).getName());
                         callback.stopped();
                     }
-                } catch (IOException e) {
+                } catch (Exception e) {
                     if (callback != null)
                         callback.error("Error downloading file: " + url, e);
                 }
@@ -139,5 +141,11 @@ public class URLDownloader extends Downloader {
             if (!files.contains(saveTo))
                 files.add(saveTo);
         }
+    }
+
+        @Override
+    public void destroy() {
+        // for now, do nothing
+        //todo: try to stop all threads running
     }
 }

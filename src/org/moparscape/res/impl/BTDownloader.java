@@ -25,7 +25,6 @@ import org.moparscape.res.ChecksumInfo;
 import org.moparscape.res.DownloadListener;
 
 import java.io.*;
-import java.net.MalformedURLException;
 import java.util.Formatter;
 import java.util.HashMap;
 import java.util.Map;
@@ -82,6 +81,11 @@ public class BTDownloader extends Downloader {
                 shutdownProcess();
             }
         });
+    }
+
+    @Override
+    public void destroy() {
+        this.shutdownProcess();
     }
 
     private void shutdownProcess() {
@@ -153,6 +157,26 @@ public class BTDownloader extends Downloader {
         if (callback == null)
             return;
         new File(savePath).mkdirs();
+        if (url.startsWith("http")) {
+            // then have callback download it first
+            try {
+                String torrentSavePath = savePath + "torrent/";
+                File tspFile = new File(torrentSavePath);
+                tspFile.mkdirs();
+                if (!callback.download(url, torrentSavePath, true, new ChecksumInfo(), this)) {
+                    throw new Exception("Download failed");
+                }
+                url = tspFile.listFiles(new FilenameFilter(){
+                    public boolean accept(File dir, String name) {
+                        return name.toLowerCase().endsWith(".torrent");
+                    }
+                })[0].getAbsolutePath();
+                System.out.println("new URL to download: "+url);
+            } catch (Exception e) {
+                callback.error("Failed to download .torrent file, cannot continue.", e);
+                return;
+            }
+        }
         synchronized (lock) {
             // if the download is already running, return
             if (activeDls.containsKey(url))
@@ -191,7 +215,7 @@ public class BTDownloader extends Downloader {
                 // now that we have the binary name, verify we have the latest and the CRC is correct, if not in devMode
                 if (!devMode)
                     try {
-                        if (!callback.download(remoteBinDir + binName + remoteBinSuffix, binDir, true, new ChecksumInfo(crc, new String[]{binName}))) {
+                        if (!callback.download(remoteBinDir + binName + remoteBinSuffix, binDir, true, new ChecksumInfo(crc, new String[]{binName}), this)) {
                             callback.error("Failed to download '" + remoteBinDir + binName + remoteBinSuffix + "', cannot continue.", null);
                             return;
                         }
@@ -327,7 +351,7 @@ public class BTDownloader extends Downloader {
                                         float total_upload_ratio = Float.parseFloat(tags.get("total_upload_ratio"));
                                         // if this is true, we are going to stop the torrent
                                         if (total_upload_ratio >= requiredSeedRatio) {
-                                            inputCommands("d", hash+"\n");
+                                            inputCommands("d", hash + "\n");
                                             // if torrent removal is successful
                                             String result = readNextTag("result", delim);
                                             if (result != null && result.equals("true")) {
@@ -387,7 +411,7 @@ public class BTDownloader extends Downloader {
      */
     @Override
     public boolean supportsURL(String url) {
-        if(url == null)
+        if (url == null)
             return false;
         url = url.toLowerCase();
         return url.startsWith("magnet:") || url.endsWith(".torrent");
@@ -403,11 +427,11 @@ public class BTDownloader extends Downloader {
             url = url.substring(url.indexOf("xt=") + 3, url.length());
             url = url.substring(0, url.indexOf("&"));
             url = url.substring(url.lastIndexOf(":") + 1, url.length()).toLowerCase();
-            if(base32)
+            if (base32)
                 url = new Base32().toSha1(url);
         } else {
             url = url.replaceFirst(".*://", "").replaceAll("/+", ".").replaceAll("(^\\.|\\.$)", "");
         }
-        return url+"/";
+        return url + "/";
     }
 }

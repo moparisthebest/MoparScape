@@ -31,7 +31,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
 import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -61,7 +60,7 @@ public class ResourceGrabber {
 
     private final Downloader[] downloaders;
 
-    private static final int delay = 500; //milliseconds
+    private static final int delay = 1000; //milliseconds
     private static final int errorTicks = 60; // errorTicks * delay is how long errors will stay onscreen
 
     private JFrame frame = null;
@@ -193,6 +192,20 @@ public class ResourceGrabber {
         return _instance;
     }
 
+    public synchronized static void destroy(){
+        if(_instance == null)
+            return;
+        synchronized (_instance.downloadItems){
+            for (final DlListener dll : _instance.downloadItems) {
+                dll.autoRemove = true;
+                dll.setStopped();
+            }
+        }
+        for(Downloader d : _instance.downloaders)
+            d.destroy();
+        _instance = null;
+    }
+
     public static ResourceGrabber getRG() throws IllegalStateException {
         return getResourceGrabber();
     }
@@ -310,6 +323,10 @@ public class ResourceGrabber {
         return this.download(url, savePath, extract, ci, false);
     }
 
+    public int download(String url, String savePath, boolean extract, ChecksumInfo ci, Downloader blacklist) throws MalformedURLException {
+        return this.download(url, savePath, extract, ci, false, blacklist);
+    }
+
     public String uniqueFoldername(String url) {
         return this.uniqueFoldername(url, null, null);
     }
@@ -342,6 +359,10 @@ public class ResourceGrabber {
     }
 
     public int download(String url, String savePath, boolean extract, ChecksumInfo ci, boolean uniqueFolder) throws MalformedURLException {
+        return this.download(url, savePath, extract, ci, uniqueFolder, (Downloader)null);
+    }
+
+    public int download(String url, String savePath, boolean extract, ChecksumInfo ci, boolean uniqueFolder, Downloader blacklist) throws MalformedURLException {
 
         // if a list of files are requested, try to make the Downloader take an educated guess
         // also append to savePath a unique folder name
@@ -364,23 +385,25 @@ public class ResourceGrabber {
                 Downloader.writeStream(new FileInputStream(listFile), baos);
                 String[] whitelist = new String(baos.toByteArray()).split("\n");
 
-                for(String file: whitelist) System.out.println("whitelist file: "+file);
+                //for(String file: whitelist) System.out.println("whitelist file: "+file);
 
                 ci.setList(true, whitelist);
             } catch (Exception e) {
                 Debug.debug(e);
             }
-            String archive = new URL(url).getFile();
+            /*
+            String archive = new URL(url.startsWith("http") ? url : "file://"+url).getFile();
             archive = savePath+archive.substring(archive.lastIndexOf("/")+1, archive.length());
             System.out.println("crcExtractFile: "+Downloader.crcExtractFile(archive)+" archive: "+archive);
             ci.checksumMatch(savePath);
             System.out.println("crc: "+ci.getChecksum()+" expected: "+ci.getExpectedChecksum()+ " checksum match: "+url);
+            */
             if (ci.checksumMatch(savePath))
                 return -1;  // this signifies that the crc matches (instant success)
         }
 
         // otherwise go ahead and download it.
-        Downloader dlr = getSupportedDownloader(url);
+        Downloader dlr = getSupportedDownloader(url, blacklist);
 
         int uid = getNewUID();
         DlListener dll = new DlListener(uid, extract, ci, files, this);
@@ -522,8 +545,12 @@ public class ResourceGrabber {
     }
 
     private Downloader getSupportedDownloader(String url) throws MalformedURLException {
+        return this.getSupportedDownloader(url, null);
+    }
+
+    private Downloader getSupportedDownloader(String url, Downloader blacklist) throws MalformedURLException {
         for (Downloader dl : this.downloaders)
-            if (dl.supportsURL(url)) {
+            if (dl != blacklist && dl.supportsURL(url)) {
                 //System.out.println("url: " + url + " returning: " + dl);
                 return dl;
             }
@@ -643,7 +670,7 @@ public class ResourceGrabber {
                     /*
                     System.out.println("-------------------------------------------------------------");
                     System.out.println("uid: " + dll.uid);
-                    System.out.println("dll: " + dll);
+                    //System.out.println("dll: " + dll);
                     System.out.println("-------------------------------------------------------------");
 */
                     DownloadListener.Status status = dll.pollStatus();
@@ -654,7 +681,6 @@ public class ResourceGrabber {
                             case NOT_STARTED:
                                 break;
                             case FINISHED:
-                                break;
                             case RUNNING:
                                 // check if we have called reset
                                 if (dll.info != null) {
@@ -853,8 +879,8 @@ public class ResourceGrabber {
             return files;
         }
 
-        public boolean download(String url, String savePath, boolean extract, ChecksumInfo ci) throws Exception {
-            return rg.wait(rg.download(url, savePath, extract, ci), true);
+        public boolean download(String url, String savePath, boolean extract, ChecksumInfo ci, Downloader dl) throws Exception {
+            return rg.wait(rg.download(url, savePath, extract, ci, dl), true);
         }
 
         /**
@@ -904,7 +930,7 @@ public class ResourceGrabber {
         public void reset(final String title, final long length, final String info) {
 
             if (title != null)
-                titleLabel.setText(sep + title + end);
+                this.setTitle(title);
             if (info != null)
                 infoLabel.setText(origInfo = info);
 
@@ -936,6 +962,7 @@ public class ResourceGrabber {
 
         public void setTitle(final String title) {
             this.titleLabel.setText(sep + title + end);
+            this.titleLabel.updateUI();
         }
 
         public void setInfo(final String info) {
