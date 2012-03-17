@@ -829,8 +829,11 @@ public class ResourceGrabber {
             if (files != null) {
                 String[] fileArray = files.toArray(new String[files.size()]);
                 // first strip off savePath from the files
-                for (int x = 0; x < fileArray.length; ++x)
-                    fileArray[x] = fileArray[x].replaceFirst(savePath, "");
+                for (int x = 0; x < fileArray.length; ++x){
+                    //fileArray[x] = fileArray[x].replaceFirst(savePath, "");
+                    fileArray[x] = fileArray[x].substring(savePath.length(), fileArray[x].length());
+                    //System.out.printf("stripped file: '%s'\n",fileArray[x]);
+                }
                 try {
                     FileOutputStream fos = new FileOutputStream(savePath + fileListFile);
                     for (String file : fileArray) {
