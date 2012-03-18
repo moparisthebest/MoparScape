@@ -20,6 +20,7 @@
 
 package org.moparscape.iface;
 
+import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
@@ -37,13 +38,13 @@ public class Hasher {
     /**
      * You can specify whatever algorithm that Java supports to this, and if it isn't supported it will first
      * try to use SHA-1 and then MD5 before showing a warning and reverting to not hashing anything.
-     *
+     * <p/>
      * null as the algorithm has a special value meaning you don't want hashString to actually hash anything.
      *
      * @param algorithm
      */
     public Hasher(String algorithm) {
-        if(algorithm == null || algorithm.equalsIgnoreCase("none"))
+        if (algorithm == null || algorithm.equalsIgnoreCase("none"))
             return;
         try {
             md = MessageDigest.getInstance(algorithm);
@@ -74,8 +75,19 @@ public class Hasher {
             return toHash;
         md.reset();
         md.update(toHash.getBytes());
-        String ret = new java.math.BigInteger(1, md.digest()).toString(16);
+        //String ret = new java.math.BigInteger(1, md.digest()).toString(16);
+        String ret = toHex(md.digest());
         md.reset();
         return ret;
     }
+
+    private String toHex(byte[] bytes) {
+        // change below to lower or uppercase X to control case of output
+        return String.format("%0" + (bytes.length << 1) + "x", new BigInteger(1, bytes));
+    }
+
+    public static void main(String[] args){
+        System.out.printf("'%s' hash of '%s': '%s'\n", args[0], args[1], new Hasher(args[0]).hashString(args[1]));
+    }
+
 }
