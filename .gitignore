@@ -1,2 +1,7 @@
-.idea/workspace.xml
-.idea/dynamic.xml
+.idea/
+
+**/target/
+**.iml
+**.eml
+
+cachedump/*.zip

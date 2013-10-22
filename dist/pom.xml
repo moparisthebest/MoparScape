@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (C) 2009-2013 moparisthebest
+  ~
+  ~ This program is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU Affero General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ This program is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU Affero General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU Affero General Public License
+  ~ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  ~
+  ~ Official forums are http://www.moparscape.org/smf/
+  ~ Email me at admin@moparisthebest.com.
+  -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>org.moparscape.client</groupId>
+        <artifactId>main</artifactId>
+        <version>0.1-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>dist</artifactId>
+    <packaging>pom</packaging>
+    <dependencies>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>clients</artifactId>
+            <version>${project.version}</version>
+            <type>pom</type>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>servers</artifactId>
+            <version>${project.version}</version>
+            <type>pom</type>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>1.7</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <configuration>
+                            <target>
+                                <pathconvert pathsep=" " property="jars.list">
+                                    <fileset dir="${basedir}/..">
+                                        <include name="clients/*/target/*.jar" />
+                                        <include name="servers/*/target/*.jar" />
+                                    </fileset>
+                                    <!-- 1.6.2 manual says a map is required, but this works
+                                    <map from=" " to=" " />
+                                    -->
+                                </pathconvert>
+                                <java classname="org.moparscape.classloader.CRCJar" fork="true" args="${project.build.directory}/crc.txt ${jars.list}">
+                                    <classpath refid="maven.compile.classpath" />
+                                </java>
+
+                                <taskdef resource="net/sf/antcontrib/antlib.xml" classpathref="maven.plugin.classpath" />
+
+                                <for param="subdir">
+                                    <dirset dir="${basedir}/../cachedump" includes="*"/>
+                                    <sequential>
+                                        <!--echo message="subdir: @{subdir}"/-->
+                                        <zip level="9" destfile="@{subdir}.zip">
+                                            <fileset dir="@{subdir}" includes="**"/>
+                                        </zip>
+                                    </sequential>
+                                </for>
+                            </target>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>ant-contrib</groupId>
+                        <artifactId>ant-contrib</artifactId>
+                        <version>1.0b3</version>
+                        <exclusions>
+                            <exclusion>
+                                <artifactId>ant</artifactId>
+                                <groupId>ant</groupId>
+                            </exclusion>
+                        </exclusions>
+                    </dependency>
+                </dependencies>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.2.1</version>
+                <executions>
+                    <execution>
+                        <id>my-execution</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <mainClass>org.moparscape.classloader.MoparScapeLinks</mainClass>
+                    <arguments>
+                        <argument>${basedir}/..</argument>
+                        <argument>${project.build.directory}/moparscape.html</argument>
+                    </arguments>
+                    <!--commandlineArgs>${basedir}/.. ${project.build.directory}/moparscape.html</commandlineArgs-->
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
